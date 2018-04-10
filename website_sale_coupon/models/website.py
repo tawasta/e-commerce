@@ -5,8 +5,8 @@
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import api, fields, models, _
-from odoo.http import request
+from openerp import api, fields, models, _
+from openerp.http import request
 
 # 4. Imports from Odoo modules:
 
@@ -27,14 +27,7 @@ class Website(models.Model):
 
         self.ensure_one()
         partner = self.env.user.partner_id
-        sale_order_id = request.session.get('sale_order_id')
-        if not sale_order_id:
-            last_order = partner.last_website_so_id
-            available_pricelists = self.get_pricelist_available()
-
-            sale_order_id = last_order.state == 'draft' and \
-                            last_order.pricelist_id in available_pricelists and \
-                            last_order.id
+        sale_order_id = request.session.get('sale_order_id', False)
 
         sale_order = self.env['sale.order'].sudo().browse(sale_order_id).exists() if sale_order_id else None
 
@@ -49,7 +42,6 @@ class Website(models.Model):
             force_create=force_create,
             code=code,
             update_pricelist=update_pricelist,
-            force_pricelist=force_pricelist
         )
 
         if sale_order:

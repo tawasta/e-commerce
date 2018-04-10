@@ -7,18 +7,18 @@ from dateutil import parser
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import http, _
-from odoo.http import request
+from openerp import http, _
+from openerp.http import request
 
 # 4. Imports from Odoo modules:
-from odoo.addons.website_sale.controllers.main import WebsiteSale
+from openerp.addons.website_sale.controllers.main import website_sale
 
 # 5. Local imports in the relative form:
 
 # 6. Unknown third party imports
 
 
-class WebsiteSaleCoupon(WebsiteSale):
+class WebsiteSaleCoupon(website_sale):
 
     @http.route(
         ['/shop/coupon/use'],

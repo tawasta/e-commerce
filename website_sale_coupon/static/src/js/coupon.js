@@ -1,4 +1,4 @@
-odoo.define('proposal', function (require) {
+openerp.define('proposal', function (require) {
     var _t = require('web.core')._t;
 
     var ajax = require('web.ajax');

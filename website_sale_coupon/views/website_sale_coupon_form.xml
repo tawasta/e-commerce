@@ -1,40 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<odoo>
-    <record id="website_sale_coupon_form" model="ir.ui.view" >
-        <field name="name">Website coupon form</field>
-        <field name="model">website.sale.coupon</field>
-        <field name="mode">primary</field>
-        <field name="arch" type="xml">
-            <form string="Website coupon">
-                <header>
+<openerp>
+    <data>
+        <record id="website_sale_coupon_form" model="ir.ui.view" >
+            <field name="name">Website coupon form</field>
+            <field name="model">website.sale.coupon</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <form string="Website coupon">
+                    <header>
 
-                </header>
-                <sheet>
-                    <group name="first-group">
-                        <group name="first-group-left">
-                            <field name="name" />
-                            <field name="code" />
-                            <field name="available" />
-                            <field name="value" />
-                            <field name="type" />
-                        </group>
-                        <group name="first-group-right">
-                            <field name="active" />
-                            <field name="start_date" />
-                            <field name="end_date" />
-                            <field name="product_id" />
-                            <field name="category_id" />
-                            <field name="partner_id" />
-                        </group>
+                    </header>
+                    <sheet>
+                        <group name="first-group">
+                            <group name="first-group-left">
+                                <field name="name" />
+                                <field name="code" />
+                                <field name="available" />
+                                <field name="value" />
+                                <field name="type" />
+                            </group>
+                            <group name="first-group-right">
+                                <field name="active" />
+                                <field name="start_date" />
+                                <field name="end_date" />
+                                <field name="product_id" />
+                                <field name="category_id" />
+                                <field name="partner_id" />
+                            </group>
 
-                        <group string="Coupon log" colspan="2">
-                            <field name="log_ids" colspan="4" nolabel="1"/>
+                            <group string="Coupon log" colspan="2">
+                                <field name="log_ids" colspan="4" nolabel="1"/>
+                            </group>
                         </group>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
 
-</odoo>
+</openerp>

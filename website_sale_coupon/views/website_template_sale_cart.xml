@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<openerp>
 	<data>
 
         <!-- Add the coupon redeem form -->
@@ -10,19 +10,19 @@
         </template>
 
         <!-- Add discount coupon lines -->
-        <template id="cart_coupon_lines" inherit_id="website_sale.cart_lines">
+        <template id="cart_coupon_lines" inherit_id="website_sale.cart">
 
-            <xpath expr="//table[@id='cart_products']/thead/tr/th[4]" position="after">
+            <xpath expr="//table[@id='cart_products']/thead/tr/th[last()]" position="after">
                 <th width="100">Coupons</th>
             </xpath>
 
             <!-- Don't show minus/plus with discount codes. Using them would set the price to 0,
              so disabling this on client side doesn't leave a possibility to inject multiple discount codes -->
-            <xpath expr="//td[@id='td-qty']/div" position="attributes">
+            <xpath expr="//td[last()]/div" position="attributes">
                 <attribute name="t-att-coupon">line.is_coupon</attribute>
             </xpath>
 
-            <xpath expr="//td[@id='td-price']" position="after">
+            <xpath expr="//td[@name='price']" position="after">
                 <td>
                     <t t-foreach="line.coupon_log_ids" t-as="discount">
                         <span t-att-data-coupon-id="discount.coupon_id.id" class="js_coupon" t-field="discount.coupon_id.name" /><br/>
@@ -33,4 +33,4 @@
         </template>
 
 	</data>
-</odoo>
+</openerp>
