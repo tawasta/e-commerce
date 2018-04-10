@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="product_product_coupon" model="product.product">
+            <field name="name">Discount coupon</field>
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="sale_ok" eval="False"/>
+            <field name="type">service</field>
+            <field name="taxes_id">[(6, 0, [])]</field>
+            <field name="supplier_taxes_id">[(6, 0, [])]</field>
+        </record>
+
+    </data>
+</odoo>

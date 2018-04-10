@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+        <!-- Add the coupon redeem form -->
+        <template id="discount_code_cart" inherit_id="website_sale.cart" active="False" customize_show="True" name="Discount code">
+            <xpath expr="//div[@id='right_column']" position="inside">
+                <t t-call="website_sale_coupon.discount_code_form" />
+            </xpath>
+        </template>
+
+        <!-- Add discount coupon lines -->
+        <template id="cart_coupon_lines" inherit_id="website_sale.cart_lines">
+
+            <xpath expr="//table[@id='cart_products']/thead/tr/th[4]" position="after">
+                <th width="100">Coupons</th>
+            </xpath>
+
+            <!-- Don't show minus/plus with discount codes. Using them would set the price to 0,
+             so disabling this on client side doesn't leave a possibility to inject multiple discount codes -->
+            <xpath expr="//td[@id='td-qty']/div" position="attributes">
+                <attribute name="t-att-coupon">line.is_coupon</attribute>
+            </xpath>
+
+            <xpath expr="//td[@id='td-price']" position="after">
+                <td>
+                    <t t-foreach="line.coupon_log_ids" t-as="discount">
+                        <span t-att-data-coupon-id="discount.coupon_id.id" class="js_coupon" t-field="discount.coupon_id.name" /><br/>
+                    </t>
+                </td>
+            </xpath>
+
+        </template>
+
+	</data>
+</odoo>
