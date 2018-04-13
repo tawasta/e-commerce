@@ -6,8 +6,7 @@
             <h4>Discount code</h4>
             <p>Use discount codes here</p>
 
-            <form t-if="website_sale_order and website_sale_order.website_order_line" action="/shop/coupon" method="post" class="mb32">
-                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+            <form t-if="website_sale_order and website_sale_order.website_order_line" action="/shop/coupon/use" method="post" class="mb32">
                 <div class="input-group">
                     <input id="coupon-code" name="code" class="form-control" type="text" placeholder="code..." />
                     <div class="input-group-btn">
