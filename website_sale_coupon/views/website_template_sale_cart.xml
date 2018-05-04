@@ -26,6 +26,7 @@
                 <td>
                     <t t-foreach="line.coupon_log_ids" t-as="discount">
                         <span t-att-data-coupon-id="discount.coupon_id.id" class="js_coupon" t-field="discount.coupon_id.name" /><br/>
+                        (<span t-field="line.discount_amount" /> <span t-field="order.currency_id.name" />)<br/>
                     </t>
                 </td>
             </xpath>

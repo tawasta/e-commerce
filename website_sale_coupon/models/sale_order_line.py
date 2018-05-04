@@ -6,6 +6,7 @@
 
 # 3. Odoo imports (openerp):
 from openerp import api, fields, models, _
+import openerp.addons.decimal_precision as dp
 
 # 4. Imports from Odoo modules:
 
@@ -27,6 +28,11 @@ class SaleOrderLine(models.Model):
     is_coupon = fields.Boolean(
         string='Is a coupon',
         compute=lambda self: self._compute_is_coupon(),
+    )
+
+    discount_amount = fields.Float(
+        string='Discount',
+        digits_compute=dp.get_precision('Product Price'),
     )
 
     def _use_coupon(self, coupon):
@@ -100,18 +106,27 @@ class SaleOrderLine(models.Model):
                     ('sale_order_line_id', '=', record.id),
                 ])
 
+                coupon_value = -1 * coupon.value
+
                 order_line = {
                     'product_id': discount_product.id,
                     'description': description,
                     'order_id': record.order_id.id,
-                    'price_unit': -1 * coupon.value,
+                    'price_unit': coupon_value,
                     'coupon_log_ids': [(6, 0, [used_coupon.id])],
                 }
                 record.env['sale.order.line'].create(order_line)
 
+                discount_amount = coupon_value
+
             elif coupon.type == 'percent':
+                original_price = record.price_subtotal
                 # Add a discount
                 record.discount = coupon.value
+
+                discount_amount = original_price - record.price_subtotal
+
+            record.discount_amount = round(discount_amount, 2)
 
     @api.multi
     def _compute_is_coupon(self):
@@ -119,3 +134,4 @@ class SaleOrderLine(models.Model):
         discount_product = self.env.ref('website_sale_coupon.product_product_coupon')
         for record in self:
             record.is_coupon = record.product_id == discount_product
+
