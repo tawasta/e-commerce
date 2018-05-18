@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="checkout" inherit_id="website_sale.checkout">
+        <!-- Rename Billing Address to Your information-->
+        <xpath expr="//h3[contains(@class, 'page-header')]" position="replace">
+            <h3 class="page-header mt16">Your Address</h3>
+        </xpath>
+    </template>
+
+
+    <template id="bill_to" inherit_id="website_sale.bill_to">
+        <!-- Add a new section to the checkout sidebar so that it shows 
+        all three addresses:
+        -Partner
+        -Invoicing
+        -Shipping
+        -->
+        <xpath expr="(//div[contains(@class,'panel')])[1]" position="before">
+            <div class="panel panel-info">
+                <div class="panel-heading">Your Address:</div>
+                <div class="panel-body">
+                    <div class='o_div_text_overflow' 
+                        t-field="order.partner_id" 
+                        t-options="{'widget': 'contact','fields': ['address', 'name', 'phone', 'email']}" />
+                </div>
+            </div>
+        </xpath>
+
+        <!-- Modify the invoice address section to show also the EDI code,
+        if applicable -->
+        <xpath expr="//div[@t-field='order.partner_invoice_id']" position="replace">
+
+            <t t-if="'edicode' in order.partner_invoice_id.fields_get() and order.partner_invoice_id.edicode">
+                <div class='o_div_text_overflow' t-field="order.partner_invoice_id"/>
+
+                <div class='o_div_text_overflow mt8'>
+                    eInvoicing:<br/>
+                    <span t-field="order.partner_invoice_id.edicode"/>
+                    <t t-if="order.partner_invoice_id.einvoice_operator">
+                        <br/>
+                        <span t-field="order.partner_invoice_id.einvoice_operator.name"/>
+                    </t>                    
+                </div>
+            </t>
+
+            <t t-if="not ('edicode' in order.partner_invoice_id.fields_get() and order.partner_invoice_id.edicode)">
+                <div class='o_div_text_overflow' 
+                     t-field="order.partner_invoice_id"
+                     t-options="{'widget': 'contact','fields': ['address', 'name', 'phone', 'email']}" />
+            </t>
+        </xpath>
+
+    </template>
+</odoo>
