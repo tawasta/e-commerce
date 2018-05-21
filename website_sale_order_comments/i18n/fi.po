@@ -1,0 +1,21 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_sale_order_comments
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-21 01:44+0000\n"
+"PO-Revision-Date: 2018-05-21 01:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_order_comments
+#: model:ir.ui.view,arch_db:website_sale_order_comments.extra_info
+msgid "Order Comments"
+msgstr "Kommentit tilaukseen"
