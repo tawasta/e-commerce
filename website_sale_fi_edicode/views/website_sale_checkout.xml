@@ -12,7 +12,7 @@
                 <select class="form-control einvoice_operator-select" name="einvoice_operator">
                     <option></option>
                     <t t-foreach="operators" t-as="op">
-                        <option t-att-value="op.id" t-esc="op.name" t-att-selected="op.id == ('einvoice_operator' in checkout and checkout['einvoice_operator'].id or -1)"/>
+                        <option t-att-value="op.id" t-esc="op.name"/>
                     </t>
                 </select>
             </div>
