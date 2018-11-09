@@ -10,7 +10,7 @@
                     <option></option>
                     <t t-foreach="methods" t-as="method">
                         <t t-esc="method.id"/>
-                        <option t-att-value="method.id" t-esc="method.name" t-att-selected="method.id == ('customer_invoice_transmit_method_id' in checkout and checkout['customer_invoice_transmit_method_id'].id or -1)"/>
+                        <option t-att-value="method.id" t-esc="method.name"/>
                     </t>
                 </select>
             </div>
