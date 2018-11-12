@@ -6,15 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-09 15:57+0000\n"
-"PO-Revision-Date: 2018-11-09 17:59+0200\n"
+"POT-Creation-Date: 2018-11-12 09:05+0000\n"
+"PO-Revision-Date: 2018-11-12 11:06+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 2.0.6\n"
+"Language: fi\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: website_sale_fi_edicode
 #: model:ir.ui.view,arch_db:website_sale_fi_edicode.address
@@ -23,6 +24,5 @@ msgstr "Verkkolaskuosoite"
 
 #. module: website_sale_fi_edicode
 #: model:ir.ui.view,arch_db:website_sale_fi_edicode.address
-#, fuzzy
 msgid "eInvoice Operator"
 msgstr "Verkkolaskuoperaattori"
