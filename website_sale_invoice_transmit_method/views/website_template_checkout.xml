@@ -14,7 +14,6 @@
                     </t>
                 </select>
             </div>
-            <div class="clearfix"/>
         </xpath>
     </template>
 </odoo>
