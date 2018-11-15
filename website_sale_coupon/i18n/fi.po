@@ -1,0 +1,351 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_coupon
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-15 18:43+0000\n"
+"PO-Revision-Date: 2018-11-15 20:51+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,help:website_sale_coupon.field_website_sale_coupon_available
+msgid "0 = not available. -1 = infinite available"
+msgstr "0 = ei käytössä. -1 = rajattomasti käytettävissä"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_active
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log_active
+msgid "Active"
+msgstr "Aktiivinen"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,help:website_sale_coupon.field_website_sale_coupon_category_id
+msgid "Allowed category. Leave empty if applies to any category"
+msgstr "Sallittu kategoria. Jätä tyhjäksi, jos koodi käy mihin tahansa kategoriaan."
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,help:website_sale_coupon.field_website_sale_coupon_partner_id
+msgid "Allowed partner. Leave empty if applies to any partner"
+msgstr "Sallittu kumppani. Jätä tyhjäksi jos koodi käy kenelle tahansa kumppanille."
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,help:website_sale_coupon.field_website_sale_coupon_product_id
+msgid "Allowed product. Leave empty if applies to any product"
+msgstr "Sallittu tuote. Jätä tyhjäksi jos koodi käy mihin tahansa tuotteeseen."
+
+#. module: website_sale_coupon
+#: model:ir.ui.view,arch_db:website_sale_coupon.discount_code_form
+msgid "Apply"
+msgstr "Käytä"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_available
+msgid "Available usages"
+msgstr "Käyttävissä oleva lukumäärä"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_code
+msgid "Code"
+msgstr "Koodi"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log_coupon_id
+msgid "Coupon"
+msgstr "Alennuskoodi"
+
+#. module: website_sale_coupon
+#: code:addons/website_sale_coupon/controllers/website_sale_coupon.py:39
+#, python-format
+msgid "Coupon doesn't exist!"
+msgstr "Alennuskoodia ei ole olemassa!"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_sale_order_line_coupon_log_ids
+#: model:ir.ui.view,arch_db:website_sale_coupon.website_sale_coupon_form
+msgid "Coupon log"
+msgstr "Alennuskoodien logi"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_type
+msgid "Coupon type"
+msgstr "Alennuskoodin tyyppi"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log_ids
+msgid "Coupon usage"
+msgstr "Alennuskoodin käyttö"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_value
+msgid "Coupon value"
+msgstr "Alennuskoodin arvo"
+
+#. module: website_sale_coupon
+#: model:ir.ui.menu,name:website_sale_coupon.website_sale_coupons_menu
+#: model:ir.ui.view,arch_db:website_sale_coupon.cart_coupon_lines
+#: model:ir.ui.view,arch_db:website_sale_coupon.payment_coupon_lines
+msgid "Coupons"
+msgstr "Alennuskoodit"
+
+#. module: website_sale_coupon
+#: model:ir.ui.menu,name:website_sale_coupon.website_sale_coupons_log_menu
+msgid "Coupons log"
+msgstr "Alennuskoodien logi"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_create_uid
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log_create_uid
+msgid "Created by"
+msgstr "Luonut"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_create_date
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log_create_date
+msgid "Created on"
+msgstr "Luotu"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_description
+msgid "Description"
+msgstr "Kuvaus"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,help:website_sale_coupon.field_website_sale_coupon_value
+msgid "Discount amount. For percentage, 50.0 means \"50%\" and 0.50 means \"0.50%\"."
+msgstr "Alennuksen määrä. Prosenttialennuksessa 50.0 tarkoittaa \"50%\" ja 0.50 tarkoittaa \"0.50%\""
+
+#. module: website_sale_coupon
+#: model:ir.ui.view,arch_db:website_sale_coupon.discount_code_form
+msgid "Discount code"
+msgstr "Alennuskoodi"
+
+#. module: website_sale_coupon
+#: code:addons/website_sale_coupon/models/sale_order_line.py:96
+#, python-format
+msgid "Discount code %s (%s)"
+msgstr "Alennuskoodi %s (%s)"
+
+#. module: website_sale_coupon
+#: model:ir.ui.view,arch_db:website_sale_coupon.discount_code_form
+msgid "Discount code used!"
+msgstr "Alennuskoodi käytettiin!"
+
+#. module: website_sale_coupon
+#: model:product.product,name:website_sale_coupon.product_product_coupon
+#: model:product.template,name:website_sale_coupon.product_product_coupon_product_template
+msgid "Discount coupon"
+msgstr "Alennuskoodi"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_display_name
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log_display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: website_sale_coupon
+#: model:ir.ui.view,arch_db:website_sale_coupon.discount_code_form
+msgid "Erronous discount code"
+msgstr "Virheellinen alennuskoodi"
+
+#. module: website_sale_coupon
+#: selection:website.sale.coupon,type:0
+msgid "Fixed"
+msgstr "Kiinteä"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,help:website_sale_coupon.field_website_sale_coupon_description
+msgid "For internal use only. This will not be shown to the customer"
+msgstr "Ainoastaan sisäiseen käyttöön. Tätä ei näytetä loppuasiakkaille."
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,help:website_sale_coupon.field_website_sale_coupon_code
+msgid "Give this to your customer(s)"
+msgstr "Anna tämä loppuasiakkaille"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_id
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log_id
+msgid "ID"
+msgstr "Tunniste (ID)"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_sale_order_line_is_coupon
+msgid "Is a coupon"
+msgstr "On alennuskoodi"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon___last_update
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log___last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log_write_uid
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_write_uid
+msgid "Last Updated by"
+msgstr "Viimeksi päivittänyt"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log_write_date
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_write_date
+msgid "Last Updated on"
+msgstr "Viimeksi päivitetty"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_name
+msgid "Name"
+msgstr "Nimi"
+
+#. module: website_sale_coupon
+#: code:addons/website_sale_coupon/models/sale_order.py:27
+#, python-format
+msgid "No code provided"
+msgstr "Alennuskoodia ei annettu"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log_sale_order_line_id
+msgid "Order line"
+msgstr "Myyntitilausrivi"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_partner_id
+msgid "Partner"
+msgstr "Kumppani"
+
+#. module: website_sale_coupon
+#: selection:website.sale.coupon,type:0
+msgid "Percentage"
+msgstr "Prosentti"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_product_id
+msgid "Product"
+msgstr "Tuote"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_category_id
+msgid "Product category"
+msgstr "Tuotteen kategoria"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_log_sale_order_id
+msgid "Sale order"
+msgstr "Myyntitilaus"
+
+#. module: website_sale_coupon
+#: model:ir.model,name:website_sale_coupon.model_sale_order
+msgid "Sales Order"
+msgstr "Myyntitilaus"
+
+#. module: website_sale_coupon
+#: model:ir.model,name:website_sale_coupon.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Myyntitilausrivi"
+
+#. module: website_sale_coupon
+#: sql_constraint:website.sale.coupon:0
+msgid "This code already exists!"
+msgstr "Tämä alennuskoodi on jo olemassa!"
+
+#. module: website_sale_coupon
+#: code:addons/website_sale_coupon/controllers/website_sale_coupon.py:41
+#, python-format
+msgid "This coupon has already been used"
+msgstr "Tämä alennuskoodi on jo käytetty"
+
+#. module: website_sale_coupon
+#: code:addons/website_sale_coupon/controllers/website_sale_coupon.py:45
+#, python-format
+msgid "This coupon has expired"
+msgstr "Tämä alennuskoodi on vanhentunut"
+
+#. module: website_sale_coupon
+#: code:addons/website_sale_coupon/models/sale_order.py:39
+#, python-format
+msgid "This coupon is already in use or doesn't match any products in your cart."
+msgstr "Tämä alennuskoodi on jo käytössä tai ei vastaa mitään tuotteita ostoskorissasi."
+
+#. module: website_sale_coupon
+#: code:addons/website_sale_coupon/controllers/website_sale_coupon.py:43
+#, python-format
+msgid "This coupon isn't active yet"
+msgstr "Tämä alennuskoodi ei ole käytössä vielä"
+
+#. module: website_sale_coupon
+#: code:addons/website_sale_coupon/controllers/website_sale_coupon.py:47
+#, python-format
+msgid "This coupon isn't yours"
+msgstr "Tämä alennuskoodi ei kuulu sinulle"
+
+#. module: website_sale_coupon
+#: model:ir.ui.view,arch_db:website_sale_coupon.discount_code_form
+msgid "Use discount codes here"
+msgstr "Käytä alennuskoodi tässä"
+
+#. module: website_sale_coupon
+#: model:ir.ui.view,arch_db:website_sale_coupon.website_sale_coupon_log_tree
+msgid "Used on"
+msgstr "Käytetty"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,help:website_sale_coupon.field_website_sale_coupon_name
+msgid "Used on sale order and invoice"
+msgstr "Käyetty myyntitilauksessa ja laskussa"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_start_date
+msgid "Valid from"
+msgstr "Voimassa alkaen"
+
+#. module: website_sale_coupon
+#: model:ir.model.fields,field_description:website_sale_coupon.field_website_sale_coupon_end_date
+msgid "Valid to"
+msgstr "Voimassa asti"
+
+#. module: website_sale_coupon
+#: model:ir.model,name:website_sale_coupon.model_website
+msgid "Website"
+msgstr "Verkkosivut"
+
+#. module: website_sale_coupon
+#: model:ir.ui.view,arch_db:website_sale_coupon.website_sale_coupon_form
+msgid "Website coupon"
+msgstr "Verkkosivun alennuskoodit"
+
+#. module: website_sale_coupon
+#: model:ir.actions.act_window,name:website_sale_coupon.website_sale_coupon_action
+#: model:ir.ui.menu,name:website_sale_coupon.website_sale_coupon_top_menu
+#: model:ir.ui.view,arch_db:website_sale_coupon.website_sale_coupon_tree
+msgid "Website coupons"
+msgstr "Verkkosivun alennuskoodit"
+
+#. module: website_sale_coupon
+#: model:ir.actions.act_window,name:website_sale_coupon.website_sale_coupon_log_action
+#: model:ir.ui.view,arch_db:website_sale_coupon.website_sale_coupon_log_tree
+msgid "Website coupons log"
+msgstr "Verkkosivun alennuskoodien logi"
+
+#. module: website_sale_coupon
+#: model:ir.ui.view,arch_db:website_sale_coupon.discount_code_form
+msgid "code..."
+msgstr "koodi..."
+
+#. module: website_sale_coupon
+#: model:ir.model,name:website_sale_coupon.model_website_sale_coupon
+msgid "website.sale.coupon"
+msgstr "website.sale.coupon"
+
+#. module: website_sale_coupon
+#: model:ir.model,name:website_sale_coupon.model_website_sale_coupon_log
+msgid "website.sale.coupon.log"
+msgstr "website.sale.coupon.log"
