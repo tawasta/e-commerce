@@ -3,7 +3,7 @@
 	<data>
 
         <!-- Add the coupon redeem form -->
-        <template id="discount_code_payment" inherit_id="website_sale.payment" active="False" customize_show="True" name="Discount code">
+        <template id="discount_code_payment" inherit_id="website_sale.payment" active="True" customize_show="True" name="Discount code">
             <xpath expr="//div[@id='right_column']" position="inside">
                 <t t-call="website_sale_coupon.discount_code_form" />
             </xpath>
