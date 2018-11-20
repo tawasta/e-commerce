@@ -22,7 +22,7 @@
 {
     'name': 'Website sale coupons',
     'summary': 'Discount coupons for website',
-    'version': '10.0.0.15.0',
+    'version': '10.0.0.16.0',
     'category': 'Website',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -46,6 +46,7 @@
         'views/website_sale_coupon_tree.xml',
         'views/website_template_coupon.xml',
         'views/website_template_coupon_assets.xml',
+        'views/website_template_sale_address.xml',
         'views/website_template_sale_cart.xml',
         'views/website_template_sale_payment.xml',
     ],

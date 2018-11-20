@@ -4,8 +4,18 @@ odoo.define('proposal', function (require) {
     var ajax = require('web.ajax');
 
     $(function() {
+        // Prevent sending with enter press
+        $('#btn-coupon-submit, #coupon-code').keypress(function (event) {
+            if (event.keyCode === 10 || event.keyCode === 13) {
+                event.preventDefault();
+                return false;
+            }
+        });
+
         // When coupon is submitted, try to use it and display error/success
-        $('#btn-coupon-submit').click(function(){
+        $('#btn-coupon-submit').click(function(event){
+            event.preventDefault();
+
             var action = "/shop/coupon/use";
             var code = $('#coupon-code').val();
 
