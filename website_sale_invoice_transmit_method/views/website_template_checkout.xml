@@ -9,7 +9,6 @@
                 <select class="form-control" name="customer_invoice_transmit_method_id">
                     <option></option>
                     <t t-foreach="methods" t-as="method">
-                        <t t-esc="method.id"/>
                         <option t-att-value="method.id" t-esc="method.name"/>
                     </t>
                 </select>
