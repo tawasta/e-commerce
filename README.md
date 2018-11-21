@@ -14,7 +14,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [website_sale_address_improvements](website_sale_address_improvements/) | 10.0.1.0.0 | Improved webshop address functionalities
-[website_sale_coupon](website_sale_coupon/) | 10.0.0.15.0 | Discount coupons for website
+[website_sale_coupon](website_sale_coupon/) | 10.0.0.16.0 | Discount coupons for website
 [website_sale_fi_edicode](website_sale_fi_edicode/) | 10.0.1.0.3 | Adds finnish EDI code to website checkout form
 [website_sale_force_autoconfirm_order](website_sale_force_autoconfirm_order/) | 10.0.1.0.0 | Autoconfirm SO regardless of payment transaction state
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 10.0.1.1.0 | Adds account invoice transmit method to checkout
