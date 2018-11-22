@@ -14,10 +14,12 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [website_sale_address_improvements](website_sale_address_improvements/) | 10.0.1.0.0 | Improved webshop address functionalities
-[website_sale_coupon](website_sale_coupon/) | 10.0.0.16.0 | Discount coupons for website
-[website_sale_fi_edicode](website_sale_fi_edicode/) | 10.0.1.0.3 | Adds finnish EDI code to website checkout form
+[website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 10.0.1.0.0 | eCommerce tax in cart lines
+[website_sale_cart_no_policies](website_sale_cart_no_policies/) | 10.0.1.1.0 | Remove policies from cart right column
+[website_sale_coupon](website_sale_coupon/) | 10.0.0.16.1 | Discount coupons for website
+[website_sale_fi_edicode](website_sale_fi_edicode/) | 10.0.1.1.0 | Adds finnish EDI code to website checkout form
 [website_sale_force_autoconfirm_order](website_sale_force_autoconfirm_order/) | 10.0.1.0.0 | Autoconfirm SO regardless of payment transaction state
-[website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 10.0.1.1.0 | Adds account invoice transmit method to checkout
+[website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 10.0.1.2.0 | Adds account invoice transmit method to checkout
 [website_sale_no_attachment_upload](website_sale_no_attachment_upload/) | 10.0.1.0.0 | Removes the file upload field from the checkout process
 [website_sale_no_own_invoices](website_sale_no_own_invoices/) | 10.0.1.0.0 | Prevent accessing own invoices from My Account
 [website_sale_no_payment_info](website_sale_no_payment_info/) | 10.0.1.0.0 | Hide payment-related sections from checkout
