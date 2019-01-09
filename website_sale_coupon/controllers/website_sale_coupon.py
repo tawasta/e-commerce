@@ -72,5 +72,6 @@ class WebsiteSaleCoupon(WebsiteSale):
             ])
 
             if coupon_log:
-                coupon_log.coupon_id.available += 1
+                if coupon_log.coupon_id.available >= 0:
+                    coupon_log.coupon_id.available += 1
                 coupon_log.active = False
