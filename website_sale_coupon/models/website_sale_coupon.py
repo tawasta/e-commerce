@@ -110,6 +110,8 @@ class WebsiteSaleCoupon(models.Model):
         if not default.get('name'):
             default['name'] = _("%s (copy)") % self.name
 
+        default['code'] = False
+
         return super(WebsiteSaleCoupon, self).copy(default)
 
     # 7. Action methods
