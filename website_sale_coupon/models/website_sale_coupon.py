@@ -7,7 +7,7 @@ import string
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 # 4. Imports from Odoo modules:
 
@@ -102,6 +102,15 @@ class WebsiteSaleCoupon(models.Model):
     ]
 
     # 6. CRUD methods
+    @api.multi
+    def copy(self, default=None):
+        if default is None:
+            default = {}
+
+        if not default.get('name'):
+            default['name'] = _("%s (copy)") % self.name
+
+        return super(WebsiteSaleCoupon, self).copy(default)
 
     # 7. Action methods
 
