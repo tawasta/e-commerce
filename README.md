@@ -16,7 +16,7 @@ addon | version | summary
 [website_sale_address_improvements](website_sale_address_improvements/) | 10.0.1.0.0 | Improved webshop address functionalities
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 10.0.1.0.0 | eCommerce tax in cart lines
 [website_sale_cart_no_policies](website_sale_cart_no_policies/) | 10.0.1.1.0 | Remove policies from cart right column
-[website_sale_coupon](website_sale_coupon/) | 10.0.0.16.2 | Discount coupons for website
+[website_sale_coupon](website_sale_coupon/) | 10.0.0.16.4 | Discount coupons for website
 [website_sale_fi_edicode](website_sale_fi_edicode/) | 10.0.1.1.0 | Adds finnish EDI code to website checkout form
 [website_sale_force_autoconfirm_order](website_sale_force_autoconfirm_order/) | 10.0.1.0.0 | Autoconfirm SO regardless of payment transaction state
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 10.0.0.1.0 | Forces autoinvoice on quotations created from website_sale
