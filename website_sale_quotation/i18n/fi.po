@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-21 12:20+0000\n"
-"PO-Revision-Date: 2019-03-21 14:22+0200\n"
+"POT-Creation-Date: 2019-03-21 13:34+0000\n"
+"PO-Revision-Date: 2019-03-21 15:37+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,11 @@ msgstr ""
 "               Tarjouspyyntö"
 
 #. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.confirmation
+msgid "<i class=\"fa fa-print\"/> Print"
+msgstr "<i class=\"fa fa-print\"/> Tulosta"
+
+#. module: website_sale_quotation
 #: model:ir.ui.view,arch_db:website_sale_quotation.checkout
 msgid "<span class=\"fa fa-long-arrow-left\"/> Return to Quotation"
 msgstr "<span class=\"fa fa-long-arrow-left\"/> Palaa tarjouspyynnölle"
@@ -37,9 +42,19 @@ msgid "<strong>Add to Quotation</strong>"
 msgstr "<strong>Lisää tarjouspyyntöön</strong>"
 
 #. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.confirmation
+msgid "<strong>Quotation Details:</strong>"
+msgstr "<strong>Tarjouspyynnön tiedot:</strong>"
+
+#. module: website_sale_quotation
 #: model:ir.ui.view,arch_db:website_sale_quotation.product
 msgid "Add to Quotation"
 msgstr "Lisää tarjouspyyntöön"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.confirmation
+msgid "Confirmed"
+msgstr "Vahvistettu"
 
 #. module: website_sale_quotation
 #: model:ir.ui.view,arch_db:website_sale_quotation.cart
@@ -47,9 +62,24 @@ msgid "My Quotation"
 msgstr "Tarjouspyyntö"
 
 #. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.confirmation
+msgid "Quotation"
+msgstr "Tarjous"
+
+#. module: website_sale_quotation
 #: model:ir.ui.view,arch_db:website_sale_quotation.wizard_checkout
 msgid "Review Quotation<span class=\"chevron\"/>"
-msgstr "Review Quotation<span class=\"chevron\"/>"
+msgstr "Tarkasta tarjouspyyntö<span class=\"chevron\"/>"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.wizard_checkout
+msgid "Review<span class=\"chevron\"/>"
+msgstr "Tarkasta<span class=\"chevron\"/>"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.confirmation
+msgid "Thank you for your interest."
+msgstr "Kiitos mielenkiinnostasi."
 
 #. module: website_sale_quotation
 #: model:ir.ui.view,arch_db:website_sale_quotation.cart_popover

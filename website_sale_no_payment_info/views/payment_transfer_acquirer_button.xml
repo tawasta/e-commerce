@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="transfer_acquirer_button" inherit_id="payment_transfer.transfer_acquirer_button">
+        <!-- Change the "Pay Now" button to "Confirm" -->
+        <xpath expr="//button[@type='submit']/span" position="replace">
+            <span t-if="submit_txt">Confirm <span class="fa fa-long-arrow-right"/></span>
+        </xpath>
+
+    </template>
+</odoo>

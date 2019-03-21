@@ -22,7 +22,7 @@
 {
     'name': 'No Payment Info in Website Shop',
     'summary': "Hide payment-related sections from checkout",
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.1.0',
     'category': 'Invoicing & Payments',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -34,9 +34,13 @@
         'bin': [],
     },
     'depends': [
+        'payment_transfer',
+        'website_sale',
         'website_portal_sale',
     ],
     'data': [
+        'views/payment_transfer_acquirer_button.xml',
+        'views/website_sale_payment.xml',
         'views/website_template_checkout.xml',
     ],
     'demo': [

@@ -17,6 +17,7 @@ Payment page in checkout:
 Confirmation page in checkout:
 ------------------------------
 * Hide payment information below product listing
+* Change the term `Pay Now` to `Confirm`
 
 
 Installation
@@ -37,6 +38,7 @@ Credits
 Contributors
 ------------
 * Timo Talvitie <timo.talvitie@tawasta.fi>
+* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 
 Maintainer
 ----------

@@ -13,5 +13,12 @@
                 </t>
             </li>
         </xpath>
+
+        <xpath expr="//li[@id='step40']" position="replace">
+            <li t-att-class="(step==40 and 'text-primary') or 'text-muted'" id="step40">
+                Review<span class="chevron"/>
+            </li>
+        </xpath>
+
     </template>
 </odoo>

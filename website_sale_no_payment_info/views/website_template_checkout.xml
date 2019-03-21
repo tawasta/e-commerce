@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    <template id="payment" inherit_id="website_sale.payment">
-        <!-- The template contains two DIVs with the same ID 'payment_method'.
-        Hide the first one's payment acquirer selection and the subheading -->
-        <xpath expr="(//div[@id='payment_method'])[1]/div/h4" position="replace"/>
-        <xpath expr="(//div[@id='payment_method'])[1]/div/ul" position="attributes">
-            <attribute name="style">display:none</attribute>
-        </xpath>
-    </template>
-
-
     <template id="confirmation" inherit_id="website_sale.confirmation">
         <!-- Hide the 'Payment information' subheading -->
         <xpath expr="(//div[@class='oe_cart']/h3)[2]" position="replace"/>
