@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="suggested_products_list" name="Alternative products in my quotation" inherit_id="website_sale.suggested_products_list">
+        <xpath expr="//a[hasclass('js_add_suggested_products')]/strong" position="replace">
+            <strong>Add to Quotation</strong>
+        </xpath>
+    </template>
+</odoo>

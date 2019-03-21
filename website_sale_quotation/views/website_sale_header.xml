@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="header" name="Header Shop My Quotation Link" inherit_id="website_sale.header">
+        <xpath expr="//li/a[@href='/shop/cart']" position="replace">
+            <a href="/shop/cart">
+                <i class="fa fa-clipboard-list"/>
+                My quotation <sup t-attf-class="my_cart_quantity label label-primary" t-esc="website_sale_order and website_sale_order.cart_quantity or ''"/>
+            </a>
+        </xpath>
+    </template>
+</odoo>

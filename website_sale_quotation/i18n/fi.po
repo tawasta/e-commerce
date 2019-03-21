@@ -1,0 +1,72 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_quotation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-21 12:20+0000\n"
+"PO-Revision-Date: 2019-03-21 14:22+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fi\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.header
+msgid ""
+"<i class=\"fa fa-clipboard-list\"/>\n"
+"                My quotation"
+msgstr ""
+"<i class=\"fa fa-clipboard-list\"/>\n"
+"               Tarjouspyyntö"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.checkout
+msgid "<span class=\"fa fa-long-arrow-left\"/> Return to Quotation"
+msgstr "<span class=\"fa fa-long-arrow-left\"/> Palaa tarjouspyynnölle"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.suggested_products_list
+msgid "<strong>Add to Quotation</strong>"
+msgstr "<strong>Lisää tarjouspyyntöön</strong>"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.product
+msgid "Add to Quotation"
+msgstr "Lisää tarjouspyyntöön"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.cart
+msgid "My Quotation"
+msgstr "Tarjouspyyntö"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.wizard_checkout
+msgid "Review Quotation<span class=\"chevron\"/>"
+msgstr "Review Quotation<span class=\"chevron\"/>"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.cart_popover
+msgid "View Quotation ("
+msgstr "Katso tarjouspyyntö ("
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.address
+msgid "Your Quotation"
+msgstr "Tarjouspyyntösi"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.cart_lines
+msgid "Your quotation is empty!"
+msgstr "Tarjouspyyntö on tyhjä!"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.cart_popover
+msgid "items)"
+msgstr "tuotetta)"

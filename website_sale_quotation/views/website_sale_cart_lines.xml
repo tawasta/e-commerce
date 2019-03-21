@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="cart_lines" name="Shopping Quotation Lines" inherit_id="website_sale.cart_lines">
+        <xpath expr="//div[hasclass('js_cart_lines')]" position="replace">
+            <div t-if="not website_sale_order or not website_sale_order.website_order_line" class="js_cart_lines well well-lg">
+                Your quotation is empty!
+            </div>
+        </xpath>
+    </template>
+</odoo>
