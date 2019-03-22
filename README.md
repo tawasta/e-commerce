@@ -1,6 +1,5 @@
-[![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/113/10.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-e-commerce-113)
-[![Build Status](https://travis-ci.org/OCA/e-commerce.svg?branch=10.0)](https://travis-ci.org/OCA/e-commerce)
-[![Coverage Status](https://coveralls.io/repos/OCA/e-commerce/badge.png?branch=10.0)](https://coveralls.io/r/OCA/e-commerce?branch=10.0)
+[![Build Status](https://travis-ci.org/tawasta/e-commerce.svg?branch=10.0)](https://travis-ci.org/OCA/e-commerce)
+[![Coverage Status](https://coveralls.io/repos/tawasta/e-commerce/badge.png?branch=10.0)](https://coveralls.io/r/OCA/e-commerce?branch=10.0)
 
 Odoo E-Commerce Modules
 =======================
