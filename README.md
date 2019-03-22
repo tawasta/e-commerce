@@ -22,8 +22,9 @@ addon | version | summary
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 10.0.1.2.0 | Adds account invoice transmit method to checkout
 [website_sale_no_attachment_upload](website_sale_no_attachment_upload/) | 10.0.1.0.0 | Removes the file upload field from the checkout process
 [website_sale_no_own_invoices](website_sale_no_own_invoices/) | 10.0.1.0.0 | Prevent accessing own invoices from My Account
-[website_sale_no_payment_info](website_sale_no_payment_info/) | 10.0.1.0.0 | Hide payment-related sections from checkout
+[website_sale_no_payment_info](website_sale_no_payment_info/) | 10.0.1.1.0 | Hide payment-related sections from checkout
 [website_sale_order_comments](website_sale_order_comments/) | 10.0.1.0.0 | Store the comments given during checkout in a separate field
+[website_sale_quotation](website_sale_quotation/) | 10.0.1.0.0 | Change the terminology used in eCommerce views
 [website_sale_show_product_code](website_sale_show_product_code/) | 10.0.1.0.0 | Show the product's internal reference on product page
 
 [//]: # (end addons)
