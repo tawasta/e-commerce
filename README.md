@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/tawasta/e-commerce.svg?branch=10.0)](https://travis-ci.org/tawasta/e-commerce)
-[![Coverage Status](https://coveralls.io/repos/tawasta/e-commerce/badge.png?branch=10.0)](https://coveralls.io/r/tawasta/e-commerce?branch=10.0)
+[![Build Status](https://travis-ci.org/Tawasta/e-commerce.svg?branch=10.0)](https://travis-ci.org/Tawasta/e-commerce)
+[![Coverage Status](https://coveralls.io/repos/Tawasta/e-commerce/badge.png?branch=10.0)](https://coveralls.io/r/Tawasta/e-commerce?branch=10.0)
 
 Odoo E-Commerce Modules
 =======================
