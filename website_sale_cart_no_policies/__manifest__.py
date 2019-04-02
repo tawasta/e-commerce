@@ -22,7 +22,7 @@
 {
     'name': 'eCommerce remove cart policies',
     'summary': 'Remove policies from cart right column',
-    'version': '10.0.1.1.0',
+    'version': '1.1.0',
     'category': 'Website',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

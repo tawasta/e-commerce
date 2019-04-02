@@ -22,7 +22,7 @@
 {
     'name': 'Force autoinvoice in website sale',
     'summary': 'Forces autoinvoice on quotations created from website_sale',
-    'version': '10.0.0.1.0',
+    'version': '0.1.0',
     'category': 'Website',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
