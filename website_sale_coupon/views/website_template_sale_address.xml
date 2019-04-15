@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <!-- Add the coupon redeem form -->
-    <template id="address" inherit_id="website_sale.address" active="True" customize_show="True" name="Discount code">
+    <template id="address" inherit_id="website_sale.address" active="True"
+              customize_show="True" name="Discount code">
         <xpath expr="//div[@class='row']/div[2]" position="inside">
-            <t t-call="website_sale_coupon.discount_code_form" />
+            <t t-call="website_sale_coupon.discount_code_form"/>
         </xpath>
     </template>
 </odoo>

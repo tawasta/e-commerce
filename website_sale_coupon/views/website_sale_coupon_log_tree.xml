@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <record id="website_sale_coupon_log_tree" model="ir.ui.view" >
+    <record id="website_sale_coupon_log_tree" model="ir.ui.view">
         <field name="name">Website coupon tree</field>
         <field name="model">website.sale.coupon.log</field>
         <field name="mode">primary</field>

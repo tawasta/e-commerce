@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-	<data>
+    <data>
 
         <!-- Add the coupon redeem form -->
-        <template id="discount_code_cart" inherit_id="website_sale.cart" active="True" customize_show="True" name="Discount code">
+        <template id="discount_code_cart" inherit_id="website_sale.cart"
+                  active="True" customize_show="True" name="Discount code">
             <xpath expr="//div[@id='right_column']" position="inside">
-                <t t-call="website_sale_coupon.discount_code_form" />
+                <t t-call="website_sale_coupon.discount_code_form"/>
             </xpath>
         </template>
 
         <!-- Add discount coupon lines -->
         <template id="cart_coupon_lines" inherit_id="website_sale.cart_lines">
 
-            <xpath expr="//table[@id='cart_products']/thead/tr/th[last()]" position="after">
+            <xpath expr="//table[@id='cart_products']/thead/tr/th[last()]"
+                   position="after">
                 <th width="100">Coupons</th>
             </xpath>
 
@@ -22,15 +24,19 @@
                 <attribute name="t-att-coupon">line.is_coupon</attribute>
             </xpath>
 
-            <xpath expr="//table[@id='cart_products']/tbody//tr/td[last()]" position="after">
+            <xpath expr="//table[@id='cart_products']/tbody//tr/td[last()]"
+                   position="after">
                 <td>
                     <t t-foreach="line.coupon_log_ids" t-as="discount">
-                        <span t-att-data-coupon-id="discount.coupon_id.id" class="js_coupon" t-field="discount.coupon_id.name" /><br/>
+                        <span t-att-data-coupon-id="discount.coupon_id.id"
+                              class="js_coupon"
+                              t-field="discount.coupon_id.name"/>
+                        <br/>
                     </t>
                 </td>
             </xpath>
 
         </template>
 
-	</data>
+    </data>
 </odoo>
