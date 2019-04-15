@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="cart" name="Shopping Quotation Lines" inherit_id="website_sale.cart">
+    <template id="cart" name="Shopping Cart Quotation" inherit_id="website_sale.cart">
         <xpath expr="//h1" position="replace">
             <h1 class="mb32">My Quotation</h1>
+        </xpath>
+
+        <xpath expr="//a[@href='/shop/checkout']/span" position="replace">
+            <span class="hidden-xs">Address</span>
         </xpath>
     </template>
 </odoo>

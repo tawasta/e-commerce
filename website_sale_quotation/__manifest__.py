@@ -22,7 +22,7 @@
 {
     'name': 'eCommerce Quotations',
     'summary': 'Change the terminology used in eCommerce views',
-    'version': '10.0.1.0.1',
+    'version': '10.0.1.0.2',
     'category': 'Website',
     'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
