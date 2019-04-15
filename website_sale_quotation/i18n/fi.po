@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* website_sale_quotation
+#   * website_sale_quotation
 #
 msgid ""
 msgstr ""
@@ -65,6 +65,11 @@ msgstr "Vahvistettu"
 #: model:ir.ui.view,arch_db:website_sale_quotation.cart
 msgid "My Quotation"
 msgstr "Tarjouspyyntö"
+
+#. module: website_sale_quotation
+#: model:ir.ui.view,arch_db:website_sale_quotation.cart
+msgid "Address"
+msgstr "Osoite"
 
 #. module: website_sale_quotation
 #: model:ir.ui.view,arch_db:website_sale_quotation.confirmation
