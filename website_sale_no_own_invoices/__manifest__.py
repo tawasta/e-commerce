@@ -22,7 +22,7 @@
 {
     'name': 'eCommerce - hide own invoices',
     'summary': "Prevent accessing own invoices from My Account",
-    'version': '1.0.0',
+    'version': '10.0.1.0.0',
     'category': 'Invoicing & Payments',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

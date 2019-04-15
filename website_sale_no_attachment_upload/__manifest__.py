@@ -22,7 +22,7 @@
 {
     'name': 'Website Sale - No Attachment Upload',
     'summary': "Removes the file upload field from the checkout process",
-    'version': '1.0.0',
+    'version': '10.0.1.0.0',
     'category': 'Website',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

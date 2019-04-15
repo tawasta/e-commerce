@@ -22,7 +22,7 @@
 {
     'name': 'Website sale coupons',
     'summary': 'Discount coupons for website',
-    'version': '0.16.4',
+    'version': '10.0.0.16.4',
     'category': 'Website',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

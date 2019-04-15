@@ -22,7 +22,7 @@
 {
     'name': 'Payment Acquirer - Force Autoconfirm Option',
     'summary': "Autoconfirm SO regardless of payment transaction state",
-    'version': '1.0.0',
+    'version': '10.0.1.0.0',
     'category': 'Invoicing & Payments',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
