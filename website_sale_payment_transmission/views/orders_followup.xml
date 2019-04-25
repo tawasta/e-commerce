@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    
+    <template id="orders_followup" name="Commercial Invoice Address" inherit_id="website_portal_sale.orders_followup">
+        <xpath expr="//t[@t-set='invoices']" position="before">
+            <br/>
+            <strong>Invoice Transmission Method</strong>
+            <span t-field="order.commercial_partner_id.customer_invoice_transmit_method_id"/>
+            <br/>
+            <strong>Payment Terms</strong>
+            <span t-field="order.payment_term_id"/>
+
+        </xpath>
+    </template>
+
+</odoo>
