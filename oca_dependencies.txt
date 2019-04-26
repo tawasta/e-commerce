@@ -4,3 +4,4 @@ sale-workflow
 server-tools
 website
 l10n_finland https://github.com/tawasta/l10n-finland
+sale https://github.com/tawasta/sale
