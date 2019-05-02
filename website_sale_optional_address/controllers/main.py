@@ -33,4 +33,3 @@ class WebsiteSaleOptionalAddress(WebsiteSale):
             res.remove('country_id')
 
         return res
-
