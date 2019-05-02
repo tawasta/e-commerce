@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2018- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
+#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,30 +20,25 @@
 ##############################################################################
 
 {
-    'name': 'eCommerce Quotations',
-    'summary': 'Change the terminology used in eCommerce views',
-    'version': '10.0.1.1.0',
+    'name': 'Website Sale - Optional address',
+    'summary': 'Only require name, email and phone from customers',
+    'version': '10.0.1.0.0',
     'category': 'Website',
     'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
+    'external_dependencies': {
+        'python': [],
+        'bin': [],
+    },
     'depends': [
         'website_sale',
-        'website_sale_no_payment_info',
-        'website_sale_optional_address',
     ],
     'data': [
         'views/website_sale_address.xml',
-        'views/website_sale_cart.xml',
-        'views/website_sale_cart_lines.xml',
-        'views/website_sale_cart_popover.xml',
-        'views/website_sale_checkout.xml',
-        'views/website_sale_confirmation.xml',
-        'views/website_sale_header.xml',
-        'views/website_sale_product.xml',
-        'views/website_sale_suggested_products_list.xml',
-        'views/website_sale_wizard_checkout.xml',
+    ],
+    'demo': [
     ],
 }
