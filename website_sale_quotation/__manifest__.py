@@ -40,6 +40,7 @@
         'views/website_sale_cart_popover.xml',
         'views/website_sale_checkout.xml',
         'views/website_sale_confirmation.xml',
+        'views/website_sale_extra_info.xml',
         'views/website_sale_header.xml',
         'views/website_sale_product.xml',
         'views/website_sale_suggested_products_list.xml',
