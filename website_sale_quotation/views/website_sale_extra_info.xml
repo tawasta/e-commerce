@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="extra_info" name="Checkout Extra Info quotation" inherit_id="website_sale.extra_info">
+        <xpath expr="//form/div[1]" position="replace" />
+
+        <xpath expr="//label[@for='Give us your feedback...']" position="replace">
+            <label for="extra-info">Extra info</label>
+        </xpath>
+    </template>
+</odoo>
