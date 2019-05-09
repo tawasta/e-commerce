@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="address" name="Address Management Optional Address" inherit_id="website_sale.address">
+
+        <xpath expr="//label[@for='vat']" position="attributes">
+            <attribute name="class">control-label label-optional</attribute>
+        </xpath>
+
+        <xpath expr="//label[@for='street']" position="attributes">
+            <attribute name="class">control-label label-optional</attribute>
+        </xpath>
+
+        <xpath expr="//label[@for='city']" position="attributes">
+            <attribute name="class">control-label label-optional</attribute>
+        </xpath>
+
+        <xpath expr="//label[@for='country_id']" position="attributes">
+            <attribute name="class">control-label label-optional</attribute>
+        </xpath>
+
+    </template>
+</odoo>

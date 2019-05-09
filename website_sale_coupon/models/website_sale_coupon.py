@@ -1,23 +1,10 @@
 # -*- coding: utf-8 -*-
-
-# 1. Standard library imports:
 import random
 import string
-
-# 2. Known third party imports:
-
-# 3. Odoo imports (openerp):
 from odoo import api, fields, models, _
-
-# 4. Imports from Odoo modules:
-
-# 5. Local imports in the relative form:
-
-# 6. Unknown third party imports:
 
 
 class WebsiteSaleCoupon(models.Model):
-    
     # 1. Private attributes
     _name = 'website.sale.coupon'
 
@@ -71,7 +58,8 @@ class WebsiteSaleCoupon(models.Model):
     )
     value = fields.Float(
         string='Coupon value',
-        help='Discount amount. For percentage, 50.0 means "50%" and 0.50 means "0.50%".'
+        help='Discount amount. '
+             'For percentage, 50.0 means "50%" and 0.50 means "0.50%".'
     )
     type = fields.Selection(
         string='Coupon type',
@@ -90,11 +78,13 @@ class WebsiteSaleCoupon(models.Model):
     # 3. Default methods
     def _compute_default_code(self):
         # Generate a pseudo-random coupon code
-        coupon_code = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(16))
+        coupon_code = \
+            ''.join(random.choice(string.ascii_uppercase + string.digits)
+                    for _ in range(16))
 
         return coupon_code
 
-    # 4. Compute and search fields, in the same order that fields declaration
+    # 4. Compute and search fields
 
     # 5. Constraints and onchanges
     _sql_constraints = [

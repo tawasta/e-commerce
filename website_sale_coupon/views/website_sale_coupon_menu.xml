@@ -2,7 +2,7 @@
 
 <odoo>
 
-    <record id="website_sale_coupon_action" model="ir.actions.act_window" >
+    <record id="website_sale_coupon_action" model="ir.actions.act_window">
         <field name="name">Website coupons</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">website.sale.coupon</field>
@@ -10,7 +10,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="website_sale_coupon_log_action" model="ir.actions.act_window" >
+    <record id="website_sale_coupon_log_action" model="ir.actions.act_window">
         <field name="name">Website coupons log</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">website.sale.coupon.log</field>
@@ -24,7 +24,7 @@
               sequence="50"
               parent="sales_team.menu_base_partner"
               groups="sales_team.group_sale_manager"
-              />
+    />
 
     <menuitem id="website_sale_coupons_menu"
               name="Coupons"
@@ -33,7 +33,7 @@
 
               parent="website_sale_coupon_top_menu"
               groups="sales_team.group_sale_manager"
-              />
+    />
 
     <menuitem id="website_sale_coupons_log_menu"
               name="Coupons log"
@@ -41,6 +41,6 @@
               sequence="20"
               parent="website_sale_coupon_top_menu"
               groups="sales_team.group_sale_manager"
-              />
+    />
 
 </odoo>
