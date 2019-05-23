@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment_sale_note" name="Terms and conditions unchecked" inherit_id="website_sale.payment_sale_note">
+        <xpath expr="//input[@id='checkbox_cgv']" position="attributes">
+            <attribute name='checked' />
+        </xpath>
+    </template>
+</odoo>
