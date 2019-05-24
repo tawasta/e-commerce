@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment_sale_note" name="Terms and conditions unchecked" inherit_id="website_sale_delivery.payment_delivery">
+        <xpath expr="//span[@t-field='delivery.price']" position="replace">
+            <span class="badge" t-field="delivery.price_with_tax"
+                t-options='{
+                    "widget": "monetary",
+                    "from_currency": delivery.delivery_type in [&apos;fixed&apos;, &apos;base_on_rule&apos;] and delivery.product_id.company_id.currency_id or False,
+                    "display_currency": website_sale_order.currency_id
+                }'/>            
+        </xpath>
+
+    </template>
+</odoo>
