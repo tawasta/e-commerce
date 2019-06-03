@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="details" name="Details transmit method" inherit_id="website_portal.details">
+
+        <xpath expr="//div[@t-if='has_check_vat']" position="after">
+            <div class="clearfix" />
+            <div name="transmit-method-input" t-attf-class="form-group #{error.get('customer_invoice_transmit_method_id') and 'has-error' or ''} col-lg-6">
+                <label class="control-label label-optional" for="customer_invoice_transmit_method_id">Invoice transmit method</label>
+                <select name="customer_invoice_transmit_method_id" class="form-control">
+                    <t t-foreach="request.env['transmit.method'].sudo().search([('customer_ok', '=', True)])" t-as="transmit_method">
+                        <option t-att-value="transmit_method.id"
+                                t-att-selected="transmit_method.id == int(customer_invoice_transmit_method_id) if customer_invoice_transmit_method_id else transmit_method.id == partner.customer_invoice_transmit_method_id.id">
+                            <t t-esc="transmit_method.name"/>
+                        </option>
+                    </t>
+                </select>
+            </div>            
+        </xpath>
+
+    </template>
+</odoo>
