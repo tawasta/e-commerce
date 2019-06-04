@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="details" name="Details edicode" inherit_id="website_portal.details">
+
+        <xpath expr="//div[@t-if='has_check_vat']" position="after">
+            <t t-if="partner.is_company">
+                <div class="clearfix" />
+                <div name="edicode-input" t-attf-class="form-group #{error.get('edicode') and 'has-error' or ''} col-lg-6">
+                    <label class="control-label label-optional" for="edicode">Edicode</label>
+                    <input type="text" name="edicode" class="form-control" t-att-value="edicode or partner.edicode"/>
+                </div>
+
+                <div name="einvoice-operator-input" t-attf-class="form-group #{error.get('einvoice_operator') and 'has-error' or ''} col-lg-6">
+                    <label class="control-label label-optional" for="einvoice_operator">eInvoice operator</label>
+                    <select name="einvoice_operator" class="form-control">
+                        <option value="">-</option>
+                        <t t-foreach="request.env['res.partner.operator.einvoice'].sudo().search([])" t-as="operator">
+                            <option t-att-value="operator.id"
+                                    t-att-selected="operator.id == int(einvoice_operator) if einvoice_operator else operator.id == partner.einvoice_operator.id">
+                                <t t-esc="operator.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+
+                <div class="clearfix" />
+            </t>
+        </xpath>
+
+    </template>
+</odoo>
