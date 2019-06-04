@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2018- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
+#    Copyright 2018- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -22,7 +22,7 @@
 {
     'name': 'eCommerce Terms and Conditions unchecked',
     'summary': 'Website sale Terms and Conditions are unchecked by default',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.0.1',
     'category': 'Website',
     'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -33,6 +33,7 @@
         'website_sale',
     ],
     'data': [
+        'views/website_payment.xml',
         'views/website_payment_sale_note.xml',
     ],
 }
