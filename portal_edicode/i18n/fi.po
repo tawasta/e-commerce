@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* portal_business_code
+# 	* portal_edicode
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-03 10:58+0000\n"
-"PO-Revision-Date: 2019-06-03 14:00+0300\n"
+"POT-Creation-Date: 2019-06-04 06:10+0000\n"
+"PO-Revision-Date: 2019-06-04 09:11+0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,14 +17,12 @@ msgstr ""
 "Language: fi\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#. module: portal_business_code
-#: model:ir.ui.view,arch_db:portal_business_code.details
-msgid "Business code"
-msgstr "Y-tunnus"
+#. module: portal_edicode
+#: model:ir.ui.view,arch_db:portal_edicode.details
+msgid "Edicode"
+msgstr "Verkkolaskuosoite"
 
-#. module: portal_business_code
-#: code:addons/mpg/e-commerce/portal_business_code/controllers/main.py:34
-#: code:addons/portal_business_code/controllers/main.py:34
-#, python-format
-msgid "Invalid business id."
-msgstr "Virheellinen y-tunnus."
+#. module: portal_edicode
+#: model:ir.ui.view,arch_db:portal_edicode.details
+msgid "eInvoice operator"
+msgstr "Verkkolaskuoperaattori"
