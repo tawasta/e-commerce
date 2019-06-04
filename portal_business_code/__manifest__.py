@@ -22,13 +22,14 @@
 {
     'name': 'Portal - Business code in my details',
     'summary': 'Allow users to add and edit their business code',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.0.1',
     'category': 'Website',
     'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
+    'auto-install': True,
     'external_dependencies': {
         'python': [],
         'bin': [],

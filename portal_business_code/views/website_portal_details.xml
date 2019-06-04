@@ -3,10 +3,13 @@
     <template id="details" name="Details business code" inherit_id="website_portal.details">
 
         <xpath expr="//div[@t-if='has_check_vat']" position="after">
-            <div name="business-id-input" t-attf-class="form-group #{error.get('business_id') and 'has-error' or ''} col-lg-6">
-                <label class="control-label label-optional" for="business_id">Business code</label>
-                <input type="text" name="business_id" class="form-control" t-att-value="business_id or partner.business_id"/>
-            </div>            
+            <t t-if="partner.is_company">
+                <div class="clearfix" />
+                <div name="business-id-input" t-attf-class="form-group #{error.get('business_id') and 'has-error' or ''} col-lg-6">
+                    <label class="control-label label-optional" for="business_id">Business code</label>
+                    <input type="text" name="business_id" class="form-control" t-att-value="business_id or partner.business_id"/>
+                </div>
+            </t>
         </xpath>
 
     </template>
