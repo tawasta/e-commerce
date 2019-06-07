@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="address" name="Address Management Optional Address" inherit_id="website_sale.address">
-
-        <xpath expr="//label[@for='zip']" position="attributes">
+    <template id="address" name="Address Management Mandatory Zip" inherit_id="website_sale.address">
+        
+        <xpath expr="(//label[@for='zip'])[1]" position="attributes">
             <attribute name="class">control-label</attribute>
         </xpath>
+        
+        <xpath expr="(//label[@for='zip'])[2]" position="attributes">
+            <attribute name="class">control-label</attribute>
+        </xpath>  
 
     </template>
 </odoo>
