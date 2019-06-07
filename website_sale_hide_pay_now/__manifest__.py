@@ -21,7 +21,7 @@
 
 {
     'name': 'eCommerce Hide "Pay Now" button',
-    'summary': 'Hide "Pay Now" button from eCommerce invoicec view',
+    'summary': 'Hide "Pay Now" button from eCommerce invoice view',
     'version': '10.0.1.0.0',
     'category': 'Website',
     'website': 'https://tawasta.fi',

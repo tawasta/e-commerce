@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-========================================
-eCommerce Mandatory zip code in checkout
-========================================
+===============================
+eCommerce Hide "Pay Now" button
+===============================
 
-Make zip code mandatory in website sale checkout
+Hide "Pay Now" button from eCommerce invoice view
 
 Configuration
 =============
