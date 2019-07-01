@@ -13,6 +13,6 @@ class WebsiteSale(WebsiteSale):
         # Overwrite the partner type
         if mode[0] == 'new':
             res_partner = request.env['res.partner']
-            res_partner.browse([partner_id]).is_company = True
+            res_partner.sudo().browse([partner_id]).is_company = True
 
         return partner_id

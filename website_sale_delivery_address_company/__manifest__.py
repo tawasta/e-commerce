@@ -22,7 +22,7 @@
 {
     'name': 'eCommerce Delivery address as company',
     'summary': 'Delivery address is company by default',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.0.1',
     'category': 'Website',
     'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
