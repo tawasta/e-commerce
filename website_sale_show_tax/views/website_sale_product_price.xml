@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product_price" name="Product price with taxes" inherit_id="website_sale.product_price">
+        <xpath expr="//span[@t-esc='product.website_price']" position="after">
+            <t t-foreach="product.website_tax_ids" t-as="website_tax">
+                <span class="badge" t-field="website_tax.sudo().description" />
+            </t>
+        </xpath>
+    </template>
+</odoo>
