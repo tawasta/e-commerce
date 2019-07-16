@@ -9,7 +9,7 @@ Order Comments for Website Sales
 Modify the "Give us your feedback" field in the Extra Info phase of checkout:
 * Change the label to Order Comments
 * Store the comments in a field provided by sale_order_description instead of
-  just posting the message to the chatter, to make searching easier.
+just posting the message to the chatter, to make searching easier.
 
 Installation
 ============
