@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Add helper ids -->
     <template id="extra_info" name="Checkout extra info settings" inherit_id="website_sale.extra_info">
+        <!-- Add helper ids -->
         <xpath expr="//form[@action='/website_form/']/div[1]" position="attributes">
             <attribute name='id'>extra-step-reference</attribute>
         </xpath>
@@ -12,9 +12,27 @@
             <attribute name='id'>extra-step-attachment</attribute>
         </xpath>
 
-        <xpath expr="//label[@for='Give us your feedback...']" position="replace">
-            <label class="control-label" id="label-extra-info" for="Give us your feedback...">Extra info</label>
+        <!-- Improve current fields -->
+        <xpath expr="//h1" position="replace">
+            <h1 class="mb32">Extra info</h1>
         </xpath>
+
+        <xpath expr="//input[@name='client_order_ref']" position="attributes">
+            <attribute name='t-att-value'>website_sale_order.client_order_ref</attribute>
+        </xpath>
+
+        <xpath expr="//label[@for='Give us your feedback...']" position="replace">
+            <label class="control-label label-optional" id="label-extra-info" for="Give us your feedback...">Extra info</label>
+        </xpath>
+
+        <xpath expr="//label[@for='client_order_ref']" position="attributes">
+            <attribute name="class">control-label label-optional</attribute>
+        </xpath>
+
+        <xpath expr="//label[@for='a_document']" position="attributes">
+            <attribute name="class">control-label label-optional</attribute>
+        </xpath>
+
     </template>
 
     <template id="extra_info_reference" inherit_id="extra_info" active="False" customize_show="True" name="Hide reference">

@@ -22,7 +22,7 @@
 {
     'name': 'eCommerce Extra steps settings',
     'summary': 'Allow hiding/showing items in extra step',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.1.0',
     'category': 'Website',
     'website': 'https://tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
