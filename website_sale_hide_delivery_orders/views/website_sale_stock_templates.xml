@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<template id="orders_followup_shipping" name="Delivery Orders Groups"
+		inherit_id="website_sale_stock.orders_followup_shipping">
+		<xpath expr="//t[@t-if='order.picking_ids']/div" position="attributes">
+			<attribute name="groups">sales_team.group_sale_manager</attribute>
+		</xpath>
+		<xpath expr="//t[@t-if='order.picking_ids']/div[2]" position="attributes">
+			<attribute name="groups">sales_team.group_sale_manager</attribute>
+		</xpath>
+	</template>
+</odoo>
