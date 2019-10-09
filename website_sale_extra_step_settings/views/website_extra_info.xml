@@ -21,12 +21,16 @@
             <attribute name='t-att-value'>website_sale_order.client_order_ref</attribute>
         </xpath>
 
-	<xpath expr="//textarea/.." position="attributes">
-		<attribute name="class">col-md-7 col-sm-8 col-lg-5</attribute>
+	<xpath expr="//form[@action='/website_form/']" position="attributes">
+		<attribute name="class">s_website_form form-horizontal container mt32</attribute>
 	</xpath>
 
 	<xpath expr="//form[@action='/website_form/']/div[2]/div" position="attributes">
 		<attribute name="class">col-md-3 col-sm-4 col-lg-5 text-right</attribute>
+	</xpath>
+
+	<xpath expr="//textarea/.." position="attributes">
+		<attribute name="class">col-md-7 col-sm-8 col-lg-7</attribute>
 	</xpath>
 
         <xpath expr="//label[@for='Give us your feedback...']" position="replace">
