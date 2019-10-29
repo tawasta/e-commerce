@@ -14,4 +14,4 @@ class ExtraStepNote(WebsiteSaleForm):
         if kwargs.get('Give us your feedback...'):
             order.note += "\n\n%s" % kwargs.get('Give us your feedback...')
 
-        return super(ExtraStepNote, self).website_form_saleorder()
+        return super(ExtraStepNote, self).website_form_saleorder(**kwargs)
