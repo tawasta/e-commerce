@@ -12,6 +12,7 @@ class ExtraStepNote(WebsiteSaleForm):
         order = http.request.website.sale_get_order()
 
         if kwargs.get('Give us your feedback...'):
-            order.note += "\n\n%s" % kwargs.get('Give us your feedback...')
+            order.note = "%s%s" % ("%s\n\n" % order.note if order.note else "",
+                                   kwargs.get('Give us your feedback...'))
 
         return super(ExtraStepNote, self).website_form_saleorder(**kwargs)
