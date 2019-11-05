@@ -1,5 +1,5 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Build Status](https://travis-ci.org/Tawasta/e-commerce.svg?branch=10.0)](https://travis-ci.org/Tawasta/e-commerce)
+[![Build Status](https://travis-ci.org/Tawasta/e-commerce.svg?branch=12.0)](https://travis-ci.org/Tawasta/e-commerce)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/19628347322e40339cfc1770ab665890)](https://www.codacy.com/app/Tawasta/e-commerce?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Tawasta/e-commerce&amp;utm_campaign=Badge_Grade)
 
 Odoo E-Commerce Modules
