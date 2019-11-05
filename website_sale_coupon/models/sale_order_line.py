@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
 
 # 1. Standard library imports:
 
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import api, fields, models, _
+from odoo import api, fields, models
 
 # 4. Imports from Odoo modules:
 
@@ -43,7 +42,8 @@ class SaleOrderLine(models.Model):
             return False
 
         # Check if the coupon has a product group limitation
-        if coupon.category_id and coupon.category_id != self.product_id.categ_id:
+        if coupon.category_id and coupon.category_id \
+                != self.product_id.categ_id:
             return False
 
         # Don't allow using same fixed discounts twice
@@ -83,7 +83,8 @@ class SaleOrderLine(models.Model):
     @api.multi
     def _add_coupon(self, coupon):
         # Add coupon as new SO line or as line discount
-        discount_product = self.env.ref('website_sale_coupon.product_product_coupon')
+        discount_product = \
+            self.env.ref('website_sale_coupon.product_product_coupon')
         coupon_log_model = self.env['website.sale.coupon.log']
 
         for record in self:
@@ -93,7 +94,8 @@ class SaleOrderLine(models.Model):
 
             if coupon.type == 'fixed':
                 # Add a negative line
-                description = _('Discount code %s (%s)' % (coupon.name, coupon.code))
+                description = \
+                    ('Discount code %s (%s)' % (coupon.name, coupon.code))
 
                 used_coupon = coupon_log_model.search([
                     ('coupon_id', '=', coupon.id),
@@ -116,6 +118,7 @@ class SaleOrderLine(models.Model):
     @api.multi
     def _compute_is_coupon(self):
         # Helper for deciding if SO line is for a coupon product
-        discount_product = self.env.ref('website_sale_coupon.product_product_coupon')
+        discount_product = \
+            self.env.ref('website_sale_coupon.product_product_coupon')
         for record in self:
             record.is_coupon = record.product_id == discount_product

@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
 
 # 1. Standard library imports:
 
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import api, fields, models, _
+from odoo import api, models
 from odoo.http import request
 
 # 4. Imports from Odoo modules:
@@ -20,10 +19,17 @@ class Website(models.Model):
     _inherit = 'website'
 
     @api.multi
-    def sale_get_order(self, force_create=False, code=None, update_pricelist=False, force_pricelist=False):
+    def sale_get_order(
+            self,
+            force_create=False,
+            code=None,
+            update_pricelist=False,
+            force_pricelist=False
+    ):
         # Store voucher price_units and update them.
         # We don't want to use the actual price '0' here.
-        # We also don't want to create separate product variants for each coupon line
+        # We also don't want to create separate product
+        # variants for each coupon line
 
         self.ensure_one()
         partner = self.env.user.partner_id
@@ -33,10 +39,12 @@ class Website(models.Model):
             available_pricelists = self.get_pricelist_available()
 
             sale_order_id = last_order.state == 'draft' and \
-                            last_order.pricelist_id in available_pricelists and \
-                            last_order.id
+                last_order.pricelist_id in available_pricelists and \
+                last_order.id
 
-        sale_order = self.env['sale.order'].sudo().browse(sale_order_id).exists() if sale_order_id else None
+        sale_order = self.env['sale.order'] \
+            .sudo().browse(sale_order_id).exists() \
+            if sale_order_id else None
 
         if sale_order:
             # Store the prices

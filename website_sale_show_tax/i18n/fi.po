@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_sale_show_tax
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-16 11:46+0000\n"
+"PO-Revision-Date: 2019-07-16 11:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_show_tax
+#: model:ir.model,name:website_sale_show_tax.model_product_product
+msgid "Product"
+msgstr "Tuote"
+
+#. module: website_sale_show_tax
+#: model:ir.model,name:website_sale_show_tax.model_product_template
+msgid "Product Template"
+msgstr "Tuotemalli"
+
+#. module: website_sale_show_tax
+#: model:ir.model.fields,help:website_sale_show_tax.field_delivery_carrier_website_tax_ids
+#: model:ir.model.fields,help:website_sale_show_tax.field_product_product_website_tax_ids
+#: model:ir.model.fields,help:website_sale_show_tax.field_product_template_website_tax_ids
+msgid "Taxes that are applied to website price"
+msgstr "Verkkosivun hintaan lisätyt verot"
+
+#. module: website_sale_show_tax
+#: model:ir.model.fields,field_description:website_sale_show_tax.field_delivery_carrier_website_tax_ids
+#: model:ir.model.fields,field_description:website_sale_show_tax.field_product_product_website_tax_ids
+#: model:ir.model.fields,field_description:website_sale_show_tax.field_product_template_website_tax_ids
+msgid "Website tax ids"
+msgstr "Verkkosivun verot"
+

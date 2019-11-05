@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 # 1. Standard library imports:
 import random
@@ -17,7 +16,7 @@ from odoo import api, fields, models, _
 
 
 class WebsiteSaleCoupon(models.Model):
-    
+
     # 1. Private attributes
     _name = 'website.sale.coupon'
 
@@ -71,7 +70,8 @@ class WebsiteSaleCoupon(models.Model):
     )
     value = fields.Float(
         string='Coupon value',
-        help='Discount amount. For percentage, 50.0 means "50%" and 0.50 means "0.50%".'
+        help='Discount amount. For percentage, \
+        50.0 means "50%" and 0.50 means "0.50%".'
     )
     type = fields.Selection(
         string='Coupon type',
@@ -90,7 +90,11 @@ class WebsiteSaleCoupon(models.Model):
     # 3. Default methods
     def _compute_default_code(self):
         # Generate a pseudo-random coupon code
-        coupon_code = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(16))
+        coupon_code = ''\
+            .join(
+                random.choice(string.ascii_uppercase + string.digits)
+                for _ in range(16)
+            )
 
         return coupon_code
 

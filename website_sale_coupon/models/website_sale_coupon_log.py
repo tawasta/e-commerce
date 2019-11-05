@@ -1,13 +1,12 @@
-# -*- coding: utf-8 -*-
 
 # 1. Standard library imports:
-import random
-import string
+# import random
+# import string
 
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import api, fields, models
+from odoo import fields, models
 
 # 4. Imports from Odoo modules:
 
@@ -17,7 +16,7 @@ from odoo import api, fields, models
 
 
 class WebsiteSaleCouponLog(models.Model):
-    
+
     # 1. Private attributes
     _name = 'website.sale.coupon.log'
 

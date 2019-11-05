@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="products_item" name="Products item with taxes" inherit_id="website_sale.products_item">
+        <xpath expr="//span[@itemprop='price']" position="after">
+            <t t-set="tax_ids" t-att-value="product.sudo().website_tax_ids"/>
+            <t t-foreach="product.taxes_id" t-as="tax">
+                <span class="badge">
+                    <span t-field="tax.name"/>
+                    <span t-field="tax.amount" t-options="{'widget': 'float', 'precision': 0}"/>
+                    <span>%</span>
+                </span>
+            </t>
+        </xpath>
+    </template>
+</odoo>

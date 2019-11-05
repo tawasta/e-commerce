@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!--
     <template id="cart" name="Cart clear right column" inherit_id="website_sale.cart">
         <xpath expr="//div[@id='right_column']/h4" position="replace" />
         <xpath expr="//div[@id='right_column']/ul" position="replace" />
         <xpath expr="//div[@id='right_column']/h4" position="replace" />
         <xpath expr="//div[@id='right_column']/ul" position="replace" />
     </template>
+    -->
 </odoo>

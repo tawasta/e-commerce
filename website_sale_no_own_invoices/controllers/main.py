@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import http
 from odoo.http import request
 from odoo.addons.website_portal_sale.controllers.main import website_account
@@ -7,9 +6,9 @@ from odoo.addons.website_portal_sale.controllers.main import website_account
 class WebsiteAccountNoInvoices(website_account):
 
     @http.route()
-    def portal_my_invoices(self, page=1, date_begin=None, 
+    def portal_my_invoices(self, page=1, date_begin=None,
                            date_end=None, **kw):
-        # Override the route for listing all invoices / inspecting 
+        # Override the route for listing all invoices / inspecting
         # a single invoice
         return request.redirect('/my/home')
 

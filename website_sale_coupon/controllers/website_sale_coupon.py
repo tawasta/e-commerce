@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 # 1. Standard library imports:
 from datetime import datetime
@@ -34,21 +33,25 @@ class WebsiteSaleCoupon(WebsiteSale):
 
         res = dict()
 
-        # Validation errors. Each conditionals purpose should be explained in the error-message
+        # Validation errors.
+        # Each conditionals purpose should be explained in the error-message
         if not coupon:
             res['error'] = _("Coupon doesn\'t exist!")
         elif coupon.available == 0:
             res['error'] = _("This coupon has already been used")
-        elif coupon.start_date and parser.parse(coupon.start_date) > datetime.now():
+        elif coupon.start_date and \
+                parser.parse(coupon.start_date) > datetime.now():
             res['error'] = _("This coupon isn\'t active yet")
-        elif coupon.end_date and parser.parse(coupon.end_date) < datetime.now():
+        elif coupon.end_date and \
+                parser.parse(coupon.end_date) < datetime.now():
             res['error'] = _("This coupon has expired")
         elif coupon.partner_id and request.env.uid != coupon.partner_id.id:
             res['error'] = _("This coupon isn't yours")
 
         # Coupon is fine. Try to use it
         if 'error' not in res:
-            coupon_used = request.website.sale_get_order(force_create=1)._use_coupon(coupon)
+            coupon_used = request.website.sale_get_order(force_create=1)\
+                ._use_coupon(coupon)
             if coupon_used:
                 res['error'] = coupon_used
 

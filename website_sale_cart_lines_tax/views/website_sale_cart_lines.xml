@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!--
     <template id="cart_lines" name="Cart clear right column" inherit_id="website_sale.cart_lines">
         <xpath expr="//thead/tr/th[last()]" position="before">
             <th width="100">Tax</th>
@@ -14,4 +15,5 @@
             </td>
         </xpath>
     </template>
+    -->
 </odoo>
