@@ -42,7 +42,7 @@ class WebsiteSale(WebsiteSale):
         business_id = all_values.get("business_id", False)
         country_id = checkout.get("country_id", False)
         vat = checkout.get("vat", False)
-        country_code = "FI"
+        country_code = request.env.ref("base.fi").code
         # Save is_company always, so that private_customer status is updated
         checkout["is_company"] = is_company
         if business_id:
@@ -51,9 +51,7 @@ class WebsiteSale(WebsiteSale):
             # Change VAT-field format to correct vat-format
             # Parse everything else except numbers and add country code in front
             country_code = (
-                request.env["res.country"]
-                .search([("id", "=", int(checkout.get("country_id")))])
-                .code
+                request.env["res.country"].search([("id", "=", country_id)]).code
             )
         if vat:
             checkout["vat"] = country_code + re.sub("[^0-9]", "", checkout["vat"])
@@ -71,19 +69,19 @@ class WebsiteSale(WebsiteSale):
         """
         Change vat to correct format to accept business id format
         """
-        country_code = "FI"
+        fin_code = request.env.ref("base.fi").code
         if data.get("vat"):
             if data.get("country_id"):
                 country_code = (
                     request.env["res.country"]
-                    .search([("id", "=", int(data.get("country_id")))])
+                    .search([("id", "=", data.get("country_id"))])
                     .code
                 )
             data["vat"] = country_code + re.sub("[^0-9]", "", data["vat"])
         res = super(WebsiteSale, self).checkout_form_validate(
             mode, all_form_values, data
         )
-        if data.get("vat") and data.get("country_id") and country_code == "FI":
+        if data.get("vat") and data.get("country_id") and country_code == fin_code:
             # Change back to business ID format if country FI
             vat_stripped = re.sub("[^0-9]", "", data["vat"])
             all_form_values.update({"vat": vat_stripped[:7] + "-" + vat_stripped[7:]})
