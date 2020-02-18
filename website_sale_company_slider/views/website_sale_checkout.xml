@@ -18,7 +18,7 @@
                 </div>
             </div>
             <input type="hidden" name="fi_country_id" id="fi_country_id"
-                t-att-value="request.env['res.country'].search([('code', '=', 'FI')]).id"/>
+                t-att-value="request.env.ref('base.fi').id"/>
             <div class="clearfix"/>
             <link rel="stylesheet" href="/website_sale_company_slider/static/src/css/style.css"/>
             <script type="text/javascript" src="/website_sale_company_slider/static/src/js/checkout.js?v001"></script>
