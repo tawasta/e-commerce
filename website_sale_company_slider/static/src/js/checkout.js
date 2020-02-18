@@ -6,7 +6,7 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
     $(function() {
 
         const REQUIRED_FIELDS_DEFAULT = $("input[name='field_required']").val();
-        const FI_COUNTRY_ID = parseInt($('#fi_country_id').val());
+        const FI_COUNTRY_ID = $('#fi_country_id').val();
 
         function showFields() {
             var is_company = $('#is_company').is(':checked');
@@ -54,7 +54,7 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
                 var vat = $(form).find("input[name='vat']").val();
                 var country_id = $('#country_id').val();
 
-                if (vat && parseInt(country_id) === FI_COUNTRY_ID) {
+                if (vat && country_id === FI_COUNTRY_ID) {
                     var parsed = vat.replace(/[^0-9]/g, '');
                     var business_id = parsed.substr(0, 7) + '-' + parsed.substr(7, 1);
                     $(form).append('<input type="hidden" name="business_id" value="' + business_id + '"/>');
