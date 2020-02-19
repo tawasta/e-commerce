@@ -17,12 +17,8 @@
 #    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
 #
 ##############################################################################
-
-
 # 1. Standard library imports:
-
 # 2. Known third party imports:
-
 # 3. Odoo imports (openerp):
 # from odoo import http
 # from odoo.http import request
@@ -36,15 +32,13 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
 class WebsiteSale(WebsiteSale):
-
     def _checkout_form_save(self, mode, checkout, all_values):
         """
         Add edicode and operator to saved values
         """
-        is_company = all_values.get('is_company', False)
-        edicode = all_values.get('edicode', False)
-        einvoice_operator = all_values.get('einvoice_operator', False)
-        checkout['edicode'] = edicode if is_company else ''
-        checkout['einvoice_operator'] = einvoice_operator if is_company else ''
-        return super(WebsiteSale, self)\
-            ._checkout_form_save(mode, checkout, all_values)
+        is_company = all_values.get("is_company", False)
+        edicode = all_values.get("edicode", False)
+        einvoice_operator = all_values.get("einvoice_operator", False)
+        checkout["edicode"] = edicode if is_company else ""
+        checkout["einvoice_operator"] = einvoice_operator if is_company else ""
+        return super(WebsiteSale, self)._checkout_form_save(mode, checkout, all_values)
