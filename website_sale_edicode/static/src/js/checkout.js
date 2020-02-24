@@ -6,8 +6,6 @@ odoo.define('website_sale_edicode.checkout', function (require) {
 
         function toggleTransmitMethod() {
             // If the selector exists, toggle visibility
-            console.log('ding');
-            console.log($("#customer-invoice-transmit-method"));
             if($('#customer-invoice-transmit-method').length){
                 var transmit_method = $('#customer-invoice-transmit-method');
                 var code = transmit_method.find(':selected').data('code');
