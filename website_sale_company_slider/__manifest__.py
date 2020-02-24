@@ -32,5 +32,8 @@
         "website_sale",
         "l10n_fi_business_code"
     ],
-    "data": ["views/website_sale_checkout.xml"],
+    "data": [
+        "views/assets.xml",
+        "views/website_sale_checkout.xml",
+    ],
 }

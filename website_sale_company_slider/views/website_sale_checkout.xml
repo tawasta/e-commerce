@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="address" inherit_id="website_sale.address">
+        <xpath expr="//label[@for='vat']" position="replace">
+            <label for="vat" class="col-form-label label-optional">Business id / VAT</label>
+        </xpath>
+
         <!-- Slider to show whether customer is private or company -->
         <xpath expr="//div[contains(@t-attf-class, 'div_name')]" position="before">
             <div id="is_company_div" class="col-lg-12 slider-div">
@@ -12,7 +16,7 @@
                 </label>
                 <label for="is_company" id="is_company_label_true" class="switch-label text-muted">Company / Organization</label>
 
-                <div id="private_customer_label_div" class="alert alert-success">
+                <div id="company-toggle" class="alert alert-success">
                     <div id="is_company_info" class="show-company">My company/organization is paying</div>
                     <div id="not_is_company_info" class="hide-company">I am paying myself</div>
                 </div>
@@ -20,8 +24,7 @@
             <input type="hidden" name="fi_country_id" id="fi_country_id"
                 t-att-value="request.env.ref('base.fi').id"/>
             <div class="clearfix"/>
-            <link rel="stylesheet" href="/website_sale_company_slider/static/src/css/style.css"/>
-            <script type="text/javascript" src="/website_sale_company_slider/static/src/js/checkout.js?v001"></script>
+            <script type="text/javascript" src="/website_sale_company_slider/static/src/js/checkout.js?v101"></script>
         </xpath>
     </template>
 </odoo>

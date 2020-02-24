@@ -18,7 +18,7 @@ addon | version | summary
 [website_sale_cart_no_policies](website_sale_cart_no_policies/) | 12.0.1.0.0 | Remove policies from cart right column
 [website_sale_coupon](website_sale_coupon/) | 12.0.1.0.0 | Discount coupons for website
 [website_sale_delivery_address_company](website_sale_delivery_address_company/) | 12.0.1.0.1 | Delivery address is company by default
-[website_sale_fi_edicode](website_sale_fi_edicode/) | 12.0.1.0.0 | Adds finnish EDI code to website checkout form
+[website_sale_fi_edicode](website_sale_edicode/) | 12.0.1.0.0 | Adds finnish EDI code to website checkout form
 [website_sale_force_autoconfirm_order](website_sale_force_autoconfirm_order/) | 12.0.1.0.0 | Autoconfirm SO regardless of payment transaction state
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 12.0.1.0.0 | Forces autoinvoice on quotations created from website_sale
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 12.0.1.0.0 | Adds account invoice transmit method to checkout
