@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2017 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,24 +19,19 @@
 ##############################################################################
 
 {
-    'name': 'Payment Acquirer - Force Autoconfirm Option',
-    'summary': "Autoconfirm SO regardless of payment transaction state",
+    'name': 'eCommerce Mandatory zip code in checkout',
+    'summary': 'Make zip code mandatory in website sale checkout',
     'version': '12.0.1.0.0',
-    'category': 'Invoicing & Payments',
-    'website': 'https://github.com/Tawasta/e-commerce',
+    'category': 'Website',
+    'website': 'https://github.com/Tawasta/e-commerce/',
     'author': 'Tawasta',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
     'depends': [
-        'website_portal_sale',
+        'website_sale',
     ],
     'data': [
-    ],
-    'demo': [
+        'views/website_sale_address.xml',
     ],
 }

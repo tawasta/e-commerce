@@ -21,7 +21,7 @@
 {
     'name': 'Finnish EDI code to website sale',
     'summary': 'Adds Finnish EDI code to website checkout form',
-    'version': '12.0.1.1.0',
+    'version': '12.0.1.2.0',
     'category': 'Website',
     'website': 'https://github.com/Tawasta/e-commerce',
     'author': 'Tawasta',

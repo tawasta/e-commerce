@@ -3,16 +3,17 @@
     <template id="address" inherit_id="website_sale.address">
         <!-- Slider to show whether customer is private or company -->
         <xpath expr="//div[contains(@t-attf-class, 'div_vat')]" position="after">
-            <div id="customer_invoice_transmit_method_id_div" t-attf-class="form-group #{error.get('customer_invoice_transmit_method_id') and 'has-error' or ''} col-md-6 show-company">
+            <div id="customer_invoice_transmit_method_id_div" t-attf-class="form-group #{error.get('customer_invoice_transmit_method_id') and 'has-error' or ''} col-lg-6 show-company">
                 <t t-set="methods" t-value="request.env['transmit.method'].sudo().search([('customer_ok', '=', True)])"/>
-                <label class="control-label label-optional" for="customer_invoice_transmit_method_id">Invoice transmit method</label>
-                <select class="form-control" name="customer_invoice_transmit_method_id">
-                    <option></option>
+                <label class="col-form-label" for="customer_invoice_transmit_method_id">Invoice transmit method</label>
+                <select id="customer-invoice-transmit-method" class="form-control" name="customer_invoice_transmit_method_id">
                     <t t-foreach="methods" t-as="method">
-                        <option t-att-value="method.id" t-esc="method.name"/>
+                        <option t-att-value="method.id" t-att-data-code="method.code" t-esc="method.name"/>
                     </t>
                 </select>
             </div>
+
+            <script type="text/javascript" src="/website_sale_invoice_transmit_method/static/src/js/checkout.js?v101"></script>
         </xpath>
     </template>
 </odoo>

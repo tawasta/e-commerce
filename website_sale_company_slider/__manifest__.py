@@ -21,13 +21,19 @@
 {
     "name": "Website Sale Company Slider",
     "summary": "Slider to checkout",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "category": "Website",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale", "l10n_fi_business_code"],
-    "data": ["views/website_sale_checkout.xml"],
+    "depends": [
+        "website_sale",
+        "l10n_fi_business_code"
+    ],
+    "data": [
+        "views/assets.xml",
+        "views/website_sale_checkout.xml",
+    ],
 }

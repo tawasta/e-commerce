@@ -13,28 +13,32 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
             var required_fields = $("input[name='field_required']");
             // Reset required fields set
             required_fields.val(REQUIRED_FIELDS_DEFAULT);
+
+            // Company customer
+            $("label[id='is_company_label_true']").toggleClass('text-primary', is_company);
+            $("label[id='is_company_label_true']").toggleClass('text-muted', !is_company);
+
+            // Private customer
+            $("label[id='is_company_label_false']").toggleClass('text-primary', !is_company);
+            $("label[id='is_company_label_false']").toggleClass('text-muted', is_company);
+
+            // Toggle fields by customer type
+            $("label[for='company_name']").toggleClass('label-optional', is_company);
+            $("label[for='vat']").toggleClass('label-optional', is_company);
+
+            $(".div_vat").toggleClass('d-none', !is_company);
+            $(".show-company").toggleClass('d-none', !is_company);
+            $(".hide-company").toggleClass('d-none', is_company);
+
             if (is_company === true) {
-                $("label[for='company_name']").removeClass('label-optional');
-                $("label[id='is_company_label_true']").addClass('text-success');
-                $("label[id='is_company_label_false']").removeClass('text-success');
-                $("label[for='vat']").removeClass('label-optional');
                 $('#is_company').attr('checked', 'checked');
                 if (required_fields.val().indexOf(',company_name,vat') < 0) {
                     required_fields.val(required_fields.val() + ',company_name,vat');
                 }
-                $('.show-company').show();
-                $('.hide-company').hide();
             } else {
-                $("label[for='company_name']").addClass('label-optional');
-                $("label[id='is_company_label_false']").addClass('text-success');
-                $("label[id='is_company_label_true']").removeClass('text-success');
-                $("label[for='vat']").addClass('label-optional');
                 $('#is_company').removeAttr('checked');
-                $('.show-company').hide();
-                $('.hide-company').show();
                 required_fields.val(required_fields.val().replace(',company_name,vat', ''));
             }
-            console.log(required_fields.val());
         }
         showFields();
         $('#is_company').click(function() {
