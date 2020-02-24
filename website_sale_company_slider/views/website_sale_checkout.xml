@@ -13,8 +13,8 @@
                 <label for="is_company" id="is_company_label_true" class="switch-label text-muted">Company / Organization</label>
 
                 <div id="private_customer_label_div" class="alert alert-success">
-                    <div id="is_company_info" class="show-company">My company/organization is paying for the ticket(s)</div>
-                    <div id="not_is_company_info" class="hide-company">I am paying for the ticket(s) myself</div>
+                    <div id="is_company_info" class="show-company">My company/organization is paying</div>
+                    <div id="not_is_company_info" class="hide-company">I am paying myself</div>
                 </div>
             </div>
             <input type="hidden" name="fi_country_id" id="fi_country_id"
