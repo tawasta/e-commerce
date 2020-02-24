@@ -8,7 +8,7 @@
                 <label class="col-form-label" for="customer_invoice_transmit_method_id">Invoice transmit method</label>
                 <select id="customer-invoice-transmit-method" class="form-control" name="customer_invoice_transmit_method_id">
                     <t t-foreach="methods" t-as="method">
-                        <option t-att-value="method.id" t-esc="method.name"/>
+                        <option t-att-value="method.id" t-att-data-code="method.code" t-esc="method.name"/>
                     </t>
                 </select>
             </div>
