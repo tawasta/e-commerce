@@ -24,7 +24,7 @@
     'version': '12.0.1.0.2',
     'category': 'Website',
     'website': 'https://github.com/Tawasta/e-commerce',
-    'author': 'Oy Tawasta Technologies Ltd.',
+    'author': 'Tawasta',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
