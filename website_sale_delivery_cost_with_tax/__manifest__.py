@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["delivery", "website_sale_delivery"],
+    "depends": ["delivery", "website_sale_delivery", "website_sale_delivery_cleanup"],
     "data": ["views/website_sale_payment_delivery.xml"],
 }
