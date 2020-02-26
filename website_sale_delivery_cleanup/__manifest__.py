@@ -19,15 +19,15 @@
 ##############################################################################
 
 {
-    "name": "eCommerce Delivery cost with tax",
-    "summary": "Website sale delivery costs with tax",
+    "name": "eCommerce Cleaner delivery method list",
+    "summary": "Website sale delivery methods that allow longer descriptions",
     "version": "12.0.1.0.0",
     "category": "Website",
-    "website": "https://tawasta.fi",
+    "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["delivery", "website_sale_delivery", "website_sale_delivery_cleanup"],
+    "depends": ["website_sale"],
     "data": ["views/website_sale_payment_delivery.xml"],
 }
