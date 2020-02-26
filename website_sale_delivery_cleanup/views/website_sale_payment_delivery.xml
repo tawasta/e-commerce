@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment_delivery" name="Delivery methods cleaned" inherit_id="website_sale_delivery.payment_delivery">
+        <xpath expr="//label/div" position="attributes">
+            <attribute name="class">text-muted hidden delivery-description</attribute>
+            <!--<div t-field="delivery.website_description" class="text-muted"/>-->
+        </xpath>
+
+        <xpath expr="//span[@class='badge']" position="after">
+            <span class="badge delivery-info bg-primary"><i class="fa fa-info" /></span>
+        </xpath>
+
+        <xpath expr="//div[@id='delivery_carrier']" position="after">
+            <script type="text/javascript" src="/website_sale_delivery_cleanup/static/src/js/payment_delivery.js"></script>
+        </xpath>
+    </template>
+</odoo>
