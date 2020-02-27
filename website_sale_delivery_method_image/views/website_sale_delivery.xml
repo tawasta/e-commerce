@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template id="payment_delivery_image" inherit_id="website_sale_delivery.payment_delivery_methods">
+        <xpath expr="//label" position="before">
+            <t t-if="delivery.delivery_image">
+                <img t-attf-src="data:image/*;base64,{{delivery.delivery_image}}" t-attf-style="max-width: 60px; display: inline-block"/>
+            </t>
+        </xpath>_
+    </template>
+</odoo>

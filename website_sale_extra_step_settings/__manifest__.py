@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Tawasta
-#    Copyright 2018- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,20 +19,19 @@
 ##############################################################################
 
 {
-    'name': 'Finnish EDI code to website sale',
-    'summary': 'Adds finnish EDI code to website checkout form',
-    'version': '12.0.1.0.0',
+    'name': 'eCommerce Extra steps settings',
+    'summary': 'Allow hiding/showing items in extra step',
+    'version': '12.0.1.1.0',
     'category': 'Website',
-    'website': 'https://github.com/Tawasta/e-commerce',
+    'website': 'https://tawasta.fi',
     'author': 'Tawasta',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
     'depends': [
-        'l10n_fi_edicode',
         'website_sale',
     ],
     'data': [
-        'views/website_sale_checkout.xml',
+        'views/website_extra_info.xml',
     ],
 }

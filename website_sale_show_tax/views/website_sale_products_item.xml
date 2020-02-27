@@ -4,10 +4,8 @@
         <xpath expr="//span[@itemprop='price']" position="after">
             <t t-set="tax_ids" t-att-value="product.sudo().website_tax_ids"/>
             <t t-foreach="product.taxes_id" t-as="tax">
-                <span class="badge">
-                    <span t-field="tax.name"/>
-                    <span t-field="tax.amount" t-options="{'widget': 'float', 'precision': 0}"/>
-                    <span>%</span>
+                <span class="badge badge-primary">
+                    <span t-field="tax.description"/>
                 </span>
             </t>
         </xpath>

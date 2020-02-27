@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <template id="extra_info" name="Checkout extra info settings" inherit_id="website_sale.extra_info">
+        <!-- Add helper ids -->
+        <xpath expr="//form[@action='/website_form/']/div[1]" position="attributes">
+            <attribute name='id'>extra-step-reference</attribute>
+        </xpath>
+        <xpath expr="//form[@action='/website_form/']/div[2]" position="attributes">
+            <attribute name='id'>extra-step-info</attribute>
+        </xpath>
+        <xpath expr="//form[@action='/website_form/']/div[3]" position="attributes">
+            <attribute name='id'>extra-step-attachment</attribute>
+        </xpath>
+
+        <!-- Add header text -->
+        <xpath expr="//form[@action='/website_form/']" position="before">
+            <h1 class="mb32">Extra info</h1>
+        </xpath>
+
+        <!-- Improve current fields -->
+        <xpath expr="//input[@name='client_order_ref']" position="attributes">
+            <attribute name='t-att-value'>website_sale_order.client_order_ref</attribute>
+        </xpath>
+
+        <xpath expr="//form[@action='/website_form/']" position="attributes">
+            <attribute name="class">s_website_form form-horizontal container mt32</attribute>
+        </xpath>
+
+        <xpath expr="//form[@action='/website_form/']/div[2]/div" position="attributes">
+            <attribute name="class">col-md-3 col-sm-4 col-lg-3 text-right</attribute>
+        </xpath>
+
+        <xpath expr="//textarea/.." position="attributes">
+            <attribute name="class">col-md-7 col-sm-8 col-lg-9</attribute>
+        </xpath>
+
+        <!-- Shrink textarea -->
+        <xpath expr="//textarea" position="attributes">
+            <attribute name="rows">4</attribute>
+        </xpath>
+
+        <!-- Replace 'Give us your feedback' text -->
+        <xpath expr="//label[@for='Give us your feedback']" position="replace">
+            <label class="control-label label-optional" id="label-extra-info" for="Give us your feedback...">Extra info</label>
+        </xpath>
+
+        <xpath expr="//label[@for='client_order_ref']" position="attributes">
+            <attribute name="class">control-label label-optional</attribute>
+        </xpath>
+
+        <xpath expr="//label[@for='a_document']" position="attributes">
+            <attribute name="class">control-label label-optional</attribute>
+        </xpath>
+    </template>
+
+    <!-- Assign d-none class to hide elements -->
+    <template id="extra_info_reference" inherit_id="extra_info" active="False" customize_show="True" name="Hide reference">
+        <xpath expr="//div[@id='extra-step-reference']" position="attributes">
+            <attribute name="class">d-none</attribute>
+        </xpath>
+    </template>
+
+    <template id="extra_info_info" inherit_id="extra_info" active="False" customize_show="True" name="Hide extra info">
+        <xpath expr="//div[@id='extra-step-info']" position="attributes">
+            <attribute name="class">d-none</attribute>
+        </xpath>
+    </template>
+
+    <template id="extra_info_attachment" inherit_id="extra_info" active="False" customize_show="True" name="Hide attachment">
+        <xpath expr="//div[@id='extra-step-attachment']" position="attributes">
+            <attribute name="class">d-none</attribute>
+        </xpath>
+    </template>
+
+</odoo>
