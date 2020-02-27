@@ -10,7 +10,7 @@
                         </span>
                     </summary>
                     <t t-if="delivery.website_description">
-                        <div t-field="delivery.website_description" class="text-muted mt8" style="display: inline-block;"/>
+                        <div t-field="delivery.website_description" class="text-muted mt8" style="display: block; float: left; width: 100%;"/>
                     </t>
                 </details>
             </t>
