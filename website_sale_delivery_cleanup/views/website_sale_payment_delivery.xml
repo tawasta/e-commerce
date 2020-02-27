@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="website_sale_delivery_cleanup_payment_delivery" name="Delivery methods cleaned" inherit_id="website_sale_delivery.payment_delivery_methods">
-        <!--
-        <xpath expr="//label/div" position="attributes">
-        -->
-        <xpath expr="//t[@t-if='delivery.website_description']" position="attributes">
-            <attribute name="class">text-muted d-none delivery-description</attribute>
-            <div t-field="delivery.website_description" class="text-muted"/>
+        <xpath expr="//t[@t-if='delivery.website_description']" position="replace">
+            <t t-if="delivery.website_description">
+                <details style="display: inline-block;">
+                    <summary style="list-style: none; cursor: pointer; display: inline-block;">
+                        <span class="badge delivery-info bg-primary">
+                            <i class="fa fa-info" />
+                        </span>
+                    </summary>
+                    <t t-if="delivery.website_description">
+                        <div t-field="delivery.website_description" class="text-muted mt8" style="display: inline-block;"/>
+                    </t>
+                </details>
+            </t>
         </xpath>
-
-        <!--
-        <xpath expr="//span[@class='badge']" position="after">
-            <span class="badge delivery-info bg-primary"><i class="fa fa-info" /></span>
-        </xpath>-->
-
-        <!--
-        <xpath expr="//div[@id='delivery_carrier']" position="after">
-            <script type="text/javascript" src="/website_sale_delivery_cleanup/static/src/js/payment_delivery.js"></script>
-        </xpath>
-        -->
     </template>
 </odoo>
