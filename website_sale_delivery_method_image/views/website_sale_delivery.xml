@@ -6,8 +6,6 @@
             <t t-if="delivery.delivery_image">
                 <img t-attf-src="data:image/*;base64,{{delivery.delivery_image}}" t-attf-style="max-width: 60px; display: inline-block"/>
             </t>
-            <!--
-            <span t-field="delivery.delivery_image" t-att-title="delivery.name" t-field-options='{"widget": "image", "style":"max-width: 60px; display: inline-block"}'/>-->
         </xpath>_
     </template>
 </odoo>
