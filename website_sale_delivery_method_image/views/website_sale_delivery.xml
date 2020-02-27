@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template id="payment_delivery_image" inherit_id="website_sale_delivery.payment_delivery">
+        <xpath expr="//abbr[@t-att-title='delivery.website_description']" position="before">
+            <span t-field="delivery.delivery_image" t-att-title="delivery.name" t-field-options='{"widget": "image", "style":"max-width: 60px; display: inline-block"}'/>
+        </xpath>
+    </template>
+</odoo>
