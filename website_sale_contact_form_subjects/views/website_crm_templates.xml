@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template id="contactus_form" inherit_id="website_crm.contactus_form">
+        <xpath expr="//form[@data-model_name='crm.lead']//div[2]//div//input" position="attributes">
+            <attribute name="required"/>
+        </xpath>
+
+    	<xpath expr="//form[@data-model_name='crm.lead']//div[4]" position="attributes">
+    	    <attribute name="class">form-group row form-field</attribute>
+    	</xpath>
+
+        <xpath expr="//form[@data-model_name='crm.lead']//div[4]//div//input" position="attributes">
+            <attribute name="required"/>
+        </xpath>
+
+        <xpath expr="//form[@data-model_name='crm.lead']//div[5]//div//input" position="replace">
+            <select name="name" class="form-control o_website_form_input" required="">
+                <option value="">Subject...</option>
+                <t t-foreach="subjects" t-as="name">
+                    <option t-att-value="name">
+                        <t t-esc="name"/>
+                    </option>
+                </t>
+            </select>
+        </xpath>
+    </template>
+
+    <template id="contactus_form_replace"
+              inherit_id="website_crm.contactus_thanks_ir_ui_view"
+              name="Contact Form Captcha">
+        <xpath expr="//div[hasclass('col-lg-4')]" position="replace" />
+    </template>
+</odoo>

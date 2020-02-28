@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record id="contactus" model="ir.ui.view">
+        <field name="name">contact_us_form</field>
+        <field name="type">qweb</field>
+        <field name="key">website.contactus</field>
+        <field name="inherit_id" ref="website.contactus"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='col-lg-12 s_title pt16 pb16']/h1" position="replace">
+                <h1>Contact form</h1>
+            </xpath>
+            <xpath expr="//div[@class='col-lg-4']" position="replace"/>
+        </field>
+    </record>
+</odoo>
