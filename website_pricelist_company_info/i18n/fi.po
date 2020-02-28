@@ -4,25 +4,24 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-04 11:13+0000\n"
-"PO-Revision-Date: 2019-06-04 14:13+0300\n"
+"POT-Creation-Date: 2020-02-28 06:14+0000\n"
+"PO-Revision-Date: 2020-02-28 08:15+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"Language: en\n"
-"X-Generator: Poedit 2.2.3\n"
+"Language: fi_FI\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #. module: website_pricelist_company_info
-#: model:ir.ui.view,arch_db:website_pricelist_company_info.details
+#: model_terms:ir.ui.view,arch_db:website_pricelist_company_info.portal_my_details
 msgid "Currency"
 msgstr "Valuutta"
 
 #. module: website_pricelist_company_info
-#: model:ir.ui.view,arch_db:website_pricelist_company_info.details
+#: model_terms:ir.ui.view,arch_db:website_pricelist_company_info.portal_my_details
 msgid "Currency..."
 msgstr "Valuutta..."
