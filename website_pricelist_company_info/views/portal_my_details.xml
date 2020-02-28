@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <template id="portal_my_details" name="Portal My Details pricelist" inherit_id="portal.portal_my_details">
+        <xpath expr="//label[@for='country_id']/.." position="before">
+            <div class="col-md-12">
+                <div class="row">
+                    <div name="pricelist-input" t-attf-class="form-group #{error.get('property_product_pricelist') and 'has-error' or ''} col-lg-6">
+                        <label class="control-label" for="property_product_pricelist">Currency</label>
+                        <select name="property_product_pricelist" class="form-control">
+                            <option value="">Currency...</option>
+                                <t t-foreach="request.env['product.pricelist'].sudo().search([])" t-as="pricelist">
+                                    <option t-att-value="'product.pricelist,%s' % pricelist.id"
+                                            t-att-selected="pricelist == property_product_pricelist if property_product_pricelist else pricelist.id == partner.property_product_pricelist.id">
+                                        <t t-esc="pricelist.name" />
+                                    </option>
+                                </t>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
