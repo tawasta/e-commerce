@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="payment_sale_note" name="Terms and conditions unchecked" inherit_id="website_sale_delivery.payment_delivery">
-        <xpath expr="//span[@t-field='delivery.price']" position="replace">
+        <xpath expr="//span[@t-field='delivery.fixed_price']" position="replace">
             <span class="badge" t-field="delivery.price_with_tax"
                 t-options='{
                     "widget": "monetary",
