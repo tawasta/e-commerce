@@ -10,7 +10,7 @@ class DeliveryCarrier(models.Model):
 
     def _compute_price_with_tax(self):
         for record in self:
-            price = record.price
+            price = record.fixed_price
             tax_amount = 0
             for tax in record.product_id.taxes_id:
                 tax_ids = tax.compute_all(price, record.currency_id).get("taxes")
