@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="details" name="Details Business Code" inherit_id="portal.portal_my_details">
+        <xpath expr="//div[@class='clearfix'][2]" position="after">
+            <t t-if="partner.is_company">
+                <div name="business-id-input" t-attf-class="form-group #{error.get('business_id') and 'has-error' or ''} col-lg-6">
+                    <label class="col-form-label label-optional" for="business_id">Business code</label>
+                    <input type="text" name="business_id" class="form-control" t-att-value="business_id or partner.business_id"/>
+                </div>
+            </t>
+        </xpath>
+
+    </template>
+</odoo>
