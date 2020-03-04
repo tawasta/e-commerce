@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-======================================
-Portal - Transmit method in my details
-======================================
+============================
+Website User Transmit Method
+============================
 
 Allow users to add and edit their transmit method
 
@@ -23,6 +23,7 @@ Credits
 Contributors
 ------------
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Joona Isoaho <joona.isoaho@tawasta.fi>
 
 Maintainer
 ----------
