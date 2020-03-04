@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Hide Country",
-    "summary": "Website Sale Hide Country",
+    "name": "Website Sale Default Country",
+    "summary": "Website Sale Default Country",
     "version": "12.0.1.1.0",
     "category": "Website",
     "website": "https://github.com/Tawasta/e-commerce",
@@ -29,10 +29,9 @@
     "application": False,
     "installable": True,
     "depends": [
-        "website_sale_company_slider",
+        "website_sale",
     ],
     "data": [
         "views/website_sale_checkout.xml",
-        "views/assets.xml",
     ],
 }

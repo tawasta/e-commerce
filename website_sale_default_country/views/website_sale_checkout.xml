@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="hide_country" inherit_id="website_sale.address">
+    <template id="default_country" inherit_id="website_sale.address">
         <xpath expr="//select[(@id='country_id')]" position="replace">
             <select id="country_id" name="country_id" t-attf-class="form-control #{error.get('country_id') and 'is-invalid' or ''}">
                 <t t-foreach="countries" t-as="c">

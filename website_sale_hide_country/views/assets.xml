@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="0">
-    <template id="assets_frontend" name="Hide country assets" inherit_id="website.assets_frontend">
-        <xpath expr="//link[last()]" position="after">
-            <link rel="stylesheet" type="text/scss" href="/website_sale_hide_country/static/src/css/custom.css"/>
-        </xpath>
-    </template>
-</odoo>
