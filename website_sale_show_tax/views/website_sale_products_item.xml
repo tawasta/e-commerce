@@ -3,7 +3,7 @@
     <template id="products_item" name="Products item with taxes" inherit_id="website_sale.products_item">
         <xpath expr="//span[@itemprop='price']" position="after">
             <t t-set="tax_ids" t-att-value="product.sudo().website_tax_ids"/>
-            <t t-foreach="product.taxes_id" t-as="tax">
+            <t t-foreach="product.sudo().taxes_id" t-as="tax">
                 <span class="badge badge-primary">
                     <span t-field="tax.description"/>
                 </span>
