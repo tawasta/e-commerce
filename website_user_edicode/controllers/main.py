@@ -1,8 +1,7 @@
-# from odoo.addons.website_portal.controllers.main import website_account
-from odoo import website_account
+from odoo.addons.portal.controllers.portal import CustomerPortal
 
 
-class CustomerPortal(website_account):
+class CustomerPortalEdicode(CustomerPortal):
 
     def __init__(self):
         super(CustomerPortal, self).__init__()
