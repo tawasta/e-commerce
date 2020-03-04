@@ -13,8 +13,8 @@ class CustomerPortalBusinessCode(CustomerPortal):
             self.OPTIONAL_BILLING_FIELDS + ['business_id']
 
     def details_form_validate(self, data):
-        error, error_message = \
-            super(CustomerPortal, self).details_form_validate(data)
+        error, error_message = super(CustomerPortalBusinessCode, self)\
+            .details_form_validate(data)
 
         # Business id validation
         if data.get('business_id'):
