@@ -7,7 +7,7 @@ from odoo.http import request
 class CustomerPortalBusinessCode(CustomerPortal):
 
     def __init__(self):
-        super(CustomerPortal, self).__init__()
+        super(CustomerPortalBusinessCode, self).__init__()
 
         self.OPTIONAL_BILLING_FIELDS = \
             self.OPTIONAL_BILLING_FIELDS + ['business_id']
