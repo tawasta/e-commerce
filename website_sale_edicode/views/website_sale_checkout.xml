@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="address" inherit_id="website_sale.address">
+    <template id="address" inherit_id="website_sale.address_b2b" name="Show Edicode field" customize_show="True" active="True">
         <xpath expr="//div[contains(@t-attf-class, 'div_vat')]" position="after">
             <div id="edicode-div" t-attf-class="form-group #{error.get('edicode') and 'has-error' or ''} col-md-6 div_edicode show-company">
                 <label class="col-form-label label-optional" for="edicode">Edicode</label>
