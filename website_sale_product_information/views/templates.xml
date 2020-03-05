@@ -3,19 +3,13 @@
 <odoo>
     <template id="product" inherit_id="website_sale.product">
         <xpath expr="//div[@itemprop='description']" position="after">
-		<div class="mt8">
-			<div class="container mb4 mt16" style="text-align: center;">
-				<div class="container">
-					<h3>Shipping countries</h3>
-				</div>
-			</div>
-			<div class="container mb4" style="text-align: center;">
-				<br/>
-				<div class="container">
-					<t t-esc="website_product_description"/>
-				</div>
-			</div>
-		</div>
-	</xpath>
+            <div class="mt8 mb8">
+                <div id="website_sale_product_information" class="container mb4" style="text-align: center;">
+                    <div class="container">
+                        <t t-esc="website_product_description"/>
+                    </div>
+                </div>
+            </div>
+        </xpath>
     </template>
 </odoo>
