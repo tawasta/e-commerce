@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale", "product_description", "product_description_sale"],
+    "depends": ["website_sale", "product_description"],
     "data": ["views/templates.xml"],
 }
