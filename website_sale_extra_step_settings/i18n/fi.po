@@ -19,4 +19,4 @@ msgstr ""
 #. module: website_sale_extra_step_settings
 #: model_terms:ir.ui.view,arch_db:website_sale_extra_step_settings.extra_info
 msgid "Extra info"
-msgstr "Lisätietovaihe"
+msgstr "Lisätiedot"
