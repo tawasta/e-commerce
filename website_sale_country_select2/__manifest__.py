@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    'name': 'eCommerce: Show taxes in products',
-    'summary': 'Show taxes in product grid and product view',
+    'name': 'Website Sale Country Select2',
+    'summary': 'Changes country in customer address form to be select2',
     'version': '12.0.1.0.0',
     'category': 'Website',
     'website': 'https://tawasta.fi',
