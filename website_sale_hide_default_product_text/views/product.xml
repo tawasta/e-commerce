@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template name="Website Sale Hide Default Product Text" id="product" inherit_id="website_sale.product">
-        <xpath expr="//p[contains(@class, 'text-muted')[2]" position="replace"/>
+        <xpath expr="//p[contains(@class, 'text-muted')[1]" position="replace"/>
     </template>
 </odoo>
