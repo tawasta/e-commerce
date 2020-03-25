@@ -77,7 +77,7 @@ class WebsiteSale(WebsiteSale):
                     .search([("id", "=", data.get("country_id"))])
                     .code
                 )
-            data["vat"] = country_code + re.sub("[^0-9]", "", data["vat"])
+                data["vat"] = country_code + re.sub("[^0-9]", "", data["vat"])
         res = super(WebsiteSale, self).checkout_form_validate(
             mode, all_form_values, data
         )

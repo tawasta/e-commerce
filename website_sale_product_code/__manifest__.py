@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,20 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Product Information",
-    "summary": "Website Sale Product Information",
-    "version": "12.0.1.0.0",
-    "category": "eCommerce",
-    "website": "https://tawasta.fi",
-    "author": "Tawasta",
-    "license": "AGPL-3",
-    "application": False,
-    "installable": True,
-    "depends": ["website_sale", "product_description"],
-    "data": ["views/templates.xml"],
+    'name': 'eCommerce Show product code in website',
+    'summary': 'Show product default code in shop',
+    'version': '12.0.1.0.0',
+    'category': 'Website',
+    'website': 'https://github.com/Tawasta/e-commerce',
+    'author': 'Tawasta',
+    'license': 'AGPL-3',
+    'application': False,
+    'installable': True,
+    'depends': [
+        'website_sale',
+    ],
+    'data': [
+        'views/product_template.xml',
+        'views/website_product.xml',
+    ],
 }
