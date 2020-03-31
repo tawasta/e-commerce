@@ -26,4 +26,3 @@ class ProductTemplate(models.Model):
         string="Replacing products",
         readonly=True,
     )
-
