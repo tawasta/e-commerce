@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template id="payment_tokens_list" inherit_id="payment.payment_tokens_list">
+        <xpath expr="//t[@t-foreach='acquirers']/div[@class='card-body']" position="inside">
+            <t t-if="acq.product_id">
+                <span class="badge badge-secondary pull-right">
+                    <t t-set="tax_added" t-value="0"/>
+                    <t t-set="fpos"
+                       t-value="website_sale_order.fiscal_position_id or website_sale_order.partner_id.property_account_position_id"/>
+                    <t t-set="taxes"
+                       t-value="acq.product_id.sudo().taxes_id.filtered(lambda r: not website_sale_order.company_id or r.company_id == website_sale_order.company_id)"/>
+                    <t t-if="acq.product_id.sudo().taxes_id">
+                        <t t-if="request.env.user.has_group('account.group_show_line_subtotals_tax_included')">
+                            <t t-set="tax_added"
+                               t-value="(fpos.map_tax(taxes, acq.product_id, website_sale_order.partner_shipping_id) if fpos else taxes).amount"/>
+                        </t>
+                    </t>
+                    <t t-esc="acq.product_id.list_price * (1 + tax_added * 0.01)"
+                       t-options='{"widget": "monetary", "from_currency": acq.product_id.company_id.currency_id, "display_currency": website_sale_order.currency_id}'/>
+                </span>
+            </t>
+        </xpath>
+    </template>
+</odoo>
