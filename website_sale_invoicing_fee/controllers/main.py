@@ -9,8 +9,10 @@ class InvoicingFee(WebsiteSale):
     def payment_validate(self, transaction_id=None, sale_order_id=None, **post):
         sale_order = request.website.sale_get_order() or False
 
+        sale_transactions = sale_order.transaction_ids and sale_order.transaction_ids[0]
+
         line_product_id = sale_order and \
-            sale_order.transaction_ids.acquirer_id.product_id or \
+            sale_transactions.acquirer_id.product_id or \
             False
 
         sale_order_line_model = request.env['sale.order.line']
