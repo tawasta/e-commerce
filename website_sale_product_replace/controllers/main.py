@@ -28,17 +28,17 @@ class WebsiteSaleReplace(WebsiteSale):
         customer = contact.commercial_partner_id
 
         for product in products:
-            product_sudo = product.sudo()
-            if product_sudo.replacement_ids:
-                # Don't add replacement products
+            if product.replace_product_id:
+                # Don't show replacement products themselves
                 continue
 
-            if product.replace_product_id:
-                customer_ids = product_sudo.customer_ids
+            for replacement in product.replacement_ids:
+                # TODO: handle multiple matching replacements
+                customer_ids = replacement.sudo().customer_ids
 
                 if not customer_ids or customer in customer_ids:
                     # Replace product for this customer
-                    product = product.replace_product_id
+                    product = replacement
 
             if product.id not in product_ids:
                 if product.website_published:
@@ -47,3 +47,12 @@ class WebsiteSaleReplace(WebsiteSale):
         customer_products = request.env['product.template'].browse(product_ids)
 
         return customer_products
+
+    @http.route()
+    def product(self, product, category='', search='', **kwargs):
+        product = self._get_customer_products(product)
+        res = super(WebsiteSaleReplace, self).product(
+            product, category, search, **kwargs
+        )
+
+        return res
