@@ -58,4 +58,3 @@ class WebsiteSaleReplace(WebsiteSale):
         return super(WebsiteSaleReplace, self).product(
             product, category, search, **kwargs
         )
-
