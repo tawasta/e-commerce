@@ -11,7 +11,6 @@ class ProductTemplate(models.Model):
         column1="customer_id",
         column2="product_id",
         string="Replace for customers",
-        context={'active_test': False},
     )
 
     replace_product_id = fields.Many2one(

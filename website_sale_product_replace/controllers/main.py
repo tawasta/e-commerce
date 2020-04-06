@@ -33,6 +33,7 @@ class WebsiteSaleReplace(WebsiteSale):
                 continue
 
             for replacement in product.replacement_ids:
+                # TODO: handle multiple matching replacements
                 customer_ids = replacement.sudo().customer_ids
 
                 if not customer_ids or customer in customer_ids:
@@ -46,3 +47,12 @@ class WebsiteSaleReplace(WebsiteSale):
         customer_products = request.env['product.template'].browse(product_ids)
 
         return customer_products
+
+    @http.route()
+    def product(self, product, category='', search='', **kwargs):
+        product = self._get_customer_products(product)
+        res = super(WebsiteSaleReplace, self).product(
+            product, category, search, **kwargs
+        )
+
+        return res
