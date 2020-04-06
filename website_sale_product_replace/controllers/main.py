@@ -50,9 +50,11 @@ class WebsiteSaleReplace(WebsiteSale):
 
     @http.route()
     def product(self, product, category='', search='', **kwargs):
-        product = self._get_customer_products(product)
-        res = super(WebsiteSaleReplace, self).product(
+        replacement = self._get_customer_products(product)
+
+        if replacement and replacement != product:
+            return request.redirect('/shop/product/%s' % replacement.id)
+
+        return super(WebsiteSaleReplace, self).product(
             product, category, search, **kwargs
         )
-
-        return res
