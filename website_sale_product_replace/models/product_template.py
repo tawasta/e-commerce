@@ -16,13 +16,15 @@ class ProductTemplate(models.Model):
     replace_product_id = fields.Many2one(
         comodel_name="product.template",
         string="Replace this product",
-        help="Show this product in shop instead. If no customers are selected, "
-             "the product is replaced for everyone"
+        help="Show current product in shop instead of this. "
+             "The product is replaced for everyone if no customer is selected"
     )
 
     replacement_ids = fields.One2many(
         comodel_name="product.template",
         inverse_name="replace_product_id",
-        string="Replacing products",
+        string="Replacement products",
+        help="These products are replacing the current product "
+             "for some customers or for all customers",
         readonly=True,
     )
