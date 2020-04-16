@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="cart_lines" name="Cart product note" inherit_id="website_sale.cart_lines">
+        <xpath expr="//td[@class='td-product_name']/t" position="after">
+            <div class="pt16 small" t-raw="line.product_id.website_cart_note" />
+        </xpath>
+    </template>
+</odoo>
