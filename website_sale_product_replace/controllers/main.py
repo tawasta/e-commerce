@@ -2,6 +2,7 @@ from odoo import http
 from odoo.http import request
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 from odoo.addons.website_sale.controllers.main import TableCompute
+from odoo.addons.website_sale.controllers.main import PPG
 
 
 class WebsiteSaleReplace(WebsiteSale):
@@ -14,6 +15,15 @@ class WebsiteSaleReplace(WebsiteSale):
 
         products = res.qcontext.get('products', {})
         customer_products = self._get_customer_products(products)
+
+        if ppg:
+            try:
+                ppg = int(ppg)
+            except ValueError:
+                ppg = PPG
+            post["ppg"] = ppg
+        else:
+            ppg = PPG
 
         res.qcontext['products'] = customer_products
         res.qcontext['bins'] = TableCompute().process(customer_products, ppg)
