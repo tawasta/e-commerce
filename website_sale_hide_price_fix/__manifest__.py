@@ -19,19 +19,20 @@
 ##############################################################################
 
 {
-    'name': 'eCommerce: Allow replacing a product in shop',
-    'summary': 'Replace a product for all customers or for certain customers',
-    'version': '12.0.1.3.0',
+    'name': 'Website Sale Hide Price Fix',
+    'summary': 'Fix missing items from Website Sale Hide Price',
+    'version': '12.0.1.0.0',
     'category': 'Website',
-    'website': 'https://github.com/Tawasta/e-commerce',
+    'website': 'https://github.com/Tawasta/e-commerce/',
     'author': 'Tawasta',
     'license': 'AGPL-3',
     'application': False,
     'installable': True,
     'depends': [
         'website_sale',
+        'website_sale_hide_price',
     ],
     'data': [
-        'views/product_template.xml',
+        'views/website_sale_variants.xml',
     ],
 }
