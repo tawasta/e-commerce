@@ -13,7 +13,12 @@ class WebsiteSaleReplace(WebsiteSale):
             page, category, search, ppg, **post
         )
 
+        if request.env.user.has_group('website.group_website_publisher'):
+            # Editors will see all products, without replacements
+            return res
+
         products = res.qcontext.get('products', {})
+
         customer_products = self._get_customer_products(products)
 
         if ppg:

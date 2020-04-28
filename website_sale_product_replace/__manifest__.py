@@ -21,7 +21,7 @@
 {
     'name': 'eCommerce: Allow replacing a product in shop',
     'summary': 'Replace a product for all customers or for certain customers',
-    'version': '12.0.1.2.2',
+    'version': '12.0.1.3.0',
     'category': 'Website',
     'website': 'https://github.com/Tawasta/e-commerce',
     'author': 'Tawasta',
