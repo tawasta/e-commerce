@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="checkout" name="Checkout address select2" inherit_id="website_sale.checkout">
+        <xpath expr="//div[@class='row all_shipping']" position="before">
+            <div class="row filter_shipping">
+                <div class="col-12">
+                    <input type="text" class="form-control"
+                       placeholder="Search for an address..."
+                       id="shipping-address-search"/>
+                </div>
+            </div>
+            <script src="/website_sale_address_filter/static/src/js/custom.js"/>
+        </xpath>
+    </template>
+</odoo>
