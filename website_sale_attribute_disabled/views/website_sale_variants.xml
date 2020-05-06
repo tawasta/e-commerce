@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="variants" inherit_id="sale.variants">
+        <xpath expr="//strong[@t-field='variant_id.attribute_id.name']" position="after">
+            <!-- Show a warning label that this attribute can't be edited.
+                 The warning is shown to internal users too for transparency, even though it doesn't apply for them -->
+            <i t-if="variant_id.attribute_id.website_disabled" class="fa fa-warning text-warning" title="You can't change this attribute" />
+        </xpath>
+
+        <!-- Select-fields -->
+        <xpath expr="//select" position="attributes">
+            <attribute name="t-att-disabled">'disabled' if variant_id.attribute_id.website_disabled and not request.env.user.has_group('base.group_user') else False</attribute>
+        </xpath>
+
+        <!-- Radio buttons -->
+        <xpath expr="//input[@type='radio']" position="attributes">
+            <attribute name="t-att-disabled">'disabled' if variant_id.attribute_id.website_disabled and not request.env.user.has_group('base.group_user') else False</attribute>
+        </xpath>
+
+        <!-- Color buttons -->
+        <xpath expr="//input[@t-att-title='value_id.name']" position="attributes">
+            <attribute name="t-att-disabled">'disabled' if variant_id.attribute_id.website_disabled and not request.env.user.has_group('base.group_user') else False</attribute>
+        </xpath>
+
+    </template>
+
+</odoo>
