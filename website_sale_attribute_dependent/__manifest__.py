@@ -31,7 +31,8 @@
     "external_dependencies": {"python": [], "bin": []},
     "depends": ["product", "website_sale"],
     "data": [
-        'views/product_attribute_form.xml',
+        'views/product_attribute.xml',
+        'views/product_attribute_value.xml',
         'views/website_sale_product.xml',
     ],
     "demo": [],
