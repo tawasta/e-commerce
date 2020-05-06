@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-====================================
-Product dependent attribute defaults
-====================================
+=====================================================
+eCommerce: allow defining dependencies for attributes
+=====================================================
 
-Allow adding dependent attribute defaults.
+Attributes may have dependent defaults, used in frontend
 For example, Shirt with text can have dependent defaults for color:
 Default text color is white, but white shirt has a default text color of black.
 

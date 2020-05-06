@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Product dependent attribute defaults",
-    "summary": "Allow adding dependent attribute defaults",
+    "name": "eCommerce: allow defining dependencies for attributes",
+    "summary": "Attributes may have dependent defaults, used in frontend",
     "version": "12.0.1.0.0",
     "category": "Product",
     "website": "https://github.com/Tawasta/e-commerce",
