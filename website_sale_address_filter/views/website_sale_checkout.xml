@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="checkout" name="Checkout address select2" inherit_id="website_sale.checkout">
+    <template id="checkout" name="Checkout address filter" inherit_id="website_sale.checkout">
         <xpath expr="//div[@class='row all_shipping']" position="before">
             <div class="row filter_shipping">
                 <div class="col-12">
