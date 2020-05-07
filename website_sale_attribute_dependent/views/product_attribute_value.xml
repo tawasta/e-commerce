@@ -6,7 +6,6 @@
         <field name="inherit_id" ref="sale.variants_tree_view"/>
         <field name="arch" type="xml">
             <field name="html_color" position="after">
-                <field name="dependency_id" />
                 <field name="dependent_attribute_ids" widget="many2many_tags" />
             </field>
         </field>

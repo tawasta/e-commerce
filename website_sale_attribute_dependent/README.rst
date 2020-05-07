@@ -10,10 +10,6 @@ Attributes may have dependent defaults, used in frontend
 For example, Shirt with text can have dependent defaults for color:
 Default text color is white, but white shirt has a default text color of black.
 
-The dependent attribute can be linked to only one main attribute.
-E.g. text color can be linked to shirt color, but not also to shirt size.
-
-
 Configuration
 =============
 \-

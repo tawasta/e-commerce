@@ -21,7 +21,7 @@
 {
     "name": "eCommerce: allow defining dependencies for attributes",
     "summary": "Attributes may have dependent defaults, used in frontend",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "category": "Product",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",

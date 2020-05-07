@@ -3,7 +3,7 @@
 
     <template id="product" inherit_id="website_sale.product">
         <xpath expr="//h1[@t-field='product.name']" position="after">
-            <script type="text/javascript" src="/website_sale_attribute_dependent/static/src/js/dependent_attribute.js?v101"></script>
+            <script type="text/javascript" src="/website_sale_attribute_dependent/static/src/js/dependent_attribute.js?v102"></script>
         </xpath>
     </template>
 
