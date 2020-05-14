@@ -20,7 +20,7 @@ class ProductAttributeValue(models.Model):
     )
 
     @api.constrains('dependent_attribute_ids')
-    def _check_something(self):
+    def _check_dependent_attribute_ids(self):
         # Try to disallow doing impossible or recursive dependencies
         for record in self:
             for attribute in record.dependent_attribute_ids:
