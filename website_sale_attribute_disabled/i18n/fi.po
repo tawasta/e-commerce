@@ -23,7 +23,7 @@ msgstr "Tuotteen ominaisuus"
 #. module: website_sale_attribute_disabled
 #: model:ir.model.fields,field_description:website_sale_attribute_disabled.field_product_attribute__website_disabled
 msgid "Website disabled"
-msgstr "Ei käytössä verkkosivulla"
+msgstr "Ei muutattavissa verkkosivulla"
 
 #. module: website_sale_attribute_disabled
 #: model_terms:ir.ui.view,arch_db:website_sale_attribute_disabled.variants
