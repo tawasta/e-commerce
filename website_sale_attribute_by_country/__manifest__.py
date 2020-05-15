@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "eCommerce: allow hiding attributes for frontend users",
-    "summary": "Frontend user will not see hidden attributes",
+    "name": "eCommerce: allow defining default attributes by country",
+    "summary": "Attributes may have country specific defaults in frontend",
     "version": "12.0.1.1.0",
     "category": "Product",
     "website": "https://github.com/Tawasta/e-commerce",
@@ -32,9 +32,7 @@
     "depends": ["product", "website_sale"],
     "data": [
         'security/ir_rule.xml',
-        'views/product_attribute.xml',
         'views/product_attribute_value.xml',
-        'views/website_sale_variants.xml',
     ],
     "demo": [],
 }
