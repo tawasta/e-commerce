@@ -21,7 +21,7 @@
 {
     'name': 'Website Sale Agent',
     'summary': 'Allow eCommerce user to purchase items for a third party',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'category': 'Website',
     'website': 'https://github.com/Tawasta/e-commerce',
     'author': 'Tawasta',
