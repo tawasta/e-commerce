@@ -1,4 +1,5 @@
 from odoo import http
+from odoo import _
 from odoo.http import request
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
@@ -16,5 +17,18 @@ class CheckoutSkipPaymentAndConfirmation(WebsiteSale):
         # Mark SO as sent
         order.write({'state': 'sent'})
 
+        # Add quotation print to message as an attachment
+        attachment = request.env.ref(
+            'sale.action_report_saleorder').sudo().render_qweb_pdf([order.id])
+        attachment_name = _("Quotation {}").format(order.name)
+
+        # Post an internal message to log
+        order.message_post(
+            subject=_("Order confirmed in website"),
+            body=_("{} confirmed the order").format(request.env.user.name),
+            attachments={(attachment_name, attachment[0])},
+        )
+
+        # The order is done
         request.website.sale_reset()
         return request.render("website_sale.confirmation", {'order': order})

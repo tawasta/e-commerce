@@ -11,7 +11,7 @@ class WebsiteSaleAddress(WebsiteSale):
 
         user = request.env.user
 
-        if user.website_agent:
+        if user.website_agent and 'parent_id' in new_values:
             # Remove parent (create a standalone shipping address)
             del(new_values['parent_id'])
 

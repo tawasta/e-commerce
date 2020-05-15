@@ -21,7 +21,7 @@
 {
     'name': 'eCommerce - Skip Paymend And order confirmation',
     'summary': 'Website orders will stay unconfirmed after sale process',
-    'version': '12.0.1.1.0',
+    'version': '12.0.1.2.0',
     'category': 'Website',
     'website': 'https://github.com/Tawasta/e-commerce',
     'author': 'Tawasta',
