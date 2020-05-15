@@ -11,19 +11,6 @@
             <attribute name="t-att-style">'display: none' if not variant_id.attribute_id.website_published and not request.env.user.has_group('base.group_user') else False</attribute>
         </xpath>
 
-        <!-- Select-fields -->
-        <xpath expr="//select/t[@t-foreach='variant_id.product_template_value_ids']" position="attributes">
-            <attribute name="t-foreach">variant_id.product_template_value_ids.filtered('product_attribute_value_id.website_published')</attribute>
-        </xpath>
-        <!-- Radio buttons -->
-        <xpath expr="//ul//t[@t-foreach='variant_id.product_template_value_ids']" position="attributes">
-            <attribute name="t-foreach">variant_id.product_template_value_ids.filtered('product_attribute_value_id.website_published')</attribute>
-        </xpath>
-        <!-- Color buttons -->
-        <xpath expr="//ul/li[@t-foreach='variant_id.product_template_value_ids']" position="attributes">
-            <attribute name="t-foreach">variant_id.product_template_value_ids.filtered('product_attribute_value_id.website_published')</attribute>
-        </xpath>
-
     </template>
 
 </odoo>

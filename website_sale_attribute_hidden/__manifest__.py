@@ -21,7 +21,7 @@
 {
     "name": "eCommerce: allow hiding attributes for frontend users",
     "summary": "Frontend user will not see hidden attributes",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "category": "Product",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",
@@ -31,6 +31,7 @@
     "external_dependencies": {"python": [], "bin": []},
     "depends": ["product", "website_sale"],
     "data": [
+        'security/ir_rule.xml',
         'views/product_attribute.xml',
         'views/product_attribute_value.xml',
         'views/website_sale_variants.xml',
