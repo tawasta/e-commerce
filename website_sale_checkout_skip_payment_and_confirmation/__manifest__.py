@@ -19,7 +19,7 @@
 ##############################################################################
 
 {
-    'name': 'eCommerce - Skip Paymend And order confirmation',
+    'name': 'eCommerce - Skip Payment And order confirmation',
     'summary': 'Website orders will stay unconfirmed after sale process',
     'version': '12.0.1.2.0',
     'category': 'Website',
