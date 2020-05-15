@@ -14,6 +14,14 @@ class CheckoutSkipPaymentAndConfirmation(WebsiteSale):
         order = request.env['sale.order'].sudo().browse(
             request.session.get('sale_last_order_id'))
 
+        # Change commercial partner to partner, if necessary
+        if order.partner_id.commercial_partner_id != order.partner_id:
+            if hasattr(order, 'customer_contact_id'):
+                if not order.customer_contact_id:
+                    order.customer_contact_id = order.partner_id.id
+
+            order.partner_id = order.partner_id.commercial_partner_id.id
+
         # Mark SO as sent
         order.write({'state': 'sent'})
 

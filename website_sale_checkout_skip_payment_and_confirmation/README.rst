@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 ===============================================
-eCommerce - Skip Paymend And order confirmation
+eCommerce - Skip Payment And order confirmation
 ===============================================
 
 Website orders will stay unconfirmed after sale process
