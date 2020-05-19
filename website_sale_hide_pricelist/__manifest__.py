@@ -19,18 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'eCommerce - Skip Payment And order confirmation',
-    'summary': 'Website orders will stay unconfirmed after sale process',
-    'version': '12.0.1.4.0',
-    'category': 'Website',
-    'website': 'https://github.com/Tawasta/e-commerce',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'website_sale_checkout_skip_payment',
-    ],
-    'data': [
-    ],
+    "name": "Website Sale hide pricelist",
+    "summary": "Website Sale hide pricelist",
+    "version": "12.0.1.0.0",
+    "category": "eCommerce",
+    "website": "https://tawasta.fi",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["website_sale"],
+    "data": ["views/website_sale_products.xml"],
 }
