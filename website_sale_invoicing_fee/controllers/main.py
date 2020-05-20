@@ -9,27 +9,30 @@ class InvoicingFee(WebsiteSale):
     def payment_validate(self, transaction_id=None, sale_order_id=None, **post):
         sale_order = request.website.sale_get_order() or False
 
-        sale_transactions = sale_order.transaction_ids and sale_order.transaction_ids[0]
+        if sale_order:
+            sale_transactions = sale_order.transaction_ids and \
+                sale_order.transaction_ids[0]
 
-        line_product_id = sale_order and \
-            sale_transactions.acquirer_id.product_id or \
-            False
+            line_product_id = sale_order and \
+                sale_transactions.acquirer_id.product_id or \
+                False
 
-        sale_order_line_model = request.env['sale.order.line']
+            sale_order_line_model = request.env['sale.order.line']
 
-        if line_product_id and sale_order:
-            product_desc = '{}{}'.format(
-                line_product_id.default_code and '[{}] '.format(
-                    line_product_id.default_code) or '', line_product_id.name)
+            if line_product_id and sale_order:
+                product_desc = '{}{}'.format(
+                    line_product_id.default_code and '[{}] '.format(
+                        line_product_id.default_code) or '',
+                    line_product_id.name)
 
-            sale_order_line_model.sudo().create({
-                'customer_lead': 0,
-                'product_id': line_product_id.id,
-                'product_uom_qty': 1,
-                'price_unit': line_product_id.list_price,
-                'name': product_desc,
-                'order_id': sale_order.id,
-            })
+                sale_order_line_model.sudo().create({
+                    'customer_lead': 0,
+                    'product_id': line_product_id.id,
+                    'product_uom_qty': 1,
+                    'price_unit': line_product_id.list_price,
+                    'name': product_desc,
+                    'order_id': sale_order.id,
+                })
 
         return super(InvoicingFee, self).payment_validate(transaction_id,
                                                           sale_order_id, **post)
