@@ -1,10 +1,11 @@
 from odoo import http
 from odoo import _
 from odoo.http import request
-from odoo.addons.website_sale.controllers.main import WebsiteSale
+from odoo.addons.website_sale_checkout_skip_payment.controllers.main \
+    import CheckoutSkipPayment
 
 
-class CheckoutSkipPaymentAndConfirmation(WebsiteSale):
+class CheckoutSkipPaymentAndConfirmation(CheckoutSkipPayment):
 
     @http.route()
     def payment_confirmation(self, **post):
