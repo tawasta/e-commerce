@@ -2,11 +2,12 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==========================================
-eCommerce Show product website description
-==========================================
+==============================================
+eCommerce: Allow using iframe in product image
+==============================================
 
-Show website product description in backend
+Allow using an iframe-URL as product image.
+Experiemental/hacky - use with caution.
 
 Configuration
 =============
