@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product_template_form_view" model="ir.ui.view" >
+        <field name="name">product.template.form.iframe</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="website_sale.product_template_form_view" />
+        <field name="arch" type="xml">
+
+            <field name="website_url" position="after">
+                <field name="id" invisible="1" />
+                <field name="website_description_iframe_html"
+                       domain="[('res_id', '=', id)]"
+                       context="{
+                       'default_name': name,
+                       'default_public': True,
+                       'default_res_model': 'product.template',
+                       'default_res_id': id
+                       }"/>
+            </field>
+
+        </field>
+    </record>
+
+</odoo>
