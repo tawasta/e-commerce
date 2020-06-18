@@ -19,9 +19,9 @@
 ##############################################################################
 
 {
-    'name': 'eCommerce: Allow using iframe in product image',
-    'summary': 'Allow using an iframe-URL as product image',
-    'version': '12.0.1.0.1',
+    'name': 'eCommerce: Allow using HTML file as product description',
+    'summary': 'Allow using an HTML file as product description (in iframe)',
+    'version': '12.0.1.1.0',
     'category': 'Website',
     'website': 'https://github.com/Tawasta/e-commerce',
     'author': 'Tawasta',
@@ -32,6 +32,7 @@
         'website_sale',
     ],
     'data': [
-        'views/attachment.xml',
+        'views/product_template.xml',
+        'views/website_product.xml',
     ],
 }

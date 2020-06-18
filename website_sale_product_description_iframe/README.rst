@@ -2,12 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==============================================
-eCommerce: Allow using iframe in product image
-==============================================
+=======================================================
+eCommerce: Allow using HTML file as product description
+=======================================================
 
-Allow using an iframe-URL as product image.
-Experiemental/hacky - use with caution.
+Allow using an HTML file as product description (in iframe)
 
 Configuration
 =============
