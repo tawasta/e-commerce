@@ -21,7 +21,7 @@
 {
     'name': 'eCommerce: Allow using iframe in product image',
     'summary': 'Allow using an iframe-URL as product image',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'category': 'Website',
     'website': 'https://github.com/Tawasta/e-commerce',
     'author': 'Tawasta',

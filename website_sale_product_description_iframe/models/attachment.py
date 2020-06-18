@@ -13,8 +13,11 @@ class Attachment(models.Model):
 
     def _compute_iframe_url(self):
         for record in self:
-            url = '<iframe class="col-12" src={}></iframe>'.format(
-                record.website_url
-            )
+            url = '<iframe class="col-12" ' \
+                  'allowfullscreen="allowfullscreen" ' \
+                  'style="height: 400px;" ' \
+                  'src={}></iframe>'.format(
+                    record.website_url
+                    )
 
             record.iframe_url = url
