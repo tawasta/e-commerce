@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-================================
-eCommerce Delivery cost with tax
-================================
+==========================================
+eCommerce Show product website description
+==========================================
 
-Website sale delivery costs with tax
+Show website product description in backend
 
 Configuration
 =============
