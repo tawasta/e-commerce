@@ -21,7 +21,7 @@
 {
     'name': 'eCommerce: Allow using HTML file as product description',
     'summary': 'Allow using an HTML file as product description (in iframe)',
-    'version': '12.0.1.1.0',
+    'version': '12.0.1.1.1',
     'category': 'Website',
     'website': 'https://github.com/Tawasta/e-commerce',
     'author': 'Tawasta',

@@ -2,7 +2,7 @@
 <odoo>
 
     <template id="product" inherit_id="website_sale.product">
-        <xpath expr="//div[@id='product_full_description']" position="after">
+        <xpath expr="//div[@id='product_full_description']" position="before">
             <div t-if="product.sudo().website_description_iframe_html" class="mt16 container">
                 <iframe allowfullscreen="allowfullscreen"
                         style="min-height: 400px; width: 100%"
