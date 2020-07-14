@@ -19,20 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'eCommerce: Allow using HTML file as product description',
-    'summary': 'Allow using an HTML file as product description (in iframe)',
-    'version': '12.0.1.1.1',
-    'category': 'Website',
-    'website': 'https://github.com/Tawasta/e-commerce',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'website_sale',
-    ],
-    'data': [
-        'views/product_template.xml',
-        'views/website_product.xml',
-    ],
+    "name": "Website sale - Hide price only",
+    "summary": "Hide only the price from webshop, not buttons to add to cart",
+    "version": "12.0.1.0.0",
+    "category": "eCommerce",
+    "website": "https://tawasta.fi",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["website_sale", "website_sale_hide_price"],
+    "data": ["views/website_sale_template.xml"],
 }
