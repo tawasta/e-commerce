@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <template id="product" inherit_id="website_sale.product">
+            <xpath expr="//a[@id='add_to_cart']" position="attributes">
+                <attribute name="t-if">
+                    True
+                </attribute>
+            </xpath>
+            <xpath expr="//div[hasclass('css_quantity')]" position="attributes">
+                <attribute name="t-if">
+                    True
+                </attribute>
+            </xpath>
+        </template>
+</odoo>
