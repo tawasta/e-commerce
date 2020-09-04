@@ -34,5 +34,6 @@
     'data': [
         'views/product_template.xml',
         'views/website_sale_cart_lines.xml',
+        'views/website_sale_total.xml',
     ],
 }
