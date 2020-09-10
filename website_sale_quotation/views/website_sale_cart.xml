@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- <template id="cart" name="Shopping Quotation Lines" inherit_id="website_sale.cart">
-        <xpath expr="//h1" position="replace">
-            <h1 class="mb32">My Quotation</h1>
+    <template id="cart_summary_remove_data" name="Cart Summary remove data" inherit_id="website_sale.cart_summary">
+        <xpath expr="//thead" position="replace">
+            <thead>
+                <tr>
+                    <th class="border-top-0 td-img">Product</th>
+                    <th class="border-top-0"></th>
+                    <th class="border-top-0 td-qty">Quantity</th>
+                </tr>
+            </thead>
         </xpath>
-    </template> -->
+        <xpath expr="//tr[@t-foreach='website_sale_order.website_order_line']" position="replace">
+            <tr t-foreach="website_sale_order.website_order_line" t-as="line">
+                <td class='' colspan="2" t-if="not line.product_id.product_tmpl_id"></td>
+                <td class='td-img' t-if="line.product_id.product_tmpl_id">
+                    <span t-field="line.product_id.image_small" t-options="{'widget': 'image', 'class': 'rounded'}" />
+                </td>
+                <td class='td-product_name' t-if="line.product_id.product_tmpl_id">
+                    <div>
+                        <strong t-field="line.name_short" />
+                    </div>
+                </td>
+                <td class='td-qty'>
+                    <div t-esc="line.product_uom_qty" />
+                </td>
+            </tr>
+        </xpath>
+    </template>
 </odoo>
