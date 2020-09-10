@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="wizard_checkout" name="Wizard Checkout Quotation" inherit_id="website_sale.wizard_checkout">
+    <!-- <template id="wizard_checkout" name="Wizard Checkout Quotation" inherit_id="website_sale.wizard_checkout">
         <xpath expr="//li[@id='step10']" position="replace">
             <li t-att-class="step==10 and 'text-primary' or 'text-muted'" id="step10">
                 <t t-if="step&gt;10 and step&lt;50">
@@ -20,5 +20,5 @@
             </li>
         </xpath>
 
-    </template>
+    </template> -->
 </odoo>

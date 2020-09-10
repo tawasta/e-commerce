@@ -30,7 +30,7 @@
     'installable': True,
     'depends': [
         'website_sale',
-        'website_sale_no_payment_info',
+        # 'website_sale_no_payment_info',
     ],
     'data': [
         'views/website_sale_address.xml',
