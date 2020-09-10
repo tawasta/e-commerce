@@ -36,6 +36,7 @@
         'views/website_sale_cart.xml',
         'views/website_sale_cart_lines.xml',
         'views/website_sale_cart_popover.xml',
+        'views/website_sale_order_portal.xml',
         'views/website_sale_checkout.xml',
         'views/website_sale_confirmation.xml',
         'views/website_sale_header.xml',
