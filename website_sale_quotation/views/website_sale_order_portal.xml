@@ -27,8 +27,14 @@
             </tr>
         </xpath>
     </template>
+
     <template id="remove_sidebar_price" name="Remove portal sidebar price" inherit_id="portal.portal_record_sidebar">
         <xpath expr="//div[@class='card-body text-center pb-2 pt-3']" position="replace">
         </xpath>
+    </template>
+
+    <template id="sale_order_portal_template" name="Sale Order Portal Template remove download" inherit_id="sale.sale_order_portal_template">
+        <xpath expr="//t[@t-call='portal.portal_record_sidebar']" position="replace" />
+        <!--<xpath expr="//div[@class='o_download_pdf btn-toolbar flex-sm-nowrap']/ancestor::li" position="replace" />-->
     </template>
 </odoo>

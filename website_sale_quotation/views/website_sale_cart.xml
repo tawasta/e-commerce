@@ -27,4 +27,8 @@
             </tr>
         </xpath>
     </template>
+
+    <template id="short_cart_summary" name="Cart Short summary disable" inherit_id="website_sale.short_cart_summary">
+        <xpath expr="//div[@class='card js_cart_summary']" position="replace" />
+    </template>
 </odoo>
