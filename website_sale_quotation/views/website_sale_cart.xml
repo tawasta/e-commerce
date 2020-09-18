@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <template id="cart" name="Cart" inherit_id="website_sale.cart">
+        <xpath expr="//a[@href='/shop']/span[2]" position="replace">
+            <span class="">Edit Quotation</span>
+        </xpath>
+
+        <xpath expr="//a[@href='/shop/checkout?express=1']/span[1]" position="replace">
+            <span class="">Continue</span>
+        </xpath>
+    </template>
+
     <template id="cart_summary_remove_data" name="Cart Summary remove data" inherit_id="website_sale.cart_summary">
         <xpath expr="//thead" position="replace">
             <thead>
