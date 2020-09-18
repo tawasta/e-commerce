@@ -1,44 +1,48 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* website_sale_quotation
+#	* website_sale_quotation
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 11:02+0000\n"
-"PO-Revision-Date: 2020-09-17 14:04+0300\n"
+"POT-Creation-Date: 2020-09-18 06:44+0000\n"
+"PO-Revision-Date: 2020-09-18 06:44+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: fi\n"
-"X-Generator: Poedit 2.4.1\n"
 
 #. module: website_sale_quotation
 #: model_terms:ir.ui.view,arch_db:website_sale_quotation.skip_payment
-msgid ""
-"<i class=\"fa fa-chevron-left\"/>\n"
+msgid "<i class=\"fa fa-chevron-left\"/>\n"
 "                Return to Quotation"
-msgstr ""
-"<i class=\"fa fa-chevron-left\"/>\n"
+msgstr "<i class=\"fa fa-chevron-left\"/>\n"
 "                Palaa tarjouspyyntöön"
 
 #. module: website_sale_quotation
 #: model_terms:ir.ui.view,arch_db:website_sale_quotation.header
-msgid ""
-"<i class=\"fa fa-clipboard-list\"/>\n"
+msgid "<i class=\"fa fa-clipboard-list\"/>\n"
 "                My quotation"
-msgstr ""
-"<i class=\"fa fa-clipboard-list\"/>\n"
+msgstr "<i class=\"fa fa-clipboard-list\"/>\n"
 "                Tarjouspyyntöni"
 
 #. module: website_sale_quotation
 #: model_terms:ir.ui.view,arch_db:website_sale_quotation.confirmation
 msgid "<i class=\"fa fa-print\"/> Print"
 msgstr "<i class=\"fa fa-print\"/> Tulosta"
+
+#. module: website_sale_quotation
+#: model_terms:ir.ui.view,arch_db:website_sale_quotation.cart
+msgid "<span class=\"\">Continue</span>"
+msgstr "<span class=\"\">Jatka</span>"
+
+#. module: website_sale_quotation
+#: model_terms:ir.ui.view,arch_db:website_sale_quotation.cart
+msgid "<span class=\"\">Edit Quotation</span>"
+msgstr "<span class=\"\">Muokkaa tarjouspyyntöä</span>"
 
 #. module: website_sale_quotation
 #: model_terms:ir.ui.view,arch_db:website_sale_quotation.checkout
@@ -163,3 +167,4 @@ msgstr "Tarjouspyyntösi on tyhjä!"
 #: model_terms:ir.ui.view,arch_db:website_sale_quotation.cart_popover
 msgid "items)"
 msgstr "tuotetta)"
+
