@@ -24,7 +24,7 @@
             <input type="hidden" name="fi_country_id" id="fi_country_id"
                 t-att-value="request.env.ref('base.fi').id"/>
             <div class="clearfix"/>
-            <script type="text/javascript" src="/website_sale_company_slider/static/src/js/checkout.js?v101"></script>
+            <script type="text/javascript" src="/website_sale_company_slider/static/src/js/checkout.js?v105"></script>
         </xpath>
     </template>
 </odoo>
