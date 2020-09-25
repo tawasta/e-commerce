@@ -34,6 +34,8 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
 
             if (is_company === true) {
                 $('#is_company').attr('checked', 'checked');
+                $("label[for='company_name']").removeClass('d-none');
+                $("input[name='company_name']").removeClass('d-none');
                 if (required_fields.val().indexOf(',company_name,vat') < 0) {
                     required_fields.val(required_fields.val() + ',company_name,vat');
                 }
