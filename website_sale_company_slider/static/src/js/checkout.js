@@ -10,6 +10,7 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
 
         function showFields() {
             var is_company = $('#is_company').is(':checked');
+            console.log(is_company);
             var required_fields = $("input[name='field_required']");
             // Reset required fields set
             required_fields.val(REQUIRED_FIELDS_DEFAULT);
@@ -33,6 +34,7 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
             $(".hide-company").toggleClass('d-none', is_company);
 
             if (is_company === true) {
+                console.log("COMPANY ON TRUE");
                 $('#is_company').attr('checked', 'checked');
                 $("label[for='company_name']").removeClass('d-none');
                 $("input[name='company_name']").removeClass('d-none');
