@@ -5,22 +5,21 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
 
     $(function() {
 
-        var is_company_back = $('#is_company').is(':checked');
-        console.log(is_company_back);
-        if (is_company_back === true) {
-            console.log("TÄÄLLÄ");
-            $("label[for='company_name']").removeClass('d-none');
-            console.log($("label[for='company_name']").removeClass('d-none'));
-            $("input[name='company_name']").removeClass('d-none');
-            console.log($("input[name='company_name']").removeClass('d-none'));
-        }
+        // var is_company_back = $('#is_company').is(':checked');
+        // console.log(is_company_back);
+        // if (is_company_back === true) {
+        //     console.log("TÄÄLLÄ");
+        //     $("label[for='company_name']").removeClass('d-none');
+        //     console.log($("label[for='company_name']").removeClass('d-none'));
+        //     $("input[name='company_name']").removeClass('d-none');
+        //     console.log($("input[name='company_name']").removeClass('d-none'));
+        // }
 
         const REQUIRED_FIELDS_DEFAULT = $("input[name='field_required']").val();
         const FI_COUNTRY_ID = $('#fi_country_id').val();
 
         function showFields() {
             var is_company = $('#is_company').is(':checked');
-            console.log(is_company);
             var required_fields = $("input[name='field_required']");
             // Reset required fields set
             required_fields.val(REQUIRED_FIELDS_DEFAULT);
