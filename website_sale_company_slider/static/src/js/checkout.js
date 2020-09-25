@@ -7,8 +7,7 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
 
         const REQUIRED_FIELDS_DEFAULT = $("input[name='field_required']").val();
         const FI_COUNTRY_ID = $('#fi_country_id').val();
-        $("input[name='company_name']").removeClass('d-none');
-        
+
         function showFields() {
             var is_company = $('#is_company').is(':checked');
             console.log(is_company);
@@ -29,8 +28,8 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
             $("label[for='vat']").toggleClass('label-optional', is_company);
 
             $(".div_vat").toggleClass('d-none', !is_company);
-            $("label[for='company_name']").toggleClass('d-none', !is_company);
-            $("input[name='company_name']").toggleClass('d-none', !is_company);
+            $("label[for='company_name']").toggleClass('d-none', is_company);
+            $("input[name='company_name']").toggleClass('d-none', is_company);
             $(".show-company").toggleClass('d-none', !is_company);
             $(".hide-company").toggleClass('d-none', is_company);
 
