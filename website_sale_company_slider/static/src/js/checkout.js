@@ -28,8 +28,6 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
             $("label[for='vat']").toggleClass('label-optional', is_company);
 
             $(".div_vat").toggleClass('d-none', !is_company);
-            $("label[for='company_name']").toggleClass('d-none', !is_company);
-            $("input[name='company_name']").toggleClass('d-none', !is_company);
             $(".show-company").toggleClass('d-none', !is_company);
             $(".hide-company").toggleClass('d-none', is_company);
 
