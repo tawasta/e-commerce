@@ -5,16 +5,6 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
 
     $(function() {
 
-        // var is_company_back = $('#is_company').is(':checked');
-        // console.log(is_company_back);
-        // if (is_company_back === true) {
-        //     console.log("TÄÄLLÄ");
-        //     $("label[for='company_name']").removeClass('d-none');
-        //     console.log($("label[for='company_name']").removeClass('d-none'));
-        //     $("input[name='company_name']").removeClass('d-none');
-        //     console.log($("input[name='company_name']").removeClass('d-none'));
-        // }
-
         const REQUIRED_FIELDS_DEFAULT = $("input[name='field_required']").val();
         const FI_COUNTRY_ID = $('#fi_country_id').val();
 
@@ -37,18 +27,11 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
             $("label[for='vat']").toggleClass('label-optional', is_company);
 
             $(".div_vat").toggleClass('d-none', !is_company);
-            $("label[for='company_name']").toggleClass('d-none', !is_company);
-            $("input[name='company_name']").toggleClass('d-none', !is_company);
             $(".show-company").toggleClass('d-none', !is_company);
             $(".hide-company").toggleClass('d-none', is_company);
 
             if (is_company === true) {
-                // console.log("COMPANY ON TRUE");
                 $('#is_company').attr('checked', 'checked');
-                // $("label[for='company_name']").removeClass('d-none');
-                // console.log($("label[for='company_name']").removeClass('d-none'));
-                // $("input[name='company_name']").removeClass('d-none');
-                // console.log($("input[name='company_name']").removeClass('d-none'));
                 if (required_fields.val().indexOf(',company_name,vat') < 0) {
                     required_fields.val(required_fields.val() + ',company_name,vat');
                 }
