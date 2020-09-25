@@ -3,16 +3,12 @@ odoo.define('website_sale_hide_company_private_customer.hide_company', function 
 
     $(function() {
         var is_company_back = $('#is_company').is(':checked');
-        console.log(is_company_back);
-        if (is_company_back === true) {
-            console.log("TÄÄLLÄ");
-            $("label[for='company_name']").removeClass('d-none');
-            console.log($("label[for='company_name']").removeClass('d-none'));
-            $("input[name='company_name']").removeClass('d-none');
-            console.log($("input[name='company_name']").removeClass('d-none'));
-        } else {
+        if (is_company_back === false) {
             $("label[for='company_name']").toggleClass('d-none');
             $("input[name='company_name']").toggleClass('d-none');
+        } else {
+            $("label[for='company_name']").removeClass('d-none');
+            $("input[name='company_name']").removeClass('d-none');
         }
     });
     
