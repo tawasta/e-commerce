@@ -32,11 +32,15 @@ odoo.define('website_sale_company_slider.checkout', function (require) {
 
             if (is_company === true) {
                 $('#is_company').attr('checked', 'checked');
+                $('#private_title').addClass('d-none');
+                $('#company_title').removeClass('d-none');
                 if (required_fields.val().indexOf(',company_name,vat') < 0) {
                     required_fields.val(required_fields.val() + ',company_name,vat');
                 }
             } else {
                 $('#is_company').removeAttr('checked');
+                $('#private_title').removeClass('d-none');
+                $('#company_title').addClass('d-none');
                 required_fields.val(required_fields.val().replace(',company_name,vat', ''));
             }
         }
