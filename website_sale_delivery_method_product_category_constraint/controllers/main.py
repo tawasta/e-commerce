@@ -3,10 +3,10 @@ from odoo.addons.website_sale_delivery.controllers.main import WebsiteSaleDelive
 
 class WebsiteSaleDelivery(WebsiteSaleDelivery):
 
-    def get_carriers(self, product_category_carrier):
+    def get_carriers(self, product_category):
         """A generator to check delivery methods"""
-        for category_carrier in product_category_carrier:
-            yield category_carrier.carrier
+        for category_carrier in product_category.category_carrier:
+            yield category_carrier
 
     def _get_shop_payment_values(self, order, **kwargs):
         values = super(WebsiteSaleDelivery, self)._get_shop_payment_values(
@@ -24,7 +24,7 @@ class WebsiteSaleDelivery(WebsiteSaleDelivery):
                 category = line.product_id.categ_id
                 # Loop through all parent categories to check delivery methods
                 while category:
-                    carriers = self.get_carriers(category.category_carrier)
+                    carriers = self.get_carriers(category)
                     category = category.parent_id
                     # If all is fine, break the while-loop
                     if delivery_method in carriers:

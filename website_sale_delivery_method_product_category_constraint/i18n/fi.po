@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-30 11:35+0000\n"
-"PO-Revision-Date: 2020-09-30 14:35+0300\n"
+"POT-Creation-Date: 2020-10-19 12:43+0000\n"
+"PO-Revision-Date: 2020-10-19 15:51+0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,14 +18,9 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #. module: website_sale_delivery_method_product_category_constraint
-#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category_carrier__create_uid
-msgid "Created by"
-msgstr "Luonut"
-
-#. module: website_sale_delivery_method_product_category_constraint
-#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category_carrier__create_date
-msgid "Created on"
-msgstr "Luotu"
+#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category__category_carrier
+msgid "Allowed Delivery methods"
+msgstr "Sallitut toimitustavat"
 
 #. module: website_sale_delivery_method_product_category_constraint
 #: model:ir.model,name:website_sale_delivery_method_product_category_constraint.model_delivery_carrier
@@ -33,52 +28,6 @@ msgid "Delivery Methods"
 msgstr "Toimitustavat"
 
 #. module: website_sale_delivery_method_product_category_constraint
-#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category_carrier__carrier
-msgid "Delivery method"
-msgstr "Toimitustapa"
-
-#. module: website_sale_delivery_method_product_category_constraint
-#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category_carrier__display_name
-msgid "Display Name"
-msgstr "Näyttönimi"
-
-#. module: website_sale_delivery_method_product_category_constraint
-#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category_carrier__id
-msgid "ID"
-msgstr "Tunniste (ID)"
-
-#. module: website_sale_delivery_method_product_category_constraint
-#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category_carrier____last_update
-msgid "Last Modified on"
-msgstr "Viimeksi muokattu"
-
-#. module: website_sale_delivery_method_product_category_constraint
-#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category_carrier__write_uid
-msgid "Last Updated by"
-msgstr "Viimeksi päivittänyt"
-
-#. module: website_sale_delivery_method_product_category_constraint
-#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category_carrier__write_date
-msgid "Last Updated on"
-msgstr "Viimeksi päivitetty"
-
-#. module: website_sale_delivery_method_product_category_constraint
-#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category_carrier__name
-msgid "Name"
-msgstr "Nimi"
-
-#. module: website_sale_delivery_method_product_category_constraint
 #: model:ir.model,name:website_sale_delivery_method_product_category_constraint.model_product_category
-#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category_carrier__product_category
 msgid "Product Category"
 msgstr "Tuotekategoria"
-
-#. module: website_sale_delivery_method_product_category_constraint
-#: model:ir.model.fields,field_description:website_sale_delivery_method_product_category_constraint.field_product_category__category_carrier
-msgid "Product Category carrier"
-msgstr "Product Category carrier"
-
-#. module: website_sale_delivery_method_product_category_constraint
-#: model:ir.model,name:website_sale_delivery_method_product_category_constraint.model_product_category_carrier
-msgid "product.category.carrier"
-msgstr "product.category.carrier"
