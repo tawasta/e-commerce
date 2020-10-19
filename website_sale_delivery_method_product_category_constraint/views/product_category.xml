@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="product.product_category_form_view" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='parent_id']" position="after">
-                <field name="category_carrier">
+                <field name="category_carrier" string="Allowed Delivery methods">
                     <form>
                         <field name="name"/>
                         <field name="zip_from"/>
