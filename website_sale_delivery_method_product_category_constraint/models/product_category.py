@@ -6,6 +6,6 @@ class ProductCategory(models.Model):
 
     _inherit = 'product.category'
 
-    category_carrier = fields.One2many(comodel_name='product.category.carrier',
-                                       inverse_name='product_category',
-                                       string="Product Category carrier")
+    category_carrier = fields.Many2many(
+        comodel_name='delivery.carrier',
+        string="Allowed Delivery methods")

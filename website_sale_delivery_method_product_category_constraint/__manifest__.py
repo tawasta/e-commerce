@@ -31,7 +31,6 @@
     "installable": True,
     "depends": ["website_sale_delivery"],
     "data": [
-        "security/ir.model.access.csv",
         "views/product_category.xml",
     ],
 }

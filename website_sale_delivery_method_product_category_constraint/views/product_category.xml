@@ -7,12 +7,16 @@
         <field name="inherit_id" ref="product.product_category_form_view" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='parent_id']" position="after">
-                <field name="category_carrier" class="oe_inline">
+                <field name="category_carrier">
                     <form>
-                        <field name="carrier"/>
+                        <field name="name"/>
+                        <field name="zip_from"/>
+                        <field name="zip_to"/>
                     </form>
                     <tree editable="bottom">
-                        <field name="carrier"/>
+                        <field name="name"/>
+                        <field name="zip_from"/>
+                        <field name="zip_to"/>
                     </tree>
                 </field>
             </xpath>
