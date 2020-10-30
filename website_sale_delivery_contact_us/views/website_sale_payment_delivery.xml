@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment"
+              name="Payment contact us"
+              inherit_id="website_sale.payment">
+        <xpath expr="//div[@t-if='errors']" position="after">
+            <div class="col-12" name="contact-us" t-if="contact_us">
+                <div class="alert alert-primary" t-raw="contact_us" />
+            </div>
+        </xpath>
+    </template>
+</odoo>
