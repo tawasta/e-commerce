@@ -21,7 +21,7 @@
 {
     "name": "eCommerce: Quick link to contact form, if delivery is not found",
     "summary": "Suggest moving to contact form if no delivery methods",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "category": "Website",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",
