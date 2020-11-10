@@ -12,8 +12,8 @@ class WebsiteSaleDeliveryContact(WebsiteSaleDelivery):
             line.product_id.type in ["consu", "product"] for line in order.order_line
         )
 
-        if not order._get_delivery_methods() and has_storable_products:
-            if len(values["errors"]) == 1:
+        if has_storable_products:
+            if len(values["errors"]) <= 1:
                 contact_link = (
                     "<a href='/contactus?"
                     "contact_name={contact_name}"
@@ -29,9 +29,9 @@ class WebsiteSaleDeliveryContact(WebsiteSaleDelivery):
                         partner_name=order.partner_id.company_name or "-",
                         name=_("Delivery of order {}").format(order.name),
                         description=_(
-                            "There were no delivery options for my order {}. Please advise"
+                            "There were no suitable delivery options for my order {}. Please advise"
                         ).format(order.name),
-                        text=_("Contact us here"),
+                        text=_("Contact us here for more delivery options"),
                     )
                 )
 
