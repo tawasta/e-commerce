@@ -19,16 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Extra Step Content to SO note',
-    'summary': 'Extra Step Content to SO note',
-    'version': '12.0.1.0.0',
-    'category': 'eCommerce',
-    'website': 'https://tawasta.fi',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'website_sale',
-    ],
+    "name": "Extra Step Content to SO note",
+    "summary": "Extra Step Content to SO note",
+    "version": "12.0.1.1.0",
+    "category": "eCommerce",
+    "website": "https://github.com/Tawasta/e-commerce",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["website_sale"],
+    "data": ["views/website_extra_info.xml"],
 }
