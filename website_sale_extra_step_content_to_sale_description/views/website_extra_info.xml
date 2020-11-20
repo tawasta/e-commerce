@@ -2,7 +2,7 @@
 
 <odoo>
 
-    <template id="extra_info" name="Wizard Checkout" inherit_id="website_sale.extra_info" active="False" customize_show="True">
+    <template id="extra_info" name="Show order description" inherit_id="website_sale.extra_info" active="False" customize_show="True">
 
         <xpath expr="//form/div[@class='form-group row']" position="before">
             <div id="extra-step-description" class="form-group row form-field o_website_form_custom">
@@ -14,6 +14,7 @@
                 </div>
             </div>
         </xpath>
+
     </template>
 
 </odoo>
