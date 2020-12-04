@@ -21,7 +21,7 @@
 {
     "name": "eCommerce - Skip Payment And order confirmation",
     "summary": "Website orders will stay unconfirmed after sale process",
-    "version": "12.0.1.5.0",
+    "version": "12.0.1.6.0",
     "category": "Website",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",
@@ -29,5 +29,5 @@
     "application": False,
     "installable": True,
     "depends": ["website_sale_checkout_skip_payment"],
-    "data": [],
+    "data": ["data/config_parameter.xml"],
 }
