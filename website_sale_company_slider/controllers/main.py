@@ -38,13 +38,35 @@ class WebsiteSale(WebsiteSale):
         """
         Add business_id to saved values
         """
+        print(checkout)
+        print(all_values)
+        # checkout["name"] = checkout.get("company_name")
+        # user_name = checkout.get("name")
+        # user_vals = {
+        #     'name': all_values.get("name"),
+        #     'email': all_values.get("email"),
+        #     'phone': all_values.get("phone"),
+        # }
+        # print(user_vals)
+        company_vals = {
+            'name': checkout.get("company_name"),
+            'vat': checkout.get("vat"),
+            "company_type": 'company',
+            # 'email': checkout.get("email"),
+            # 'name': checkout.get("company_name"),
+            # 'name': checkout.get("company_name"),
+            # 'name': checkout.get("company_name"),
+            # 'name': checkout.get("company_name"),
+        }
+        print(company_vals)
         is_company = all_values.get("is_company", False)
+        print(is_company)
         business_id = all_values.get("business_id", False)
         country_id = checkout.get("country_id", False)
         vat = checkout.get("vat", False)
         country_code = request.env.ref("base.fi").code
         # Save is_company always, so that private_customer status is updated
-        checkout["is_company"] = is_company
+        # checkout["is_company"] = is_company
         if business_id:
             checkout["business_id"] = business_id
         if country_id:
@@ -59,6 +81,25 @@ class WebsiteSale(WebsiteSale):
             mode, checkout, all_values
         )
         partner = request.env["res.partner"].sudo().browse(partner_id)
+        # user_vals.update(
+        #     {
+        #         "parent_id": partner.id,
+        #     }
+        # )
+        # print(partner.name)
+        print(checkout)
+        company_partner = request.env["res.partner"].sudo().create(company_vals)
+        print(company_partner.name)
+        if company_partner:
+            partner.sudo().write({"parent_id": company_partner.id})
+            # order = request.website.sale_get_order()
+            # if order:
+            #     order.update(
+            #         {
+            #             "partner_id": company_partner.id,
+            #             "customer_contact_id": partner.id,
+            #         }
+            #     )
         if not is_company:
             # For some reason partners are created as companies - change it afterwards
             # Update partner to be private customer
