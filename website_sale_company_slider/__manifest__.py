@@ -21,7 +21,7 @@
 {
     "name": "Website Sale Company Slider",
     "summary": "Slider to checkout",
-    "version": "12.0.1.1.1",
+    "version": "12.0.1.1.2",
     "category": "Website",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",

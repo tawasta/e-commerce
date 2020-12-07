@@ -35,9 +35,14 @@ from odoo.http import request
 
 class WebsiteSale(WebsiteSale):
     def _checkout_form_save(self, mode, checkout, all_values):
+        # partner_id = super(WebsiteSale, self)._checkout_form_save(
+        #     mode, checkout, all_values
+        # )
+        print("---------------KÄYKÖ TÄMÄ EDES TÄÄLKLÄ--------------")
         """
         Add business_id to saved values
         """
+        print(checkout)
         is_company = all_values.get("is_company", False)
         business_id = all_values.get("business_id", False)
         country_id = checkout.get("country_id", False)
@@ -59,6 +64,8 @@ class WebsiteSale(WebsiteSale):
             mode, checkout, all_values
         )
         partner = request.env["res.partner"].sudo().browse(partner_id)
+        print(partner)
+        print(partner.name)
         if not is_company:
             # For some reason partners are created as companies - change it afterwards
             # Update partner to be private customer
@@ -66,6 +73,7 @@ class WebsiteSale(WebsiteSale):
         return partner
 
     def checkout_form_validate(self, mode, all_form_values, data):
+        print("------------ÄLÄ NYT PERHANA SANO ETTÄ KÄYT KUITESKINB TÄÄLLÄ-----")
         """
         Change vat to correct format to accept business id format
         """
