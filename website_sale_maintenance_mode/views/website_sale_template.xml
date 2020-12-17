@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="website_sale_template" name="Website sale template">
-        <t t-call="portal.portal_layout">
+        <t t-call="website.layout">
             <t t-set="title">Shop</t>
             <div id="wrap">
                 <div class="oe_structure oe_empty">

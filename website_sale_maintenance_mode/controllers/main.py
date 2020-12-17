@@ -34,12 +34,7 @@ from odoo.http import request
 
 class WebsiteSale(WebsiteSale):
 
-    @http.route([
-        '''/shop''',
-        '''/shop/page/<int:page>''',
-        '''/shop/category/<model("product.public.category"):category>''',
-        '''/shop/category/<model("product.public.category"):category>/page/<int:page>'''
-    ], type='http', auth="public", website=True)
+    @http.route()
     def shop(self, page=0, category=None, search='', ppg=False, **post):
 
         get_param = request.env["ir.config_parameter"].sudo().get_param
@@ -49,7 +44,7 @@ class WebsiteSale(WebsiteSale):
         ])
         render_values = {"company": company}
         if maintenance_mode == "True":
-            return request.render("webiste_sale_maintenance_mode.website_sale_template", render_values)
+            return request.render("website_sale_maintenance_mode.website_sale_template", render_values)
         else:
             response = super(WebsiteSale, self).shop(
                 page=page, category=category, search=search, ppg=ppg, **post)
