@@ -56,4 +56,3 @@ class WebsiteSale(WebsiteSale):
                 page=page, category=category, search=search, ppg=ppg, **post)
 
             return response
-            # return request.render("website_sale_maintenance_mode.maintenance_mode_template", {})
