@@ -35,5 +35,6 @@
         "views/res_company_view.xml",
         "views/website_sale_template.xml",
         "views/res_config_settings_views.xml",
+
     ],
 }

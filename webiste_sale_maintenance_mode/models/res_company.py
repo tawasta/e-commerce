@@ -1,5 +1,5 @@
-
-from odoo import api, fields, models
+from odoo import fields
+from odoo import models
 
 
 class Company(models.Model):

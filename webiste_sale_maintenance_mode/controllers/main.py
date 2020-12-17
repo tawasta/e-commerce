@@ -19,8 +19,8 @@
 ##############################################################################
 # 1. Standard library imports:
 from odoo import http
-from odoo.http import request
 from odoo.addons.website_sale.controllers.main import WebsiteSale
+from odoo.http import request
 
 # 2. Known third party imports:
 # 3. Odoo imports (openerp):
@@ -48,7 +48,6 @@ class WebsiteSale(WebsiteSale):
             ('id', '=', '1')
         ])
         render_values = {"company": company}
-
         if maintenance_mode == "True":
             return request.render("webiste_sale_maintenance_mode.website_sale_template", render_values)
         else:
