@@ -21,7 +21,7 @@
 {
     "name": "Website Sale Maintenance mode",
     "summary": "Website Sale Maintenance mode",
-    "version": "12.0.1.0.1",
+    "version": "12.0.1.0.0",
     "category": "Website",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",
