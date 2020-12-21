@@ -118,3 +118,88 @@ class WebsiteSale(WebsiteSale):
                 access_token=None, revive='', **post)
 
             return response
+
+    @http.route()
+    def address(self, **kw):
+
+        get_param = request.env["ir.config_parameter"].sudo().get_param
+        maintenance_mode = get_param("website_sale.maintenance_mode")
+        company = request.env["res.company"].sudo().search([
+            ('id', '=', '1')
+        ])
+        render_values = {"company": company}
+        if maintenance_mode == "True":
+            return request.render("website_sale_maintenance_mode.website_sale_template", render_values)
+        else:
+            response = super(WebsiteSale, self).address(
+                **kw)
+
+            return response
+
+    @http.route()
+    def checkout(self, **post):
+
+        get_param = request.env["ir.config_parameter"].sudo().get_param
+        maintenance_mode = get_param("website_sale.maintenance_mode")
+        company = request.env["res.company"].sudo().search([
+            ('id', '=', '1')
+        ])
+        render_values = {"company": company}
+        if maintenance_mode == "True":
+            return request.render("website_sale_maintenance_mode.website_sale_template", render_values)
+        else:
+            response = super(WebsiteSale, self).checkout(
+                **post)
+
+            return response
+
+    @http.route()
+    def confirm_order(self, **post):
+
+        get_param = request.env["ir.config_parameter"].sudo().get_param
+        maintenance_mode = get_param("website_sale.maintenance_mode")
+        company = request.env["res.company"].sudo().search([
+            ('id', '=', '1')
+        ])
+        render_values = {"company": company}
+        if maintenance_mode == "True":
+            return request.render("website_sale_maintenance_mode.website_sale_template", render_values)
+        else:
+            response = super(WebsiteSale, self).confirm_order(
+                **post)
+
+            return response
+
+    @http.route()
+    def extra_info(self, **post):
+
+        get_param = request.env["ir.config_parameter"].sudo().get_param
+        maintenance_mode = get_param("website_sale.maintenance_mode")
+        company = request.env["res.company"].sudo().search([
+            ('id', '=', '1')
+        ])
+        render_values = {"company": company}
+        if maintenance_mode == "True":
+            return request.render("website_sale_maintenance_mode.website_sale_template", render_values)
+        else:
+            response = super(WebsiteSale, self).extra_info(
+                **post)
+
+            return response
+
+    @http.route()
+    def payment(self, **post):
+
+        get_param = request.env["ir.config_parameter"].sudo().get_param
+        maintenance_mode = get_param("website_sale.maintenance_mode")
+        company = request.env["res.company"].sudo().search([
+            ('id', '=', '1')
+        ])
+        render_values = {"company": company}
+        if maintenance_mode == "True":
+            return request.render("website_sale_maintenance_mode.website_sale_template", render_values)
+        else:
+            response = super(WebsiteSale, self).payment(
+                **post)
+
+            return response
