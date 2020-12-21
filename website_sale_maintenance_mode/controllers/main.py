@@ -50,3 +50,71 @@ class WebsiteSale(WebsiteSale):
                 page=page, category=category, search=search, ppg=ppg, **post)
 
             return response
+
+    @http.route()
+    def product(self, product, category='', search='', **kwargs):
+
+        get_param = request.env["ir.config_parameter"].sudo().get_param
+        maintenance_mode = get_param("website_sale.maintenance_mode")
+        company = request.env["res.company"].sudo().search([
+            ('id', '=', '1')
+        ])
+        render_values = {"company": company}
+        if maintenance_mode == "True":
+            return request.render("website_sale_maintenance_mode.website_sale_template", render_values)
+        else:
+            response = super(WebsiteSale, self).product(
+                product, category='', search='', **kwargs)
+
+            return response
+
+    @http.route()
+    def pricelist_change(self, pl_id, **post):
+
+        get_param = request.env["ir.config_parameter"].sudo().get_param
+        maintenance_mode = get_param("website_sale.maintenance_mode")
+        company = request.env["res.company"].sudo().search([
+            ('id', '=', '1')
+        ])
+        render_values = {"company": company}
+        if maintenance_mode == "True":
+            return request.render("website_sale_maintenance_mode.website_sale_template", render_values)
+        else:
+            response = super(WebsiteSale, self).pricelist_change(
+                pl_id, **post)
+
+            return response
+
+    @http.route()
+    def pricelist(self, promo, **post):
+
+        get_param = request.env["ir.config_parameter"].sudo().get_param
+        maintenance_mode = get_param("website_sale.maintenance_mode")
+        company = request.env["res.company"].sudo().search([
+            ('id', '=', '1')
+        ])
+        render_values = {"company": company}
+        if maintenance_mode == "True":
+            return request.render("website_sale_maintenance_mode.website_sale_template", render_values)
+        else:
+            response = super(WebsiteSale, self).pricelist(
+                promo, **post)
+
+            return response
+
+    @http.route()
+    def cart(self, access_token=None, revive='', **post):
+
+        get_param = request.env["ir.config_parameter"].sudo().get_param
+        maintenance_mode = get_param("website_sale.maintenance_mode")
+        company = request.env["res.company"].sudo().search([
+            ('id', '=', '1')
+        ])
+        render_values = {"company": company}
+        if maintenance_mode == "True":
+            return request.render("website_sale_maintenance_mode.website_sale_template", render_values)
+        else:
+            response = super(WebsiteSale, self).cart(
+                access_token=None, revive='', **post)
+
+            return response
