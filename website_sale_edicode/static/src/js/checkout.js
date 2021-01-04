@@ -4,20 +4,21 @@ odoo.define('website_sale_edicode.checkout', function (require) {
     $(function() {
         $('#einvoice-operator-select').select2();
 
-        function toggleTransmitMethod() {
-            // If the selector exists, toggle visibility
-            if($('#customer-invoice-transmit-method').length){
-                var transmit_method = $('#customer-invoice-transmit-method');
-                var code = transmit_method.find(':selected').data('code');
-
-                var einvoice = code == 'einvoice';
-                // Show einvoice address and operator if transmit method is einvoice
-                $('#einvoice-operator-div').toggleClass('d-none', !einvoice);
-                $('#edicode-div').toggleClass('d-none', !einvoice);
+        function toggleEdicode() {
+            var company = $("input[name=company_name]").val().length != 0
+            if(company){
+                $('#einvoice-operator-div').fadeIn();
+                $('#edicode-div').fadeIn();
+                $('.div_vat').fadeIn();
+            } else{
+                // Slow fadeout so user notices what's being removed
+                $('#einvoice-operator-div').fadeOut("slow");
+                $('#edicode-div').fadeOut("slow");
+                $('.div_vat').fadeOut("slow");
             }
         }
 
-        $('#customer-invoice-transmit-method').change(toggleTransmitMethod);
-        toggleTransmitMethod();
+        $("input[name=company_name]").change(toggleEdicode);
+        toggleEdicode();
     });
 });

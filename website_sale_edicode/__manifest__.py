@@ -19,20 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Finnish EDI code to website sale',
-    'summary': 'Adds Finnish EDI code to website checkout form',
-    'version': '12.0.1.2.1',
-    'category': 'Website',
-    'website': 'https://github.com/Tawasta/e-commerce',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'l10n_fi_edicode',
-        'website_sale',
-    ],
-    'data': [
-        'views/website_sale_checkout.xml',
-    ],
+    "name": "Finnish EDI code to website sale",
+    "summary": "Adds Finnish EDI code to website checkout form",
+    "version": "12.0.1.3.0",
+    "category": "Website",
+    "website": "https://github.com/Tawasta/e-commerce",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["l10n_fi_edicode", "website_sale"],
+    "data": ["views/website_sale_checkout.xml"],
 }
