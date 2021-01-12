@@ -21,7 +21,7 @@
 {
     "name": "Website payment acquirer filter",
     "summary": "Allows filtering payment acquirers by partner type",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "category": "Website",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",
