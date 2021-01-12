@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2018- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Finnish EDI code to website sale",
-    "summary": "Adds Finnish EDI code to website checkout form",
-    "version": "12.0.1.3.0",
-    "category": "Website",
+    "name": "Image Alt text",
+    "summary": "Custom Image Alt texts",
+    "version": "12.0.1.0.0",
+    "category": "Product",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["l10n_fi_edicode", "website_sale"],
-    "data": ["views/website_sale_checkout.xml"],
+    "depends": ["product", "website_sale",],
+    "data": ["views/product_views.xml", "views/templates.xml",],
 }

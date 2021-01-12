@@ -2,22 +2,24 @@
 <odoo>
     <template id="address" inherit_id="website_sale.address_b2b" name="Show Edicode field" customize_show="True" active="True">
         <xpath expr="//div[contains(@t-attf-class, 'div_vat')]" position="after">
-            <div id="edicode-div" t-attf-class="form-group #{error.get('edicode') and 'has-error' or ''} col-md-6 div_edicode show-company">
+            <div id="edicode-div" style="display: none;" t-attf-class="form-group #{error.get('edicode') and 'has-error' or ''} col-md-6 div_edicode show-company">
                 <label class="col-form-label label-optional" for="edicode">Edicode</label>
-                <input type="text" name="edicode" class="form-control" />
+                <input type="text" name="edicode" class="form-control" t-att-value="'edicode' in checkout and checkout['edicode']" />
             </div>
-            <div id="einvoice-operator-div" t-attf-class="form-group #{error.get('einvoice_operator') and 'has-error' or ''} col-lg-6 div_einvoice_operator show-company">
+            <div id="einvoice-operator-div" style="display: none;" t-attf-class="form-group #{error.get('einvoice_operator') and 'has-error' or ''} col-lg-6 div_einvoice_operator show-company">
                 <t t-set="operators" t-value="request.env['res.partner.operator.einvoice'].sudo().search([])"/>
                 <label class="col-form-label label-optional" for="einvoice_operator">eInvoice Operator</label>
                 <select id="einvoice-operator-select" class="form-control einvoice_operator-select select2" name="einvoice_operator">
                     <option></option>
                     <t t-foreach="operators" t-as="op">
-                        <option t-att-value="op.id"><span t-esc="op.name" /> (<span t-esc="op.identifier" />)</option>
+                        <option t-att-value="op.id" t-att-selected="op == ('einvoice_operator' in checkout and checkout['einvoice_operator'])">
+                            <span t-esc="op.name" /> (<span t-esc="op.identifier" />)
+                        </option>
                     </t>
                 </select>
             </div>
             <div class="clearfix"/>
-            <script type="text/javascript" src="/website_sale_edicode/static/src/js/checkout.js?v101"></script>
+            <script type="text/javascript" src="/website_sale_edicode/static/src/js/checkout.js?v102"></script>
         </xpath>
     </template>
 </odoo>

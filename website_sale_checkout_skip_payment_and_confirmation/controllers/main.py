@@ -32,17 +32,24 @@ class CheckoutSkipPaymentAndConfirmation(CheckoutSkipPayment):
         # Mark SO as sent
         order.write({"state": "sent"})
 
-        if (
-            request.env["ir.config_parameter"]
+        config = request.env["ir.config_parameter"].sudo()
+
+        # Add quotation print to message as an attachment
+        attachment = (
+            request.env.ref("sale.action_report_saleorder")
             .sudo()
-            .get_param("auto_send_quotation_from_ecommerce")
-        ) == "1":
+            .render_qweb_pdf([order.id])
+        )
+        attachment_name = _("Quotation {}").format(order.name)
+
+        if config.get_param("auto_send_quotation_from_ecommerce") == "1":
             order.force_quotation_send()
         else:
             # Post an internal message to log
             order.message_post(
                 subject=_("Order confirmed in website"),
                 body=_("{} confirmed the order").format(request.env.user.name),
+                attachments={(attachment_name, attachment[0])},
             )
 
         # The order is done

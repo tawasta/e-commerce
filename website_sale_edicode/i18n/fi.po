@@ -1,28 +1,27 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* website_sale_fi_edicode
+#	* website_sale_edicode
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-12 09:05+0000\n"
-"PO-Revision-Date: 2018-11-12 11:06+0200\n"
+"POT-Creation-Date: 2021-01-08 12:00+0000\n"
+"PO-Revision-Date: 2021-01-08 12:00+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: fi\n"
-"X-Generator: Poedit 1.8.7.1\n"
 
-#. module: website_sale_fi_edicode
-#: model:ir.ui.view,arch_db:website_sale_fi_edicode.address
+#. module: website_sale_edicode
+#: model_terms:ir.ui.view,arch_db:website_sale_edicode.address
 msgid "Edicode"
 msgstr "Verkkolaskuosoite"
 
-#. module: website_sale_fi_edicode
-#: model:ir.ui.view,arch_db:website_sale_fi_edicode.address
+#. module: website_sale_edicode
+#: model_terms:ir.ui.view,arch_db:website_sale_edicode.address
 msgid "eInvoice Operator"
 msgstr "Verkkolaskuoperaattori"
+
