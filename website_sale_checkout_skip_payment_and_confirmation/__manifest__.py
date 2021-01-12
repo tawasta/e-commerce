@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale_checkout_skip_payment"],
+    "depends": ["sale", "website_sale_checkout_skip_payment"],
     "data": ["data/config_parameter.xml"],
 }
