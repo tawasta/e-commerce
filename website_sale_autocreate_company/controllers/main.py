@@ -10,11 +10,8 @@ class WebsiteSale(WebsiteSale):
 
         res = super(WebsiteSale, self)._checkout_form_save(mode, checkout, all_values)
 
-        print(checkout)
         if checkout.get("company_name"):
-            print(res)
             partner = request.env["res.partner"].sudo().browse([res])
-            print(partner)
             if partner:
                 partner.create_company()
 
