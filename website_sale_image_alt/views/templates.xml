@@ -1,40 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="shop_product_carousel_alt" inherit_id="website_sale.shop_product_carousel">
-        <xpath expr="//div[@class='carousel-item'][@t-field='pimg.image']" position="replace">
-            <t t-if="pimg.alt">
-                <div class="carousel-item" t-field="pimg.image" t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "alt", "zoom": "image", "itemprop": "image"}'/>
-            </t>
-            <t t-else="">
-                <div class="carousel-item" t-field="pimg.image" t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name", "zoom": "image", "itemprop": "image"}'/>
-            </t>
-        </xpath>
-        <xpath expr="//img[@class='img img-fluid'][@t-att-alt='pimg.name']" position="replace">
-            <t t-if="pimg.alt">
-                <img class="img img-fluid" t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90" t-att-alt="pimg.alt"/>
-            </t>
-            <t t-else="">
-                <img class="img img-fluid" t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90" t-att-alt="pimg.name"/>
-            </t>
-        </xpath>
-    </template>
+  <!-- change alt text for "live" version -->
+  <template id="shop_product_carousel_alt" inherit_id="website_sale.shop_product_carousel">
+    <!-- change extra image alt text for large image -->
+    <xpath expr="//div[@class='carousel-item'][@t-field='pimg.image']" position="replace">
+      <t t-if="pimg.alt">
+        <div class="carousel-item" t-field="pimg.image" t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "alt", "zoom": "image", "itemprop": "image"}'/>
+      </t>
+      <t t-else="">
+        <div class="carousel-item" t-field="pimg.image" t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name", "zoom": "image", "itemprop": "image"}'/>
+      </t>
+    </xpath>
+    <!-- change extra image alt text for carousel items -->
+    <xpath expr="//img[@class='img img-fluid'][@t-att-alt='pimg.name']" position="replace">
+      <t t-if="pimg.alt">
+        <img class="img img-fluid" t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90" t-att-alt="pimg.alt"/>
+      </t>
+      <t t-else="">
+        <img class="img img-fluid" t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90" t-att-alt="pimg.name"/>
+      </t>
+    </xpath>
+    <!-- change main image alt text for large image -->
+      <xpath expr="//div[@t-field='product.image']" position="replace">
+      <t t-if="product.alt">
+        <div t-attf-class="carousel-item#{'' if variant_img else ' active'}" t-field="product.image" t-options="{'widget': 'image', 'class': 'product_detail_img', 'alt-field': 'alt', 'zoom': 'image', 'unique': product['__last_update'], 'itemprop': 'image'}"/>
+      </t>
+      <t t-else="">
+        <div t-attf-class="carousel-item#{'' if variant_img else ' active'}" t-field="product.image" t-options="{'widget': 'image', 'class': 'product_detail_img', 'alt-field': 'name', 'zoom': 'image', 'unique': product['__last_update'], 'itemprop': 'image'}"/>
+      </t>
+    </xpath>
+    <!-- change main image alt text for carousel items -->
+    <xpath expr="//img[@class='img img-fluid'][@t-att-alt='product.name']" position="replace">
+      <t t-if="product.alt">
+        <img class="img img-fluid" t-attf-src="/website/image/product.template/{{product.id}}/image/90x90" t-att-alt="product.alt"/>
+      </t>
+      <t t-else="">
+        <img class="img img-fluid" t-attf-src="/website/image/product.template/{{product.id}}/image/90x90" t-att-alt="product.name"/>
+      </t>
+    </xpath>
+  </template>
 
-    <template id="product_alt" inherit_id="website_sale.product">
-        <xpath expr="//div[@class='carousel-item'][@t-field='pimg.image']" position="replace">
-            <t t-if="pimg.alt">
-                <div class="carousel-item" t-field="pimg.image" t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "alt", "zoom": "image", "itemprop": "image"}'/>
-            </t>
-            <t t-else="">
-                <div class="carousel-item" t-field="pimg.image" t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name", "zoom": "image", "itemprop": "image"}'/>
-            </t>
-        </xpath>
-        <xpath expr="//img[@class='img img-fluid'][@t-att-alt='pimg.name']" position="replace">
-            <t t-if="pimg.alt">
-                <img class="img img-fluid" t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90" t-att-alt="pimg.alt"/>
-            </t>
-            <t t-else="">
-                <img class="img img-fluid" t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90" t-att-alt="pimg.name"/>
-            </t>
-        </xpath>
-    </template>
+  <!-- change alt text for source version -->
+  <template id="product_alt" inherit_id="website_sale.product">
+    <!-- change extra image alt text for large image -->
+    <xpath expr="//div[@class='carousel-item'][@t-field='pimg.image']" position="replace">
+      <t t-if="pimg.alt">
+        <div class="carousel-item" t-field="pimg.image" t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "alt", "zoom": "image", "itemprop": "image"}'/>
+      </t>
+      <t t-else="">
+        <div class="carousel-item" t-field="pimg.image" t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name", "zoom": "image", "itemprop": "image"}'/>
+      </t>
+    </xpath>
+    <!-- change extra image alt text for carousel items -->
+    <xpath expr="//img[@class='img img-fluid'][@t-att-alt='pimg.name']" position="replace">
+      <t t-if="pimg.alt">
+        <img class="img img-fluid" t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90" t-att-alt="pimg.alt"/>
+      </t>
+      <t t-else="">
+        <img class="img img-fluid" t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90" t-att-alt="pimg.name"/>
+      </t>
+    </xpath>
+      <!-- change main image alt text for large image -->
+      <xpath expr="//div[@t-field='product.image']" position="replace">
+      <t t-if="product.alt">
+        <div t-attf-class="carousel-item#{'' if variant_img else ' active'}" t-field="product.image" t-options="{'widget': 'image', 'class': 'product_detail_img', 'alt-field': 'alt', 'zoom': 'image', 'unique': product['__last_update'], 'itemprop': 'image'}"/>
+      </t>
+      <t t-else="">
+        <div t-attf-class="carousel-item#{'' if variant_img else ' active'}" t-field="product.image" t-options="{'widget': 'image', 'class': 'product_detail_img', 'alt-field': 'name', 'zoom': 'image', 'unique': product['__last_update'], 'itemprop': 'image'}"/>
+      </t>
+    </xpath>
+    <!-- change main image alt text for carousel items -->
+    <xpath expr="//img[@class='img img-fluid'][@t-att-alt='product.name']" position="replace">
+      <t t-if="product.alt">
+        <img class="img img-fluid" t-attf-src="/website/image/product.template/{{product.id}}/image/90x90" t-att-alt="product.alt"/>
+      </t>
+      <t t-else="">
+        <img class="img img-fluid" t-attf-src="/website/image/product.template/{{product.id}}/image/90x90" t-att-alt="product.name"/>
+      </t>
+    </xpath>
+  </template>
 </odoo>

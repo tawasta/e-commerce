@@ -60,3 +60,33 @@ class ProductImage(models.Model):
     # 7. Action methods
 
     # 8. Business methods
+
+
+class ProductTemplate(models.Model):
+
+    # 1. Private attributes
+    _inherit = "product.template"
+
+    # 2. Fields declaration
+    alt = fields.Char(
+        string="Main Image Alt", default=lambda self: self._get_default_alt(),
+    )
+
+    # 3. Default methods
+    @api.model
+    def _get_default_alt(self):
+        return self.env["product.template"].name
+
+    # 4. Compute and search fields, in the same order that fields declaration
+
+    # 5. Constraints and onchanges
+    @api.onchange("name")
+    def image_name_change(self):
+        if not self.alt:
+            self.alt = self.name
+
+    # 6. CRUD methods
+
+    # 7. Action methods
+
+    # 8. Business methods
