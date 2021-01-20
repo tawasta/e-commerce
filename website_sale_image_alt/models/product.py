@@ -86,20 +86,6 @@ class ProductTemplate(models.Model):
             self.alt = self.name
 
     # 6. CRUD methods
-    # @api.model
-    # def create(self, vals):
-    #     res = super(ProductTemplate, self).create(vals)
-    #     print(res)
-    #     # if not self.product_image_alt:
-    #     #     self.product_image_alt = self.name
-    #     return res
-
-    # @api.multi
-    # def write(self, vals):
-    #     res = super(ProductTemplate, self).write(vals)
-    #     if not self.product_image_alt:
-    #         self.product_image_alt = self.name
-        # return res
 
     # 7. Action methods
 
