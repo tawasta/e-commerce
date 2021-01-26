@@ -22,8 +22,6 @@ class WebsiteSale(WebsiteSale):
 
             checkout["vat"] = country_code + re.sub("[^0-9]", "", checkout["vat"])
 
-        print(checkout)
-
         res = super(WebsiteSale, self)._checkout_form_save(mode, checkout, all_values)
 
         return res
