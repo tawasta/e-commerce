@@ -8,11 +8,6 @@ class WebsiteSaleAcquirers(WebsiteSale):
         )
 
         if order and res.get("acquirers"):
-            print(order.partner_id)
-            print(order.partner_id.is_company)
-            print(order.partner_id.commercial_partner_id)
-            print(order.partner_id.commercial_partner_id.is_company)
-            print(order.partner_id.is_company or order.partner_id.is_company)
             if (
                 order.partner_id.is_company
                 or order.partner_id.commercial_partner_id.is_company
