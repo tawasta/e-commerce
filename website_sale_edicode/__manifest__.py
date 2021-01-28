@@ -21,7 +21,7 @@
 {
     "name": "EDI code to website sale",
     "summary": "Adds EDI code to website checkout form",
-    "version": "12.0.1.3.1",
+    "version": "12.0.1.4.0",
     "category": "Website",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",
