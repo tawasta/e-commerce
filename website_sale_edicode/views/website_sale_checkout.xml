@@ -19,7 +19,21 @@
                 </select>
             </div>
             <div class="clearfix"/>
-            <script type="text/javascript" src="/website_sale_edicode/static/src/js/checkout.js?v102"></script>
+            <script type="text/javascript" src="/website_sale_edicode/static/src/js/checkout.js?v103"></script>
+        </xpath>
+    </template>
+
+    <template id="edicode_notification" name="Show edicode notification" inherit_id="address" customize_show="True" active="False" >
+        <xpath expr="//div[@id='einvoice-operator-div']" position="after">
+            <div id="edicode-notification-div" class="col-12" style="display: none;">
+                <div class="alert alert-info text-center alert-dismissible fade show" role="alert">
+                    <p><strong>Please use edicode when possible!</strong></p>
+                    <p>This will allow us to process your order quicker.</p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span>&amp;times;</span>
+                    </button>
+                </div>
+            </div>
         </xpath>
     </template>
 </odoo>
