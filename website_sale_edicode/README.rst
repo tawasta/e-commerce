@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===============================
-Website Sale - Finnish EDI code
-===============================
+=======================
+Website Sale - EDI code
+=======================
 
-This module adds Finnish EDI code to website sale checkout form.
+This module adds EDI code to website sale checkout form.
 
 Installation
 ============
@@ -32,6 +32,7 @@ Contributors
 ------------
 
 * Aleksi Savijoki <aleksi.savijoki@tawasta.fi>
+* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 
 Maintainer
 ----------
