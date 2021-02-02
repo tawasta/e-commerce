@@ -19,20 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'eCommerce Show product website description',
-    'summary': 'Show website product description in backend',
-    'version': '12.0.1.0.0',
-    'category': 'Website',
-    'website': 'https://github.com/Tawasta/e-commerce',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'website_sale',
-    ],
-    'data': [
-        'views/product_template.xml',
-        'views/website_product.xml',
-    ],
+    "name": "eCommerce Show product website description",
+    "summary": "Show website product description in backend",
+    "version": "12.0.1.1.0",
+    "category": "Website",
+    "website": "https://github.com/Tawasta/e-commerce",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["website_sale",],
+    "data": ["views/product_template.xml", "views/website_product.xml",],
 }
