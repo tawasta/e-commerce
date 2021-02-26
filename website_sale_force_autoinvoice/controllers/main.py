@@ -17,16 +17,12 @@
 #    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
 #
 ##############################################################################
-
-
 # 1. Standard library imports:
-
 # 2. Known third party imports:
-
 # 3. Odoo imports (openerp):
 from odoo import http
-from odoo.http import request
 from odoo.addons.website_sale.controllers.main import WebsiteSale
+from odoo.http import request
 
 # 4. Imports from Odoo modules (rarely, and only if necessary):
 
@@ -45,10 +41,13 @@ class WebsiteSale(WebsiteSale):
         """
         Confirm sale order and create invoice.
         """
+        get_param = request.env["ir.config_parameter"].sudo().get_param
+        create_invoice_param = get_param("website_sale_force_autoinvoice.create_invoice")
         sale_order_id = request.session.get('sale_last_order_id')
         if sale_order_id:
             order = request.env['sale.order'].sudo().browse(sale_order_id)
             if order.state == 'sent':
                 order.sudo().action_confirm()
-                order.sudo().action_invoice_create()
+                if create_invoice_param == "True":
+                    order.sudo().action_invoice_create()
         return super(WebsiteSale, self).payment_confirmation(**post)

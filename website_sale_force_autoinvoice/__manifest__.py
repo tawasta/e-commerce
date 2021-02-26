@@ -32,5 +32,6 @@
         'website_sale',
     ],
     'data': [
+        'views/res_config_settings_view.xml',
     ],
 }
