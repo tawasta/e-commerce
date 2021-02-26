@@ -9,4 +9,4 @@ class PaymentAcquirer(models.Model):
 
     auto_confirm = fields.Selection([('allow', 'Allow'), ('not_allowed', 'Not allowed')], default='not_allowed')
 
-    create_invoice = fields.Selection([('allow', 'Allow'), ('not_allowed', 'Not allowed')], default='not_allowed')
+    auto_create_invoice = fields.Selection([('allow', 'Allow'), ('not_allowed', 'Not allowed')], default='not_allowed')

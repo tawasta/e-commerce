@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <field name="journal_id" position="after">
                 <field name="auto_confirm" />
-                <field name="create_invoice" />
+                <field name="auto_create_invoice" />
             </field>
         </field>
     </record>
