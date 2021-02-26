@@ -30,8 +30,9 @@
     'installable': True,
     'depends': [
         'website_sale',
+        'payment',
     ],
     'data': [
-        'views/res_config_settings_view.xml',
+        'views/payment_acquired_view.xml',
     ],
 }
