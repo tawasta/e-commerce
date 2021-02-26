@@ -45,8 +45,6 @@ class WebsiteSale(WebsiteSale):
         if sale_order_id:
             order = request.env['sale.order'].sudo().browse(sale_order_id)
             if order.state == 'sent':
-                if order.transaction_ids.acquirer_id.auto_confirm == 'allow':
-                    order.sudo().action_confirm()
                 if order.transaction_ids.acquirer_id.auto_create_invoice == 'allow':
                     order.sudo().action_invoice_create()
         return super(WebsiteSale, self).payment_confirmation(**post)
