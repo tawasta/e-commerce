@@ -17,6 +17,8 @@ class SaleOrder(models.Model):
 
         sale_order_line_model = self.env['sale.order.line']
 
+        current_website = self.env['website'].get_current_website()
+
         if line_product_id and self:
             product_desc = '{}{}'.format(
                 line_product_id.default_code and '[{}] '.format(
@@ -30,7 +32,7 @@ class SaleOrder(models.Model):
                 'price_unit': line_product_id.list_price,
                 'name': product_desc,
                 'order_id': self.id,
-                'company_id': self.env['website'].get_current_website()
+                'company_id': current_website.id,
             })
 
         return super(SaleOrder, self).action_quotation_send()
