@@ -30,7 +30,9 @@
     'installable': True,
     'depends': [
         'website_sale',
+        'payment',
     ],
     'data': [
+        'views/payment_acquired_view.xml',
     ],
 }
