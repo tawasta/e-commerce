@@ -30,6 +30,7 @@ class SaleOrder(models.Model):
                 'price_unit': line_product_id.list_price,
                 'name': product_desc,
                 'order_id': self.id,
+                'company_id': self.env['website'].get_current_website()
             })
 
         return super(SaleOrder, self).action_quotation_send()
