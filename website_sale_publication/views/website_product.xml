@@ -47,7 +47,7 @@
                                     <span><strong>Publishing year</strong></span>
                                 </th>
                                 <th>
-                                    <span t-field="product.publication_publishing_year"/>
+                                    <t t-raw="product.publication_publishing_year"/>
                                 </th>
                             </tr>
                         </t>
@@ -107,7 +107,7 @@
                                     <span><strong>Duration</strong></span>
                                 </th>
                                 <th>
-                                    <time t-field="product.publication_duration"/>
+                                    <span t-field="product.publication_duration" t-options="{'widget': 'float_time'}"/>
                                 </th>
                             </tr>
                         </t>
