@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_frontend" inherit_id="web.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/website_sale_publication/static/src/scss/style.scss" />
+        </xpath>
+    </template>
+
+    <template id="product" inherit_id="website_sale.product">
+        <xpath expr="//div[@id='product_full_description']" position="after">
+            <t t-if="product.is_publication_product">
+                <div class="publication_information py-2 container">
+                    <table>
+                        <t t-if="product.publication_isbn">
+                            <tr>
+                                <th>
+                                    <span><strong>ISBN</strong></span>
+                                </th>
+                                <th>
+                                    <span t-field="product.publication_isbn"/>
+                                </th>
+                            </tr>
+                        </t>
+                        <t t-if="product.publication_authors">
+                            <tr>
+                                <th>
+                                    <span><strong>Authors</strong></span>
+                                </th>
+                                <th>
+                                    <span t-field="product.publication_authors"/>
+                                </th>
+                            </tr>
+                        </t>
+                        <t t-if="product.publication_publisher">
+                            <tr>
+                                <th>
+                                    <span><strong>Publisher</strong></span>
+                                </th>
+                                <th>
+                                    <span t-field="product.publication_publisher"/>
+                                </th>
+                            </tr>
+                        </t>
+                        <t t-if="product.publication_publishing_year">
+                            <tr>
+                                <th>
+                                    <span><strong>Publishing year</strong></span>
+                                </th>
+                                <th>
+                                    <t t-raw="product.publication_publishing_year"/>
+                                </th>
+                            </tr>
+                        </t>
+                        <t t-if="product.publication_binding_form">
+                            <tr>
+                                <th>
+                                    <span><strong>Binding form</strong></span>
+                                </th>
+                                <th>
+                                    <span t-field="product.publication_binding_form"/>
+                                </th>
+                            </tr>
+                        </t>
+                        <t t-if="product.publication_edition">
+                            <tr>
+                                <th>
+                                    <span><strong>Edition</strong></span>
+                                </th>
+                                <th>
+                                    <span t-field="product.publication_edition"/>
+                                </th>
+                            </tr>
+                        </t>
+                        <t t-if="product.publication_size">
+                            <tr>
+                                <th>
+                                    <span><strong>Size</strong></span>
+                                </th>
+                                <th>
+                                    <span t-field="product.publication_size"/>
+                                </th>
+                            </tr>
+                        </t>
+                        <t t-if="product.publication_breadth">
+                            <tr>
+                                <th>
+                                    <span><strong>Breadth</strong></span>
+                                </th>
+                                <th>
+                                    <span t-field="product.publication_breadth"/>
+                                </th>
+                            </tr>
+                        </t>
+                        <t t-if="product.publication_quantity">
+                            <tr>
+                                <th>
+                                    <span><strong>Quantity</strong></span>
+                                </th>
+                                <th>
+                                    <span t-field="product.publication_quantity"/>
+                                </th>
+                            </tr>
+                        </t>
+                        <t t-if="product.publication_duration">
+                            <tr>
+                                <th>
+                                    <span><strong>Duration</strong></span>
+                                </th>
+                                <th>
+                                    <span t-field="product.publication_duration" t-options="{'widget': 'float_time'}"/>
+                                </th>
+                            </tr>
+                        </t>
+                    </table>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>
