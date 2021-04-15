@@ -1,23 +1,23 @@
-from odoo.addons.website_sale_delivery.controllers.main import WebsiteSaleDelivery
+from odoo import models
 
 
-class WebsiteSaleDelivery(WebsiteSaleDelivery):
+class SaleOrder(models.Model):
+
+    _inherit = 'sale.order'
 
     def get_carriers(self, product_category):
         """A generator to check delivery methods"""
         for category_carrier in product_category.category_carrier:
             yield category_carrier
 
-    def _get_shop_payment_values(self, order, **kwargs):
-        values = super(WebsiteSaleDelivery, self)._get_shop_payment_values(
-            order, **kwargs)
-        delivery_methods = order._get_delivery_methods()
+    def _get_delivery_methods(self):
+        delivery_methods = super(SaleOrder, self)._get_delivery_methods()
         # lines is a generator object
-        lines = (x for x in order.order_line if order and delivery_methods)
+        lines = (x for x in self.order_line if delivery_methods)
         for line in lines:
             # Skip a line if its product is the same as
             # sale order's delivery method's product
-            if line.product_id == order.carrier_id.product_id:
+            if line.product_id == self.carrier_id.product_id:
                 continue
 
             for delivery_method in delivery_methods:
@@ -37,5 +37,4 @@ class WebsiteSaleDelivery(WebsiteSaleDelivery):
                         else:
                             delivery_methods -= delivery_method
 
-        values['deliveries'] = delivery_methods.sudo() or False
-        return values
+        return delivery_methods
