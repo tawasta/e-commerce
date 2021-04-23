@@ -19,20 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'Force autoinvoice in website sale',
-    'summary': 'Forces autoinvoice on quotations created from website_sale',
-    'version': '12.0.1.0.0',
-    'category': 'Website',
-    'website': 'https://github.com/Tawasta/e-commerce',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'website_sale',
-        'payment',
-    ],
-    'data': [
-        'views/payment_acquired_view.xml',
-    ],
+    "name": "Force autoinvoice in website sale",
+    "summary": "Forces autoinvoice on quotations created from website_sale",
+    "version": "12.0.1.0.0",
+    "category": "Website",
+    "website": "https://github.com/Tawasta/e-commerce",
+    "author": "Oy Tawasta Technologies Ltd.",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["website_sale", "payment",],
+    "data": ["views/payment_acquired_view.xml",],
 }
