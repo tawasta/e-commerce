@@ -3,7 +3,7 @@
 <odoo>
     <template id="payment_tokens_list" inherit_id="payment.payment_tokens_list">
         <xpath expr="//t[@t-foreach='acquirers']/div[@class='card-body']" position="inside">
-            <t t-if="acq.product_id">
+            <t t-if="acq.sudo().product_id">
                 <span class="badge badge-secondary pull-right">
                     <t t-set="tax_added" t-value="0"/>
                     <t t-set="fpos"
@@ -16,8 +16,8 @@
                                t-value="(fpos.map_tax(taxes, acq.product_id, website_sale_order.partner_shipping_id) if fpos else taxes).amount"/>
                         </t>
                     </t>
-                    <t t-esc="acq.product_id.list_price * (1 + tax_added * 0.01)"
-                       t-options='{"widget": "monetary", "from_currency": acq.product_id.company_id.currency_id, "display_currency": website_sale_order.currency_id}'/>
+                    <t t-esc="acq.sudo().product_id.list_price * (1 + tax_added * 0.01)"
+                       t-options='{"widget": "monetary", "from_currency": acq.sudo().product_id.company_id.currency_id, "display_currency": website_sale_order.currency_id}'/>
                 </span>
             </t>
         </xpath>
