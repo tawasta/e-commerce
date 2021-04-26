@@ -21,7 +21,7 @@
 {
     "name": "Invoicing fee for Website sale",
     "summary": "Adds Invoicing fee to Sale Order",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.0.1",
     "category": "eCommerce",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",
