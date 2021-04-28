@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="address" inherit_id="website_sale.address">
+        <xpath expr="//h2[@class='o_page_header mt8']" position="replace">
+            <h2 class="o_page_header mt8">Your Address</h2>
+        </xpath>
+    </template>
+</odoo>
