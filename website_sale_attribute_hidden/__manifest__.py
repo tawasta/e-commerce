@@ -21,7 +21,7 @@
 {
     "name": "eCommerce: allow hiding attributes for frontend users",
     "summary": "Frontend user will not see hidden attributes",
-    "version": "12.0.1.2.0",
+    "version": "12.0.1.3.0",
     "category": "Product",
     "website": "https://github.com/Tawasta/e-commerce",
     "author": "Tawasta",
