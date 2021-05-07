@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2021 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,22 +19,15 @@
 ##############################################################################
 
 {
-    "name": "eCommerce: allow hiding attributes for frontend users",
-    "summary": "Frontend user will not see hidden attributes",
-    "version": "12.0.1.2.0",
-    "category": "Product",
-    "website": "https://github.com/Tawasta/e-commerce",
+    "name": "eCommerce Mandatory company in checkout",
+    "summary": "Make company mandatory in website sale checkout",
+    "version": "12.0.1.0.0",
+    "category": "Website",
+    "website": "https://github.com/Tawasta/e-commerce/",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "external_dependencies": {"python": [], "bin": []},
-    "depends": ["product", "website_sale"],
-    "data": [
-        "security/ir_rule.xml",
-        "views/product_attribute.xml",
-        "views/product_attribute_value.xml",
-        "views/website_sale_variants.xml",
-    ],
-    "demo": [],
+    "depends": ["website_sale"],
+    "data": ["views/website_sale_address.xml"],
 }
