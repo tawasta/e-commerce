@@ -5,7 +5,12 @@
         <xpath expr="//strong[@t-field='variant_id.attribute_id.name']" position="after">
             <!-- Show a warning label that this attribute can't be edited.
                  The warning is shown to internal users too for transparency, even though it doesn't apply for them -->
-            <i t-if="not variant_id.attribute_id.website_published" class="fa fa-warning text-danger" title="This attribute is hidden from customers" />
+            <i t-if="not variant_id.attribute_id.website_published" class="fa fa-warning text-danger" title="This attribute is hidden from customers" groups="base.group_user"/>
+        </xpath>
+
+        <!-- Hide attribute label -->
+        <xpath expr="//strong[@class='attribute_name']" position="attributes">
+            <attribute name="t-att-style">'display: none' if not variant_id.attribute_id.website_published and not request.env.user.has_group('base.group_user') else False</attribute>
         </xpath>
 
         <!-- Hidden select button attribute -->
@@ -19,7 +24,7 @@
         </xpath>
 
         <!-- Hidden radio button attribute -->
-        <xpath expr="//input[@type='radio']" position="attributes">
+        <xpath expr="//input[@type='radio']/../../.." position="attributes">
             <attribute name="t-att-style">'display: none' if not variant_id.attribute_id.website_published and not request.env.user.has_group('base.group_user') else False</attribute>
         </xpath>
 
@@ -29,7 +34,7 @@
         </xpath>
 
         <!-- Hidden color attribute -->
-        <xpath expr="//input[@t-att-title='value_id.name']" position="attributes">
+        <xpath expr="//input[@t-att-title='value_id.name']/.." position="attributes">
             <attribute name="t-att-style">'display: none' if not variant_id.attribute_id.website_published and not request.env.user.has_group('base.group_user') else 'list-inline-item'</attribute>
         </xpath>
 
