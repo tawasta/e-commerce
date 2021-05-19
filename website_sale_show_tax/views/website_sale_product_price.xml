@@ -2,7 +2,8 @@
 <odoo>
     <template id="product_price" name="Product price with taxes" inherit_id="website_sale.product_price">
         <xpath expr="//h4" position="inside">
-            <t t-foreach="product.sudo().taxes_id" t-as="tax">
+            <t t-if="request.env.user.has_group('account.group_show_line_subtotals_tax_included'))"
+               t-foreach="product.sudo().taxes_id" t-as="tax">
                 <span class="badge badge-primary">
                     <span t-field="tax.description"/>
                 </span>
