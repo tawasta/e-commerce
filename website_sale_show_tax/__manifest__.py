@@ -19,20 +19,18 @@
 ##############################################################################
 
 {
-    'name': 'eCommerce: Show taxes in products',
-    'summary': 'Show taxes in product grid and product view',
-    'version': '12.0.1.0.1',
-    'category': 'Website',
-    'website': 'https://tawasta.fi',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'website_sale',
-    ],
-    'data': [
-        'views/website_sale_product_price.xml',
-        'views/website_sale_products_item.xml',
+    "name": "eCommerce: Show taxes in products",
+    "summary": "Show taxes in product grid and product view",
+    "version": "12.0.1.1.0",
+    "category": "Website",
+    "website": "https://tawasta.fi",
+    "author": "Oy Tawasta Technologies Ltd.",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["website_sale",],
+    "data": [
+        "views/website_sale_product_price.xml",
+        "views/website_sale_products_item.xml",
     ],
 }
