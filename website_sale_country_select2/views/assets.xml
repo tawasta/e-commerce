@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <template id="website_sale_country_select2_assets" name="Website Sale Country Select2 Assets" inherit_id="web.assets_frontend">
-        <xpath expr="//script[last()]" position="after">
-            <script src="/website_sale_country_select2/static/src/js/custom.js"/>
-        </xpath>
-    </template>
-</odoo>

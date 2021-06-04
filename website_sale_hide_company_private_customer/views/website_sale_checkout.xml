@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <template id="hide_company" inherit_id="website_sale.address">
-        <xpath expr="//div[contains(@t-attf-class, 'div_name')]" position="before">
-            <script type="text/javascript" src="/website_sale_hide_company_private_customer/static/src/js/custom.js?v101"></script>
-        </xpath>
-    </template>
-</odoo>
