@@ -19,20 +19,20 @@
 ##############################################################################
 
 {
-    'name': 'eCommerce - Product synopsis',
-    'summary': 'Show product synopsis in shop',
-    'version': '12.0.1.1.0',
-    'category': 'Website',
-    'website': 'https://github.com/Tawasta/e-commerce',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'website_sale',
+    "name": "eCommerce - Product synopsis",
+    "summary": "Show product synopsis in shop",
+    "version": "12.0.1.2.0",
+    "category": "Website",
+    "website": "https://github.com/Tawasta/e-commerce",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": [
+        "website_sale",
     ],
-    'data': [
-        'views/product_template.xml',
-        'views/website_product.xml',
+    "data": [
+        "views/product_template.xml",
+        "views/website_product.xml",
     ],
 }
