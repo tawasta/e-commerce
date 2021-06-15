@@ -8,4 +8,5 @@ class ProductTemplate(models.Model):
     website_synopsis = fields.Char(
         string="Website synopsis",
         help="Show product synopsis in website",
+        translate=True,
     )
