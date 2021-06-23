@@ -22,9 +22,25 @@ class SaleOrder(models.Model):
             return super()._create_invoices(grouped=grouped, final=final)
         else:
             print("======LISTALLE ON ERI YRITYKSIÄ=======")
-            # new_list = list(dict.fromkeys(companies))
+
+            company_list = list(dict.fromkeys(companies))
             # print(new_list)
-            
+            for company in company_list:
+                invoice_vals_list = []
+                print(company)
+                invoice_vals = self._prepare_invoice()
+                invoice_vals.update({
+                    "partner_bank_id": company.partner_id.bank_ids[:1].id,
+                    "company_id": company.id,
+                })
+                print(invoice_vals)
+                for line in self.order_line:
+                    if line.product_id.company_id == company:
+                        invoice_vals_list.append(line)
+                # for line in self.sale_order_line:
+                #     if line.company_id == company:
+
+
             # invoice_ids = super()._create_invoices(grouped=grouped, final=final)
             # for invoice in invoice_ids:
             #     print(invoice)
@@ -48,7 +64,6 @@ class SaleOrder(models.Model):
                 # for li in new_list:
 
             # for invoice in invoice_ids:
-
 
             # for invoice in invoice_ids:
 
