@@ -12,6 +12,6 @@ class WebsiteSaleMandatoryCompany(WebsiteSale):
     def _get_mandatory_shipping_fields(self):
         res = super()._get_mandatory_shipping_fields()
 
-        res.append("company_name")
+        # res.append("company_name")
 
         return res

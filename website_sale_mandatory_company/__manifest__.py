@@ -21,7 +21,7 @@
 {
     "name": "eCommerce Mandatory company in checkout",
     "summary": "Make company mandatory in website sale checkout",
-    "version": "12.0.1.0.0",
+    "version": "12.0.1.1.0",
     "category": "Website",
     "website": "https://github.com/Tawasta/e-commerce/",
     "author": "Tawasta",
