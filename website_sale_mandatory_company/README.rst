@@ -6,7 +6,7 @@
 eCommerce Mandatory zip code in checkout
 ========================================
 
-Make zip code mandatory in website sale checkout
+Make company mandatory in website sale checkout
 
 Configuration
 =============
