@@ -25,11 +25,7 @@ class WebsiteSale(WebsiteSale):
                 "company_ids": [(6, 0, [company_id])],
             }
             user = (
-                request.env["res.users"]
-                .with_context(no_reset_password=True)
-                .sudo()
-                .with_delay()
-                ._delayed_create_user_from_template(user_values)
+                request.env["res.users"].sudo()._create_user_from_template(user_values)
             )
 
             # Set new user as SO follower

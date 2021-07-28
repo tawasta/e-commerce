@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["queue_job", "website_sale"],
+    "depends": ["website_sale"],
     "data": ["views/website_sale_address.xml"],
 }
