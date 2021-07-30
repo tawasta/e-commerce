@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="address" name="Address Management headers" inherit_id="website_sale.address">
+        <xpath expr="(//input[@name='name']/..)" position="before">
+            <h3>User information</h3>
+            <div class="alert alert-info text-center alert-dismissible fade show from-group col-12" role="alert">
+                <p>Please provide your information here. The email will be used as your account login.</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span>&amp;times;</span>
+                </button>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@id='div_phone']" position="after">
+            <h3>Payer information</h3>
+            <div class="alert alert-info text-center alert-dismissible fade show from-group col-12" role="alert">
+                <p>If a company will pay the order, provide the company information.<br/>
+                    Otherwise just add your own address details.</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span>&amp;times;</span>
+                </button>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="address_b2b" name="Address Management company email" inherit_id="website_sale.address_b2b">
+
+        <xpath expr="(//input[@name='company_name']/..)" position="after">
+            <div t-attf-class="form-group #{error.get('company_email') and 'o_has_error' or ''} col-lg-6" id="company_email">
+                <label class="col-form-label font-weight-normal label-optional" for="company_email">Company Email</label>
+                <input type="text"
+                       name="company_email"
+                       t-attf-class="form-control #{error.get('company_email') and 'is-invalid' or ''}"
+                       t-att-value="'company_email' in checkout and checkout['company_email']"
+                       t-att-readonly="'1' if 'vat' in checkout and checkout['vat'] and not can_edit_vat else None"
+                       t-att-title="company_email if 'vat' in checkout and checkout['vat'] and not can_edit_vat else None"/>
+            </div>
+        </xpath>
+
+    </template>
+
+</odoo>
