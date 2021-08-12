@@ -59,6 +59,8 @@ class WebsiteSaleCustom(WebsiteSale):
         search_categories = False
         search_product = Product.search(domain)
         if search:
+            categories = search_product.mapped('public_categ_ids')
+            search_categories = Category.search([('id', 'parent_of', categories.ids)] + request.website.website_domain())
             categs = Category.search([('parent_id', '=', False)] + request.website.website_domain())
         else:
             categs = Category.search([('parent_id', '=', False)] + request.website.website_domain())
