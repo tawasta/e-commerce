@@ -75,8 +75,6 @@ class WebsiteSaleCustom(WebsiteSale):
                 current_category = current_category.parent_id
 
         if category and search:
-            print("======================")
-            print("===TAAAALLAAAA========")
             search_categories = Category.search([])
             categs = Category.search([('parent_id', '=', False)] + request.website.website_domain())
 
