@@ -7,4 +7,17 @@
             </li>
         </xpath>
     </template>
+
+    <template id="search" inherit_id="website_sale.search">
+        <xpath expr="//form" position="replace">
+             <form t-attf-action="/shop" method="get" t-att-class="_classes">
+                <t t-if="attrib_values">
+                    <t t-foreach="attrib_values" t-as="a">
+                        <input type="hidden" name="attrib" t-att-value="'%s-%s' % (a[0], a[1])" />
+                    </t>
+                </t>
+                <t t-call="website.website_search_box" />
+            </form>
+        </xpath>
+    </template>
 </odoo>
