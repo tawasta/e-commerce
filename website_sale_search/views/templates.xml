@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="products_categories" inherit_id="website_sale.products_categories">
+        <xpath expr="//li[contains(@class, 'nav-item')]" position="replace">
+            <li class="nav-item">
+                <a href="/shop" t-attf-class="nav-link#{'' if category else ' active'} o_not_editable">All Products</a>
+            </li>
+        </xpath>
+    </template>
+</odoo>
