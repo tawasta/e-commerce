@@ -58,7 +58,7 @@ class WebsiteSaleCustom(WebsiteSale):
         Category = request.env['product.public.category']
         search_categories = False
         search_product = Product.search(domain)
-        if search:
+        if search and not category:
             # categories = search_product.mapped('public_categ_ids')
             search_categories = Category.search([])
             categs = Category.search([('parent_id', '=', False)] + request.website.website_domain())
@@ -66,13 +66,17 @@ class WebsiteSaleCustom(WebsiteSale):
             categs = Category.search([('parent_id', '=', False)] + request.website.website_domain())
 
         parent_category_ids = []
-        if category:
+        if category and not search:
             url = "/shop/category/%s" % slug(category)
             parent_category_ids = [category.id]
             current_category = category
             while current_category.parent_id:
                 parent_category_ids.append(current_category.parent_id.id)
                 current_category = current_category.parent_id
+
+        if category and search:
+            search_categories = Category.search([])
+            categs = Category.search([('parent_id', '=', False)] + request.website.website_domain())
 
         product_count = len(search_product)
         pager = request.website.pager(url=url, total=product_count, page=page, step=ppg, scope=7, url_args=post)
