@@ -11,6 +11,8 @@
                     <page string="Payment rules" name="payment_rules">
                         <group name="payment_rule">
                             <field name="payment_only_invoice" />
+                            <field name="requires_attachment" />
+                            <field name="requires_explanation" />
                         </group>
                     </page>
                 </page>

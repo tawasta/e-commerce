@@ -32,5 +32,5 @@
         "website_sale",
         "payment_paytrail"
     ],
-    "data": ["views/templates.xml"],
+    "data": ["views/templates.xml","views/website_sale_templates.xml"],
 }

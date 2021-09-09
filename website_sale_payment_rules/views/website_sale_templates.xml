@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment" inherit_id="website_sale.payment" name="Payments rules" customize_show="True" active="True">
+        <xpath expr="//div[@id='payment_method']" position="replace">
+            <div id="payment_method" class="mt-3" t-if="(acquirers or tokens) and website_sale_order.amount_total">
+                <t t-if="need_attachment or need_exmplanation">
+                    <t t-if="need_attachment">
+                        <div class="alert alert-warning">
+                            <h5 class="mb24">You must add an attachment in order to make a payment  </h5>
+                            <div>
+                                <p>Add attachment <a class='' href='/shop/extra_info'>here</a></p>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-if="need_exmplanation">
+                        <div class="alert alert-warning">
+                            <h5 class="mb24">You must add an explanation in order to make a payment  </h5>
+                            <div>
+                                <p>Add exmplanation <a class='' href=''>here</a></p>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+                <t t-else="">
+                    <h3 class="mb24">Pay with </h3>
+                    <t t-call="payment.payment_tokens_list">
+                        <t t-set="mode" t-value="'payment'"/>
+                        <t t-set="submit_txt">Pay Now</t>
+                        <t t-set="icon_right" t-value="1"/>
+                        <t t-set="icon_class" t-value="'fa-chevron-right'"/>
+                        <t t-set="submit_class" t-value="'btn btn-primary'"/>
+                        <t t-set="pms" t-value="tokens"/>
+                        <t t-set="form_action" t-value="'/shop/payment/token'"/>
+                        <t t-set="prepare_tx_url" t-value="'/shop/payment/transaction/'"/>
+                        <t t-set="partner_id" t-value="partner"/>
+
+                        <t t-set="back_button_icon_class" t-value="'fa-chevron-left'"/>
+                        <t t-set="back_button_txt">Return to Cart</t>
+                        <t t-set="back_button_class" t-value="'btn btn-secondary'"/>
+                        <t t-set="back_button_link" t-value="'/shop/cart'"/>
+                    </t>
+                </t>
+            </div>
+        </xpath>
+    </template>
+</odoo>
