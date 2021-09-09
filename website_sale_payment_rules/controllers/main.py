@@ -25,6 +25,8 @@ class WebsiteSale(WebsiteSale):
         result = all(element == companies[0] for element in companies)
         if not result:
             only_invoice = True
+        if result:
+            company_id = companies[0]
 
         if check_attachment:
             if order.message_attachment_count <= 1:
@@ -38,7 +40,14 @@ class WebsiteSale(WebsiteSale):
                 ['|', ('website_id', '=', False), ('website_id', '=', request.website.id)],
                 ['|', ('country_ids', '=', False), ('country_ids', 'in', [order.partner_id.country_id.id])]
             ])
-            acquirers = request.env['payment.acquirer'].search(domain)
-            values['acquirers'] = acquirers
+            
+        else:
+            domain = expression.AND([
+                [('state', 'in', ['enabled', 'test']), ('company_id', '=', company_id.id)],
+                ['|', ('website_id', '=', False), ('website_id', '=', request.website.id)],
+                ['|', ('country_ids', '=', False), ('country_ids', 'in', [order.partner_id.country_id.id])]
+            ])
+        acquirers = request.env['payment.acquirer'].search(domain)
+        values['acquirers'] = acquirers
 
         return values
