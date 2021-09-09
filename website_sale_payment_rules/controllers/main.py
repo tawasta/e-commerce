@@ -27,7 +27,7 @@ class WebsiteSale(WebsiteSale):
             only_invoice = True
 
         if check_attachment:
-            if order.message_attachment_count >= 1:
+            if order.message_attachment_count <= 1:
                 values.update({"need_attachment": True})
         if check_explanation:
             values.update({"need_explanation": True})
