@@ -3,25 +3,23 @@
     <template id="payment" inherit_id="website_sale.payment" name="Payments rules" customize_show="True" active="True">
         <xpath expr="//div[@id='payment_method']" position="replace">
             <div id="payment_method" class="mt-3" t-if="(acquirers or tokens) and website_sale_order.amount_total">
-                <t t-if="need_attachment or need_exmplanation">
-                    <t t-if="need_attachment">
-                        <div class="alert alert-warning">
-                            <h5 class="mb24">You must add an attachment in order to make a payment  </h5>
-                            <div>
-                                <p>Add attachment <a class='' href='/shop/extra_info'>here</a></p>
-                            </div>
+                <t t-if="need_attachment">
+                    <div class="alert alert-warning">
+                        <h5 class="mb24">You must add an attachment in order to make a payment  </h5>
+                        <div>
+                            <p>Add attachment <a class='' href='/shop/extra_info'>here</a></p>
                         </div>
-                    </t>
-                    <t t-if="need_exmplanation">
-                        <div class="alert alert-warning">
-                            <h5 class="mb24">You must add an explanation in order to make a payment  </h5>
-                            <div>
-                                <p>Add exmplanation <a class='' href=''>here</a></p>
-                            </div>
-                        </div>
-                    </t>
+                    </div>
                 </t>
-                <t t-else="">
+                <t t-if="need_explanation">
+                    <div class="alert alert-warning">
+                        <h5 class="mb24">You must add an explanation in order to make a payment  </h5>
+                        <div>
+                            <p>Add explanation <a class='' href='/shop/extra_info'>here</a></p>
+                        </div>
+                    </div>
+                </t>
+                <t t-if="not need_attachment and not need_explanation">
                     <h3 class="mb24">Pay with </h3>
                     <t t-call="payment.payment_tokens_list">
                         <t t-set="mode" t-value="'payment'"/>

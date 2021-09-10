@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import http
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 from odoo.http import request
@@ -32,7 +31,8 @@ class WebsiteSale(WebsiteSale):
             if order.message_attachment_count <= 1:
                 values.update({"need_attachment": True})
         if check_explanation:
-            values.update({"need_explanation": True})
+            if not order.note:
+                values.update({"need_explanation": True})
 
         if only_invoice:
             domain = expression.AND([
