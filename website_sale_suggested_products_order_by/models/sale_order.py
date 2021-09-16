@@ -53,6 +53,6 @@ class SaleOrder(models.Model):
         records = self.env["product.product"]
         for record in res:
             records += self.env["product.product"].browse(record.id)
-        return list(records.sorted(key=lambda r: r.default_code))
+        return list(records.sorted())
 
     # 8. Business methods
