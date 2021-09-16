@@ -28,7 +28,7 @@ class WebsiteSale(WebsiteSale):
             company_id = companies[0]
 
         if check_attachment:
-            if order.message_attachment_count <= 1:
+            if order.message_attachment_count < 1:
                 values.update({"need_attachment": True})
         if check_explanation:
             if not order.note:
