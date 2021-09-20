@@ -21,9 +21,10 @@ class WebsiteSale(WebsiteSale):
                 check_attachment = True
             if line.product_id.requires_explanation:
                 check_explanation = True
-            if line.product_id.required_product_category_id:
-                check_category_product = True
-                product_categ_list.append(line.product_id.required_product_category_id)
+            if request.env.user.id == request.env.ref('base.public_user').id:
+                if line.product_id.required_product_category_id:
+                    check_category_product = True
+                    product_categ_list.append(line.product_id.required_product_category_id)
             companies.append(line.product_id.company_id)
 
         result = all(element == companies[0] for element in companies)
