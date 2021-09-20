@@ -6,6 +6,10 @@
 Website Sale - Payment rules
 ============================
 
+* Payment by invoice only
+* Product requires an attachment
+* Product requires an explanation
+* Checks whether the company for all products is the same and the payment method is displayed accordingly.
 
 Configuration
 =============
