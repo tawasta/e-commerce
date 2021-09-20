@@ -6,6 +6,7 @@
 Website Sale - Split name
 =========================
 
+* The eCommerce form name field is changed to first name, last name
 
 Configuration
 =============
