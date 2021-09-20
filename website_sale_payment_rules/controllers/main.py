@@ -11,6 +11,8 @@ class WebsiteSale(WebsiteSale):
         only_invoice = False
         check_attachment = False
         check_explanation = False
+        check_category_product= False
+        product_categ_list = []
         companies = []
         for line in order.order_line:
             if line.product_id.payment_only_invoice:
@@ -19,6 +21,9 @@ class WebsiteSale(WebsiteSale):
                 check_attachment = True
             if line.product_id.requires_explanation:
                 check_explanation = True
+            if line.product_id.required_product_category_id:
+                check_category_product = True
+                product_categ_list.append(line.product_id.required_product_category_id)
             companies.append(line.product_id.company_id)
 
         result = all(element == companies[0] for element in companies)
@@ -26,6 +31,15 @@ class WebsiteSale(WebsiteSale):
             only_invoice = True
         if result:
             company_id = companies[0]
+
+        if check_category_product:
+            for product_line in order.order_line:
+                for p_categ_id in product_line.product_id.public_categ_ids:
+                    if p_categ_id in product_categ_list:
+                        product_categ_list.remove(p_categ_id)
+            if product_categ_list:
+                values.update({"product_categ_list": product_categ_list})
+
 
         if check_attachment:
             if order.message_attachment_count < 1:

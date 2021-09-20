@@ -10,5 +10,7 @@ class ProductTemplate(models.Model):
 
     requires_explanation = fields.Boolean("Requires an explanation")
 
+    required_product_category_id = fields.Many2one(string="Required product category", comodel_name="product.public.category")
+
     company_id = fields.Many2one(
         'res.company', 'Company', index=1, required=True)

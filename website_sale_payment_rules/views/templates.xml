@@ -13,6 +13,7 @@
                             <field name="payment_only_invoice" />
                             <field name="requires_attachment" />
                             <field name="requires_explanation" />
+                            <field name="required_product_category_id" />
                         </group>
                     </page>
                 </page>
