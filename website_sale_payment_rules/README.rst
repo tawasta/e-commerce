@@ -11,6 +11,7 @@ Website Sale - Payment rules
 * Product requires an explanation
 * Checks whether the company for all products is the same and the payment method is displayed accordingly.
 * Product field required
+* Required product category
 
 Configuration
 =============
