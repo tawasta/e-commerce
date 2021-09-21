@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Extra Step Content to SO note",
-    "summary": "Extra Step Content to SO note",
+    "name": "Payment Acquirer - Force Autoconfirm Option",
+    "summary": "Autoconfirm SO regardless of payment transaction state",
     "version": "14.0.1.0.0",
-    "category": "eCommerce",
+    "category": "Invoicing & Payments",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale"],
-    "data": ["views/website_extra_info.xml"],
+    "depends": ["website_portal_sale"],
+    "data": [],
 }
