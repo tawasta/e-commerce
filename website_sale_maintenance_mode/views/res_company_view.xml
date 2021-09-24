@@ -7,10 +7,10 @@
         <field name="arch" type="xml">
             <xpath expr="//notebook[last()]" position="after">
                 <group
-          string="Shop maintenance"
-          name="shop_maintenance"
-          groups="base.group_no_one"
-        >
+                    string="Shop maintenance"
+                    name="shop_maintenance"
+                    groups="base.group_no_one"
+                >
                     <field name="website_sale_maintenance_text" />
                 </group>
             </xpath>
