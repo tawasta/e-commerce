@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2021 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,19 +19,19 @@
 ##############################################################################
 
 {
-    "name": "Website sale payment rules",
-    "summary": "Website sale payment rules",
+    "name": "eCommerce: Fiscal position in cart confirmation",
+    "summary": "Show fiscal position when confirming a sale",
     "version": "14.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
-    "author": "Tawasta",
+    "author": "Oy Tawasta Technologies Ltd.",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "depends": [
         "website_sale",
-        "payment_paytrail",
-        "website_sale_extra_step_content_to_sale_order_note",
     ],
-    "data": ["views/templates.xml", "views/website_sale_templates.xml"],
+    "data": [
+        "views/website_sale_payment.xml",
+    ],
 }

@@ -1,8 +1,8 @@
-from odoo import api, fields, models, _
+from odoo import fields, models
 
 
 class ProductTemplate(models.Model):
-    _inherit = 'product.template'
+    _inherit = "product.template"
 
     payment_only_invoice = fields.Boolean("Payment by invoice only")
 
@@ -10,7 +10,8 @@ class ProductTemplate(models.Model):
 
     requires_explanation = fields.Boolean("Requires an explanation")
 
-    required_product_category_id = fields.Many2one(string="Required product category", comodel_name="product.public.category")
+    required_product_category_id = fields.Many2one(
+        string="Required product category", comodel_name="product.public.category"
+    )
 
-    company_id = fields.Many2one(
-        'res.company', 'Company', index=1, required=True)
+    company_id = fields.Many2one("res.company", "Company", index=1, required=True)

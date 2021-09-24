@@ -2,16 +2,12 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==========================
-Website Sale Multi Company
-==========================
+===========================
+eCommerce tax in cart lines
+===========================
 
-Website Sale Multi Company
+eCommerce tax in cart lines
 
-Installation
-============
-
-Install the module form Settings->Local Modules
 
 Configuration
 =============
@@ -31,7 +27,7 @@ Credits
 Contributors
 ------------
 
-* Valtteri Lattu <valtteri.lattu@tawasta.fi>
+* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 
 Maintainer
 ----------
