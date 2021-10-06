@@ -31,4 +31,3 @@
     "depends": ["sale_stock"],
     "data": ["views/website_sale_stock_templates.xml"],
 }
-
