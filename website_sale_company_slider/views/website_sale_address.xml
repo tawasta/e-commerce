@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="address_b2b" inherit_id="website_sale.address_b2b">
+        <xpath expr="//label[@for='vat']" position="replace">
+            <label
+                for="vat"
+                class="col-form-label label-optional"
+            >Business id / VAT</label>
+        </xpath>
+
+        <!-- Slider to show whether customer is private or company -->
+        <xpath expr="(//input[@name='name']/..)" position="before">
+            <t t-if="mode[1] != 'shipping'">
+                <div id="is_company_div" class="col-lg-12 slider-div">
+                    <label
+                        for="company"
+                        id="is_company_label_false"
+                        class="switch-label text-muted"
+                    >Private customer</label>
+                    <label class="switch">
+                        <input
+                            type="checkbox"
+                            name="company"
+                            id="company"
+                            t-att-checked="'is_company' in checkout and checkout['is_company']"
+                        />
+                        <div class="slider round" />
+                    </label>
+                    <label
+                        for="company"
+                        id="is_company_label_true"
+                        class="switch-label text-muted"
+                    >Company / Organization</label>
+
+                    <div id="company-toggle" class="alert alert-success">
+                        <div
+                            id="is_company_info"
+                            class="show-company"
+                        >My company/organization is paying</div>
+                        <div
+                            id="not_is_company_info"
+                            class="hide-company"
+                        >I am paying myself</div>
+                    </div>
+                </div>
+            </t>
+            <input
+                type="hidden"
+                name="fi_country_id"
+                id="fi_country_id"
+                t-att-value="request.env.ref('base.fi').id"
+            />
+            <div class="clearfix" />
+
+        </xpath>
+    </template>
+</odoo>

@@ -1,6 +1,6 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
+#    Author: Tawasta
 #    Copyright 2018- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,19 +19,15 @@
 ##############################################################################
 
 {
-    "name": "eCommerce tax in cart lines",
-    "summary": "eCommerce tax in cart lines",
-    "version": "14.0.1.0.0",
+    "name": "EDI code to website sale",
+    "summary": "Adds EDI code to website checkout form",
+    "version": "14.0.1.4.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "website_sale",
-    ],
-    "data": [
-        "views/website_sale_cart_lines.xml",
-    ],
+    "depends": ["l10n_fi_edicode", "website_sale"],
+    "data": ["views/assets.xml", "views/website_sale_checkout.xml"],
 }

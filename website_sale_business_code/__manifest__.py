@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2018- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Tawasta
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "eCommerce tax in cart lines",
-    "summary": "eCommerce tax in cart lines",
+    "name": "Finnish Business code to website sale",
+    "summary": "Adds Finnish Business code to website checkout form",
     "version": "14.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
@@ -29,9 +29,9 @@
     "application": False,
     "installable": True,
     "depends": [
+        "l10n_fi_business_code",
         "website_sale",
+        "website_sale_autocreate_company",
     ],
-    "data": [
-        "views/website_sale_cart_lines.xml",
-    ],
+    "data": ["views/website_sale_checkout.xml"],
 }

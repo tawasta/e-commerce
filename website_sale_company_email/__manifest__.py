@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2018- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Tawasta
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "eCommerce tax in cart lines",
-    "summary": "eCommerce tax in cart lines",
+    "name": "eCommerce: Separate email for company in address management",
+    "summary": "Add different emails for ecommerce user and company",
     "version": "14.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
@@ -28,10 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "website_sale",
-    ],
-    "data": [
-        "views/website_sale_cart_lines.xml",
-    ],
+    "depends": ["website_sale"],
+    "data": ["views/website_sale_address.xml"],
 }

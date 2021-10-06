@@ -1,6 +1,6 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
+#    Author: Tawasta
 #    Copyright 2018- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,9 +19,9 @@
 ##############################################################################
 
 {
-    "name": "eCommerce tax in cart lines",
-    "summary": "eCommerce tax in cart lines",
-    "version": "14.0.1.0.0",
+    "name": "Website Sale Company Slider",
+    "summary": "Slider to checkout",
+    "version": "14.0.1.2.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
@@ -30,8 +30,12 @@
     "installable": True,
     "depends": [
         "website_sale",
+        "website_sale_business_code",
+        "website_sale_company_email",
+        "website_sale_edicode",
     ],
     "data": [
-        "views/website_sale_cart_lines.xml",
+        "views/assets.xml",
+        "views/website_sale_address.xml",
     ],
 }
