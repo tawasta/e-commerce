@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Tawasta
+#    Copyright 2018- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,23 @@
 ##############################################################################
 
 {
-    "name": "Hide Delivery Orders Snippet",
-    "summary": "Hide Delivery Orders Snippet",
-    "version": "14.0.1.0.0",
+    "name": "Website Sale Company Slider",
+    "summary": "Slider to checkout",
+    "version": "14.0.1.2.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale_stock"],
-    "data": ["views/website_sale_stock_templates.xml"],
+    "depends": [
+        "website_sale",
+        "website_sale_business_code",
+        "website_sale_company_email",
+        "website_sale_edicode",
+    ],
+    "data": [
+        "views/assets.xml",
+        "views/website_sale_address.xml",
+    ],
 }
