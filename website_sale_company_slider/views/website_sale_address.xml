@@ -50,6 +50,7 @@
                 id="fi_country_id"
                 t-att-value="request.env.ref('base.fi').id"
             />
+
             <div class="clearfix" />
 
         </xpath>

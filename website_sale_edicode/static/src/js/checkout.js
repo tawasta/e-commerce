@@ -7,7 +7,12 @@ odoo.define("website_sale_edicode.checkout", function (require) {
         });
 
         function toggleEdicode() {
-            var company = $("input[name=company_name]").val().length != 0;
+            var company_name = $("input[name=company_name]");
+            if(company_name.length == 0){
+                return;
+            }
+
+            var company = company_name.val().length != 0;
             var speed = "slow";
 
             if (company) {

@@ -2,7 +2,12 @@ odoo.define("website_sale_company_slider.checkout", function (require) {
     "use strict";
 
     $(function () {
-        const REQUIRED_FIELDS_DEFAULT = $("input[name='field_required']").val();
+        var field_required = $("input[name='field_required']");
+        const REQUIRED_FIELDS_DEFAULT = null;
+
+        if(field_required.length > 0){
+            const REQUIRED_FIELDS_DEFAULT = field_required.val();
+        }
 
         function showFields() {
             var is_company = $("#company").is(":checked");
