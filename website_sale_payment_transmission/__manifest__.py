@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Hide Delivery Orders Snippet",
-    "summary": "Hide Delivery Orders Snippet",
+    "name": "Invoice Transmit Method and Payment Terms for Website SO print",
+    "summary": "Invoice Transmit Method and Payment Terms for Website SO print",
     "version": "14.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
@@ -28,6 +28,10 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale_stock"],
-    "data": ["views/website_sale_stock_templates.xml"],
+    "depends": [
+        "account_invoice_transmit_method",
+        "sale_commercial_partner",
+        "sale_stock",
+    ],
+    "data": ["views/orders_followup.xml"],
 }
