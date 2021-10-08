@@ -12,8 +12,10 @@ odoo.define("website_sale_company_slider.checkout", function (require) {
         function showFields() {
             var is_company = $("#company").is(":checked");
             var required_fields = $("input[name='field_required']");
-            // Reset required fields set
-            required_fields.val(REQUIRED_FIELDS_DEFAULT);
+            if(required_fields.length > 0){
+                // Reset required fields set
+                required_fields.val(REQUIRED_FIELDS_DEFAULT);
+            }
 
             // Company customer
             $("label[id='is_company_label_true']").toggleClass(
@@ -65,9 +67,11 @@ odoo.define("website_sale_company_slider.checkout", function (require) {
                     );
                 }
             } else {
-                required_fields.val(
-                    required_fields.val().replace(",company_name,company_email,vat", "")
-                );
+                if(required_fields.length > 0){
+                    required_fields.val(
+                        required_fields.val().replace(",company_name,company_email,vat", "")
+                    );
+                }
             }
         }
 
