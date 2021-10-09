@@ -7,5 +7,5 @@ class WebsiteSale(WebsiteSale):
         Add edicode and operator to saved values
         """
         checkout["edicode"] = all_values.get("edicode", "")
-        checkout["einvoice_operator"] = all_values.get("einvoice_operator", "")
+        checkout["einvoice_operator_id"] = all_values.get("einvoice_operator_id", "")
         return super(WebsiteSale, self)._checkout_form_save(mode, checkout, all_values)

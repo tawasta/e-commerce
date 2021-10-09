@@ -27,7 +27,7 @@
             <div
                 id="einvoice-operator-div"
                 style="display: none;"
-                t-attf-class="form-group #{error.get('einvoice_operator') and 'has-error' or ''} col-lg-6 div_einvoice_operator show-company"
+                t-attf-class="form-group #{error.get('einvoice_operator_id') and 'has-error' or ''} col-lg-6 div_einvoice_operator show-company"
             >
                 <t
                     t-set="operators"
@@ -35,18 +35,18 @@
                 />
                 <label
                     class="col-form-label label-optional"
-                    for="einvoice_operator"
+                    for="einvoice_operator_id"
                 >eInvoice Operator</label>
                 <select
                     id="einvoice-operator-select"
                     class="form-control einvoice_operator-select select2"
-                    name="einvoice_operator"
+                    name="einvoice_operator_id"
                 >
                     <option />
                     <t t-foreach="operators" t-as="op">
                         <option
                             t-att-value="op.id"
-                            t-att-selected="op == ('einvoice_operator' in checkout and checkout['einvoice_operator'])"
+                            t-att-selected="op == ('einvoice_operator_id' in checkout and checkout['einvoice_operator_id'])"
                         >
                             <span t-esc="op.name" /> (<span t-esc="op.identifier" />)
                         </option>
