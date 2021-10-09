@@ -11,7 +11,7 @@ class ResPartner(models.Model):
             if not self.parent_id.edicode:
                 self.parent_id.edicode = self.edicode
 
-            if not self.parent_id.einvoice_operator:
-                self.parent_id.einvoice_operator = self.einvoice_operator
+            if not self.parent_id.einvoice_operator_id:
+                self.parent_id.einvoice_operator_id = self.einvoice_operator_id
 
         return res
