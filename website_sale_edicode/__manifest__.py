@@ -19,9 +19,9 @@
 ##############################################################################
 
 {
-    "name": "EDI code to website sale",
+    "name": "Website Sale Edicode",
     "summary": "Adds EDI code to website checkout form",
-    "version": "14.0.1.4.4",
+    "version": "14.0.1.4.5",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
