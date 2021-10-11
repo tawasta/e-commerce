@@ -33,6 +33,7 @@ Contributors
 
 * Aleksi Savijoki <aleksi.savijoki@tawasta.fi>
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Miika Nissi <miika.nissi@tawasta.fi>
 
 Maintainer
 ----------
