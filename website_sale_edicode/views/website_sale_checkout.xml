@@ -37,8 +37,7 @@
     </template>
     <template id="address_kanban_edicode" inherit_id="website_sale.address_kanban">
         <xpath expr="//t[@t-esc='contact']" position="after">
-            <t t-if="contact.edicode">
-                <t t-esc="contact.edicode"/>
+            <t t-if="contact.edicode and contact.einvoice_operator_id"><t t-esc="contact.edicode"/> (<t t-esc="contact.einvoice_operator_id.name"/>)
             </t>
         </xpath>
     </template>
