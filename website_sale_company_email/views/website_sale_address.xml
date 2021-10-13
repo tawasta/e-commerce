@@ -9,6 +9,7 @@
         <xpath expr="(//input[@name='name']/..)" position="before">
             <h3>User information</h3>
             <div
+                t-if="mode == ('new', 'billing')"
                 class="alert alert-info text-center alert-dismissible fade show from-group col-12"
                 role="alert"
                 id="user-information-alert"
@@ -32,6 +33,7 @@
                 class="alert alert-info text-center alert-dismissible fade show from-group col-12"
                 role="alert"
                 id="payer-information-alert"
+                t-if="mode == ('new', 'billing')"
             >
                 <p>If a company will pay the order, provide the company information.<br
                     />

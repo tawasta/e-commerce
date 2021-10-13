@@ -11,6 +11,8 @@ odoo.define("website_sale_company_slider.checkout", function (require) {
 
         function showFields() {
             var is_company = $("#company").is(":checked");
+            console.log("Company");
+            console.log(is_company);
             var required_fields = $("input[name='field_required']");
             if(required_fields.length > 0){
                 // Reset required fields set
