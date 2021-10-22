@@ -17,7 +17,7 @@
                     <div class="alert alert-warning">
                         <h5
                             class="mb24"
-                        >You must add an attachment in order to make a payment  </h5>
+                        ><t t-raw="website.add_attachment_text"/>  </h5>
                         <div>
                             <p>Add attachment <a
                                     class=''
@@ -30,7 +30,7 @@
                     <div class="alert alert-warning">
                         <h5
                             class="mb24"
-                        >You must add an explanation in order to make a payment  </h5>
+                        ><t t-raw="website.add_explanation_text"/>  </h5>
                         <div>
                             <p>Add explanation <a
                                     class=''
@@ -44,7 +44,7 @@
                         <div class="alert alert-warning">
                             <h5
                                 class="mb24"
-                            >Because of the products in your shopping cart, you still need to purchase more products to complete the payment transaction </h5>
+                            ><t t-raw="website.product_categ_text"/> </h5>
                             <div>
                                 <p>Buy a product from this <a
                                         class=''
