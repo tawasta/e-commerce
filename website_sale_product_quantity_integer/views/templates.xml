@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="cart_summary_product_integer" inherit_id="website_sale.cart_summary">
+        <xpath expr="//tbody//tr//td[@class='td-qty']//div" position="attributes">
+            <attribute name="t-esc">int(line.product_uom_qty)</attribute>
+            <attribute name="style">text-align: center;</attribute>
+        </xpath>
+    </template>
+</odoo>
