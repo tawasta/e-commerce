@@ -5,6 +5,15 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
 class WebsiteSale(WebsiteSale):
+
+    def _get_mandatory_billing_fields(self):
+        # deprecated for _get_mandatory_fields_billing which handle zip/state required
+        return ["name", "email", "street", "city", "country_id", "firstname", "lastname"]
+
+    def _get_mandatory_shipping_fields(self):
+        # deprecated for _get_mandatory_fields_shipping which handle zip/state required
+        return ["name", "street", "city", "country_id", "firstname", "lastname"]
+
     @http.route()
     def address(self, **kw):
         if "submitted" in kw:
