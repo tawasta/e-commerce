@@ -51,6 +51,15 @@ odoo.define("website_sale_company_slider.checkout", function (require) {
 
             // Toggle field visibility by customer type
             $("input[name='company_name']").parent().toggleClass("d-none", !is_company);
+            if (!is_company) {
+                $("input[name='company_name']").val("");
+                $("input[name='company_email']").val("");
+                $("input[name='vat']").val("");
+                $("input[name='edicode']").val("");
+                $("#einvoice-operator-select").select2("val", "");
+
+            }
+
             $("input[name='company_email']")
                 .parent()
                 .toggleClass("d-none", !is_company);
