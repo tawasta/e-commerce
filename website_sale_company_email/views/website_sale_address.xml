@@ -7,7 +7,7 @@
         inherit_id="website_sale.address"
     >
         <xpath expr="(//input[@name='name']/..)" position="before">
-            <h3>User information</h3>
+            <h3 class="col-12">User information</h3>
             <div
                 t-if="mode == ('new', 'billing')"
                 class="alert alert-info text-center alert-dismissible fade show from-group col-12"
@@ -28,7 +28,7 @@
         </xpath>
 
         <xpath expr="//div[@id='div_phone']" position="after">
-            <h3 t-if="mode == ('new', 'billing')">Payer information</h3>
+            <h3 t-if="mode == ('new', 'billing')" class="col-12">Payer information</h3>
             <div
                 class="alert alert-info text-center alert-dismissible fade show from-group col-12"
                 role="alert"
