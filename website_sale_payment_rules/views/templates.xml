@@ -14,6 +14,7 @@
                             <field name="requires_attachment" />
                             <field name="requires_explanation" />
                             <field name="required_product_category_id" />
+                            <field name="change_allowed" />
                         </group>
                     </page>
                 </page>
