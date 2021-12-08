@@ -15,3 +15,5 @@ class ProductTemplate(models.Model):
     )
 
     company_id = fields.Many2one("res.company", "Company", index=1, required=True)
+
+    change_allowed = fields.Boolean(string="Change allowed", default=False)
