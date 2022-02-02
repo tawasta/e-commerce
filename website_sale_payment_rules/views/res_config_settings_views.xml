@@ -39,6 +39,16 @@
                                 <field name="website_sale_required_product_categ_text"/>
                             </div>
                         </div>
+                        <div class="o_setting_right_pane">
+                            <div class="text-muted">
+                                Need company data text
+                            </div>
+                        </div>
+                        <div class="content-group">
+                            <div class="mt8">
+                                <field name="website_sale_add_company_info_text"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

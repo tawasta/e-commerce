@@ -8,12 +8,16 @@ class WebsiteSale(WebsiteSale):
     def _get_shop_payment_values(self, order, **kwargs):
         values = super(WebsiteSale, self)._get_shop_payment_values(order, **kwargs)
         only_invoice = False
+        need_company_info = False
         check_attachment = False
         check_explanation = False
         check_category_product = False
         product_categ_list = []
         companies = []
         for line in order.order_line:
+            if line.product_id.membership_type == 'company':
+                if not order.partner_id.parent_id:
+                    need_company_info = True
             if line.product_id.payment_only_invoice:
                 only_invoice = True
             if line.product_id.requires_attachment:
@@ -48,6 +52,8 @@ class WebsiteSale(WebsiteSale):
         if check_explanation:
             if not order.note:
                 values.update({"need_explanation": True})
+        if need_company_info:
+            values.update({"need_company_info": True})
 
         if only_invoice:
             domain = expression.AND(
