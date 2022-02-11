@@ -11,7 +11,7 @@
         <xpath expr="(//select[@name='state_id']/..)" position="after">
            <t t-set="privacies" t-value="request.env['privacy.activity'].sudo().search([('default_in_website_sale', '=', True)])" />
            <t t-if="privacies">
-                <t t-if="mode == ('new', 'billing') and not only_services">
+                <t t-if="mode == ('new', 'billing')">
                     <t t-foreach="privacies" t-as="p">
                         <div class="form-group col-md-6">
                             <input type="checkbox" t-attf-name="privacy_#{str(p.id)}"/>
