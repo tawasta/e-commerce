@@ -10,3 +10,5 @@ class ResConfigSettings(models.TransientModel):
     website_sale_add_attachment_text = fields.Html(string="Website sale: add an attachment", related="website_id.add_attachment_text", readonly=False, translate=True)
 
     website_sale_required_product_categ_text = fields.Html(string="Website sale: Required product category text", related="website_id.product_categ_text", readonly=False, translate=True)
+
+    website_sale_add_company_info_text = fields.Html(string="Website sale: need company data", related="website_id.company_info_text", readonly=False, translate=True)
