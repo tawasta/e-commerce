@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
+#    Copyright 2022- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,16 +18,40 @@
 #
 ##############################################################################
 
-{
-    "name": "Website Sale Suggested Products Order By",
-    "summary": "Order suggested products using sequence_variant",
-    "version": "14.0.1.0.1",
-    "category": "eCommerce",
-    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
-    "author": "Tawasta",
-    "license": "AGPL-3",
-    "application": False,
-    "installable": True,
-    "depends": ["website_sale"],
-    "data": ["views/product_views.xml"],
-}
+# 1. Standard library imports:
+
+# 2. Known third party imports:
+
+# 3. Odoo imports (openerp):
+from odoo import fields, models
+
+# 4. Imports from Odoo modules:
+
+# 5. Local imports in the relative form:
+
+# 6. Unknown third party imports:
+
+
+class ProductProduct(models.Model):
+    # 1. Private attributes
+    _inherit = "product.product"
+    _order = "sequence_variant, default_code, name, id"
+
+    # 2. Fields declaration
+    sequence_variant = fields.Integer(
+        "Sequence Variant",
+        default=1,
+        help="Gives the sequence order when displaying a product variant list",
+    )
+
+    # 3. Default methods
+
+    # 4. Compute and search fields, in the same order that fields declaration
+
+    # 5. Constraints and onchanges
+
+    # 6. CRUD methods
+
+    # 7. Action methods
+
+    # 8. Business methods
