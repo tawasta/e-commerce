@@ -5,7 +5,7 @@
 ========================================
 Website Sale Suggested Products Order By
 ========================================
-* Order suggested products based on default_code
+* Order suggested products based on sequence_variant
 
 Configuration
 =============
