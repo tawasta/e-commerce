@@ -1,5 +1,6 @@
 from odoo.http import request
 from odoo.osv import expression
+from odoo import http
 
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
@@ -100,3 +101,36 @@ class WebsiteSale(WebsiteSale):
         values["acquirers"] = acquirers
 
         return values
+
+    @http.route()
+    def payment_confirmation(self, **post):
+        sale_order_id = request.session.get('sale_last_order_id')
+        company_id = False
+        if sale_order_id:
+            order = request.env['sale.order'].sudo().browse(sale_order_id)
+            companies = []
+            for line in order.order_line:
+                companies.append(line.product_id.company_id)
+
+            result = all(element == companies[0] for element in companies)
+
+            if result:
+                company_id = companies[0]
+            else:
+                company_id = request.env['res.company']._get_main_company()
+
+            warehouse_id = request.env.user.with_company(company_id.id)._get_default_warehouse_id().id
+            fiscal_position_id = request.env['account.fiscal.position'].sudo().with_company(company_id.id).get_fiscal_position(order.partner_id.id, order.partner_shipping_id.id)
+            if order.company_id != company_id:
+                order.sudo().write({
+                    'company_id': company_id,
+                    'fiscal_position_id': fiscal_position_id.id,
+                    'warehouse_id': warehouse_id,
+                })
+            # vals = {
+            #     'company_id': company_id
+            # }
+
+            # vals = order.sudo().play_onchanges(vals, ['company_id'])
+
+        return super(WebsiteSale, self).payment_confirmation(**post)
