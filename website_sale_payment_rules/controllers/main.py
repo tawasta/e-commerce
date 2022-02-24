@@ -102,44 +102,39 @@ class WebsiteSale(WebsiteSale):
 
         return values
 
-    # @http.route()
-    # def payment_confirmation(self, **post):
-    #     sale_order_id = request.session.get('sale_last_order_id')
-    #     company_id = False
-    #     if sale_order_id:
-    #         order = request.env['sale.order'].sudo().browse(sale_order_id)
-    #         companies = []
-    #         for line in order.order_line:
-    #             companies.append(line.product_id.company_id)
+    @http.route()
+    def payment_confirmation(self, **post):
+        sale_order_id = request.session.get('sale_last_order_id')
+        company_id = False
+        if sale_order_id:
+            order = request.env['sale.order'].sudo().browse(sale_order_id)
+            companies = []
+            for line in order.order_line:
+                companies.append(line.product_id.company_id)
 
-    #         result = all(element == companies[0] for element in companies)
+            result = all(element == companies[0] for element in companies)
 
-    #         if result:
-    #             company_id = companies[0]
-    #         else:
-    #             company_id = request.env['res.company']._get_main_company()
+            if result:
+                company_id = companies[0]
+            else:
+                company_id = request.env['res.company']._get_main_company()
 
-    #         warehouse_id = request.env.user.with_company(company_id.id)._get_default_warehouse_id().id
-    #         fiscal_position_id = request.env['account.fiscal.position'].sudo().with_company(company_id.id).get_fiscal_position(order.partner_invoice_id.id, order.partner_shipping_id.id)
-    #         print(fiscal_position_id)
-    #         if order.company_id != company_id:
-    #             order.sudo().write({
-    #                 'company_id': company_id,
-    #                 'fiscal_position_id': fiscal_position_id.id,
-    #                 'warehouse_id': warehouse_id,
-    #             })
+            if order.company_id != company_id:
+                warehouse_id = request.env.user.with_company(company_id.id)._get_default_warehouse_id().id
+                fiscal_position_id = request.env['account.fiscal.position'].sudo().with_company(company_id.id).get_fiscal_position(order.partner_id.id, order.partner_shipping_id.id)
+                print(fiscal_position_id)
+                order.sudo().write({
+                    'company_id': company_id,
+                    'fiscal_position_id': fiscal_position_id.id,
+                    'warehouse_id': warehouse_id,
+                })
 
-    #             # for order_line in order.order_line:
-    #             #     order_line = order_line.with_company(company_id)
-    #             #     fpos = order_line.order_id.fiscal_position_id or order_line.order_id.fiscal_position_id.get_fiscal_position(order_line.order_partner_id.id)
-    #             #     # If company_id is set, always filter taxes by the company
-    #             #     taxes = line.product_id.taxes_id.filtered(lambda t: t.company_id == line.env.company)
-    #             #     line.tax_id = fpos.map_tax(taxes, line.product_id, line.order_id.partner_shipping_id)
-    #             # order.order_line._compute_tax_id()
-    #         # vals = {
-    #         #     'company_id': company_id
-    #         # }
+                for order_line in order.order_line:
+                    order_line = order_line.with_company(company_id)
+                    fpos = order_line.order_id.fiscal_position_id or order_line.order_id.fiscal_position_id.get_fiscal_position(order_line.order_partner_id.id)
+                    # If company_id is set, always filter taxes by the company
+                    taxes = line.product_id.taxes_id.filtered(lambda t: t.company_id == line.env.company)
+                    tax_id = fpos.map_tax(taxes, line.product_id, line.order_id.partner_shipping_id)
+                    order_line.sudo().write({'tax_id': tax_id})
 
-    #         # vals = order.sudo().play_onchanges(vals, ['company_id'])
-
-    #     return super(WebsiteSale, self).payment_confirmation(**post)
+        return super(WebsiteSale, self).payment_confirmation(**post)
