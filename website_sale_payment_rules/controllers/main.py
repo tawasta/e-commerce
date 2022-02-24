@@ -122,19 +122,11 @@ class WebsiteSale(WebsiteSale):
             if order.company_id != company_id:
                 warehouse_id = request.env.user.with_company(company_id.id)._get_default_warehouse_id().id
                 fiscal_position_id = request.env['account.fiscal.position'].sudo().with_company(company_id.id).get_fiscal_position(order.partner_id.id, order.partner_shipping_id.id)
-                print(fiscal_position_id)
+
                 order.sudo().write({
                     'company_id': company_id,
                     'fiscal_position_id': fiscal_position_id.id,
                     'warehouse_id': warehouse_id,
                 })
-
-                for order_line in order.order_line:
-                    order_line = order_line.with_company(company_id)
-                    fpos = order_line.order_id.fiscal_position_id or order_line.order_id.fiscal_position_id.get_fiscal_position(order_line.order_partner_id.id)
-                    # If company_id is set, always filter taxes by the company
-                    taxes = line.product_id.taxes_id.filtered(lambda t: t.company_id == line.env.company)
-                    tax_id = fpos.map_tax(taxes, line.product_id, line.order_id.partner_shipping_id)
-                    order_line.sudo().write({'tax_id': tax_id})
 
         return super(WebsiteSale, self).payment_confirmation(**post)
