@@ -34,6 +34,7 @@
     },
     'depends': [
         'website_sale',
+        "website_form_recaptcha",
     ],
     'data': [
         'views/template.xml',
