@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product" inherit_id="website_sale.product">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+            <script type="text/javascript" src="/website_sale_invisible_recaptcha/static/src/js/recaptcha.js"></script>
+        </xpath>
+        <xpath expr="//form" position="attributes">
+            <attribute name="class" separator=" " add="check-recaptcha"/>
+        </xpath>
+        <xpath expr="//form" position="inside">
+            <t t-set="RECATPCHA_KEY" t-value="request.env['website'].get_current_website().recaptcha_key_site" />
+            <div
+                id="header_recaptcha"
+                class="g-recaptcha"
+                t-attf-data-sitekey="{{ RECATPCHA_KEY }}"
+                data-size="invisible"
+                data-callback="onSubmit"
+                ></div>
+        </xpath>
+    </template>
+
+    <template id="products_item" inherit_id="website_sale.products_item">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+            <script type="text/javascript" src="/website_sale_invisible_recaptcha/static/src/js/recaptcha.js"></script>
+        </xpath>
+        <xpath expr="//form" position="inside">
+            <t t-set="RECATPCHA_KEY" t-value="request.env['website'].get_current_website().recaptcha_key_site" />
+            <div
+                id="header_recaptcha"
+                class="g-recaptcha"
+                t-attf-data-sitekey="{{ RECATPCHA_KEY }}"
+                data-size="invisible"
+                data-callback="onSubmit"
+                ></div>
+        </xpath>
+    </template>
+</odoo>
