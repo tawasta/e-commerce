@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Hide Suggested Product Default Code -->
+    <template
+        id="hide_suggested_product_default_code"
+        inherit_id="website_sale.suggested_products_list"
+        name="Hide Suggested Product Default Code"
+        active="False"
+        customize_show="True"
+    >
+        <xpath
+            expr="//strong[@t-esc=&quot;combination_info['display_name']&quot;]"
+            position="attributes"
+        >
+            <attribute name="t-esc">combination_info['name_without_code']</attribute>
+        </xpath>
+    </template>
+</odoo>
