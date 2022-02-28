@@ -8,8 +8,8 @@
 
         <xpath expr="//div[@class='availability_messages o_not_editable']" position="before">
             <t t-if="product.type == 'product' and product.inventory_availability == 'never'">
-                <div t-attf-class="mt16 #{product.virtual_available > 0 and 'text-success' or 'text-danger'}">
-                    <span t-esc="product.virtual_available" t-options='{"widget": "float", "precision": 0}' /> <span t-field="product.uom_id" /> available
+                <div t-attf-class="mt16 #{product_variant.virtual_available > 0 and 'text-success' or 'text-danger'}">
+                    <span t-esc="product_variant.virtual_available" t-options='{"widget": "float", "precision": 0}' /> <span t-field="product.uom_id" /> available
                 </div>
             </t>
         </xpath>

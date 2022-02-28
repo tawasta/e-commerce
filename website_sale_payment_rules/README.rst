@@ -12,6 +12,8 @@ Website Sale - Payment rules
 * Checks whether the company for all products is the same and the payment method is displayed accordingly.
 * Product field required
 * Required product category
+* When the order is confirmed and if the company in the order is different from the company in the products, the information in the SO is updated to match the company in the products. 
+* When the product is updated in the shopping cart, it is checked whether the e-commerce company is different from the product company. If so, the taxes on the order line will be updated 
 
 Configuration
 =============
