@@ -7,6 +7,7 @@ Website Sale Settings
 =====================
 * Toggleable settings/customizations under "customize" menu:
    - Hide suggested products default_code in cart
+   - Wider product layout for attributes
 
 Configuration
 =============
