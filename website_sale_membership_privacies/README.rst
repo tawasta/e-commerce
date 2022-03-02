@@ -2,10 +2,12 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-========================================
-Website Sale Suggested Products Order By
-========================================
-* Order suggested products based on _order
+======================================
+Website sale membership privacy values
+======================================
+
+* Displays the selected privacies on the e-commerce form.
+* If there are membership products in the shopping cart, only the membership privacies will be displayed.
 
 Configuration
 =============
@@ -25,7 +27,7 @@ Credits
 Contributors
 ------------
 
-* Miika Nissi <miika.nissi@tawasta.fi>
+* Valtteri Lattu <valtteri.lattu@tawasta.fi>
 
 Maintainer
 ----------

@@ -53,6 +53,7 @@ class SaleOrder(models.Model):
         records = self.env["product.product"]
         for record in res:
             records += self.env["product.product"].browse(record.id)
+        # Sort product records based on _order
         return list(records.sorted())
 
     # 8. Business methods

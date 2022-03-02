@@ -2,10 +2,12 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-========================================
-Website Sale Suggested Products Order By
-========================================
-* Order suggested products based on _order
+========================
+Website sale create user
+========================
+
+* When the order is confirmed, a user is created for the contact if it does not already exist.
+* If the cart has a membership product, a new user will be added to the membership group.
 
 Configuration
 =============
@@ -25,13 +27,13 @@ Credits
 Contributors
 ------------
 
-* Miika Nissi <miika.nissi@tawasta.fi>
+* Valtteri Lattu <valtteri.lattu@tawasta.fi>
 
 Maintainer
 ----------
 
-.. image:: http://tawasta.fi/templates/tawastrap/images/logo.png
+.. image:: https://tawasta.fi/templates/tawastrap/images/logo.png
    :alt: Oy Tawasta OS Technologies Ltd.
-   :target: http://tawasta.fi/
+   :target: https://tawasta.fi/
 
 This module is maintained by Oy Tawasta OS Technologies Ltd.

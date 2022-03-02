@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="address_membership_privacies"
+        inherit_id="website_sale_default_privacies.address"
+        name="Membership privacy values"
+        customize_show="True"
+        active="True"
+    >
+
+        <xpath expr="(//div[@id='web-privacy'])" position="replace">
+            <div id="web-privacy" class="row col-12">
+                <t t-set="order_have_membership" t-value="False"/>
+                <t t-foreach="website_sale_order.order_line" t-as="line">
+                    <t t-if="line.product_id.membership">
+                        <t t-set="order_have_membership" t-value="True"/>
+                    </t>
+                </t>
+                <t t-if="order_have_membership">
+                    <t t-set="privacies" t-value="request.env['privacy.activity'].sudo().search([('default_in_website_sale_membership', '=', True)])" />
+                </t>
+                <t t-else="">
+                    <t t-set="privacies" t-value="request.env['privacy.activity'].sudo().search([('default_in_website_sale', '=', True)])" />
+                </t>
+               <t t-if="privacies">
+                    <t t-if="mode == ('new', 'billing')">
+                        <t t-foreach="privacies" t-as="p">
+                            <div class="form-group col-md-6">
+                                <input type="checkbox" t-attf-name="privacy_#{str(p.id)}"/>
+                                <t t-esc="p.sudo().name"/>
+                            </div>
+                        </t>
+                    </t>
+               </t>
+           </div>
+        </xpath>
+    </template>
+</odoo>

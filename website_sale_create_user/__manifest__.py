@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
+#    Author: Tawasta
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,19 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Suggested Products Order By",
-    "summary": "Order suggested products using _order",
-    "version": "14.0.1.0.2",
-    "category": "eCommerce",
+    "name": "Website sale create user",
+    "summary": "Website sale create user",
+    "version": "14.0.1.0.0",
+    "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale"],
+    "depends": [
+        "website_sale",
+        "membership_group",
+        "membership_product",
+    ],
     "data": [],
 }
