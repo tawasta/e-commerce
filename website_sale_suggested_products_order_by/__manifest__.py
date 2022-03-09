@@ -20,8 +20,8 @@
 
 {
     "name": "Website Sale Suggested Products Order By",
-    "summary": "Order suggested products using sequence_variant",
-    "version": "14.0.1.0.1",
+    "summary": "Order suggested products using _order",
+    "version": "14.0.1.0.2",
     "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
@@ -29,5 +29,5 @@
     "application": False,
     "installable": True,
     "depends": ["website_sale"],
-    "data": ["views/product_views.xml"],
+    "data": [],
 }
