@@ -1,22 +1,23 @@
-odoo.define('website_sale_invisible_recaptcha.product', function (require) {
-    "use strict";
+odoo.define("website_sale_invisible_recaptcha.product", function (require) {
+  "use strict";
 
-    var core = require('web.core');
-    var time = require('web.time');
+  var core = require("web.core");
+  var time = require("web.time");
 
-    $(function () {
-
-        $('.check-recaptcha').on('submit', function() {
-            grecaptcha.execute();
-        });
-
-        $('.a-submit').on('click', function() {
-            grecaptcha.execute();
-        });
-
+  $(function () {
+    $(".check-recaptcha").on("submit", function (event) {
+      window.grecaptcha.execute();
     });
-    window.onSubmit = function () {
-        console.log("success");
-    };
 
+    $(".a-submit").on("click", function (event) {
+      if (!window.grecaptcha.getResponse()) {
+        event.preventDefault();
+        event.stopPropagation();
+        window.grecaptcha.execute();
+      }
+    });
+  });
+  window.onSubmit = function (event) {
+    $(".a-submit").trigger("click");
+  };
 });
