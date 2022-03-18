@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template
         id="extra_info_text"
         name="Extra info: info text"
         inherit_id="website_sale.extra_info"
     >
-        <xpath expr="//div[@class='col-12 col-xl order-xl-1 oe_cart']" position="before">
-            <t t-if="request.env.user.id != request.env.ref('base.public_user').id">
+        <xpath
+            expr="//div[@class='col-12 col-xl order-xl-1 oe_cart']"
+            position="before"
+        >
+            <t t-if="website.extra_step_text">
                 <div class="col-12 alert alert-success alert-dismissible fade show">
-                    <t t-raw="website.extra_step_text"/>
+                    <t t-raw="website.extra_step_text" />
                 </div>
             </t>
         </xpath>
