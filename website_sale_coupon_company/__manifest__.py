@@ -19,18 +19,19 @@
 ##############################################################################
 
 {
-    "name": "Website Sale extra step info text",
-    "summary": "Website Sale extra step info text",
-    "version": "14.0.1.0.2",
+    "name": "Website sale coupon company",
+    "summary": "Website sale coupon company",
+    "version": "14.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale"],
-    "data": [
-        "views/res_config_settings_views.xml",
-        "views/templates.xml",
+    "depends": [
+        "website_sale",
+        "website_sale_coupon",
+        'sale_coupon',
     ],
+    "data": [],
 }
