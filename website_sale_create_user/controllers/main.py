@@ -27,15 +27,35 @@ class WebsiteSale(WebsiteSale):
             )
 
             if not partner_user:
-                new_user = request.env["res.users"].sudo()._signup_create_user(values)
+                admin_user = request.env["res.users"].sudo().search([
+                    ('id', '=', '2')
+                ])
+                new_user = request.env["res.users"].sudo(admin_user)._signup_create_user(values)
                 if new_user:
                     new_user.with_context(create_user=True).action_reset_password()
+                    template = request.env.ref('auth_signup.set_password_email', raise_if_not_found=False)
+                    template_values = {
+                        'email_to': new_user.partner_id.email,
+                        'email_cc': False,
+                        'auto_delete': True,
+                        'partner_to': False,
+                        'scheduled_date': False,
+                    }
                     if membership_user:
+                        attachment_ids = request.env["ir.attachment"].sudo().search([
+                            ('membership_attachment', '=', True)
+                        ])
+                        template_values.update({
+                            "attachment_ids": [(4, att.id) for att in attachment_ids],
+                        })
                         group = request.env["res.groups"].sudo().search([
                             ('membership_group', '=', True)
                         ])
 
                         if group:
                             group.sudo().write({"users": [(4, new_user.id)]})
+
+                    template.sudo().write(template_values)
+                    template.sudo().send_mail(new_user.id, force_send=True, raise_exception=True)
 
         return super(WebsiteSale, self).payment_confirmation(**post)
