@@ -33,5 +33,7 @@
         "membership_group",
         "membership_product",
     ],
-    "data": [],
+    "data": [
+        "views/attachment.xml"
+    ],
 }
