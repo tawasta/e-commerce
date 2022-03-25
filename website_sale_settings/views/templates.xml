@@ -17,7 +17,8 @@
     </template>
 
     <!-- Product Layout Wider -->
-    <template
+    <!-- Commented off to make the OCA module Website Sale Product Description work  -->
+    <!-- <template
         id="product_layout_wider"
         inherit_id="website_sale.product"
         name="Product Layout Attributes Wider"
@@ -30,7 +31,7 @@
         <xpath expr="//div[@class='col-md-6 col-xl-4']" position="attributes">
             <attribute name="class">col-md-6 col-xl-6</attribute>
         </xpath>
-    </template>
+    </template> -->
 
     <!-- Add to Cart button primary -->
     <template
