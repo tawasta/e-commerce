@@ -5,7 +5,7 @@
 ==============================
 eCommerce: invisible recaptcha
 ==============================
-
+Invisible Recaptcha when adding products to cart to block bots from creating unecessary sale orders.
 
 
 Installation
@@ -26,6 +26,7 @@ Credits
 Contributors
 ------------
 * Valtteri Lattu <valtteri.lattu@tawasta.fi>
+* Miika Nissi <miika.nissi@tawasta.fi>
 
 Maintainer
 ----------
