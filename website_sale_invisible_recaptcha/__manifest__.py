@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2022- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,26 +19,15 @@
 ##############################################################################
 
 {
-    'name': 'eCommerce: invisible recaptcha',
-    'summary': "eCommerce: invisible recaptcha",
-    'version': '12.0.1.0.0',
-    'category': 'Website',
-    'website': 'https://github.com/Tawasta/e-commerce',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'website_sale',
-        "website_form_recaptcha",
-    ],
-    'data': [
-        'views/template.xml',
-    ],
-    'demo': [
-    ],
+    "name": "eCommerce: Invisible Recaptcha",
+    "summary": "Invisible Recaptcha when adding products to cart",
+    "version": "12.0.1.0.1",
+    "category": "Website",
+    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": ["website_sale", "website_form_recaptcha"],
+    "data": ["views/template.xml"],
 }
