@@ -4,53 +4,56 @@
         <xpath expr="." position="inside">
             <script
         type="text/javascript"
-        src="https://www.google.com/recaptcha/api.js"
+        src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit"
+        async="async"
+        defer="defer"
       />
             <script
         type="text/javascript"
         src="/website_sale_invisible_recaptcha/static/src/js/recaptcha.js"
       />
         </xpath>
-        <xpath expr="//form" position="attributes">
-            <attribute name="class" separator=" " add="check-recaptcha" />
-        </xpath>
         <xpath expr="//form" position="inside">
             <t
-        t-set="RECATPCHA_KEY"
+        t-set="RECAPTCHA_KEY"
         t-value="request.env['website'].get_current_website().recaptcha_key_site"
       />
             <div
-        id="header_recaptcha"
+        t-attf-id="recaptcha-#{product.id}"
         class="g-recaptcha"
-        t-attf-data-sitekey="{{ RECATPCHA_KEY }}"
+        t-att-data-sitekey="RECAPTCHA_KEY"
         data-size="invisible"
-        data-callback="onSubmit"
+        render="explicit"
       />
         </xpath>
     </template>
 
-    <template id="products_item" inherit_id="website_sale.products_item">
+    <template id="products" inherit_id="website_sale.products">
         <xpath expr="." position="inside">
             <script
         type="text/javascript"
-        src="https://www.google.com/recaptcha/api.js"
+        src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit"
+        async="async"
+        defer="defer"
       />
             <script
         type="text/javascript"
         src="/website_sale_invisible_recaptcha/static/src/js/recaptcha.js"
       />
         </xpath>
+    </template>
+    <template id="products_item" inherit_id="website_sale.products_item">
         <xpath expr="//form" position="inside">
             <t
-        t-set="RECATPCHA_KEY"
+        t-set="RECAPTCHA_KEY"
         t-value="request.env['website'].get_current_website().recaptcha_key_site"
       />
             <div
-        id="header_recaptcha"
+        t-attf-id="recaptcha-#{product.id}"
         class="g-recaptcha"
-        t-attf-data-sitekey="{{ RECATPCHA_KEY }}"
+        t-att-data-sitekey="RECAPTCHA_KEY"
         data-size="invisible"
-        data-callback="onSubmit"
+        render="explicit"
       />
         </xpath>
     </template>
