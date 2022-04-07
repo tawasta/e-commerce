@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="address"
+        inherit_id="website_sale.address"
+        name="Billing address"
+        customize_show="True"
+        active="True"
+    >
+        <xpath expr="//div[@class='checkbox']" position="inside">
+            <label>
+                <input type="checkbox" id='billing_use_same' class="mr8" name='billing_use_same' value="1" checked='checked'/>Same billing address
+            </label>
+        </xpath>
+    </template>
+
+    <template id="checkout" inherit_id="website_sale.checkout">
+        <xpath expr="//div[@class='col-lg-6 one_kanban']" position="before">
+            <div class="col-md-12 col-lg-12 one_kanban" t-if="website_sale_order.partner_invoice_id == website_sale_order.partner_id">
+                <form action="/shop/billing_address" method="post" class=''>
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                    <a role="button" href="#" class='a-submit btn btn-secondary mb16 btn-block'>
+                        <i class="fa fa-plus-square"/>
+                        <span>Add another billing address</span>
+                    </a>
+                </form>
+            </div>
+        </xpath>
+        <xpath expr="//div[@class='col-lg-6 one_kanban']" position="inside">
+            <div class="card border border-primary" t-if="website_sale_order.use_different_billing_address and website_sale_order.partner_invoice_id != website_sale_order.partner_id">
+                <div class='card-body' style='min-height: 130px;'>
+                    <a href="/shop/billing_address" class="btn btn-link float-right p-0 no-decoration" role="button" title="Edit this address" aria-label="Edit this address"><i class='fa fa-edit'/></a>
+                    <t t-esc="website_sale_order.partner_invoice_id" t-options="dict(widget='contact', fields=['name', 'address'], no_marker=True)"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="billing_address" name="billing_address">
+        <t t-call="website.layout">
+            <t t-set="no_footer" t-value="1"/>
+            <div id="wrap">
+                <div class="container oe_website_sale py-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <t t-call="website_sale.wizard_checkout">
+                                <t t-set="step" t-value="25"/>
+                            </t>
+                        </div>
+                        <div class="col-12 col-xl-auto order-xl-2 d-none d-xl-block">
+                            <t t-call="website_sale.cart_summary">
+                                <t t-set="redirect" t-valuef="/shop/billing_address"/>
+                            </t>
+                        </div>
+                        <div class="col-12 col-xl order-xl-1 oe_cart">
+                            <h2 class="o_page_header mt8">Billing Address</h2>
+                            <form action="/shop/billing_address" method="post" class="checkout_autoformat">
+                                <div class="form-row">
+                                    <div class="form-group col-lg-12 div_name">
+                                        <label class="col-form-label" for="name">Name</label>
+                                        <t t-if="partner">
+                                            <input type="text" name="name" class="form-control" t-att-value="partner.name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <input type="text" name="name" class="form-control" />
+                                        </t>
+                                    </div>
+                                    <div class="form-group col-lg-6" id="div_phone">
+                                        <label class="col-form-label" for="phone">Phone</label>
+                                        <t t-if="partner">
+                                            <input type="tel" name="phone" class="form-control" t-att-value="partner.phone" />
+                                        </t>
+                                        <t t-else="">
+                                            <input type="tel" name="phone" class="form-control" />
+                                        </t>
+                                    </div>
+
+                                    <div class="form-group col-lg-6 div_company_name">
+                                        <label class="col-form-label" for="company_name">Company name</label>
+                                        <t t-if="partner and partner.parent_id">
+                                            <input type="text" name="company_name" class="form-control" t-att-value="partner.parent_id.name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <input type="text" name="company_name" class="form-control" />
+                                        </t>
+                                    </div>
+                                    <div class="form-group col-lg-6 div_company_email">
+                                        <label class="col-form-label" for="company_email">Company email</label>
+                                        <t t-if="partner and partner.parent_id">
+                                            <input type="text" name="company_email" class="form-control" t-att-value="partner.parent_id.email"/>
+                                        </t>
+                                        <t t-else="">
+                                            <input type="text" name="company_email" class="form-control" />
+                                        </t>
+                                    </div>
+                                    <div class="form-group col-lg-6 div_vat">
+                                        <label class="col-form-label font-weight-normal label-optional" for="vat">TIN / VAT </label>
+                                        <t t-if="partner and partner.parent_id">
+                                            <input type="text" name="vat" class="form-control" t-att-value="partner.parent_id.vat"/>
+                                        </t>
+                                        <t t-else="">
+                                            <input type="text" name="vat" class="form-control" />
+                                        </t>
+                                    </div>
+                                    <div id="edicode-div" style="display: none;" class="form-group col-md-6 div_edicode show-company">
+                                        <label class="col-form-label label-optional" for="edicode">Edicode</label>
+                                        <t t-if="partner and partner.parent_id">
+                                            <input type="text" name="edicode" class="form-control" t-att-value="partner.parent_id.edicode"/>
+                                        </t>
+                                        <t t-else="">
+                                            <input type="text" name="edicode" class="form-control" />
+                                        </t>
+                                    </div>
+                                    <div id="einvoice-operator-div" style="display: none;" class="form-group col-lg-6 div_einvoice_operator show-company">
+                                        <t t-set="operators" t-value="request.env['res.partner.operator.einvoice'].sudo().search([])"/>
+                                        <label class="col-form-label label-optional" for="einvoice_operator_id">eInvoice Operator</label>
+                                        <t t-if="partner and partner.parent_id">
+                                            <select id="einvoice-operator-select" class="form-control einvoice_operator-select select2" name="einvoice_operator_id">
+                                                <option/>
+                                                <t t-foreach="operators" t-as="op">
+                                                    <option t-att-value="op.id" t-att-selected="op.id == partner.parent_id.einvoice_operator_id
+                                                        .id"><span t-esc="op.name"/> (<span t-esc="op.identifier"/>)
+                                                    </option>
+                                                </t>
+                                            </select>
+                                        </t>
+                                        <t t-else="">
+                                            <select id="einvoice-operator-select" class="form-control einvoice_operator-select select2" name="einvoice_operator_id">
+                                                <option/>
+                                                <t t-foreach="operators" t-as="op">
+                                                    <option t-att-value="op.id"><span t-esc="op.name"/> (<span t-esc="op.identifier"/>)
+                                                    </option>
+                                                </t>
+                                            </select>
+                                        </t>
+                                    </div>
+
+
+
+
+                                    <div class="w-100"/>
+                                    <div class="form-group col-lg-12 div_street">
+                                        <label class="col-form-label" for="street">Street <span class="d-none d-md-inline"> and Number</span></label>
+                                        <t t-if="partner">
+                                            <input type="text" name="street" class="form-control" t-att-value="partner.street" />
+                                        </t>
+                                        <t t-else="">
+                                            <input type="text" name="street" class="form-control" />
+                                        </t>
+                                    </div>
+                                    <div class="form-group col-lg-12 div_street2">
+                                        <label class="col-form-label label-optional" for="street2">Street 2</label>
+                                        <t t-if="partner">
+                                            <input type="text" name="street2" class="form-control" t-att-value="partner.street2" />
+                                        </t>
+                                        <t t-else="">
+                                            <input type="text" name="street2" class="form-control" />
+                                        </t>
+                                    </div>
+                                    <div class="w-100"/>
+                                    <t t-set='zip_city' t-value='country and [x for x in country.get_address_fields() if x in ["zip", "city"]] or ["city", "zip"]'/>
+                                    <t t-if="'zip' in zip_city and zip_city.index('zip') &lt; zip_city.index('city')">
+                                        <div class="form-group col-md-4 div_zip">
+                                            <label class="col-form-label label-optional" for="zip">Zip Code</label>
+                                            <t t-if="partner">
+                                                <input type="text" name="zip" class="form-control" t-att-value="partner.zip" />
+                                            </t>
+                                            <t t-else="">
+                                                <input type="text" name="zip" class="form-control" />
+                                            </t>
+                                        </div>
+                                    </t>
+                                    <div class="form-group col-md-8 div_city">
+                                        <label class="col-form-label" for="city">City</label>
+                                        <t t-if="partner">
+                                            <input type="text" name="city" class="form-control" t-att-value="partner.city" />
+                                        </t>
+                                        <t t-else="">
+                                            <input type="text" name="city" class="form-control" />
+                                        </t>
+                                    </div>
+                                    <t t-if="'zip' in zip_city and zip_city.index('zip') &gt; zip_city.index('city')">
+                                        <div class="form-group col-md-4 div_zip">
+                                            <label class="col-form-label label-optional" for="zip">Zip Code</label>
+                                            <t t-if="partner">
+                                                <input type="text" name="zip" class="form-control" t-att-value="partner.zip" />
+                                            </t>
+                                            <t t-else="">
+                                                <input type="text" name="zip" class="form-control" />
+                                            </t>
+                                        </div>
+                                    </t>
+                                    <div class="w-100"/>
+                                    <div t-attf-class="form-group col-lg-6 div_c_id">
+                                        <label class="col-form-label" for="c_id">Country</label>
+                                        <t t-if="partner">
+                                            <select id="c_id" name="c_id" class="form-control">
+                                                <option value="">Country...</option>
+                                                <t t-foreach="countries" t-as="c">
+                                                    <option t-att-value="c.id" t-att-selected="c.id == partner.country_id.id">
+                                                        <t t-esc="c.name" />
+                                                    </option>
+                                                </t>
+                                            </select>
+                                        </t>
+                                        <t t-else="">
+                                            <select id="c_id" name="c_id" class="form-control">
+                                                <option value="">Country...</option>
+                                                <t t-foreach="countries" t-as="c">
+                                                    <option t-att-value="c.id">
+                                                        <t t-esc="c.name" />
+                                                    </option>
+                                                </t>
+                                            </select>
+                                        </t>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                <input type="hidden" name="submitted" value="1" />
+                                <t t-if="partner">
+                                    <input type="hidden" name="partner_id" t-att-value="partner.id or '0'" />
+                                    <t t-set="back_href" t-value="'/shop/checkout'" />
+                                </t>
+                                <t t-else="">
+                                    <input type="hidden" name="partner_id" t-att-value="partner or '0'" />
+                                    <t t-set="back_href" t-value="'/shop/address'" />
+                                </t>
+                                <t t-if="partner and partner.parent_id">
+                                    <input type="hidden" name="company_id" t-att-value="partner.parent_id.id" />
+                                </t>
+                                <t t-if="partner">
+                                    <input type="hidden" name="editing" value="1" />
+                                </t>
+
+                                <div class="d-flex justify-content-between">
+                                    <a role="button" t-att-href="back_href" class="btn btn-secondary mb32">
+                                        <i class="fa fa-chevron-left"/>
+                                        <span>Back</span>
+                                    </a>
+                                    <a role="button" href="#" class="btn btn-primary mb32 a-submit a-submit-disable a-submit-loading">
+                                        <span>Next</span>
+                                        <i class="fa fa-chevron-right"/>
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>
