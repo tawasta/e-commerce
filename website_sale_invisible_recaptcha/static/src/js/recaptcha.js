@@ -2,7 +2,6 @@ odoo.define("website_sale_invisible_recaptcha.product", function (require) {
   "use strict";
 
   $(".a-submit").on("click", function (event) {
-    console.log("SUBMIT");
     event.preventDefault();
     event.stopPropagation();
     var object = $(this).parents("form").find(".g-recaptcha");
@@ -10,7 +9,6 @@ odoo.define("website_sale_invisible_recaptcha.product", function (require) {
       sitekey: object.parents("form").find(".g-recaptcha").attr("data-sitekey"),
       size: "invisible",
       callback: function (token) {
-        console.log("CALLBACK");
         object.parents("form").find(".g-recaptcha-response").val(token);
         object.parents("form").submit();
       },
