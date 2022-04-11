@@ -56,6 +56,6 @@ class WebsiteSaleRecaptcha(WebsiteSale):
             )
             return request.render("website.404")
         res = super(WebsiteSaleRecaptcha, self).cart_update(
-            product_id, add_qty=1, set_qty=0, **kw
+            product_id, add_qty, set_qty, **kw
         )
         return res
