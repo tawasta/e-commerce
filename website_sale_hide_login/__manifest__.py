@@ -19,25 +19,24 @@
 ##############################################################################
 
 {
-    'name': 'Website Sale Hide Login Button',
-    'summary': "Website Sale Hide Login Button",
-    'version': '14.0.1.0.0',
-    'category': 'Website',
-    'website': 'https://gitlab.com/tawasta/odoo',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
+    "name": "Website Sale Hide Login Button",
+    "summary": "Website Sale Hide Login Button",
+    "version": "14.0.1.0.0",
+    "category": "Website",
+    "website": "https://gitlab.com/tawasta/odoo",
+    "author": "Oy Tawasta Technologies Ltd.",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {
+        "python": [],
+        "bin": [],
     },
-    'depends': [
-        'website_sale',
+    "depends": [
+        "website_sale",
     ],
-    'data': [
-        'views/templates.xml',
+    "data": [
+        "views/templates.xml",
     ],
-    'demo': [
-    ],
+    "demo": [],
 }

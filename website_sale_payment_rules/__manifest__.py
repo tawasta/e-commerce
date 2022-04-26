@@ -33,5 +33,9 @@
         "payment_paytrail",
         "website_sale_extra_step_content_to_sale_order_note",
     ],
-    "data": ["views/res_config_settings_views.xml", "views/templates.xml", "views/website_sale_templates.xml"],
+    "data": [
+        "views/res_config_settings_views.xml",
+        "views/templates.xml",
+        "views/website_sale_templates.xml",
+    ],
 }

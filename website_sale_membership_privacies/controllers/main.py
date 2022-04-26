@@ -16,16 +16,20 @@ class WebsiteSaleMembership(WebsiteSale):
                     is_membership = True
 
             if is_membership:
-                is_sale_membership_privacies = request.env["privacy.activity"].sudo().search([
-                    ("default_in_website_sale_membership", "=", "True")
-                ])
+                is_sale_membership_privacies = (
+                    request.env["privacy.activity"]
+                    .sudo()
+                    .search([("default_in_website_sale_membership", "=", "True")])
+                )
                 if is_sale_membership_privacies:
                     self._create_privacy(kw, order.partner_id, is_membership)
 
             else:
-                is_sale_privacies = request.env["privacy.activity"].sudo().search([
-                    ("default_in_website_sale", "=", "True")
-                ])
+                is_sale_privacies = (
+                    request.env["privacy.activity"]
+                    .sudo()
+                    .search([("default_in_website_sale", "=", "True")])
+                )
                 if is_sale_privacies:
                     self._create_privacy(kw, order.partner_id, is_membership)
         else:
@@ -34,16 +38,20 @@ class WebsiteSaleMembership(WebsiteSale):
         return response
 
     def _create_privacy(self, kw, partner, is_membership):
-        """ Create privacies """
+        """Create privacies"""
         privacy_ids = []
         if is_membership:
-            sale_privacies = request.env["privacy.activity"].sudo().search([
-                ("default_in_website_sale_membership", "=", "True")
-            ])
+            sale_privacies = (
+                request.env["privacy.activity"]
+                .sudo()
+                .search([("default_in_website_sale_membership", "=", "True")])
+            )
         else:
-            sale_privacies = request.env["privacy.activity"].sudo().search([
-                ("default_in_website_sale", "=", "True")
-            ])
+            sale_privacies = (
+                request.env["privacy.activity"]
+                .sudo()
+                .search([("default_in_website_sale", "=", "True")])
+            )
         for privacy in sale_privacies:
             if kw.get("privacy_" + str(privacy.id)):
                 privacy_ids.append(privacy.id)
@@ -61,7 +69,11 @@ class WebsiteSaleMembership(WebsiteSale):
                 .sudo()
                 .search(
                     [
-                        ("partner_id", "=", partner.id,),
+                        (
+                            "partner_id",
+                            "=",
+                            partner.id,
+                        ),
                         ("activity_id", "=", pr.id),
                     ]
                 )

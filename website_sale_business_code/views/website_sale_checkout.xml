@@ -5,8 +5,7 @@
         inherit_id="website_sale.address"
         name="Show Business code field"
         customize_show="True"
-        active="True"
-    >
+        active="True">
         <xpath expr="//label[@for='name']" position="replace">
             <label class="col-form-label" for="name">Your name</label>
         </xpath>
@@ -17,13 +16,11 @@
         inherit_id="website_sale.address_b2b"
         name="Show Business code field"
         customize_show="True"
-        active="True"
-    >
+        active="True">
         <xpath expr="//label[@for='vat']" position="replace">
             <label
                 for="vat"
-                class="col-form-label label-optional"
-            >Business code / VAT</label>
+                class="col-form-label label-optional">Business code / VAT</label>
         </xpath>
     </template>
 </odoo>

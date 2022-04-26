@@ -1,12 +1,12 @@
+from odoo import http
 from odoo.http import request
 from odoo.osv import expression
-from odoo import http
 
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
 class WebsiteSale(WebsiteSale):
-    def _get_shop_payment_values(self, order, **kwargs):
+    def _get_shop_payment_values(self, order, **kwargs):  # noqa: max-complexity: 23
         values = super(WebsiteSale, self)._get_shop_payment_values(order, **kwargs)
         only_invoice = False
         need_company_info = False
@@ -16,7 +16,7 @@ class WebsiteSale(WebsiteSale):
         product_categ_list = []
         companies = []
         for line in order.order_line:
-            if line.product_id.membership_type == 'company':
+            if line.product_id.membership_type == "company":
                 if not order.partner_id.parent_id:
                     need_company_info = True
             if line.product_id.payment_only_invoice:
@@ -104,10 +104,10 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def payment_confirmation(self, **post):
-        sale_order_id = request.session.get('sale_last_order_id')
+        sale_order_id = request.session.get("sale_last_order_id")
         company_id = False
         if sale_order_id:
-            order = request.env['sale.order'].sudo().browse(sale_order_id)
+            order = request.env["sale.order"].sudo().browse(sale_order_id)
             companies = []
             for line in order.order_line:
                 companies.append(line.product_id.company_id)
@@ -117,16 +117,29 @@ class WebsiteSale(WebsiteSale):
             if result:
                 company_id = companies[0]
             else:
-                company_id = request.env['res.company']._get_main_company()
+                company_id = request.env["res.company"]._get_main_company()
 
             if order.company_id != company_id:
-                warehouse_id = request.env.user.with_company(company_id.id)._get_default_warehouse_id().id
-                fiscal_position_id = request.env['account.fiscal.position'].sudo().with_company(company_id.id).get_fiscal_position(order.partner_id.id, order.partner_shipping_id.id)
+                warehouse_id = (
+                    request.env.user.with_company(company_id.id)
+                    ._get_default_warehouse_id()
+                    .id
+                )
+                fiscal_position_id = (
+                    request.env["account.fiscal.position"]
+                    .sudo()
+                    .with_company(company_id.id)
+                    .get_fiscal_position(
+                        order.partner_id.id, order.partner_shipping_id.id
+                    )
+                )
 
-                order.sudo().write({
-                    'company_id': company_id,
-                    'fiscal_position_id': fiscal_position_id.id,
-                    'warehouse_id': warehouse_id,
-                })
+                order.sudo().write(
+                    {
+                        "company_id": company_id,
+                        "fiscal_position_id": fiscal_position_id.id,
+                        "warehouse_id": warehouse_id,
+                    }
+                )
 
         return super(WebsiteSale, self).payment_confirmation(**post)

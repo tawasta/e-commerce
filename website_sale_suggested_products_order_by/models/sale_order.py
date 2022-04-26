@@ -48,7 +48,7 @@ class SaleOrder(models.Model):
 
     # 7. Action methods
     def _cart_accessories(self):
-        """ Suggest accessories based on 'Accessory Products' of products in cart """
+        """Suggest accessories based on 'Accessory Products' of products in cart"""
         res = super(SaleOrder, self)._cart_accessories()
         records = self.env["product.product"]
         for record in res:
