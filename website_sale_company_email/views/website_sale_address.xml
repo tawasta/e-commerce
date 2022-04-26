@@ -4,24 +4,20 @@
     <template
         id="address"
         name="Address Management headers"
-        inherit_id="website_sale.address"
-    >
+        inherit_id="website_sale.address">
         <xpath expr="(//input[@name='name']/..)" position="before">
             <h3 class="col-12">User information</h3>
             <div
                 t-if="mode == ('new', 'billing')"
                 class="alert alert-info text-center alert-dismissible fade show from-group col-12"
                 role="alert"
-                id="user-information-alert"
-            >
-                <p
-                >Please provide your information here. The email will be used as your account login.</p>
+                id="user-information-alert">
+                <p>Please provide your information here. The email will be used as your account login.</p>
                 <button
                     type="button"
                     class="close"
                     data-dismiss="alert"
-                    aria-label="Close"
-                >
+                    aria-label="Close">
                     <span>&amp;times;</span>
                 </button>
             </div>
@@ -33,8 +29,7 @@
                 class="alert alert-info text-center alert-dismissible fade show from-group col-12"
                 role="alert"
                 id="payer-information-alert"
-                t-if="mode == ('new', 'billing')"
-            >
+                t-if="mode == ('new', 'billing')">
                 <p>If a company will pay the order, provide the company information.<br
                     />
                     Otherwise just add your own address details.</p>
@@ -42,8 +37,7 @@
                     type="button"
                     class="close"
                     data-dismiss="alert"
-                    aria-label="Close"
-                >
+                    aria-label="Close">
                     <span>&amp;times;</span>
                 </button>
             </div>
@@ -53,18 +47,15 @@
     <template
         id="address_b2b"
         name="Address Management company email"
-        inherit_id="website_sale.address_b2b"
-    >
+        inherit_id="website_sale.address_b2b">
 
         <xpath expr="(//input[@name='company_name']/..)" position="after">
             <div
                 t-attf-class="form-group #{error.get('company_email') and 'o_has_error' or ''} col-lg-6"
-                id="company_email"
-            >
+                id="company_email">
                 <label
                     class="col-form-label font-weight-normal label-optional"
-                    for="company_email"
-                >Company Email</label>
+                    for="company_email">Company Email</label>
                 <input
                     type="text"
                     name="company_email"

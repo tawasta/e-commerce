@@ -21,10 +21,11 @@
 # 1. Standard library imports:
 import re
 
+# 3. Odoo imports (openerp):
+from odoo import models
+
 # 2. Known third party imports:
 
-# 3. Odoo imports (openerp):
-from odoo import fields, models
 
 # 4. Imports from Odoo modules:
 

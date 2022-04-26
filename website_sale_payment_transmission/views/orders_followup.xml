@@ -1,15 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <template id="orders_followup_shipping" name="Commercial Invoice Address"
+    <template
+        id="orders_followup_shipping"
+        name="Commercial Invoice Address"
         inherit_id="sale_stock.sale_order_portal_content_inherit_sale_stock">
         <t t-if="sale_order.picking_ids" position="after">
-            <br/>
+            <br />
             <strong>Invoice Transmission Method</strong>
-            <span t-field="sale_order.commercial_partner_id.customer_invoice_transmit_method_id"/>
-            <br/>
+            <span
+                t-field="sale_order.commercial_partner_id.customer_invoice_transmit_method_id"
+            />
+            <br />
             <strong>Payment Terms</strong>
-            <span t-field="sale_order.payment_term_id"/>
+            <span t-field="sale_order.payment_term_id" />
         </t>
     </template>
 </odoo>

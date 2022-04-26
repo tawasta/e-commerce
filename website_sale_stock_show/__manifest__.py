@@ -20,7 +20,7 @@
 
 {
     "name": "eCommerce: Show availability on website if 'never' is selected",
-    "summary": "Always show availability on website if 'Sell regardless of inventory' is selected for product",
+    "summary": "Always show availability on website if 'Sell regardless of inventory' is selected for product",  # noqa:
     "version": "14.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",

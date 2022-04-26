@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,27 +19,26 @@
 ##############################################################################
 
 {
-    'name': 'Website sale default privacy values',
-    'summary': "Website sale default privacy values",
-    'version': '14.0.1.0.0',
-    'category': 'Futural EDU',
-    'website': 'http://www.tawasta.fi',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
+    "name": "Website sale default privacy values",
+    "summary": "Website sale default privacy values",
+    "version": "14.0.1.0.0",
+    "category": "Futural EDU",
+    "website": "http://www.tawasta.fi",
+    "author": "Oy Tawasta Technologies Ltd.",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {
+        "python": [],
+        "bin": [],
     },
-    'depends': [
-        'website_sale',
-        'privacy',
+    "depends": [
+        "website_sale",
+        "privacy",
     ],
-    'data': [
-        'views/privacy_activity.xml',
+    "data": [
+        "views/privacy_activity.xml",
         "views/templates.xml",
     ],
-    'demo': [
-    ],
+    "demo": [],
 }

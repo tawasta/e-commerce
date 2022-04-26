@@ -4,12 +4,11 @@ odoo.define("website_sale_domicile.checkout", function (require) {
     var _t = core._t;
 
     $(function () {
-        $("input[name=city]").blur(function() {
+        $("input[name=city]").blur(function () {
             // Fill domicile after filling the city
-            if( !$("input[name=domicile]").val() ) {
-                $("input[name=domicile]").val($("input[name=city]").val())
+            if (!$("input[name=domicile]").val()) {
+                $("input[name=domicile]").val($("input[name=city]").val());
             }
         });
-
     });
 });

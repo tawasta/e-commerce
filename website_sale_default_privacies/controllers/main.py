@@ -9,9 +9,11 @@ class WebsiteSale(WebsiteSale):
     def address(self, **kw):
         if "submitted" in kw:
             response = super(WebsiteSale, self).address(**kw)
-            is_sale_privacies = request.env["privacy.activity"].sudo().search([
-                ("default_in_website_sale", "=", "True")
-            ])
+            is_sale_privacies = (
+                request.env["privacy.activity"]
+                .sudo()
+                .search([("default_in_website_sale", "=", "True")])
+            )
             if is_sale_privacies:
                 order = request.website.sale_get_order()
                 self._create_privacy(kw, order.partner_id)
@@ -21,11 +23,13 @@ class WebsiteSale(WebsiteSale):
         return response
 
     def _create_privacy(self, kw, partner):
-        """ Create privacies """
+        """Create privacies"""
         privacy_ids = []
-        sale_privacies = request.env["privacy.activity"].sudo().search([
-            ("default_in_website_sale", "=", "True")
-        ])
+        sale_privacies = (
+            request.env["privacy.activity"]
+            .sudo()
+            .search([("default_in_website_sale", "=", "True")])
+        )
         for privacy in sale_privacies:
             if kw.get("privacy_" + str(privacy.id)):
                 privacy_ids.append(privacy.id)
@@ -43,7 +47,11 @@ class WebsiteSale(WebsiteSale):
                 .sudo()
                 .search(
                     [
-                        ("partner_id", "=", partner.id,),
+                        (
+                            "partner_id",
+                            "=",
+                            partner.id,
+                        ),
                         ("activity_id", "=", pr.id),
                     ]
                 )
