@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "e-Commerce: Customer contact to SO",
-    "summary": "Adds customer contact as SO contact",
+    "name": "eCommerce Delivery cost with tax",
+    "summary": "Website sale delivery costs with tax",
     "version": "14.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["sale_order_customer_contact", "website_sale"],
-    "data": [],
+    "depends": ["delivery", "delivery_carrier_price_with_tax", "website_sale_delivery"],
+    "data": ["views/website_payment_delivery_methods.xml"],
 }
