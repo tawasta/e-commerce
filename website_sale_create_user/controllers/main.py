@@ -23,8 +23,14 @@ class WebsiteSale(WebsiteSale):
                 order.partner_id.user_ids and order.partner_id.user_ids[0] or False
             )
 
+            res_users = request.env["res.users"].sudo()
+
             if not partner_user:
-                admin_user = request.env["res.users"].sudo().search([("id", "=", "2")])
+                # Check if this user already exists
+                partner_user = res_users.search([("login", "=", values.get("login"))])
+
+            if not partner_user:
+                admin_user = res_users.search([("id", "=", "2")])
                 new_user = (
                     request.env["res.users"]
                     .sudo(admin_user)
