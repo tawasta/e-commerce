@@ -33,7 +33,6 @@ class WebsiteSaleBilling(WebsiteSale):
     def extra_info(self, **post):
         order = request.website.sale_get_order()
         if order.use_different_billing_address and order.partner_id == order.partner_invoice_id:
-            print("=====KAYKO TAALLA VAI NYT=====")
             return request.redirect("/shop/billing_address")
         else:
             return super(WebsiteSaleBilling, self).extra_info(**post)
@@ -46,7 +45,6 @@ class WebsiteSaleBilling(WebsiteSale):
             Partner = order.partner_id.with_context(show_address=1).sudo()
             childs = Partner.search([
                 ("id", "=", order.partner_id.id),
-                # ("type", "in", ["invoice"])
             ]).mapped('child_ids')
 
             billing_partners = Partner.search([
@@ -54,8 +52,6 @@ class WebsiteSaleBilling(WebsiteSale):
                 ('type', '=', 'invoice'),
             ], order='id desc')
 
-            print(order.partner_id)
-            print(billing_partners)
             for bp in billing_partners:
                 if bp.is_company and bp.child_ids:
                     for c in bp.child_ids:
@@ -66,7 +62,6 @@ class WebsiteSaleBilling(WebsiteSale):
                     billings.append(bp)
 
             billings.append(order.partner_id)
-            print(billings)
             response.update({'billings': billings})
 
         return response
@@ -94,7 +89,6 @@ class WebsiteSaleBilling(WebsiteSale):
     @http.route(['/shop/billing_address', '/shop/billing_address/<int:partner_id>'], type='http', auth="public", website=True, sitemap=False)
     def billing_address(self, partner_id=None, **post):
         order = request.website.sale_get_order()
-        print(post)
 
         # check that cart is valid
         order = request.website.sale_get_order()
@@ -179,7 +173,6 @@ class WebsiteSaleBilling(WebsiteSale):
             'order': order,
         }
         if 'new_billing_address' in post:
-            print("=====TAMA=====")
             values.update({
                 'partner': False
             })
@@ -200,6 +193,8 @@ class WebsiteSaleBilling(WebsiteSale):
                 })
             else:
                 # TAHAN JOKIN VIRHE ETTÄ EI MUUTEN ONNISTU
+                return request.redirect('shop/extra_info')
+
 
         return request.render("website_sale_billing_address.billing_address", values)
 
