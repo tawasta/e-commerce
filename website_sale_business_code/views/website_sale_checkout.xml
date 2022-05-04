@@ -18,9 +18,7 @@
         customize_show="True"
         active="True">
         <xpath expr="//label[@for='vat']" position="replace">
-            <label
-                for="vat"
-                class="col-form-label label-optional">Business code / VAT</label>
+            <label for="vat" class="col-form-label">Business code / VAT</label>
         </xpath>
     </template>
 </odoo>
