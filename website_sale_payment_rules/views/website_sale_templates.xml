@@ -89,7 +89,10 @@
 
     <template id="payment_total_zero" inherit_id="website_sale.payment">
         <xpath expr="//div[@class='js_payment mt-3']" position="replace">
-            <div class="js_payment mt-3" t-if="not website_sale_order.amount_total" id="payment_method">
+            <div
+                class="js_payment mt-3"
+                t-if="not website_sale_order.amount_total"
+                id="payment_method">
                 <t t-if="need_attachment">
                     <div class="alert alert-warning">
                         <h5 class="mb24"><t
@@ -139,12 +142,25 @@
                         </div>
                     </t>
                 </t>
-                <t t-if="not need_attachment and not need_explanation and not product_categ_list and not need_company_info">
-                    <form target="_self" action="/shop/payment/validate" method="post" class="float-right">
-                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <t
+                    t-if="not need_attachment and not need_explanation and not product_categ_list and not need_company_info">
+                    <form
+                        target="_self"
+                        action="/shop/payment/validate"
+                        method="post"
+                        class="float-right">
+                        <input
+                            type="hidden"
+                            name="csrf_token"
+                            t-att-value="request.csrf_token()"
+                        />
                         <a role="button" class="btn btn-primary a-submit" href="#">
-                            <span t-if="order.amount_total &gt; 0">Pay Now <span class="fa fa-chevron-right"></span></span>
-                            <span t-if="order.amount_total == 0">Confirm Order <span class="fa fa-chevron-right"></span></span>
+                            <span t-if="order.amount_total &gt; 0">Pay Now <span
+                                    class="fa fa-chevron-right"
+                                /></span>
+                            <span t-if="order.amount_total == 0">Confirm Order <span
+                                    class="fa fa-chevron-right"
+                                /></span>
                         </a>
                     </form>
                 </t>
