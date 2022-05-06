@@ -21,7 +21,7 @@
 {
     "name": "Website Sale Company Slider",
     "summary": "Slider to checkout",
-    "version": "14.0.1.2.5",
+    "version": "14.0.1.2.7",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
@@ -35,6 +35,7 @@
         "website_sale_edicode",
     ],
     "data": [
+        "data/config_parameter.xml",
         "views/assets.xml",
         "views/website_sale_address.xml",
     ],

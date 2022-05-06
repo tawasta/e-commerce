@@ -4,7 +4,7 @@
         <!-- Slider to show whether customer is private or company -->
         <xpath expr="(//input[@name='name']/..)" position="before">
             <t
-                t-if="mode == ('new', 'billing') or (mode == ('edit', 'billing') and (can_edit_vat or 'vat' in checkout and checkout['vat']))">
+                t-if="mode == ('new', 'billing')">
                 <div id="is_company_div" class="col-lg-12 slider-div">
                     <label
                         for="company"
@@ -15,7 +15,7 @@
                             type="checkbox"
                             name="company"
                             id="company"
-                            t-att-checked="'is_company' in checkout and checkout['is_company']"
+                            t-att-checked="'company' in checkout and checkout['company']"
                         />
                         <div class="slider round" />
                     </label>
@@ -34,12 +34,6 @@
                     </div>
                 </div>
             </t>
-            <input
-                type="hidden"
-                name="fi_country_id"
-                id="fi_country_id"
-                t-att-value="request.env.ref('base.fi').id"
-            />
 
             <div class="clearfix" />
 
