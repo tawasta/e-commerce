@@ -86,4 +86,85 @@
             </div>
         </xpath>
     </template>
+
+    <template id="payment_total_zero" inherit_id="website_sale.payment">
+        <xpath expr="//div[@class='js_payment mt-3']" position="replace">
+            <div
+                class="js_payment mt-3"
+                t-if="not website_sale_order.amount_total"
+                id="payment_method">
+                <t t-if="need_attachment">
+                    <div class="alert alert-warning">
+                        <h5 class="mb24"><t
+                                t-raw="website.add_attachment_text"
+                            />  </h5>
+                        <div>
+                            <p>Add attachment <a
+                                    class=''
+                                    href='/shop/extra_info'>here</a></p>
+                        </div>
+                    </div>
+                </t>
+                <t t-if="need_explanation">
+                    <div class="alert alert-warning">
+                        <h5 class="mb24"><t
+                                t-raw="website.add_explanation_text"
+                            />  </h5>
+                        <div>
+                            <p>Add explanation <a
+                                    class=''
+                                    href='/shop/extra_info'>here</a></p>
+                        </div>
+                    </div>
+                </t>
+                <t t-if="need_company_info">
+                    <div class="alert alert-warning">
+                        <h5 class="mb24"><t t-raw="website.company_info_text" />  </h5>
+                        <div>
+                            <p>Modify address <a
+                                    class=''
+                                    href='/shop/checkout'>here</a></p>
+                        </div>
+                    </div>
+                </t>
+                <t t-if="product_categ_list">
+                    <t t-foreach="product_categ_list" t-as="categ">
+                        <div class="alert alert-warning">
+                            <h5 class="mb24"><t
+                                    t-raw="website.product_categ_text"
+                                /> </h5>
+                            <div>
+                                <p>Buy a product from this <a
+                                        class=''
+                                        t-attf-href='/shop/category/#{slug(categ)}'
+                                        target="_blank">category</a></p>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+                <t
+                    t-if="not need_attachment and not need_explanation and not product_categ_list and not need_company_info">
+                    <form
+                        target="_self"
+                        action="/shop/payment/validate"
+                        method="post"
+                        class="float-right">
+                        <input
+                            type="hidden"
+                            name="csrf_token"
+                            t-att-value="request.csrf_token()"
+                        />
+                        <a role="button" class="btn btn-primary a-submit" href="#">
+                            <span t-if="order.amount_total &gt; 0">Pay Now <span
+                                    class="fa fa-chevron-right"
+                                /></span>
+                            <span t-if="order.amount_total == 0">Confirm Order <span
+                                    class="fa fa-chevron-right"
+                                /></span>
+                        </a>
+                    </form>
+                </t>
+            </div>
+        </xpath>
+    </template>
 </odoo>

@@ -21,7 +21,7 @@
 {
     "name": "Website Sale Settings",
     "summary": "Website sale toggleable settings under customize menu",
-    "version": "14.0.1.0.4",
+    "version": "14.0.1.0.5",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",

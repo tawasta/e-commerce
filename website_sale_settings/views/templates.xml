@@ -15,21 +15,19 @@
     </template>
 
     <!-- Product Layout Wider -->
-    <!-- Commented off to make the OCA module Website Sale Product Description work  -->
-    <!-- <template
+    <template
         id="product_layout_wider"
         inherit_id="website_sale.product"
         name="Product Layout Attributes Wider"
         active="False"
-        customize_show="True"
-    >
+        customize_show="True">
         <xpath expr="//div[@class='col-md-6 col-xl-8']" position="attributes">
             <attribute name="class">col-md-6 col-xl-6</attribute>
         </xpath>
         <xpath expr="//div[@class='col-md-6 col-xl-4']" position="attributes">
             <attribute name="class">col-md-6 col-xl-6</attribute>
         </xpath>
-    </template> -->
+    </template>
 
     <!-- Add to Cart button primary -->
     <template
@@ -100,6 +98,18 @@
         <xpath expr="//td[@class='td-product_name']" position="after">
             <td colspan="1" t-if="line.product_id.product_tmpl_id" />
             <td colspan="2" t-if="not line.product_id.product_tmpl_id" />
+        </xpath>
+    </template>
+
+    <!-- Street and number to billing address -->
+    <template
+        id="street_and_number_to_billing_address"
+        inherit_id="website_sale.address"
+        name="Street and Number to Billing Address"
+        active="False"
+        customize_show="True">
+        <xpath expr="//label[@for='street']" position="replace">
+            <label class="col-form-label" for="street">Billing Address</label>
         </xpath>
     </template>
 </odoo>
