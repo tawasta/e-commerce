@@ -45,7 +45,7 @@ class WebsiteSale(WebsiteSale):
                 # if order.transaction_ids.acquirer_id.auto_confirm == 'allow':
                 order.sudo().action_confirm()
 
-                if order.transaction_ids.acquirer_id.auto_create_invoice == "allow":
+                if order.transaction_ids and order.transaction_ids[0].acquirer_id.auto_create_invoice == "allow":
                     order.sudo()._create_invoices()
 
         return super(WebsiteSale, self).payment_confirmation(**post)
