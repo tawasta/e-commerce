@@ -31,7 +31,7 @@
     "depends": [
         "website_sale",
         "website_sale_coupon",
-        'sale_coupon',
+        "sale_coupon",
     ],
     "data": [],
 }

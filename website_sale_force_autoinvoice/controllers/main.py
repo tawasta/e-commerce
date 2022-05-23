@@ -21,8 +21,9 @@
 # 2. Known third party imports:
 # 3. Odoo imports (openerp):
 from odoo import http
-from odoo.addons.website_sale.controllers.main import WebsiteSale
 from odoo.http import request
+
+from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 # 4. Imports from Odoo modules (rarely, and only if necessary):
 
@@ -32,23 +33,19 @@ from odoo.http import request
 
 
 class WebsiteSale(WebsiteSale):
-
-    @http.route(['/shop/confirmation'],
-                type='http',
-                auth="public",
-                website=True)
+    @http.route(["/shop/confirmation"], type="http", auth="public", website=True)
     def payment_confirmation(self, **post):
         """
         Confirm sale order and create invoice.
         """
-        sale_order_id = request.session.get('sale_last_order_id')
+        sale_order_id = request.session.get("sale_last_order_id")
         if sale_order_id:
-            order = request.env['sale.order'].sudo().browse(sale_order_id)
-            if order.state == 'sent':
+            order = request.env["sale.order"].sudo().browse(sale_order_id)
+            if order.state == "sent":
                 # if order.transaction_ids.acquirer_id.auto_confirm == 'allow':
                 order.sudo().action_confirm()
 
-                if order.transaction_ids.acquirer_id.auto_create_invoice == 'allow':
+                if order.transaction_ids and order.transaction_ids[0].acquirer_id.auto_create_invoice == "allow":
                     order.sudo()._create_invoices()
 
         return super(WebsiteSale, self).payment_confirmation(**post)

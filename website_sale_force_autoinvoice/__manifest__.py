@@ -21,7 +21,7 @@
 {
     "name": "Force autoinvoice in website sale",
     "summary": "Forces autoinvoice on quotations created from website_sale",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",

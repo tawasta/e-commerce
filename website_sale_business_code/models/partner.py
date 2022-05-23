@@ -6,5 +6,5 @@ class ResPartner(models.Model):
 
     @api.model
     def _commercial_fields(self):
-        """ Add business id to commercial fields """
+        """Add business id to commercial fields"""
         return super()._commercial_fields() + ["business_code"]

@@ -2,12 +2,11 @@ odoo.define("website_sale_company_slider.checkout", function (require) {
     "use strict";
 
     $(function () {
-        
         if ($("#company").length != 0) {
             var field_required = $("input[name='field_required']");
             const REQUIRED_FIELDS_DEFAULT = null;
 
-            if(field_required.length > 0){
+            if (field_required.length > 0) {
                 const REQUIRED_FIELDS_DEFAULT = field_required.val();
             }
 
@@ -15,7 +14,7 @@ odoo.define("website_sale_company_slider.checkout", function (require) {
                 var is_company = $("#company").is(":checked");
 
                 var required_fields = $("input[name='field_required']");
-                if(required_fields.length > 0){
+                if (required_fields.length > 0) {
                     // Reset required fields set
                     required_fields.val(REQUIRED_FIELDS_DEFAULT);
                 }
@@ -51,14 +50,15 @@ odoo.define("website_sale_company_slider.checkout", function (require) {
                 );
 
                 // Toggle field visibility by customer type
-                $("input[name='company_name']").parent().toggleClass("d-none", !is_company);
+                $("input[name='company_name']")
+                    .parent()
+                    .toggleClass("d-none", !is_company);
                 if (!is_company) {
                     $("input[name='company_name']").val("");
                     $("input[name='company_email']").val("");
                     $("input[name='vat']").val("");
                     $("input[name='edicode']").val("");
                     $("#einvoice-operator-select").select2("val", "");
-
                 }
 
                 $("input[name='company_email']")
@@ -79,9 +79,11 @@ odoo.define("website_sale_company_slider.checkout", function (require) {
                         );
                     }
                 } else {
-                    if(required_fields.length > 0){
+                    if (required_fields.length > 0) {
                         required_fields.val(
-                            required_fields.val().replace(",company_name,company_email,vat", "")
+                            required_fields
+                                .val()
+                                .replace(",company_name,company_email,vat", "")
                         );
                     }
                 }

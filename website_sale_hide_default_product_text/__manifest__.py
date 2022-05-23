@@ -19,25 +19,24 @@
 ##############################################################################
 
 {
-    'name': 'Website Sale Hide Default Product Text',
-    'summary': "Hides the default '30-day money-back quarantee...' text",
-    'version': '14.0.1.0.0',
-    'category': 'Website',
-    'website': 'https://gitlab.com/tawasta/odoo',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
+    "name": "Website Sale Hide Default Product Text",
+    "summary": "Hides the default '30-day money-back quarantee...' text",
+    "version": "14.0.1.0.0",
+    "category": "Website",
+    "website": "https://gitlab.com/tawasta/odoo",
+    "author": "Oy Tawasta Technologies Ltd.",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {
+        "python": [],
+        "bin": [],
     },
-    'depends': [
-        'website_sale',
+    "depends": [
+        "website_sale",
     ],
-    'data': [
-        'views/product.xml',
+    "data": [
+        "views/product.xml",
     ],
-    'demo': [
-    ],
+    "demo": [],
 }

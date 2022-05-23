@@ -29,4 +29,3 @@ msgstr "Kontakti"
 #: model_terms:ir.ui.view,arch_db:website_sale_business_code.address
 msgid "Your name"
 msgstr "Nimesi"
-
