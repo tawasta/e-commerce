@@ -67,7 +67,7 @@
                 id="company_email">
                 <label
                     class="col-form-label font-weight-normal label-optional"
-                    for="company_email">Company Email</label>
+                    for="company_email">Invoice Email</label>
                 <input
                     type="text"
                     name="company_email"
