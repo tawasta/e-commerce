@@ -66,10 +66,12 @@
                 t-attf-class="form-group #{error.get('company_email') and 'o_has_error' or ''} col-lg-6"
                 id="company_email">
                 <label
+                    id="company-email-label"
                     class="col-form-label font-weight-normal label-optional"
                     for="company_email">Invoice Email</label>
                 <input
                     type="text"
+                    id="company-email-input"
                     name="company_email"
                     t-attf-class="form-control #{error.get('company_email') and 'is-invalid' or ''}"
                     t-att-value="'company_email' in checkout and checkout['company_email']"
