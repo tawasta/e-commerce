@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template
+        id="suggested_products_list_categories_template"
+        name="Alternative Products in my cart suggested products category template">
+        <h5 class='text-muted js_cart_lines'><t t-esc="template_title" /></h5>
+        <table
+            id="suggested_products"
+            class="js_cart_lines table table-striped table-sm">
+            <tbody>
+                <tr t-foreach="template_products" t-as="product">
+                    <t
+                        t-set="combination_info"
+                        t-value="product._get_combination_info_variant(pricelist=website_sale_order.pricelist_id)"
+                    />
+                    <td class='td-img text-center'>
+                        <a t-att-href="product.website_url">
+                            <span
+                                t-field="product.image_128"
+                                t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class': 'rounded o_image_64_max'}"
+                            />
+                        </a>
+                    </td>
+                    <td class='td-product_name'>
+                        <div>
+                            <a t-att-href="product.website_url">
+                                <strong t-esc="combination_info['display_name']" />
+                            </a>
+                        </div>
+                        <div
+                            class="text-muted d-none d-md-block"
+                            t-field="product.description_sale"
+                        />
+                    </td>
+                    <td class='td-price'>
+                        <del
+                            t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}"
+                            style="white-space: nowrap;"
+                            t-esc="combination_info['list_price']"
+                            t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                        />
+                        <span
+                            t-esc="combination_info['price']"
+                            style="white-space: nowrap;"
+                            t-options="{'widget': 'monetary','display_currency': website.currency_id}"
+                        />
+                    </td>
+                    <td class="w-25 text-center">
+                        <input
+                            class="js_quantity"
+                            name="product_id"
+                            t-att-data-product-id="product.id"
+                            type="hidden"
+                        />
+                        <a role="button" class="btn btn-link js_add_suggested_products">
+                            <strong>Add to Cart</strong>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+    <template
+        id="suggested_products_list_categories"
+        inherit_id="website_sale.suggested_products_list"
+        name="Alternative Products in my cart suggested products category">
+        <xpath expr="//h5[hasclass('js_cart_lines')]" position="attributes">
+            <attribute name="class" separator=" " add="d-none" />
+        </xpath>
+        <xpath expr="//table[@id='suggested_products']" position="attributes">
+            <attribute name="class" separator=" " add="d-none" />
+        </xpath>
+        <xpath expr="//table[@id='suggested_products']" position="after">
+            <!-- Messy logic to sort products in suggested categories. Suggested products list -->
+            <!-- is small so speed shouldn't be an issue. -->
+            <t
+                t-set="suggested_products_categories"
+                t-value="request.env['suggested.products.category']"
+            />
+            <t t-set="other_products" t-value="request.env['product.product']" />
+            <!-- Loop products. If product has suggested category add category to recordset. -->
+            <!-- If product is not in suggested category add it to other products recordset. -->
+            <t t-foreach="suggested_products" t-as="product">
+                <t t-if="product.public_categ_ids">
+                    <t t-foreach="product.public_categ_ids" t-as="public_categ">
+                        <t t-if="public_categ.suggested_products_category_id">
+                            <t
+                                t-if="public_categ.suggested_products_category_id not in suggested_products_categories">
+                                <t
+                                    t-set="suggested_products_categories"
+                                    t-value="suggested_products_categories + public_categ.suggested_products_category_id"
+                                />
+                            </t>
+                        </t>
+                        <t t-else="">
+                            <t
+                                t-set="other_products"
+                                t-value="other_products + product"
+                            />
+                        </t>
+                    </t>
+                </t>
+                <t t-else="">
+                    <t t-set="other_products" t-value="other_products + product" />
+                </t>
+            </t>
+            <!-- Loop suggested categories and show products list under suggested category -->
+            <t
+                t-foreach="suggested_products_categories.sorted()"
+                t-as="suggested_products_category">
+                <t t-set="category_products" t-value="request.env['product.product']" />
+                <t t-foreach="suggested_products" t-as="product">
+                    <t t-if="product in suggested_products_category.product_ids">
+                        <t
+                            t-set="category_products"
+                            t-value="category_products + product"
+                        />
+                    </t>
+                </t>
+                <t
+                    t-call="website_sale_suggested_products_category.suggested_products_list_categories_template">
+                    <t
+                        t-set="template_title"
+                        t-value="suggested_products_category.description"
+                    />
+                    <t t-set="template_products" t-value="category_products.sorted()" />
+                </t>
+            </t>
+            <!-- If products not in any suggested category show default products list -->
+            <t t-if="other_products">
+                <t
+                    t-call="website_sale_suggested_products_category.suggested_products_list_categories_template">
+                    <t t-set="template_title">Suggested Accessories:</t>
+                    <t t-set="template_products" t-value="other_products.sorted()" />
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Hide Suggested Product Default Code -->
+    <template
+        id="hide_suggested_product_default_code_categories"
+        inherit_id="website_sale_suggested_products_category.suggested_products_list_categories_template"
+        name="Hide Suggested Product Default Code"
+        active="False"
+        customize_show="True">
+        <xpath
+            expr="//strong[@t-esc=&quot;combination_info['display_name']&quot;]"
+            position="attributes">
+            <attribute name="t-esc">combination_info['name_without_code']</attribute>
+        </xpath>
+    </template>
+
+    <!-- Add to Cart button primary -->
+    <template
+        id="suggested_products_list_button_primary_categories"
+        inherit_id="website_sale_suggested_products_category.suggested_products_list_categories_template"
+        name="Suggested Products Add to Cart Button Primary"
+        active="False"
+        customize_show="True">
+        <xpath
+            expr="//a[@class='btn btn-link js_add_suggested_products']"
+            position="attributes">
+            <attribute
+                name="class">btn btn-primary btn-custom-cart js_add_suggested_products</attribute>
+        </xpath>
+    </template>
+
+    <!-- Hide suggested products image -->
+    <template
+        id="suggested_products_list_hide_image_categories"
+        inherit_id="website_sale_suggested_products_category.suggested_products_list_categories_template"
+        name="Hide Suggested Products Image"
+        active="False"
+        customize_show="True">
+        <xpath
+            expr="//tr[@t-foreach='template_products']//td[@class='td-product_name']"
+            position="attributes">
+            <attribute name="style">padding-left:15px;</attribute>
+        </xpath>
+        <xpath
+            expr="//tr[@t-foreach='template_products']//td[@class='td-product_name']"
+            position="after">
+            <td colspan="1" />
+        </xpath>
+        <xpath expr="//td[@class='td-img text-center']" position="attributes">
+            <attribute name="class">td-img text-center d-none</attribute>
+        </xpath>
+    </template>
+</odoo>
