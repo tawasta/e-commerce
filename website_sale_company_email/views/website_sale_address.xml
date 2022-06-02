@@ -6,7 +6,21 @@
         name="Address Management headers"
         inherit_id="website_sale.address">
         <xpath expr="(//input[@name='name']/..)" position="before">
-            <h3 class="col-12">User information</h3>
+            <h3 class="col-12" id="user-information-header">User information</h3>
+        </xpath>
+
+        <xpath expr="//div[@id='div_phone']" position="after">
+            <h3 t-if="mode == ('new', 'billing')" class="col-12" id="payer-information-header">Payer information</h3>
+        </xpath>
+    </template>
+
+    <template
+        id="address-guidance"
+        inherit_id="website_sale_company_email.address"
+        name="Show address guidance"
+        customize_show="True"
+        active="True">
+        <xpath expr="//h3[@id='user-information-header']" position="after">
             <div
                 t-if="mode == ('new', 'billing')"
                 class="alert alert-info text-center alert-dismissible fade show from-group col-12"
@@ -22,9 +36,7 @@
                 </button>
             </div>
         </xpath>
-
-        <xpath expr="//div[@id='div_phone']" position="after">
-            <h3 t-if="mode == ('new', 'billing')" class="col-12">Payer information</h3>
+        <xpath expr="//h3[@id='payer-information-header']" position="after">
             <div
                 class="alert alert-info text-center alert-dismissible fade show from-group col-12"
                 role="alert"
