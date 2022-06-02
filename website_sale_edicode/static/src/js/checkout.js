@@ -32,8 +32,9 @@ odoo.define("website_sale_edicode.checkout", function (require) {
                 }
             }
 
-            $("input[name=company_name]").change(toggleEdicode);
-            toggleEdicode();
+            // Uncommenting these will enable auto-hide for edicode-fields
+            //$("input[name=company_name]").change(toggleEdicode);
+            //toggleEdicode();
 
             $("form[class$='checkout_autoformat']").on(
                 "click",
