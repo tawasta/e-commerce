@@ -6,7 +6,9 @@ class WebsiteSale(WebsiteSale):
         """
         Add invoice_transmit_method to saved values
         """
-        checkout["customer_invoice_transmit_method_id"] = all_values.get(
-            "customer_invoice_transmit_method_id"
-        )
+        if all_values.get("customer_invoice_transmit_method_id"):
+            checkout["customer_invoice_transmit_method_id"] = int(
+                all_values.get("customer_invoice_transmit_method_id")
+            )
+
         return super()._checkout_form_save(mode, checkout, all_values)
