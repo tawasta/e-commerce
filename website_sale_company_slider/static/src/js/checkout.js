@@ -78,14 +78,12 @@ odoo.define("website_sale_company_slider.checkout", function (require) {
                             required_fields.val() + ",company_name,company_email,vat"
                         );
                     }
-                } else {
-                    if (required_fields.length > 0) {
-                        required_fields.val(
-                            required_fields
-                                .val()
-                                .replace(",company_name,company_email,vat", "")
-                        );
-                    }
+                } else if (required_fields.length > 0) {
+                    required_fields.val(
+                        required_fields
+                            .val()
+                            .replace(",company_name,company_email,vat", "")
+                    );
                 }
             }
 

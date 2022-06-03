@@ -1,9 +1,11 @@
-odoo.define('website_sale_invoice_transmit_method.checkout', function (require) {
+odoo.define("website_sale_invoice_transmit_method.checkout", function (require) {
     "use strict";
 
-    $(function() {
+    $(function () {
         function toggleVisibility() {
-            var transmit_type = $('#customer-invoice-transmit-method').find(":selected").data("code");
+            var transmit_type = $("#customer-invoice-transmit-method")
+                .find(":selected")
+                .data("code");
             var speed = "slow";
 
             // Initial values
@@ -35,7 +37,7 @@ odoo.define('website_sale_invoice_transmit_method.checkout', function (require) 
             }
         }
 
-        $('#customer-invoice-transmit-method').select2();
+        $("#customer-invoice-transmit-method").select2();
         $("#customer-invoice-transmit-method").change(toggleVisibility);
         toggleVisibility();
     });

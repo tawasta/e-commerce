@@ -22,7 +22,7 @@
     "version": "14.0.1.0.0",
     "category": "E-commerce",
     "summary": "Show suggested products in cart under Suggested Products Categories",
-    "website": "https://gitlab.com/tawasta/odoo",
+    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

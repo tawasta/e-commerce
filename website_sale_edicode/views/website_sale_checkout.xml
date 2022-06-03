@@ -43,9 +43,8 @@
                     <t t-foreach="operators" t-as="op">
                         <option
                             t-att-value="op.id"
-                            t-att-selected="op.id == ('einvoice_operator_id' in checkout and checkout['einvoice_operator_id'] != '' and int(checkout['customer_invoice_transmit_method_id']))"
-                        >
-                            <span t-esc="op.name"/> (<span t-esc="op.identifier" />)
+                            t-att-selected="op.id == ('einvoice_operator_id' in checkout and checkout['einvoice_operator_id'] != '' and int(checkout['customer_invoice_transmit_method_id']))">
+                            <span t-esc="op.name" /> (<span t-esc="op.identifier" />)
                         </option>
                     </t>
                 </select>

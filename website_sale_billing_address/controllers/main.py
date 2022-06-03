@@ -1,19 +1,17 @@
-from odoo.http import request
-from urllib.parse import urlparse
 from odoo import http
+from odoo.http import request
 
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
 class WebsiteSaleBilling(WebsiteSale):
-
     @http.route()
     def address(self, **kw):
         response = super(WebsiteSaleBilling, self).address(**kw)
         order = request.website.sale_get_order()
-        if 'submitted' in kw:
-            if not kw.get('billing_use_same') and not order.only_services:
-                order.sudo().write({'use_different_billing_address': True})
+        if "submitted" in kw:
+            if not kw.get("billing_use_same") and not order.only_services:
+                order.sudo().write({"use_different_billing_address": True})
 
                 return response
             else:
@@ -32,7 +30,10 @@ class WebsiteSaleBilling(WebsiteSale):
     @http.route()
     def extra_info(self, **post):
         order = request.website.sale_get_order()
-        if order.use_different_billing_address and order.partner_id == order.partner_invoice_id:
+        if (
+            order.use_different_billing_address
+            and order.partner_id == order.partner_invoice_id
+        ):
             return request.redirect("/shop/billing_address")
         else:
             return super(WebsiteSaleBilling, self).extra_info(**post)
@@ -43,14 +44,19 @@ class WebsiteSaleBilling(WebsiteSale):
         billings = []
         if order.partner_id != request.website.user_id.sudo().partner_id:
             Partner = order.partner_id.with_context(show_address=1).sudo()
-            childs = Partner.search([
-                ("id", "=", order.partner_id.id),
-            ]).mapped('child_ids')
+            childs = Partner.search(
+                [
+                    ("id", "=", order.partner_id.id),
+                ]
+            ).mapped("child_ids")
 
-            billing_partners = Partner.search([
-                ('id', 'in', childs.ids),
-                ('type', '=', 'invoice'),
-            ], order='id desc')
+            billing_partners = Partner.search(
+                [
+                    ("id", "in", childs.ids),
+                    ("type", "=", "invoice"),
+                ],
+                order="id desc",
+            )
 
             for bp in billing_partners:
                 if bp.is_company and bp.child_ids:
@@ -62,11 +68,17 @@ class WebsiteSaleBilling(WebsiteSale):
                     billings.append(bp)
 
             billings.append(order.partner_id)
-            response.update({'billings': billings})
+            response.update({"billings": billings})
 
         return response
 
-    @http.route(['/shop/change/billing_address'], type='http', auth="public", website=True, sitemap=False)
+    @http.route(
+        ["/shop/change/billing_address"],
+        type="http",
+        auth="public",
+        website=True,
+        sitemap=False,
+    )
     def change_billing_address(self, **post):
         order = request.website.sale_get_order()
 
@@ -76,17 +88,23 @@ class WebsiteSaleBilling(WebsiteSale):
         if redirection:
             return redirection
 
-        if 'partner_id' in post and 'user_billing_address' in post:
-            partner_id = request.env["res.partner"].sudo().search([
-                ('id', '=', post.get('partner_id'))
-            ])
-            order.sudo().write({
-                'partner_invoice_id': partner_id
-            })
+        if "partner_id" in post and "user_billing_address" in post:
+            partner_id = (
+                request.env["res.partner"]
+                .sudo()
+                .search([("id", "=", post.get("partner_id"))])
+            )
+            order.sudo().write({"partner_invoice_id": partner_id})
 
-            return request.redirect(post.get('return_url'))
+            return request.redirect(post.get("return_url"))
 
-    @http.route(['/shop/billing_address', '/shop/billing_address/<int:partner_id>'], type='http', auth="public", website=True, sitemap=False)
+    @http.route(
+        ["/shop/billing_address", "/shop/billing_address/<int:partner_id>"],
+        type="http",
+        auth="public",
+        website=True,
+        sitemap=False,
+    )
     def billing_address(self, partner_id=None, **post):
         order = request.website.sale_get_order()
 
@@ -98,118 +116,111 @@ class WebsiteSaleBilling(WebsiteSale):
         countries = request.env["res.country"].sudo().search([])
         company_vals = {}
         current_user = request.env.user
-        if 'submitted' in post:
-            country = request.env['res.country'].browse(int(post.get("c_id")))
+        if "submitted" in post:
+            country = request.env["res.country"].browse(int(post.get("c_id")))
             partner_vals = {
-                'name': post.get("name"),
-                'phone': post.get("phone"),
-                'street': post.get("street"),
-                'street2': post.get("street2"),
-                'type': 'invoice',
-                'zip': post.get("zip"),
-                'city': post.get("city"),
-                'country_id': country.id,
+                "name": post.get("name"),
+                "phone": post.get("phone"),
+                "street": post.get("street"),
+                "street2": post.get("street2"),
+                "type": "invoice",
+                "zip": post.get("zip"),
+                "city": post.get("city"),
+                "country_id": country.id,
             }
             if post.get("company_name"):
-                company_vals.update({
-                    'name': post.get("company_name"),
-                    'email': post.get("company_email"),
-                    'vat': post.get("vat"),
-                    'type': 'invoice',
-                    'edicode': post.get("edicode") or False,
-                    'einvoice_operator_id': post.get("einvoice_operator_id") or False
-                })
+                company_vals.update(
+                    {
+                        "name": post.get("company_name"),
+                        "email": post.get("company_email"),
+                        "vat": post.get("vat"),
+                        "type": "invoice",
+                        "edicode": post.get("edicode") or False,
+                        "einvoice_operator_id": post.get("einvoice_operator_id")
+                        or False,
+                    }
+                )
 
-            if 'editing' in post:
-                current_partner = request.env["res.partner"].sudo().search([
-                    ('id', '=', post.get("partner_id"))
-                ])
+            if "editing" in post:
+                current_partner = (
+                    request.env["res.partner"]
+                    .sudo()
+                    .search([("id", "=", post.get("partner_id"))])
+                )
 
                 current_partner.sudo().write(partner_vals)
 
                 if post.get("company_id"):
-                    current_company = request.env["res.partner"].sudo().search([
-                        ('id', '=', post.get("company_id"))
-                    ])
+                    current_company = (
+                        request.env["res.partner"]
+                        .sudo()
+                        .search([("id", "=", post.get("company_id"))])
+                    )
                     current_company.sudo().write(company_vals)
                     if company_vals and not current_company:
-                        company_vals.update({
-                            'is_company': True
-                        })
+                        company_vals.update({"is_company": True})
                         company = request.env["res.partner"].sudo().create(company_vals)
-                        current_partner.sudo().write({'parent_id': company.id})
+                        current_partner.sudo().write({"parent_id": company.id})
             else:
                 partner_id = request.env["res.partner"].sudo().create(partner_vals)
 
                 if company_vals:
-                    company_vals.update({
-                        'is_company': True
-                    })
+                    company_vals.update({"is_company": True})
                     company = request.env["res.partner"].sudo().create(company_vals)
-                    partner_id.sudo().write({'parent_id': company.id})
-                    company.sudo().write({'parent_id': order.partner_id.id})
+                    partner_id.sudo().write({"parent_id": company.id})
+                    company.sudo().write({"parent_id": order.partner_id.id})
 
                 else:
-                    partner_id.sudo().write({'parent_id': order.partner_id.id})
+                    partner_id.sudo().write({"parent_id": order.partner_id.id})
 
-
-
-                order.sudo().write({'partner_invoice_id': partner_id})
+                order.sudo().write({"partner_invoice_id": partner_id})
 
             if current_user.partner_id == order.partner_id and not partner_id:
                 if not order.use_different_billing_address:
-                    order.sudo().write({'use_different_billing_address': True})
-            if 'submitted' in post and not 'editing' in post:
+                    order.sudo().write({"use_different_billing_address": True})
+            if "submitted" in post and "editing" not in post:
                 if not order.use_different_billing_address:
-                    order.sudo().write({'use_different_billing_address': True})
+                    order.sudo().write({"use_different_billing_address": True})
 
             return request.redirect("/shop/extra_info")
 
-
-
         values = {
-            'website_sale_order': order,
-            'countries': countries,
-            'order': order,
+            "website_sale_order": order,
+            "countries": countries,
+            "order": order,
         }
-        if 'new_billing_address' in post:
-            values.update({
-                'partner': False
-            })
-        if order.use_different_billing_address and order.partner_invoice_id != order.partner_id and not 'new_billing_address' in post:
-            values.update({
-                'partner': order.partner_invoice_id
-            })
+        if "new_billing_address" in post:
+            values.update({"partner": False})
+        if (
+            order.use_different_billing_address
+            and order.partner_invoice_id != order.partner_id
+            and "new_billing_address" not in post
+        ):
+            values.update({"partner": order.partner_invoice_id})
 
         if partner_id:
-            allow_partner_edit = False
-            edit_partner = request.env["res.partner"].sudo().search([
-                ('id', '=', partner_id)
-            ])
+            edit_partner = (
+                request.env["res.partner"].sudo().search([("id", "=", partner_id)])
+            )
             if edit_partner in order.partner_id.child_ids:
-                allow_partner_edit = True
-                values.update({
-                    'partner': edit_partner
-                })
+                values.update({"partner": edit_partner})
             else:
                 # TAHAN JOKIN VIRHE ETTÄ EI MUUTEN ONNISTU
-                return request.redirect('shop/extra_info')
-
+                return request.redirect("shop/extra_info")
 
         return request.render("website_sale_billing_address.billing_address", values)
 
     def checkout_redirection(self, order):
         # must have a draft sales order with lines at this point, otherwise reset
-        if not order or order.state != 'draft':
-            request.session['sale_order_id'] = None
-            request.session['sale_transaction_id'] = None
-            return request.redirect('/shop')
+        if not order or order.state != "draft":
+            request.session["sale_order_id"] = None
+            request.session["sale_transaction_id"] = None
+            return request.redirect("/shop")
 
         if order and not order.order_line:
-            return request.redirect('/shop/cart')
+            return request.redirect("/shop/cart")
 
         # if transaction pending / done: redirect to confirmation
-        tx = request.env.context.get('website_sale_transaction')
-        if tx and tx.state != 'draft':
-            return request.redirect('/shop/payment/confirmation/%s' % order.id)
-
+        tx = request.env.context.get("website_sale_transaction")
+        if tx and tx.state != "draft":
+            return request.redirect("/shop/payment/confirmation/%s" % order.id)

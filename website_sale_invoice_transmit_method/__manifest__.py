@@ -23,7 +23,7 @@
     "summary": "Adds account invoice transmit method to checkout",
     "version": "14.0.1.0.2",
     "category": "Website",
-    "website": "https://github.com/Tawasta/e-commerce",
+    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

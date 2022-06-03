@@ -10,7 +10,10 @@
         </xpath>
 
         <xpath expr="//div[@id='div_phone']" position="after">
-            <h3 t-if="mode == ('new', 'billing')" class="col-12" id="payer-information-header">Payer information</h3>
+            <h3
+                t-if="mode == ('new', 'billing')"
+                class="col-12"
+                id="payer-information-header">Payer information</h3>
         </xpath>
     </template>
 
