@@ -14,7 +14,7 @@
                     <t t-foreach="methods" t-as="method">
                         <option t-att-value="method.id"
                                 t-att-data-code="method.code"
-                                t-att-selected="method.id == ('customer_invoice_transmit_method_id' in checkout and country and checkout['customer_invoice_transmit_method_id'] != '' and int(checkout['customer_invoice_transmit_method_id']))"
+                                t-att-selected="method.id == ('customer_invoice_transmit_method_id' in checkout and checkout['customer_invoice_transmit_method_id'] != '' and int(checkout['customer_invoice_transmit_method_id']))"
                                 t-esc="method.name"/>
                     </t>
                 </select>
