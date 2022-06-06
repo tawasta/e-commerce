@@ -17,7 +17,7 @@ addon | version | maintainers | summary
 [website_sale_cart_fiscal_position](website_sale_cart_fiscal_position/) | 14.0.1.0.0 |  | Show fiscal position when confirming a sale
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 14.0.1.0.0 |  | eCommerce tax in cart lines
 [website_sale_company_email](website_sale_company_email/) | 14.0.1.0.4 |  | Add different emails for ecommerce user and company
-[website_sale_company_slider](website_sale_company_slider/) | 14.0.1.2.7 |  | Slider to checkout
+[website_sale_company_slider](website_sale_company_slider/) | 14.0.1.2.8 |  | Slider to checkout
 [website_sale_coupon_company](website_sale_coupon_company/) | 14.0.1.0.0 |  | Website sale coupon company
 [website_sale_create_user](website_sale_create_user/) | 14.0.1.0.1 |  | Website sale create user
 [website_sale_customer_contact](website_sale_customer_contact/) | 14.0.1.0.0 |  | Adds customer contact as SO contact
