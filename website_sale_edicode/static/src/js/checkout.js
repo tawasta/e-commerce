@@ -4,33 +4,34 @@ odoo.define("website_sale_edicode.checkout", function (require) {
     var _t = core._t;
 
     $(function () {
-        if ($("#einvoice-operator-select").length != 0) {
+        // eslint-disable-next-line no-unused-vars
+        function toggleEdicode() {
+            var company_name = $("input[name=company_name]");
+            if (company_name.length === 0) {
+                return;
+            }
+
+            var company = company_name.val().length !== 0;
+            var speed = "slow";
+
+            if (company) {
+                $("#einvoice-operator-div").fadeIn();
+                $("#edicode-div").fadeIn();
+                $("#edicode-notification-div").fadeIn();
+                $(".div_vat").fadeIn();
+            } else {
+                // Slow fadeout so user notices what's being removed
+                $("#einvoice-operator-div").fadeOut(speed);
+                $("#edicode-div").fadeOut(speed);
+                $("#edicode-notification-div").fadeOut(speed);
+                $(".div_vat").fadeOut(speed);
+            }
+        }
+
+        if ($("#einvoice-operator-select").length !== 0) {
             $("#einvoice-operator-select").select2({
                 allowClear: true,
             });
-
-            function toggleEdicode() {
-                var company_name = $("input[name=company_name]");
-                if (company_name.length == 0) {
-                    return;
-                }
-
-                var company = company_name.val().length != 0;
-                var speed = "slow";
-
-                if (company) {
-                    $("#einvoice-operator-div").fadeIn();
-                    $("#edicode-div").fadeIn();
-                    $("#edicode-notification-div").fadeIn();
-                    $(".div_vat").fadeIn();
-                } else {
-                    // Slow fadeout so user notices what's being removed
-                    $("#einvoice-operator-div").fadeOut(speed);
-                    $("#edicode-div").fadeOut(speed);
-                    $("#edicode-notification-div").fadeOut(speed);
-                    $(".div_vat").fadeOut(speed);
-                }
-            }
 
             // Uncommenting these will enable auto-hide for edicode-fields
             // $("input[name=company_name]").change(toggleEdicode);
@@ -48,6 +49,7 @@ odoo.define("website_sale_edicode.checkout", function (require) {
                         (!edicode.val() && !einvoice_operator.val()) ||
                         !company_name.val()
                     ) {
+                        console.log("Edicode validation successful");
                     } else {
                         e.preventDefault();
                         e.stopPropagation();

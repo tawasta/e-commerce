@@ -40,7 +40,7 @@ addon | version | maintainers | summary
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 14.0.1.0.0 |  | Website Sale Maintenance mode
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 14.0.1.0.0 |  | Website sale membership privacy values
 [website_sale_payment_acquirer_filter](website_sale_payment_acquirer_filter/) | 14.0.1.0.0 |  | Allows filtering payment acquirers by partner type
-[website_sale_payment_rules](website_sale_payment_rules/) | 14.0.1.0.0 |  | Website sale payment rules
+[website_sale_payment_rules](website_sale_payment_rules/) | 14.0.1.0.1 |  | Website sale payment rules
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 14.0.1.0.0 |  | Invoice Transmit Method and Payment Terms for Website SO print
 [website_sale_product_quantity_integer](website_sale_product_quantity_integer/) | 14.0.1.0.0 |  | Show product quantity in cart as integer
 [website_sale_publication](website_sale_publication/) | 14.0.1.0.0 |  | Adds publication product to website product views

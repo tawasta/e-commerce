@@ -1,4 +1,4 @@
-odoo.define("website_sale_invoice_transmit_method.checkout", function (require) {
+odoo.define("website_sale_invoice_transmit_method.checkout", function () {
     "use strict";
 
     $(function () {
@@ -20,10 +20,10 @@ odoo.define("website_sale_invoice_transmit_method.checkout", function (require) 
             $("#edicode-div").hide();
             $("#edicode-notification-div").hide();
 
-            if (transmit_type == "mail") {
+            if (transmit_type === "mail") {
                 // Refers to website_sale_company_email
                 $("label[for='company_email'").removeClass("label-optional");
-            } else if (transmit_type == "einvoice") {
+            } else if (transmit_type === "einvoice") {
                 // Refers to website_sale_business_code
                 $("label[for='vat'").removeClass("label-optional");
 
