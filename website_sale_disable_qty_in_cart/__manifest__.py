@@ -22,7 +22,7 @@
     "version": "14.0.1.0.0",
     "category": "E-commerce",
     "summary": "Helper module to disable changing product quantity in cart",
-    "website": "https://gitlab.com/tawasta/odoo",
+    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

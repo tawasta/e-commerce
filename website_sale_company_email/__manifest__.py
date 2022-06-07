@@ -21,7 +21,7 @@
 {
     "name": "eCommerce: Separate email for company in address management",
     "summary": "Add different emails for ecommerce user and company",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.4",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",

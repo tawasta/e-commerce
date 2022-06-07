@@ -9,9 +9,10 @@
         <xpath expr="//div[contains(@t-attf-class, 'div_vat')]" position="after">
             <div
                 id="edicode-div"
-                style="display: none;"
+                style="display: initial;"
                 t-attf-class="form-group #{error.get('edicode') and 'has-error' or ''} col-md-6 div_edicode show-company">
                 <label
+                    id="edicode-label"
                     class="col-form-label label-optional"
                     for="edicode">Edicode</label>
                 <input
@@ -23,26 +24,27 @@
             </div>
             <div
                 id="einvoice-operator-div"
-                style="display: none;"
+                style="display: initial;"
                 t-attf-class="form-group #{error.get('einvoice_operator_id') and 'has-error' or ''} col-lg-6 div_einvoice_operator show-company">
                 <t
                     t-set="operators"
                     t-value="request.env['res.partner.operator.einvoice'].sudo().search([])"
                 />
                 <label
+                    id="einvoice-operator-label"
                     class="col-form-label label-optional"
                     for="einvoice_operator_id">eInvoice Operator</label>
                 <select
                     id="einvoice-operator-select"
-                    class="form-control einvoice_operator-select select2"
+                    t-attf-class="form-control #{error.get('einvoice_operator_id') and 'is-invalid' or ''}"
                     name="einvoice_operator_id">
+                    data-init="1"
                     <option />
                     <t t-foreach="operators" t-as="op">
                         <option
                             t-att-value="op.id"
-                            t-att-selected="op == ('einvoice_operator_id' in checkout and checkout['einvoice_operator_id'])"><span
-                                t-esc="op.name"
-                            /> (<span t-esc="op.identifier" />)
+                            t-att-selected="op.id == ('einvoice_operator_id' in checkout and checkout['einvoice_operator_id'] != '' and int(checkout['customer_invoice_transmit_method_id']))">
+                            <span t-esc="op.name" /> (<span t-esc="op.identifier" />)
                         </option>
                     </t>
                 </select>
@@ -57,7 +59,7 @@
         customize_show="True"
         active="False">
         <xpath expr="//div[@id='einvoice-operator-div']" position="after">
-            <div id="edicode-notification-div" class="col-12" style="display: none;">
+            <div id="edicode-notification-div" class="col-12" style="display: initial;">
                 <div
                     class="alert alert-info text-center alert-dismissible fade show"
                     role="alert">

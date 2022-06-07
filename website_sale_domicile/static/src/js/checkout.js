@@ -1,7 +1,5 @@
-odoo.define("website_sale_domicile.checkout", function (require) {
+odoo.define("website_sale_domicile.checkout", function () {
     "use strict";
-    var core = require("web.core");
-    var _t = core._t;
 
     $(function () {
         $("input[name=city]").blur(function () {

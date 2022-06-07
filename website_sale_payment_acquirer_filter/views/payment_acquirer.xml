@@ -4,11 +4,11 @@
         <field name="name">aquirer.form.filter</field>
         <field name="model">payment.acquirer</field>
         <field name="inherit_id" ref="payment.acquirer_form" />
-		<field name="arch" type="xml">
-			<field name='provider' position='after'>
+        <field name="arch" type="xml">
+            <field name='provider' position='after'>
                 <field name="website_show_company" />
                 <field name="website_show_private" />
-			</field>
+            </field>
         </field>
     </record>
 </odoo>
