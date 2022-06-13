@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Product Public Categories -->
+    <record id="product_public_category_form_view_extra_step_text" model="ir.ui.view">
+        <field name="name">product.public.category.form.extra.step.text</field>
+        <field name="model">product.public.category</field>
+        <field name="inherit_id" ref="website_sale.product_public_category_form_view" />
+        <field name="arch" type="xml">
+            <field name="sequence" position="before">
+                <field name="extra_step_text" />
+            </field>
+        </field>
+    </record>
+</odoo>

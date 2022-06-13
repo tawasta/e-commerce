@@ -28,7 +28,7 @@ addon | version | maintainers | summary
 [website_sale_domicile](website_sale_domicile/) | 14.0.1.0.0 |  | Adds domicile to website checkout form
 [website_sale_edicode](website_sale_edicode/) | 14.0.1.5.1 |  | Adds EDI code to website checkout form
 [website_sale_extra_step_content_to_sale_order_note](website_sale_extra_step_content_to_sale_order_note/) | 14.0.1.0.0 |  | Extra Step Content to SO note
-[website_sale_extra_step_info](website_sale_extra_step_info/) | 14.0.1.0.2 |  | Website Sale extra step info text
+[website_sale_extra_step_info](website_sale_extra_step_info/) | 14.0.1.0.3 |  | Extra step info text: global and publica category
 [website_sale_extra_step_replace_feedback_text](website_sale_extra_step_replace_feedback_text/) | 14.0.1.0.0 |  | Replace extra step feedback text to more information
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 14.0.1.0.0 |  | Allow hiding/showing items in extra step
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 14.0.1.0.1 |  | Forces autoinvoice on quotations created from website_sale
