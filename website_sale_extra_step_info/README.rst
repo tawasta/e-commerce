@@ -3,11 +3,12 @@
    :alt: License: AGPL-3
 
 =================================
-Website Sale extra step info text
+Website Sale Extra Step Info Text
 =================================
 
 * The control panel allows you to specify the text that will be displayed in the extra step of the e-commerce.
 * The text is only shown to logged in users.
+* Ability to add extra step text per public category
 
 Configuration
 =============
