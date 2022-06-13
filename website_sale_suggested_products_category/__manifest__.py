@@ -19,7 +19,7 @@
 ##############################################################################
 {
     "name": "Website Sale Suggested Products Category",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "E-commerce",
     "summary": "Show suggested products in cart under Suggested Products Categories",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
@@ -27,7 +27,7 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale"],
+    "depends": ["website_sale", "product_cant_order"],
     "data": [
         "security/ir.model.access.csv",
         "views/suggested_products_category_views.xml",
