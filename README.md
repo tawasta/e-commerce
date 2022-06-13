@@ -49,7 +49,7 @@ addon | version | maintainers | summary
 [website_sale_show_product_code](website_sale_show_product_code/) | 14.0.1.0.0 |  | Show the product's internal reference on product page
 [website_sale_split_name](website_sale_split_name/) | 14.0.1.0.1 |  | Website sale split name
 [website_sale_stock_show](website_sale_stock_show/) | 14.0.1.0.0 |  | Always show availability on website if 'Sell regardless of inventory' is selected for product
-[website_sale_suggested_products_category](website_sale_suggested_products_category/) | 14.0.1.0.0 |  | Show suggested products in cart under Suggested Products Categories
+[website_sale_suggested_products_category](website_sale_suggested_products_category/) | 14.0.1.0.1 |  | Show suggested products in cart under Suggested Products Categories
 [website_sale_suggested_products_order_by](website_sale_suggested_products_order_by/) | 14.0.1.0.2 |  | Order suggested products using _order
 
 [//]: # (end addons)
