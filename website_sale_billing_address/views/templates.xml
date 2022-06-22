@@ -6,17 +6,20 @@
         name="Billing address"
         customize_show="True"
         active="True">
-        <xpath expr="//div[@class='checkbox']" position="inside">
-            <label>
-                <input
-                    type="checkbox"
-                    id='billing_use_same'
-                    class="mr8"
-                    name='billing_use_same'
-                    value="1"
-                    checked='checked'
-                />Same billing address
-            </label>
+        <xpath expr="//div[@class='w-100'][last()]" position="after">
+            <t t-esc="mode" />
+            <div class="col-12" t-if="mode != ('new', 'shipping')">
+                <label>
+                    <input
+                        type="checkbox"
+                        id='billing_use_same'
+                        class="mr8"
+                        name='billing_use_same'
+                        value="1"
+                        checked='checked'
+                    />Same billing address
+                </label>
+            </div>
         </xpath>
     </template>
 
@@ -62,7 +65,7 @@
                 <div class='card-body' style='min-height: 130px;'>
                     <a
                     t-attf-href="/shop/billing_address/{{contact.id}}"
-                    t-att-class="'btn btn-link float-right p-0 no-decoration' if not selected else 'd-none'"
+                    t-att-class="'btn btn-link float-right p-0 no-decoration' if not order.partner_id == contact else 'd-none'"
                     role="button"
                     title="Edit this address"
                     aria-label="Edit this address"><i class='fa fa-edit' /></a>
@@ -138,22 +141,42 @@
                                 method="post"
                                 class="checkout_autoformat">
                                 <div class="form-row">
-                                    <div class="form-group col-lg-12 div_name">
+                                    <div class="form-group col-lg-6 div_firstname">
                                         <label
                                             class="col-form-label"
-                                            for="name">Name</label>
+                                            for="firstname">Firstname</label>
                                         <t t-if="partner">
                                             <input
                                                 type="text"
-                                                name="name"
+                                                name="firstname"
                                                 class="form-control"
-                                                t-att-value="partner.name"
+                                                t-att-value="partner.firstname"
                                             />
                                         </t>
                                         <t t-else="">
                                             <input
                                                 type="text"
-                                                name="name"
+                                                name="firstname"
+                                                class="form-control"
+                                            />
+                                        </t>
+                                    </div>
+                                    <div class="form-group col-lg-6 div_lastname">
+                                        <label
+                                            class="col-form-label"
+                                            for="lastname">Lastname</label>
+                                        <t t-if="partner">
+                                            <input
+                                                type="text"
+                                                name="lastname"
+                                                class="form-control"
+                                                t-att-value="partner.lastname"
+                                            />
+                                        </t>
+                                        <t t-else="">
+                                            <input
+                                                type="text"
+                                                name="lastname"
                                                 class="form-control"
                                             />
                                         </t>
