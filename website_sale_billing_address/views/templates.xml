@@ -7,7 +7,6 @@
         customize_show="True"
         active="True">
         <xpath expr="//div[@class='w-100'][last()]" position="after">
-            <t t-esc="mode" />
             <div class="col-12" t-if="mode != ('new', 'shipping')">
                 <label>
                     <input
