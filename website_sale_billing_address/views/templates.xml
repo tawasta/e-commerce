@@ -64,7 +64,7 @@
                 <div class='card-body' style='min-height: 130px;'>
                     <a
                     t-attf-href="/shop/billing_address/{{contact.id}}"
-                    t-att-class="'btn btn-link float-right p-0 no-decoration' if not order.partner_id == contact else 'd-none'"
+                    t-att-class="'btn btn-link float-right p-0 no-decoration'"
                     role="button"
                     title="Edit this address"
                     aria-label="Edit this address"><i class='fa fa-edit' /></a>
