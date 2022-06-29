@@ -69,19 +69,23 @@
                 </form>
             </div>
         </xpath>
-        <xpath expr="//div[@class='col-lg-6 one_kanban']/t" position="replace">
-            <t t-foreach="billings" t-as="billing">
-                <t t-call="website_sale_billing_address.address_kanban">
-                    <t t-set="actual_partner" t-value="order.partner_id" />
-                    <t t-set='contact' t-value="billing" />
-                    <t t-set='selected' t-value="order.partner_invoice_id==billing" />
-                    <t t-set='readonly' t-value="bool(len(billings)==1)" />
-                    <t
-                        t-set='edit_billing'
-                        t-value="bool(billing!=order.partner_invoice_id)"
-                    />
+        <xpath expr="//div[@class='col-lg-6 one_kanban']" position="replace">
+            <div class="col-lg-12 one_kanban row">
+                <t t-foreach="billings" t-as="billing">
+                    <div class="col-md-12 col-lg-6 one_kanban">
+                        <t t-call="website_sale_billing_address.address_kanban">
+                            <t t-set="actual_partner" t-value="order.partner_id" />
+                            <t t-set='contact' t-value="billing" />
+                            <t t-set='selected' t-value="order.partner_invoice_id==billing" />
+                            <t t-set='readonly' t-value="bool(len(billings)==1)" />
+                            <t
+                                t-set='edit_billing'
+                                t-value="bool(billing!=order.partner_invoice_id)"
+                            />
+                        </t>
+                    </div>
                 </t>
-            </t>
+            </div>
         </xpath>
     </template>
 
@@ -290,7 +294,6 @@
                                     </div>
                                     <div
                                         id="edicode-div"
-                                        style="display: none;"
                                         class="form-group col-md-6 div_edicode show-company">
                                         <label
                                             class="col-form-label label-optional"
@@ -313,7 +316,6 @@
                                     </div>
                                     <div
                                         id="einvoice-operator-div"
-                                        style="display: none;"
                                         class="form-group col-lg-6 div_einvoice_operator show-company">
                                         <t
                                             t-set="operators"
