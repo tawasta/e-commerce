@@ -148,6 +148,7 @@ class WebsiteSaleBilling(WebsiteSale):
                         "vat": post.get("vat"),
                         "type": "invoice",
                         "edicode": post.get("edicode") or False,
+                        "customer_invoice_transmit_method_id": int(post.get("customer_invoice_transmit_method_id")) or False,
                         "einvoice_operator_id": post.get("einvoice_operator_id")
                         or False,
                     }

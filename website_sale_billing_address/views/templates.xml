@@ -292,6 +292,50 @@
                                             />
                                         </t>
                                     </div>
+
+                                    <div
+                                        id="customer_invoice_transmit_method_id_div"
+                                        class="form-group col-lg-6 show-company">
+                                        <t
+                                            t-set="methods"
+                                            t-value="request.env['transmit.method'].sudo().search([('customer_ok', '=', True)])"
+                                        />
+                                        <label
+                                            class="col-form-label"
+                                            for="customer_invoice_transmit_method_id">Invoice transmit method</label>
+                                        <t t-if="partner">
+                                            <select
+                                                id="customer-invoice-transmit-method"
+                                                class="form-control"
+                                                name="customer_invoice_transmit_method_id"
+                                                data-init="1">
+                                                <t t-foreach="methods" t-as="method">
+                                                    <option
+                                                        t-att-value="method.id"
+                                                        t-att-data-code="method.code"
+                                                        t-att-selected="method.id == partner.parent_id.customer_invoice_transmit_method_id.id"
+                                                        t-esc="method.name"
+                                                    />
+                                                </t>
+                                            </select>
+                                        </t>
+                                        <t t-else="">
+                                            <select
+                                                id="customer-invoice-transmit-method"
+                                                class="form-control"
+                                                name="customer_invoice_transmit_method_id"
+                                                data-init="1">
+                                                <t t-foreach="methods" t-as="method">
+                                                    <option
+                                                        t-att-value="method.id"
+                                                        t-att-data-code="method.code"
+                                                        t-esc="method.name"
+                                                    />
+                                                </t>
+                                            </select>
+                                        </t>
+                                    </div>
+
                                     <div
                                         id="edicode-div"
                                         class="form-group col-md-6 div_edicode show-company">
