@@ -24,6 +24,7 @@ addon | version | maintainers | summary
 [website_sale_default_country](website_sale_default_country/) | 14.0.1.0.0 |  | Website Sale Default Country
 [website_sale_default_privacies](website_sale_default_privacies/) | 14.0.1.0.0 |  | Website sale default privacy values
 [website_sale_delivery_cost_with_tax](website_sale_delivery_cost_with_tax/) | 14.0.1.0.0 |  | Website sale delivery costs with tax
+[website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 14.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop
 [website_sale_disable_qty_in_cart](website_sale_disable_qty_in_cart/) | 14.0.1.0.0 |  | Helper module to disable changing product quantity in cart
 [website_sale_domicile](website_sale_domicile/) | 14.0.1.0.0 |  | Adds domicile to website checkout form
 [website_sale_edicode](website_sale_edicode/) | 14.0.1.5.2 |  | Adds EDI code to website checkout form
