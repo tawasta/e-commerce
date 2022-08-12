@@ -145,7 +145,7 @@ msgstr "Katuosoite <span class=\"d-none d-md-inline\"> ja numero</span>"
 #. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.billing_address
 msgid "TIN / VAT"
-msgstr "VAT"
+msgstr "Verokoodi"
 
 #. module: website_sale_billing_address
 #: model:ir.model.fields,field_description:website_sale_billing_address.field_sale_order__use_different_billing_address
@@ -160,4 +160,4 @@ msgstr "Postinumero"
 #. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.billing_address
 msgid "eInvoice Operator"
-msgstr ""
+msgstr "Verkkolaskuoperaattori"

@@ -60,24 +60,29 @@
     </template> -->
 
     <template id="checkout" inherit_id="website_sale.checkout">
-        <xpath expr="//div[@class='col-12 col-xl order-xl-1 oe_cart']/div[@class='row']" position="before">
+        <xpath
+            expr="//div[@class='col-12 col-xl order-xl-1 oe_cart']/div[@class='row']"
+            position="before">
             <div class="row">
                 <div class="col-lg-12">
                     <h3 class="o_page_header mt8">Subscriber</h3>
                 </div>
                 <div class="col-lg-6 one_kanban_subscriber">
-                <div t-attf-class="card #{selected and 'border border-primary' or 'js_change_shipping'}">
+                <div
+                        t-attf-class="card #{selected and 'border border-primary' or 'js_change_shipping'}">
                     <div class='card-body' style='min-height: 130px;'>
                     <a
-                    t-attf-href="/shop/address?partner_id={{order.partner_id.id}}"
-                    t-att-class="'btn btn-link float-right p-0 no-decoration'"
-                    role="button"
-                    title="Edit this address"
-                    aria-label="Edit this address"><i class='fa fa-edit' /></a>
+                                t-attf-href="/shop/address?partner_id={{order.partner_id.id}}"
+                                t-att-class="'btn btn-link float-right p-0 no-decoration'"
+                                role="button"
+                                title="Edit this address"
+                                aria-label="Edit this address"><i
+                                    class='fa fa-edit'
+                                /></a>
                     <t
-                    t-esc="order.partner_id"
-                    t-options="dict(widget='contact', fields=['name', 'address'], no_marker=True)"
-                />
+                                t-esc="order.partner_id"
+                                t-options="dict(widget='contact', fields=['name', 'address'], no_marker=True)"
+                            />
                 </div>
                 </div>
                 </div>
@@ -109,7 +114,10 @@
                         <t t-call="website_sale_billing_address.address_kanban">
                             <t t-set="actual_partner" t-value="order.partner_id" />
                             <t t-set='contact' t-value="billing" />
-                            <t t-set='selected' t-value="order.partner_invoice_id==billing" />
+                            <t
+                                t-set='selected'
+                                t-value="order.partner_invoice_id==billing"
+                            />
                             <t t-set='readonly' t-value="bool(len(billings)==1)" />
                             <t
                                 t-set='edit_billing'
@@ -511,7 +519,7 @@
                                             </t>
                                         </div>
                                     </t>
-                                    
+
                                     <t
                                         t-if="'zip' in zip_city and zip_city.index('zip') &gt; zip_city.index('city')">
                                         <div class="form-group col-md-4 div_zip">
@@ -582,7 +590,11 @@
                                                 class="form-control">
                                                 <option value="">Country...</option>
                                                 <t t-foreach="countries" t-as="c">
-                                                     <option t-att-selected="c.id == request.env.ref('base.fi').id" t-att-value="c.id"><t t-esc="c.name"/></option>
+                                                     <option
+                                                        t-att-selected="c.id == request.env.ref('base.fi').id"
+                                                        t-att-value="c.id"><t
+                                                            t-esc="c.name"
+                                                        /></option>
                                                 </t>
                                             </select>
                                         </t>
