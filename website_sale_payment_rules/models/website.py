@@ -23,6 +23,10 @@ class Website(models.Model):
         string="Website sale: need company data", readonly=False, translate=True
     )
 
+    mandatory_products_text = fields.Html(
+        string="Website sale: mandatory products", readonly=False, translate=True
+    )
+
     def sale_get_order(self, *args, **kwargs):
         # Override to allow fixing SO taxes on multi-company website
         res = super().sale_get_order(*args, **kwargs)

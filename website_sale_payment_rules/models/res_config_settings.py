@@ -31,3 +31,10 @@ class ResConfigSettings(models.TransientModel):
         readonly=False,
         translate=True,
     )
+
+    website_sale_mandatory_products_text = fields.Html(
+        string="Website sale: mandatory products",
+        related="website_id.mandatory_products_text",
+        readonly=False,
+        translate=True,
+    )

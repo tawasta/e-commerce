@@ -60,8 +60,26 @@
                         </div>
                     </t>
                 </t>
+                <t t-if="mandatory_products_list">
+                    
+                        <div class="alert alert-warning">
+                            <h5 class="mb24"><t
+                                    t-raw="website.mandatory_products_text"
+                                /> </h5>
+                            <div class="row">
+                                <t t-foreach="mandatory_products_list" t-as="prod">
+                                    <div class="col-12 mb-1">
+                                        <a
+                                            class=''
+                                            t-attf-href='/shop/product/{{prod.product_tmpl_id.id}}'
+                                            target="_blank"><t t-esc="prod.name" /></a>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                </t>
                 <t
-                    t-if="not need_attachment and not need_explanation and not product_categ_list and not need_company_info">
+                    t-if="not need_attachment and not mandatory_products_list and not need_explanation and not product_categ_list and not need_company_info">
                     <h3 class="mb24">Pay with </h3>
                     <t t-call="payment.payment_tokens_list">
                         <t t-set="mode" t-value="'payment'" />
@@ -142,8 +160,26 @@
                         </div>
                     </t>
                 </t>
+                <t t-if="mandatory_products_list">
+                    
+                        <div class="alert alert-warning">
+                            <h5 class="mb24"><t
+                                    t-raw="website.mandatory_products_text"
+                                /> </h5>
+                            <div class="row">
+                                <t t-foreach="mandatory_products_list" t-as="prod">
+                                    <div class="col-12 mb-1">
+                                        <a
+                                            class=''
+                                            t-attf-href='/shop/product/{{prod.product_tmpl_id.id}}'
+                                            target="_blank"><t t-esc="prod.name" /></a>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                </t>
                 <t
-                    t-if="not need_attachment and not need_explanation and not product_categ_list and not need_company_info">
+                    t-if="not need_attachment and not mandatory_products_list and not need_explanation and not product_categ_list and not need_company_info">
                     <form
                         target="_self"
                         action="/shop/payment/validate"
