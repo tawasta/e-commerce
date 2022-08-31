@@ -21,7 +21,7 @@
 {
     "name": "Finnish Business code to website sale",
     "summary": "Adds Finnish Business code to website checkout form",
-    "version": "14.0.1.0.2",
+    "version": "14.0.1.0.3",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
