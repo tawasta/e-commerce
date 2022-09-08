@@ -61,18 +61,18 @@
                     </t>
                 </t>
                 <t t-if="mandatory_products_list">
-                    
+
                         <div class="alert alert-warning">
                             <h5 class="mb24"><t
-                                    t-raw="website.mandatory_products_text"
-                                /> </h5>
+                                t-raw="website.mandatory_products_text"
+                            /> </h5>
                             <div class="row">
                                 <t t-foreach="mandatory_products_list" t-as="prod">
                                     <div class="col-12 mb-1">
                                         <a
-                                            class=''
-                                            t-attf-href='/shop/product/{{prod.product_tmpl_id.id}}'
-                                            target="_blank"><t t-esc="prod.name" /></a>
+                                        class=''
+                                        t-attf-href='/shop/product/{{prod.product_tmpl_id.id}}'
+                                        target="_blank"><t t-esc="prod.name" /></a>
                                     </div>
                                 </t>
                             </div>
@@ -161,18 +161,18 @@
                     </t>
                 </t>
                 <t t-if="mandatory_products_list">
-                    
+
                         <div class="alert alert-warning">
                             <h5 class="mb24"><t
-                                    t-raw="website.mandatory_products_text"
-                                /> </h5>
+                                t-raw="website.mandatory_products_text"
+                            /> </h5>
                             <div class="row">
                                 <t t-foreach="mandatory_products_list" t-as="prod">
                                     <div class="col-12 mb-1">
                                         <a
-                                            class=''
-                                            t-attf-href='/shop/product/{{prod.product_tmpl_id.id}}'
-                                            target="_blank"><t t-esc="prod.name" /></a>
+                                        class=''
+                                        t-attf-href='/shop/product/{{prod.product_tmpl_id.id}}'
+                                        target="_blank"><t t-esc="prod.name" /></a>
                                     </div>
                                 </t>
                             </div>

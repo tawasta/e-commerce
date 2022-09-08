@@ -18,4 +18,8 @@ class ProductTemplate(models.Model):
 
     change_allowed = fields.Boolean(string="Change allowed", default=False)
 
-    mandatory_products = fields.Many2many(comodel_name="product.product", relation='mandatory_product_product_rel', string="Mandatory products",)
+    mandatory_products = fields.Many2many(
+        comodel_name="product.product",
+        relation="mandatory_product_product_rel",
+        string="Mandatory products",
+    )
