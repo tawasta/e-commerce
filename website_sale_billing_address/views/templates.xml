@@ -492,6 +492,28 @@
                                         </t>
                                     </div>
                                     <div class="w-100" />
+                                    
+                                    <div class="form-group col-md-8 div_city">
+                                        <label
+                                            class="col-form-label"
+                                            for="city">City</label>
+                                        <t t-if="partner">
+                                            <input
+                                                type="text"
+                                                name="city"
+                                                class="form-control"
+                                                t-att-value="partner.city"
+                                            />
+                                        </t>
+                                        <t t-else="">
+                                            <input
+                                                type="text"
+                                                name="city"
+                                                class="form-control"
+                                            />
+                                        </t>
+                                    </div>
+                                    <div class="w-100" />
                                     <t
                                         t-set='zip_city'
                                         t-value='country and [x for x in country.get_address_fields() if x in ["zip", "city"]] or ["city", "zip"]'
@@ -543,27 +565,6 @@
                                             </t>
                                         </div>
                                     </t>
-                                    <div class="form-group col-md-8 div_city">
-                                        <label
-                                            class="col-form-label"
-                                            for="city">City</label>
-                                        <t t-if="partner">
-                                            <input
-                                                type="text"
-                                                name="city"
-                                                class="form-control"
-                                                t-att-value="partner.city"
-                                            />
-                                        </t>
-                                        <t t-else="">
-                                            <input
-                                                type="text"
-                                                name="city"
-                                                class="form-control"
-                                            />
-                                        </t>
-                                    </div>
-                                    <div class="w-100" />
                                     <div t-attf-class="form-group col-lg-6 div_c_id">
                                         <label
                                             class="col-form-label"
