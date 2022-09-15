@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 14.0-20220520\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-22 12:29+0000\n"
-"PO-Revision-Date: 2022-06-22 12:29+0000\n"
+"POT-Creation-Date: 2022-09-15 08:21+0000\n"
+"PO-Revision-Date: 2022-09-15 08:21+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address_kanban
 msgid "<i class=\"fa fa-check\"/> Billing to this address"
-msgstr "<i class=\"fa fa-check\"/> Laskutus samaan osoitteeseen"
+msgstr "<i class=\"fa fa-check\"/> Laskutus tähän osoitteeseen"
 
 #. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.billing_address
@@ -89,6 +89,7 @@ msgstr "Verkkolaskuosoite"
 
 #. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address_kanban
+#: model_terms:ir.ui.view,arch_db:website_sale_billing_address.checkout
 msgid "Edit this address"
 msgstr "Muokkaa osoitetta"
 
@@ -101,6 +102,11 @@ msgstr "Etunimi"
 #: model:ir.model.fields,field_description:website_sale_billing_address.field_sale_order__id
 msgid "ID"
 msgstr "Tunniste (ID)"
+
+#. module: website_sale_billing_address
+#: model_terms:ir.ui.view,arch_db:website_sale_billing_address.billing_address
+msgid "Invoice transmit method"
+msgstr ""
 
 #. module: website_sale_billing_address
 #: model:ir.model.fields,field_description:website_sale_billing_address.field_sale_order____last_update
@@ -143,9 +149,14 @@ msgid "Street <span class=\"d-none d-md-inline\"> and Number</span>"
 msgstr "Katuosoite <span class=\"d-none d-md-inline\"> ja numero</span>"
 
 #. module: website_sale_billing_address
+#: model_terms:ir.ui.view,arch_db:website_sale_billing_address.checkout
+msgid "Subscriber"
+msgstr ""
+
+#. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.billing_address
 msgid "TIN / VAT"
-msgstr "Verokoodi"
+msgstr "Y-tunnus"
 
 #. module: website_sale_billing_address
 #: model:ir.model.fields,field_description:website_sale_billing_address.field_sale_order__use_different_billing_address
