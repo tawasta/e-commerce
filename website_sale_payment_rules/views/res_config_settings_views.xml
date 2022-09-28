@@ -55,6 +55,16 @@
                                 <field name="website_sale_add_company_info_text" />
                             </div>
                         </div>
+                        <div class="o_setting_right_pane">
+                            <div class="text-muted">
+                                Mandatory products text
+                            </div>
+                        </div>
+                        <div class="content-group">
+                            <div class="mt8">
+                                <field name="website_sale_mandatory_products_text" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

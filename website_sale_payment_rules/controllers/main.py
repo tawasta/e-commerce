@@ -13,7 +13,9 @@ class WebsiteSale(WebsiteSale):
         check_attachment = False
         check_explanation = False
         check_category_product = False
+        check_mandatory_products = False
         product_categ_list = []
+        mandatory_products_list = []
         companies = []
         for line in order.order_line:
             if line.product_id.membership_type == "company":
@@ -21,6 +23,8 @@ class WebsiteSale(WebsiteSale):
                     need_company_info = True
             if line.product_id.payment_only_invoice:
                 only_invoice = True
+            if line.product_id.mandatory_products:
+                check_mandatory_products = True
             if line.product_id.requires_attachment:
                 check_attachment = True
             if line.product_id.requires_explanation:
@@ -38,6 +42,13 @@ class WebsiteSale(WebsiteSale):
             only_invoice = True
         if result:
             company_id = companies[0]
+
+        if check_mandatory_products:
+            for li in order.order_line:
+                if li.product_id.mandatory_products:
+                    for mp in li.product_id.mandatory_products:
+                        mandatory_products_list.append(mp)
+            values.update({"mandatory_products_list": mandatory_products_list})
 
         if check_category_product:
             for product_line in order.order_line:

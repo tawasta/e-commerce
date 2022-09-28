@@ -29,6 +29,7 @@
     "application": False,
     "installable": True,
     "depends": [
+        "sale_create_membership",
         "website_sale",
         "payment_paytrail",
         "website_sale_extra_step_content_to_sale_order_note",

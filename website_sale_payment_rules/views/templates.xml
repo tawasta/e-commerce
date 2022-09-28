@@ -15,6 +15,7 @@
                             <field name="requires_explanation" />
                             <field name="required_product_category_id" />
                             <field name="change_allowed" />
+                            <field name="mandatory_products" widget="many2many_tags" />
                         </group>
                     </page>
                 </page>

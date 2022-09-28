@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="checkout"
+        inherit_id="website_sale.checkout"
+        name="Checkout default billing address">
+
+        <xpath expr="//t[@t-call='website_sale.address_kanban'][1]" position="inside">
+            <t
+                t-if="order.partner_id.default_partner_invoice_id"
+                t-set="contact"
+                t-value="order.partner_invoice_id"
+            />
+        </xpath>
+    </template>
+
+    <template
+        id="address_kanban"
+        inherit_id="website_sale.address_kanban"
+        name="Address kanban default billing address">
+
+        <xpath expr="//div[@class='card-body']/a" position="attributes">
+            <attribute
+                name="t-if">actual_partner or (not actual_partner and contact != order.partner_id.default_partner_invoice_id)</attribute>
+        </xpath>
+    </template>
+
+</odoo>
