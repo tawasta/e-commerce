@@ -32,7 +32,7 @@ addon | version | maintainers | summary
 [website_sale_extra_step_content_to_sale_order_note](website_sale_extra_step_content_to_sale_order_note/) | 14.0.1.0.0 |  | Extra Step Content to SO note
 [website_sale_extra_step_info](website_sale_extra_step_info/) | 14.0.1.0.3 |  | Extra step info text: global and publica category
 [website_sale_extra_step_replace_feedback_text](website_sale_extra_step_replace_feedback_text/) | 14.0.1.0.0 |  | Replace extra step feedback text to more information
-[website_sale_extra_step_settings](website_sale_extra_step_settings/) | 14.0.1.0.0 |  | Allow hiding/showing items in extra step
+[website_sale_extra_step_settings](website_sale_extra_step_settings/) | 14.0.1.0.1 |  | Allow hiding/showing items in extra step
 [website_sale_force_address_step](website_sale_force_address_step/) | 14.0.1.0.1 |  | Never skip the address step. Disables 'express'-checkout
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 14.0.1.0.1 |  | Forces autoinvoice on quotations created from website_sale
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 14.0.1.0.0 |  | Hides the default '30-day money-back quarantee...' text
