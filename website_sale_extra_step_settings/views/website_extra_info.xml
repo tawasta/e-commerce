@@ -54,12 +54,14 @@
         </xpath>
 
         <!-- Replace 'Give us your feedback' text -->
+        <!--
         <xpath expr="//textarea[@id='sale2']/../../label/span" position="replace">
             <label
                 class="control-label label-optional"
                 id="label-extra-info"
                 for="Give us your feedback...">Extra info</label>
         </xpath>
+        -->
 
         <xpath
             expr="//input[@name='client_order_ref']/../../label"
