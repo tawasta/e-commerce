@@ -21,7 +21,7 @@
 {
     "name": "Invoicing fee for Website Sale",
     "summary": "Adds Invoicing fee to Sale Order",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.2",
     "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",

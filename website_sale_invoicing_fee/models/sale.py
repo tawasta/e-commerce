@@ -5,7 +5,8 @@ class SaleOrder(models.Model):
 
     _inherit = "sale.order"
 
-    def action_quotation_send(self):
+    def _send_order_confirmation_mail(self):
+        """Adds an invoicing fee to SO upon confirmation mail."""
         sale_transactions = self.transaction_ids and self.transaction_ids[0]
 
         line_product_id = self and sale_transactions.acquirer_id.product_id or False
@@ -34,4 +35,4 @@ class SaleOrder(models.Model):
                 }
             )
 
-        return super(SaleOrder, self).action_quotation_send()
+        return super(SaleOrder, self)._send_order_confirmation_mail()

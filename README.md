@@ -39,7 +39,7 @@ addon | version | maintainers | summary
 [website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 14.0.1.0.0 |  | Hide Delivery Orders Snippet
 [website_sale_hide_login](website_sale_hide_login/) | 14.0.1.0.0 |  | Website Sale Hide Login Button
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 14.0.1.0.2 |  | Adds account invoice transmit method to checkout
-[website_sale_invoicing_fee](website_sale_invoicing_fee/) | 14.0.1.0.1 |  | Adds Invoicing fee to Sale Order
+[website_sale_invoicing_fee](website_sale_invoicing_fee/) | 14.0.1.0.2 |  | Adds Invoicing fee to Sale Order
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 14.0.1.0.0 |  | Website Sale Maintenance mode
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 14.0.1.0.0 |  | Website sale membership privacy values
 [website_sale_payment_acquirer_filter](website_sale_payment_acquirer_filter/) | 14.0.1.0.0 |  | Allows filtering payment acquirers by partner type
