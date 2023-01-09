@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <template id="billing_address_assets" name="Billing address assets">
+        <script type="text/javascript" src="/website_sale_billing_address/static/src/js/address.js"/>
+    </template>
     <template
         id="address"
         inherit_id="website_sale.address"
@@ -17,8 +20,13 @@
                         value="1"
                         checked='checked'
                     />Same billing address
+                    <span class='billing_to_other text-muted' style="display: none">&amp;nbsp;(<i>Your billing address will be requested later) </i></span>
                 </label>
             </div>
+            <t
+                t-call-assets="website_sale_billing_address.billing_address_assets"
+                lazy_load="True"
+            />
         </xpath>
     </template>
 
