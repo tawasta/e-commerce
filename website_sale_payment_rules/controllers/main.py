@@ -165,10 +165,48 @@ class WebsiteSale(WebsiteSale):
             page=page, category=category, search=search, ppg=ppg, **post
         )
 
-        products = response.qcontext["products"] 
+        products = response.qcontext["products"]
+        attrib_values = response.qcontext["search_count"]
+        attributes = response.qcontext["attributes"]
+        searches = response.qcontext["search"]
+        product_list = [] 
+        for p in products:
+            if not p.allowed_groups_ids or p.allowed_groups_ids in request.env.user.groups_id:
+                product_list.append(p.id)
+
+        products_ids = (
+            request.env["product.template"]
+            .sudo()
+            .search([("id", "in", product_list)])
+        )
+        logging.info(products_ids)
         response.qcontext.update({
             "bins": TableCompute().process(response.qcontext["products"], response.qcontext["ppg"], response.qcontext["ppr"]),
+            "products": products_ids,
         })
+        return response
+
+    @http.route()
+    def products_autocomplete(self, term, options={}, **kwargs):
+
+        response = super(WebsiteSale, self).products_autocomplete(
+            term, options=options, **kwargs
+        )
+        products = response["products"]
+        logging.info(response)
+        for i in range(len(products)):
+            product = request.env["product.template"].sudo().search([
+                ('id', '=', products[i]['id'])
+            ])
+            if product:
+                if product.allowed_groups_ids and product.allowed_groups_ids not in request.env.user.groups_id:
+                    del products[i]
+
+        response.update({
+            'products': products,
+            'products_count': len(products)
+        })
+
         return response
 
 class TableCompute(object):
