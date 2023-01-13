@@ -193,18 +193,18 @@ class WebsiteSale(WebsiteSale):
             term, options=options, **kwargs
         )
         products = response["products"]
-        logging.info(response)
+        product_list = []
         for i in range(len(products)):
-            product = request.env["product.template"].sudo().search([
+            product = request.env["product.template"].search([
                 ('id', '=', products[i]['id'])
             ])
             if product:
-                if product.allowed_groups_ids and product.allowed_groups_ids not in request.env.user.groups_id:
-                    del products[i]
+                if not product.allowed_groups_ids or product.allowed_groups_ids in request.env.user.groups_id:
+                    product_list.append(products[i])
 
         response.update({
-            'products': products,
-            'products_count': len(products)
+            'products': product_list,
+            'products_count': len(product_list)
         })
 
         return response
