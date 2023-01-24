@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="billing_address_assets" name="Billing address assets">
-        <script type="text/javascript" src="/website_sale_billing_address/static/src/js/address.js"/>
+        <script
+            type="text/javascript"
+            src="/website_sale_billing_address/static/src/js/address.js"
+        />
     </template>
     <template
         id="address"
@@ -20,7 +23,9 @@
                         value="1"
                         checked='checked'
                     />Same billing address
-                    <span class='billing_to_other text-muted' style="display: none">&amp;nbsp;(<i>Your billing address will be requested later) </i></span>
+                    <span
+                        class='billing_to_other text-muted'
+                        style="display: none">&amp;nbsp;(<i>Your billing address will be requested later) </i></span>
                 </label>
             </div>
             <t

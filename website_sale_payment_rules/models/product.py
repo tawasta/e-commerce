@@ -19,8 +19,7 @@ class ProductTemplate(models.Model):
     change_allowed = fields.Boolean(string="Change allowed", default=False)
 
     allowed_groups_ids = fields.Many2many(
-        string="Allowed groups can see the product",
-        comodel_name="res.groups"
+        string="Allowed groups can see the product", comodel_name="res.groups"
     )
 
     mandatory_products = fields.Many2many(
