@@ -21,7 +21,7 @@
 {
     "name": "eCommerce: Partner Default Invoice Address",
     "summary": "Use predefined invoice address for partner, if set",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
