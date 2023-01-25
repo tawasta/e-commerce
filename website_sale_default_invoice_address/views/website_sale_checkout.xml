@@ -7,12 +7,12 @@
 
         <xpath expr="//t[@t-call='website_sale.address_kanban'][1]" position="inside">
             <t
-                t-if="order.commercial_partner_id.default_partner_invoice_id"
+                t-if="order.partner_id.default_partner_invoice_id"
                 t-set="contact"
                 t-value="order.partner_invoice_id"
             />
             <t
-                t-if="order.partner_id.default_partner_invoice_id"
+                t-elif="order.commercial_partner_id.default_partner_invoice_id"
                 t-set="contact"
                 t-value="order.partner_invoice_id"
             />
