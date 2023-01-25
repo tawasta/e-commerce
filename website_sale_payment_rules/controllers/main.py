@@ -159,40 +159,40 @@ class WebsiteSale(WebsiteSale):
 
         return super(WebsiteSale, self).payment_confirmation(**post)
 
-    @http.route()
-    def shop(self, page=0, category=None, search="", ppg=False, **post):
+    # @http.route()
+    # def shop(self, page=0, category=None, search="", ppg=False, **post):
 
-        response = super(WebsiteSale, self).shop(
-            page=page, category=category, search=search, ppg=ppg, **post
-        )
+    #     response = super(WebsiteSale, self).shop(
+    #         page=page, category=category, search=search, ppg=ppg, **post
+    #     )
 
-        products = response.qcontext["products"]
-        # response.qcontext["search_count"]
-        # response.qcontext["attributes"]
-        # response.qcontext["search"]
-        product_list = []
-        for p in products:
-            if (
-                not p.allowed_groups_ids
-                or p.allowed_groups_ids in request.env.user.groups_id
-            ):
-                product_list.append(p.id)
+    #     products = response.qcontext["products"]
+    #     # response.qcontext["search_count"]
+    #     # response.qcontext["attributes"]
+    #     # response.qcontext["search"]
+    #     product_list = []
+    #     for p in products:
+    #         if (
+    #             not p.allowed_groups_ids
+    #             or p.allowed_groups_ids in request.env.user.groups_id
+    #         ):
+    #             product_list.append(p.id)
 
-        products_ids = (
-            request.env["product.template"].sudo().search([("id", "in", product_list)])
-        )
-        logging.info(products_ids)
-        response.qcontext.update(
-            {
-                "bins": TableCompute().process(
-                    response.qcontext["products"],
-                    response.qcontext["ppg"],
-                    response.qcontext["ppr"],
-                ),
-                "products": products_ids,
-            }
-        )
-        return response
+    #     products_ids = (
+    #         request.env["product.template"].sudo().search([("id", "in", product_list)])
+    #     )
+    #     logging.info(products_ids)
+    #     response.qcontext.update(
+    #         {
+    #             "bins": TableCompute().process(
+    #                 response.qcontext["products"],
+    #                 response.qcontext["ppg"],
+    #                 response.qcontext["ppr"],
+    #             ),
+    #             "products": products_ids,
+    #         }
+    #     )
+    #     return response
 
     @http.route()
     def products_autocomplete(self, term, options=False, **kwargs):
