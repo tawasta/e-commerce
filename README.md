@@ -22,7 +22,7 @@ addon | version | maintainers | summary
 [website_sale_create_user](website_sale_create_user/) | 14.0.1.0.1 |  | Website sale create user
 [website_sale_customer_contact](website_sale_customer_contact/) | 14.0.1.0.0 |  | Adds customer contact as SO contact
 [website_sale_default_country](website_sale_default_country/) | 14.0.1.0.0 |  | Website Sale Default Country
-[website_sale_default_invoice_address](website_sale_default_invoice_address/) | 14.0.1.1.0 |  | Use predefined invoice address for partner, if set
+[website_sale_default_invoice_address](website_sale_default_invoice_address/) | 14.0.1.1.1 |  | Use predefined invoice address for partner, if set
 [website_sale_default_privacies](website_sale_default_privacies/) | 14.0.1.0.0 |  | Website sale default privacy values
 [website_sale_delivery_cost_with_tax](website_sale_delivery_cost_with_tax/) | 14.0.1.0.0 |  | Website sale delivery costs with tax
 [website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 14.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop

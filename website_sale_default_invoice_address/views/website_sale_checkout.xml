@@ -7,6 +7,11 @@
 
         <xpath expr="//t[@t-call='website_sale.address_kanban'][1]" position="inside">
             <t
+                t-if="order.commercial_partner_id.default_partner_invoice_id"
+                t-set="contact"
+                t-value="order.partner_invoice_id"
+            />
+            <t
                 t-if="order.partner_id.default_partner_invoice_id"
                 t-set="contact"
                 t-value="order.partner_invoice_id"
@@ -21,7 +26,7 @@
 
         <xpath expr="//div[@class='card-body']/a" position="attributes">
             <attribute
-                name="t-if">actual_partner or (not actual_partner and contact != order.partner_id.default_partner_invoice_id)</attribute>
+                name="t-if">actual_partner or (not actual_partner and contact not in [order.partner_id.default_partner_invoice_id, order.commercial_partner_id.default_partner_invoice_id])</attribute>
         </xpath>
     </template>
 
