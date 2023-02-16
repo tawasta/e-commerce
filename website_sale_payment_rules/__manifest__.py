@@ -35,6 +35,7 @@
         "website_sale_extra_step_content_to_sale_order_note",
     ],
     "data": [
+        "views/payment_acquirer_view.xml",
         "views/res_config_settings_views.xml",
         "views/templates.xml",
         "views/website_sale_templates.xml",
