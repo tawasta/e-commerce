@@ -47,6 +47,7 @@ addon | version | maintainers | summary
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 14.0.1.0.0 |  | Invoice Transmit Method and Payment Terms for Website SO print
 [website_sale_product_code](website_sale_product_code/) | 14.0.1.0.0 |  | Show product default code in shop
 [website_sale_product_quantity_integer](website_sale_product_quantity_integer/) | 14.0.1.0.0 |  | Show product quantity in cart as integer
+[website_sale_product_variant_header](website_sale_product_variant_header/) | 14.0.1.0.0 |  | Show product variant header in shop
 [website_sale_publication](website_sale_publication/) | 14.0.1.0.0 |  | Adds publication product to website product views
 [website_sale_remove_confirmation_status](website_sale_remove_confirmation_status/) | 14.0.1.0.0 |  | Website sale: remove confirmation status
 [website_sale_settings](website_sale_settings/) | 14.0.1.0.5 |  | Website sale toggleable settings under customize menu

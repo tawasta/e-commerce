@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="product" inherit_id="website_sale.product">
+        <xpath expr="//form" position="before">
+            <h5
+                id="product-variant-header"
+                class="product-variant-header text-muted"
+                t-if="product.website_variant_header"
+                t-field="product.website_variant_header"
+            />
+        </xpath>
+    </template>
+
+</odoo>
