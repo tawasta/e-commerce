@@ -13,7 +13,7 @@ class WebsiteSale(WebsiteSale):
     def _get_shop_payment_values(self, order, **kwargs):  # noqa: max-complexity: 23
         values = super(WebsiteSale, self)._get_shop_payment_values(order, **kwargs)
         only_invoice = False
-        #check_payment_allowed_groups = False
+        # check_payment_allowed_groups = False
         need_company_info = False
         check_attachment = False
         check_explanation = False
