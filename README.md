@@ -16,6 +16,7 @@ addon | version | maintainers | summary
 [website_sale_business_code](website_sale_business_code/) | 14.0.1.0.3 |  | Adds Finnish Business code to website checkout form
 [website_sale_cart_fiscal_position](website_sale_cart_fiscal_position/) | 14.0.1.0.0 |  | Show fiscal position when confirming a sale
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 14.0.1.0.0 |  | eCommerce tax in cart lines
+[website_sale_checkout_skip_payment_and_confirmation](website_sale_checkout_skip_payment_and_confirmation/) | 14.0.1.0.0 |  | Website orders will stay unconfirmed after sale process
 [website_sale_company_email](website_sale_company_email/) | 14.0.1.0.4 |  | Add different emails for ecommerce user and company
 [website_sale_company_slider](website_sale_company_slider/) | 14.0.1.2.8 |  | Slider to checkout
 [website_sale_coupon_company](website_sale_coupon_company/) | 14.0.1.0.0 |  | Website sale coupon company
