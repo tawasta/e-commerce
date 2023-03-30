@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="product" inherit_id="website_sale.product">
+        <xpath
+            expr="//section[@id='product_detail']/div[@class='row'][1]"
+            position="after">
+            <div class="row">
+                <div class="col-12">
+                    <h5
+                        id="product-synopsis"
+                        class="product-synopsis text-muted"
+                        t-if="product.website_synopsis"
+                        t-field="product.website_synopsis"
+                    />
+                    </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
