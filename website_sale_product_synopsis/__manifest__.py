@@ -35,3 +35,4 @@
         "views/product_template.xml",
         "views/website_product.xml",
     ],
+}
