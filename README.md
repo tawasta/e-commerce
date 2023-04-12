@@ -38,7 +38,7 @@ addon | version | maintainers | summary
 [website_sale_force_address_step](website_sale_force_address_step/) | 14.0.1.0.1 |  | Never skip the address step. Disables 'express'-checkout
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 14.0.1.0.1 |  | Forces autoinvoice on quotations created from website_sale
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 14.0.1.0.0 |  | Hides the default '30-day money-back quarantee...' text
-[website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 14.0.1.0.0 |  | Hide Delivery Orders Snippet
+[website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 14.0.1.0.1 |  | Hide Delivery Orders Snippet
 [website_sale_hide_login](website_sale_hide_login/) | 14.0.1.0.0 |  | Website Sale Hide Login Button
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 14.0.1.0.2 |  | Adds account invoice transmit method to checkout
 [website_sale_invoicing_fee](website_sale_invoicing_fee/) | 14.0.1.0.2 |  | Adds Invoicing fee to Sale Order
