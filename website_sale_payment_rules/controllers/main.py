@@ -13,6 +13,7 @@ class WebsiteSale(WebsiteSale):
     def _get_shop_payment_values(self, order, **kwargs):  # noqa: max-complexity: 23
         values = super(WebsiteSale, self)._get_shop_payment_values(order, **kwargs)
         only_invoice = False
+        # check_payment_allowed_groups = False
         need_company_info = False
         check_attachment = False
         check_explanation = False
@@ -94,6 +95,7 @@ class WebsiteSale(WebsiteSale):
             )
 
         else:
+            groups_ids = request.env.user.groups_id
             domain = expression.AND(
                 [
                     [
@@ -109,6 +111,11 @@ class WebsiteSale(WebsiteSale):
                         "|",
                         ("country_ids", "=", False),
                         ("country_ids", "in", [order.partner_id.country_id.id]),
+                    ],
+                    [
+                        "|",
+                        ("allowed_group_ids", "=", False),
+                        ("allowed_group_ids", "in", groups_ids.ids),
                     ],
                 ]
             )

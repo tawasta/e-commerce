@@ -21,7 +21,7 @@
 {
     "name": "Invoice Transmit Method and Payment Terms for Website SO print",
     "summary": "Invoice Transmit Method and Payment Terms for Website SO print",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
