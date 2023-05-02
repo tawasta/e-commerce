@@ -40,6 +40,7 @@ addon | version | maintainers | summary
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 14.0.1.0.0 |  | Hides the default '30-day money-back quarantee...' text
 [website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 14.0.1.0.1 |  | Hide Delivery Orders Snippet
 [website_sale_hide_login](website_sale_hide_login/) | 14.0.1.0.0 |  | Website Sale Hide Login Button
+[website_sale_hide_price_fix](website_sale_hide_price_fix/) | 14.0.1.0.0 |  | Fix missing items from Website Sale Hide Price
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 14.0.1.0.2 |  | Adds account invoice transmit method to checkout
 [website_sale_invoicing_fee](website_sale_invoicing_fee/) | 14.0.1.0.2 |  | Adds Invoicing fee to Sale Order
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 14.0.1.0.0 |  | Website Sale Maintenance mode
