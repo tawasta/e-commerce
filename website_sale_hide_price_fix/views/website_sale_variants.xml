@@ -6,14 +6,14 @@
             expr='//select//span[@t-if="combination_info_variant[&apos;price_extra&apos;]"]'
             position="attributes">
             <attribute
-                name="t-if">combination_info_variant['price_extra'] and website.website_show_price</attribute>
+                name="t-if">combination_info_variant['price_extra'] and website and website.website_show_price</attribute>
         </xpath>
         <!-- Replace radiobutton-element price -->
         <xpath
             expr='//li[@class="form-group js_attribute_value"]//span[@t-if="combination_info_variant[&apos;price_extra&apos;]"]'
             position="attributes">
             <attribute
-                name="t-if">combination_info_variant['price_extra'] and website.website_show_price</attribute>
+                name="t-if">combination_info_variant['price_extra'] and website and website.website_show_price</attribute>
         </xpath>
     </template>
 </odoo>
