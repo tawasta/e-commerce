@@ -165,8 +165,19 @@
             </div>
     </template>
 
+    <template id="billing_assets" name="Billing assets">
+        <script
+            type="text/javascript"
+            src="/website_sale_billing_address/static/src/js/billing.js"
+        />
+    </template>
+
     <template id="billing_address" name="billing_address">
         <t t-call="website.layout">
+            <t
+                t-call-assets="website_sale_billing_address.billing_assets"
+                lazy_load="True"
+            />
             <t t-set="no_footer" t-value="1" />
             <div id="wrap">
                 <div class="container oe_website_sale py-2">
@@ -230,6 +241,15 @@
                                                 required="1"
                                                 class="form-control"
                                             />
+                                        </t>
+                                    </div>
+                                    <div class="form-group col-lg-6" id="div_email">
+                                        <label class="col-form-label" for="email">Email</label>
+                                        <t t-if="partner">
+                                            <input type="email" name="email" id="email_input" class="form-control" required="1" t-att-value="partner.email"/>
+                                        </t>
+                                        <t t-else="">
+                                            <input type="email" id="email_input" name="email" class="form-control" required="1" />
                                         </t>
                                     </div>
                                     <div class="form-group col-lg-6" id="div_phone">

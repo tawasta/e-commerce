@@ -137,6 +137,8 @@ class WebsiteSaleBilling(WebsiteSale):
                 "city": post.get("city"),
                 "country_id": country.id,
             }
+            if post.get("email"):
+                partner_vals.update({"email": post.get("email")})
             if post.get("company_name"):
                 company_vals.update(
                     {
