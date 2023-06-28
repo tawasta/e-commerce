@@ -14,7 +14,7 @@
                 <label
                     id="edicode-label"
                     class="col-form-label label-optional"
-                    for="edicode">Edicode</label>
+                    for="edicode">eInvoice address (EDI-code)</label>
                 <input
                     type="text"
                     name="edicode"

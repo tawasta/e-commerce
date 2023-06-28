@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 14.0-20230329\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-12 11:30+0000\n"
-"PO-Revision-Date: 2021-10-12 11:30+0000\n"
+"POT-Creation-Date: 2023-06-28 07:37+0000\n"
+"PO-Revision-Date: 2023-06-28 07:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,17 +20,17 @@ msgstr ""
 #: code:addons/website_sale_edicode/static/src/js/checkout.js:0
 #, python-format
 msgid ""
-"<h5 class='text-danger'><p>Fill in both Edicode and eInvoice "
+"<h5 class='text-danger'><p>Fill in both eInvoice address and eInvoice "
 "Operator.</p></h5>"
 msgstr ""
-"<h5 class='text-danger'><p>Täytä sekä verkkolaskuosoite, että verkkolaskuoperaattori"
-".</p></h5>"
+"<h5 class='text-danger'><p>Täytä sekä verkkolaskuosoite, että "
+"verkkolaskuoperaattori.</p></h5>"
 
 #. module: website_sale_edicode
 #. openerp-web
 #: code:addons/website_sale_edicode/static/src/js/checkout.js:0
 #, python-format
-msgid "<p>Fill in both Edicode and eInvoice Operator.</p>"
+msgid "<p>Fill in both eInvoice address and eInvoice Operator.</p>"
 msgstr "<p>Täytä sekä verkkolaskuosoite, että verkkolaskuoperaattori.</p>"
 
 #. module: website_sale_edicode
@@ -59,11 +59,6 @@ msgid "Display Name"
 msgstr "Näyttönimi"
 
 #. module: website_sale_edicode
-#: model_terms:ir.ui.view,arch_db:website_sale_edicode.address
-msgid "Edicode"
-msgstr "Verkkolaskuosoite"
-
-#. module: website_sale_edicode
 #: model:ir.model.fields,field_description:website_sale_edicode.field_res_partner__id
 msgid "ID"
 msgstr "Tunniste (ID)"
@@ -80,5 +75,15 @@ msgstr "Näin pystymme käsittelemään tilauksesi nopeammin."
 
 #. module: website_sale_edicode
 #: model_terms:ir.ui.view,arch_db:website_sale_edicode.address
+msgid "data-init=\"1\""
+msgstr ""
+
+#. module: website_sale_edicode
+#: model_terms:ir.ui.view,arch_db:website_sale_edicode.address
 msgid "eInvoice Operator"
 msgstr "Verkkolaskuoperaattori"
+
+#. module: website_sale_edicode
+#: model_terms:ir.ui.view,arch_db:website_sale_edicode.address
+msgid "eInvoice address (EDI-code)"
+msgstr "Verkkolaskuosoite"

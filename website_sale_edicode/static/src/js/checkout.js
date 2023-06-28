@@ -56,12 +56,14 @@ odoo.define("website_sale_edicode.checkout", function (require) {
                         if ($("h5[class$='text-danger']").length) {
                             $("h5[class$='text-danger']").empty();
                             $("h5[class$='text-danger']").append(
-                                _t("<p>Fill in both Edicode and eInvoice Operator.</p>")
+                                _t(
+                                    "<p>Fill in both eInvoice address and eInvoice Operator.</p>"
+                                )
                             );
                         } else {
                             $("form[class$='checkout_autoformat']").before(
                                 _t(
-                                    "<h5 class='text-danger'><p>Fill in both Edicode and eInvoice Operator.</p></h5>"
+                                    "<h5 class='text-danger'><p>Fill in both eInvoice address and eInvoice Operator.</p></h5>"
                                 )
                             );
                         }
