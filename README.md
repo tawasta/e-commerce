@@ -30,7 +30,7 @@ addon | version | maintainers | summary
 [website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 14.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop
 [website_sale_disable_qty_in_cart](website_sale_disable_qty_in_cart/) | 14.0.1.0.0 |  | Helper module to disable changing product quantity in cart
 [website_sale_domicile](website_sale_domicile/) | 14.0.1.0.0 |  | Adds domicile to website checkout form
-[website_sale_edicode](website_sale_edicode/) | 14.0.1.5.2 |  | Adds EDI code to website checkout form
+[website_sale_edicode](website_sale_edicode/) | 14.0.1.5.3 |  | Adds EDI code to website checkout form
 [website_sale_extra_step_content_to_sale_order_note](website_sale_extra_step_content_to_sale_order_note/) | 14.0.1.0.0 |  | Extra Step Content to SO note
 [website_sale_extra_step_info](website_sale_extra_step_info/) | 14.0.1.0.3 |  | Extra step info text: global and publica category
 [website_sale_extra_step_replace_feedback_text](website_sale_extra_step_replace_feedback_text/) | 14.0.1.0.0 |  | Replace extra step feedback text to more information
