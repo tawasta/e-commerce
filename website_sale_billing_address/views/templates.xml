@@ -244,12 +244,27 @@
                                         </t>
                                     </div>
                                     <div class="form-group col-lg-6" id="div_email">
-                                        <label class="col-form-label" for="email">Email</label>
+                                        <label
+                                            class="col-form-label"
+                                            for="email">Email</label>
                                         <t t-if="partner">
-                                            <input type="email" name="email" id="email_input" class="form-control" required="1" t-att-value="partner.email"/>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                id="email_input"
+                                                class="form-control"
+                                                required="1"
+                                                t-att-value="partner.email"
+                                            />
                                         </t>
                                         <t t-else="">
-                                            <input type="email" id="email_input" name="email" class="form-control" required="1" />
+                                            <input
+                                                type="email"
+                                                id="email_input"
+                                                name="email"
+                                                class="form-control"
+                                                required="1"
+                                            />
                                         </t>
                                     </div>
                                     <div class="form-group col-lg-6" id="div_phone">

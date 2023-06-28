@@ -21,6 +21,7 @@
 # 2. Known third party imports:
 # 3. Odoo imports (openerp):
 import logging
+
 from odoo import http
 from odoo.http import request
 
@@ -43,9 +44,9 @@ class WebsiteSale(WebsiteSale):
         if sale_order_id:
             order = request.env["sale.order"].sudo().browse(sale_order_id)
             if order.state == "sent":
-                logging.info("======TILA ON SENT======");
-                if order.transaction_ids[0].acquirer_id.auto_confirm == 'allow':
-                    logging.info("===ACTION CONFIRM======");
+                logging.info("======TILA ON SENT======")
+                if order.transaction_ids[0].acquirer_id.auto_confirm == "allow":
+                    logging.info("===ACTION CONFIRM======")
                     order.sudo().action_confirm()
 
                 if (
