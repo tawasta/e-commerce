@@ -9,10 +9,12 @@
                 <h2>Website sale</h2>
                 <div
                     class="row mt16 o_settings_container"
-                    id="website_sale_maintenance">
+                    id="website_sale_maintenance"
+                >
                     <div
                         class="col-12 col-lg-6 o_setting_box"
-                        id="website_sale_maintenance_setting">
+                        id="website_sale_maintenance_setting"
+                    >
                         <div class="o_setting_left_pane">
                             <field name="website_sale_maintenance_mode" />
                         </div>

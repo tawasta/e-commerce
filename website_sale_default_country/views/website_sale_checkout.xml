@@ -6,12 +6,14 @@
                 id="country_id"
                 name="country_id"
                 t-attf-class="form-control #{error.get('country_id') and 'is-invalid' or ''}"
-                t-att-mode="mode[1]">
+                t-att-mode="mode[1]"
+            >
                 <option value="">Country...</option>
                 <t t-foreach="countries" t-as="c">
                     <option
                         t-att-selected="c.id == request.env.ref('base.fi').id"
-                        t-att-value="c.id">
+                        t-att-value="c.id"
+                    >
                         <t t-esc="c.name" />
                     </option>
                 </t>

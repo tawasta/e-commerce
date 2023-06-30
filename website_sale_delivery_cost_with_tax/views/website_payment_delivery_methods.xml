@@ -3,12 +3,14 @@
     <template
         id="payment_delivery_methods"
         name="Delivery methods with tax"
-        inherit_id="website_sale_delivery.payment_delivery_methods">
+        inherit_id="website_sale_delivery.payment_delivery_methods"
+    >
 
         <!-- Show tax excluded -->
         <xpath expr="//span[@t-att-class='badge_class']/t" position="attributes">
             <attribute
-                name='t-if'>request.env.user.has_group('account.group_show_line_subtotals_tax_excluded')</attribute>
+                name='t-if'
+            >request.env.user.has_group('account.group_show_line_subtotals_tax_excluded')</attribute>
         </xpath>
 
         <!-- Show tax included -->

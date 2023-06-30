@@ -3,7 +3,8 @@
     <template
         id="orders_followup_shipping"
         name="Commercial Invoice Address"
-        inherit_id="sale_stock.sale_order_portal_content_inherit_sale_stock">
+        inherit_id="sale_stock.sale_order_portal_content_inherit_sale_stock"
+    >
         <t t-if="delivery_orders" position="after">
             <br />
             <strong>Invoice Transmission Method</strong>

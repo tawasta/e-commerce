@@ -3,7 +3,8 @@
     <template
         id="extra_info_text"
         name="Extra info: info text"
-        inherit_id="website_sale.extra_info">
+        inherit_id="website_sale.extra_info"
+    >
         <xpath expr="//div[hasclass('oe_cart')]" position="before">
             <t
                 t-set="public_categ_ids"
@@ -13,9 +14,11 @@
                 <t
                     t-if="order_line.product_id.public_categ_ids"
                     t-foreach="order_line.product_id.public_categ_ids"
-                    t-as="public_categ_id">
+                    t-as="public_categ_id"
+                >
                     <t
-                        t-if="public_categ_id not in public_categ_ids and public_categ_id.extra_step_text">
+                        t-if="public_categ_id not in public_categ_ids and public_categ_id.extra_step_text"
+                    >
                         <t
                             t-set="public_categ_ids"
                             t-value="public_categ_ids + public_categ_id"

@@ -2,7 +2,8 @@
 <odoo>
     <record
         id="product_public_category_form_view_suggested_products"
-        model="ir.ui.view">
+        model="ir.ui.view"
+    >
         <field name="name">product.public.category.form.suggested.products</field>
         <field name="model">product.public.category</field>
         <field name="inherit_id" ref="website_sale.product_public_category_form_view" />

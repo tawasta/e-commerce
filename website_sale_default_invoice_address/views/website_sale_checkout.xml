@@ -3,7 +3,8 @@
     <template
         id="checkout"
         inherit_id="website_sale.checkout"
-        name="Checkout default billing address">
+        name="Checkout default billing address"
+    >
 
         <xpath expr="//t[@t-call='website_sale.address_kanban'][1]" position="inside">
             <t
@@ -22,11 +23,13 @@
     <template
         id="address_kanban"
         inherit_id="website_sale.address_kanban"
-        name="Address kanban default billing address">
+        name="Address kanban default billing address"
+    >
 
         <xpath expr="//div[@class='card-body']/a" position="attributes">
             <attribute
-                name="t-if">actual_partner or (not actual_partner and contact not in [order.partner_id.default_partner_invoice_id, order.commercial_partner_id.default_partner_invoice_id])</attribute>
+                name="t-if"
+            >actual_partner or (not actual_partner and contact not in [order.partner_id.default_partner_invoice_id, order.commercial_partner_id.default_partner_invoice_id])</attribute>
         </xpath>
     </template>
 

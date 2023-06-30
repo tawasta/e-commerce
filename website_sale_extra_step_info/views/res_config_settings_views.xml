@@ -10,7 +10,8 @@
                 <div class="row mt16 o_settings_container" id="website_sale_extra_step">
                     <div
                         class="col-12 col-lg-6 o_setting_box"
-                        id="website_sale_extra_step_setting">
+                        id="website_sale_extra_step_setting"
+                    >
                         <div class="o_setting_right_pane">
                             <div class="text-muted">
                                 Website sale extra step text

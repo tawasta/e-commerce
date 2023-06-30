@@ -3,7 +3,8 @@
     <template
         id="cart_lines"
         name="Cart clear right column"
-        inherit_id="website_sale.cart_lines">
+        inherit_id="website_sale.cart_lines"
+    >
         <xpath expr="//thead/tr/th[last()]" position="before">
             <th width="100">Tax</th>
         </xpath>

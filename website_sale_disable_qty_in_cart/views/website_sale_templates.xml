@@ -6,7 +6,8 @@
         </xpath>
         <xpath expr="//input[@type='text']" position="attributes">
             <attribute
-                name="t-att-disabled">'disabled' if disable_cart_change else None</attribute>
+                name="t-att-disabled"
+            >'disabled' if disable_cart_change else None</attribute>
         </xpath>
         <xpath expr="//div[@class='input-group-prepend']" position="attributes">
             <attribute
