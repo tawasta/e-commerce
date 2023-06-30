@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="total"
+        inherit_id="website_sale.total"
+        name="Show promo code info in cart summary">
+        <xpath expr="//div[@id='cart_total']//table/tr[last()]" position="after">
+            <tr t-if="hide_coupon">
+                <td colspan="3" class="text-center border-0">
+                    <span><i
+                            class="fa fa-warning text-info"
+                        /> Discount coupons and Promotion codes<br
+                        />can be added in the next step</span>
+                </td>
+            </tr>
+        </xpath>
+    </template>
+</odoo>
