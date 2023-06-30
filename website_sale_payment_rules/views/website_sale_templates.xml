@@ -5,12 +5,14 @@
         inherit_id="website_sale.payment"
         name="Payments rules"
         customize_show="True"
-        active="True">
+        active="True"
+    >
         <xpath expr="//div[@id='payment_method']" position="replace">
             <div
                 id="payment_method"
                 class="mt-3"
-                t-if="(acquirers or tokens) and website_sale_order.amount_total">
+                t-if="(acquirers or tokens) and website_sale_order.amount_total"
+            >
                 <t t-if="need_attachment">
                     <div class="alert alert-warning">
                         <h5 class="mb24"><t
@@ -19,7 +21,8 @@
                         <div>
                             <p>Add attachment <a
                                     class=''
-                                    href='/shop/extra_info'>here</a></p>
+                                    href='/shop/extra_info'
+                                >here</a></p>
                         </div>
                     </div>
                 </t>
@@ -31,7 +34,8 @@
                         <div>
                             <p>Add explanation <a
                                     class=''
-                                    href='/shop/extra_info'>here</a></p>
+                                    href='/shop/extra_info'
+                                >here</a></p>
                         </div>
                     </div>
                 </t>
@@ -41,7 +45,8 @@
                         <div>
                             <p>Modify address <a
                                     class=''
-                                    href='/shop/checkout'>here</a></p>
+                                    href='/shop/checkout'
+                                >here</a></p>
                         </div>
                     </div>
                 </t>
@@ -55,7 +60,8 @@
                                 <p>Buy a product from this <a
                                         class=''
                                         t-attf-href='/shop/category/#{slug(categ)}'
-                                        target="_blank">category</a></p>
+                                        target="_blank"
+                                    >category</a></p>
                             </div>
                         </div>
                     </t>
@@ -72,14 +78,16 @@
                                         <a
                                         class=''
                                         t-attf-href='/shop/product/{{prod.product_tmpl_id.id}}'
-                                        target="_blank"><t t-esc="prod.name" /></a>
+                                        target="_blank"
+                                    ><t t-esc="prod.name" /></a>
                                     </div>
                                 </t>
                             </div>
                         </div>
                 </t>
                 <t
-                    t-if="not need_attachment and not mandatory_products_list and not need_explanation and not product_categ_list and not need_company_info">
+                    t-if="not need_attachment and not mandatory_products_list and not need_explanation and not product_categ_list and not need_company_info"
+                >
                     <h3 class="mb24">Pay with </h3>
                     <t t-call="payment.payment_tokens_list">
                         <t t-set="mode" t-value="'payment'" />
@@ -110,7 +118,8 @@
             <div
                 class="js_payment mt-3"
                 t-if="not website_sale_order.amount_total"
-                id="payment_method">
+                id="payment_method"
+            >
                 <t t-if="need_attachment">
                     <div class="alert alert-warning">
                         <h5 class="mb24"><t
@@ -119,7 +128,8 @@
                         <div>
                             <p>Add attachment <a
                                     class=''
-                                    href='/shop/extra_info'>here</a></p>
+                                    href='/shop/extra_info'
+                                >here</a></p>
                         </div>
                     </div>
                 </t>
@@ -131,7 +141,8 @@
                         <div>
                             <p>Add explanation <a
                                     class=''
-                                    href='/shop/extra_info'>here</a></p>
+                                    href='/shop/extra_info'
+                                >here</a></p>
                         </div>
                     </div>
                 </t>
@@ -141,7 +152,8 @@
                         <div>
                             <p>Modify address <a
                                     class=''
-                                    href='/shop/checkout'>here</a></p>
+                                    href='/shop/checkout'
+                                >here</a></p>
                         </div>
                     </div>
                 </t>
@@ -155,7 +167,8 @@
                                 <p>Buy a product from this <a
                                         class=''
                                         t-attf-href='/shop/category/#{slug(categ)}'
-                                        target="_blank">category</a></p>
+                                        target="_blank"
+                                    >category</a></p>
                             </div>
                         </div>
                     </t>
@@ -172,19 +185,22 @@
                                         <a
                                         class=''
                                         t-attf-href='/shop/product/{{prod.product_tmpl_id.id}}'
-                                        target="_blank"><t t-esc="prod.name" /></a>
+                                        target="_blank"
+                                    ><t t-esc="prod.name" /></a>
                                     </div>
                                 </t>
                             </div>
                         </div>
                 </t>
                 <t
-                    t-if="not need_attachment and not mandatory_products_list and not need_explanation and not product_categ_list and not need_company_info">
+                    t-if="not need_attachment and not mandatory_products_list and not need_explanation and not product_categ_list and not need_company_info"
+                >
                     <form
                         target="_self"
                         action="/shop/payment/validate"
                         method="post"
-                        class="float-right">
+                        class="float-right"
+                    >
                         <input
                             type="hidden"
                             name="csrf_token"

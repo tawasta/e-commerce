@@ -6,10 +6,12 @@
         inherit_id="website_sale.suggested_products_list"
         name="Hide Suggested Product Default Code"
         active="False"
-        customize_show="True">
+        customize_show="True"
+    >
         <xpath
             expr="//strong[@t-esc=&quot;combination_info['display_name']&quot;]"
-            position="attributes">
+            position="attributes"
+        >
             <attribute name="t-esc">combination_info['name_without_code']</attribute>
         </xpath>
     </template>
@@ -20,7 +22,8 @@
         inherit_id="website_sale.product"
         name="Product Layout Attributes Wider"
         active="False"
-        customize_show="True">
+        customize_show="True"
+    >
         <xpath expr="//div[@class='col-md-6 col-xl-8']" position="attributes">
             <attribute name="class">col-md-6 col-xl-6</attribute>
         </xpath>
@@ -35,12 +38,15 @@
         inherit_id="website_sale.suggested_products_list"
         name="Suggested Products Add to Cart Button Primary"
         active="False"
-        customize_show="True">
+        customize_show="True"
+    >
         <xpath
             expr="//a[@class='btn btn-link js_add_suggested_products']"
-            position="attributes">
+            position="attributes"
+        >
             <attribute
-                name="class">btn btn-primary btn-custom-cart js_add_suggested_products</attribute>
+                name="class"
+            >btn btn-primary btn-custom-cart js_add_suggested_products</attribute>
         </xpath>
     </template>
 
@@ -50,15 +56,18 @@
         inherit_id="website_sale.suggested_products_list"
         name="Hide Suggested Products Image"
         active="False"
-        customize_show="True">
+        customize_show="True"
+    >
         <xpath
             expr="//tr[@t-foreach='suggested_products']//td[@class='td-product_name']"
-            position="attributes">
+            position="attributes"
+        >
             <attribute name="style">padding-left:15px;</attribute>
         </xpath>
         <xpath
             expr="//tr[@t-foreach='suggested_products']//td[@class='td-product_name']"
-            position="after">
+            position="after"
+        >
             <td colspan="1" />
         </xpath>
         <xpath expr="//td[@class='td-img text-center']" position="attributes">
@@ -72,7 +81,8 @@
         inherit_id="website_sale.cart_summary"
         name="Hide Cart Summary Product Image"
         active="False"
-        customize_show="True">
+        customize_show="True"
+    >
         <xpath expr="//td[@t-if='line.product_id.product_tmpl_id']" position="replace">
             <td colspan="1" class="td-img" />
         </xpath>
@@ -84,15 +94,18 @@
         inherit_id="website_sale.cart_lines"
         name="Hide Cart Lines Product Image"
         active="False"
-        customize_show="True">
+        customize_show="True"
+    >
         <xpath
             expr="//td[@class='td-img'][@t-if='line.product_id.product_tmpl_id']"
-            position="attributes">
+            position="attributes"
+        >
             <attribute name="t-if">0</attribute>
         </xpath>
         <xpath
             expr="//td[@class='td-img'][@t-if='not line.product_id.product_tmpl_id']"
-            position="attributes">
+            position="attributes"
+        >
             <attribute name="t-if">0</attribute>
         </xpath>
         <xpath expr="//td[@class='td-product_name']" position="after">
@@ -107,7 +120,8 @@
         inherit_id="website_sale.address"
         name="Street and Number to Billing Address"
         active="False"
-        customize_show="True">
+        customize_show="True"
+    >
         <xpath expr="//label[@for='street']" position="replace">
             <label class="col-form-label" for="street">Billing Address</label>
         </xpath>

@@ -3,7 +3,8 @@
     <template
         id="total"
         inherit_id="website_sale.total"
-        name="Show promo code info in cart summary">
+        name="Show promo code info in cart summary"
+    >
         <xpath expr="//div[@id='cart_total']//table/tr[last()]" position="after">
             <tr t-if="hide_coupon">
                 <td colspan="3" class="text-center border-0">

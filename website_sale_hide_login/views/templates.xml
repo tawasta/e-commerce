@@ -3,7 +3,8 @@
     <template
         name="Website Sale Hide Login Link"
         id="confirmation"
-        inherit_id="website_sale.confirmation">
+        inherit_id="website_sale.confirmation"
+    >
         <xpath expr="//p[@class='alert alert-info mt-3']" position="replace" />
     </template>
 </odoo>

@@ -3,7 +3,8 @@
     <template id="payment_tokens_list" inherit_id="payment.payment_tokens_list">
         <xpath
             expr="//t[@t-foreach='acquirers']/div[hasclass('card-body')]"
-            position="inside">
+            position="inside"
+        >
             <t t-if="acq.sudo().product_id">
                 <span class="badge badge-secondary pull-right">
                     <t t-set="tax_added" t-value="0" />
@@ -17,7 +18,8 @@
                     />
                     <t t-if="acq.product_id.sudo().taxes_id">
                         <t
-                            t-if="request.env.user.has_group('account.group_show_line_subtotals_tax_included')">
+                            t-if="request.env.user.has_group('account.group_show_line_subtotals_tax_included')"
+                        >
                             <t
                                 t-set="tax_added"
                                 t-value="(fpos.map_tax(taxes, acq.product_id, website_sale_order.partner_shipping_id) if fpos else taxes).amount"

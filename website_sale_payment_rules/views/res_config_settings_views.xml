@@ -9,10 +9,12 @@
                 <h2>Website sale: payment rules</h2>
                 <div
                     class="row mt16 o_settings_container"
-                    id="website_sale_payment_rules">
+                    id="website_sale_payment_rules"
+                >
                     <div
                         class="col-12 col-lg-6 o_setting_box"
-                        id="website_sale_payment_rules_setting">
+                        id="website_sale_payment_rules_setting"
+                    >
                         <div class="o_setting_right_pane">
                             <div class="text-muted">
                                 Add an explanation text

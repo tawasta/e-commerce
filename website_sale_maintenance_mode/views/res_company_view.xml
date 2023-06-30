@@ -9,7 +9,8 @@
                 <group
                     string="Shop maintenance"
                     name="shop_maintenance"
-                    groups="base.group_no_one">
+                    groups="base.group_no_one"
+                >
                     <field name="website_sale_maintenance_text" />
                 </group>
             </xpath>

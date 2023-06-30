@@ -5,7 +5,8 @@
         inherit_id="website_sale_default_privacies.address"
         name="Membership privacy values"
         customize_show="True"
-        active="True">
+        active="True"
+    >
 
         <xpath expr="(//div[@id='web-privacy'])" position="replace">
             <div id="web-privacy" class="row col-12">
