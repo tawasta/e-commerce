@@ -4,19 +4,22 @@
         <xpath expr="//div[contains(@t-attf-class, 'div_vat')]" position="after">
             <div
                 id="customer_invoice_transmit_method_id_div"
-                t-attf-class="form-group #{error.get('customer_invoice_transmit_method_id') and 'has-error' or ''} col-lg-6 show-company">
+                t-attf-class="form-group #{error.get('customer_invoice_transmit_method_id') and 'has-error' or ''} col-lg-6 show-company"
+            >
                 <t
                     t-set="methods"
                     t-value="request.env['transmit.method'].sudo().search([('website_sale_ok', '=', True)])"
                 />
                 <label
                     class="col-form-label"
-                    for="customer_invoice_transmit_method_id">Invoice transmit method</label>
+                    for="customer_invoice_transmit_method_id"
+                >Invoice transmit method</label>
                 <select
                     id="customer-invoice-transmit-method"
                     t-attf-class="form-control #{error.get('customer_invoice_transmit_method_id') and 'is-invalid' or ''}"
                     name="customer_invoice_transmit_method_id"
-                    data-init="1">
+                    data-init="1"
+                >
                     <t t-foreach="methods" t-as="method">
                         <option
                             t-att-value="method.id"
