@@ -8,7 +8,7 @@
             >
                 <t
                     t-set="methods"
-                    t-value="request.env['transmit.method'].sudo().search([('customer_ok', '=', True)])"
+                    t-value="request.env['transmit.method'].sudo().search([('website_sale_ok', '=', True)])"
                 />
                 <label
                     class="col-form-label"

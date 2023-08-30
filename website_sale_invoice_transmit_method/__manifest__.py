@@ -38,6 +38,7 @@
     ],
     "data": [
         "views/assets.xml",
+        "views/transmit_method.xml",
         "views/website_template_checkout.xml",
     ],
     "demo": [],
