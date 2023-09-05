@@ -14,7 +14,7 @@ addon | version | summary
 [website_sale_address_coupon_info](website_sale_address_coupon_info/) | 14.0.1.0.0 | Inform customer about coupon-possibility in the upcoming step
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 14.0.1.0.0 | Create company for website customer, if company name is set
 [website_sale_billing_address](website_sale_billing_address/) | 14.0.1.0.0 | Website sale billing address
-[website_sale_business_code](website_sale_business_code/) | 14.0.1.0.3 | Adds Finnish Business code to website checkout form
+[website_sale_business_code](website_sale_business_code/) | 14.0.1.0.4 | Adds Finnish Business code to website checkout form
 [website_sale_cart_fiscal_position](website_sale_cart_fiscal_position/) | 14.0.1.0.0 | Show fiscal position when confirming a sale
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 14.0.1.0.0 | eCommerce tax in cart lines
 [website_sale_cart_product_note](website_sale_cart_product_note/) | 14.0.1.0.0 | Show a product-spesific note in the cart view

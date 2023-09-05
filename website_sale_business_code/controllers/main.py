@@ -33,14 +33,16 @@ class WebsiteSale(WebsiteSale):
         fi_code = request.env.ref("base.fi").code
         vat = data.get("vat")
         country_code = False
+        country_id = data.get("country_id")
 
-        if vat and data.get("country_id"):
+        if vat and country_id:
             country_code = (
                 request.env["res.country"]
                 .search([("id", "=", data.get("country_id"))])
                 .code
             )
-            data["vat"] = country_code + re.sub("[^0-9]", "", data["vat"])
+            if country_code == fi_code:
+                data["vat"] = country_code + re.sub("[^0-9]", "", data["vat"])
 
         res = super(WebsiteSale, self).checkout_form_validate(
             mode, all_form_values, data
