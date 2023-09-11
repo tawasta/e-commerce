@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="website_address_default_email" inherit_id="website_sale_company_slider.website_sale_address">
+        <t t-call-assets="website_sale_default_email.assets_frontend" lazy_load="True" />
+    </template>
+</odoo>
