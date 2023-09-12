@@ -36,5 +36,6 @@
         "website_sale_company_slider",
     ],
     "data": [
+        "views/assets.xml",
     ],
 }
