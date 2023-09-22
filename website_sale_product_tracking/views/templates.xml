@@ -1,0 +1,44 @@
+<odoo>
+    <template id="assets_frontend" inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/website_sale_product_tracking/static/src/js/product_tracking.js"></script>
+        </xpath>
+    </template>
+
+    <template id="product" inherit_id="website_sale.product">
+        <xpath expr="//div[@id='product_details']" position="inside">
+            <!-- <button type="object" class="btn btn-secondary btn-sm js_add_product_tracking" t-if="product_variant.inventory_availability == 'always'" t-att-data-product-id="product_variant.id">
+                Add to Tracking
+            </button> -->
+            <button type="button" class="btn btn-primary tracking-product" t-att-data-product-id="product_variant.id" t-if="product_variant.inventory_availability == 'always'">
+                Add to Tracking
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modaltracking" tabindex="-1" aria-labelledby="trackProductModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="trackProductModalLabel">Track this Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="track-product-form">
+                        <div class="mb-3">
+                            <small>Enter your email address and we will send you a message when the product is available in stock again. After this, your email address will be removed from our list.</small>
+                        </div>
+                      <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" />
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <input type="hidden" id="hidden-product-id" name="product_id" />
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </xpath>
+    </template>
+</odoo>

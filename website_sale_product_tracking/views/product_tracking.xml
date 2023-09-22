@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_product_tracking_form" model="ir.ui.view">
+            <field name="name">product.tracking.form</field>
+            <field name="model">product.tracking</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="product_id"/>
+                            <field name="is_available"/>
+                            <field name="email" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_product_tracking_tree" model="ir.ui.view">
+            <field name="name">product.tracking.tree</field>
+            <field name="model">product.tracking</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_id"/>
+                    <field name="is_available"/>
+                    <field name="email" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_tracking_action" model="ir.actions.act_window">
+            <field name="name">Product tracking</field>
+            <field name="res_model">product.tracking</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="product_tracking_menu"
+            name="Product tracking"
+            parent="website.menu_website_pages_list"
+            action="product_tracking_action"
+        />
+
+    </data>
+</odoo>
