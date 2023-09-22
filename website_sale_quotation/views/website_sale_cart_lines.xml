@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="remove_prices" inherit_id="website_sale.total">
+        <xpath expr="//table[@class='table']" position="replace">
+        </xpath>
+    </template>
+    <template id="cart_lines" name="Shopping Quotation Lines" inherit_id="website_sale.cart_lines">
+        <xpath expr="//div[hasclass('js_cart_lines')]" position="replace">
+            <div t-if="not website_sale_order or not website_sale_order.website_order_line" class="js_cart_lines well well-lg">
+                Your quotation is empty!
+            </div>
+        </xpath>
+        <xpath expr="//thead" position="replace">
+            <thead>
+                <tr>
+                    <th class="td-img">Product</th>
+                    <th></th>
+                    <th class="text-center td-qty">Quantity</th>
+                    <th class="text-center td-action"></th>
+                </tr>
+            </thead>
+        </xpath>
+        <xpath expr="//td[@class='text-center td-price']" position="replace">
+        </xpath>
+    </template>
+</odoo>
