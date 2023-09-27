@@ -34,6 +34,7 @@ addon | version | summary
 [website_sale_disable_qty_in_cart](website_sale_disable_qty_in_cart/) | 14.0.1.0.0 | Helper module to disable changing product quantity in cart
 [website_sale_domicile](website_sale_domicile/) | 14.0.1.0.0 | Adds domicile to website checkout form
 [website_sale_edicode](website_sale_edicode/) | 14.0.1.5.3 | Adds EDI code to website checkout form
+[website_sale_extra_step_content_to_sale_description](website_sale_extra_step_content_to_sale_description/) | 14.0.1.0.0 | Extra Step Content to SO description
 [website_sale_extra_step_content_to_sale_order_note](website_sale_extra_step_content_to_sale_order_note/) | 14.0.1.0.0 | Extra Step Content to SO note
 [website_sale_extra_step_info](website_sale_extra_step_info/) | 14.0.1.0.3 | Extra step info text: global and publica category
 [website_sale_extra_step_replace_feedback_text](website_sale_extra_step_replace_feedback_text/) | 14.0.1.0.0 | Replace extra step feedback text to more information
@@ -47,7 +48,11 @@ addon | version | summary
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 14.0.1.0.2 | Adds account invoice transmit method to checkout
 [website_sale_invoicing_fee](website_sale_invoicing_fee/) | 14.0.1.0.2 | Adds Invoicing fee to Sale Order
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 14.0.1.0.0 | Website Sale Maintenance mode
+[website_sale_mandatory_company](website_sale_mandatory_company/) | 14.0.1.1.0 | Make company mandatory in website sale checkout
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 14.0.1.0.0 | Website sale membership privacy values
+[website_sale_optional_city](website_sale_optional_city/) | 14.0.1.0.0 | Make city optional in website sale checkout
+[website_sale_optional_country](website_sale_optional_country/) | 14.0.1.0.0 | Make country optional in website sale checkout
+[website_sale_optional_street](website_sale_optional_street/) | 14.0.1.0.0 | Make street optional in website sale checkout
 [website_sale_payment_acquirer_filter](website_sale_payment_acquirer_filter/) | 14.0.1.0.0 | Allows filtering payment acquirers by partner type
 [website_sale_payment_rules](website_sale_payment_rules/) | 14.0.1.0.1 | Website sale payment rules
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 14.0.1.0.1 | Invoice Transmit Method and Payment Terms for Website SO print
@@ -57,7 +62,9 @@ addon | version | summary
 [website_sale_product_synopsis](website_sale_product_synopsis/) | 14.0.1.2.0 | Show product synopsis in shop
 [website_sale_product_variant_header](website_sale_product_variant_header/) | 14.0.1.0.0 | Show product variant header in shop
 [website_sale_publication](website_sale_publication/) | 14.0.1.0.0 | Adds publication product to website product views
+[website_sale_quotation](website_sale_quotation/) | 14.0.1.1.0 | Change the terminology used in eCommerce views
 [website_sale_remove_confirmation_status](website_sale_remove_confirmation_status/) | 14.0.1.0.0 | Website sale: remove confirmation status
+[website_sale_search](website_sale_search/) | 14.0.1.0.0 | Website Sale - Search
 [website_sale_settings](website_sale_settings/) | 14.0.1.0.5 | Website sale toggleable settings under customize menu
 [website_sale_show_product_code](website_sale_show_product_code/) | 14.0.1.0.0 | Show the product's internal reference on product page
 [website_sale_split_name](website_sale_split_name/) | 14.0.1.0.1 | Website sale split name

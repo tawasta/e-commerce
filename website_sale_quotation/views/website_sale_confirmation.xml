@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <template id="confirmation" name="Confirmation Quotation" inherit_id="website_sale.confirmation">
+    <template
+        id="confirmation"
+        name="Confirmation Quotation"
+        inherit_id="website_sale.confirmation"
+    >
         <xpath expr="//h1" position="replace">
-            <h1 class="mb32">Quotation <em t-field="order.name"/> Confirmed</h1>
+            <h1 class="mb32">Quotation <em t-field="order.name" /> Confirmed</h1>
         </xpath>
 
         <xpath expr="//h2" position="replace">
             <h2>Thank you for your interest.
-            <a class="btn btn-primary pull-right" href="/shop/print" target="_blank"><i class="fa fa-print"/> Print
+            <a class="btn btn-primary pull-right" href="/shop/print" target="_blank"><i
+                        class="fa fa-print"
+                    /> Print
             </a></h2>
         </xpath>
 
