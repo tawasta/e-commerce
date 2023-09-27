@@ -23,7 +23,7 @@
     "summary": "Extra Step Content to SO description",
     "version": "14.0.1.0.0",
     "category": "eCommerce",
-    "website": "https://github.com/Tawasta/e-commerce",
+    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
