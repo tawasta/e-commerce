@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-extend="website_sale_stock.product_availability">
+        <t
+            t-jquery="div[t-if='!cart_qty and virtual_available lte 0']"
+            t-operation="replace"
+        >
+            lol
+        </t>
+    </t>
+</templates>
