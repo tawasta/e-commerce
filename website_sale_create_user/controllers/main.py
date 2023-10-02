@@ -33,7 +33,7 @@ class WebsiteSale(WebsiteSale):
                 admin_user = res_users.search([("id", "=", "2")])
                 new_user = (
                     request.env["res.users"]
-                    .sudo(admin_user)
+                    .sudo()
                     ._signup_create_user(values)
                 )
                 if new_user:
