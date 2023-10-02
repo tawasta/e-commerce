@@ -30,10 +30,10 @@ class WebsiteSale(WebsiteSale):
                 partner_user = res_users.search([("login", "=", values.get("login"))])
 
             if not partner_user:
-                admin_user = res_users.search([("id", "=", "2")])
+                #admin_user = res_users.search([("id", "=", "2")])
                 new_user = (
                     request.env["res.users"]
-                    .sudo(admin_user)
+                    .sudo()
                     ._signup_create_user(values)
                 )
                 if new_user:
