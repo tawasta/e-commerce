@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="address" inherit_id="website_sale.address">
+        <xpath expr="//div[@class='checkbox']" position="attributes">
+            <attribute name="type">hidden</attribute>
+            <attribute name="t-att-value">True</attribute>
+        </xpath>
+    </template>
+</odoo>
