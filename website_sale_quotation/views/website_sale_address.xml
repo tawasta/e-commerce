@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- <template id="address" name="Address Management Quotation" inherit_id="website_sale.address">
+        <xpath expr="//div/h3[hasclass('page-header')]" position="replace">
+            <h3 class="page-header mt16 text-center">Your Quotation</h3>
+        </xpath>
+    </template> -->
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="address"
+        name="Address Management Optional Country"
+        inherit_id="website_sale.address"
+    >
+
+        <xpath expr="(//label[@for='country_id'])" position="attributes">
+            <attribute name="class">col-form-label label-optional</attribute>
+        </xpath>
+
+    </template>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="address_b2b"
+        name="Address Management Mandatory Company"
+        inherit_id="website_sale.address_b2b"
+    >
+
+        <xpath expr="(//label[@for='company_name'])[1]" position="attributes">
+            <attribute name="class">col-form-label</attribute>
+        </xpath>
+
+    </template>
+</odoo>

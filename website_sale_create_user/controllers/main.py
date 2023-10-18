@@ -32,6 +32,7 @@ class WebsiteSale(WebsiteSale):
             if not partner_user:
                 # admin_user = res_users.search([("id", "=", "2")])
                 new_user = request.env["res.users"].sudo()._signup_create_user(values)
+
                 if new_user:
                     new_user.with_context(create_user=True).action_reset_password()
                     template = request.env.ref(

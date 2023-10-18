@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="cart_popover"
+        name="Quotation Popover"
+        inherit_id="website_sale.cart_popover"
+    >
+        <xpath expr="//a[@href='/shop/cart']" position="replace">
+            <a class="btn btn-primary" href="/shop/cart">
+                View Quotation (<t t-esc="website_sale_order.cart_quantity" /> items)
+            </a>
+        </xpath>
+    </template>
+</odoo>

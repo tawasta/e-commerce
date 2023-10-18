@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="products_categories" inherit_id="website_sale.products_categories">
+        <xpath expr="//li[@class='nav-item']//a" position="attributes">
+            <attribute name="t-att-href">'/shop'</attribute>
+        </xpath>
+    </template>
+
+    <template id="search" inherit_id="website_sale.search">
+        <t t-set="action" position="attributes">
+            <attribute name="t-value">'/shop'</attribute>
+        </t>
+    </template>
+</odoo>
