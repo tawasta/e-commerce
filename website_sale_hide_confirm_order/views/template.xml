@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="wizard_checkout" inherit_id="website_sale.wizard_checkout">
+        <xpath expr="//div[@id='wizard-step40']" position="attributes">
+            <attribute name="t-att-class" />
+            <attribute name="class">d-none</attribute>
+        </xpath>
+    </template>
+</odoo>
