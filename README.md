@@ -64,7 +64,7 @@ addon | version | summary
 [website_sale_product_synopsis](website_sale_product_synopsis/) | 14.0.1.2.0 | Show product synopsis in shop
 [website_sale_product_variant_header](website_sale_product_variant_header/) | 14.0.1.0.0 | Show product variant header in shop
 [website_sale_publication](website_sale_publication/) | 14.0.1.0.0 | Adds publication product to website product views
-[website_sale_quotation](website_sale_quotation/) | 14.0.1.1.0 | Change the terminology used in eCommerce views
+[website_sale_quotation](website_sale_quotation/) | 14.0.1.1.1 | Change the terminology used in eCommerce views
 [website_sale_remove_confirmation_status](website_sale_remove_confirmation_status/) | 14.0.1.0.0 | Website sale: remove confirmation status
 [website_sale_search](website_sale_search/) | 14.0.1.0.0 | Website Sale - Search
 [website_sale_settings](website_sale_settings/) | 14.0.1.0.5 | Website sale toggleable settings under customize menu
