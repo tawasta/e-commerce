@@ -21,7 +21,7 @@
 {
     "name": "Website sale billing address",
     "summary": "Website sale billing address",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
@@ -30,6 +30,7 @@
     "installable": True,
     "depends": [
         "website_sale",
+        "website_sale_invoice_transmit_method",
     ],
     "data": ["views/templates.xml"],
 }
