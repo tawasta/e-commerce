@@ -10,6 +10,7 @@ Display the sales as there were quotations
 
 - Replaces term `Cart` with `Quotation`
 - Replaces term `Order` with `Quotation`
+- Replaces header's shopping cart icon with `My Quotation` text
 - Enforces product list price visibility to internal users only
 - Skip confirmation step
 - Soft-disable printing quotation or order from portal
