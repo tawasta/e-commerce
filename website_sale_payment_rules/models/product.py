@@ -6,7 +6,7 @@ class ProductTemplate(models.Model):
 
     #payment_only_invoice = fields.Boolean("Payment by invoice only")
 
-    allowed_payment_acquired = fields.Many2many(string="Allowed payment acquired", comodel_name="payment.acquirer")
+    allowed_payment_acquired = fields.Many2many(string="Allowed payment acquired", comodel_name="payment.acquirer", domain=[('state', 'in', ['enabled', 'test'])])
 
     requires_attachment = fields.Boolean("Requires an attachment")
 

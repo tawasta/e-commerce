@@ -130,7 +130,6 @@ class WebsiteSale(WebsiteSale):
                     for pa in line.product_id.allowed_payment_acquired:
                         acquirers_list.append(pa.id)
 
-            logging.info(acquirers_list);
             unique_acquirers = list(set(acquirers_list))
 
             domain = expression.AND(
