@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="remove_prices" inherit_id="website_sale.total">
-        <xpath expr="//table[@class='table']" position="attributes">
-            <attribute name="t-if">1 == 0</attribute>
+        <xpath expr="//table[@class='table']" position="replace">
         </xpath>
     </template>
     <template

@@ -54,8 +54,6 @@
         name="Cart Short summary disable"
         inherit_id="website_sale.short_cart_summary"
     >
-        <xpath expr="//div[@class='card js_cart_summary']" position="attributes">
-            <attribute name="t-if">1 == 0</attribute>
-        </xpath>
+        <xpath expr="//div[@class='card js_cart_summary']" position="replace" />
     </template>
 </odoo>

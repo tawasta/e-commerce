@@ -51,9 +51,7 @@
         name="Sale Order Portal Template remove download"
         inherit_id="sale.sale_order_portal_template"
     >
-        <xpath expr="//t[@t-call='portal.portal_record_sidebar']" position="attributes">
-            <attribute name="t-if">1 == 0</attribute>
+        <xpath expr="//t[@t-call='portal.portal_record_sidebar']" position="replace" />
         <!--<xpath expr="//div[@class='o_download_pdf btn-toolbar flex-sm-nowrap']/ancestor::li" position="replace" />-->
-        </xpath>
     </template>
 </odoo>
