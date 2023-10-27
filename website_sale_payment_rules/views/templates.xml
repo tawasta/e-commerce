@@ -11,10 +11,7 @@
                     <page string="Payment rules" name="payment_rules">
                         <group name="payment_rule">
                             <!-- <field name="payment_only_invoice" /> -->
-                            <field
-                                name="allowed_payment_acquired"
-                                widget="many2many_tags"
-                            />
+                            <field name="allowed_payment_acquired" widget="many2many_tags" />
                             <field name="requires_attachment" />
                             <field name="requires_explanation" />
                             <field name="required_product_category_id" />
