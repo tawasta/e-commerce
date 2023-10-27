@@ -132,13 +132,7 @@ class WebsiteSale(WebsiteSale):
 
             unique_acquirers = list(set(acquirers_list))
 
-            domain = expression.AND(
-                [
-                    [
-                        ('id', 'in', unique_acquirers)
-                    ]
-                ]
-            )
+            domain = expression.AND([[("id", "in", unique_acquirers)]])
         acquirers = request.env["payment.acquirer"].search(domain)
         values["acquirers"] = acquirers
 
