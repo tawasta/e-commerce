@@ -6,7 +6,7 @@
         inherit_id="website_sale.product"
     >
         <xpath
-            expr="//div[@id='product_details']/p[@class='text-muted']"
+            expr="//div[@id='product_details']/p[@class='text-muted']/a[@href='/shop/terms']/.."
             position="replace"
         />
     </template>
