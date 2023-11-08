@@ -14,6 +14,7 @@ class WebsiteSale(WebsiteSale):
         values = super(WebsiteSale, self)._get_shop_payment_values(order, **kwargs)
         only_invoice = False
         # check_payment_allowed_groups = False
+        allowed_acquirers = False
         need_company_info = False
         check_attachment = False
         check_explanation = False
@@ -26,8 +27,10 @@ class WebsiteSale(WebsiteSale):
             if line.product_id.membership_type == "company":
                 if not order.partner_id.parent_id:
                     need_company_info = True
-            if line.product_id.payment_only_invoice:
-                only_invoice = True
+            # if line.product_id.payment_only_invoice:
+            #     only_invoice = True
+            if line.product_id.allowed_payment_acquired:
+                allowed_acquirers = True
             if line.product_id.mandatory_products:
                 check_mandatory_products = True
             if line.product_id.requires_attachment:
@@ -119,6 +122,17 @@ class WebsiteSale(WebsiteSale):
                     ],
                 ]
             )
+
+        if allowed_acquirers:
+            acquirers_list = []
+            for line in order.order_line:
+                if line.product_id.allowed_payment_acquired:
+                    for pa in line.product_id.allowed_payment_acquired:
+                        acquirers_list.append(pa.id)
+
+            unique_acquirers = list(set(acquirers_list))
+
+            domain = expression.AND([[("id", "in", unique_acquirers)]])
         acquirers = request.env["payment.acquirer"].search(domain)
         values["acquirers"] = acquirers
 

@@ -13,7 +13,7 @@ addon | version | summary
 [delivery_carrier_price_with_tax](delivery_carrier_price_with_tax/) | 14.0.1.0.0 | Show also price with tax on the delivery carrier
 [website_sale_address_coupon_info](website_sale_address_coupon_info/) | 14.0.1.0.0 | Inform customer about coupon-possibility in the upcoming step
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 14.0.1.0.0 | Create company for website customer, if company name is set
-[website_sale_billing_address](website_sale_billing_address/) | 14.0.1.0.0 | Website sale billing address
+[website_sale_billing_address](website_sale_billing_address/) | 14.0.1.0.1 | Website sale billing address
 [website_sale_business_code](website_sale_business_code/) | 14.0.1.0.4 | Adds Finnish Business code to website checkout form
 [website_sale_cart_fiscal_position](website_sale_cart_fiscal_position/) | 14.0.1.0.0 | Show fiscal position when confirming a sale
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 14.0.1.0.0 | eCommerce tax in cart lines
@@ -21,6 +21,7 @@ addon | version | summary
 [website_sale_checkout_skip_payment_and_confirmation](website_sale_checkout_skip_payment_and_confirmation/) | 14.0.1.0.0 | Website orders will stay unconfirmed after sale process
 [website_sale_company_email](website_sale_company_email/) | 14.0.1.0.4 | Add different emails for ecommerce user and company
 [website_sale_company_slider](website_sale_company_slider/) | 14.0.1.2.8 | Slider to checkout
+[website_sale_confirmation_billing_is_address](website_sale_confirmation_billing_is_address/) | 14.0.1.0.0 | Website sale confirmation part - Billing text is changed to Address
 [website_sale_coupon_company](website_sale_coupon_company/) | 14.0.1.0.0 | Website sale coupon company
 [website_sale_create_user](website_sale_create_user/) | 14.0.1.0.1 | Website sale create user
 [website_sale_customer_contact](website_sale_customer_contact/) | 14.0.1.0.0 | Adds customer contact as SO contact
@@ -41,6 +42,7 @@ addon | version | summary
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 14.0.1.0.1 | Allow hiding/showing items in extra step
 [website_sale_force_address_step](website_sale_force_address_step/) | 14.0.1.0.1 | Never skip the address step. Disables 'express'-checkout
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 14.0.1.0.1 | Forces autoinvoice on quotations created from website_sale
+[website_sale_hide_confirm_order](website_sale_hide_confirm_order/) | 14.0.1.0.0 | Website sale: Hides Confirm Order part in the payment process
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 14.0.1.0.0 | Hides the default '30-day money-back quarantee...' text
 [website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 14.0.1.0.1 | Hide Delivery Orders Snippet
 [website_sale_hide_login](website_sale_hide_login/) | 14.0.1.0.0 | Website Sale Hide Login Button
@@ -62,10 +64,11 @@ addon | version | summary
 [website_sale_product_synopsis](website_sale_product_synopsis/) | 14.0.1.2.0 | Show product synopsis in shop
 [website_sale_product_variant_header](website_sale_product_variant_header/) | 14.0.1.0.0 | Show product variant header in shop
 [website_sale_publication](website_sale_publication/) | 14.0.1.0.0 | Adds publication product to website product views
-[website_sale_quotation](website_sale_quotation/) | 14.0.1.1.0 | Change the terminology used in eCommerce views
+[website_sale_quotation](website_sale_quotation/) | 14.0.1.1.3 | Change the terminology used in eCommerce views
 [website_sale_remove_confirmation_status](website_sale_remove_confirmation_status/) | 14.0.1.0.0 | Website sale: remove confirmation status
 [website_sale_search](website_sale_search/) | 14.0.1.0.0 | Website Sale - Search
 [website_sale_settings](website_sale_settings/) | 14.0.1.0.5 | Website sale toggleable settings under customize menu
+[website_sale_shipping_same](website_sale_shipping_same/) | 14.0.1.0.1 | Address change in website sale: Hide checkbox to use same shipping address
 [website_sale_show_product_code](website_sale_show_product_code/) | 14.0.1.0.0 | Show the product's internal reference on product page
 [website_sale_split_name](website_sale_split_name/) | 14.0.1.0.1 | Website sale split name
 [website_sale_stock_show](website_sale_stock_show/) | 14.0.1.0.0 | Always show availability on website if 'Sell regardless of inventory' is selected for product
