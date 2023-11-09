@@ -1,4 +1,4 @@
-odoo.define("website_sale_find_closest_stock_move.customVariantMixin", function (
+odoo.define("website_sale_show_sale_delay.customVariantMixin", function (
     require
 ) {
     "use strict";
@@ -9,7 +9,7 @@ odoo.define("website_sale_find_closest_stock_move.customVariantMixin", function 
     var core = require("web.core");
     var QWeb = core.qweb;
     var xml_load = ajax.loadXML(
-        "/website_sale_find_closest_stock_move/static/src/xml/website_sale_stock_product_availability.xml",
+        "/website_sale_show_sale_delay/static/src/xml/website_sale_stock_product_availability.xml",
         QWeb
     );
 
@@ -64,7 +64,7 @@ odoo.define("website_sale_find_closest_stock_move.customVariantMixin", function 
 
                 var $message = $(
                     QWeb.render(
-                        "website_sale_find_closest_stock_move.product_availability",
+                        "website_sale_show_sale_delay.product_availability",
                         combination
                     )
                 );

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates>
-    <t t-name="website_sale_find_closest_stock_move.product_availability">
+    <t t-name="website_sale_show_sale_delay.product_availability">
         <t
             t-if="product_type == 'product' and _.contains(['always', 'threshold'], inventory_availability)"
         >
