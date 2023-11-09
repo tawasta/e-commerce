@@ -36,9 +36,6 @@
         "website_sale_stock",
         "website",
     ],
-    "data": [
-        "views/assets.xml"
-    ],
-
+    "data": ["views/assets.xml"],
     "demo": [],
 }
