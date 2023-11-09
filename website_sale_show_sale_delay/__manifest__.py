@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Find Closest Stock Move",
-    "summary": "Website Sale Find Closest Stock Move",
+    "name": "Website Sale Show Sale Delay",
+    "summary": "Website Sale Show Sale Delay",
     "version": "14.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
@@ -34,9 +34,11 @@
     },
     "depends": [
         "website_sale_stock",
+        "website",
     ],
     "data": [
-
+        "views/assets.xml"
     ],
+
     "demo": [],
 }

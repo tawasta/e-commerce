@@ -2,11 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-====================================
-Website Sale Find Closest Stock Move
-====================================
+============================
+Website Sale Show Sale Delay
+============================
 
-* Website Sale Find Closest Stock Move
+* Website Sale Show Sale Delay
 
 
 Configuration
