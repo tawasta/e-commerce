@@ -24,6 +24,7 @@ odoo.define("website_sale_show_sale_delay.customVariantMixin", function (
                 combination.product_type === "product" &&
                 _.contains(["delivery_time"], combination.inventory_availability)
             ) {
+                console.log(combination);
                 var qty = $parent.find('input[name="add_qty"]').val();
                 $parent.find("#add_to_cart").removeClass("out_of_stock");
                 $parent.find("#buy_now").removeClass("out_of_stock");
