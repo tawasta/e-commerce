@@ -9,7 +9,7 @@ class ProductTemplate(models.Model):
         selection_add=[
             (
                 "delivery_time",
-                "When the stock balance is below the limit, show the delivery time",
+                "Show the stock balance in the online store, if the product is not in stock, show the delivery time",
             )
         ]
     )

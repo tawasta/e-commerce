@@ -32,20 +32,6 @@ odoo.define("website_sale_show_sale_delay.customVariantMixin", function (
                 if (combination.virtual_available < 0) {
                     combination.virtual_available = 0;
                 }
-                // Handle case when manually write in input
-                if (qty > combination.virtual_available) {
-                    var $input_add_qty = $parent.find('input[name="add_qty"]');
-                    qty = combination.virtual_available || 1;
-                    $input_add_qty.val(qty);
-                }
-                if (
-                    qty > combination.virtual_available ||
-                    combination.virtual_available < 1 ||
-                    qty < 1
-                ) {
-                    $parent.find("#add_to_cart").addClass("disabled out_of_stock");
-                    $parent.find("#buy_now").addClass("disabled out_of_stock");
-                }
 
                 this._rpc({
                     route: "/get/more/info",
@@ -54,7 +40,10 @@ odoo.define("website_sale_show_sale_delay.customVariantMixin", function (
                     },
                 }).then(function (results) {
                     combination.sale_delay = results.sale_delay;
-                    $parent.find(".sale_delay").text(combination.sale_delay);
+                    if(combination.virtual_available == 0) {
+                        $parent.find(".sale_delay").text(combination.sale_delay); 
+                    }
+                    
                 });
             }
             xml_load.then(function () {

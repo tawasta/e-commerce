@@ -60,9 +60,14 @@
         </div>
         <div
             t-if="product_type == 'product' and inventory_availability == 'delivery_time'"
-            t-attf-class="availability_message_#{product_template} text-warning mt16"
+            t-attf-class="availability_message_#{product_template} text-danger mt16"
         >
-            Delivery time: <span class="sale_delay" /> days
+            <div t-if="virtual_available == 0">
+                Delivery time: <span class="sale_delay" /> days
+            </div>
+            <div t-if="virtual_available > 0">
+                Balance: <t t-esc="virtual_available"/>
+            </div>
         </div>
     </t>
 
