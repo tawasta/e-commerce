@@ -9,7 +9,7 @@ odoo.define("website_sale_show_sale_delay.customVariantMixin", function (
     var core = require("web.core");
     var QWeb = core.qweb;
     var xml_load = ajax.loadXML(
-        "/website_sale_show_sale_delay/static/src/xml/website_sale_stock_product_availability.xml",
+        "/website_sale_show_sale_delay/static/src/xml/websitesale_stock_product_availability.xml",
         QWeb
     );
 
