@@ -45,7 +45,7 @@ class WebsiteSale(WebsiteSale):
                     )
             companies.append(line.product_id.company_id)
 
-        logging.info(companies);
+        logging.info(companies)
         result = all(element == companies[0] for element in companies)
         if not result:
             only_invoice = True
@@ -134,10 +134,10 @@ class WebsiteSale(WebsiteSale):
             unique_acquirers = list(set(acquirers_list))
 
             domain = expression.AND([[("id", "in", unique_acquirers)]])
-        logging.info("============DOMAIN=========");
-        logging.info(domain);
+        logging.info("============DOMAIN=========")
+        logging.info(domain)
         acquirers = request.env["payment.acquirer"].search(domain)
-        logging.info(acquirers);
+        logging.info(acquirers)
         values["acquirers"] = acquirers
 
         return values

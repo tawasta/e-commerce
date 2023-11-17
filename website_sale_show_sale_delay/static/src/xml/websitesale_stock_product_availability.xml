@@ -66,7 +66,7 @@
                 Delivery time: <span class="sale_delay" /> days
             </div>
             <div t-if="virtual_available > 0">
-                Balance: <t t-esc="virtual_available"/>
+                Balance: <t t-esc="virtual_available" />
             </div>
         </div>
     </t>
