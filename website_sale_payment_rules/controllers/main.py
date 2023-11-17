@@ -45,6 +45,7 @@ class WebsiteSale(WebsiteSale):
                     )
             companies.append(line.product_id.company_id)
 
+        logging.info(companies);
         result = all(element == companies[0] for element in companies)
         if not result:
             only_invoice = True
