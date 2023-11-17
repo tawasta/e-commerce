@@ -133,7 +133,10 @@ class WebsiteSale(WebsiteSale):
             unique_acquirers = list(set(acquirers_list))
 
             domain = expression.AND([[("id", "in", unique_acquirers)]])
+        logging.info("============DOMAIN=========");
+        logging.info(domain);
         acquirers = request.env["payment.acquirer"].search(domain)
+        logging.info(acquirers);
         values["acquirers"] = acquirers
 
         return values
