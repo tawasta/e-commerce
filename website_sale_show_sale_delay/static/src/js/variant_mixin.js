@@ -1,6 +1,4 @@
-odoo.define("website_sale_show_sale_delay.customVariantMixin", function (
-    require
-) {
+odoo.define("website_sale_show_sale_delay.customVariantMixin", function (require) {
     "use strict";
 
     var VariantMixin = require("website_sale_stock.VariantMixin");
@@ -25,7 +23,7 @@ odoo.define("website_sale_show_sale_delay.customVariantMixin", function (
                 _.contains(["delivery_time"], combination.inventory_availability)
             ) {
                 console.log(combination);
-                var qty = $parent.find('input[name="add_qty"]').val();
+                // Var qty = $parent.find('input[name="add_qty"]').val();
                 $parent.find("#add_to_cart").removeClass("out_of_stock");
                 $parent.find("#buy_now").removeClass("out_of_stock");
                 combination.virtual_available -= parseInt(combination.cart_qty);
@@ -41,10 +39,9 @@ odoo.define("website_sale_show_sale_delay.customVariantMixin", function (
                     },
                 }).then(function (results) {
                     combination.sale_delay = results.sale_delay;
-                    if(combination.virtual_available == 0) {
-                        $parent.find(".sale_delay").text(combination.sale_delay); 
+                    if (combination.virtual_available == 0) {
+                        $parent.find(".sale_delay").text(combination.sale_delay);
                     }
-                    
                 });
             }
             xml_load.then(function () {
