@@ -35,7 +35,12 @@ class WebsiteSale(WebsiteSale):
 
                 if new_user:
                     website = request.env["website"].get_current_website()
-                    new_user.sudo().write({"company_id": website.company_id.id, "company_ids": [(6, 0, website.company_id.ids)]})
+                    new_user.sudo().write(
+                        {
+                            "company_id": website.company_id.id,
+                            "company_ids": [(6, 0, website.company_id.ids)],
+                        }
+                    )
                     new_user.with_context(create_user=True).action_reset_password()
                     template = request.env.ref(
                         "auth_signup.set_password_email", raise_if_not_found=False
