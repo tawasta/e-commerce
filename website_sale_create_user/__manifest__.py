@@ -30,8 +30,6 @@
     "installable": True,
     "depends": [
         "website_sale",
-        "membership_group",
-        "membership_product",
     ],
-    "data": ["views/attachment.xml"],
+    "data": [],
 }
