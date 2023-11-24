@@ -15,7 +15,9 @@ class WebsiteSale(WebsiteSale):
                 "partner_id": order.partner_id.id,
                 "login": order.partner_id.email,
             }
-            partner_user = order.partner_id.user_ids and order.partner_id.user_ids[0] or False
+            partner_user = (
+                order.partner_id.user_ids and order.partner_id.user_ids[0] or False
+            )
             res_users = request.env["res.users"].sudo()
 
             if not partner_user:
@@ -40,6 +42,7 @@ class WebsiteSale(WebsiteSale):
         # Tässä metodissa toteutetaan perustoiminnot uudelle käyttäjälle.
         # Tämä metodi voidaan korvata toisessa moduulissa.
         pass
+
 
 # class WebsiteSale(WebsiteSale):
 #     @http.route()
