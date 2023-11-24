@@ -7,7 +7,6 @@ Website sale create user
 ========================
 
 * When the order is confirmed, a user is created for the contact if it does not already exist.
-* If the cart has a membership product, a new user will be added to the membership group.
 
 Configuration
 =============
