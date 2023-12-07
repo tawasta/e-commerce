@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<odoo>
-    <template id="confirmation" inherit_id="website_sale.confirmation">
-        <xpath
-            expr='//t[@t-call="website_sale.payment_confirmation_status"]'
-            position="replace"
-        />
-    </template>
-</odoo>
