@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2023 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,18 +19,17 @@
 ##############################################################################
 
 {
-    "name": "Website sale billing address",
-    "summary": "Website customer can select a billing address",
-    "version": "14.0.1.1.0",
-    "category": "Website",
+    "name": "Website sale billing address: hide from public user",
+    "summary": "Only registered users see billing address during checkout",
+    "version": "14.0.1.0.0",
+    "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "website_sale",
-        "website_sale_invoice_transmit_method",
+    "depends": ["website_sale_billing_address"],
+    "data": [
+        "views/website_sale_address.xml",
     ],
-    "data": ["views/templates.xml", "views/res_config_settings.xml"],
 }
