@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <template id="cart_lines_disable_qty" inherit_id="website_sale.cart_lines">
+        <xpath expr="//div[@t-attf-class='css_quantity input-group mb-2']" position="before">
+            <t t-set="disable_cart_change" t-value='1==0' />
+        </xpath>
+        <xpath expr="//input[@type='text']" position="attributes">
+            <attribute
+                name="t-att-disabled"
+            >'disabled' if disable_cart_change else None</attribute>
+        </xpath>
         <xpath expr="//div[@t-attf-class='css_quantity input-group mb-2']" position="attributes">
-            <attribute
-                name="t-attf-class"
-                separator=" "
-                add="d-none"
-            />
-        </xpath>
-        <xpath expr="//a[@class='js_add_cart_json btn btn-link d-inline-block border-end-0']" position="attributes">
-            <attribute
-                name="class"
-                separator=" "
-                add="disabled"
-            />
-        </xpath>
-        <xpath expr="//a[@class='js_add_cart_json d-inline-block float_left btn btn-link border-start-0']" position="attributes">
-            <attribute
-                name="class"
-                separator=" "
-                add="disabled"
-            />
+            <attribute name="t-attf-class">css_quantity input-group mb-2 {{ 'd-none' if disable_cart_change else '' }}</attribute>
         </xpath>
     </template>
 </odoo>
