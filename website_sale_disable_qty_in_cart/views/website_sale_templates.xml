@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="cart_lines_disable_qty" inherit_id="website_sale.cart_lines">
+        <xpath expr="//div[@t-attf-class='css_quantity input-group mb-2']" position="attributes">
+            <attribute
+                name="t-attf-class"
+                separator=" "
+                add="d-none"
+            />
+        </xpath>
+        <xpath expr="//a[@class='js_add_cart_json btn btn-link d-inline-block border-end-0']" position="attributes">
+            <attribute
+                name="class"
+                separator=" "
+                add="disabled"
+            />
+        </xpath>
+        <xpath expr="//a[@class='js_add_cart_json d-inline-block float_left btn btn-link border-start-0']" position="attributes">
+            <attribute
+                name="class"
+                separator=" "
+                add="disabled"
+            />
+        </xpath>
+    </template>
+</odoo>
