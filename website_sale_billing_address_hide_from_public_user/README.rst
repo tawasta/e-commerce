@@ -2,17 +2,16 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-============================
-Website sale billing address
-============================
+===================================================
+Website sale billing address: hide from public user
+===================================================
 
-* Enables the customer to select a Billing Address during checkout
+* Hides the billing address options from website customers who are not
+  logged in
 
 Configuration
 =============
-* Optional: in website settings, check the "Allow Selecting Sibling Billing Addresses" checkbox.
-  This will show the customer also those billing addresses are the children of the customer's 
-  parent company.
+\-
 
 Usage
 =====

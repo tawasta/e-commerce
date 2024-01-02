@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<odoo>
+    <template id="addressbilling" inherit_id="website_sale_billing_address.address">
+        <xpath expr="//input[@id='billing_use_same']" position="replace">
+            <t t-if="request.env.user.has_group('base.group_public')">
+                <input type="hidden" name="billing_use_same" value="1" />
+            </t>
+            <t t-else="">
+                <input
+                    type="checkbox"
+                    id='billing_use_same'
+                    class="mr8"
+                    name='billing_use_same'
+                    value="1"
+                    checked='checked'
+                />
+            </t>
+
+        </xpath>
+
+    </template>
+    <template id="checkoutbilling" inherit_id="website_sale_billing_address.checkout">
+        <xpath
+            expr="//div[@class='col-md-12 col-lg-12 one_kanban']/.."
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >not request.env.user.has_group('base.group_public')</attribute>
+        </xpath>
+    </template>
+
+</odoo>

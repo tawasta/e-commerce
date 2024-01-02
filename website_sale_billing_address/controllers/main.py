@@ -62,6 +62,31 @@ class WebsiteSaleBilling(WebsiteSale):
                 order="id desc",
             )
 
+            if request.website.allow_selecting_sibling_billing_addresses:
+                # Fetch sibling billing addresses, e.g. in this contact hierarchy:
+                #
+                # MainCompany
+                # - MainCompany, Billing Address 1
+                # - MainCompany, Billing Address 2
+                # - MainCompany, Test Person 1
+                #
+                # ...Test Person 1, when in shop, would see also Billing Address 1 and 2
+                if order.partner_id.parent_id and order.partner_id.parent_id.is_company:
+
+                    sibling_billing_partners = (
+                        request.env["res.partner"]
+                        .sudo()
+                        .search(
+                            [
+                                ("parent_id", "=", order.partner_id.parent_id.id),
+                                ("type", "=", "invoice"),
+                            ],
+                            order="id desc",
+                        )
+                    )
+
+                    billing_partners = billing_partners + sibling_billing_partners
+
             for bp in billing_partners:
                 if bp.is_company and bp.child_ids:
                     for c in bp.child_ids:
