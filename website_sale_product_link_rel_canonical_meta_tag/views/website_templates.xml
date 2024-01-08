@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="layout"
+        name="Main layout canonical meta tag"
+        inherit_id="website.layout"
+    >
+
+        <!-- Replace the core canonical link -->
+        <xpath expr="//link[@rel='canonical']" position="replace">
+
+            <!-- Also with the new implementation, create the tag only for public users -->
+            <t t-if="request and website and website.is_public_user()">
+
+                <!-- check if rendering the HEAD for a product page -->
+                <t t-if="main_object and main_object._name == 'product.template' ">
+                    <!-- place a tag that calls the custom url building -->
+                    <link
+                        t-if="request and website and website.is_public_user()"
+                        rel="canonical"
+                        t-att-href="website._get_canonical_url_for_product_template(canonical_params=canonical_params,object_name=main_object._name,object_id=main_object.id)"
+                    />
+                </t>
+                <t t-else="">
+                    <!-- Otherwise place a tag that calls the core url building -->
+                    <link
+                        t-if="request and website and website.is_public_user()"
+                        rel="canonical"
+                        t-att-href="website._get_canonical_url(canonical_params=canonical_params)"
+                    />
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
