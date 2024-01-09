@@ -1,0 +1,60 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_product_link_rel_canonical_meta_tag
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20230925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-08 11:24+0000\n"
+"PO-Revision-Date: 2024-01-08 11:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_product_link_rel_canonical_meta_tag
+#: model:ir.model.fields,help:website_sale_product_link_rel_canonical_meta_tag.field_product_product__website_page_canonical_link_target_id
+#: model:ir.model.fields,help:website_sale_product_link_rel_canonical_meta_tag.field_product_template__website_page_canonical_link_target_id
+msgid ""
+"Bypass Odoo's default link rel='canonical' link creation for this product's "
+"page, and have the link point to a custom page instead."
+msgstr ""
+"Ohita Odoon oletustoiminnallisuus tuotesivun 'link rel=canonical' -linkkiä "
+"muodostaessa, ja aseta linkki osoittamaan tähän sivuun."
+
+#. module: website_sale_product_link_rel_canonical_meta_tag
+#: model:ir.model.fields,field_description:website_sale_product_link_rel_canonical_meta_tag.field_product_product__website_page_canonical_link_target_id
+#: model:ir.model.fields,field_description:website_sale_product_link_rel_canonical_meta_tag.field_product_template__website_page_canonical_link_target_id
+msgid "Canonical Link Target"
+msgstr "Canonical-linkin kohde"
+
+#. module: website_sale_product_link_rel_canonical_meta_tag
+#: model:ir.model.fields,field_description:website_sale_product_link_rel_canonical_meta_tag.field_product_template__display_name
+#: model:ir.model.fields,field_description:website_sale_product_link_rel_canonical_meta_tag.field_website__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: website_sale_product_link_rel_canonical_meta_tag
+#: model:ir.model.fields,field_description:website_sale_product_link_rel_canonical_meta_tag.field_product_template__id
+#: model:ir.model.fields,field_description:website_sale_product_link_rel_canonical_meta_tag.field_website__id
+msgid "ID"
+msgstr "Tunniste (ID)"
+
+#. module: website_sale_product_link_rel_canonical_meta_tag
+#: model:ir.model.fields,field_description:website_sale_product_link_rel_canonical_meta_tag.field_product_template____last_update
+#: model:ir.model.fields,field_description:website_sale_product_link_rel_canonical_meta_tag.field_website____last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: website_sale_product_link_rel_canonical_meta_tag
+#: model:ir.model,name:website_sale_product_link_rel_canonical_meta_tag.model_product_template
+msgid "Product Template"
+msgstr "Tuotemalli"
+
+#. module: website_sale_product_link_rel_canonical_meta_tag
+#: model:ir.model,name:website_sale_product_link_rel_canonical_meta_tag.model_website
+msgid "Website"
+msgstr "Verkkosivu"
