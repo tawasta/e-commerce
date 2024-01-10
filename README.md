@@ -61,7 +61,7 @@ addon | version | summary
 [website_sale_payment_rules](website_sale_payment_rules/) | 14.0.1.0.1 | Website sale payment rules
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 14.0.1.0.1 | Invoice Transmit Method and Payment Terms for Website SO print
 [website_sale_product_code](website_sale_product_code/) | 14.0.1.0.0 | Show product default code in shop
-[website_sale_product_link_rel_canonical_meta_tag](website_sale_product_link_rel_canonical_meta_tag/) | 14.0.1.0.0 | Support for setting a custom canonical link meta tag
+[website_sale_product_link_rel_canonical_meta_tag](website_sale_product_link_rel_canonical_meta_tag/) | 14.0.1.1.0 | Support for setting a custom canonical link meta tag
 [website_sale_product_quantity_integer](website_sale_product_quantity_integer/) | 14.0.1.0.0 | Show product quantity in cart as integer
 [website_sale_product_replace](website_sale_product_replace/) | 14.0.1.3.0 | Replace a product for all customers or for certain customers
 [website_sale_product_synopsis](website_sale_product_synopsis/) | 14.0.1.2.0 | Show product synopsis in shop
