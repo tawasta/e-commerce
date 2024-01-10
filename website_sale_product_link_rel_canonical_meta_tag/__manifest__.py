@@ -21,8 +21,8 @@
 {
     "name": "eCommerce: custom link rel='canonical' support for product pages",
     "summary": "Support for setting a custom canonical link meta tag",
-    "version": "14.0.1.0.0",
-    "category": "Website",
+    "version": "14.0.1.1.0",
+    "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
