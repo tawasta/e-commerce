@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="birth_year_view_form">
+        <field name="name">res.birth.year.form</field>
+        <field name="model">res.birth.year</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Birth year">
+                <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="abroad_period_view_tree">
+        <field name="name">res.birth.year.view.tree</field>
+        <field name="model">res.birth.year</field>
+        <field name="type">tree</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="birth year">
+                <field name="name" optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="birth_year_action" model="ir.actions.act_window">
+        <field name="name">Birth year</field>
+        <field name="res_model">res.birth.year</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="birth_year_menu"
+        name="Birth year"
+        parent="contacts.menu_localisation"
+        action="birth_year_action"/>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">Birthdate Date field</field>
+        <field name="model">res.partner</field>
+        <field
+            name="inherit_id"
+            ref="partner_contact_personal_information_page.personal_information"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='personal_information_group']">
+                <field name='birth_year' />
+            </xpath>
+        </field>
+    </record>
+</odoo>

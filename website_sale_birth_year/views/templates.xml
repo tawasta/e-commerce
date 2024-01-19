@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="address_inherit_birth_year" inherit_id="website_sale.address">
+        <xpath expr="//select[@id='country_id']//.." position="after">
+            <div
+                id="birth-year-div"
+                style="display: initial;"
+                t-attf-class="form-group col-lg-6"
+            >
+                <t
+                    t-set="years"
+                    t-value="request.env['res.birth.year'].sudo().search([])"
+                />
+                <label
+                    class="col-form-label label-optional"
+                    for="birth_year"
+                >Birth year</label>
+                <select
+                    id="birth-year-select"
+                    t-attf-class="form-control"
+                    name="birth_year"
+                >
+                    <t t-foreach="years" t-as="y">
+                        <option
+                            t-att-value="y.id"
+                        >
+                            <span t-esc="y.name" />
+                        </option>
+                    </t>
+                </select>
+            </div>
+        </xpath>
+    </template>
+</odoo>
