@@ -16,3 +16,5 @@ class ProductTemplate(models.Model):
             )
         ]
     )
+
+    sale_delay_for_website = fields.Float("Website delivery time")
