@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="address_inherit_birth_year" inherit_id="website_sale.address">
         <xpath expr="//select[@id='country_id']//.." position="after">
@@ -21,9 +21,7 @@
                     name="birth_year"
                 >
                     <t t-foreach="years" t-as="y">
-                        <option
-                            t-att-value="y.id"
-                        >
+                        <option t-att-value="y.id">
                             <span t-esc="y.name" />
                         </option>
                     </t>

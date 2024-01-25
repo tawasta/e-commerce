@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-18 06:53+0000\n"
-"PO-Revision-Date: 2023-12-18 09:03+0200\n"
+"POT-Creation-Date: 2024-01-25 11:44+0000\n"
+"PO-Revision-Date: 2024-01-25 13:49+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -94,6 +94,13 @@ msgstr "Tilapäisesti loppunut"
 #, python-format
 msgid "Warning"
 msgstr "Varoitus"
+
+#. module: website_sale_show_sale_delay
+#: model:ir.model.fields,field_description:website_sale_show_sale_delay.field_procountor_product_product__sale_delay_for_website
+#: model:ir.model.fields,field_description:website_sale_show_sale_delay.field_product_product__sale_delay_for_website
+#: model:ir.model.fields,field_description:website_sale_show_sale_delay.field_product_template__sale_delay_for_website
+msgid "Website delivery time"
+msgstr "Verkkokaupan toimitusaika"
 
 #. module: website_sale_show_sale_delay
 #. openerp-web
