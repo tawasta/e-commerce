@@ -1,7 +1,7 @@
-from odoo import models, fields
+from odoo import fields, models
+
 
 class ResPartner(models.Model):
-    _inherit = 'res.partner'
+    _inherit = "res.partner"
 
-    birth_year = fields.Many2one(string='Birth year', comodel_name='res.birth.year')
-
+    birth_year = fields.Many2one(string="Birth year", comodel_name="res.birth.year")
