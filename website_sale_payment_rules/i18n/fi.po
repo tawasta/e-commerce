@@ -1,0 +1,165 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_payment_rules
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-25 11:07+0000\n"
+"PO-Revision-Date: 2021-10-25 11:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.res_config_settings_view_form
+msgid "Add an attachment text"
+msgstr "Lisää liiteteksti"
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.res_config_settings_view_form
+msgid "Add an explanation text"
+msgstr "Lisää selitysteksti"
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.payment
+msgid "Add attachment"
+msgstr "Lisää liite"
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.payment
+msgid "Add explanation"
+msgstr "Lisää selite"
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.payment
+msgid "Buy a product from this"
+msgstr "Osta tuote tästä"
+
+#. module: website_sale_payment_rules
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_product__company_id
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_template__company_id
+msgid "Company"
+msgstr "Yritys"
+
+#. module: website_sale_payment_rules
+#: model:ir.model,name:website_sale_payment_rules.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfiguraatioasetukset"
+
+#. module: website_sale_payment_rules
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_template__display_name
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_website__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: website_sale_payment_rules
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_template__id
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_res_config_settings__id
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_website__id
+msgid "ID"
+msgstr "Tunniste (ID)"
+
+#. module: website_sale_payment_rules
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_template____last_update
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_website____last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.payment
+msgid "Pay Now"
+msgstr "Maksa nyt"
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.payment
+msgid "Pay with"
+msgstr "Maksu"
+
+#. module: website_sale_payment_rules
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_product__payment_only_invoice
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_template__payment_only_invoice
+msgid "Payment by invoice only"
+msgstr "Maksu vain laskulla"
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.product_template_only_form_view
+msgid "Payment rules"
+msgstr "Maksusäännöt"
+
+#. module: website_sale_payment_rules
+#: model:ir.model,name:website_sale_payment_rules.model_product_template
+msgid "Product Template"
+msgstr "Tuotemalli"
+
+#. module: website_sale_payment_rules
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_product__required_product_category_id
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_template__required_product_category_id
+msgid "Required product category"
+msgstr "Pakollinen tuotekategoria"
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.res_config_settings_view_form
+msgid "Required product category text"
+msgstr "Vaadittu tuotekategoriateksti"
+
+#. module: website_sale_payment_rules
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_product__requires_attachment
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_template__requires_attachment
+msgid "Requires an attachment"
+msgstr "Vaatii liitteen"
+
+#. module: website_sale_payment_rules
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_product__requires_explanation
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_product_template__requires_explanation
+msgid "Requires an explanation"
+msgstr "Vaatii selityksen"
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.payment
+msgid "Return to Cart"
+msgstr "Palaa ostoskoriin"
+
+#. module: website_sale_payment_rules
+#: model:ir.model,name:website_sale_payment_rules.model_website
+msgid "Website"
+msgstr "Verkkosivu"
+
+#. module: website_sale_payment_rules
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_res_config_settings__website_sale_required_product_categ_text
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_website__product_categ_text
+msgid "Website sale: Required product category text"
+msgstr ""
+
+#. module: website_sale_payment_rules
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_res_config_settings__website_sale_add_attachment_text
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_website__add_attachment_text
+msgid "Website sale: add an attachment"
+msgstr ""
+
+#. module: website_sale_payment_rules
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_res_config_settings__website_sale_add_explanation_text
+#: model:ir.model.fields,field_description:website_sale_payment_rules.field_website__add_explanation_text
+msgid "Website sale: add an explanation"
+msgstr ""
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.res_config_settings_view_form
+msgid "Website sale: payment rules"
+msgstr ""
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.payment
+msgid "category"
+msgstr "kategoria"
+
+#. module: website_sale_payment_rules
+#: model_terms:ir.ui.view,arch_db:website_sale_payment_rules.payment
+msgid "here"
+msgstr "tässä"

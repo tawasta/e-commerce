@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="custom_payment_inherit" inherit_id="website_sale.payment" name="Custom Payment Inherit">
+        <!-- Modifying the payment method display section -->
+        <xpath expr="//div[@id='payment_method']" position="before">
+            <t t-if="need_attachment or need_explanation or need_company_info or product_categ_list or mandatory_products_list">
+                <div class="alert alert-warning">
+                    <strong>Additional information needed:</strong>
+                    <ul>
+                        <li t-if="need_attachment">Attachment required.</li>
+                        <li t-if="need_explanation">Explanation required.</li>
+                        <li t-if="need_company_info">Company information needed.</li>
+                        <li t-if="product_categ_list">
+                            Specific product category required.
+                            <div>
+                                <t t-foreach="product_categ_list" t-as="categ">
+                                    <p>Buy a product from this <a
+                                            class=''
+                                            t-attf-href='/shop/category/#{slug(categ)}'
+                                            target="_blank"
+                                        >category: <t t-esc="categ.name"/></a></p>
+                                </t>
+                            </div>
+                        </li>
+
+                        <li t-if="mandatory_products_list">
+                            Mandatory products must be added.
+                            <div class="row">
+                                <t t-foreach="mandatory_products_list" t-as="prod">
+                                    <div class="col-12 mb-1">
+                                        <a t-attf-href='/shop/product/#{prod.product_tmpl_id.id}' target="_blank">
+                                            <t t-esc="prod.display_name" />
+                                        </a>
+                                    </div>
+                                </t>
+                            </div>
+                        </li>
+                    </ul>
+                    <span>Please complete the necessary steps before proceeding to payment.</span>
+                </div>
+                <!-- Set a variable to hide payment methods -->
+                <t t-set="hide_payment_methods" t-value="True"/>
+            </t>
+        </xpath>
+
+        <!-- Conditionally hide the payment methods based on the flags -->
+        <xpath expr="//div[@id='payment_method']" position="attributes">
+            <attribute name="t-if">not hide_payment_methods and (payment_methods_sudo or tokens_sudo)</attribute>
+        </xpath>
+    </template>
+
+
+</odoo>
