@@ -21,7 +21,7 @@
 {
     "name": "Website Sale Show Sale Delay",
     "summary": "Website Sale Show Sale Delay",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.2",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
@@ -36,6 +36,9 @@
         "website_sale_stock",
         "website",
     ],
-    "data": ["views/assets.xml"],
+    "data": [
+        "views/assets.xml",
+        "views/product_view.xml",
+    ],
     "demo": [],
 }

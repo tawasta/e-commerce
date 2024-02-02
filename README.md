@@ -75,7 +75,11 @@ addon | version | summary
 [website_sale_settings](website_sale_settings/) | 14.0.1.0.5 | Website sale toggleable settings under customize menu
 [website_sale_shipping_same](website_sale_shipping_same/) | 14.0.1.0.1 | Address change in website sale: Hide checkbox to use same shipping address
 [website_sale_show_product_code](website_sale_show_product_code/) | 14.0.1.0.0 | Show the product's internal reference on product page
+<<<<<<< HEAD
 [website_sale_show_sale_delay](website_sale_show_sale_delay/) | 14.0.1.0.1 | Website Sale Show Sale Delay
+=======
+[website_sale_show_sale_delay](website_sale_show_sale_delay/) | 14.0.1.0.2 | Website Sale Show Sale Delay
+>>>>>>> 14.0
 [website_sale_split_name](website_sale_split_name/) | 14.0.1.0.1 | Website sale split name
 [website_sale_stock_show](website_sale_stock_show/) | 14.0.1.0.0 | Always show availability on website if 'Sell regardless of inventory' is selected for product
 [website_sale_suggested_products_category](website_sale_suggested_products_category/) | 14.0.1.0.1 | Show suggested products in cart under Suggested Products Categories
