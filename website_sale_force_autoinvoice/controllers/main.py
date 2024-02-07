@@ -23,7 +23,7 @@
 
 from odoo import http
 from odoo.http import request
-
+import logging
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 # 4. Imports from Odoo modules (rarely, and only if necessary):
@@ -49,11 +49,17 @@ class WebsiteSale(WebsiteSale):
                 ):
                     order.sudo().action_confirm()
 
+                logging.info(order);
+                logging.info(order.transaction_ids);
+                logging.info(order.transaction_ids);
+                logging.info(order.transaction_ids[0].acquirer_id.auto_create_invoice);
+
                 if (
                     order.transaction_ids
                     and order.transaction_ids[0].acquirer_id.auto_create_invoice
                     == "allow"
                 ):
+                    logging.info("=========TARKISTUA LAPI JA LUODAAN LASKU======");
                     order.sudo()._create_invoices()
 
         return super(WebsiteSale, self).payment_confirmation(**post)
