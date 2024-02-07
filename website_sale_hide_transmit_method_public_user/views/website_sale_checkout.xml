@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="address_inherit_invoice_transmit_method"
+        inherit_id="website_sale_invoice_transmit_method.address"
+    >
+        <xpath
+            expr="//div[@id='customer_invoice_transmit_method_id_div']"
+            position="attributes"
+        >
+            <!-- Lisää t-if ehto tarkistamaan, onko käyttäjä kirjautunut sisään -->
+            <attribute
+                name="t-if"
+            >request.env.user.id != request.env.ref('base.public_user').id</attribute>
+        </xpath>
+    </template>
+</odoo>
