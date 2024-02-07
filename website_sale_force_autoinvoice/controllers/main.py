@@ -47,6 +47,8 @@ class WebsiteSale(WebsiteSale):
             order = request.env["sale.order"].sudo().browse(sale_order_id)
             logging.info(order);
             logging.info(order.state);
+            logging.info(order.transaction_ids);
+            logging.info(order.transaction_ids[0].acquirer_id.auto_create_invoice);
             if order.state == "sent":
                 logging.info(order);
                 logging.info(order.transaction_ids);
