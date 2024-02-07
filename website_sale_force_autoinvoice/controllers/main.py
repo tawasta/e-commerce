@@ -46,6 +46,10 @@ class WebsiteSale(WebsiteSale):
             logging.info(sale_order_id);
             order = request.env["sale.order"].sudo().browse(sale_order_id)
             if order.state == "sent":
+                logging.info(order);
+                logging.info(order.transaction_ids);
+                logging.info(order.transaction_ids[0].acquirer_id.auto_create_invoice);
+                logging.info("=====TILA ON SENT=====");
                 if (
                     order.transaction_ids
                     and order.transaction_ids[0].acquirer_id.auto_confirm == "allow"
