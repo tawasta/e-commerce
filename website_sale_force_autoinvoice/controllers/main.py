@@ -39,8 +39,11 @@ class WebsiteSale(WebsiteSale):
         """
         Confirm sale order and create invoice.
         """
+        logging.info("=====================");
+        logging.info("======MENEEKO EDES=======");
         sale_order_id = request.session.get("sale_last_order_id")
         if sale_order_id:
+            logging.info(sale_order_id);
             order = request.env["sale.order"].sudo().browse(sale_order_id)
             if order.state == "sent":
                 if (
