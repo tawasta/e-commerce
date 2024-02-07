@@ -45,6 +45,8 @@ class WebsiteSale(WebsiteSale):
         if sale_order_id:
             logging.info(sale_order_id);
             order = request.env["sale.order"].sudo().browse(sale_order_id)
+            logging.info(order);
+            logging.info(order.state);
             if order.state == "sent":
                 logging.info(order);
                 logging.info(order.transaction_ids);
