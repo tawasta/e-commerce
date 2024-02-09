@@ -10,6 +10,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[website_sale_company_email](website_sale_company_email/) | 17.0.1.0.0 | Add different emails for ecommerce user and company
 [website_sale_create_user](website_sale_create_user/) | 17.0.1.0.0 | Website sale create user
 [website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 | If a pricelist is assigned to a partner, hide pricelist selector in shop
 [website_sale_disable_qty_in_cart](website_sale_disable_qty_in_cart/) | 17.0.1.0.0 | Helper module to disable changing product quantity in cart
