@@ -19,9 +19,9 @@ class ProductTemplate(models.Model):
         string="Required product category", comodel_name="product.public.category"
     )
 
-    #company_id = fields.Many2one("res.company", "Company", index=1, required=True)
+    # company_id = fields.Many2one("res.company", "Company", index=1, required=True)
 
-    #change_allowed = fields.Boolean(string="Change allowed", default=False)
+    # change_allowed = fields.Boolean(string="Change allowed", default=False)
 
     allowed_groups_ids = fields.Many2many(
         string="Allowed groups can see the product", comodel_name="res.groups"

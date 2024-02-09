@@ -1,8 +1,8 @@
 import logging
 import re
+
 from odoo import http
 from odoo.http import request
-from odoo.osv import expression
 
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
@@ -13,8 +13,8 @@ class WebsiteSale(WebsiteSale):
     def _get_shop_payment_values(self, order, **kwargs):
         values = super(WebsiteSale, self)._get_shop_payment_values(order, **kwargs)
         self._process_order_lines(order, values)
-        #self._update_payment_acquirers(order, values)
-        logging.info(values);
+        # self._update_payment_acquirers(order, values)
+        logging.info(values)
         return values
 
     def _process_order_lines(self, order, values):
@@ -26,7 +26,7 @@ class WebsiteSale(WebsiteSale):
             "check_category_product": False,
             "need_company_info": False,
             "product_categ_list": [],
-            "mandatory_products_list": []
+            "mandatory_products_list": [],
         }
 
         for line in order.order_line:
@@ -44,7 +44,10 @@ class WebsiteSale(WebsiteSale):
             flags["check_attachment"] = True
         if product.requires_explanation:
             flags["check_explanation"] = True
-        if request.env.user.id == request.env.ref("base.public_user").id and product.required_product_category_id:
+        if (
+            request.env.user.id == request.env.ref("base.public_user").id
+            and product.required_product_category_id
+        ):
             flags["check_category_product"] = True
             flags["product_categ_list"].append(product.required_product_category_id)
 
@@ -64,11 +67,10 @@ class WebsiteSale(WebsiteSale):
                     remaining_categories.discard(p_categ)
             values["product_categ_list"] = list(remaining_categories)
 
-
         if flags["check_attachment"] and order.message_attachment_count < 1:
             values["need_attachment"] = True
 
-        cleaned_note = re.sub('<[^<]+?>', '', order.note).strip()
+        cleaned_note = re.sub("<[^<]+?>", "", order.note).strip()
         if flags["check_explanation"] and not cleaned_note:
             values["need_explanation"] = True
 
@@ -77,8 +79,9 @@ class WebsiteSale(WebsiteSale):
 
         allowed_methods_ids = set(flags["allowed_methods"])
         if allowed_methods_ids:
-            values["payment_methods_sudo"] = request.env['payment.method'].browse(list(allowed_methods_ids))
-
+            values["payment_methods_sudo"] = request.env["payment.method"].browse(
+                list(allowed_methods_ids)
+            )
 
     @http.route()
     def payment_confirmation(self, **post):
