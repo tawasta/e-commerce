@@ -19,7 +19,7 @@
 ##############################################################################
 {
     "name": "Website Sale Disable Quantity in Cart",
-    "version": "17.0.1.0",
+    "version": "17.0.1.0.0",
     "category": "E-commerce",
     "summary": "Helper module to disable changing product quantity in cart",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",

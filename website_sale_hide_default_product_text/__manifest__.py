@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Website sale payment rules",
-    "summary": "Website sale payment rules",
+    "name": "Website Sale Hide Default Product Text",
+    "summary": "Hides the default '30-day money-back quarantee...' text",
     "version": "17.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
@@ -28,16 +28,15 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
+    "external_dependencies": {
+        "python": [],
+        "bin": [],
+    },
     "depends": [
-        # "sale_create_membership",
         "website_sale",
-        # "payment_paytrail",
-        # "website_sale_extra_step_content_to_sale_order_note",
     ],
     "data": [
-        "views/payment_acquirer_view.xml",
-        "views/res_config_settings_views.xml",
-        "views/templates.xml",
-        "views/website_sale_templates.xml",
+        "views/product.xml",
     ],
+    "demo": [],
 }

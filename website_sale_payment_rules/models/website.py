@@ -1,5 +1,4 @@
 from odoo import fields, models
-from odoo.http import request
 
 
 class Website(models.Model):
@@ -26,6 +25,7 @@ class Website(models.Model):
     mandatory_products_text = fields.Html(
         string="Website sale: mandatory products", readonly=False, translate=True
     )
+
 
 #     def sale_get_order(self, *args, **kwargs):
 #         # Override to allow fixing SO taxes on multi-company website
