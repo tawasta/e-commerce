@@ -2,7 +2,7 @@ import logging
 
 from odoo import http
 from odoo.http import request
-
+from odoo.addons.auth_signup.models.res_partner import SignupError, now
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
@@ -43,6 +43,16 @@ class WebsiteSale(WebsiteSale):
         return super(WebsiteSale, self).payment_confirmation(**post)
 
     def handle_new_user(self, order, new_user):
+
+        # prepare reset password signup
+        create_mode = False
+
+        # no time limit for initial invitation, only for reset password
+        expiration = False if create_mode else now(days=+1)
+
+        # Signup prepare for the partner linked to the new user
+        new_user.partner_id.signup_prepare(signup_type="reset", expiration=expiration)
+
         template_values = {
             "email_to": new_user.partner_id.email,
             "email_cc": False,
