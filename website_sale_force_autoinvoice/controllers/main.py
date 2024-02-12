@@ -21,7 +21,6 @@
 # 2. Known third party imports:
 # 3. Odoo imports (openerp):
 
-import logging
 
 from odoo import http
 from odoo.http import request
