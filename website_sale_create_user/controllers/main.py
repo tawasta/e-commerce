@@ -1,6 +1,7 @@
+import logging
+
 from odoo import http
 from odoo.http import request
-import logging
 
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
@@ -35,10 +36,9 @@ class WebsiteSale(WebsiteSale):
                         }
                     )
                     email_template_values = self.handle_new_user(order, new_user)
-                    logging.info(email_template_values);
+                    logging.info(email_template_values)
                     if email_template_values:
                         self.send_email(new_user, email_template_values)
-                
 
         return super(WebsiteSale, self).payment_confirmation(**post)
 
@@ -50,11 +50,15 @@ class WebsiteSale(WebsiteSale):
             "partner_to": False,
             "scheduled_date": False,
         }
-        logging.info(template_values);
+        logging.info(template_values)
         return template_values
 
     def send_email(self, new_user, template_values):
-        template = request.env.ref("auth_signup.set_password_email", raise_if_not_found=False)
+        template = request.env.ref(
+            "auth_signup.set_password_email", raise_if_not_found=False
+        )
         if template:
             template.sudo().write(template_values)
-            template.sudo().send_mail(new_user.id, force_send=True, raise_exception=True)
+            template.sudo().send_mail(
+                new_user.id, force_send=True, raise_exception=True
+            )

@@ -21,9 +21,11 @@
 # 2. Known third party imports:
 # 3. Odoo imports (openerp):
 
+import logging
+
 from odoo import http
 from odoo.http import request
-import logging
+
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 # 4. Imports from Odoo modules (rarely, and only if necessary):
@@ -39,38 +41,38 @@ class WebsiteSale(WebsiteSale):
         """
         Confirm sale order and create invoice.
         """
-        logging.info("=====================");
-        logging.info("======MENEEKO EDES=======");
+        logging.info("=====================")
+        logging.info("======MENEEKO EDES=======")
         sale_order_id = request.session.get("sale_last_order_id")
         if sale_order_id:
-            logging.info(sale_order_id);
+            logging.info(sale_order_id)
             order = request.env["sale.order"].sudo().browse(sale_order_id)
-            logging.info(order);
-            logging.info(order.state);
-            logging.info(order.transaction_ids);
-            logging.info(order.transaction_ids[0].acquirer_id.auto_create_invoice);
+            logging.info(order)
+            logging.info(order.state)
+            logging.info(order.transaction_ids)
+            logging.info(order.transaction_ids[0].acquirer_id.auto_create_invoice)
             if order.state == "sent":
-                logging.info(order);
-                logging.info(order.transaction_ids);
-                logging.info(order.transaction_ids[0].acquirer_id.auto_create_invoice);
-                logging.info("=====TILA ON SENT=====");
+                logging.info(order)
+                logging.info(order.transaction_ids)
+                logging.info(order.transaction_ids[0].acquirer_id.auto_create_invoice)
+                logging.info("=====TILA ON SENT=====")
                 if (
                     order.transaction_ids
                     and order.transaction_ids[0].acquirer_id.auto_confirm == "allow"
                 ):
                     order.sudo().action_confirm()
 
-                logging.info(order);
-                logging.info(order.transaction_ids);
-                logging.info(order.transaction_ids);
-                logging.info(order.transaction_ids[0].acquirer_id.auto_create_invoice);
+                logging.info(order)
+                logging.info(order.transaction_ids)
+                logging.info(order.transaction_ids)
+                logging.info(order.transaction_ids[0].acquirer_id.auto_create_invoice)
 
                 if (
                     order.transaction_ids
                     and order.transaction_ids[0].acquirer_id.auto_create_invoice
                     == "allow"
                 ):
-                    logging.info("=========TARKISTUA LAPI JA LUODAAN LASKU======");
+                    logging.info("=========TARKISTUA LAPI JA LUODAAN LASKU======")
                     order.sudo()._create_invoices()
 
         return super(WebsiteSale, self).payment_confirmation(**post)
