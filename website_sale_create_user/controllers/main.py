@@ -2,7 +2,8 @@ import logging
 
 from odoo import http
 from odoo.http import request
-from odoo.addons.auth_signup.models.res_partner import SignupError, now
+
+from odoo.addons.auth_signup.models.res_partner import now
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
