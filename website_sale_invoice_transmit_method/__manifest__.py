@@ -21,7 +21,7 @@
 {
     "name": "Website Sale Account Invoice Transmit Method",
     "summary": "Adds account invoice transmit method to checkout",
-    "version": "14.0.1.0.2",
+    "version": "14.0.1.0.3",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
