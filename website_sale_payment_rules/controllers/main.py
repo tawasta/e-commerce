@@ -127,7 +127,6 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def shop(self, page=0, category=None, search="", ppg=False, **post):
-
         response = super(WebsiteSale, self).shop(
             page=page, category=category, search=search, ppg=ppg, **post
         )
@@ -214,7 +213,6 @@ class TableCompute(object):
         groups_ids = request.env.user.groups_id
         for p in products:
             if not p.allowed_groups_ids or p.allowed_groups_ids in groups_ids:
-
                 x = min(max(p.website_size_x, 1), ppr)
                 y = min(max(p.website_size_y, 1), ppr)
                 if index >= ppg:
