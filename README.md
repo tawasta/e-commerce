@@ -14,7 +14,7 @@ addon | version | summary
 [website_sale_address_coupon_info](website_sale_address_coupon_info/) | 14.0.1.0.0 | Inform customer about coupon-possibility in the upcoming step
 [website_sale_allowed_payment_acquirers](website_sale_allowed_payment_acquirers/) | 14.0.1.0.0 | Website Sale - allowed payment acquirers
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 14.0.1.0.0 | Create company for website customer, if company name is set
-[website_sale_billing_address](website_sale_billing_address/) | 14.0.1.1.0 | Website customer can select a billing address
+[website_sale_billing_address](website_sale_billing_address/) | 14.0.1.1.1 | Website customer can select a billing address
 [website_sale_billing_address_hide_from_public_user](website_sale_billing_address_hide_from_public_user/) | 14.0.1.0.0 | Only registered users see billing address during checkout
 [website_sale_birth_year](website_sale_birth_year/) | 14.0.1.0.0 | Website sale birth year
 [website_sale_business_code](website_sale_business_code/) | 14.0.1.0.4 | Adds Finnish Business code to website checkout form
@@ -52,7 +52,7 @@ addon | version | summary
 [website_sale_hide_login](website_sale_hide_login/) | 14.0.1.0.0 | Website Sale Hide Login Button
 [website_sale_hide_price_fix](website_sale_hide_price_fix/) | 14.0.1.0.1 | Fix missing items from Website Sale Hide Price
 [website_sale_hide_transmit_method_public_user](website_sale_hide_transmit_method_public_user/) | 14.0.1.5.3 | Website Sale Hide Transmit Method Public User
-[website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 14.0.1.0.3 | Adds account invoice transmit method to checkout
+[website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 14.0.1.0.4 | Adds account invoice transmit method to checkout
 [website_sale_invoicing_fee](website_sale_invoicing_fee/) | 14.0.1.0.2 | Adds Invoicing fee to Sale Order
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 14.0.1.0.0 | Website Sale Maintenance mode
 [website_sale_mandatory_company](website_sale_mandatory_company/) | 14.0.1.1.0 | Make company mandatory in website sale checkout
