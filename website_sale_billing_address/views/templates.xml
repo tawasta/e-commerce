@@ -694,7 +694,7 @@
                                         name="partner_id"
                                         t-att-value="partner or '0'"
                                     />
-                                    <t t-set="back_href" t-value="'/shop/address'" />
+                                    <t t-set="back_href" t-value="'/shop/checkout'" />
                                 </t>
                                 <t t-if="partner and partner.parent_id">
                                     <input
