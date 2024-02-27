@@ -45,7 +45,10 @@ class WebsiteSaleBilling(WebsiteSale):
     def checkout_values(self, **kw):
         response = super(WebsiteSaleBilling, self).checkout_values(**kw)
         order = request.website.sale_get_order(force_create=1)
-        if order.use_different_billing_address and order.partner_id == order.partner_invoice_id:
+        if (
+            order.use_different_billing_address
+            and order.partner_id == order.partner_invoice_id
+        ):
             order.sudo().write({"use_different_billing_address": False})
         billings = []
         if order.partner_id != request.website.user_id.sudo().partner_id:
