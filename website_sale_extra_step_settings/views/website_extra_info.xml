@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="extra_info"
+        name="Checkout extra info settings"
+        inherit_id="website_sale.extra_info"
+    >
+        <xpath expr="//label[@for='sale1']/../.." position="attributes">
+            <attribute
+                name='t-if'
+            >not website.website_sale_extra_step_reference</attribute>
+        </xpath>
+
+        <xpath expr="//label[@for='sale2']/../.." position="attributes">
+            <attribute name='t-if'>not website.website_sale_extra_step_info</attribute>
+        </xpath>
+
+        <xpath expr="//label[@for='sale3']/../.." position="attributes">
+            <attribute
+                name='t-if'
+            >not website.website_sale_extra_step_attachment</attribute>
+        </xpath>
+
+        <!-- Improve current fields -->
+        <xpath expr="//input[@name='client_order_ref']" position="attributes">
+            <attribute
+                name='t-att-value'
+            >website_sale_order.client_order_ref</attribute>
+        </xpath>
+
+        <xpath expr="//textarea" position="attributes">
+            <attribute name="rows">4</attribute>
+        </xpath>
+    </template>
+</odoo>
