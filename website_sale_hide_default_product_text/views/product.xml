@@ -5,6 +5,8 @@
         id="product"
         inherit_id="website_sale.product_custom_text"
     >
-        <xpath expr="//p[@class='text-muted mb-0']" position="replace" />
+        <xpath expr="//p[@class='text-muted mb-0']" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
     </template>
 </odoo>
