@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-extend="payment.no_tx_found">
+        <t t-jquery=".text" t-operation="replace">
+            <div class="text-center" id="processed_payment">
+                <p>Your order is being processed.</p>
+            </div>
+        </t>
+    </t>
+</templates>
