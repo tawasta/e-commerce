@@ -132,17 +132,27 @@ class WebsiteSaleBilling(WebsiteSale):
 
             return request.redirect(post.get("return_url"))
 
-
-    @http.route(["/shop/billing_address", "/shop/billing_address/<int:partner_id>"], type="http", auth="public", website=True, sitemap=False)
+    @http.route(
+        ["/shop/billing_address", "/shop/billing_address/<int:partner_id>"],
+        type="http",
+        auth="public",
+        website=True,
+        sitemap=False,
+    )
     def billing_address(self, partner_id=None, **post):
-        Partner = request.env['res.partner'].sudo()
+        Partner = request.env["res.partner"].sudo()
         order = request.website.sale_get_order()
         redirection = self.checkout_redirection(order)
         if redirection:
             return redirection
-        
+
         countries = request.env["res.country"].sudo().search([])
-        values = {"website_sale_order": order, "countries": countries, "order": order, "partner": False}
+        values = {
+            "website_sale_order": order,
+            "countries": countries,
+            "order": order,
+            "partner": False,
+        }
 
         if "submitted" in post:
             partner_id = int(partner_id) if partner_id else None
@@ -157,7 +167,10 @@ class WebsiteSaleBilling(WebsiteSale):
                 "zip": post.get("zip"),
                 "city": post.get("city"),
                 "country_id": country_id,
-                "customer_invoice_transmit_method_id": int(post.get("customer_invoice_transmit_method_id", 0)) or False,
+                "customer_invoice_transmit_method_id": int(
+                    post.get("customer_invoice_transmit_method_id", 0)
+                )
+                or False,
             }
 
             if partner_id and "editing" in post:
@@ -175,11 +188,14 @@ class WebsiteSaleBilling(WebsiteSale):
         # Load billing address info if user wants to edit or add new one
         if partner_id or "new_billing_address" in post:
             edit_partner = Partner.browse(partner_id) if partner_id else None
-            if edit_partner in order.partner_id.child_ids or edit_partner == order.partner_invoice_id or "new_billing_address" in post:
+            if (
+                edit_partner in order.partner_id.child_ids
+                or edit_partner == order.partner_invoice_id
+                or "new_billing_address" in post
+            ):
                 values["partner"] = edit_partner
             else:
                 # Error handling: redirect if unauthorized edit attempt
                 return request.redirect("/shop/extra_info")
 
         return request.render("website_sale_billing_address.billing_address", values)
-

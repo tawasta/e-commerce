@@ -221,10 +221,7 @@
                             >
                                 <div class="form-row">
                                     <div class="form-group col-lg-6 div_name">
-                                        <label
-                                            class="col-form-label"
-                                            for="name"
-                                        >Name
+                                        <label class="col-form-label" for="name">Name
                                         </label>
                                         <t t-if="partner">
                                             <input
