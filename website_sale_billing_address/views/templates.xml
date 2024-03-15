@@ -220,31 +220,28 @@
                                 class="checkout_autoformat"
                             >
                                 <div class="form-row">
-                                    <div class="form-group col-lg-6 div_firstname">
-                                        <label
-                                            class="col-form-label"
-                                            for="firstname"
-                                        >Firstname
+                                    <div class="form-group col-lg-6 div_name">
+                                        <label class="col-form-label" for="name">Name
                                         </label>
                                         <t t-if="partner">
                                             <input
                                                 type="text"
-                                                name="firstname"
+                                                name="name"
                                                 required="1"
                                                 class="form-control"
-                                                t-att-value="partner.firstname"
+                                                t-att-value="partner.name"
                                             />
                                         </t>
                                         <t t-else="">
                                             <input
                                                 type="text"
-                                                name="firstname"
+                                                name="name"
                                                 required="1"
                                                 class="form-control"
                                             />
                                         </t>
                                     </div>
-                                    <div class="form-group col-lg-6 div_lastname">
+<!--                                     <div class="form-group col-lg-6 div_lastname">
                                         <label
                                             class="col-form-label"
                                             for="lastname"
@@ -267,7 +264,7 @@
                                                 class="form-control"
                                             />
                                         </t>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group col-lg-6" id="div_email">
                                         <label class="col-form-label" for="email">Email
                                         </label>
@@ -313,7 +310,7 @@
                                         </t>
                                     </div>
 
-                                    <div class="form-group col-lg-6 div_company_name">
+<!--                                     <div class="form-group col-lg-6 div_company_name">
                                         <label
                                             class="col-form-label font-weight-normal label-optional"
                                             for="company_name"
@@ -334,8 +331,8 @@
                                                 class="form-control"
                                             />
                                         </t>
-                                    </div>
-                                    <div class="form-group col-lg-6 div_company_email">
+                                    </div> -->
+<!--                                     <div class="form-group col-lg-6 div_company_email">
                                         <label
                                             class="col-form-label font-weight-normal label-optional"
                                             for="company_email"
@@ -356,8 +353,8 @@
                                                 class="form-control"
                                             />
                                         </t>
-                                    </div>
-                                    <div class="form-group col-lg-6 div_vat">
+                                    </div> -->
+<!--                                     <div class="form-group col-lg-6 div_vat">
                                         <label
                                             class="col-form-label font-weight-normal label-optional"
                                             for="vat"
@@ -378,7 +375,7 @@
                                                 class="form-control"
                                             />
                                         </t>
-                                    </div>
+                                    </div> -->
 
                                     <div
                                         id="customer_invoice_transmit_method_id_div"
@@ -430,7 +427,7 @@
                                         </t>
                                     </div>
 
-                                    <div
+<!--                                     <div
                                         id="edicode-div"
                                         class="form-group col-md-6 div_edicode show-company"
                                     >
@@ -502,7 +499,7 @@
                                                 </t>
                                             </select>
                                         </t>
-                                    </div>
+                                    </div> -->
 
 
                                     <div class="w-100" />
