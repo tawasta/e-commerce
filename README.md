@@ -16,7 +16,7 @@ addon | version | summary
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 14.0.1.0.0 | Create company for website customer, if company name is set
 [website_sale_billing_address](website_sale_billing_address/) | 14.0.1.1.0 | Website customer can select a billing address
 [website_sale_billing_address_hide_from_public_user](website_sale_billing_address_hide_from_public_user/) | 14.0.1.0.0 | Only registered users see billing address during checkout
-[website_sale_birth_year](website_sale_birth_year/) | 14.0.1.0.0 | Website sale birth year
+[website_sale_birth_year](website_sale_birth_year/) | 14.0.2.0.0 | Customer can fill in their birth year at checkout
 [website_sale_business_code](website_sale_business_code/) | 14.0.1.0.4 | Adds Finnish Business code to website checkout form
 [website_sale_cart_fiscal_position](website_sale_cart_fiscal_position/) | 14.0.1.0.0 | Show fiscal position when confirming a sale
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 14.0.1.0.0 | eCommerce tax in cart lines
