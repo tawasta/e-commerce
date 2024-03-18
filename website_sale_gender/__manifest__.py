@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
+#    Copyright 2024 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,10 +19,10 @@
 ##############################################################################
 
 {
-    "name": "Website sale gender",
-    "summary": "Website sale gender",
-    "version": "14.0.1.0.0",
-    "category": "Futural EDU",
+    "name": "eCommerce: Customer's Gender",
+    "summary": "Customer can fill in their gender at checkout",
+    "version": "14.0.1.1.0",
+    "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
@@ -32,10 +32,7 @@
         "python": [],
         "bin": [],
     },
-    "depends": [
-        "website_sale",
-        "partner_contact_gender",
-    ],
+    "depends": ["website_sale", "partner_contact_gender", "partner_gender_values"],
     "data": [
         "views/templates.xml",
     ],
