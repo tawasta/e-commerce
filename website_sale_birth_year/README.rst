@@ -2,23 +2,25 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=======================
-Website sale birth year
-=======================
+================================
+eCommerce: Customer's Birth Year
+================================
 
-Website sale birth year
+* Customer can fill in their birth year at checkout and it gets
+  saved into their partner info as a new field
 
 Configuration
 =============
-\-
+* No configuration needed
 
 Usage
 =====
-\-
+* Proceed to checkout in webshop, and you will see the new field
+* In backend the field is available on the partner form 
 
 Known issues / Roadmap
 ======================
-\-
+* None
 
 Credits
 =======
@@ -27,6 +29,7 @@ Contributors
 ------------
 
 * Valtteri Lattu <valtteri.lattu@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------

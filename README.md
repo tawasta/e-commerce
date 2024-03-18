@@ -16,7 +16,7 @@ addon | version | summary
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 14.0.1.0.0 | Create company for website customer, if company name is set
 [website_sale_billing_address](website_sale_billing_address/) | 14.0.1.1.1 | Website customer can select a billing address
 [website_sale_billing_address_hide_from_public_user](website_sale_billing_address_hide_from_public_user/) | 14.0.1.0.0 | Only registered users see billing address during checkout
-[website_sale_birth_year](website_sale_birth_year/) | 14.0.1.0.0 | Website sale birth year
+[website_sale_birth_year](website_sale_birth_year/) | 14.0.2.0.0 | Customer can fill in their birth year at checkout
 [website_sale_business_code](website_sale_business_code/) | 14.0.1.0.4 | Adds Finnish Business code to website checkout form
 [website_sale_cart_fiscal_position](website_sale_cart_fiscal_position/) | 14.0.1.0.0 | Show fiscal position when confirming a sale
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 14.0.1.0.0 | eCommerce tax in cart lines
@@ -45,7 +45,7 @@ addon | version | summary
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 14.0.1.0.1 | Allow hiding/showing items in extra step
 [website_sale_force_address_step](website_sale_force_address_step/) | 14.0.1.0.1 | Never skip the address step. Disables 'express'-checkout
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 14.0.1.0.1 | Forces autoinvoice on quotations created from website_sale
-[website_sale_gender](website_sale_gender/) | 14.0.1.0.0 | Website sale gender
+[website_sale_gender](website_sale_gender/) | 14.0.1.1.0 | Customer can fill in their gender at checkout
 [website_sale_hide_confirm_order](website_sale_hide_confirm_order/) | 14.0.1.0.0 | Website sale: Hides Confirm Order part in the payment process
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 14.0.1.0.0 | Hides the default '30-day money-back quarantee...' text
 [website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 14.0.1.0.1 | Hide Delivery Orders Snippet

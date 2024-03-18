@@ -2,23 +2,24 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===================
-Website sale gender
-===================
+============================
+eCommerce: Customer's Gender
+============================
 
-Website sale gender
+* Customer can fill in their gender at checkout
 
 Configuration
 =============
-\-
+* None needed
 
 Usage
 =====
-\-
+* Proceed to checkout in webshop, and you will see the new field
+* In backend the field is available on the partner form 
 
 Known issues / Roadmap
 ======================
-\-
+* None
 
 Credits
 =======
@@ -27,6 +28,7 @@ Contributors
 ------------
 
 * Valtteri Lattu <valtteri.lattu@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------
