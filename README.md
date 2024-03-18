@@ -45,7 +45,7 @@ addon | version | summary
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 14.0.1.0.1 | Allow hiding/showing items in extra step
 [website_sale_force_address_step](website_sale_force_address_step/) | 14.0.1.0.1 | Never skip the address step. Disables 'express'-checkout
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 14.0.1.0.1 | Forces autoinvoice on quotations created from website_sale
-[website_sale_gender](website_sale_gender/) | 14.0.1.1.0 | Customer can fill in their birth year at checkout
+[website_sale_gender](website_sale_gender/) | 14.0.1.1.0 | Customer can fill in their gender at checkout
 [website_sale_hide_confirm_order](website_sale_hide_confirm_order/) | 14.0.1.0.0 | Website sale: Hides Confirm Order part in the payment process
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 14.0.1.0.0 | Hides the default '30-day money-back quarantee...' text
 [website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 14.0.1.0.1 | Hide Delivery Orders Snippet
