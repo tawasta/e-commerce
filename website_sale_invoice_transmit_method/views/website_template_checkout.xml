@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <template id="address" inherit_id="website_sale.address">
+    <template
+        id="address"
+        inherit_id="website_sale.address"
+        customize_show="True"
+        active="True"
+        name="Show invoice transmit method"
+    >
         <xpath expr="//div[contains(@t-attf-class, 'div_vat')]" position="after">
             <t
                 t-set="methods"

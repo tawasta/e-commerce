@@ -27,8 +27,10 @@
                     <span
                         class='billing_to_other text-muted'
                         style="display: none"
-                    >&amp;nbsp;(<i
-                        >Your billing address will be requested later) </i></span>
+                    >&amp;nbsp;(
+                        <i>Your billing address will be requested later)
+                        </i>
+                    </span>
                 </label>
             </div>
             <t
@@ -48,23 +50,26 @@
                     <h3 class="o_page_header mt8">Subscriber</h3>
                 </div>
                 <div class="col-lg-6 one_kanban_subscriber">
-                <div
+                    <div
                         t-attf-class="card #{selected and 'border border-primary' or 'js_change_shipping'}"
                     >
-                    <div class='card-body' style='min-height: 130px;'>
-                    <a
+                        <div class='card-body' style='min-height: 130px;'>
+                            <a
+                                t-if="not actual_partner or (billing.id in actual_partner.child_ids.ids)"
                                 t-attf-href="/shop/address?partner_id={{order.partner_id.id}}"
                                 t-att-class="'btn btn-link float-right p-0 no-decoration'"
                                 role="button"
                                 title="Edit this address"
                                 aria-label="Edit this address"
-                            ><i class='fa fa-edit' /></a>
-                    <t
+                            >
+                                <i class='fa fa-edit' />
+                            </a>
+                            <t
                                 t-esc="order.partner_id"
                                 t-options="dict(widget='contact', fields=['name', 'address'], no_marker=True)"
                             />
-                </div>
-                </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </xpath>
@@ -112,67 +117,72 @@
     </template>
 
     <template id="address_kanban" name="Kanban address">
-            <div
+        <div
             t-attf-class="card #{selected and 'border border-primary' or 'js_change_shipping'}"
         >
-                <div class='card-body' style='min-height: 130px;'>
-                    <a
+            <div class='card-body' style='min-height: 130px;'>
+                <a
+                    t-if="not actual_partner or (billing.id in actual_partner.child_ids.ids)"
                     t-attf-href="/shop/billing_address/{{contact.id}}"
                     t-att-class="'btn btn-link float-right p-0 no-decoration'"
                     role="button"
                     title="Edit this address"
                     aria-label="Edit this address"
-                ><i class='fa fa-edit' /></a>
-                    <t
+                >
+                    <i class='fa fa-edit' />
+                </a>
+                <t
                     t-esc="contact"
                     t-options="dict(widget='contact', fields=['name', 'address'], no_marker=True)"
                 />
-                </div>
-                <div class='card-footer' t-if='not readonly'>
-                    <span
+            </div>
+            <div class='card-footer' t-if='not readonly'>
+                <span
                     class='btn-billing'
                     t-att-style="'' if selected else 'display:none;'"
                 >
-                        <a role="button" href='#' class="btn btn-block btn-primary">
-                            <i class='fa fa-check' /> Billing to this address
-                        </a>
-                    </span>
-                    <span
+                    <a role="button" href='#' class="btn btn-block btn-primary">
+                        <i class='fa fa-check' />
+                        Billing to this address
+                    </a>
+                </span>
+                <span
                     class='btn-billing'
                     t-att-style="'' if not selected else 'display:none;'"
                 >
-                        <form action="/shop/change/billing_address" method="POST">
-                            <input
+                    <form action="/shop/change/billing_address" method="POST">
+                        <input
                             type="hidden"
                             name="csrf_token"
                             t-att-value="request.csrf_token()"
                         />
-                            <input
+                        <input
                             type="hidden"
                             name="partner_id"
                             t-att-value="contact.id"
                         />
-                            <t t-if='edit_billing'>
-                                <input
+                        <t t-if='edit_billing'>
+                            <input
                                 type="hidden"
                                 name="return_url"
                                 t-att-value="request.httprequest.path"
                             />
-                                <input
+                            <input
                                 type="hidden"
                                 name="user_billing_address"
                                 value="True"
                             />
-                            </t>
-                            <button
+                        </t>
+                        <button
                             class="btn btn-block btn-secondary"
                             type="submit"
-                        >Select this address</button>
-                        </form>
+                        >Select this address
+                        </button>
+                    </form>
 
-                    </span>
-                </div>
+                </span>
             </div>
+        </div>
     </template>
 
     <template id="billing_assets" name="Billing assets">
@@ -210,34 +220,33 @@
                                 class="checkout_autoformat"
                             >
                                 <div class="form-row">
-                                    <div class="form-group col-lg-6 div_firstname">
-                                        <label
-                                            class="col-form-label"
-                                            for="firstname"
-                                        >Firstname</label>
+                                    <div class="form-group col-lg-6 div_name">
+                                        <label class="col-form-label" for="name">Name
+                                        </label>
                                         <t t-if="partner">
                                             <input
                                                 type="text"
-                                                name="firstname"
+                                                name="name"
                                                 required="1"
                                                 class="form-control"
-                                                t-att-value="partner.firstname"
+                                                t-att-value="partner.name"
                                             />
                                         </t>
                                         <t t-else="">
                                             <input
                                                 type="text"
-                                                name="firstname"
+                                                name="name"
                                                 required="1"
                                                 class="form-control"
                                             />
                                         </t>
                                     </div>
-                                    <div class="form-group col-lg-6 div_lastname">
+<!--                                     <div class="form-group col-lg-6 div_lastname">
                                         <label
                                             class="col-form-label"
                                             for="lastname"
-                                        >Lastname</label>
+                                        >Lastname
+                                        </label>
                                         <t t-if="partner">
                                             <input
                                                 type="text"
@@ -255,12 +264,10 @@
                                                 class="form-control"
                                             />
                                         </t>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group col-lg-6" id="div_email">
-                                        <label
-                                            class="col-form-label"
-                                            for="email"
-                                        >Email</label>
+                                        <label class="col-form-label" for="email">Email
+                                        </label>
                                         <t t-if="partner">
                                             <input
                                                 type="email"
@@ -282,10 +289,8 @@
                                         </t>
                                     </div>
                                     <div class="form-group col-lg-6" id="div_phone">
-                                        <label
-                                            class="col-form-label"
-                                            for="phone"
-                                        >Phone</label>
+                                        <label class="col-form-label" for="phone">Phone
+                                        </label>
                                         <t t-if="partner">
                                             <input
                                                 type="tel"
@@ -305,11 +310,12 @@
                                         </t>
                                     </div>
 
-                                    <div class="form-group col-lg-6 div_company_name">
+<!--                                     <div class="form-group col-lg-6 div_company_name">
                                         <label
                                             class="col-form-label font-weight-normal label-optional"
                                             for="company_name"
-                                        >Company name</label>
+                                        >Company name
+                                        </label>
                                         <t t-if="partner and partner.parent_id">
                                             <input
                                                 type="text"
@@ -325,12 +331,13 @@
                                                 class="form-control"
                                             />
                                         </t>
-                                    </div>
-                                    <div class="form-group col-lg-6 div_company_email">
+                                    </div> -->
+<!--                                     <div class="form-group col-lg-6 div_company_email">
                                         <label
                                             class="col-form-label font-weight-normal label-optional"
                                             for="company_email"
-                                        >Company email</label>
+                                        >Company email
+                                        </label>
                                         <t t-if="partner and partner.parent_id">
                                             <input
                                                 type="text"
@@ -346,12 +353,13 @@
                                                 class="form-control"
                                             />
                                         </t>
-                                    </div>
-                                    <div class="form-group col-lg-6 div_vat">
+                                    </div> -->
+<!--                                     <div class="form-group col-lg-6 div_vat">
                                         <label
                                             class="col-form-label font-weight-normal label-optional"
                                             for="vat"
-                                        >TIN / VAT </label>
+                                        >TIN / VAT
+                                        </label>
                                         <t t-if="partner and partner.parent_id">
                                             <input
                                                 type="text"
@@ -367,7 +375,7 @@
                                                 class="form-control"
                                             />
                                         </t>
-                                    </div>
+                                    </div> -->
 
                                     <div
                                         id="customer_invoice_transmit_method_id_div"
@@ -380,7 +388,8 @@
                                         <label
                                             class="col-form-label"
                                             for="customer_invoice_transmit_method_id"
-                                        >Invoice transmit method</label>
+                                        >Invoice transmit method
+                                        </label>
                                         <t t-if="partner">
                                             <select
                                                 id="customer-invoice-transmit-method"
@@ -418,14 +427,15 @@
                                         </t>
                                     </div>
 
-                                    <div
+<!--                                     <div
                                         id="edicode-div"
                                         class="form-group col-md-6 div_edicode show-company"
                                     >
                                         <label
                                             class="col-form-label label-optional"
                                             for="edicode"
-                                        >Edicode</label>
+                                        >Edicode
+                                        </label>
                                         <t t-if="partner and partner.parent_id">
                                             <input
                                                 type="text"
@@ -453,7 +463,8 @@
                                         <label
                                             class="col-form-label label-optional"
                                             for="einvoice_operator_id"
-                                        >eInvoice Operator</label>
+                                        >eInvoice Operator
+                                        </label>
                                         <t t-if="partner and partner.parent_id">
                                             <select
                                                 id="einvoice-operator-select"
@@ -466,9 +477,9 @@
                                                         t-att-value="op.id"
                                                         t-att-selected="op.id == partner.parent_id.einvoice_operator_id
                                                         .id"
-                                                    ><span t-esc="op.name" /> (<span
-                                                            t-esc="op.identifier"
-                                                        />)
+                                                    >
+                                                        <span t-esc="op.name" />
+                                                        (<span t-esc="op.identifier" />)
                                                     </option>
                                                 </t>
                                             </select>
@@ -481,18 +492,14 @@
                                             >
                                                 <option />
                                                 <t t-foreach="operators" t-as="op">
-                                                    <option t-att-value="op.id"><span
-                                                            t-esc="op.name"
-                                                        /> (<span
-                                                            t-esc="op.identifier"
-                                                        />)
+                                                    <option t-att-value="op.id">
+                                                        <span t-esc="op.name" />
+                                                        (<span t-esc="op.identifier" />)
                                                     </option>
                                                 </t>
                                             </select>
                                         </t>
-                                    </div>
-
-
+                                    </div> -->
 
 
                                     <div class="w-100" />
@@ -500,9 +507,10 @@
                                         <label
                                             class="col-form-label"
                                             for="street"
-                                        >Street <span
-                                                class="d-none d-md-inline"
-                                            > and Number</span></label>
+                                        >Street
+                                            <span class="d-none d-md-inline">and Number
+                                            </span>
+                                        </label>
                                         <t t-if="partner">
                                             <input
                                                 type="text"
@@ -525,7 +533,8 @@
                                         <label
                                             class="col-form-label label-optional"
                                             for="street2"
-                                        >Street 2</label>
+                                        >Street 2
+                                        </label>
                                         <t t-if="partner">
                                             <input
                                                 type="text"
@@ -554,7 +563,8 @@
                                             <label
                                                 class="col-form-label label-optional"
                                                 for="zip"
-                                            >Zip Code</label>
+                                            >Zip Code
+                                            </label>
                                             <t t-if="partner">
                                                 <input
                                                     type="text"
@@ -580,7 +590,8 @@
                                             <label
                                                 class="col-form-label label-optional"
                                                 for="zip"
-                                            >Zip Code</label>
+                                            >Zip Code
+                                            </label>
                                             <t t-if="partner">
                                                 <input
                                                     type="text"
@@ -599,10 +610,8 @@
                                         </div>
                                     </t>
                                     <div class="form-group col-md-8 div_city">
-                                        <label
-                                            class="col-form-label"
-                                            for="city"
-                                        >City</label>
+                                        <label class="col-form-label" for="city">City
+                                        </label>
                                         <t t-if="partner">
                                             <input
                                                 type="text"
@@ -623,10 +632,8 @@
                                     </div>
                                     <div class="w-100" />
                                     <div t-attf-class="form-group col-lg-6 div_c_id">
-                                        <label
-                                            class="col-form-label"
-                                            for="c_id"
-                                        >Country</label>
+                                        <label class="col-form-label" for="c_id">Country
+                                        </label>
                                         <t t-if="partner">
                                             <select
                                                 id="c_id"
@@ -652,10 +659,12 @@
                                             >
                                                 <option value="">Country...</option>
                                                 <t t-foreach="countries" t-as="c">
-                                                     <option
+                                                    <option
                                                         t-att-selected="c.id == request.env.ref('base.fi').id"
                                                         t-att-value="c.id"
-                                                    ><t t-esc="c.name" /></option>
+                                                    >
+                                                        <t t-esc="c.name" />
+                                                    </option>
                                                 </t>
                                             </select>
                                         </t>
@@ -682,7 +691,7 @@
                                         name="partner_id"
                                         t-att-value="partner or '0'"
                                     />
-                                    <t t-set="back_href" t-value="'/shop/address'" />
+                                    <t t-set="back_href" t-value="'/shop/checkout'" />
                                 </t>
                                 <t t-if="partner and partner.parent_id">
                                     <input
@@ -708,8 +717,10 @@
                                         class="btn btn-primary mb32"
                                         id="billing_address_confirm_btn"
                                         type="submit"
-                                    ><span>Next</span>
-                                        <i class="fa fa-chevron-right" /></button>
+                                    >
+                                        <span>Next</span>
+                                        <i class="fa fa-chevron-right" />
+                                    </button>
                                 </div>
                             </form>
                         </div>

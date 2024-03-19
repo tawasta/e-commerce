@@ -6,14 +6,23 @@
                 <input type="hidden" name="billing_use_same" value="1" />
             </t>
             <t t-else="">
-                <input
+                <!-- <input
                     type="checkbox"
                     id='billing_use_same'
                     class="mr8"
                     name='billing_use_same'
                     value="1"
                     checked='checked'
-                />
+                /> -->
+                    <input
+                    t-if="mode != ('new', 'shipping')"
+                    type="checkbox"
+                    id='billing_use_same'
+                    class="mr8"
+                    name='billing_use_same'
+                    value="1"
+                    checked='checked'
+                />Same billing address
             </t>
 
         </xpath>
