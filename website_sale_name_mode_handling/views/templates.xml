@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_address_shipping_template" inherit_id="website_sale_split_name.address" name="Customized Address Form for Shipping">
+        <!-- Näytä yksi yhteinen nimi-kenttä vain shipping-tilassa ja piilota erilliset etu- ja sukunimi kentät -->
+        <xpath expr="//div[@id='div_firstname']" position="before">
+            <t t-if="mode[1] == 'shipping'">
+                <div t-attf-class="form-group #{error.get('name') and 'o_has_error' or ''} col-lg-12 div_name">
+                    <label class="col-form-label" for="name">Name</label>
+                    <input type="text" name="name" t-attf-class="form-control #{error.get('name') and 'is-invalid' or ''}" t-att-value="'name' in checkout and checkout['name']" />
+                </div>
+            </t>
+        </xpath>
+
+        <!-- Piilota erilliset etu- ja sukunimi kentät shipping-tilassa, muuten näytä -->
+        <xpath expr="//div[@id='div_firstname']" position="attributes">
+            <attribute name="t-if">mode[1] != 'shipping'</attribute>
+        </xpath>
+        <xpath expr="//div[@id='div_lastname']" position="attributes">
+            <attribute name="t-if">mode[1] != 'shipping'</attribute>
+        </xpath>
+
+        <!-- Piilota alkuperäinen name-kenttä kokonaan, koska se korvataan joko yhteisellä kentällä tai erillisillä etu- ja sukunimi kentillä -->
+        <xpath expr="//input[@name='name']/.." position="replace"/>
+    </template>
+</odoo>
