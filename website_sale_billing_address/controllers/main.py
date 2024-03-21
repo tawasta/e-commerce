@@ -187,7 +187,7 @@ class WebsiteSaleBilling(WebsiteSale):
 
         # Load billing address info if user wants to edit or add new one
         if partner_id or "new_billing_address" in post:
-            edit_partner = Partner.browse(partner_id) if partner_id else None
+            edit_partner = Partner.browse(partner_id) if partner_id else Partner
             if (
                 edit_partner in order.partner_id.child_ids
                 or edit_partner == order.partner_invoice_id
