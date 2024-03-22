@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Product Layout Wider -->
+    <template
+        id="product_layout_wider"
+        inherit_id="website_sale.product"
+        name="Product Layout Attributes Wider"
+        active="False"
+        customize_show="True"
+    >
+
+        <xpath expr="//div[@t-attf-class='col-lg-#{image_cols[1]} mt-md-4']" position="attributes">
+            <attribute name="t-attf-class">col-lg-#{image_cols[1] + 2} mt-md-4</attribute>
+        </xpath>
+
+    </template>
+
+    <!-- Add to Cart button primary -->
+    <template
+        id="suggested_products_list_button_primary"
+        inherit_id="website_sale.suggested_products_list"
+        name="Suggested Products Add to Cart Button Primary"
+        active="False"
+        customize_show="True"
+    >
+        <xpath
+            expr="//a[@class='js_add_suggested_products btn btn-md btn-outline-primary text-nowrap']"
+            position="attributes"
+        >
+            <attribute
+                name="class"
+            >js_add_suggested_products btn btn-md btn-primary text-nowrap</attribute>
+        </xpath>
+    </template>
+
+    <!-- Hide suggested products image -->
+    <template
+        id="suggested_products_list_hide_image"
+        inherit_id="website_sale.suggested_products_list"
+        name="Hide Suggested Products Image"
+        active="False"
+        customize_show="True"
+    >
+        <xpath expr="//span[@t-field='product.image_128']" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+    </template>
+
+    <!-- Hide cart summary product image -->
+    <template
+        id="cart_summary_hide_image"
+        inherit_id="website_sale.checkout_layout"
+        name="Hide Cart Summary Product Image"
+        active="False"
+        customize_show="True"
+    >
+        <xpath expr="//td[@t-attf-class='td-img ps-0 #{o_cart_sum_padding_top}']" position="replace">
+            <td colspan="1" class="td-img" />
+        </xpath>
+    </template>
+
+    <!-- Hide cart lines product image -->
+    <template
+        id="cart_lines_hide_image"
+        inherit_id="website_sale.cart_lines"
+        name="Hide Cart Lines Product Image"
+        active="False"
+        customize_show="True"
+    >
+        <xpath expr="//img[@class='o_image_64_max  img rounded']" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+
+        <xpath expr="//div[@t-field='line.product_id.image_128']" position="attributes">
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+    </template>
+
+    <!-- Street and number to billing address -->
+    <template
+        id="street_and_number_to_billing_address"
+        inherit_id="website_sale.address"
+        name="Street and Number to Billing Address"
+        active="False"
+        customize_show="True"
+    >
+        <xpath expr="//label[@for='street']" position="replace">
+            <label class="col-form-label" for="street">Billing Address</label>
+        </xpath>
+    </template>
+</odoo>
