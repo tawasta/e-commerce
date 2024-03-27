@@ -88,7 +88,13 @@
             </div>
         </xpath>
     </template>
-    <template id="address_kanban_edicode" inherit_id="website_sale.address_kanban">
+    <template
+        id="address_kanban_edicode"
+        inherit_id="website_sale.address_kanban"
+        name="Show edicode in address card"
+        customize_show="True"
+        active="True"
+    >
         <xpath expr="//t[@t-esc='contact']" position="after">
             <t t-if="contact.edicode and contact.einvoice_operator_id"><t
                     t-esc="contact.edicode"
