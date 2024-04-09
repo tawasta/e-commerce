@@ -241,6 +241,30 @@
                                             />
                                         </t>
                                     </div>
+
+                                    <div class="form-group col-lg-6 div_vat">
+                                        <label
+                                            class="col-form-label font-weight-normal label-optional"
+                                            for="vat"
+                                        >TIN / VAT
+                                        </label>
+                                        <t t-if="partner and partner.parent_id">
+                                            <input
+                                                type="text"
+                                                name="vat"
+                                                class="form-control"
+                                                t-att-value="partner.parent_id.vat"
+                                            />
+                                        </t>
+                                        <t t-else="">
+                                            <input
+                                                type="text"
+                                                name="vat"
+                                                class="form-control"
+                                            />
+                                        </t>
+                                    </div>
+
 <!--                                     <div class="form-group col-lg-6 div_lastname">
                                         <label
                                             class="col-form-label"
@@ -265,29 +289,7 @@
                                             />
                                         </t>
                                     </div> -->
-                                    <div class="form-group col-lg-6" id="div_email">
-                                        <label class="col-form-label" for="email">Email
-                                        </label>
-                                        <t t-if="partner">
-                                            <input
-                                                type="email"
-                                                name="email"
-                                                id="email_input"
-                                                class="form-control"
-                                                required="1"
-                                                t-att-value="partner.email"
-                                            />
-                                        </t>
-                                        <t t-else="">
-                                            <input
-                                                type="email"
-                                                id="email_input"
-                                                name="email"
-                                                class="form-control"
-                                                required="1"
-                                            />
-                                        </t>
-                                    </div>
+                                    <!--
                                     <div class="form-group col-lg-6" id="div_phone">
                                         <label class="col-form-label" for="phone">Phone
                                         </label>
@@ -309,6 +311,7 @@
                                             />
                                         </t>
                                     </div>
+                                    -->
 
 <!--                                     <div class="form-group col-lg-6 div_company_name">
                                         <label
@@ -350,28 +353,6 @@
                                             <input
                                                 type="text"
                                                 name="company_email"
-                                                class="form-control"
-                                            />
-                                        </t>
-                                    </div> -->
-<!--                                     <div class="form-group col-lg-6 div_vat">
-                                        <label
-                                            class="col-form-label font-weight-normal label-optional"
-                                            for="vat"
-                                        >TIN / VAT
-                                        </label>
-                                        <t t-if="partner and partner.parent_id">
-                                            <input
-                                                type="text"
-                                                name="vat"
-                                                class="form-control"
-                                                t-att-value="partner.parent_id.vat"
-                                            />
-                                        </t>
-                                        <t t-else="">
-                                            <input
-                                                type="text"
-                                                name="vat"
                                                 class="form-control"
                                             />
                                         </t>
@@ -427,7 +408,32 @@
                                         </t>
                                     </div>
 
-<!--                                     <div
+                                    <div class="form-group col-lg-6" id="div_email">
+                                        <label class="col-form-label" for="email">Email
+                                        </label>
+                                        <t t-if="partner">
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                id="email_input"
+                                                class="form-control"
+                                                required="1"
+                                                t-att-value="partner.email"
+                                            />
+                                        </t>
+                                        <t t-else="">
+                                            <input
+                                                type="email"
+                                                id="email_input"
+                                                name="email"
+                                                class="form-control"
+                                                required="1"
+                                            />
+                                        </t>
+                                    </div>
+
+
+                                    <div
                                         id="edicode-div"
                                         class="form-group col-md-6 div_edicode show-company"
                                     >
@@ -499,8 +505,7 @@
                                                 </t>
                                             </select>
                                         </t>
-                                    </div> -->
-
+                                    </div>
 
                                     <div class="w-100" />
                                     <div class="form-group col-lg-12 div_street">

@@ -157,6 +157,8 @@ class WebsiteSaleBilling(WebsiteSale):
         if "submitted" in post:
             partner_id = int(partner_id) if partner_id else None
             country_id = int(post.get("c_id", 0))
+            einvoice_operator_id = post.get("einvoice_operator_id", 0)
+
             partner_vals = {
                 "name": post.get("name"),
                 "email": post.get("email"),
@@ -167,11 +169,19 @@ class WebsiteSaleBilling(WebsiteSale):
                 "zip": post.get("zip"),
                 "city": post.get("city"),
                 "country_id": country_id,
+                "business_code": post.get("vat"),
+                "vat": post.get("vat"),
+                "company_type": "company" if post.get("vat") else "person",
+                "edicode": post.get("edicode"),
+                "einvoice_operator_id": einvoice_operator_id or False,
                 "customer_invoice_transmit_method_id": int(
                     post.get("customer_invoice_transmit_method_id", 0)
                 )
                 or False,
             }
+
+            if hasattr(Partner, "email_invoicing_address"):
+                partner_vals["email_invoicing_address"] = partner_vals.pop("email")
 
             if partner_id and "editing" in post:
                 current_partner = Partner.browse(partner_id)
