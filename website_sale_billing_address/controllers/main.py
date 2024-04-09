@@ -170,7 +170,6 @@ class WebsiteSaleBilling(WebsiteSale):
                 "city": post.get("city"),
                 "country_id": country_id,
                 "business_code": post.get("vat"),
-                "vat": post.get("vat"),
                 "company_type": "company" if post.get("vat") else "person",
                 "edicode": post.get("edicode"),
                 "einvoice_operator_id": einvoice_operator_id or False,
