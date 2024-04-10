@@ -10,6 +10,7 @@ odoo.define("website_sale_invoice_transmit_method.checkout", function () {
 
             // Initial values
             $("label[for='company_email'").addClass("label-optional");
+            $("#company_email").show();
 
             $("label[for='vat'").addClass("label-optional");
 
@@ -23,6 +24,10 @@ odoo.define("website_sale_invoice_transmit_method.checkout", function () {
             if (transmit_type === "mail") {
                 // Refers to website_sale_company_email
                 $("label[for='company_email'").removeClass("label-optional");
+            } else if (transmit_type == "post") {
+                // Refers to website_sale_company_email
+                $("#company_email").hide();
+                $("#company-email-input").val("");
             } else if (transmit_type === "einvoice") {
                 // Refers to website_sale_business_code
                 $("label[for='vat'").removeClass("label-optional");

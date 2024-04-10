@@ -15,7 +15,7 @@ addon | version | summary
 [website_sale_allowed_payment_acquirers](website_sale_allowed_payment_acquirers/) | 14.0.1.0.0 | Website Sale - allowed payment acquirers
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 14.0.1.0.0 | Create company for website customer, if company name is set
 [website_sale_autoflag_partner_as_customer](website_sale_autoflag_partner_as_customer/) | 14.0.1.0.0 | Set the 'Is a Customer' flag automatically
-[website_sale_billing_address](website_sale_billing_address/) | 14.0.1.1.0 | Website customer can select a billing address
+[website_sale_billing_address](website_sale_billing_address/) | 14.0.1.1.1 | Website customer can select a billing address
 [website_sale_billing_address_hide_from_public_user](website_sale_billing_address_hide_from_public_user/) | 14.0.1.0.0 | Only registered users see billing address during checkout
 [website_sale_birth_year](website_sale_birth_year/) | 14.0.2.0.0 | Customer can fill in their birth year at checkout
 [website_sale_business_code](website_sale_business_code/) | 14.0.1.0.4 | Adds Finnish Business code to website checkout form
@@ -53,7 +53,7 @@ addon | version | summary
 [website_sale_hide_login](website_sale_hide_login/) | 14.0.1.0.0 | Website Sale Hide Login Button
 [website_sale_hide_price_fix](website_sale_hide_price_fix/) | 14.0.1.0.1 | Fix missing items from Website Sale Hide Price
 [website_sale_hide_transmit_method_public_user](website_sale_hide_transmit_method_public_user/) | 14.0.1.5.3 | Website Sale Hide Transmit Method Public User
-[website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 14.0.1.0.3 | Adds account invoice transmit method to checkout
+[website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 14.0.1.0.5 | Adds account invoice transmit method to checkout
 [website_sale_invoicing_fee](website_sale_invoicing_fee/) | 14.0.1.0.2 | Adds Invoicing fee to Sale Order
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 14.0.1.0.0 | Website Sale Maintenance mode
 [website_sale_mandatory_company](website_sale_mandatory_company/) | 14.0.1.1.0 | Make company mandatory in website sale checkout
@@ -62,6 +62,7 @@ addon | version | summary
 [website_sale_optional_country](website_sale_optional_country/) | 14.0.1.0.0 | Make country optional in website sale checkout
 [website_sale_optional_street](website_sale_optional_street/) | 14.0.1.0.0 | Make street optional in website sale checkout
 [website_sale_payment_acquirer_filter](website_sale_payment_acquirer_filter/) | 14.0.1.0.0 | Allows filtering payment acquirers by partner type
+[website_sale_payment_processing_payment_text](website_sale_payment_processing_payment_text/) | 14.0.1.0.0 | Processing payment text shown for unfinished transaction
 [website_sale_payment_rules](website_sale_payment_rules/) | 14.0.1.0.1 | Website sale payment rules
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 14.0.1.0.1 | Invoice Transmit Method and Payment Terms for Website SO print
 [website_sale_product_code](website_sale_product_code/) | 14.0.1.0.0 | Show product default code in shop

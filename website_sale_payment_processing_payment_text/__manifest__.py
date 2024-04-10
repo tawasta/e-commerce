@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2024 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,18 +19,19 @@
 ##############################################################################
 
 {
-    "name": "Website sale billing address",
-    "summary": "Website customer can select a billing address",
-    "version": "14.0.1.1.1",
-    "category": "Website",
+    "name": "Processing payment text shown for unfinished transaction",
+    "summary": "Processing payment text shown for unfinished transaction",
+    "version": "14.0.1.0.0",
+    "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "depends": [
-        "website_sale",
-        "website_sale_invoice_transmit_method",
+        "payment",
     ],
-    "data": ["views/templates.xml", "views/res_config_settings.xml"],
+    "qweb": [
+        "static/src/xml/payment_processing.xml",
+    ],
 }
