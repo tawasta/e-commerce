@@ -57,6 +57,7 @@ addon | version | summary
 [website_sale_invoicing_fee](website_sale_invoicing_fee/) | 14.0.1.0.2 | Adds Invoicing fee to Sale Order
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 14.0.1.0.0 | Website Sale Maintenance mode
 [website_sale_mandatory_company](website_sale_mandatory_company/) | 14.0.1.1.0 | Make company mandatory in website sale checkout
+[website_sale_mandatory_zip](website_sale_mandatory_zip/) | 14.0.1.0.0 | Make zip code mandatory in website sale checkout
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 14.0.1.0.0 | Website sale membership privacy values
 [website_sale_optional_city](website_sale_optional_city/) | 14.0.1.0.0 | Make city optional in website sale checkout
 [website_sale_optional_country](website_sale_optional_country/) | 14.0.1.0.0 | Make country optional in website sale checkout
