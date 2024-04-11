@@ -170,7 +170,8 @@ class WebsiteSaleBilling(WebsiteSale):
                 "city": post.get("city"),
                 "country_id": country_id,
                 "business_code": post.get("vat"),
-                "company_type": "company" if post.get("vat") else "person",
+                # This will cause unexpected behaviour after confirming
+                # "company_type": "company" if post.get("vat") else "person",
                 "edicode": post.get("edicode"),
                 "einvoice_operator_id": einvoice_operator_id or False,
                 "customer_invoice_transmit_method_id": int(
