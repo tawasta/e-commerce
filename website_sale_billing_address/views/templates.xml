@@ -360,7 +360,7 @@
 
                                     <div
                                         id="customer_invoice_transmit_method_id_div"
-                                        class="form-group col-lg-6 show-company"
+                                        class="form-group col-lg-6"
                                     >
                                         <t
                                             t-set="methods"
@@ -435,7 +435,7 @@
 
                                     <div
                                         id="edicode-div"
-                                        class="form-group col-md-6 div_edicode show-company"
+                                        class="form-group col-md-6 div_edicode"
                                     >
                                         <label
                                             class="col-form-label label-optional"
@@ -460,7 +460,7 @@
                                     </div>
                                     <div
                                         id="einvoice-operator-div"
-                                        class="form-group col-lg-6 div_einvoice_operator show-company"
+                                        class="form-group col-lg-6 div_einvoice_operator"
                                     >
                                         <t
                                             t-set="operators"
