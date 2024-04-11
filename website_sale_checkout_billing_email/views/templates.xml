@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="payment" inherit_id="website_sale.payment">
+        <xpath expr="//span[@t-esc='order.partner_id']" position="after">
+            , <span t-esc='order.partner_id.email' class="address-inline" />
+        </xpath>
+        <xpath expr="//span[@t-esc='order.partner_shipping_id']" position="after">
+            , <span t-esc='order.partner_id.email' class="address-inline" />
+        </xpath>
+    </template>
+    <template id="confirmation" inherit_id="website_sale.confirmation">
+        <xpath expr="//span[@t-esc='order.partner_id']" position="after">
+            , <span t-esc='order.partner_id.email' class="address-inline" />
+        </xpath>
+        <xpath expr="//span[@t-esc='order.partner_shipping_id']" position="after">
+            , <span t-esc='order.partner_id.email' class="address-inline" />
+        </xpath>
+    </template>
+</odoo>

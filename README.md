@@ -22,6 +22,7 @@ addon | version | summary
 [website_sale_cart_fiscal_position](website_sale_cart_fiscal_position/) | 14.0.1.0.0 | Show fiscal position when confirming a sale
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 14.0.1.0.0 | eCommerce tax in cart lines
 [website_sale_cart_product_note](website_sale_cart_product_note/) | 14.0.1.0.0 | Show a product-spesific note in the cart view
+[website_sale_checkout_billing_email](website_sale_checkout_billing_email/) | 14.0.1.0.0 | Show email with billing address on checkout
 [website_sale_checkout_skip_payment_and_confirmation](website_sale_checkout_skip_payment_and_confirmation/) | 14.0.1.0.0 | Website orders will stay unconfirmed after sale process
 [website_sale_company_email](website_sale_company_email/) | 14.0.1.0.4 | Add different emails for ecommerce user and company
 [website_sale_company_slider](website_sale_company_slider/) | 14.0.1.2.8 | Slider to checkout
