@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <template id="configure_optional_products" inherit_id="website_sale_product_configurator.configure_optional_products">
+    <template
+        id="configure_optional_products"
+        inherit_id="website_sale_product_configurator.configure_optional_products"
+        priority="199"
+    >
         <xpath expr="//tr[@class='o_select_options']/td/h4" position="replace">
             <h4>You may also be interested in these products:</h4>
         </xpath>

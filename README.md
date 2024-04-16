@@ -10,6 +10,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[website_pricelist_company_info](website_pricelist_company_info/) | 17.0.1.0.0 |  | Allow users to add and edit their currency
 [website_sale_company_email](website_sale_company_email/) | 17.0.1.0.0 |  | Add different emails for ecommerce user and company
 [website_sale_create_user](website_sale_create_user/) | 17.0.1.0.0 |  | Website sale create user
 [website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop
@@ -17,6 +18,12 @@ addon | version | maintainers | summary
 [website_sale_extra_step_content_to_sale_order_note](website_sale_extra_step_content_to_sale_order_note/) | 17.0.1.0.0 |  | Extra Step Content to SO note
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 17.0.1.0.0 |  | Allow hiding/showing items in extra step
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 17.0.1.0.0 |  | Hides the default '30-day money-back quarantee...' text
+[website_sale_interested_product](website_sale_interested_product/) | 17.0.1.0.0 |  | Replace alternative product section to interested product
 [website_sale_payment_rules](website_sale_payment_rules/) | 17.0.1.0.0 |  | Website sale payment rules
+[website_sale_product_description](website_sale_product_description/) | 17.0.1.0.0 |  | Show website product description in backend
+[website_sale_show_tax](website_sale_show_tax/) | 17.0.1.1.1 |  | Show taxes in product grid and product view
+[website_user_business_code](website_user_business_code/) | 17.0.1.0.0 |  | Allow users to add and edit their business code
+[website_user_edicode](website_user_edicode/) | 17.0.1.0.0 |  | Allow users to add and edit their edicode and operator
+[website_user_transmit_method](website_user_transmit_method/) | 17.0.1.0.1 |  | Allow users to add and edit their transmit method
 
 [//]: # (end addons)

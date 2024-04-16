@@ -23,7 +23,7 @@
     "summary": "Replace alternative product section to interested product",
     "version": "17.0.1.0.0",
     "category": "eCommerce",
-    "website": "https://tawasta.fi",
+    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

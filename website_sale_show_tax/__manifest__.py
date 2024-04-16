@@ -23,7 +23,7 @@
     "summary": "Show taxes in product grid and product view",
     "version": "17.0.1.1.1",
     "category": "Website",
-    "website": "https://tawasta.fi",
+    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

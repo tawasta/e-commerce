@@ -19,9 +19,9 @@
 ##############################################################################
 
 {
-    "name": "Website User Transmit Method",
-    "summary": "Allow users to add and edit their transmit method",
-    "version": "17.0.1.0.1",
+    "name": "Website User Business Code",
+    "summary": "Allow users to add and edit their business code",
+    "version": "17.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
@@ -34,7 +34,7 @@
         "bin": [],
     },
     "depends": [
-        "account_invoice_transmit_method",
+        #        'l10n_fi_business_code',
         "website",
     ],
     "data": [
