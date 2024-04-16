@@ -19,20 +19,20 @@
 ##############################################################################
 
 {
-    'name': 'Portal - Currency in my details',
-    'summary': 'Allow users to add and edit their currency',
-    'version': '17.0.1.0.0',
-    'category': 'Website',
-    'website': 'https://tawasta.fi',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'depends': [
-        'product',
-        'portal',
+    "name": "Portal - Currency in my details",
+    "summary": "Allow users to add and edit their currency",
+    "version": "17.0.1.0.0",
+    "category": "Website",
+    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": [
+        "product",
+        "portal",
     ],
-    'data': [
-        'views/portal_my_details.xml',
+    "data": [
+        "views/portal_my_details.xml",
     ],
 }

@@ -23,11 +23,16 @@
     "summary": "Show website product description in backend",
     "version": "17.0.1.0.0",
     "category": "Website",
-    "website": "https://github.com/Tawasta/e-commerce",
+    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale",],
-    "data": ["views/product_template.xml", "views/website_product.xml",],
+    "depends": [
+        "website_sale",
+    ],
+    "data": [
+        "views/product_template.xml",
+        "views/website_product.xml",
+    ],
 }

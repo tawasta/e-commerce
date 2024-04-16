@@ -19,27 +19,26 @@
 ##############################################################################
 
 {
-    'name': 'Website - User Edicode',
-    'summary': 'Allow users to add and edit their edicode and operator',
-    'version': '17.0.1.0.0',
-    'category': 'Website',
-    'website': 'https://tawasta.fi',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'auto-install': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
+    "name": "Website - User Edicode",
+    "summary": "Allow users to add and edit their edicode and operator",
+    "version": "17.0.1.0.0",
+    "category": "Website",
+    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "auto-install": True,
+    "external_dependencies": {
+        "python": [],
+        "bin": [],
     },
-    'depends': [
-        'l10n_fi_edicode',
-        'website',
+    "depends": [
+        "l10n_fi_edicode",
+        "website",
     ],
-    'data': [
-        'views/website_portal_details.xml',
+    "data": [
+        "views/website_portal_details.xml",
     ],
-    'demo': [
-    ],
+    "demo": [],
 }
