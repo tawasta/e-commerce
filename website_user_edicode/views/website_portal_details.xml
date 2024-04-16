@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="details"
+        name="Details edicode"
+        inherit_id="portal.portal_my_details_fields"
+    >
+        <xpath expr="//input[@name='vat']/.." position="after">
+            <t t-if="partner.is_company">
+                <div
+                    name="edicode-input"
+                    t-attf-class="form-group #{error.get('edicode') and 'has-error' or ''} col-lg-6"
+                >
+                    <label
+                        class="control-label label-optional"
+                        for="edicode"
+                    >Edicode</label>
+                    <input
+                        type="text"
+                        name="edicode"
+                        class="form-control"
+                        t-att-value="edicode or partner.edicode"
+                    />
+                </div>
+
+                <div
+                    name="einvoice-operator-input"
+                    t-attf-class="form-group #{error.get('einvoice_operator_id') and 'has-error' or ''} col-lg-6"
+                >
+                    <label
+                        class="control-label label-optional"
+                        for="einvoice_operator_id"
+                    >eInvoice Operator</label>
+                    <select name="einvoice_operator_id" class="form-control">
+                        <option value="">-</option>
+                        <t
+                            t-foreach="request.env['res.partner.operator.einvoice'].sudo().search([])"
+                            t-as="operator"
+                        >
+                            <option
+                                t-att-value="operator.id"
+                                t-att-selected="operator.id == int(einvoice_operator_id) if einvoice_operator_id else operator.id == partner.einvoice_operator_id.id"
+                            >
+                                <t t-esc="operator.name" />
+                            </option>
+                        </t>
+                    </select>
+                </div>
+            </t>
+        </xpath>
+
+    </template>
+</odoo>

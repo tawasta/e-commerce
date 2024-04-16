@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="product" inherit_id="website_sale.product">
+        <!-- Add missing classes for product website description -->
+        <xpath expr="//div[@id='product_full_description']" position="attributes">
+            <attribute name="class">container py-2 oe_website_sale</attribute>
+        </xpath>
+
+    </template>
+</odoo>
