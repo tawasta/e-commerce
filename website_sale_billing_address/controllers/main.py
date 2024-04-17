@@ -23,13 +23,13 @@ class WebsiteSaleBilling(WebsiteSale):
         else:
             return response
 
-    @http.route()
-    def confirm_order(self, **post):
-        order = request.website.sale_get_order()
-        if order.use_different_billing_address:
-            return request.redirect("/shop/billing_address")
-        else:
-            return super(WebsiteSaleBilling, self).confirm_order(**post)
+    # @http.route()
+    # def confirm_order(self, **post):
+    #     order = request.website.sale_get_order()
+    #     if order.use_different_billing_address and order.par:
+    #         return request.redirect("/shop/billing_address")
+    #     else:
+    #         return super(WebsiteSaleBilling, self).confirm_order(**post)
 
     @http.route()
     def extra_info(self, **post):
