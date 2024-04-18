@@ -35,7 +35,7 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
 class WebsiteSale(WebsiteSale):
-    @http.route(["/shop/confirmation"], type="http", auth="public", website=True)
+    @http.route()
     def payment_confirmation(self, **post):
         """
         Confirm sale order and create invoice.
