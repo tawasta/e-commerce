@@ -5,29 +5,15 @@
         id="extra_info"
         name="Show order description"
         inherit_id="website_sale.extra_info"
-        active="False"
+        active="True"
         customize_show="True"
     >
-
-        <xpath expr="//form/div[@class='form-group row']" position="before">
-            <div
-                id="extra-step-description"
-                class="form-group row form-field o_website_form_custom"
-            >
-                <div class="col-lg-3 col-md-4 text-md-right">
-                    <label
-                        class="control-label label-optional"
-                        for="description"
-                    >Order note</label>
-                </div>
-                <div class="col-lg-9 col-md-8">
-                    <textarea
-                        class="form-control o_website_form_input"
-                        rows="4"
-                        name="description"
-                    ><t t-esc="order.description" /></textarea>
-                </div>
-            </div>
+        <xpath expr="//textarea[@name='Give us your feedback']" position="replace">
+            <textarea
+                class="form-control o_website_form_input"
+                rows="4"
+                name="description"
+            ><t t-esc="order.description" /></textarea>
         </xpath>
 
     </template>
