@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="address"
+        inherit_id="website_sale.address"
+        name="Show Edicode field"
+        active="True"
+    >
+        <xpath expr="//div[contains(@t-attf-class, 'div_vat')]" position="after">
+            <t t-if="website.show_edicode_field">
+                <div
+                    id="edicode-div"
+                    t-attf-class="form-group #{error.get('edicode') and 'has-error' or ''} col-md-6 div_edicode show-company"
+                >
+                    <label
+                        id="edicode-label"
+                        class="col-form-label label-optional"
+                        for="edicode"
+                    >eInvoice address (EDI-code)</label>
+                    <input
+                        type="text"
+                        name="edicode"
+                        class="form-control"
+                        t-att-value="'edicode' in checkout and checkout['edicode']"
+                    />
+                </div>
+                <div
+                    id="einvoice-operator-div"
+                    t-attf-class="form-group #{error.get('einvoice_operator_id') and 'has-error' or ''} col-lg-6 div_einvoice_operator show-company"
+                >
+                    <t
+                        t-set="operators"
+                        t-value="request.env['res.partner.operator.einvoice'].sudo().search([])"
+                    />
+                    <label
+                        id="einvoice-operator-label"
+                        class="col-form-label label-optional"
+                        for="einvoice_operator_id"
+                    >eInvoice Operator</label>
+                    <select
+                        id="einvoice-operator-select"
+                        t-attf-class="form-control #{error.get('einvoice_operator_id') and 'is-invalid' or ''}"
+                        name="einvoice_operator_id"
+                    >
+                        data-init="1"
+                        <option />
+                        <t t-foreach="operators" t-as="op">
+                            <option
+                                t-att-value="op.id"
+                                t-att-selected="op.id == ('einvoice_operator_id' in checkout and checkout['einvoice_operator_id'] != '' and int(checkout['einvoice_operator_id']))"
+                            >
+                                <span t-esc="op.name" /> (<span
+                                    t-esc="op.identifier"
+                                />)
+                            </option>
+                        </t>
+                    </select>
+                </div>
+
+                <t t-if="website.show_edicode_notification">
+                    <div
+                        id="edicode-notification-div"
+                        class="alert alert-info text-center alert-dismissible fade show from-group col-12 mt-4"
+                        role="alert"
+                    >
+                        <p>
+                            <strong>Please use edicode when possible!</strong>
+                        </p>
+                        <p>This will allow us to process your order quicker.</p>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert"
+                            aria-label="Close"
+                        >
+                            <span>&amp;times;</span>
+                        </button>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <template
+        id="address_kanban_edicode"
+        inherit_id="website_sale.address_kanban"
+        name="Show edicode in address card"
+        active="True"
+    >
+        <xpath expr="//t[@t-esc='contact']" position="after">
+            <t t-if="website.show_edicode_in_address_card">
+                <t t-if="contact.edicode and contact.einvoice_operator_id"><t
+                        t-esc="contact.edicode"
+                    /> (<t t-esc="contact.einvoice_operator_id.name" />)
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>
