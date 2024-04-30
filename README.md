@@ -12,9 +12,11 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [website_pricelist_company_info](website_pricelist_company_info/) | 17.0.1.0.0 |  | Allow users to add and edit their currency
 [website_sale_company_email](website_sale_company_email/) | 17.0.1.0.0 |  | Add different emails for ecommerce user and company
+[website_sale_country_select2](website_sale_country_select2/) | 17.0.1.0.0 |  | Changes country in customer address form to be select2
 [website_sale_create_user](website_sale_create_user/) | 17.0.1.0.0 |  | Website sale create user
 [website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop
 [website_sale_disable_qty_in_cart](website_sale_disable_qty_in_cart/) | 17.0.1.0.0 |  | Helper module to disable changing product quantity in cart
+[website_sale_edicode](website_sale_edicode/) | 17.0.1.0.1 |  | Adds EDI code to website checkout form
 [website_sale_extra_step_content_to_sale_order_note](website_sale_extra_step_content_to_sale_order_note/) | 17.0.1.0.0 |  | Extra Step Content to SO note
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 17.0.1.0.0 |  | Allow hiding/showing items in extra step
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 17.0.1.0.0 |  | Hides the default '30-day money-back quarantee...' text

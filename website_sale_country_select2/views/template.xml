@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="address" inherit_id="website_sale.address">
+        <select id="country_id" position="attributes">
+            <attribute
+                name="t-attf-class"
+            >col-12 mt-1 #{error.get('country_id') and 'is-invalid' or ''}</attribute>
+        </select>
+    </template>
+</odoo>
