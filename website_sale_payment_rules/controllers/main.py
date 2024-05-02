@@ -72,7 +72,11 @@ class WebsiteSale(WebsiteSale):
                 values.update({"need_attachment": True})
         if check_explanation:
             if not order.note:
+                # Require explanation
                 values.update({"need_explanation": True})
+            if hasattr(order, "description") and order.description:
+                # Also accept explanation in "description"-field
+                values.pop("need_explanation")
         if need_company_info:
             values.update({"need_company_info": True})
 

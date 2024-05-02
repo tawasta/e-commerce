@@ -21,7 +21,7 @@
 {
     "name": "Extra Step Content to SO description",
     "summary": "Extra Step Content to SO description",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
