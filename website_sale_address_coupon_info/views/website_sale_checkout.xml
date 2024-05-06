@@ -7,7 +7,11 @@
     >
         <xpath expr="//div[@id='cart_total']//table/tr[last()]" position="after">
             <tr t-if="hide_coupon">
-                <td colspan="3" class="text-center border-0" t-if="website_sale_order and website_sale_order.state != 'sale'">
+                <td
+                    colspan="3"
+                    class="text-center border-0"
+                    t-if="website_sale_order and website_sale_order.state != 'sale'"
+                >
                     <span><i
                             class="fa fa-warning text-info"
                         /> Discount coupons and Promotion codes<br
