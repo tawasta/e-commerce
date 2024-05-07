@@ -10,12 +10,16 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 class WebsiteSale(WebsiteSale):
     @http.route()
     def payment_confirmation(self, **post):
-        create_user_always = request.env['ir.config_parameter'].sudo().get_param('website_sale_create_user.always_create_user', default='False')
+        create_user_always = (
+            request.env["ir.config_parameter"]
+            .sudo()
+            .get_param("website_sale_create_user.always_create_user", default="False")
+        )
         sale_order_id = request.session.get("sale_last_order_id")
         if sale_order_id:
             order = request.env["sale.order"].sudo().browse(sale_order_id)
 
-            if create_user_always == 'True':
+            if create_user_always == "True":
                 self.create_user_from_order(order)
 
         return super(WebsiteSale, self).payment_confirmation(**post)
@@ -26,7 +30,9 @@ class WebsiteSale(WebsiteSale):
             "partner_id": order.partner_id.id,
             "login": order.partner_id.email,
         }
-        partner_user = order.partner_id.user_ids and order.partner_id.user_ids[0] or False
+        partner_user = (
+            order.partner_id.user_ids and order.partner_id.user_ids[0] or False
+        )
         res_users = request.env["res.users"].sudo()
 
         if not partner_user:
@@ -36,10 +42,12 @@ class WebsiteSale(WebsiteSale):
             new_user = res_users._signup_create_user(values)
             if new_user:
                 website = request.env["website"].get_current_website()
-                new_user.sudo().write({
-                    "company_id": website.company_id.id,
-                    "company_ids": [(6, 0, [website.company_id.id])],
-                })
+                new_user.sudo().write(
+                    {
+                        "company_id": website.company_id.id,
+                        "company_ids": [(6, 0, [website.company_id.id])],
+                    }
+                )
                 email_template_values = self.handle_new_user(order, new_user)
                 if email_template_values:
                     self.send_email(new_user, email_template_values)
