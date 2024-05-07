@@ -21,7 +21,7 @@
 {
     "name": "Website sale billing address",
     "summary": "Website customer can select a billing address",
-    "version": "14.0.1.1.1",
+    "version": "14.0.1.1.2",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",

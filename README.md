@@ -15,7 +15,7 @@ addon | version | summary
 [website_sale_allowed_payment_acquirers](website_sale_allowed_payment_acquirers/) | 14.0.1.0.0 | Website Sale - allowed payment acquirers
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 14.0.1.0.0 | Create company for website customer, if company name is set
 [website_sale_autoflag_partner_as_customer](website_sale_autoflag_partner_as_customer/) | 14.0.1.0.0 | Set the 'Is a Customer' flag automatically
-[website_sale_billing_address](website_sale_billing_address/) | 14.0.1.1.1 | Website customer can select a billing address
+[website_sale_billing_address](website_sale_billing_address/) | 14.0.1.1.2 | Website customer can select a billing address
 [website_sale_billing_address_hide_from_public_user](website_sale_billing_address_hide_from_public_user/) | 14.0.1.0.0 | Only registered users see billing address during checkout
 [website_sale_birth_year](website_sale_birth_year/) | 14.0.2.0.0 | Customer can fill in their birth year at checkout
 [website_sale_business_code](website_sale_business_code/) | 14.0.1.0.4 | Adds Finnish Business code to website checkout form
