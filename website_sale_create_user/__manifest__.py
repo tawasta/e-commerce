@@ -29,6 +29,7 @@
     "application": False,
     "installable": True,
     "depends": [
+        "queue_job",
         "website_sale",
     ],
     "data": [],
