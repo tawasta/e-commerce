@@ -39,26 +39,22 @@ class SaleOrder(models.Model):
             allow_create = True
 
         if create_user and allow_create:
-            self._create_user_from_order()
+            self._create_user_from_order(self.partner_id)
         return res
 
-    def _create_user_from_order(self):
-
-        existing_user = (
-            self.env["res.users"]
-            .sudo()
-            .search([("login", "=", self.partner_id.email)], limit=1)
-        )
+    def _create_user_from_order(self, partner):
+        """Luo käyttäjä tilauksesta annetun partnerin perusteella."""
+        existing_user = self.env["res.users"].sudo().search([
+            ("login", "=", partner.email)
+        ], limit=1)
         if not existing_user:
             user_values = {
-                "partner_id": self.partner_id.id,
-                "email": self.partner_id.email,
+                "partner_id": partner.id,
+                "email": partner.email,
                 "in_portal": True,
             }
-
-            wizard = (
-                self.env["portal.wizard"]
-                .sudo()
-                .create({"user_ids": [(0, 0, user_values)], "sale_order_id": self.id})
-            )
+            wizard = self.env["portal.wizard"].sudo().create({
+                "user_ids": [(0, 0, user_values)],
+                "sale_order_id": self.id
+            })
             wizard.action_apply()
