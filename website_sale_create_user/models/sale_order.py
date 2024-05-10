@@ -1,9 +1,8 @@
-from odoo import models, api
-from odoo.addons.auth_signup.models.res_partner import now
-import logging
+from odoo import models
+
 
 class SaleOrder(models.Model):
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     def action_confirm(self):
         res = super(SaleOrder, self).action_confirm()
@@ -20,10 +19,18 @@ class SaleOrder(models.Model):
         create_user_only_ecommerce = (
             self.env["ir.config_parameter"]
             .sudo()
-            .get_param("website_sale_create_user.create_user_only_ecommerce", default="True")
+            .get_param(
+                "website_sale_create_user.create_user_only_ecommerce", default="True"
+            )
         )
 
-        create_user_only_ecommerce = create_user_only_ecommerce.lower() in ['true', '1', 't', 'y', 'yes']
+        create_user_only_ecommerce = create_user_only_ecommerce.lower() in [
+            "true",
+            "1",
+            "t",
+            "y",
+            "yes",
+        ]
 
         if create_user_only_ecommerce:
             if self.team_id == self.website_id.salesteam_id:
@@ -37,16 +44,21 @@ class SaleOrder(models.Model):
 
     def _create_user_from_order(self):
 
-        existing_user = self.env['res.users'].sudo().search([('login', '=', self.partner_id.email)], limit=1)
+        existing_user = (
+            self.env["res.users"]
+            .sudo()
+            .search([("login", "=", self.partner_id.email)], limit=1)
+        )
         if not existing_user:
             user_values = {
-                'partner_id': self.partner_id.id,
-                'email': self.partner_id.email,
-                'in_portal': True,
+                "partner_id": self.partner_id.id,
+                "email": self.partner_id.email,
+                "in_portal": True,
             }
 
-            wizard = self.env['portal.wizard'].sudo().create({
-                'user_ids': [(0, 0, user_values)],
-                'sale_order_id': self.id
-            })
+            wizard = (
+                self.env["portal.wizard"]
+                .sudo()
+                .create({"user_ids": [(0, 0, user_values)], "sale_order_id": self.id})
+            )
             wizard.action_apply()

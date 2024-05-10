@@ -31,5 +31,7 @@
     "depends": [
         "website_sale",
     ],
-    "data": ["views/product_category_view.xml",],
+    "data": [
+        "views/product_category_view.xml",
+    ],
 }
