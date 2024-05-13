@@ -2,15 +2,17 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-============================
-eCommerce: Customer's Gender
-============================
+================================
+eCommerce: Customer's Birth Year
+================================
 
-* Customer can fill in their gender at checkout
+* Customer can fill in their birth year at checkout and it gets
+  saved into their partner info as a new field
+* The field appears when there is a membership product in the shopping cart 
 
 Configuration
 =============
-* None needed
+* No configuration needed
 
 Usage
 =====
