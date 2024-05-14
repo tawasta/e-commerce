@@ -8,7 +8,6 @@ class SaleOrder(models.Model):
         res = super(SaleOrder, self).action_confirm()
         create_user = False
         allow_create = False
-
         for line in self.order_line:
             category = line.product_id.categ_id
             while category and not create_user:
