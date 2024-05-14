@@ -14,12 +14,12 @@ class PortalWizardUser(models.TransientModel):
     _inherit = "portal.wizard.user"
 
     def _send_email(self):
-        if not self.env.user.email:
-            raise UserError(
-                _(
-                    "You must have an email address in your User Preferences to send emails."
-                )
-            )
+        # if not self.env.user.email:
+        #     raise UserError(
+        #         _(
+        #             "You must have an email address in your User Preferences to send emails."
+        #         )
+        #     )
 
         template = self.env.ref("portal.mail_template_data_portal_welcome")
 
