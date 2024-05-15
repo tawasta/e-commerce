@@ -43,8 +43,8 @@ odoo.define("website_sale_invoice_transmit_method.checkout", function () {
                 $("label[for='vat']").removeClass("label-optional");
 
                 // Refers to website_sale_company_email
-                // $("#company_email").hide();
-                // $("#company-email-input").val("");
+                $("#company_email").hide();
+                $("#company-email-input").val("");
 
                 // Set company email as not required
                 field_required.val(field_required_val.replace("company_email,", ""));
