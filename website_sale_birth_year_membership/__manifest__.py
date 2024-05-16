@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2024 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,10 +19,10 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Account Invoice Transmit Method",
-    "summary": "Adds account invoice transmit method to checkout",
-    "version": "14.0.1.0.6",
-    "category": "Website",
+    "name": "eCommerce: Customer's Birth Year",
+    "summary": "Customer can fill in their birth year at checkout",
+    "version": "14.0.2.0.0",
+    "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
@@ -33,13 +33,12 @@
         "bin": [],
     },
     "depends": [
-        "account_invoice_transmit_method",
         "website_sale",
+        "partner_contact_personal_information_page",
     ],
     "data": [
-        "views/assets.xml",
-        "views/transmit_method.xml",
-        "views/website_template_checkout.xml",
+        "views/partner.xml",
+        "views/templates.xml",
     ],
     "demo": [],
 }
