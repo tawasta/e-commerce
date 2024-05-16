@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.year.of.birth</field>
+        <field name="model">res.partner</field>
+        <field
+            name="inherit_id"
+            ref="partner_contact_personal_information_page.personal_information"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='personal_information_group']">
+                <!-- use formatting to get rid of thousands separator -->
+                <field name="year_of_birth" options="{ 'format': 0} " />
+            </xpath>
+        </field>
+    </record>
+</odoo>

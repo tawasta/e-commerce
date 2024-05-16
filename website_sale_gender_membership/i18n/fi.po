@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_gender
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20230925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-18 10:14+0000\n"
+"PO-Revision-Date: 2024-03-18 10:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_gender
+#: model_terms:ir.ui.view,arch_db:website_sale_gender.address_inherit_gender
+msgid ""
+"<select name=\"gender\" class=\"form-control select2\">\n"
+"                    <option value=\"\">Select Gender...</option>\n"
+"                    <option value=\"male\">Male</option>\n"
+"                    <option value=\"female\">Female</option>\n"
+"                    <option value=\"other\">Other</option>\n"
+"                    <option value=\"not_to_say\">I Prefer not to Say</option>\n"
+"                </select>"
+msgstr ""
+"<select name=\"gender\" class=\"form-control select2\">\n"
+"                    <option value=\"\">Valitse...</option>\n"
+"                    <option value=\"male\">Mies</option>\n"
+"                    <option value=\"female\">Nainen</option>\n"
+"                    <option value=\"other\">Muu</option>\n"
+"                    <option value=\"not_to_say\">En halua kertoa</option>\n"
+"                </select>"
+
+#. module: website_sale_gender
+#: model_terms:ir.ui.view,arch_db:website_sale_gender.address_inherit_gender
+msgid "Gender"
+msgstr "Sukupuoli"
