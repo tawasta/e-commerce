@@ -1,0 +1,65 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_stock_already_in_cart_helper_message
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240216\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-20 11:27+0000\n"
+"PO-Revision-Date: 2024-05-20 11:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_stock_already_in_cart_helper_message
+#. odoo-javascript
+#: code:addons/website_sale_stock_already_in_cart_helper_message/static/src/xml/website_sale_stock_product_availability.xml:0
+#, python-format
+msgid "You already added"
+msgstr "Lisäsit jo"
+
+#. module: website_sale_stock_already_in_cart_helper_message
+#. odoo-javascript
+#: code:addons/website_sale_stock_already_in_cart_helper_message/static/src/xml/website_sale_stock_product_availability.xml:0
+#, python-format
+msgid "You already added all the available product in your cart."
+msgstr "Lisäsit saatavilla olevan maksimimäärän tuotetta jo ostoskoriin."
+
+#. module: website_sale_stock_already_in_cart_helper_message
+#. odoo-javascript
+#: code:addons/website_sale_stock_already_in_cart_helper_message/static/src/xml/website_sale_stock_product_availability.xml:0
+#, python-format
+msgid "You can"
+msgstr "Voit"
+
+#. module: website_sale_stock_already_in_cart_helper_message
+#. odoo-javascript
+#: code:addons/website_sale_stock_already_in_cart_helper_message/static/src/xml/website_sale_stock_product_availability.xml:0
+#, python-format
+msgid "continue shopping"
+msgstr "jatkaa ostoksia"
+
+#. module: website_sale_stock_already_in_cart_helper_message
+#. odoo-javascript
+#: code:addons/website_sale_stock_already_in_cart_helper_message/static/src/xml/website_sale_stock_product_availability.xml:0
+#, python-format
+msgid "in your cart."
+msgstr "ostoskoriin."
+
+#. module: website_sale_stock_already_in_cart_helper_message
+#. odoo-javascript
+#: code:addons/website_sale_stock_already_in_cart_helper_message/static/src/xml/website_sale_stock_product_availability.xml:0
+#, python-format
+msgid "or"
+msgstr "tai"
+
+#. module: website_sale_stock_already_in_cart_helper_message
+#. odoo-javascript
+#: code:addons/website_sale_stock_already_in_cart_helper_message/static/src/xml/website_sale_stock_product_availability.xml:0
+#, python-format
+msgid "proceed to checkout"
+msgstr "siirtyä kassalle"
