@@ -21,6 +21,7 @@ addon | version | maintainers | summary
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 17.0.1.0.0 |  | Allow hiding/showing items in extra step
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 17.0.1.0.0 |  | Hides the default '30-day money-back quarantee...' text
 [website_sale_interested_product](website_sale_interested_product/) | 17.0.1.0.0 |  | Replace alternative product section to interested product
+[website_sale_maintenance_mode](website_sale_maintenance_mode/) | 17.0.1.0.0 |  | Website Sale Maintenance mode
 [website_sale_payment_rules](website_sale_payment_rules/) | 17.0.1.0.0 |  | Website sale payment rules
 [website_sale_product_description](website_sale_product_description/) | 17.0.1.0.0 |  | Show website product description in backend
 [website_sale_show_tax](website_sale_show_tax/) | 17.0.1.1.1 |  | Show taxes in product grid and product view
