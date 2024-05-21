@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_company_form_inherit_maintenance_mode" model="ir.ui.view">
+        <field name="name">res.company.form.inherit.maintenance.mode</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook[last()]" position="after">
+                <group
+                    string="Shop maintenance"
+                    name="shop_maintenance"
+                    groups="base.group_no_one"
+                >
+                    <field name="website_sale_maintenance_text" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
