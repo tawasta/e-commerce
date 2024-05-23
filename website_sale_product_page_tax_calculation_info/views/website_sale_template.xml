@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="product" inherit_id="website_sale.product">
+
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="before">
+            <p class="alert alert-warning">
+                <i
+                    class="fa fa-exclamation-triangle"
+                /> The final price and the VAT of the Product are determined by country of delivery and are displayed before the order confirmation.
+            </p>
+        </xpath>
+
+    </template>
+</odoo>

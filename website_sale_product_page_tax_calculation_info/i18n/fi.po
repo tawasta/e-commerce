@@ -1,0 +1,27 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_product_page_tax_calculation_info
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240216\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-23 05:03+0000\n"
+"PO-Revision-Date: 2024-05-23 05:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_product_page_tax_calculation_info
+#: model_terms:ir.ui.view,arch_db:website_sale_product_page_tax_calculation_info.product
+msgid ""
+"<i class=\"fa fa-exclamation-triangle\"/> The final price and the VAT of the"
+" Product are determined by country of delivery and are displayed before the "
+"order confirmation."
+msgstr ""
+"<i class=\"fa fa-exclamation-triangle\"/> Tuotteen lopullinen hinta ja ALV:n "
+"osuus määräytyvät toimitusmaan mukaan ja näkyvät tilauksen vahvistamisen "
+"yhteydessä."
