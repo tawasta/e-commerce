@@ -36,7 +36,7 @@ class WebsiteSale(WebsiteSale):
             return response
 
     @http.route()
-    def pricelist_change(self, pl_id, **post):
+    def pricelist_change(self, pricelist, **post):
         company = request.env["res.company"].sudo().search([("id", "=", "1")])
         render_values = {"company": company}
         if self._maintenance_mode():
@@ -44,7 +44,7 @@ class WebsiteSale(WebsiteSale):
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
         else:
-            response = super(WebsiteSale, self).pricelist_change(pl_id, **post)
+            response = super(WebsiteSale, self).pricelist_change(pricelist, **post)
 
             return response
 
