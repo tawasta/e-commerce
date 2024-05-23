@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <template
-        id="configure_optional_products"
-        inherit_id="website_sale_product_configurator.configure_optional_products"
+        id="alternative_products"
+        inherit_id="website_sale.alternative_products"
         priority="199"
     >
-        <xpath expr="//tr[@class='o_select_options']/td/h4" position="replace">
-            <h4>You may also be interested in these products:</h4>
+        <xpath
+            expr="(//section[hasclass('o_wsale_alternative_products')]//div[@class='css_non_editable_mode_hidden'])[1]"
+            position="before"
+        >
+            <h4 class="alternative-products-title">
+                You may also be interested in these products:
+            </h4>
         </xpath>
     </template>
 </odoo>

@@ -19,9 +19,9 @@
 ##############################################################################
 
 {
-    "name": "Website sale interested product",
-    "summary": "Replace alternative product section to interested product",
-    "version": "17.0.1.0.0",
+    "name": "eCommerce: Title for Product page's Alternative products section",
+    "summary": "Add a title above the alternative products",
+    "version": "17.0.2.0.0",
     "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",

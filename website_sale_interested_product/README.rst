@@ -2,23 +2,26 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===============================
-Website sale interested product
-===============================
+================================================================
+eCommerce: Title for Product page's Alternative products section
+================================================================
 
-* The module removes the title of alternative products and replaces it with another title
+* Adds a "You may also be interested in these products:" title 
+  above the alternative products on product page
 
 Configuration
 =============
-\-
+* None needed
 
 Usage
 =====
-Install this module from Apps.
+* Open shop page for a product that has some alternative products defined
 
 Known issues / Roadmap
 ======================
-There are no known issues with this module.
+* Consider making the text configurable
+* Consider making the used element configurable (currently H4)
+  to make uniform styling more convenient
 
 Credits
 =======
@@ -27,6 +30,7 @@ Contributors
 ------------
 
 * Valtteri Lattu <valtteri.lattu@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------
