@@ -15,9 +15,8 @@ addon | version | summary
 [website_sale_allowed_payment_acquirers](website_sale_allowed_payment_acquirers/) | 14.0.1.0.0 | Website Sale - allowed payment acquirers
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 14.0.1.0.0 | Create company for website customer, if company name is set
 [website_sale_autoflag_partner_as_customer](website_sale_autoflag_partner_as_customer/) | 14.0.1.0.0 | Set the 'Is a Customer' flag automatically
-[website_sale_billing_address](website_sale_billing_address/) | 14.0.1.1.1 | Website customer can select a billing address
+[website_sale_billing_address](website_sale_billing_address/) | 14.0.1.1.2 | Website customer can select a billing address
 [website_sale_billing_address_hide_from_public_user](website_sale_billing_address_hide_from_public_user/) | 14.0.1.0.0 | Only registered users see billing address during checkout
-[website_sale_birth_year](website_sale_birth_year/) | 14.0.2.0.0 | Customer can fill in their birth year at checkout
 [website_sale_birth_year_membership](website_sale_birth_year_membership/) | 14.0.2.0.0 | Customer can fill in their birth year at checkout
 [website_sale_business_code](website_sale_business_code/) | 14.0.1.0.4 | Adds Finnish Business code to website checkout form
 [website_sale_cart_fiscal_position](website_sale_cart_fiscal_position/) | 14.0.1.0.0 | Show fiscal position when confirming a sale
@@ -25,7 +24,7 @@ addon | version | summary
 [website_sale_cart_product_note](website_sale_cart_product_note/) | 14.0.1.0.0 | Show a product-spesific note in the cart view
 [website_sale_checkout_billing_email](website_sale_checkout_billing_email/) | 14.0.1.0.0 | Show email with billing address on checkout
 [website_sale_checkout_skip_payment_and_confirmation](website_sale_checkout_skip_payment_and_confirmation/) | 14.0.1.0.0 | Website orders will stay unconfirmed after sale process
-[website_sale_company_email](website_sale_company_email/) | 14.0.1.0.4 | Add different emails for ecommerce user and company
+[website_sale_company_email](website_sale_company_email/) | 14.0.1.0.6 | Add different emails for ecommerce user and company
 [website_sale_company_slider](website_sale_company_slider/) | 14.0.1.2.8 | Slider to checkout
 [website_sale_confirmation_billing_is_address](website_sale_confirmation_billing_is_address/) | 14.0.1.0.0 | Website sale confirmation part - Billing text is changed to Address
 [website_sale_coupon_company](website_sale_coupon_company/) | 14.0.1.0.0 | Website sale coupon company
@@ -48,7 +47,6 @@ addon | version | summary
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 14.0.1.0.1 | Allow hiding/showing items in extra step
 [website_sale_force_address_step](website_sale_force_address_step/) | 14.0.1.0.1 | Never skip the address step. Disables 'express'-checkout
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 14.0.1.0.1 | Forces autoinvoice on quotations created from website_sale
-[website_sale_gender](website_sale_gender/) | 14.0.1.1.0 | Customer can fill in their gender at checkout
 [website_sale_gender_membership](website_sale_gender_membership/) | 14.0.1.1.0 | Customer can fill in their gender at checkout
 [website_sale_hide_confirm_order](website_sale_hide_confirm_order/) | 14.0.1.0.0 | Website sale: Hides Confirm Order part in the payment process
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 14.0.1.0.0 | Hides the default '30-day money-back quarantee...' text
@@ -56,7 +54,7 @@ addon | version | summary
 [website_sale_hide_login](website_sale_hide_login/) | 14.0.1.0.0 | Website Sale Hide Login Button
 [website_sale_hide_price_fix](website_sale_hide_price_fix/) | 14.0.1.0.1 | Fix missing items from Website Sale Hide Price
 [website_sale_hide_transmit_method_public_user](website_sale_hide_transmit_method_public_user/) | 14.0.1.5.3 | Website Sale Hide Transmit Method Public User
-[website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 14.0.1.0.6 | Adds account invoice transmit method to checkout
+[website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 14.0.1.0.7 | Adds account invoice transmit method to checkout
 [website_sale_invoicing_fee](website_sale_invoicing_fee/) | 14.0.1.0.2 | Adds Invoicing fee to Sale Order
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 14.0.1.0.0 | Website Sale Maintenance mode
 [website_sale_mandatory_company](website_sale_mandatory_company/) | 14.0.1.1.0 | Make company mandatory in website sale checkout

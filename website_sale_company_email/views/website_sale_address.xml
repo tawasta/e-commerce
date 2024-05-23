@@ -80,7 +80,7 @@
             >
                 <label
                     id="company-email-label"
-                    class="col-form-label font-weight-normal label-optional"
+                    class="col-form-label label-optional"
                     for="company_email"
                 >Invoice Email</label>
                 <input
