@@ -19,16 +19,22 @@ addon | version | maintainers | summary
 [website_sale_edicode](website_sale_edicode/) | 17.0.1.0.1 |  | Adds EDI code to website checkout form
 [website_sale_extra_step_content_to_sale_order_note](website_sale_extra_step_content_to_sale_order_note/) | 17.0.1.0.1 |  | Extra Step Content to SO note
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 17.0.1.0.0 |  | Allow hiding/showing items in extra step
-[website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 17.0.1.0.0 |  | Hides the default '30-day money-back quarantee...' text
 [website_sale_interested_product](website_sale_interested_product/) | 17.0.2.0.0 |  | Add a title above the alternative products
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 17.0.1.0.0 |  | Website Sale Maintenance mode
 [website_sale_payment_rules](website_sale_payment_rules/) | 17.0.1.0.0 |  | Website sale payment rules
-[website_sale_product_description](website_sale_product_description/) | 17.0.1.0.0 |  | Show website product description in backend
 [website_sale_product_page_tax_calculation_info](website_sale_product_page_tax_calculation_info/) | 17.0.1.0.0 |  | Shows a note that country-based VAT is calculated at checkout
 [website_sale_show_tax](website_sale_show_tax/) | 17.0.1.1.1 |  | Show taxes in product grid and product view
 [website_sale_stock_already_in_cart_helper_message](website_sale_stock_already_in_cart_helper_message/) | 17.0.1.0.0 |  | Show additional instruction for the user
 [website_user_business_code](website_user_business_code/) | 17.0.1.0.0 |  | Allow users to add and edit their business code
 [website_user_edicode](website_user_edicode/) | 17.0.1.0.0 |  | Allow users to add and edit their edicode and operator
 [website_user_transmit_method](website_user_transmit_method/) | 17.0.1.0.1 |  | Allow users to add and edit their transmit method
+
+
+Unported addons
+---------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 17.0.1.0.1 (unported) |  | Hides the default '30-day money-back quarantee...' text (deprecated)
+[website_sale_product_description](website_sale_product_description/) | 17.0.1.0.1 (unported) |  | Show website product description in backend (deprecated)
 
 [//]: # (end addons)

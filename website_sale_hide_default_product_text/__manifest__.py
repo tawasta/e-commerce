@@ -19,15 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Hide Default Product Text",
-    "summary": "Hides the default '30-day money-back quarantee...' text",
-    "version": "17.0.1.0.0",
+    "name": "Website Sale Hide Default Product Text (DEPRECATED)",
+    "summary": "Hides the default '30-day money-back quarantee...' text (deprecated)",
+    "version": "17.0.1.0.1",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
-    "installable": True,
+    "installable": False,
     "external_dependencies": {
         "python": [],
         "bin": [],
