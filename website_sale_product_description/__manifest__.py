@@ -19,15 +19,15 @@
 ##############################################################################
 
 {
-    "name": "eCommerce Show product website description",
-    "summary": "Show website product description in backend",
-    "version": "17.0.1.0.0",
+    "name": "eCommerce Show product website description (DEPRECATED)",
+    "summary": "Show website product description in backend (deprecated)",
+    "version": "17.0.1.0.1",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
-    "installable": True,
+    "installable": False,
     "depends": [
         "website_sale",
     ],

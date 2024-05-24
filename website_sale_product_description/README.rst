@@ -2,11 +2,13 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==========================================
-eCommerce Show product website description
-==========================================
+=======================================================
+eCommerce Show product website description (DEPRECATED)
+=======================================================
 
-Show website product description in backend
+* Show website product description in backend
+* Deprecated and flagged as uninstallable in 17.0 to avoid clashes from
+  being able to edit the data with both frontend and backend editors.
 
 Configuration
 =============
@@ -24,6 +26,7 @@ Contributors
 ------------
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------
