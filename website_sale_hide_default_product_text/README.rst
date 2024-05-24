@@ -2,12 +2,13 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-======================================
-Website Sale Hide Default Product Text
-======================================
+===================================================
+Website Sale Hide Default Product Text (DEPRECATED)
+===================================================
 
 * Hides the default '30-day money-back quarantee...' text from product view
-
+* Deprecated and flagged as uninstallable in 17.0 since website builder
+  now supports toggling the visibility of this block.
 
 Configuration
 =============
@@ -28,6 +29,7 @@ Contributors
 ------------
 
 * Valtteri Lattu <valtteri.lattu@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------
