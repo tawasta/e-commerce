@@ -5,16 +5,24 @@
             expr="//t[@t-foreach='acquirers']/div[hasclass('card-body')]"
             position="inside"
         >
-            <t t-if="acq.sudo().product_id">
+            <t t-if="acq.sudo().product_id and website_sale_order">
                 <span class="badge badge-secondary pull-right">
                     <t t-set="tax_added" t-value="0" />
                     <t
+                        t-if="website_sale_order"
                         t-set="fpos"
                         t-value="website_sale_order.fiscal_position_id or website_sale_order.partner_id.property_account_position_id"
                     />
+                    <t t-else="" t-set="fpos" t-value="False" />
+
+                    <t
+                        t-set="company"
+                        t-value="website_sale_order.company_id if website_sale_order else acq.sudo().company_id"
+                    />
+
                     <t
                         t-set="taxes"
-                        t-value="acq.product_id.sudo().taxes_id.filtered(lambda r: not website_sale_order.company_id or r.company_id == website_sale_order.company_id)"
+                        t-value="acq.product_id.sudo().taxes_id.filtered(lambda r: not company or r.company_id == company)"
                     />
                     <t t-if="acq.product_id.sudo().taxes_id">
                         <t
@@ -22,7 +30,7 @@
                         >
                             <t
                                 t-set="tax_added"
-                                t-value="(fpos.map_tax(taxes, acq.product_id, website_sale_order.partner_shipping_id) if fpos else taxes).amount"
+                                t-value="fpos.map_tax(taxes, acq.product_id, website_sale_order.partner_shipping_id) if fpos else taxes.amount"
                             />
                         </t>
                     </t>
