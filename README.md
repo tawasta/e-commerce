@@ -44,6 +44,7 @@ addon | version | summary
 [website_sale_extra_step_info](website_sale_extra_step_info/) | 14.0.1.0.3 | Extra step info text: global and publica category
 [website_sale_extra_step_replace_feedback_text](website_sale_extra_step_replace_feedback_text/) | 14.0.1.0.0 | Replace extra step feedback text to more information
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 14.0.1.0.1 | Allow hiding/showing items in extra step
+[website_sale_firstname2](website_sale_firstname2/) | 14.0.1.0.1 | Website sale firstname2
 [website_sale_force_address_step](website_sale_force_address_step/) | 14.0.1.0.1 | Never skip the address step. Disables 'express'-checkout
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 14.0.1.0.1 | Forces autoinvoice on quotations created from website_sale
 [website_sale_gender](website_sale_gender/) | 14.0.1.1.0 | Customer can fill in their gender at checkout
@@ -58,6 +59,7 @@ addon | version | summary
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 14.0.1.0.0 | Website Sale Maintenance mode
 [website_sale_mandatory_company](website_sale_mandatory_company/) | 14.0.1.1.0 | Make company mandatory in website sale checkout
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 14.0.1.0.0 | Website sale membership privacy values
+[website_sale_name_mode_handling](website_sale_name_mode_handling/) | 14.0.1.0.1 | Website sale name mode handling
 [website_sale_optional_city](website_sale_optional_city/) | 14.0.1.0.0 | Make city optional in website sale checkout
 [website_sale_optional_country](website_sale_optional_country/) | 14.0.1.0.0 | Make country optional in website sale checkout
 [website_sale_optional_street](website_sale_optional_street/) | 14.0.1.0.0 | Make street optional in website sale checkout
