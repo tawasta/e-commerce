@@ -19,6 +19,7 @@ class CustomWebsiteSale(WebsiteSale):
 
     @http.route()
     def address(self, **kw):
+        logging.info(kw);
         if "submitted" in kw:
             if "name" in kw and kw.get("name"):
                 logging.info("==ONKO TAMA====");
@@ -29,5 +30,6 @@ class CustomWebsiteSale(WebsiteSale):
                     kw.get("lastname"), kw.get("firstname")
                 )
                 kw["name"] = name
+        logging.info(kw);
 
         return super(CustomWebsiteSale, self).address(**kw)
