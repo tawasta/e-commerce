@@ -27,8 +27,5 @@ class CustomWebsiteSale(WebsiteSale):
                     kw.get("lastname"), kw.get("firstname")
                 )
                 kw["name"] = name
-            errors, error_msg = self.checkout_form_validate(mode, kw, pre_values)
-            logging.info(errors);
-            logging.info(error_msg);
 
         return super(CustomWebsiteSale, self).address(**kw)
