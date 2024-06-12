@@ -21,8 +21,10 @@ class CustomWebsiteSale(WebsiteSale):
     def address(self, **kw):
         if "submitted" in kw:
             if "name" in kw and kw.get("name"):
+                logging.info("==ONKO TAMA====");
                 kw["name"] = kw.get("name")
             else:
+                logging.info("===VAI TAMA====");
                 name = request.env["res.partner"]._get_computed_name(
                     kw.get("lastname"), kw.get("firstname")
                 )
