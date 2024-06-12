@@ -7,18 +7,14 @@ from odoo.addons.website_sale_split_name.controllers.main import WebsiteSale
 
 class CustomWebsiteSale(WebsiteSale):
 
-    def _get_mandatory_billing_fields(self):
-        # Remove 'firstname' and 'lastname' from mandatory fields for billing
-        fields = super(CustomWebsiteSale, self)._get_mandatory_billing_fields()
-        fields.remove('firstname')
-        fields.remove('lastname')
-        return fields
 
     def _get_mandatory_shipping_fields(self):
         # Remove 'firstname' and 'lastname' from mandatory fields for shipping
         fields = super(CustomWebsiteSale, self)._get_mandatory_shipping_fields()
         fields.remove('firstname')
         fields.remove('lastname')
+        logging.info("====FIELDS====");
+        logging.info(fields);
         return fields
 
     @http.route()
@@ -31,5 +27,8 @@ class CustomWebsiteSale(WebsiteSale):
                     kw.get("lastname"), kw.get("firstname")
                 )
                 kw["name"] = name
+            errors, error_msg = self.checkout_form_validate(mode, kw, pre_values)
+            logging.info(errors);
+            logging.info(error_msg);
 
         return super(CustomWebsiteSale, self).address(**kw)
