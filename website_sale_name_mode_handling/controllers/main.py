@@ -1,18 +1,24 @@
 from odoo import http
 from odoo.http import request
+import logging
 
 from odoo.addons.website_sale_split_name.controllers.main import WebsiteSale
 
 
 class CustomWebsiteSale(WebsiteSale):
 
+    def _get_mandatory_billing_fields(self):
+        # Remove 'firstname' and 'lastname' from mandatory fields for billing
+        fields = super(CustomWebsiteSale, self)._get_mandatory_billing_fields()
+        fields.remove('firstname')
+        fields.remove('lastname')
+        return fields
+
     def _get_mandatory_shipping_fields(self):
         # Remove 'firstname' and 'lastname' from mandatory fields for shipping
         fields = super(CustomWebsiteSale, self)._get_mandatory_shipping_fields()
         fields.remove('firstname')
         fields.remove('lastname')
-        if 'name' not in fields:
-            fields.append('name')  # Ensure 'name' is in mandatory fields
         return fields
 
     @http.route()
