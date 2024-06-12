@@ -39,6 +39,8 @@ class CustomWebsiteSale(WebsiteSale):
         return super(CustomWebsiteSale, self).address(**kw)
 
     def checkout_form_validate(self, mode, all_form_values, data):
+        logging.info(all_form_values);
+        logging.info(data);
         # mode: tuple ('new|edit', 'billing|shipping')
         # all_form_values: all values before preprocess
         # data: values after preprocess
