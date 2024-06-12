@@ -15,7 +15,8 @@ class CustomWebsiteSale(WebsiteSale):
                     kw["firstname"] = firstname
                     kw["lastname"] = lastname
                 else:
-                    kw["name"] = kw.get("name")
+                    kw["firstname"] = " "
+                    kw["lastname"] = kw.get("name")
             else:
                 name = request.env["res.partner"]._get_computed_name(
                     kw.get("lastname"), kw.get("firstname")
