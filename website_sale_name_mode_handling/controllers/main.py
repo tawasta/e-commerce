@@ -63,6 +63,7 @@ class CustomWebsiteSale(WebsiteSale):
         # error message for empty required fields
         for field_name in required_fields:
             if not data.get(field_name):
+                logging.info(field_name);
                 error[field_name] = 'missing'
 
         # email validation
