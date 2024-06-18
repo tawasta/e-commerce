@@ -25,6 +25,7 @@ addon | version | maintainers | summary
 [website_sale_product_page_tax_calculation_info](website_sale_product_page_tax_calculation_info/) | 17.0.1.0.0 |  | Shows a note that country-based VAT is calculated at checkout
 [website_sale_show_tax](website_sale_show_tax/) | 17.0.1.1.1 |  | Show taxes in product grid and product view
 [website_sale_stock_already_in_cart_helper_message](website_sale_stock_already_in_cart_helper_message/) | 17.0.1.0.0 |  | Show additional instruction for the user
+[website_sale_suggested_products_order_by](website_sale_suggested_products_order_by/) | 17.0.1.0.0 |  | Accessories ordered by _order instead of random order
 [website_user_business_code](website_user_business_code/) | 17.0.1.0.0 |  | Allow users to add and edit their business code
 [website_user_edicode](website_user_edicode/) | 17.0.1.0.0 |  | Allow users to add and edit their edicode and operator
 [website_user_transmit_method](website_user_transmit_method/) | 17.0.1.0.1 |  | Allow users to add and edit their transmit method
