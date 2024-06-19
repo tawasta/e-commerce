@@ -4,6 +4,7 @@
         <xpath expr="//select[@name='state_id']/.." position="after">
             <div
                 t-attf-class="form-group #{error.get('domicile') and 'o_has_error' or ''} col-md-8 div_domicile"
+                id="domicile_div"
             >
                 <label
                     class="col-form-label label-optional"
