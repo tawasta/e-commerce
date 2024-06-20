@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_suggested_products_category_manager,suggested.products.category.manager,model_suggested_products_category,sales_team.group_sale_manager,1,1,1,1
+access_suggested_products_category_public,suggested.products.category.public,model_suggested_products_category,,1,0,0,0
