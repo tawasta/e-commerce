@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Conditionally hide add to cart button also from suggested products in Order Overview -->
+    <template
+        name="Suggested products list"
+        id="suggested_products_list"
+        inherit_id="website_sale.suggested_products_list"
+    >
+        <xpath
+            expr="//div[@id='suggested_products']//a[hasclass('js_add_suggested_products')]"
+            position="attributes"
+        >
+            <attribute
+                name="t-if"
+            >product._website_show_quick_add() and not product.can_not_order</attribute>
+        </xpath>
+
+    </template>
+</odoo>
