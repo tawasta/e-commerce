@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+
+    <!-- Use btn-primary instead of btn-outline-primary styling for Suggested Accessories Add to Cart button -->
+    <template
+        id="suggested_products_list_button_primary"
+        inherit_id="website_sale.suggested_products_list"
+        name="Switch to primary button style for Suggested Accessories' Add to Cart buttons"
+        active="False"
+        priority="101"
+        customize_show="True"
+    >
+        <xpath expr="//a[hasclass('js_add_suggested_products')]" position="attributes">
+            <attribute name="class" add="btn-primary" separator=" " />
+            <attribute name="class" remove="btn-outline-primary" separator=" " />
+        </xpath>
+    </template>
+
+    <!-- Hide product images from cart lines in Order Overview -->
+    <template
+        id="cart_lines_hide_images"
+        inherit_id="website_sale.cart_lines"
+        name="Hide Order Overview Lines' Product Images"
+        active="False"
+        priority="101"
+        customize_show="True"
+    >
+        <xpath
+            expr="//div[@id='cart_products']/div[@t-as='line']/t/img"
+            position="replace"
+        >
+            <div />
+        </xpath>
+
+        <xpath
+            expr="//div[@id='cart_products']/div[@t-as='line']/t/div[@t-field='line.product_id.image_128']"
+            position="replace"
+        >
+            <div />
+        </xpath>
+    </template>
+
+    <!-- Hide products images from suggested accessories in Order Overview -->
+    <template
+        id="suggested_products_list_hide_images"
+        inherit_id="website_sale.suggested_products_list"
+        name="Hide Order Overview Suggested Accessories' Product Images"
+        active="False"
+        priority="101"
+        customize_show="True"
+    >
+        <xpath expr="//div[@t-as='product']/div[1]/a" position="replace" />
+
+    </template>
+
+    <!-- Hide product images from cart summary in sidebar cart phases -->
+    <template
+        id="checkout_layout_order_summary_hide_images"
+        inherit_id="website_sale.checkout_layout"
+        name="Hide Sidebar Order Summary's Lines' Product Images"
+        active="False"
+        priority="101"
+        customize_show="True"
+    >
+
+        <xpath
+            expr="//div[@id='o_wsale_total_accordion']//tr[@t-as='line']//img"
+            position="replace"
+        >
+            <div />
+        </xpath>
+
+        <xpath
+            expr="//div[@id='o_wsale_total_accordion']//tr[@t-as='line']//span[@t-field='line.product_id.image_128']"
+            position="replace"
+        >
+            <span />
+        </xpath>
+
+    </template>
+
+    <!--
+        Rename Street and number to billing address
+        TODO: Is this needed or get rid of this in 17.0
+        for consistency?
+    -->
+    <template
+        id="street_and_number_to_billing_address"
+        inherit_id="website_sale.address"
+        name="Rename 'Street and Number' to 'Billing Address'"
+        active="False"
+        priority="101"
+        customize_show="True"
+    >
+        <xpath expr="//label[@for='street']" position="replace">
+            <label class="col-form-label" for="street">Billing Address</label>
+        </xpath>
+    </template>
+</odoo>

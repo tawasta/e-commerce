@@ -10,6 +10,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[product_cant_order](product_cant_order/) | 17.0.1.0.0 |  | Disables adding specific variants to cart
 [website_pricelist_company_info](website_pricelist_company_info/) | 17.0.1.0.0 |  | Allow users to add and edit their currency
 [website_sale_company_email](website_sale_company_email/) | 17.0.1.0.0 |  | Add different emails for ecommerce user and company
 [website_sale_country_select2](website_sale_country_select2/) | 17.0.1.0.0 |  | Changes country in customer address form to be select2
@@ -24,9 +25,11 @@ addon | version | maintainers | summary
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 17.0.1.0.0 |  | Website Sale Maintenance mode
 [website_sale_payment_rules](website_sale_payment_rules/) | 17.0.1.0.0 |  | Website sale payment rules
 [website_sale_product_page_tax_calculation_info](website_sale_product_page_tax_calculation_info/) | 17.0.1.0.0 |  | Shows a note that country-based VAT is calculated at checkout
+[website_sale_settings](website_sale_settings/) | 17.0.1.0.0 |  | Various toggleable settings under editor's customize menu
 [website_sale_show_tax](website_sale_show_tax/) | 17.0.1.1.1 |  | Show taxes in product grid and product view
 [website_sale_split_name](website_sale_split_name/) | 17.0.1.0.0 |  | Split name field on address card to first and last name
 [website_sale_stock_already_in_cart_helper_message](website_sale_stock_already_in_cart_helper_message/) | 17.0.1.0.0 |  | Show additional instruction for the user
+[website_sale_suggested_products_category](website_sale_suggested_products_category/) | 17.0.1.0.0 |  | Enable categorizing Order Overview's suggested accessories
 [website_sale_suggested_products_order_by](website_sale_suggested_products_order_by/) | 17.0.1.0.0 |  | Accessories ordered by _order instead of random order
 [website_user_business_code](website_user_business_code/) | 17.0.1.0.0 |  | Allow users to add and edit their business code
 [website_user_edicode](website_user_edicode/) | 17.0.1.0.0 |  | Allow users to add and edit their edicode and operator
