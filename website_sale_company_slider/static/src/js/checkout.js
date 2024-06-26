@@ -70,13 +70,11 @@ odoo.define("website_sale_company_slider.checkout", function () {
 
             if (is_company === true) {
                 if (field_required.val().indexOf(",company_name,vat") < 0) {
-                    field_required.val(
-                        field_required.val() + ",company_name,company_email,vat"
-                    );
+                    field_required.val(field_required.val() + ",company_name,vat");
                 }
             } else if (field_required.length > 0) {
                 field_required.val(
-                    field_required.val().replace(",company_name,company_email,vat", "")
+                    field_required.val().replace(",company_name,vat", "")
                 );
             }
         }
