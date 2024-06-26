@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="address_firstname2"
+        inherit_id="website_sale_split_name.address"
+        name="Address firstname2"
+    >
+        <!-- Lisää firstname2 kenttä firstname kentän jälkeen -->
+        <xpath expr="//div[@id='div_firstname']" position="after">
+            <t t-if="mode == ('edit', 'billing') or mode == ('new', 'billing')">
+                <div class="form-group col-lg-6 div_firstname2">
+                    <label class="col-form-label" for="firstname2">Firstname 2</label>
+                    <input
+                        type="text"
+                        name="firstname2"
+                        class="form-control"
+                        t-att-value="'firstname2' in checkout and checkout['firstname2']"
+                    />
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

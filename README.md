@@ -25,7 +25,7 @@ addon | version | summary
 [website_sale_checkout_billing_email](website_sale_checkout_billing_email/) | 14.0.1.0.0 | Show email with billing address on checkout
 [website_sale_checkout_skip_payment_and_confirmation](website_sale_checkout_skip_payment_and_confirmation/) | 14.0.1.0.0 | Website orders will stay unconfirmed after sale process
 [website_sale_company_email](website_sale_company_email/) | 14.0.1.0.6 | Add different emails for ecommerce user and company
-[website_sale_company_slider](website_sale_company_slider/) | 14.0.1.2.8 | Slider to checkout
+[website_sale_company_slider](website_sale_company_slider/) | 14.0.1.2.9 | Slider to checkout
 [website_sale_confirmation_billing_is_address](website_sale_confirmation_billing_is_address/) | 14.0.1.0.0 | Website sale confirmation part - Billing text is changed to Address
 [website_sale_coupon_company](website_sale_coupon_company/) | 14.0.1.0.0 | Website sale coupon company
 [website_sale_create_user](website_sale_create_user/) | 14.0.1.0.1 | Website sale create user
@@ -45,6 +45,7 @@ addon | version | summary
 [website_sale_extra_step_info](website_sale_extra_step_info/) | 14.0.1.0.3 | Extra step info text: global and publica category
 [website_sale_extra_step_replace_feedback_text](website_sale_extra_step_replace_feedback_text/) | 14.0.1.0.0 | Replace extra step feedback text to more information
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 14.0.1.0.1 | Allow hiding/showing items in extra step
+[website_sale_firstname2](website_sale_firstname2/) | 14.0.1.0.1 | Website sale firstname2
 [website_sale_force_address_step](website_sale_force_address_step/) | 14.0.1.0.1 | Never skip the address step. Disables 'express'-checkout
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 14.0.1.0.1 | Forces autoinvoice on quotations created from website_sale
 [website_sale_gender_membership](website_sale_gender_membership/) | 14.0.1.1.0 | Customer can fill in their gender at checkout
@@ -60,6 +61,7 @@ addon | version | summary
 [website_sale_mandatory_company](website_sale_mandatory_company/) | 14.0.1.1.0 | Make company mandatory in website sale checkout
 [website_sale_mandatory_zip](website_sale_mandatory_zip/) | 14.0.1.0.0 | Make zip code mandatory in website sale checkout
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 14.0.1.0.0 | Website sale membership privacy values
+[website_sale_name_mode_handling](website_sale_name_mode_handling/) | 14.0.1.0.1 | Website sale name mode handling
 [website_sale_optional_city](website_sale_optional_city/) | 14.0.1.0.0 | Make city optional in website sale checkout
 [website_sale_optional_country](website_sale_optional_country/) | 14.0.1.0.0 | Make country optional in website sale checkout
 [website_sale_optional_street](website_sale_optional_street/) | 14.0.1.0.0 | Make street optional in website sale checkout

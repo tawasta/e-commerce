@@ -23,7 +23,7 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def address(self, **kw):
-        if "submitted" in kw:
+        if "submitted" in kw and kw.get("firstname"):
             name = request.env["res.partner"]._get_computed_name(
                 kw.get("lastname"), kw.get("firstname")
             )
