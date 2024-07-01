@@ -25,6 +25,7 @@ addon | version | maintainers | summary
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 17.0.1.0.0 |  | Website Sale Maintenance mode
 [website_sale_payment_rules](website_sale_payment_rules/) | 17.0.1.0.0 |  | Website sale payment rules
 [website_sale_product_page_tax_calculation_info](website_sale_product_page_tax_calculation_info/) | 17.0.1.0.0 |  | Shows a note that country-based VAT is calculated at checkout
+[website_sale_remove_confirmation_status](website_sale_remove_confirmation_status/) | 17.0.1.0.0 |  | Removes confirmation status after completing an order
 [website_sale_settings](website_sale_settings/) | 17.0.1.0.0 |  | Various toggleable settings under editor's customize menu
 [website_sale_show_tax](website_sale_show_tax/) | 17.0.1.1.1 |  | Show taxes in product grid and product view
 [website_sale_split_name](website_sale_split_name/) | 17.0.1.0.0 |  | Split name field on address card to first and last name
