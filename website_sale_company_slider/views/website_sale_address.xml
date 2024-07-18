@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="address_b2b" inherit_id="website_sale.address_b2b">
+        <!-- Slider to show whether customer is private or company -->
+        <xpath expr="(//input[@name='name']/..)" position="before">
+            <t t-if="mode == ('new', 'billing')">
+                <div id="is_company_div" class="col-lg-12 slider-div">
+                    <label
+                        for="company"
+                        id="is_company_label_false"
+                        class="switch-label text-muted"
+                    >Private customer</label>
+                    <label class="switch">
+                        <input
+                            type="checkbox"
+                            name="company"
+                            id="company"
+                            t-att-checked="'company' in checkout and checkout['company']"
+                        />
+                        <div class="slider round" />
+                    </label>
+                    <label
+                        for="company"
+                        id="is_company_label_true"
+                        class="switch-label text-muted"
+                    >Company / Organization</label>
+
+                    <div id="company-toggle" class="alert alert-success">
+                        <div
+                            id="is_company_info"
+                            class="show-company d-none"
+                        >My company/organization is paying</div>
+                        <div
+                            id="not_is_company_info"
+                            class="hide-company d-none"
+                        >I am paying myself</div>
+                    </div>
+                </div>
+            </t>
+
+            <div class="clearfix" />
+
+        </xpath>
+    </template>
+</odoo>
