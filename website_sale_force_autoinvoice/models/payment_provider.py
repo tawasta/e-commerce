@@ -2,7 +2,6 @@ from odoo import fields, models
 
 
 class PaymentProvider(models.Model):
-
     _inherit = "payment.provider"
 
     auto_confirm = fields.Selection(

@@ -3,11 +3,11 @@
 import publicWidget from "@web/legacy/js/public/public_widget";
 
 publicWidget.registry.WebsiteSaleCompanySlider = publicWidget.Widget.extend({
-    selector: '.oe_website_sale',
+    selector: ".oe_website_sale",
     events: {
-        'click #company': '_onToggleCompanyFields',
+        "click #company": "_onToggleCompanyFields",
     },
-    
+
     start() {
         this._super(...arguments);
         this._showFields();
@@ -32,13 +32,23 @@ publicWidget.registry.WebsiteSaleCompanySlider = publicWidget.Widget.extend({
         }
 
         // Company customer
-        $("#is_company_label_true").toggleClass("text-primary", isCompany).toggleClass("text-muted", !isCompany);
+        $("#is_company_label_true")
+            .toggleClass("text-primary", isCompany)
+            .toggleClass("text-muted", !isCompany);
         // Private customer
-        $("#is_company_label_false").toggleClass("text-primary", !isCompany).toggleClass("text-muted", isCompany);
+        $("#is_company_label_false")
+            .toggleClass("text-primary", !isCompany)
+            .toggleClass("text-muted", isCompany);
 
         // Toggle fields as required by customer type
-        $("label[for='company_name']").toggleClass("label-optional font-weight-normal", !isCompany);
-        $("label[for='company_email']").toggleClass("label-optional font-weight-normal", !isCompany);
+        $("label[for='company_name']").toggleClass(
+            "label-optional font-weight-normal",
+            !isCompany
+        );
+        $("label[for='company_email']").toggleClass(
+            "label-optional font-weight-normal",
+            !isCompany
+        );
 
         // Toggle field visibility by customer type
         $("input[name='company_name']").parent().toggleClass("d-none", !isCompany);

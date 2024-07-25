@@ -42,7 +42,7 @@
     ],
     "assets": {
         "web.assets_frontend": [
-            "website_sale_invoice_transmit_method/static/src/js/checkout.js",
+            "website_sale_invoice_transmit_method/static/src/js/checkout.esm.js",
         ],
     },
     "demo": [],

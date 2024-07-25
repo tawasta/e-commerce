@@ -1,7 +1,9 @@
 from odoo import http
 from odoo.http import request
 
-from odoo.addons.website_sale_default_privacies.controllers.main import WebsiteSalePrivacy
+from odoo.addons.website_sale_default_privacies.controllers.main import (
+    WebsiteSalePrivacy,
+)
 
 
 class WebsiteSaleMembership(WebsiteSalePrivacy):
@@ -22,7 +24,9 @@ class WebsiteSaleMembership(WebsiteSalePrivacy):
                     .search([("default_in_website_sale_membership", "=", "True")])
                 )
                 if is_sale_membership_privacies:
-                    self._create_privacy_website_sale_membership(kw, order.partner_id, is_membership)
+                    self._create_privacy_website_sale_membership(
+                        kw, order.partner_id, is_membership
+                    )
 
             else:
                 is_sale_privacies = (
@@ -31,7 +35,9 @@ class WebsiteSaleMembership(WebsiteSalePrivacy):
                     .search([("default_in_website_sale", "=", "True")])
                 )
                 if is_sale_privacies:
-                    self._create_privacy_website_sale_membership(kw, order.partner_id, is_membership)
+                    self._create_privacy_website_sale_membership(
+                        kw, order.partner_id, is_membership
+                    )
         else:
             response = super(WebsiteSalePrivacy, self).address(**kw)
 

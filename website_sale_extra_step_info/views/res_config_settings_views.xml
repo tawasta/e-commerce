@@ -9,7 +9,11 @@
                 <setting>
                     <div class="content-group">
                         <div class="row mt8">
-                            <label class="col-lg-3" string="Website sale extra step: info text" for="website_sale_extra_step_text"/>
+                            <label
+                                class="col-lg-3"
+                                string="Website sale extra step: info text"
+                                for="website_sale_extra_step_text"
+                            />
                             <field name="website_sale_extra_step_text" />
                         </div>
                     </div>
