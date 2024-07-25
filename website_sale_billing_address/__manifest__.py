@@ -34,6 +34,6 @@
     ],
     "data": [
         "views/templates.xml",
-        #"views/res_config_settings.xml"
+        # "views/res_config_settings.xml"
     ],
 }

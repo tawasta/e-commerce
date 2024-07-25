@@ -2,7 +2,6 @@ from odoo import fields, models
 
 
 class ResConfigSettings(models.TransientModel):
-
     _inherit = "res.config.settings"
 
     allow_selecting_sibling_billing_addresses = fields.Boolean(

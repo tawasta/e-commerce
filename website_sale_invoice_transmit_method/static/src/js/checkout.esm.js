@@ -3,9 +3,9 @@
 import publicWidget from "@web/legacy/js/public/public_widget";
 
 publicWidget.registry.WebsiteSaleInvoiceTransmitMethod = publicWidget.Widget.extend({
-    selector: '.oe_website_sale',
+    selector: ".oe_website_sale",
     events: {
-        'change #customer-invoice-transmit-method': '_onToggleVisibility',
+        "change #customer-invoice-transmit-method": "_onToggleVisibility",
     },
 
     start() {
@@ -21,7 +21,9 @@ publicWidget.registry.WebsiteSaleInvoiceTransmitMethod = publicWidget.Widget.ext
         const $fieldRequired = $("input[name='field_required']");
         let fieldRequiredVal = $fieldRequired.val() || "";
 
-        const transmitType = $("#customer-invoice-transmit-method").find(":selected").data("code");
+        const transmitType = $("#customer-invoice-transmit-method")
+            .find(":selected")
+            .data("code");
         const speed = "slow";
 
         // Initial values
@@ -71,8 +73,7 @@ publicWidget.registry.WebsiteSaleInvoiceTransmitMethod = publicWidget.Widget.ext
 
 export default publicWidget.registry.WebsiteSaleInvoiceTransmitMethod;
 
-
-// odoo.define("website_sale_invoice_transmit_method.checkout", function () {
+// Odoo.define("website_sale_invoice_transmit_method.checkout", function () {
 //     "use strict";
 
 //     $(function () {

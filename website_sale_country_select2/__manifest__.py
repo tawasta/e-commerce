@@ -36,7 +36,7 @@
     ],
     "assets": {
         "web.assets_frontend": [
-            "website_sale_country_select2/static/src/js/custom.js",
+            "website_sale_country_select2/static/src/js/custom.esm.js",
         ],
     },
 }
