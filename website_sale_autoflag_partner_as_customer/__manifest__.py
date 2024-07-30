@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Tawasta
+#    Copyright 2024 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,24 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Country Select2",
-    "summary": "Changes country in customer address form to be select2",
+    "name": "eCommerce: Autoflag Buying Partners as Customers",
+    "summary": "Set the 'Is a Customer' flag automatically",
     "version": "17.0.1.0.0",
-    "category": "Website",
+    "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "website_sale",
-    ],
-    "data": [
-        "views/template.xml",
-    ],
-    "assets": {
-        "web.assets_frontend": [
-            "website_sale_country_select2/static/src/js/custom.esm.js",
-        ],
-    },
+    "depends": ["website_sale", "partner_manual_rank"],
+    "data": [],
 }

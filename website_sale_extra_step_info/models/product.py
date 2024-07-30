@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2022- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,25 +18,38 @@
 #
 ##############################################################################
 
-{
-    "name": "Website Sale Country Select2",
-    "summary": "Changes country in customer address form to be select2",
-    "version": "17.0.1.0.0",
-    "category": "Website",
-    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
-    "author": "Tawasta",
-    "license": "AGPL-3",
-    "application": False,
-    "installable": True,
-    "depends": [
-        "website_sale",
-    ],
-    "data": [
-        "views/template.xml",
-    ],
-    "assets": {
-        "web.assets_frontend": [
-            "website_sale_country_select2/static/src/js/custom.esm.js",
-        ],
-    },
-}
+# 1. Standard library imports:
+
+# 2. Known third party imports:
+
+# 3. Odoo imports (openerp):
+from odoo import fields, models
+
+# 4. Imports from Odoo modules:
+
+# 5. Local imports in the relative form:
+
+# 6. Unknown third party imports:
+
+
+class ProductPublicCategory(models.Model):
+    # 1. Private attributes
+    _inherit = "product.public.category"
+
+    # 2. Fields declaration
+    extra_step_text = fields.Html(
+        "Website Sale Extra Step: Info Text",
+        translate=True,
+    )
+
+    # 3. Default methods
+
+    # 4. Compute and search fields, in the same order that fields declaration
+
+    # 5. Constraints and onchanges
+
+    # 6. CRUD methods
+
+    # 7. Action methods
+
+    # 8. Business methods

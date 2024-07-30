@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2019 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Country Select2",
-    "summary": "Changes country in customer address form to be select2",
+    "name": "Website sale: remove confirmation status",
+    "summary": "Removes confirmation status after completing an order",
     "version": "17.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
@@ -31,12 +31,5 @@
     "depends": [
         "website_sale",
     ],
-    "data": [
-        "views/template.xml",
-    ],
-    "assets": {
-        "web.assets_frontend": [
-            "website_sale_country_select2/static/src/js/custom.esm.js",
-        ],
-    },
+    "data": ["views/templates.xml"],
 }

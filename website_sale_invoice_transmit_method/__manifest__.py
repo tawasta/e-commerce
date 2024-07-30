@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Country Select2",
-    "summary": "Changes country in customer address form to be select2",
+    "name": "Website Sale Account Invoice Transmit Method",
+    "summary": "Adds account invoice transmit method to checkout",
     "version": "17.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
@@ -28,15 +28,22 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
+    "external_dependencies": {
+        "python": [],
+        "bin": [],
+    },
     "depends": [
+        "account_invoice_transmit_method",
         "website_sale",
     ],
     "data": [
-        "views/template.xml",
+        "views/transmit_method.xml",
+        "views/website_template_checkout.xml",
     ],
     "assets": {
         "web.assets_frontend": [
-            "website_sale_country_select2/static/src/js/custom.esm.js",
+            "website_sale_invoice_transmit_method/static/src/js/checkout.esm.js",
         ],
     },
+    "demo": [],
 }

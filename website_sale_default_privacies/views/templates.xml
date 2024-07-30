@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="address"
+        inherit_id="website_sale.address"
+        name="Default privacy values"
+        customize_show="True"
+        active="True"
+    >
+
+        <xpath expr="(//select[@name='state_id']/..)" position="after">
+            <div id="web-privacy" class="row col-12">
+               <t
+                    t-set="privacies"
+                    t-value="request.env['privacy.activity'].sudo().search([('default_in_website_sale', '=', True)])"
+                />
+               <t t-if="privacies">
+                    <t t-if="mode == ('new', 'billing')">
+                        <t t-foreach="privacies" t-as="p">
+                            <div class="form-group col-md-6">
+                                <input
+                                    type="checkbox"
+                                    t-attf-name="privacy_#{str(p.id)}"
+                                />
+                                <t t-esc="p.sudo().name" />
+                            </div>
+                        </t>
+                    </t>
+               </t>
+           </div>
+        </xpath>
+    </template>
+</odoo>

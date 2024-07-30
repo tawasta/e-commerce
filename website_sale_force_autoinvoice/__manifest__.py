@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2018- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,9 +19,9 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Country Select2",
-    "summary": "Changes country in customer address form to be select2",
-    "version": "17.0.1.0.0",
+    "name": "Force autoinvoice in website sale",
+    "summary": "Forces autoinvoice on quotations created from website_sale",
+    "version": "17.0.1.0.1",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
@@ -30,13 +30,9 @@
     "installable": True,
     "depends": [
         "website_sale",
+        "payment",
     ],
     "data": [
-        "views/template.xml",
+        "views/payment_acquired_view.xml",
     ],
-    "assets": {
-        "web.assets_frontend": [
-            "website_sale_country_select2/static/src/js/custom.esm.js",
-        ],
-    },
 }

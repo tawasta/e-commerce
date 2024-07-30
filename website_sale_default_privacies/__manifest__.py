@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2020- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,24 +19,26 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Country Select2",
-    "summary": "Changes country in customer address form to be select2",
+    "name": "Website sale default privacy values",
+    "summary": "Website sale default privacy values",
     "version": "17.0.1.0.0",
-    "category": "Website",
+    "category": "Futural EDU",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
+    "external_dependencies": {
+        "python": [],
+        "bin": [],
+    },
     "depends": [
         "website_sale",
+        "privacy",
     ],
     "data": [
-        "views/template.xml",
+        "views/privacy_activity.xml",
+        "views/templates.xml",
     ],
-    "assets": {
-        "web.assets_frontend": [
-            "website_sale_country_select2/static/src/js/custom.esm.js",
-        ],
-    },
+    "demo": [],
 }

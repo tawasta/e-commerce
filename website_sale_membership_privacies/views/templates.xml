@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="address_membership_privacies"
+        inherit_id="website_sale_default_privacies.address"
+        name="Membership privacy values"
+        customize_show="True"
+        active="True"
+    >
+
+        <!-- Disable the original t-set statement -->
+        <xpath expr="//t[@t-set='privacies']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+
+        <!-- Add the new logic before the original t-set statement -->
+        <xpath expr="//t[@t-set='privacies']" position="before">
+            <t t-set="order_have_membership" t-value="False" />
+            <t t-foreach="website_sale_order.order_line" t-as="line">
+                <t t-if="line.product_id.membership">
+                    <t t-set="order_have_membership" t-value="True" />
+                </t>
+            </t>
+            <t t-if="order_have_membership">
+                <t
+                    t-set="privacies"
+                    t-value="request.env['privacy.activity'].sudo().search([('default_in_website_sale_membership', '=', True)])"
+                />
+            </t>
+            <t t-else="">
+                <t
+                    t-set="privacies"
+                    t-value="request.env['privacy.activity'].sudo().search([('default_in_website_sale', '=', True)])"
+                />
+            </t>
+        </xpath>
+    </template>
+</odoo>
