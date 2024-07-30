@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="extra_info" inherit_id="website_sale.extra_info" priority="100">
+        <xpath expr="//textarea[@name='Give us your feedback']" position="replace">
+            <textarea
+                class="form-control o_website_form_input"
+                rows="4"
+                name="description"
+            ><t t-esc="order.description" /></textarea>
+        </xpath>
+    </template>
+
+    <template id="snippet_options" inherit_id="website_sale.snippet_options">
+        <xpath
+            expr="//we-checkbox[@data-customize-website-views='website_sale.address_b2b']"
+            position="after"
+        >
+            <we-checkbox
+                string="Show order description"
+                data-customize-website-views="website_sale_extra_step_content_to_sale_description.extra_info"
+                data-no-preview="true"
+                data-reload="/"
+            />
+        </xpath>
+    </template>
+</odoo>

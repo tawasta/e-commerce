@@ -25,6 +25,7 @@ addon | version | maintainers | summary
 [website_sale_disable_qty_in_cart](website_sale_disable_qty_in_cart/) | 17.0.1.0.0 |  | Helper module to disable changing product quantity in cart
 [website_sale_domicile](website_sale_domicile/) | 17.0.1.0.1 |  | Adds domicile to website checkout form
 [website_sale_edicode](website_sale_edicode/) | 17.0.1.0.1 |  | Adds EDI code to website checkout form
+[website_sale_extra_step_content_to_sale_description](website_sale_extra_step_content_to_sale_description/) | 17.0.1.0.0 |  | Extra Step Content to SO description
 [website_sale_extra_step_content_to_sale_order_note](website_sale_extra_step_content_to_sale_order_note/) | 17.0.1.0.1 |  | Extra Step Content to SO note
 [website_sale_extra_step_info](website_sale_extra_step_info/) | 17.0.1.0.0 |  | Extra step info text: global and publica category
 [website_sale_extra_step_replace_feedback_text](website_sale_extra_step_replace_feedback_text/) | 17.0.1.0.0 |  | Replace extra step feedback text to more information
