@@ -21,7 +21,7 @@
 {
     "name": "Force autoinvoice in website sale",
     "summary": "Forces autoinvoice on quotations created from website_sale",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.0.2",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
@@ -33,6 +33,6 @@
         "payment",
     ],
     "data": [
-        "views/payment_acquired_view.xml",
+        "views/payment_provider_view.xml",
     ],
 }

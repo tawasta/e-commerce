@@ -5,10 +5,10 @@
         <field name="model">payment.provider</field>
         <field name="inherit_id" ref="payment.payment_provider_form" />
         <field name="arch" type="xml">
-            <field name="qr_code" position="after">
+            <xpath expr="//group[@name='payment_followup']" position="inside">
                 <field name="auto_confirm" />
                 <field name="auto_create_invoice" />
-            </field>
+            </xpath>
         </field>
     </record>
 </odoo>

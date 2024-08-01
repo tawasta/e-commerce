@@ -30,7 +30,7 @@ addon | version | maintainers | summary
 [website_sale_extra_step_info](website_sale_extra_step_info/) | 17.0.1.0.0 |  | Extra step info text: global and publica category
 [website_sale_extra_step_replace_feedback_text](website_sale_extra_step_replace_feedback_text/) | 17.0.1.0.0 |  | Replace extra step feedback text to more information
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 17.0.1.0.0 |  | Allow hiding/showing items in extra step
-[website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 17.0.1.0.1 |  | Forces autoinvoice on quotations created from website_sale
+[website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 17.0.1.0.2 |  | Forces autoinvoice on quotations created from website_sale
 [website_sale_interested_product](website_sale_interested_product/) | 17.0.2.0.0 |  | Add a title above the alternative products
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 17.0.1.0.0 |  | Adds account invoice transmit method to checkout
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 17.0.1.0.0 |  | Website Sale Maintenance mode
