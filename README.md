@@ -81,6 +81,7 @@ addon | version | summary
 [website_sale_search](website_sale_search/) | 14.0.1.0.0 | Website Sale - Search
 [website_sale_settings](website_sale_settings/) | 14.0.1.0.5 | Website sale toggleable settings under customize menu
 [website_sale_shipping_same](website_sale_shipping_same/) | 14.0.1.0.1 | Address change in website sale: Hide checkbox to use same shipping address
+[website_sale_shop_routes_require_login](website_sale_shop_routes_require_login/) | 14.0.1.0.0 | Authentication is required to access shop pages
 [website_sale_show_product_code](website_sale_show_product_code/) | 14.0.1.0.0 | Show the product's internal reference on product page
 [website_sale_show_sale_delay](website_sale_show_sale_delay/) | 14.0.1.0.2 | Website Sale Show Sale Delay
 [website_sale_slider_only_person](website_sale_slider_only_person/) | 14.0.1.0.1 | Website sale slider only person
