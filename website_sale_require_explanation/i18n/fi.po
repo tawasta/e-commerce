@@ -1,0 +1,65 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_require_explanation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240711\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-05 11:28+0000\n"
+"PO-Revision-Date: 2024-08-05 14:30+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.3\n"
+
+#. module: website_sale_require_explanation
+#. odoo-python
+#: code:addons/website_sale_require_explanation/controllers/main.py:0
+#, python-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+#. module: website_sale_require_explanation
+#: model:ir.model.fields,field_description:website_sale_require_explanation.field_netvisor_product__requires_explanation_help
+#: model:ir.model.fields,field_description:website_sale_require_explanation.field_product_product__requires_explanation_help
+#: model:ir.model.fields,field_description:website_sale_require_explanation.field_product_template__requires_explanation_help
+msgid "Explanation text"
+msgstr "Seliteteksti"
+
+#. module: website_sale_require_explanation
+#. odoo-python
+#: code:addons/website_sale_require_explanation/controllers/main.py:0
+#, python-format
+msgid "Needs explanation"
+msgstr "Vaatii selitteen"
+
+#. module: website_sale_require_explanation
+#. odoo-python
+#: code:addons/website_sale_require_explanation/controllers/main.py:0
+#, python-format
+msgid "Please return to the previous step and add an explanation"
+msgstr "Palaa edelliseen vaiheeseen lisäämään selite"
+
+#. module: website_sale_require_explanation
+#: model:ir.model,name:website_sale_require_explanation.model_product_template
+msgid "Product"
+msgstr "Tuote"
+
+#. module: website_sale_require_explanation
+#: model:ir.model.fields,field_description:website_sale_require_explanation.field_netvisor_product__requires_explanation
+#: model:ir.model.fields,field_description:website_sale_require_explanation.field_product_product__requires_explanation
+#: model:ir.model.fields,field_description:website_sale_require_explanation.field_product_template__requires_explanation
+msgid "Requires an explanation"
+msgstr "Vaatii selitteen"
+
+#. module: website_sale_require_explanation
+#: model:ir.model.fields,help:website_sale_require_explanation.field_netvisor_product__requires_explanation_help
+#: model:ir.model.fields,help:website_sale_require_explanation.field_product_product__requires_explanation_help
+#: model:ir.model.fields,help:website_sale_require_explanation.field_product_template__requires_explanation_help
+msgid "Show this help text if explanation is missing for this product"
+msgstr "Näytä tämä teksti, jos tilaukselta puuttuu selite"
