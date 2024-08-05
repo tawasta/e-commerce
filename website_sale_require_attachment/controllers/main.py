@@ -18,17 +18,23 @@ class WebsiteSaleRequireAttachment(WebsiteSale):
         if requires_attachment and not has_attachment:
             # Order requires an attachment, but doesn't have one
             lines = order.order_line.filtered(
-                lambda line: line.product_id.requires_attachment
+                lambda l: l.product_id.requires_attachment
             )
-            product_names = ",".join(lines.mapped("product_id.name"))
+            errors = []
+            for line in lines:
+                product = line.product_id
+                explanation = product.requires_attachment_help or _(
+                    "Needs attachment"
+                )
+
+                errors.append(_("%s: %s", product.name, explanation))
+
+            error_text = ", ".join(errors)
 
             values["errors"].append(
                 (
-                    _("Please return to previous step and add an attachment"),
-                    _(
-                        "You didn't provide an attachment for products: %s",
-                        product_names,
-                    ),
+                    _("Please return to the previous step and add an attachment"),
+                    error_text,
                 )
             )
 

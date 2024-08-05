@@ -7,6 +7,10 @@
         <field name="arch" type="xml">
             <field name="website_ribbon_id" position="after">
                 <field name="requires_attachment" widget="boolean_toggle" />
+                <field
+                    name="requires_attachment_help"
+                    invisible="not requires_attachment"
+                />
             </field>
         </field>
     </record>
