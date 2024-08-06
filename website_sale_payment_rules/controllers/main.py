@@ -1,8 +1,8 @@
 import logging
-import re
 
 from odoo import http
 from odoo.http import request
+from odoo.osv import expression
 
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
@@ -10,78 +10,80 @@ _logger = logging.getLogger(__name__)
 
 
 class WebsiteSale(WebsiteSale):
-    def _get_shop_payment_values(self, order, **kwargs):
+    def _get_shop_payment_values(self, order, **kwargs):  # noqa: max-complexity: 23
         values = super(WebsiteSale, self)._get_shop_payment_values(order, **kwargs)
-        self._process_order_lines(order, values)
-        # self._update_payment_acquirers(order, values)
-        logging.info(values)
-        return values
-
-    def _process_order_lines(self, order, values):
-        flags = {
-            "allowed_methods": [],
-            "check_mandatory_products": False,
-            "check_attachment": False,
-            "check_explanation": False,
-            "check_category_product": False,
-            "need_company_info": False,
-            "product_categ_list": [],
-            "mandatory_products_list": [],
-        }
-
+        only_invoice = False
+        check_mandatory_products = False
+        mandatory_products_list = []
+        companies = []
         for line in order.order_line:
-            self._check_order_line_flags(line, flags)
+            if line.product_id.mandatory_products:
+                check_mandatory_products = True
 
-        self._update_values_based_on_flags(order, flags, values)
+            companies.append(line.product_id.company_id)
 
-    def _check_order_line_flags(self, line, flags):
-        product = line.product_id
-        if product.allowed_payment_method_ids:
-            flags["allowed_methods"].extend(product.allowed_payment_method_ids.ids)
-        if product.mandatory_products:
-            flags["check_mandatory_products"] = True
-        if product.requires_attachment:
-            flags["check_attachment"] = True
-        if product.requires_explanation:
-            flags["check_explanation"] = True
-        if (
-            request.env.user.id == request.env.ref("base.public_user").id
-            and product.required_product_category_id
-        ):
-            flags["check_category_product"] = True
-            flags["product_categ_list"].append(product.required_product_category_id)
+        result = all(element == companies[0] for element in companies)
+        if not result:
+            only_invoice = True
+        if result:
+            company_id = companies[0]
 
-    def _update_values_based_on_flags(self, order, flags, values):
-        if flags["check_mandatory_products"]:
-            mandatory_products_list = []
+        if check_mandatory_products:
             for li in order.order_line:
                 if li.product_id.mandatory_products:
                     for mp in li.product_id.mandatory_products:
                         mandatory_products_list.append(mp)
-            values["mandatory_products_list"] = mandatory_products_list
+            values.update({"mandatory_products_list": mandatory_products_list})
 
-        if flags["check_category_product"]:
-            remaining_categories = set(flags["product_categ_list"])
-            for product_line in order.order_line:
-                for p_categ in product_line.product_id.public_categ_ids:
-                    remaining_categories.discard(p_categ)
-            values["product_categ_list"] = list(remaining_categories)
-
-        if flags["check_attachment"] and order.message_attachment_count < 1:
-            values["need_attachment"] = True
-
-        cleaned_note = re.sub("<[^<]+?>", "", order.note).strip()
-        if flags["check_explanation"] and not cleaned_note:
-            values["need_explanation"] = True
-
-        if flags["need_company_info"]:
-            values["need_company_info"] = True
-
-        allowed_methods_ids = set(flags["allowed_methods"])
-        if allowed_methods_ids:
-            values["payment_methods_sudo"] = request.env["payment.method"].browse(
-                list(allowed_methods_ids)
+        if only_invoice:
+            domain = expression.AND(
+                [
+                    [
+                        ("provider", "!=", "paytrail"),
+                        "&",
+                        ("state", "in", ["enabled", "test"]),
+                        ("company_id", "=", order.company_id.id),
+                    ],
+                    [
+                        "|",
+                        ("website_id", "=", False),
+                        ("website_id", "=", request.website.id),
+                    ],
+                    [
+                        "|",
+                        ("country_ids", "=", False),
+                        ("country_ids", "in", [order.partner_id.country_id.id]),
+                    ],
+                ]
             )
+
+        else:
+            groups_ids = request.env.user.groups_id
+            domain = expression.AND(
+                [
+                    [
+                        ("state", "in", ["enabled", "test"]),
+                        ("company_id", "=", company_id.id),
+                    ],
+                    [
+                        "|",
+                        ("website_id", "=", False),
+                        ("website_id", "=", request.website.id),
+                    ],
+                    [
+                        "|",
+                        ("country_ids", "=", False),
+                        ("country_ids", "in", [order.partner_id.country_id.id]),
+                    ],
+                    [
+                        "|",
+                        ("allowed_group_ids", "=", False),
+                        ("allowed_group_ids", "in", groups_ids.ids),
+                    ],
+                ]
+            )
+
+        return values
 
     @http.route()
     def payment_confirmation(self, **post):

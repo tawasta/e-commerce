@@ -5,11 +5,9 @@
         <field name="model">payment.acquirer</field>
         <field name="inherit_id" ref="payment.acquirer_form" />
         <field name="arch" type="xml">
-<!--
             <field name="journal_id" position="after">
                 <field name="allowed_group_ids" widget="many2many_tags" />
             </field>
--->
         </field>
     </record>
 </odoo>
