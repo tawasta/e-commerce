@@ -28,8 +28,8 @@ msgstr "%s: %s"
 #: model:ir.model.fields,field_description:website_sale_require_explanation.field_netvisor_product__requires_explanation_help
 #: model:ir.model.fields,field_description:website_sale_require_explanation.field_product_product__requires_explanation_help
 #: model:ir.model.fields,field_description:website_sale_require_explanation.field_product_template__requires_explanation_help
-msgid "Explanation text"
-msgstr "Seliteteksti"
+msgid "Explanation help"
+msgstr "Selitteen ohje"
 
 #. module: website_sale_require_explanation
 #. odoo-python

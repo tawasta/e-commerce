@@ -33,11 +33,15 @@ addon | version | maintainers | summary
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 17.0.1.0.2 |  | Forces autoinvoice on quotations created from website_sale
 [website_sale_interested_product](website_sale_interested_product/) | 17.0.2.0.0 |  | Add a title above the alternative products
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 17.0.1.0.0 |  | Adds account invoice transmit method to checkout
+[website_sale_limit_payment_providers](website_sale_limit_payment_providers/) | 17.0.1.0.0 |  | Limit payment providers by product
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 17.0.1.0.0 |  | Website Sale Maintenance mode
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 17.0.1.0.0 |  | Website sale membership privacy values
-[website_sale_payment_rules](website_sale_payment_rules/) | 17.0.1.0.0 |  | Website sale payment rules
 [website_sale_product_page_tax_calculation_info](website_sale_product_page_tax_calculation_info/) | 17.0.1.0.0 |  | Shows a note that country-based VAT is calculated at checkout
 [website_sale_remove_confirmation_status](website_sale_remove_confirmation_status/) | 17.0.1.0.0 |  | Removes confirmation status after completing an order
+[website_sale_require_attachment](website_sale_require_attachment/) | 17.0.1.0.0 |  | Require an attachment on checkout
+[website_sale_require_company](website_sale_require_company/) | 17.0.1.0.0 |  | Require company info on checkout
+[website_sale_require_explanation](website_sale_require_explanation/) | 17.0.1.0.0 |  | Require an explanation (note) on checkout
+[website_sale_require_product_category](website_sale_require_product_category/) | 17.0.1.0.0 |  | Require a product category on checkout
 [website_sale_settings](website_sale_settings/) | 17.0.1.0.0 |  | Various toggleable settings under editor's customize menu
 [website_sale_show_tax](website_sale_show_tax/) | 17.0.1.1.1 |  | Show taxes in product grid and product view
 [website_sale_split_name](website_sale_split_name/) | 17.0.1.0.0 |  | Split name field on address card to first and last name
@@ -54,6 +58,7 @@ Unported addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 17.0.1.0.1 (unported) |  | Hides the default '30-day money-back quarantee...' text (deprecated)
+[website_sale_payment_rules](website_sale_payment_rules/) | 17.0.1.0.0 (unported) |  | Website sale payment rules
 [website_sale_product_description](website_sale_product_description/) | 17.0.1.0.1 (unported) |  | Show website product description in backend (deprecated)
 
 [//]: # (end addons)

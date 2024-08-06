@@ -23,7 +23,7 @@ class WebsiteSaleRequireExplanation(WebsiteSale):
         if requires_explanation and no_explanation:
             # Order requires an explanation, but doesn't have one
             lines = order.order_line.filtered(
-                lambda l: l.product_id.requires_explanation
+                lambda x: x.product_id.requires_explanation
             )
             errors = []
             for line in lines:
