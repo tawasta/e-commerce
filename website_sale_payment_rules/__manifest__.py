@@ -27,12 +27,13 @@
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
-    "installable": True,
+    # This module is not supposed to be ported to 17.0!
+    # It has been split to multiple standalone modules
+    "installable": False,
     "depends": [
-        # "sale_create_membership",
+        "sale_create_membership",
         "website_sale",
-        # "payment_paytrail",
-        # "website_sale_extra_step_content_to_sale_order_note",
+        "payment_paytrail",
     ],
     "data": [
         "views/payment_acquirer_view.xml",
