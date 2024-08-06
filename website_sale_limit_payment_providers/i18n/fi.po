@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* website_sale_require_explanation
+# 	* website_sale_limit_payment_providers
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0-20240711\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-05 11:28+0000\n"
-"PO-Revision-Date: 2024-08-05 14:30+0300\n"
+"POT-Creation-Date: 2024-08-06 10:28+0000\n"
+"PO-Revision-Date: 2024-08-06 13:29+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -17,49 +17,21 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.3\n"
 
-#. module: website_sale_require_explanation
-#. odoo-python
-#: code:addons/website_sale_require_explanation/controllers/main.py:0
-#, python-format
-msgid "%s: %s"
-msgstr "%s: %s"
+#. module: website_sale_limit_payment_providers
+#: model:ir.model.fields,field_description:website_sale_limit_payment_providers.field_netvisor_product__allowed_payment_provider_ids
+#: model:ir.model.fields,field_description:website_sale_limit_payment_providers.field_product_product__allowed_payment_provider_ids
+#: model:ir.model.fields,field_description:website_sale_limit_payment_providers.field_product_template__allowed_payment_provider_ids
+msgid "Allowed payment providers"
+msgstr "Sallitut maksutavat"
 
-#. module: website_sale_require_explanation
-#: model:ir.model.fields,field_description:website_sale_require_explanation.field_netvisor_product__requires_explanation_help
-#: model:ir.model.fields,field_description:website_sale_require_explanation.field_product_product__requires_explanation_help
-#: model:ir.model.fields,field_description:website_sale_require_explanation.field_product_template__requires_explanation_help
-msgid "Explanation help"
-msgstr "Selitteen ohje"
+#. module: website_sale_limit_payment_providers
+#: model:ir.model.fields,help:website_sale_limit_payment_providers.field_netvisor_product__allowed_payment_provider_ids
+#: model:ir.model.fields,help:website_sale_limit_payment_providers.field_product_product__allowed_payment_provider_ids
+#: model:ir.model.fields,help:website_sale_limit_payment_providers.field_product_template__allowed_payment_provider_ids
+msgid "Leaving this empty will allow any provider to be used"
+msgstr "Jos tämän jättää tyhjäksi, tuotteen voi maksaa millä tahansa maksutavalla"
 
-#. module: website_sale_require_explanation
-#. odoo-python
-#: code:addons/website_sale_require_explanation/controllers/main.py:0
-#, python-format
-msgid "Needs explanation"
-msgstr "Vaatii selitteen"
-
-#. module: website_sale_require_explanation
-#. odoo-python
-#: code:addons/website_sale_require_explanation/controllers/main.py:0
-#, python-format
-msgid "Please return to the previous step and add an explanation"
-msgstr "Palaa edelliseen vaiheeseen lisäämään selite"
-
-#. module: website_sale_require_explanation
-#: model:ir.model,name:website_sale_require_explanation.model_product_template
+#. module: website_sale_limit_payment_providers
+#: model:ir.model,name:website_sale_limit_payment_providers.model_product_template
 msgid "Product"
 msgstr "Tuote"
-
-#. module: website_sale_require_explanation
-#: model:ir.model.fields,field_description:website_sale_require_explanation.field_netvisor_product__requires_explanation
-#: model:ir.model.fields,field_description:website_sale_require_explanation.field_product_product__requires_explanation
-#: model:ir.model.fields,field_description:website_sale_require_explanation.field_product_template__requires_explanation
-msgid "Requires an explanation"
-msgstr "Vaatii selitteen"
-
-#. module: website_sale_require_explanation
-#: model:ir.model.fields,help:website_sale_require_explanation.field_netvisor_product__requires_explanation_help
-#: model:ir.model.fields,help:website_sale_require_explanation.field_product_product__requires_explanation_help
-#: model:ir.model.fields,help:website_sale_require_explanation.field_product_template__requires_explanation_help
-msgid "Show this help text if explanation is missing for this product"
-msgstr "Näytä tämä teksti, jos tilaukselta puuttuu selite"
