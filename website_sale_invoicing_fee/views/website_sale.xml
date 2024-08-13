@@ -30,7 +30,7 @@
                         >
                             <t
                                 t-set="tax_added"
-                                t-value="fpos.map_tax(taxes, acq.product_id, website_sale_order.partner_shipping_id) if fpos else taxes.amount"
+                                t-value="fpos.map_tax(taxes, acq.product_id, website_sale_order.partner_shipping_id).amount if fpos else taxes.amount"
                             />
                         </t>
                     </t>
