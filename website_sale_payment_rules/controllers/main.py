@@ -129,15 +129,21 @@ class WebsiteSale(WebsiteSale):
             )
 
         if allowed_acquirers:
-            acquirers_list = []
+            # All providers in products
+            acquirer_ids = order.order_line.mapped(
+                "product_id.allowed_payment_acquired"
+            ).ids
             for line in order.order_line:
+                # If there is no limit on allowed providers, do nothing
                 if line.product_id.allowed_payment_acquired:
-                    for pa in line.product_id.allowed_payment_acquired:
-                        acquirers_list.append(pa.id)
+                    # Exclude providers that are missing from allowed providers
+                    acquirer_ids = [
+                        x
+                        for x in acquirer_ids
+                        if x in line.product_id.allowed_payment_acquired.ids
+                    ]
 
-            unique_acquirers = list(set(acquirers_list))
-
-            domain = expression.AND([[("id", "in", unique_acquirers)]])
+            domain = expression.AND([[("id", "in", acquirer_ids)]])
         acquirers = request.env["payment.acquirer"].search(domain)
         values["acquirers"] = acquirers
 
