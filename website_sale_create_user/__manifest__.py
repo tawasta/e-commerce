@@ -21,7 +21,7 @@
 {
     "name": "Website sale create user",
     "summary": "Website sale create user",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
@@ -31,5 +31,7 @@
     "depends": [
         "website_sale",
     ],
-    "data": [],
+    "data": [
+        "views/product_category_view.xml",
+    ],
 }
