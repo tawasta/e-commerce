@@ -50,17 +50,29 @@ class SaleOrder(models.Model):
         )
         if not existing_user:
             # Create a new portal wizard for granting access
-            portal_wizard = self.env["portal.wizard"].sudo().create({
-                "partner_ids": [partner.id],  # Use the partner ID directly
-                "sale_order_id": self.id,
-            })
+            portal_wizard = (
+                self.env["portal.wizard"]
+                .sudo()
+                .create(
+                    {
+                        "partner_ids": [partner.id],  # Use the partner ID directly
+                        "sale_order_id": self.id,
+                    }
+                )
+            )
 
             # Get wizard user details for the portal access
-            portal_user = self.env["portal.wizard.user"].sudo().create({
-                "wizard_id": portal_wizard.id,
-                "partner_id": partner.id,
-                "email": partner.email,
-            })
+            portal_user = (
+                self.env["portal.wizard.user"]
+                .sudo()
+                .create(
+                    {
+                        "wizard_id": portal_wizard.id,
+                        "partner_id": partner.id,
+                        "email": partner.email,
+                    }
+                )
+            )
 
             # Grant portal access and send the invitation email
             portal_user.action_grant_access()

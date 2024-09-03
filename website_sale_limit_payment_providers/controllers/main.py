@@ -19,7 +19,7 @@ class WebsiteSalePaymentProviders(WebsiteSale):
                     for x in providers_sudo
                     if x in line.product_id.allowed_payment_provider_ids
                 ]
-                providers_sudo = next(iter(providers_list), payment_provider)
+                providers_sudo += next(iter(providers_list), payment_provider)
 
         if providers_sudo != values["providers_sudo"]:
             payment_method = request.env["payment.method"].sudo()

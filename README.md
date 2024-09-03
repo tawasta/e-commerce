@@ -19,7 +19,7 @@ addon | version | maintainers | summary
 [website_sale_company_email](website_sale_company_email/) | 17.0.1.0.0 |  | Add different emails for ecommerce user and company
 [website_sale_company_slider](website_sale_company_slider/) | 17.0.1.0.0 |  | Slider to checkout
 [website_sale_country_select2](website_sale_country_select2/) | 17.0.1.0.0 |  | Changes country in customer address form to be select2
-[website_sale_create_user](website_sale_create_user/) | 17.0.1.0.0 |  | Website sale create user
+[website_sale_create_user](website_sale_create_user/) | 17.0.1.0.1 |  | Website sale create user
 [website_sale_default_country](website_sale_default_country/) | 17.0.1.0.0 |  | Website Sale Default Country
 [website_sale_default_privacies](website_sale_default_privacies/) | 17.0.1.0.0 |  | Website sale default privacy values
 [website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop
@@ -34,7 +34,7 @@ addon | version | maintainers | summary
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 17.0.1.0.2 |  | Forces autoinvoice on quotations created from website_sale
 [website_sale_interested_product](website_sale_interested_product/) | 17.0.2.0.0 |  | Add a title above the alternative products
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 17.0.1.0.0 |  | Adds account invoice transmit method to checkout
-[website_sale_limit_payment_providers](website_sale_limit_payment_providers/) | 17.0.1.0.0 |  | Limit payment providers by product
+[website_sale_limit_payment_providers](website_sale_limit_payment_providers/) | 17.0.1.0.1 |  | Limit payment providers by product
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 17.0.1.0.0 |  | Website Sale Maintenance mode
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 17.0.1.0.0 |  | Website sale membership privacy values
 [website_sale_product_page_tax_calculation_info](website_sale_product_page_tax_calculation_info/) | 17.0.1.0.0 |  | Shows a note that country-based VAT is calculated at checkout
