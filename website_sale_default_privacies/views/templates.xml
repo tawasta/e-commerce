@@ -9,7 +9,7 @@
     >
 
         <xpath expr="(//select[@name='state_id']/..)" position="after">
-            <div id="web-privacy" class="row col-12">
+            <div id="web-privacy" class="col-12">
                <t
                     t-set="privacies"
                     t-value="request.env['privacy.activity'].sudo().search([('default_in_website_sale', '=', True)])"
@@ -17,9 +17,10 @@
                <t t-if="privacies">
                     <t t-if="mode == ('new', 'billing')">
                         <t t-foreach="privacies" t-as="p">
-                            <div class="form-group col-md-6">
+                            <div class="form-check form-switch mt-2 mb-3">
                                 <input
                                     type="checkbox"
+                                    class="form-check-input mr8"
                                     t-attf-name="privacy_#{str(p.id)}"
                                 />
                                 <t t-esc="p.sudo().name" />

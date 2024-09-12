@@ -30,7 +30,6 @@
     "installable": True,
     "depends": [
         "website_sale",
-        "website_sale_business_code",
         "website_sale_company_email",
         "website_sale_edicode",
     ],

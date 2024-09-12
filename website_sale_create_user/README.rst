@@ -6,7 +6,16 @@
 Website sale create user
 ========================
 
-* When the order is confirmed, a user is created for the contact if it does not already exist.
+* This Odoo module enhances the functionality of sales and product management by integrating user creation based on product category settings directly within the sales order workflow. It includes customization options for products to trigger user creation and attach specific documents when a sale is confirmed.
+
+* When a sales order is confirmed, the system checks each product line to determine if the associated product category has user creation enabled. If at least one product qualifies, and the sales team matches the configured e-commerce team (if the setting is enabled), the module will proceed to create a user.
+
+Features
+========
+
+* User Creation Control by Product Category: Set whether users can be created from the sale of products within specific categories.
+* Attachment Management: Attach specific documents to the user creation process, managed at the product category level.
+* Automatic User Creation: Automatically create portal users when specific conditions are met in the sales order process.
 
 Configuration
 =============
@@ -14,7 +23,7 @@ Configuration
 
 Usage
 =====
-\-
+* After configuration, the module operates automatically upon the confirmation of sales orders. Ensure that your sales team is aware of the new features and how they affect sales and user management processes.
 
 Known issues / Roadmap
 ======================
