@@ -5,6 +5,8 @@
         id="address"
         name="Address Management headers"
         inherit_id="website_sale.address"
+        customize_show="True"
+        active="True"
     >
         <xpath expr="(//input[@name='name']/..)" position="before">
             <h3 class="col-12" id="user-information-header">User information</h3>
@@ -20,9 +22,9 @@
     </template>
 
     <template
-        id="address-guidance"
+        id="address-guidance-user"
         inherit_id="website_sale_company_email.address"
-        name="Show address guidance"
+        name="Show address user guidance"
         customize_show="True"
         active="True"
     >
@@ -45,6 +47,15 @@
                 </button>
             </div>
         </xpath>
+    </template>
+
+    <template
+        id="address-guidance-payer"
+        inherit_id="website_sale_company_email.address"
+        name="Show address payer guidance"
+        customize_show="True"
+        active="True"
+    >
         <xpath expr="//h3[@id='payer-information-header']" position="after">
             <div
                 class="alert alert-info text-center alert-dismissible fade show from-group col-12"
