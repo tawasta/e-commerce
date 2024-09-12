@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="address" inherit_id="website_sale.address" name="Show domicile">
-        <xpath expr="//select[@name='state_id']/.." position="after">
+        <xpath expr="//input[@name='street']/.." position="before">
             <div
                 t-attf-class="form-group #{error.get('domicile') and 'o_has_error' or ''} col-md-8 div_domicile"
                 id="domicile_div"
