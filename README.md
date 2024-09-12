@@ -16,7 +16,7 @@ addon | version | maintainers | summary
 [website_sale_autoflag_partner_as_customer](website_sale_autoflag_partner_as_customer/) | 17.0.1.0.0 |  | Set the 'Is a Customer' flag automatically
 [website_sale_billing_address](website_sale_billing_address/) | 17.0.1.0.0 |  | Website customer can select a billing address
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 17.0.1.0.0 |  | eCommerce tax in cart lines
-[website_sale_company_email](website_sale_company_email/) | 17.0.1.0.0 |  | Add different emails for ecommerce user and company
+[website_sale_company_email](website_sale_company_email/) | 17.0.1.0.1 |  | Add different emails for ecommerce user and company
 [website_sale_company_slider](website_sale_company_slider/) | 17.0.1.0.0 |  | Slider to checkout
 [website_sale_country_select2](website_sale_country_select2/) | 17.0.1.0.0 |  | Changes country in customer address form to be select2
 [website_sale_create_user](website_sale_create_user/) | 17.0.1.0.1 |  | Website sale create user
@@ -24,7 +24,7 @@ addon | version | maintainers | summary
 [website_sale_default_privacies](website_sale_default_privacies/) | 17.0.1.0.0 |  | Website sale default privacy values
 [website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop
 [website_sale_disable_qty_in_cart](website_sale_disable_qty_in_cart/) | 17.0.1.0.0 |  | Helper module to disable changing product quantity in cart
-[website_sale_domicile](website_sale_domicile/) | 17.0.1.0.1 |  | Adds domicile to website checkout form
+[website_sale_domicile](website_sale_domicile/) | 17.0.1.0.2 |  | Adds domicile to website checkout form
 [website_sale_edicode](website_sale_edicode/) | 17.0.1.0.1 |  | Adds EDI code to website checkout form
 [website_sale_extra_step_content_to_sale_description](website_sale_extra_step_content_to_sale_description/) | 17.0.1.0.0 |  | Extra Step Content to SO description
 [website_sale_extra_step_content_to_sale_order_note](website_sale_extra_step_content_to_sale_order_note/) | 17.0.1.0.1 |  | Extra Step Content to SO note
