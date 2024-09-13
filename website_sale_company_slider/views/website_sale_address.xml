@@ -4,7 +4,11 @@
         <!-- Slider to show whether customer is private or company -->
         <xpath expr="(//input[@name='name']/..)" position="before">
             <t t-if="mode == ('new', 'billing')">
-                <div id="is_company_div" class="col-lg-12 slider-div">
+                <div
+                    id="is_company_div"
+                    class="col-lg-12 slider-div"
+                    t-if="not website_sale_order.hide_company_slider"
+                >
                     <label
                         for="company"
                         id="is_company_label_false"
