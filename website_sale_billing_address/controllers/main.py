@@ -19,7 +19,9 @@ class WebsiteSaleBilling(WebsiteSale):
                 return request.redirect("/shop/address?mode=billing")
             else:
                 if kw.get("is_billing_mode") and kw.get("vat"):
-                    order.partner_invoice_id.sudo().write({"company_registry": kw.get("vat")})
+                    order.partner_invoice_id.sudo().write(
+                        {"company_registry": kw.get("vat")}
+                    )
                 return response
         else:
             return response

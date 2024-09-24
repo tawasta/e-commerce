@@ -24,7 +24,7 @@ class WebsiteSale(WebsiteSale):
     @http.route()
     def address(self, **kw):
         # Tarkistetaan, onko URL:ssa parametri mode=billing
-        is_billing_mode = request.httprequest.args.get('mode') == 'billing'
+        is_billing_mode = request.httprequest.args.get("mode") == "billing"
 
         if "submitted" in kw and kw.get("firstname"):
             name = request.env["res.partner"]._get_computed_name(
@@ -36,8 +36,10 @@ class WebsiteSale(WebsiteSale):
             response = super(WebsiteSale, self).address(**kw)
 
         # Välitetään is_billing_mode templateen
-        response.qcontext.update({
-            'is_billing_mode': is_billing_mode,
-        })
+        response.qcontext.update(
+            {
+                "is_billing_mode": is_billing_mode,
+            }
+        )
 
         return response
