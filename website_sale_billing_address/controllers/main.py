@@ -1,6 +1,6 @@
 from odoo import http
 from odoo.http import request
-
+import logging
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
@@ -18,6 +18,10 @@ class WebsiteSaleBilling(WebsiteSale):
                 order.sudo().write({"use_different_billing_address": True})
                 return request.redirect("/shop/address?mode=billing")
             else:
+                if kw.get("is_billing_mode") and kw.get("vat"):
+                    order.partner_invoice_id.sudo().write(
+                        {"company_registry": kw.get("vat")}
+                    )
                 return response
         else:
             return response

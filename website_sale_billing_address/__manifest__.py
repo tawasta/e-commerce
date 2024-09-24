@@ -31,6 +31,7 @@
     "depends": [
         "website_sale",
         "website_sale_invoice_transmit_method",
+        "website_sale_split_name",
     ],
     "data": [
         "views/templates.xml",

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <template id="address" inherit_id="website_sale.address" name="Split name field">
+        <!-- Piilotetaan alkuperäinen "name"-kenttä -->
         <xpath expr="(//input[@name='name']/..)" position="attributes">
             <attribute name="style">display: none;</attribute>
         </xpath>
@@ -8,30 +9,45 @@
             <attribute name="disabled">disabled</attribute>
         </xpath>
 
+        <!-- Lisää erilliset kentät etu- ja sukunimelle, jos ei ole billing-mode -->
         <xpath expr="(//input[@name='name']/..)" position="after">
-            <div
-                t-attf-class="form-group #{error.get('firstname') and 'o_has_error' or ''} col-lg-6 div_firstname"
-                id="div_firstname"
-            >
-                <label class="col-form-label" for="firstname">Firstname</label>
-                <input
-                    type="text"
-                    name="firstname"
-                    required="1"
-                    t-attf-class="form-control #{error.get('firstname') and 'is-invalid' or ''}"
-                    t-att-value="'firstname' in checkout and checkout['firstname']"
-                />
+            <div t-if="not is_billing_mode" class="row">
+                <div
+                    t-attf-class="form-group #{error.get('firstname') and 'o_has_error' or ''} col-lg-6 div_firstname"
+                    id="div_firstname"
+                >
+                    <label class="col-form-label" for="firstname">Firstname</label>
+                    <input
+                        type="text"
+                        name="firstname"
+                        required="1"
+                        t-attf-class="form-control #{error.get('firstname') and 'is-invalid' or ''}"
+                        t-att-value="'firstname' in checkout and checkout['firstname']"
+                    />
+                </div>
+                <div
+                    t-attf-class="form-group #{error.get('lastname') and 'o_has_error' or ''} col-lg-6 div_lastname"
+                    id="div_lastname"
+                >
+                    <label class="col-form-label" for="lastname">Lastname</label>
+                    <input
+                        type="text"
+                        name="lastname"
+                        t-attf-class="form-control #{error.get('lastname') and 'is-invalid' or ''}"
+                        t-att-value="'lastname' in checkout and checkout['lastname']"
+                    />
+                </div>
             </div>
-            <div
-                t-attf-class="form-group #{error.get('lastname') and 'o_has_error' or ''} col-lg-6 div_lastname"
-                id="div_lastname"
-            >
-                <label class="col-form-label" for="lastname">Lastname</label>
+
+            <!-- Näytetään koko nimen kenttä, jos on billing-mode -->
+            <div t-if="is_billing_mode" class="form-group col-lg-12 mb-2">
+                <label class="col-form-label" for="name">Full name</label>
                 <input
                     type="text"
-                    name="lastname"
-                    t-attf-class="form-control #{error.get('lastname') and 'is-invalid' or ''}"
-                    t-att-value="'lastname' in checkout and checkout['lastname']"
+                    name="name"
+                    required="1"
+                    t-attf-class="form-control #{error.get('name') and 'is-invalid' or ''}"
+                    t-att-value="'name' in checkout and checkout['name']"
                 />
             </div>
         </xpath>

@@ -11,7 +11,6 @@
             expr="//t[@t-if=&quot;mode == ('new', 'billing') and not only_services&quot;]"
             position="after"
         >
-
             <div class="col-12" t-if="mode != ('new', 'shipping')">
 
                 <div class="form-check form-switch mt-2 mb-3">
@@ -35,6 +34,59 @@
                     </label>
                 </div>
             </div>
+        </xpath>
+        <xpath expr="//input[@name='name']/.." position="after">
+
+            <div
+                t-attf-class="#{error.get('vat') and 'o_has_error'} div_vat col-lg-6 mb-2"
+                t-if="is_billing_mode"
+            >
+                                                    <label
+                    class="col-form-label fw-normal label-optional"
+                    for="vat"
+                >VAT</label>
+                                                    <input
+                    type="text"
+                    name="vat"
+                    t-attf-class="form-control #{error.get('vat') and 'is-invalid' or ''}"
+                    t-att-value="'vat' in checkout and checkout['vat']"
+                    t-att-readonly="'1' if vat_warning else None"
+                />
+                                                    <small
+                    t-if="vat_warning"
+                    class="form-text text-muted d-block d-lg-none"
+                >Changing VAT number is not allowed once document(s) have been issued for your account. Please contact us directly for this operation.</small>
+                                                </div>
+            <t
+                t-set="methods"
+                t-value="request.env['transmit.method'].sudo().search([('website_sale_ok', '=', True)])"
+            />
+            <div
+                id="customer_invoice_transmit_method_id_div"
+                t-attf-class="form-group #{error.get('customer_invoice_transmit_method_id') and 'has-error' or ''} col-lg-6"
+                t-if="is_billing_mode and methods"
+            >
+                <label
+                    class="col-form-label"
+                    for="customer_invoice_transmit_method_id"
+                >Invoice transmit method</label>
+                <select
+                    id="customer-invoice-transmit-method"
+                    t-attf-class="form-control #{error.get('customer_invoice_transmit_method_id') and 'is-invalid' or ''}"
+                    name="customer_invoice_transmit_method_id"
+                    data-init="1"
+                >
+                    <t t-foreach="methods" t-as="method">
+                        <option
+                            t-att-value="method.id"
+                            t-att-data-code="method.code"
+                            t-att-selected="method.id == ('customer_invoice_transmit_method_id' in checkout and checkout['customer_invoice_transmit_method_id'] != '' and int(checkout['customer_invoice_transmit_method_id']))"
+                            t-esc="method.name"
+                        />
+                    </t>
+                </select>
+            </div>
+            <input type="hidden" name="billing_address" t-att-value="is_billing_mode" />
         </xpath>
     </template>
 

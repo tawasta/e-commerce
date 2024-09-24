@@ -17,7 +17,7 @@ addon | version | maintainers | summary
 [website_sale_billing_address](website_sale_billing_address/) | 17.0.1.0.0 |  | Website customer can select a billing address
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 17.0.1.0.0 |  | eCommerce tax in cart lines
 [website_sale_company_email](website_sale_company_email/) | 17.0.1.0.1 |  | Add different emails for ecommerce user and company
-[website_sale_company_slider](website_sale_company_slider/) | 17.0.1.0.0 |  | Slider to checkout
+[website_sale_company_slider](website_sale_company_slider/) | 17.0.1.1.0 |  | Slider to checkout
 [website_sale_country_select2](website_sale_country_select2/) | 17.0.1.0.0 |  | Changes country in customer address form to be select2
 [website_sale_create_user](website_sale_create_user/) | 17.0.1.0.1 |  | Website sale create user
 [website_sale_default_country](website_sale_default_country/) | 17.0.1.0.0 |  | Website Sale Default Country
