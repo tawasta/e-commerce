@@ -13,7 +13,7 @@ class WebsiteSaleMaintenance(WebsiteSale):
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
         else:
-            response = super(WebsiteSale, self).shop(
+            response = super().shop(
                 page=page, category=category, search=search, ppg=ppg, **post
             )
 
@@ -27,9 +27,7 @@ class WebsiteSaleMaintenance(WebsiteSale):
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
         else:
-            response = super(WebsiteSale, self).product(
-                product, category="", search="", **kwargs
-            )
+            response = super().product(product, category="", search="", **kwargs)
 
             return response
 
@@ -41,7 +39,7 @@ class WebsiteSaleMaintenance(WebsiteSale):
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
         else:
-            response = super(WebsiteSale, self).pricelist_change(pricelist, **post)
+            response = super().pricelist_change(pricelist, **post)
 
             return response
 
@@ -53,7 +51,7 @@ class WebsiteSaleMaintenance(WebsiteSale):
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
         else:
-            response = super(WebsiteSale, self).pricelist(promo, **post)
+            response = super().pricelist(promo, **post)
 
             return response
 
@@ -65,9 +63,7 @@ class WebsiteSaleMaintenance(WebsiteSale):
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
         else:
-            response = super(WebsiteSale, self).cart(
-                access_token=None, revive="", **post
-            )
+            response = super().cart(access_token=None, revive="", **post)
 
             return response
 
@@ -79,7 +75,7 @@ class WebsiteSaleMaintenance(WebsiteSale):
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
         else:
-            response = super(WebsiteSale, self).address(**kw)
+            response = super().address(**kw)
 
             return response
 
@@ -91,7 +87,7 @@ class WebsiteSaleMaintenance(WebsiteSale):
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
         else:
-            response = super(WebsiteSale, self).checkout(**post)
+            response = super().checkout(**post)
 
             return response
 
@@ -103,7 +99,7 @@ class WebsiteSaleMaintenance(WebsiteSale):
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
         else:
-            response = super(WebsiteSale, self).confirm_order(**post)
+            response = super().confirm_order(**post)
 
             return response
 
@@ -115,7 +111,7 @@ class WebsiteSaleMaintenance(WebsiteSale):
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
         else:
-            response = super(WebsiteSale, self).extra_info(**post)
+            response = super().extra_info(**post)
 
             return response
 
@@ -127,6 +123,6 @@ class WebsiteSaleMaintenance(WebsiteSale):
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
         else:
-            response = super(WebsiteSale, self).payment(**post)
+            response = super().payment(**post)
 
             return response
