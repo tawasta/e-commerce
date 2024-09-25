@@ -4,12 +4,11 @@ from odoo.http import request
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
-class WebsiteSale(WebsiteSale):
+class WebsiteSaleMaintenance(WebsiteSale):
     @http.route()
     def shop(self, page=0, category=None, search="", ppg=False, **post):
-        company = request.env["res.company"].sudo().search([("id", "=", "1")])
-        render_values = {"company": company}
-        if self._maintenance_mode():
+        render_values = {"company": request.website.company_id}
+        if request.website._maintenance_mode():
             return request.render(
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
@@ -22,9 +21,8 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def product(self, product, category="", search="", **kwargs):
-        company = request.env["res.company"].sudo().search([("id", "=", "1")])
-        render_values = {"company": company}
-        if self._maintenance_mode():
+        render_values = {"company": request.website.company_id}
+        if request.website._maintenance_mode():
             return request.render(
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
@@ -37,9 +35,8 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def pricelist_change(self, pricelist, **post):
-        company = request.env["res.company"].sudo().search([("id", "=", "1")])
-        render_values = {"company": company}
-        if self._maintenance_mode():
+        render_values = {"company": request.website.company_id}
+        if request.website._maintenance_mode():
             return request.render(
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
@@ -50,9 +47,8 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def pricelist(self, promo, **post):
-        company = request.env["res.company"].sudo().search([("id", "=", "1")])
-        render_values = {"company": company}
-        if self._maintenance_mode():
+        render_values = {"company": request.website.company_id}
+        if request.website._maintenance_mode():
             return request.render(
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
@@ -63,9 +59,8 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def cart(self, access_token=None, revive="", **post):
-        company = request.env["res.company"].sudo().search([("id", "=", "1")])
-        render_values = {"company": company}
-        if self._maintenance_mode():
+        render_values = {"company": request.website.company_id}
+        if request.website._maintenance_mode():
             return request.render(
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
@@ -78,9 +73,8 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def address(self, **kw):
-        company = request.env["res.company"].sudo().search([("id", "=", "1")])
-        render_values = {"company": company}
-        if self._maintenance_mode():
+        render_values = {"company": request.website.company_id}
+        if request.website._maintenance_mode():
             return request.render(
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
@@ -91,9 +85,8 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def checkout(self, **post):
-        company = request.env["res.company"].sudo().search([("id", "=", "1")])
-        render_values = {"company": company}
-        if self._maintenance_mode():
+        render_values = {"company": request.website.company_id}
+        if request.website._maintenance_mode():
             return request.render(
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
@@ -104,9 +97,8 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def confirm_order(self, **post):
-        company = request.env["res.company"].sudo().search([("id", "=", "1")])
-        render_values = {"company": company}
-        if self._maintenance_mode():
+        render_values = {"company": request.website.company_id}
+        if request.website._maintenance_mode():
             return request.render(
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
@@ -117,9 +109,8 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def extra_info(self, **post):
-        company = request.env["res.company"].sudo().search([("id", "=", "1")])
-        render_values = {"company": company}
-        if self._maintenance_mode():
+        render_values = {"company": request.website.company_id}
+        if request.website._maintenance_mode():
             return request.render(
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
@@ -130,9 +121,8 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def payment(self, **post):
-        company = request.env["res.company"].sudo().search([("id", "=", "1")])
-        render_values = {"company": company}
-        if self._maintenance_mode():
+        render_values = {"company": request.website.company_id}
+        if request.website._maintenance_mode():
             return request.render(
                 "website_sale_maintenance_mode.website_sale_template", render_values
             )
@@ -140,12 +130,3 @@ class WebsiteSale(WebsiteSale):
             response = super(WebsiteSale, self).payment(**post)
 
             return response
-
-    def _maintenance_mode(self):
-        # If maintenance mode is set, and user doesn't belong to website editors
-        get_param = request.env["ir.config_parameter"].sudo().get_param
-        maintenance_mode = get_param("website_sale.maintenance_mode")
-
-        return maintenance_mode == "True" and not request.env.user.has_group(
-            "website.group_website_designer"
-        )
