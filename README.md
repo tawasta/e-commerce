@@ -45,7 +45,7 @@ addon | version | maintainers | summary
 [website_sale_require_product_category](website_sale_require_product_category/) | 17.0.1.0.0 |  | Require a product category on checkout
 [website_sale_settings](website_sale_settings/) | 17.0.1.0.0 |  | Various toggleable settings under editor's customize menu
 [website_sale_show_tax](website_sale_show_tax/) | 17.0.1.1.1 |  | Show taxes in product grid and product view
-[website_sale_split_name](website_sale_split_name/) | 17.0.1.0.0 |  | Split name field on address card to first and last name
+[website_sale_split_name](website_sale_split_name/) | 17.0.1.0.1 |  | Split name field on address card to first and last name
 [website_sale_stock_already_in_cart_helper_message](website_sale_stock_already_in_cart_helper_message/) | 17.0.1.0.0 |  | Show additional instruction for the user
 [website_sale_suggested_products_category](website_sale_suggested_products_category/) | 17.0.1.0.0 |  | Enable categorizing Order Overview's suggested accessories
 [website_sale_suggested_products_order_by](website_sale_suggested_products_order_by/) | 17.0.1.0.0 |  | Accessories ordered by _order instead of random order
