@@ -6,7 +6,7 @@ class WebsiteSalePaymentProviders(WebsiteSale):
     def _get_shop_payment_values(self, order, **kwargs):
         values = super()._get_shop_payment_values(order, **kwargs)
 
-        payment_provider = request.env["payment.method"].sudo()
+        payment_provider = request.env["payment.provider"].sudo()
         providers_sudo = values["providers_sudo"]
 
         for line in order.order_line:
