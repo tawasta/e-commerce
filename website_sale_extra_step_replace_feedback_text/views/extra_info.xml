@@ -5,11 +5,11 @@
         id="extra_info"
         name="Extra info: replace text"
         inherit_id="website_sale.extra_info"
+        priority="99"
     >
 
-        <xpath expr="//label[@for='sale2']/span" position="attributes">
-            <attribute name="class">s_website_form_label_content</attribute>
-            <attribute name="t-esc">"More information"</attribute>
+        <xpath expr="//label[@for='sale2']/span" position="replace">
+            <span class="s_website_form_label_content">More information</span>
         </xpath>
 
     </template>
