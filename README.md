@@ -10,7 +10,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[product_cant_order](product_cant_order/) | 17.0.1.0.0 |  | Disables adding specific variants to cart
+[product_cant_order](product_cant_order/) | 17.0.1.1.0 |  | Disables adding specific variants to cart
 [website_pricelist_company_info](website_pricelist_company_info/) | 17.0.1.0.0 |  | Allow users to add and edit their currency
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 17.0.1.0.0 |  | Create company for website customer, if company name is set
 [website_sale_autoflag_partner_as_customer](website_sale_autoflag_partner_as_customer/) | 17.0.1.0.0 |  | Set the 'Is a Customer' flag automatically
