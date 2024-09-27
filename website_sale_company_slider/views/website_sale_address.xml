@@ -6,8 +6,7 @@
             <t t-if="mode == ('new', 'billing')">
                 <div
                     id="is_company_div"
-                    class="col-lg-12 slider-div"
-                    t-if="not website_sale_order.hide_company_slider"
+                    t-attf-class="col-lg-12 slider-div {{'d-none' if website_sale_order.hide_company_slider else ''}}"
                 >
                     <label
                         for="company"
@@ -19,7 +18,7 @@
                             type="checkbox"
                             name="company"
                             id="company"
-                            t-att-checked="'company' in checkout and checkout['company']"
+                            t-att-checked="website_sale_order.force_company_slider or 'company' in checkout and checkout['company']"
                         />
                         <div class="slider round" />
                     </label>
