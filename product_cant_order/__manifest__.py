@@ -21,8 +21,8 @@
 {
     "name": "Product Variant: Prevent Ordering via eCommerce",
     "summary": "Disables adding specific variants to cart",
-    "version": "17.0.1.0.0",
-    "category": "Product",
+    "version": "17.0.1.1.0",
+    "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
