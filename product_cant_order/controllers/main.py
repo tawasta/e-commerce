@@ -1,4 +1,4 @@
-from odoo import http
+from odoo import http, exceptions, _
 from odoo.http import request
 
 
@@ -14,18 +14,13 @@ class CheckProduct(http.Controller):
         """
         Checks if the provided variant ID can be added to cart.
         """
-        try:
-            product = (
-                request.env["product.product"]
-                .sudo()
-                .search([("id", "=", product_id)], limit=1)
-            )
-            if product:
-                values = {"can_not_order": product.can_not_order}
-            else:
-                values = {"error": "Product not found"}
 
-        except Exception as e:
-            values = {"error": str(e)}
-
-        return values
+        product = (
+            request.env["product.product"]
+            .sudo()
+            .search([("id", "=", product_id)], limit=1)
+        )
+        if product:
+            return {"can_not_order": product.can_not_order}
+        else:
+            raise exceptions.ValidationError(_("Product ID %s not found", product_id))
