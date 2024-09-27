@@ -7,6 +7,7 @@
         <field name="inherit_id" ref="product.product_template_form_view" />
         <field name="arch" type="xml">
             <field name="website_ribbon_id" position="after">
+                <field name="force_company_slider" widget="boolean_toggle" />
                 <field name="hide_company_slider" widget="boolean_toggle" />
             </field>
         </field>
