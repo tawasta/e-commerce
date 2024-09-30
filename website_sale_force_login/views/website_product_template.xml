@@ -29,12 +29,11 @@
     </template>
 
     <template id="product" inherit_id="website_sale.product">
-
-        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="attributes">
+        <xpath expr="//div[@id='add_to_cart_wrap']" position="attributes">
             <attribute name="t-if">not website.is_public_user()</attribute>
         </xpath>
 
-        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="after">
+        <xpath expr="//div[@id='add_to_cart_wrap']" position="after">
             <t t-call="website_sale_force_login.product_login_buttons" />
         </xpath>
 
