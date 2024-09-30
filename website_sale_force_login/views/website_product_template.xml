@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <template id="product_login_buttons">
+        <div
+            id="cart_login"
+            class="d-inline-flex align-items-center mb-2 me-auto"
+            t-if="website.is_public_user()"
+        >
+            <a
+                t-attf-href="/web/login"
+                id="cart_login_button"
+                title="Please login or register before continuing"
+                class="btn btn-primary flex-grow-1"
+                href="#"
+            ><i class="fa fa-sign-in me-2" />Login</a>
+
+            <a
+                t-attf-href="/web/signup"
+                id="cart_register_button"
+                title="Please login or register before continuing"
+                class="btn btn-warning flex-grow-1 ms-1"
+                href="#"
+            ><i class="fa fa-lock me-2" />Sign up</a>
+        </div>
+        <div id="cart_login_guide">
+            <i class="font-italic">Please login or register before continuing</i>
+        </div>
+    </template>
+
     <template id="product" inherit_id="website_sale.product">
 
-        <xpath expr="//div[@id='add_to_cart_wrap']" position="attributes">
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="attributes">
             <attribute name="t-if">not website.is_public_user()</attribute>
         </xpath>
 
-        <xpath expr="//div[@id='add_to_cart_wrap']" position="after">
-            <div
-                id="cart_register"
-                class="d-inline-flex align-items-center mb-2 me-auto"
-                t-if="website.is_public_user()"
-            >
-                <a
-                    t-attf-href="/web/signup"
-                    id="cart_register_button"
-                    title="You need to login before continuing"
-                    t-attf-class="btn btn-warning flex-grow-1"
-                    href="#"
-                >
-                    <i class="fa fa-lock me-2" />
-                    Login or Sign up
-                </a>
-            </div>
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="after">
+            <t t-call="website_sale_force_login.product_login_buttons" />
         </xpath>
 
     </template>
