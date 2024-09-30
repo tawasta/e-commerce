@@ -32,6 +32,7 @@ addon | version | maintainers | summary
 [website_sale_extra_step_replace_feedback_text](website_sale_extra_step_replace_feedback_text/) | 17.0.1.0.0 |  | Replace extra step feedback text to more information
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 17.0.1.0.0 |  | Allow hiding/showing items in extra step
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 17.0.1.0.2 |  | Forces autoinvoice on quotations created from website_sale
+[website_sale_force_login](website_sale_force_login/) | 17.0.1.0.0 |  | Force login before adding products to carts
 [website_sale_interested_product](website_sale_interested_product/) | 17.0.2.0.0 |  | Add a title above the alternative products
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 17.0.1.0.0 |  | Adds account invoice transmit method to checkout
 [website_sale_limit_payment_providers](website_sale_limit_payment_providers/) | 17.0.1.0.1 |  | Limit payment providers by product
