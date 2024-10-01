@@ -10,21 +10,23 @@
             <a
                 t-attf-href="/web/login"
                 id="cart_login_button"
-                title="Please login or register before continuing"
+                title="Please login or sign up by registering your email address to continue"
                 class="btn btn-primary flex-grow-1"
                 href="#"
-            ><i class="fa fa-sign-in me-2" />Login</a>
+            ><i class="fa fa-sign-in me-2" /><small>Login</small></a>
 
             <a
                 t-attf-href="/web/signup"
                 id="cart_register_button"
-                title="Please login or register before continuing"
+                title="Please login or sign up by registering your email address to continue"
                 class="btn btn-warning flex-grow-1 ms-1"
                 href="#"
-            ><i class="fa fa-lock me-2" />Sign up</a>
+            ><i class="fa fa-lock me-2" /><small>Sign up</small></a>
         </div>
-        <div id="cart_login_guide" t-if="website.is_public_user()">
-            <i class="font-italic">Please login or register before continuing</i>
+        <div id="cart_login_guide">
+            <small><i
+                    class="font-italic"
+                >Please login or sign up by registering your email address to continue</i></small>
         </div>
     </template>
 

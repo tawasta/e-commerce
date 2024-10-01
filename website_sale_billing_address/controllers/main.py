@@ -13,6 +13,10 @@ class WebsiteSaleBilling(WebsiteSale):
             new_billing = True
         response = super(WebsiteSaleBilling, self).address(**kw)
         order = request.website.sale_get_order()
+
+        print(kw)
+        print(response)
+
         if "submitted" in kw:
             if not kw.get("billing_use_same") and new_billing:
                 order.sudo().write({"use_different_billing_address": True})
@@ -22,6 +26,5 @@ class WebsiteSaleBilling(WebsiteSale):
                     order.partner_invoice_id.sudo().write(
                         {"company_registry": kw.get("vat")}
                     )
-                return response
-        else:
-            return response
+
+        return response
