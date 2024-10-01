@@ -32,6 +32,8 @@
         "website_sale",
         "website_sale_invoice_transmit_method",
         "website_sale_split_name",
+        "website_sale_domicile",
+        "website_sale_company_email",
     ],
     "data": [
         "views/templates.xml",
