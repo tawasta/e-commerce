@@ -7,6 +7,16 @@
         customize_show="True"
         active="True"
     >
+        <!-- Hide "Billing address" from first address view -->
+        <xpath
+            expr="//t[@t-if='is_public_order']/following-sibling::t/h3"
+            position="attributes"
+        >
+            <attribute
+                name="t-attf-class"
+            >{{'mb-3 asd' if website_sale_order.use_different_billing_address else 'd-none' }}</attribute>
+        </xpath>
+
         <xpath
             expr="//t[@t-if=&quot;mode == ('new', 'billing') and not only_services&quot;]"
             position="after"
