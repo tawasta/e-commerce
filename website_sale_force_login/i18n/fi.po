@@ -35,4 +35,4 @@ msgstr "<i class=\"font-italic\">Kirjaudu sisään tai rekisteröidy ennen jatka
 #. module: website_sale_force_login
 #: model_terms:ir.ui.view,arch_db:website_sale_force_login.product_login_buttons
 msgid "Please login or register before continuing"
-msgstr "Kirjaudu sisään tai luo käyttäjätunnus rekisteröimällä sähköpostiosoitteesi jatkaaksesi"
+msgstr "Kirjaudu sisään tai rekisteröidy ennen jatkamista"
