@@ -6,13 +6,11 @@
 Website sale billing address
 ============================
 
-* Enables the customer to select a Billing Address during checkout
+* This Odoo module extends the default website sale functionality to include custom fields and manage billing address requirements during checkout. It adds new fields for invoice email, VAT, and invoice transmit method, which are dynamically displayed or hidden based on the user's selection. The module ensures that these custom fields are correctly saved to the sales order's partner invoice address, providing a seamless and customizable checkout experience.
 
 Configuration
 =============
-* Optional: in website settings, check the "Allow Selecting Sibling Billing Addresses" checkbox.
-  This will show the customer also those billing addresses are the children of the customer's 
-  parent company.
+\-
 
 Usage
 =====
