@@ -37,7 +37,10 @@
         "website_sale_default_privacies",
     ],
     "data": [
-        "views/templates.xml",
+        "views/website_sale_address_kanban_template.xml",
+        "views/website_sale_address_template.xml",
+        "views/website_sale_checkout_template.xml",
+        "views/website_sale_row_addresses_template.xml",
     ],
     "assets": {
         "web.assets_frontend": [
