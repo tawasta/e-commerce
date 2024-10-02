@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="address_hide_domicile" inherit_id="website_sale_domicile.address">
+        <xpath expr="//div[@id='domicile_div']" position="attributes">
+            <attribute name="t-if">not is_billing_mode</attribute>
+        </xpath>
+    </template>
+
+    <template
+        id="address_hide_web_privacy"
+        inherit_id="website_sale_default_privacies.address"
+    >
+        <xpath expr="//div[@id='web-privacy']" position="attributes">
+            <attribute name="t-if">not is_billing_mode</attribute>
+        </xpath>
+    </template>
+
+    <template
+        id="address"
+        inherit_id="website_sale.address"
+        name="Billing address"
+        customize_show="True"
+        active="True"
+    >
+        <xpath expr="//input[@name='name']/.." position="after">
+            <input type="hidden" name="billing_address" t-att-value="is_billing_mode" />
+        </xpath>
+        <xpath
+            expr="//t[@t-elif=&quot;address_mode == 'billing'&quot;]/h3"
+            position="attributes"
+        >
+            <attribute name="t-if">is_billing_mode</attribute>
+        </xpath>
+
+        <xpath
+            expr="//t[@t-elif=&quot;address_mode == 'billing'&quot;]/h3"
+            position="after"
+        >
+            <h3 t-if="not is_billing_mode">Subscriber</h3>
+        </xpath>
+        <xpath expr="//input[@name='phone']/.." position="after">
+            <div
+                t-attf-class="form-group #{error.get('company_email') and 'o_has_error' or ''} col-lg-6"
+                id="company_email"
+                t-if="is_billing_mode"
+            >
+                <label
+                    id="company-email-label"
+                    class="col-form-label font-weight-normal label-optional"
+                    for="company_email"
+                >Invoice Email</label>
+                <input
+                    type="text"
+                    id="company-email-input"
+                    name="company_email_billing"
+                    t-attf-class="form-control #{error.get('company_email') and 'is-invalid' or ''}"
+                    t-att-value="'company_email' in checkout and checkout['company_email']"
+                    t-att-readonly="'1' if 'vat' in checkout and checkout['vat'] and not can_edit_vat else None"
+                    t-att-title="company_email if 'vat' in checkout and checkout['vat'] and not can_edit_vat else None"
+                />
+            </div>
+            <div
+                class="div_company_registry_billing col-lg-6 mb-2"
+                t-if="is_billing_mode"
+            >
+                <label
+                    class="col-form-label fw-normal label-optional"
+                    for="company_registry"
+                >VAT</label>
+                <input
+                    type="text"
+                    name="billing_company_registry"
+                    class="form-control"
+                    t-att-value="'company_registry' in checkout and checkout['company_registry']"
+                />
+            </div>
+            <t
+                t-set="methods"
+                t-value="request.env['transmit.method'].sudo().search([('website_sale_ok', '=', True)])"
+            />
+            <div
+                id="customer_invoice_transmit_method_id_div_billing"
+                t-attf-class="form-group #{error.get('customer_invoice_transmit_method_id') and 'has-error' or ''} col-lg-6"
+                t-if="methods and is_billing_mode"
+            >
+                <label
+                    class="col-form-label"
+                    for="customer_invoice_transmit_method_id"
+                >Invoice transmit method</label>
+                <select
+                    id="customer-invoice-transmit-method-billing"
+                    t-attf-class="form-control #{error.get('customer_invoice_transmit_method_id') and 'is-invalid' or ''}"
+                    name="customer_invoice_transmit_method_id"
+                    data-init="1"
+                >
+                    <t t-foreach="methods" t-as="method">
+                        <option
+                            t-att-value="method.id"
+                            t-att-data-code="method.code"
+                            t-att-selected="method.id == ('customer_invoice_transmit_method_id' in checkout and checkout['customer_invoice_transmit_method_id'] != '' and int(checkout['customer_invoice_transmit_method_id']))"
+                            t-esc="method.name"
+                        />
+                    </t>
+                </select>
+            </div>
+            <div
+                id="edicode-div"
+                t-attf-class="form-group #{error.get('edicode') and 'has-error' or ''} col-md-6 div_edicode"
+            >
+                    <label
+                    id="edicode-label"
+                    class="col-form-label label-optional"
+                    for="edicode"
+                >eInvoice address (EDI-code)</label>
+                    <input
+                    type="text"
+                    name="edicode"
+                    class="form-control"
+                    t-att-value="'edicode' in checkout and checkout['edicode']"
+                />
+                </div>
+                <div
+                id="einvoice-operator-div"
+                t-attf-class="form-group #{error.get('einvoice_operator_id') and 'has-error' or ''} col-lg-6 div_einvoice_operator"
+            >
+                    <t
+                    t-set="operators"
+                    t-value="request.env['res.partner.operator.einvoice'].sudo().search([])"
+                />
+                    <label
+                    id="einvoice-operator-label"
+                    class="col-form-label label-optional"
+                    for="einvoice_operator_id"
+                >eInvoice Operator</label>
+                    <select
+                    id="einvoice-operator-select"
+                    t-attf-class="form-control #{error.get('einvoice_operator_id') and 'is-invalid' or ''}"
+                    name="einvoice_operator_id"
+                >
+                        <option />
+                        <t t-foreach="operators" t-as="op">
+                            <option
+                            t-att-value="op.id"
+                            t-att-selected="op.id == ('einvoice_operator_id' in checkout and checkout['einvoice_operator_id'] != '' and int(checkout['einvoice_operator_id']))"
+                        >
+                                <span t-esc="op.name" /> (<span
+                                t-esc="op.identifier"
+                            />)
+                            </option>
+                        </t>
+                    </select>
+                </div>
+        </xpath>
+    </template>
+
+</odoo>

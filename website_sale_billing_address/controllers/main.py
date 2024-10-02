@@ -7,24 +7,62 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 class WebsiteSaleBilling(WebsiteSale):
     @http.route()
     def address(self, **kw):
-        new_billing = False
-        order = request.website.sale_get_order()
-        if order.partner_id.id == request.website.user_id.sudo().partner_id.id:
-            new_billing = True
-        response = super(WebsiteSaleBilling, self).address(**kw)
         order = request.website.sale_get_order()
 
-        print(kw)
-        print(response)
+        if kw.get("billing_address"):
+            custom_fields = {
+                "company_email": kw.pop("company_email_billing", None),
+                "company_registry": kw.pop("billing_company_registry", None),
+                "customer_invoice_transmit_method_id": kw.pop(
+                    "customer_invoice_transmit_method_id", None
+                ),
+            }
 
-        if "submitted" in kw:
-            if not kw.get("billing_use_same") and new_billing:
-                order.sudo().write({"use_different_billing_address": True})
-                return request.redirect("/shop/address?mode=billing")
-            else:
-                if kw.get("is_billing_mode") and kw.get("vat"):
-                    order.partner_invoice_id.sudo().write(
-                        {"company_registry": kw.get("vat")}
+            response = super().address(**kw)
+            if order.partner_invoice_id:
+                partner_invoice = order.partner_invoice_id
+
+                update_values = {}
+
+                if custom_fields.get("company_email"):
+                    update_values["company_email"] = custom_fields["company_email"]
+
+                if custom_fields.get("company_registry"):
+                    update_values["company_registry"] = custom_fields[
+                        "company_registry"
+                    ]
+
+                if custom_fields.get("customer_invoice_transmit_method_id"):
+                    update_values["customer_invoice_transmit_method_id"] = int(
+                        custom_fields["customer_invoice_transmit_method_id"]
                     )
 
-        return response
+                if update_values:
+                    partner_invoice.sudo().write(update_values)
+            else:
+                logging.warning("Order does not have a partner_invoice_id!")
+
+            return response
+
+        if "submitted" in kw and request.httprequest.method == "POST":
+            # Force checking your addresses
+            kw["callback"] = "/shop/checkout"
+
+        res = super().address(**kw)
+        return res
+
+    @http.route()
+    def checkout(self, **post):
+        res = super().checkout(**post)
+
+        # Remove "mode"-parameter from first address screen
+        order = request.website.sale_get_order()
+        if order:
+            partner_invoice = order.partner_invoice_id
+            if not self._check_billing_partner_mandatory_fields(partner_invoice):
+                # Return without "mode=billing"-parameter
+                return request.redirect(
+                    "/shop/address?partner_id=%d" % partner_invoice.id
+                )
+
+        return res

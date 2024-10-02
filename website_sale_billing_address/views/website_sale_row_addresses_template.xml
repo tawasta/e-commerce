@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="row_addresses_inherit" inherit_id="website_sale.row_addresses">
+        <xpath
+            expr="//div[contains(@class, 'one_kanban') and contains(@class, 'col-md') and @t-if]"
+            position="after"
+        >
+            <div
+                class="one_kanban col-md"
+                t-if="order.website_id.is_public_user() and is_invoice"
+            >
+                <t t-if="is_invoice">
+                    <t t-set="new_address_href" t-valuef="/shop/address?mode=billing" />
+                </t>
+                <a
+                    role="button"
+                    t-att-href="new_address_href"
+                    class="o_wsale_add_address d-flex align-items-center justify-content-center h-100 px-4 border rounded mx-auto no-decoration"
+                >
+                    <i class="fa fa-plus me-md-2" /><span
+                        class="d-none d-md-inline"
+                    >Add address</span>
+                </a>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

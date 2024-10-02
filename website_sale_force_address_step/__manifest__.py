@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Tawasta
-#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2022 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Website sale billing address",
-    "summary": "Website customer can select a billing address",
+    "name": "eCommerce: Always show address-step",
+    "summary": "Never skip the address step. Disables 'express'-checkout",
     "version": "17.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
@@ -28,23 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": [
-        "website_sale",
-        "website_sale_invoice_transmit_method",
-        "website_sale_split_name",
-        "website_sale_domicile",
-        "website_sale_company_email",
-        "website_sale_default_privacies",
-    ],
-    "data": [
-        "views/website_sale_address_kanban_template.xml",
-        "views/website_sale_address_template.xml",
-        "views/website_sale_checkout_template.xml",
-        "views/website_sale_row_addresses_template.xml",
-    ],
-    "assets": {
-        "web.assets_frontend": [
-            "website_sale_billing_address/static/src/js/billing.esm.js",
-        ],
-    },
+    "depends": ["website_sale"],
+    "data": [],
 }
