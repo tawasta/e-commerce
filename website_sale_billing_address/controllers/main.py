@@ -11,7 +11,7 @@ class WebsiteSaleBilling(WebsiteSale):
 
         if kw.get("billing_address"):
             custom_fields = {
-                "company_email": kw.pop("billing_company_registry", None),
+                "company_email": kw.pop("company_email_billing", None),
                 "company_registry": kw.pop("billing_company_registry", None),
                 "customer_invoice_transmit_method_id": kw.pop(
                     "customer_invoice_transmit_method_id", None
@@ -37,6 +37,8 @@ class WebsiteSaleBilling(WebsiteSale):
                         "company_registry"
                     ]
                     update_values["vat"] = custom_fields["company_registry"]
+                    update_values["company_type"] = "company"
+                    update_values["is_company"] = True
 
                 if custom_fields.get("customer_invoice_transmit_method_id"):
                     update_values["customer_invoice_transmit_method_id"] = int(
