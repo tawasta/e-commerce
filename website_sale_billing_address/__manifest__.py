@@ -37,7 +37,6 @@
     ],
     "data": [
         "views/templates.xml",
-        # "views/res_config_settings.xml"
     ],
     "assets": {
         "web.assets_frontend": [

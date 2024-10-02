@@ -5,46 +5,51 @@ import publicWidget from "@web/legacy/js/public/public_widget";
 publicWidget.registry.WebsiteSaleInvoiceTransmitMethod = publicWidget.Widget.extend({
     selector: ".oe_website_sale",
     events: {
-        "change #customer-invoice-transmit-method-billing": "_onToggleVisibility",  // Päivitetty ID
+        "change #customer-invoice-transmit-method-billing": "_onToggleVisibility",
     },
 
     start() {
         this._super(...arguments);
-        this._onToggleVisibility(); // Muutettu kutsumaan oikein määriteltyä funktiota
+        this._onToggleVisibility();
     },
 
     _onToggleVisibility() {
-        const transmitType = $("#customer-invoice-transmit-method-billing").find(":selected").data("code");
+        const transmitType = $("#customer-invoice-transmit-method-billing")
+            .find(":selected")
+            .data("code");
         const fieldRequiredInput = $("input[name='field_required']");
         let fieldRequiredVal = fieldRequiredInput.val() || "";
 
-        // Resetoidaan kenttien oletusarvot
         this._resetFields();
 
-        // Manage visibility and required fields based on transmitType
         const actions = {
-            "mail": () => $("label[for='company_email']").removeClass("label-optional"),
-            "post": () => {
+            mail: () => $("label[for='company_email']").removeClass("label-optional"),
+            post: () => {
                 this._hideCompanyEmail();
-                fieldRequiredVal = this._removeFieldFromRequiredList(fieldRequiredVal, "company_email");
+                fieldRequiredVal = this._removeFieldFromRequiredList(
+                    fieldRequiredVal,
+                    "company_email"
+                );
             },
-            "einvoice": () => {
+            einvoice: () => {
                 $("label[for='vat']").removeClass("label-optional");
                 this._hideCompanyEmail();
-                fieldRequiredVal = this._removeFieldFromRequiredList(fieldRequiredVal, "company_email");
+                fieldRequiredVal = this._removeFieldFromRequiredList(
+                    fieldRequiredVal,
+                    "company_email"
+                );
                 this._showEinvoiceFields();
-            }
+            },
         };
 
-        // Execute corresponding action if exists
         if (actions[transmitType]) actions[transmitType]();
-
-        // Update fieldRequired input
         fieldRequiredInput.val(fieldRequiredVal);
     },
 
     _resetFields() {
-        $("label[for='company_email'], label[for='vat'], label[for='einvoice_operator_id'], label[for='edicode']").addClass("label-optional");
+        $(
+            "label[for='company_email'], label[for='vat'], label[for='einvoice_operator_id'], label[for='edicode']"
+        ).addClass("label-optional");
         $("#company_email").show();
         $("#einvoice-operator-div, #edicode-div, #edicode-notification-div").hide();
     },
@@ -55,7 +60,9 @@ publicWidget.registry.WebsiteSaleInvoiceTransmitMethod = publicWidget.Widget.ext
     },
 
     _showEinvoiceFields() {
-        $("#einvoice-operator-div, #edicode-div, #edicode-notification-div").fadeIn("slow");
+        $("#einvoice-operator-div, #edicode-div, #edicode-notification-div").fadeIn(
+            "slow"
+        );
     },
 
     _removeFieldFromRequiredList(fieldRequiredVal, fieldName) {
