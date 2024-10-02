@@ -23,7 +23,7 @@
                 href="#"
             ><i class="fa fa-lock me-2" /><small>Sign up</small></a>
         </div>
-        <div id="cart_login_guide">
+        <div id="cart_login_guide" t-if="website.is_public_user()">
             <small><i
                     class="font-italic"
                 >Please login or sign up by registering your email address to continue</i></small>
