@@ -31,6 +31,7 @@ addon | version | maintainers | summary
 [website_sale_extra_step_info](website_sale_extra_step_info/) | 17.0.1.0.0 |  | Extra step info text: global and publica category
 [website_sale_extra_step_replace_feedback_text](website_sale_extra_step_replace_feedback_text/) | 17.0.1.0.0 |  | Replace extra step feedback text to more information
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 17.0.1.0.0 |  | Allow hiding/showing items in extra step
+[website_sale_force_address_step](website_sale_force_address_step/) | 17.0.1.0.0 |  | Never skip the address step. Disables 'express'-checkout
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 17.0.1.0.2 |  | Forces autoinvoice on quotations created from website_sale
 [website_sale_force_login](website_sale_force_login/) | 17.0.1.0.0 |  | Force login before adding products to carts
 [website_sale_interested_product](website_sale_interested_product/) | 17.0.2.0.0 |  | Add a title above the alternative products
