@@ -39,4 +39,9 @@
         "views/templates.xml",
         # "views/res_config_settings.xml"
     ],
+    "assets": {
+        "web.assets_frontend": [
+            "website_sale_billing_address/static/src/js/billing.esm.js",
+        ],
+    },
 }
