@@ -4,27 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0-20240711\n"
+"Project-Id-Version: Odoo Server 17.0-20240826\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-26 10:32+0000\n"
-"PO-Revision-Date: 2024-09-26 10:32+0000\n"
+"POT-Creation-Date: 2024-10-02 09:45+0000\n"
+"PO-Revision-Date: 2024-10-02 12:46+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
-
-#. module: website_sale_billing_address
-#: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address
-msgid ""
-"&amp;nbsp;(\n"
-"                            <i>Your billing address will be requested later)\n"
-"                            </i>"
-msgstr ""
-"&amp;nbsp;(\n"
-"                            <i>Laskutusosoitteesi pyydetään myöhemmin)\n"
-"                            </i>"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
 
 #. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.row_addresses_inherit
@@ -41,18 +32,14 @@ msgid "Billing"
 msgstr "Laskutus"
 
 #. module: website_sale_billing_address
-#: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address
-msgid ""
-"Changing VAT number is not allowed once document(s) have been issued for "
-"your account. Please contact us directly for this operation."
-msgstr ""
-"ALV-numeron muuttaminen ei ole sallittua, kun asiakirjat on jo luotu "
-"tilillesi. Ole hyvä ja ota meihin suoraan yhteyttä tämän toimenpiteen suorittamiseksi."
-
-#. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.checkout
 msgid "Edit this address"
 msgstr "Muokkaa osoitetta"
+
+#. module: website_sale_billing_address
+#: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address
+msgid "Invoice Email"
+msgstr "Laskutussähköposti"
 
 #. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address
@@ -60,26 +47,22 @@ msgid "Invoice transmit method"
 msgstr "Laskutustapa"
 
 #. module: website_sale_billing_address
-#: model:ir.model,name:website_sale_billing_address.model_sale_order
-msgid "Sales Order"
-msgstr "Myyntitilaus"
-
-#. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address
-msgid "Same billing address"
-msgstr "Sama laskutusosoite"
-
-#. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.checkout
 msgid "Subscriber"
 msgstr "Tilaaja"
 
 #. module: website_sale_billing_address
-#: model:ir.model.fields,field_description:website_sale_billing_address.field_sale_order__use_different_billing_address
-msgid "Use Different Billing Address"
-msgstr "Käytä erillistä laskutusosoitetta"
+#: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address
+msgid "VAT"
+msgstr "ALV-numero"
 
 #. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address
-msgid "VAT"
-msgstr "VAT"
+msgid "eInvoice Operator"
+msgstr "Verkkolaskuoperaattori"
+
+#. module: website_sale_billing_address
+#: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address
+msgid "eInvoice address (EDI-code)"
+msgstr "Verkkolaskuosoite"
