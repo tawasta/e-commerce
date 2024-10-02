@@ -34,6 +34,7 @@
         "website_sale_split_name",
         "website_sale_domicile",
         "website_sale_company_email",
+        "website_sale_default_privacies",
     ],
     "data": [
         "views/templates.xml",

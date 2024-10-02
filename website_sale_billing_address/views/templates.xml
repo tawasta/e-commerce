@@ -6,6 +6,12 @@
         </xpath>
     </template>
 
+    <template id="address_hide_domicile" inherit_id="website_sale_default_privacies.address">
+        <xpath expr="//div[@id='web-privacy']" position="attributes">
+            <attribute name="t-if">not is_billing_mode</attribute>
+        </xpath>
+    </template>
+
     <template
         id="address"
         inherit_id="website_sale.address"
