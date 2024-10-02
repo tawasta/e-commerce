@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <template
-        id="address_hide_domicile"
-        inherit_id="website_sale_domicile.address">
+    <template id="address_hide_domicile" inherit_id="website_sale_domicile.address">
         <xpath expr="//div[@id='domicile_div']" position="attributes">
             <attribute name="t-if">not is_billing_mode</attribute>
         </xpath>
