@@ -167,6 +167,10 @@
                         t-attf-class="card #{selected and 'border border-primary' or 'js_change_shipping'}"
                     >
                         <div class='card-body' style='min-height: 130px;'>
+                            <t
+                                t-esc="order.partner_id"
+                                t-options="dict(widget='contact', fields=['name', 'address'], no_marker=True)"
+                            />
                             <a
                                 t-if="not actual_partner or (billing.id in actual_partner.child_ids.ids)"
                                 t-attf-href="/shop/address?partner_id={{order.partner_id.id}}"
@@ -175,12 +179,8 @@
                                 title="Edit this address"
                                 aria-label="Edit this address"
                             >
-                                <i class='fa fa-edit' />
+                                <i class="fa fa-pencil me-1" />Edit
                             </a>
-                            <t
-                                t-esc="order.partner_id"
-                                t-options="dict(widget='contact', fields=['name', 'address'], no_marker=True)"
-                            />
                         </div>
                     </div>
                 </div>

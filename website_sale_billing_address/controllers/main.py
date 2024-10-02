@@ -7,6 +7,8 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 class WebsiteSaleBilling(WebsiteSale):
     @http.route()
     def address(self, **kw):
+        order = request.website.sale_get_order()
+
         if kw.get("billing_address"):
             custom_fields = {
                 "company_email": kw.pop("company_email_billing", None),
@@ -16,8 +18,7 @@ class WebsiteSaleBilling(WebsiteSale):
                 ),
             }
 
-            response = super(WebsiteSaleBilling, self).address(**kw)
-            order = request.website.sale_get_order()
+            response = super().address(**kw)
             if order.partner_invoice_id:
                 partner_invoice = order.partner_invoice_id
 
@@ -42,5 +43,26 @@ class WebsiteSaleBilling(WebsiteSale):
                 logging.warning("Order does not have a partner_invoice_id!")
 
             return response
-        else:
-            return super(WebsiteSaleBilling, self).address(**kw)
+
+        if "submitted" in kw and request.httprequest.method == "POST":
+            # Force checking your addresses
+            kw["callback"] = "/shop/checkout"
+
+        res = super().address(**kw)
+        return res
+
+    @http.route()
+    def checkout(self, **post):
+        res = super().checkout(**post)
+
+        # Remove "mode"-parameter from first address screen
+        order = request.website.sale_get_order()
+        if order:
+            partner_invoice = order.partner_invoice_id
+            if not self._check_billing_partner_mandatory_fields(partner_invoice):
+                # Return without "mode=billing"-parameter
+                return request.redirect(
+                    "/shop/address?partner_id=%d" % partner_invoice.id
+                )
+
+        return res
