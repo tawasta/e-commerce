@@ -18,11 +18,15 @@ class WebsiteSaleBilling(WebsiteSale):
                 ),
             }
 
+            # Email is a mandatory field
+            kw["email"] = custom_fields["company_email"]
+
             response = super().address(**kw)
             if order.partner_invoice_id:
                 partner_invoice = order.partner_invoice_id
 
-                update_values = {}
+                # Correct invoice address type
+                update_values = {"type": "invoice"}
 
                 if custom_fields.get("company_email"):
                     update_values["company_email"] = custom_fields["company_email"]
@@ -37,8 +41,8 @@ class WebsiteSaleBilling(WebsiteSale):
                         "company_registry"
                     ]
                     update_values["vat"] = custom_fields["company_registry"]
-                    update_values["company_type"] = "company"
                     update_values["is_company"] = True
+                    update_values["company_type"] = "company"
 
                 if custom_fields.get("customer_invoice_transmit_method_id"):
                     update_values["customer_invoice_transmit_method_id"] = int(
