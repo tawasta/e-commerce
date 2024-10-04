@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="address_kanban_inherit" inherit_id="website_sale.address_kanban">
+        <xpath expr="//a[contains(@class, 'js_edit_address')]" position="attributes">
+            <!-- Piilotetaan painike, jos order.partner_id == contact.id -->
+            <attribute
+                name="t-if"
+            >mode == 'billing' and order.partner_id.id != contact.id</attribute>
+        </xpath>
+    </template>
+
+</odoo>

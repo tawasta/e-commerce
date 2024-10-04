@@ -89,10 +89,15 @@
     >
         <xpath expr="//t[@t-esc='contact']" position="after">
             <t t-if="website.show_edicode_in_address_card">
-                <t t-if="contact.edicode and contact.einvoice_operator_id"><t
-                        t-esc="contact.edicode"
-                    /> (<t t-esc="contact.einvoice_operator_id.name" />)
-                </t>
+                <address
+                    class="o_portal_address mb-0"
+                    t-if="contact.edicode and contact.einvoice_operator_id"
+                >
+                    <div itemprop="address">
+                        <span t-esc="contact.edicode" /><br />
+                        <span t-esc="contact.einvoice_operator_id.name" />
+                    </div>
+                </address>
             </t>
         </xpath>
     </template>
