@@ -6,21 +6,30 @@ class WebsiteSalePaymentProviders(WebsiteSale):
     def _get_shop_payment_values(self, order, **kwargs):
         values = super()._get_shop_payment_values(order, **kwargs)
 
-        payment_provider = request.env["payment.provider"].sudo()
+        # Haetaan kaikki maksupalveluntarjoajat ja maksutavat yhdellä kertaa suodatuksen helpottamiseksi
         providers_sudo = values["providers_sudo"]
+        filtered_providers_sudo = request.env["payment.provider"].sudo()
 
+        # Hae kaikki sallitut maksupalveluntarjoajat yhdellä kyselyllä
+        allowed_providers_set = set()
         for line in order.order_line:
-            # If there is no limit on allowed providers, do nothing
             if line.product_id.allowed_payment_provider_ids:
-                # Exclude providers that are missing from allowed providers
+                # Käytetään set-unionia, jotta vältetään saman palveluntarjoajan lisääminen useaan kertaan
+                allowed_providers_set |= set(
+                    line.product_id.allowed_payment_provider_ids.ids
+                )
 
-                providers_list = [
-                    x
-                    for x in providers_sudo
-                    if x in line.product_id.allowed_payment_provider_ids
-                ]
-                providers_sudo += next(iter(providers_list), payment_provider)
+        # Suodatus: poista providers, joita ei ole sallituissa
+        if allowed_providers_set:
+            filtered_providers_sudo = providers_sudo.filtered(
+                lambda p: p.id in allowed_providers_set
+            )
 
+        # Käytä suodatettuja palveluntarjoajia, jos niitä löytyi
+        if filtered_providers_sudo:
+            providers_sudo = filtered_providers_sudo
+
+        # Päivitä maksutavat vain, jos suodatettu lista poikkeaa alkuperäisestä
         if providers_sudo != values["providers_sudo"]:
             payment_method = request.env["payment.method"].sudo()
 

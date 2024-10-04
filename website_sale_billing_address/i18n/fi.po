@@ -4,16 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0-20240826\n"
+"Project-Id-Version: Odoo Server 17.0-20240924\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 11:41+0000\n"
-"PO-Revision-Date: 2024-10-02 11:41+0000\n"
+"POT-Creation-Date: 2024-10-04 09:54+0000\n"
+"PO-Revision-Date: 2024-10-04 12:56+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
 
 #. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.checkout
@@ -52,8 +54,8 @@ msgstr "Laskutustapa"
 #. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.checkout
-msgid "Subscriber"
-msgstr "Tilaaja"
+msgid "User"
+msgstr "Käyttäjä"
 
 #. module: website_sale_billing_address
 #: model_terms:ir.ui.view,arch_db:website_sale_billing_address.address
