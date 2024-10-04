@@ -6,7 +6,10 @@
         </xpath>
     </template>
 
-    <template id="address_hide_domicile" inherit_id="website_sale_default_privacies.address">
+    <template
+        id="address_hide_domicile"
+        inherit_id="website_sale_default_privacies.address"
+    >
         <xpath expr="//div[@id='web-privacy']" position="attributes">
             <attribute name="t-if">not is_billing_mode</attribute>
         </xpath>
@@ -22,11 +25,17 @@
         <xpath expr="//input[@name='name']/.." position="after">
             <input type="hidden" name="billing_address" t-att-value="is_billing_mode" />
         </xpath>
-        <xpath expr="//t[@t-elif=&quot;address_mode == 'billing'&quot;]/h3" position="attributes">
+        <xpath
+            expr="//t[@t-elif=&quot;address_mode == 'billing'&quot;]/h3"
+            position="attributes"
+        >
             <attribute name="t-if">is_billing_mode</attribute>
         </xpath>
 
-        <xpath expr="//t[@t-elif=&quot;address_mode == 'billing'&quot;]/h3" position="after">
+        <xpath
+            expr="//t[@t-elif=&quot;address_mode == 'billing'&quot;]/h3"
+            position="after"
+        >
             <h3 t-if="not is_billing_mode">Subscriber</h3>
         </xpath>
         <xpath expr="//input[@name='phone']/.." position="after">
@@ -185,7 +194,9 @@
     <template id="address_kanban_inherit" inherit_id="website_sale.address_kanban">
         <xpath expr="//a[contains(@class, 'js_edit_address')]" position="attributes">
             <!-- Piilotetaan painike, jos order.partner_id == contact.id -->
-            <attribute name="t-if">mode == 'billing' and order.partner_id.id != contact.id</attribute>
+            <attribute
+                name="t-if"
+            >mode == 'billing' and order.partner_id.id != contact.id</attribute>
         </xpath>
     </template>
 
