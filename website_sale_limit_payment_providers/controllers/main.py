@@ -11,19 +11,26 @@ class WebsiteSalePaymentProviders(WebsiteSale):
         filtered_providers_sudo = request.env["payment.provider"].sudo()
 
         # Hae kaikki sallitut maksupalveluntarjoajat yhdellä kyselyllä
-        allowed_providers_set = set()
+        allowed_providers_list = []
         for line in order.order_line:
             if line.product_id.allowed_payment_provider_ids:
-                # Käytetään set-unionia, jotta vältetään saman palveluntarjoajan lisääminen useaan kertaan
-                allowed_providers_set |= set(
-                    line.product_id.allowed_payment_provider_ids.ids
+                allowed_providers_list.append(
+                    set(line.product_id.allowed_payment_provider_ids.ids)
                 )
 
-        # Suodatus: poista providers, joita ei ole sallituissa
-        if allowed_providers_set:
-            filtered_providers_sudo = providers_sudo.filtered(
-                lambda p: p.id in allowed_providers_set
-            )
+        # Tarkistetaan, onko olemassa ristiriitaisia maksupalveluntarjoajia
+        if allowed_providers_list:
+            common_providers = set.intersection(*allowed_providers_list)
+            if not common_providers:
+                # Jos ristiriita löytyy, tyhjennetään maksupalveluntarjoajat
+                values["providers_sudo"] = request.env["payment.provider"].sudo()
+                values["payment_methods_sudo"] = request.env["payment.method"].sudo()
+                return values
+            else:
+                # Suodatus: käytetään vain yhteisiä maksupalveluntarjoajia
+                filtered_providers_sudo = providers_sudo.filtered(
+                    lambda p: p.id in common_providers
+                )
 
         # Käytä suodatettuja palveluntarjoajia, jos niitä löytyi
         if filtered_providers_sudo:
