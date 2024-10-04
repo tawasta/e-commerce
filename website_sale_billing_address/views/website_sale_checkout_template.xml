@@ -7,7 +7,7 @@
         <xpath expr="//t[@t-call='website_sale.row_addresses']" position="before">
             <div class="row">
                 <div class="col-lg-12">
-                    <h4 class="">Subscriber</h4>
+                    <h4 class="">User</h4>
                 </div>
                 <div class="col-lg-6 one_kanban_subscriber">
                     <div class="card border-primary">
