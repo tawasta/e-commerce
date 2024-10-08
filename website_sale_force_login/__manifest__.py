@@ -21,14 +21,14 @@
 {
     "name": "eCommerce: Force login",
     "summary": "Force login before adding products to carts",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.1.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale"],
+    "depends": ["website_sale", "auth_signup_portal_user_custom_redirect_after_signup"],
     "data": [
         "views/website_product_template.xml",
     ],
