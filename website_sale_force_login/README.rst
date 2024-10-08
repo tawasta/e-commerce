@@ -6,7 +6,8 @@
 eCommerce: Force login
 ======================
 
-Force login before adding products to carts
+* Force login/signup before adding products to carts
+* Redirects to product page after login/signup
 
 Configuration
 =============
@@ -24,6 +25,7 @@ Contributors
 ------------
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------

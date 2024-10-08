@@ -8,7 +8,7 @@
             t-if="website.is_public_user()"
         >
             <a
-                t-attf-href="/web/login"
+                t-attf-href="/web/login?redirect=#{request.httprequest.url}"
                 id="cart_login_button"
                 title="Please login or sign up by registering your email address to continue"
                 class="btn btn-primary flex-grow-1"
@@ -16,7 +16,7 @@
             ><i class="fa fa-sign-in me-2" /><small>Login</small></a>
 
             <a
-                t-attf-href="/web/signup"
+                t-attf-href="/web/signup?portal_user_signup_origin_url=#{request.httprequest.url}"
                 id="cart_register_button"
                 title="Please login or sign up by registering your email address to continue"
                 class="btn btn-warning flex-grow-1 ms-1"
