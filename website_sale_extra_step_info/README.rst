@@ -16,7 +16,9 @@ Configuration
 
 Usage
 =====
-\-
+* When editing the info texts, pay attention to not leave any HTML traces in the wysiwyg editor.
+  This could result in the text to seem empty, but still have e.g. line breaks show up on the
+  Extra Step page.
 
 Credits
 =======
@@ -25,6 +27,7 @@ Contributors
 ------------
 
 * Valtteri Lattu <valtteri.lattu@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------

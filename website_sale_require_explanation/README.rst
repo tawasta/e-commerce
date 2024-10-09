@@ -6,15 +6,16 @@
 Website Sale - Require explanation
 ==================================
 
-Require an explanation (note) on checkout
+* Products can be configured to require an explanation (note) on checkout
 
 Configuration
 =============
-\-
+* On product form, enable "Requires an explanation" option, and type in the
+  explanation help text
 
 Usage
 =====
-\-
+* Add product to cart and navigate to Extra Info step. The help text is shown.
 
 Known issues / Roadmap
 ======================
@@ -28,6 +29,7 @@ Contributors
 
 * Valtteri Lattu <valtteri.lattu@tawasta.fi>
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------

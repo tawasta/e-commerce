@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 17.0-20240603\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-13 16:16+0000\n"
-"PO-Revision-Date: 2022-06-13 16:16+0000\n"
+"POT-Creation-Date: 2024-10-09 08:27+0000\n"
+"PO-Revision-Date: 2024-10-09 08:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,28 +18,31 @@ msgstr ""
 #. module: website_sale_extra_step_info
 #: model:ir.model,name:website_sale_extra_step_info.model_res_config_settings
 msgid "Config Settings"
-msgstr "Konfiguraatioasetukset"
+msgstr "Asetukset"
 
 #. module: website_sale_extra_step_info
-#: model:ir.model.fields,field_description:website_sale_extra_step_info.field_product_public_category__display_name
-#: model:ir.model.fields,field_description:website_sale_extra_step_info.field_res_config_settings__display_name
-#: model:ir.model.fields,field_description:website_sale_extra_step_info.field_website__display_name
-msgid "Display Name"
-msgstr "Näyttönimi"
+#: model_terms:ir.ui.view,arch_db:website_sale_extra_step_info.res_config_settings_view_form
+msgid ""
+"If set, this text will always be shown in the Extra Info phase of the cart "
+"flow. Note: pay attention to not leave any HTML remnants in the field when "
+"editing/translating it."
+msgstr ""
+"Jos asetettu, tämä teksti näkyy verkkokaupan ostoskoriputken Lisätiedot-"
+"vaiheessa. Huom: "
+"kenttää muokatessa/kääntäessä varmista, ettei siihen jää HTML-tagien "
+"jäänteitä."
 
 #. module: website_sale_extra_step_info
-#: model:ir.model.fields,field_description:website_sale_extra_step_info.field_product_public_category__id
-#: model:ir.model.fields,field_description:website_sale_extra_step_info.field_res_config_settings__id
-#: model:ir.model.fields,field_description:website_sale_extra_step_info.field_website__id
-msgid "ID"
-msgstr "Tunniste (ID)"
-
-#. module: website_sale_extra_step_info
-#: model:ir.model.fields,field_description:website_sale_extra_step_info.field_product_public_category____last_update
-#: model:ir.model.fields,field_description:website_sale_extra_step_info.field_res_config_settings____last_update
-#: model:ir.model.fields,field_description:website_sale_extra_step_info.field_website____last_update
-msgid "Last Modified on"
-msgstr "Viimeksi muokattu"
+#: model:ir.model.fields,help:website_sale_extra_step_info.field_product_public_category__extra_step_text
+msgid ""
+"If set, this text will be shown in the Extra Info phase of the cart flow if "
+"the cart contains products of this category. Note: pay attention to not "
+"leave any HTML remnants in the field when editing/translating it."
+msgstr ""
+"Jos asetettu, tämä teksti näkyy verkkokaupan ostoskoriputken Lisätiedot-"
+"vaiheessa, jos korissa on tähän kategoriaan kuuluvia tuotteita. Huom: "
+"kenttää muokatessa/kääntäessä varmista, ettei siihen jää HTML-tagien "
+"jäänteitä."
 
 #. module: website_sale_extra_step_info
 #: model:ir.model,name:website_sale_extra_step_info.model_website
@@ -49,21 +52,16 @@ msgstr "Verkkosivu"
 #. module: website_sale_extra_step_info
 #: model:ir.model,name:website_sale_extra_step_info.model_product_public_category
 msgid "Website Product Category"
-msgstr "Verkkosivun Tuote Kategoria"
+msgstr "Verkkosivun Tuotekategoria"
 
 #. module: website_sale_extra_step_info
 #: model:ir.model.fields,field_description:website_sale_extra_step_info.field_product_public_category__extra_step_text
 msgid "Website Sale Extra Step: Info Text"
-msgstr "Verkkokaupan lisätiedot: info teksti"
-
-#. module: website_sale_extra_step_info
-#: model_terms:ir.ui.view,arch_db:website_sale_extra_step_info.res_config_settings_view_form
-msgid "Website sale extra step text"
-msgstr "Verkkokaupan lisätiedot info teksti"
+msgstr "Verkkokaupan Lisätiedot-vaihe: infoteksti"
 
 #. module: website_sale_extra_step_info
 #: model:ir.model.fields,field_description:website_sale_extra_step_info.field_res_config_settings__website_sale_extra_step_text
 #: model:ir.model.fields,field_description:website_sale_extra_step_info.field_website__extra_step_text
 #: model_terms:ir.ui.view,arch_db:website_sale_extra_step_info.res_config_settings_view_form
 msgid "Website sale extra step: info text"
-msgstr "Verkkokaupan lisätiedot: info teksti"
+msgstr "Verkkokaupan Lisätiedot-vaihe: infoteksti"
