@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="extra_info"
+        name="website_sale_require_attachment: Extra Info Step"
+        inherit_id="website_sale.extra_info"
+    >
+        <xpath expr="(//section[hasclass('s_website_form')])[1]" position="before">
+
+            <!-- Show each product's attachment help text -->
+            <t t-foreach="order.order_line" t-as="order_line">
+                <t t-if="order_line.product_id.requires_attachment">
+                    <div
+                        class="alert alert-info alert-dismissible fade show alert-product-requires-attachment-help-text "
+                    >
+                        <p>
+                            <i
+                                class="fa fa-info-circle mr-2"
+                                aria-hidden="true"
+                            /> <span
+                                t-esc="order_line.product_id.with_context(display_default_code=False).display_name"
+                                class="fw-bold"
+                            />:
+                        </p>
+                        <t t-out="order_line.product_id.requires_attachment_help" />
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert"
+                            aria-label="Close"
+                        />
+                    </div>
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>

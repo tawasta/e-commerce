@@ -43,7 +43,7 @@ addon | version | maintainers | summary
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 17.0.1.0.0 |  | Invoice Transmit Method and Payment Terms for Website SO print
 [website_sale_product_page_tax_calculation_info](website_sale_product_page_tax_calculation_info/) | 17.0.1.0.0 |  | Shows a note that country-based VAT is calculated at checkout
 [website_sale_remove_confirmation_status](website_sale_remove_confirmation_status/) | 17.0.1.0.0 |  | Removes confirmation status after completing an order
-[website_sale_require_attachment](website_sale_require_attachment/) | 17.0.1.0.0 |  | Require an attachment on checkout
+[website_sale_require_attachment](website_sale_require_attachment/) | 17.0.1.0.1 |  | Configurable option to require an attachment on checkout
 [website_sale_require_company](website_sale_require_company/) | 17.0.1.0.0 |  | Require company info on checkout
 [website_sale_require_explanation](website_sale_require_explanation/) | 17.0.1.0.1 |  | Configurable option for products to require text in the Extra Info step of the cart flow
 [website_sale_require_product_category](website_sale_require_product_category/) | 17.0.1.0.0 |  | Require a product category on checkout

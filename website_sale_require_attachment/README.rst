@@ -6,15 +6,16 @@
 Website Sale - Require attachment
 =================================
 
-Require an attachment on checkout
+* Products can be configured to require an attachment on checkout
 
 Configuration
 =============
-\-
+* On product form, enable "Requires an attachment" option, and type in the
+  attachment help text
 
 Usage
 =====
-\-
+* Add product to cart and navigate to Extra Info step. The help text is shown.
 
 Known issues / Roadmap
 ======================
@@ -28,6 +29,7 @@ Contributors
 
 * Valtteri Lattu <valtteri.lattu@tawasta.fi>
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------
