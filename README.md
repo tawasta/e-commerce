@@ -28,7 +28,7 @@ addon | version | maintainers | summary
 [website_sale_edicode](website_sale_edicode/) | 17.0.1.0.1 |  | Adds EDI code to website checkout form
 [website_sale_extra_step_content_to_sale_description](website_sale_extra_step_content_to_sale_description/) | 17.0.1.0.0 |  | Extra Step Content to SO description
 [website_sale_extra_step_content_to_sale_order_note](website_sale_extra_step_content_to_sale_order_note/) | 17.0.1.0.1 |  | Extra Step Content to SO note
-[website_sale_extra_step_info](website_sale_extra_step_info/) | 17.0.1.0.0 |  | Extra step info text: global and publica category
+[website_sale_extra_step_info](website_sale_extra_step_info/) | 17.0.1.0.1 |  | Extra step info texts: global text and public category based text
 [website_sale_extra_step_replace_feedback_text](website_sale_extra_step_replace_feedback_text/) | 17.0.1.0.0 |  | Replace extra step feedback text to more information
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 17.0.1.0.0 |  | Allow hiding/showing items in extra step
 [website_sale_force_address_step](website_sale_force_address_step/) | 17.0.1.0.0 |  | Never skip the address step. Disables 'express'-checkout
@@ -43,9 +43,9 @@ addon | version | maintainers | summary
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 17.0.1.0.0 |  | Invoice Transmit Method and Payment Terms for Website SO print
 [website_sale_product_page_tax_calculation_info](website_sale_product_page_tax_calculation_info/) | 17.0.1.0.0 |  | Shows a note that country-based VAT is calculated at checkout
 [website_sale_remove_confirmation_status](website_sale_remove_confirmation_status/) | 17.0.1.0.0 |  | Removes confirmation status after completing an order
-[website_sale_require_attachment](website_sale_require_attachment/) | 17.0.1.0.0 |  | Require an attachment on checkout
+[website_sale_require_attachment](website_sale_require_attachment/) | 17.0.1.0.1 |  | Configurable option to require an attachment on checkout
 [website_sale_require_company](website_sale_require_company/) | 17.0.1.0.0 |  | Require company info on checkout
-[website_sale_require_explanation](website_sale_require_explanation/) | 17.0.1.0.0 |  | Require an explanation (note) on checkout
+[website_sale_require_explanation](website_sale_require_explanation/) | 17.0.1.0.1 |  | Configurable option for products to require text in the Extra Info step of the cart flow
 [website_sale_require_product_category](website_sale_require_product_category/) | 17.0.1.0.0 |  | Require a product category on checkout
 [website_sale_settings](website_sale_settings/) | 17.0.1.0.0 |  | Various toggleable settings under editor's customize menu
 [website_sale_show_product_code](website_sale_show_product_code/) | 17.0.1.0.0 |  | Show the product's internal reference on product page

@@ -20,8 +20,8 @@
 
 {
     "name": "Website Sale - Require attachment",
-    "summary": "Require an attachment on checkout",
-    "version": "17.0.1.0.0",
+    "summary": "Configurable option to require an attachment on checkout",
+    "version": "17.0.1.0.1",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
@@ -31,7 +31,5 @@
     "depends": [
         "website_sale",
     ],
-    "data": [
-        "views/product_template.xml",
-    ],
+    "data": ["views/product_template.xml", "views/templates.xml"],
 }

@@ -40,6 +40,10 @@ class ProductPublicCategory(models.Model):
     extra_step_text = fields.Html(
         "Website Sale Extra Step: Info Text",
         translate=True,
+        help="If set, this text will be shown in the Extra Info phase of "
+        "the cart flow if the cart contains products of this category. Note: pay "
+        "attention to not leave any HTML remnants in the field when "
+        "editing/translating it.",
     )
 
     # 3. Default methods
