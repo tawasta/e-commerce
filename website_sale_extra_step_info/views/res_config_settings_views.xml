@@ -15,6 +15,9 @@
                                 for="website_sale_extra_step_text"
                             />
                             <field name="website_sale_extra_step_text" />
+                            <p class="text-muted mt-2">
+                                If set, this text will always be shown in the Extra Info phase of the cart flow. Note: pay attention to not leave any HTML remnants in the field when editing/translating it.
+                            </p>
                         </div>
                     </div>
                 </setting>

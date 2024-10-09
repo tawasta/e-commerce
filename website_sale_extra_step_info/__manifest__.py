@@ -20,8 +20,8 @@
 
 {
     "name": "Website Sale Extra Step Info Text",
-    "summary": "Extra step info text: global and publica category",
-    "version": "17.0.1.0.0",
+    "summary": "Extra step info texts: global text and public category based text ",
+    "version": "17.0.1.0.1",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
