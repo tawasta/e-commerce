@@ -45,7 +45,7 @@ addon | version | maintainers | summary
 [website_sale_remove_confirmation_status](website_sale_remove_confirmation_status/) | 17.0.1.0.0 |  | Removes confirmation status after completing an order
 [website_sale_require_attachment](website_sale_require_attachment/) | 17.0.1.0.0 |  | Require an attachment on checkout
 [website_sale_require_company](website_sale_require_company/) | 17.0.1.0.0 |  | Require company info on checkout
-[website_sale_require_explanation](website_sale_require_explanation/) | 17.0.1.0.0 |  | Require an explanation (note) on checkout
+[website_sale_require_explanation](website_sale_require_explanation/) | 17.0.1.0.1 |  | Configurable option for products to require text in the Extra Info step of the cart flow
 [website_sale_require_product_category](website_sale_require_product_category/) | 17.0.1.0.0 |  | Require a product category on checkout
 [website_sale_settings](website_sale_settings/) | 17.0.1.0.0 |  | Various toggleable settings under editor's customize menu
 [website_sale_show_product_code](website_sale_show_product_code/) | 17.0.1.0.0 |  | Show the product's internal reference on product page
