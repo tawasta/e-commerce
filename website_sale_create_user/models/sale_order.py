@@ -46,7 +46,10 @@ class SaleOrder(models.Model):
         existing_user = (
             self.env["res.users"]
             .sudo()
-            .search([("login", "=", partner.email)], limit=1)
+            .search(
+                ["|", ("partner_id", "=", partner.id), ("login", "=", partner.email)],
+                limit=1,
+            )
         )
         if not existing_user:
             # Create a new portal wizard for granting access
