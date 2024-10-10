@@ -23,7 +23,9 @@ class WebsiteSaleBilling(WebsiteSale):
 
             response = super().address(**kw)
             if order.partner_invoice_id:
-                partner_invoice = order.partner_invoice_id
+                partner_invoice = order.with_context(
+                    no_vat_validation=True
+                ).partner_invoice_id
 
                 # Correct invoice address type
                 update_values = {"type": "invoice"}
@@ -60,7 +62,7 @@ class WebsiteSaleBilling(WebsiteSale):
             # Force checking your addresses
             kw["callback"] = "/shop/checkout"
 
-        res = super().address(**kw)
+        res = super().with_context(no_vat_validation=True).address(**kw)
         return res
 
     @http.route()
