@@ -1,5 +1,5 @@
 from odoo import models
-
+import logging
 
 class SaleOrder(models.Model):
     _inherit = "sale.order"
@@ -48,6 +48,9 @@ class SaleOrder(models.Model):
             .sudo()
             .search([("login", "=", partner.email)], limit=1)
         )
+        logging.info("===KAYTTAJA====");
+        logging.info(existing_user);
+        logging.info(partner.email);
         if not existing_user:
             # Create a new portal wizard for granting access
             portal_wizard = (
