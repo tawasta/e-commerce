@@ -49,6 +49,7 @@ class SaleOrder(models.Model):
             .search([("login", "=", partner.email)], limit=1)
         )
         logging.info("===KAYTTAJA====");
+        logging.info(partner.is_portal);
         logging.info(existing_user);
         logging.info(partner.email);
         if not existing_user:
