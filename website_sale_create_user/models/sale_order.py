@@ -1,5 +1,6 @@
 from odoo import models
 
+
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
@@ -46,8 +47,8 @@ class SaleOrder(models.Model):
             self.env["res.users"]
             .sudo()
             .search(
-                ["|", ("partner_id", "=", partner.id), ("login", "=", partner.email)], 
-                limit=1
+                ["|", ("partner_id", "=", partner.id), ("login", "=", partner.email)],
+                limit=1,
             )
         )
         if not existing_user:
