@@ -46,10 +46,12 @@ class SaleOrder(models.Model):
         existing_user = (
             self.env["res.users"]
             .sudo()
-            .search([("login", "=", partner.email)], limit=1)
+            .search(
+                ["|", ("partner_id", "=", partner.id), ("login", "=", partner.email)], 
+                limit=1
+            )
         )
         logging.info("===KAYTTAJA====");
-        logging.info(partner.is_portal);
         logging.info(existing_user);
         logging.info(partner.email);
         if not existing_user:
