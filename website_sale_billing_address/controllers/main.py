@@ -62,7 +62,7 @@ class WebsiteSaleBilling(WebsiteSale):
             # Force checking your addresses
             kw["callback"] = "/shop/checkout"
 
-        res = super().with_context(no_vat_validation=True).address(**kw)
+        res = super().address(**kw)
         return res
 
     @http.route()
