@@ -23,12 +23,12 @@ publicWidget.registry.WebsiteSaleInvoiceTransmitMethod = publicWidget.Widget.ext
         this._resetFields();
 
         const actions = {
-            mail: () => $("label[for='company_email']").removeClass("label-optional"),
+            mail: () => $("label[for='email']").removeClass("label-optional"),
             post: () => {
                 this._hideCompanyEmail();
                 fieldRequiredVal = this._removeFieldFromRequiredList(
                     fieldRequiredVal,
-                    "company_email"
+                    "email"
                 );
             },
             einvoice: () => {
@@ -36,7 +36,7 @@ publicWidget.registry.WebsiteSaleInvoiceTransmitMethod = publicWidget.Widget.ext
                 this._hideCompanyEmail();
                 fieldRequiredVal = this._removeFieldFromRequiredList(
                     fieldRequiredVal,
-                    "company_email"
+                    "email"
                 );
                 this._showEinvoiceFields();
             },
@@ -48,15 +48,16 @@ publicWidget.registry.WebsiteSaleInvoiceTransmitMethod = publicWidget.Widget.ext
 
     _resetFields() {
         $(
-            "label[for='company_email'], label[for='vat'], label[for='einvoice_operator_id'], label[for='edicode']"
+            "label[for='email'], label[for='vat'], label[for='einvoice_operator_id'], label[for='edicode']"
         ).addClass("label-optional");
-        $("#company_email").show();
+        // $("#email_input").val("");
+        // #$("#div_email").show();
         $("#einvoice-operator-div, #edicode-div, #edicode-notification-div").hide();
     },
 
     _hideCompanyEmail() {
-        $("#company_email").hide();
-        $("#company-email-input").val("");
+        // $("#div_email").hide();
+        // $("#email_input").val("-");
     },
 
     _showEinvoiceFields() {

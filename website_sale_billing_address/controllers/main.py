@@ -9,19 +9,16 @@ class WebsiteSaleBilling(WebsiteSale):
     def address(self, **kw):
         order = request.website.sale_get_order()
 
-        if kw.get("billing_address"):
+        if kw.get("billing_address") or kw.get("checkout", {}).get("billing_address"):
             custom_fields = {
-                "company_email": kw.pop("company_email_billing", None),
+                "company_email": kw.get("email", None) or kw.get("company_email"),
                 "company_registry": kw.pop("billing_company_registry", None),
                 "customer_invoice_transmit_method_id": kw.pop(
                     "customer_invoice_transmit_method_id", None
                 ),
             }
 
-            # Email is a mandatory field
-            kw["email"] = custom_fields["company_email"]
-
-            response = super().address(**kw)
+            res = super().address(**kw)
             if order.partner_invoice_id:
                 partner_invoice = order.with_context(
                     no_vat_validation=True
@@ -56,13 +53,14 @@ class WebsiteSaleBilling(WebsiteSale):
             else:
                 logging.warning("Order does not have a partner_invoice_id!")
 
-            return response
+            return res
 
         if "submitted" in kw and request.httprequest.method == "POST":
             # Force checking your addresses
             kw["callback"] = "/shop/checkout"
 
         res = super().address(**kw)
+
         return res
 
     @http.route()
