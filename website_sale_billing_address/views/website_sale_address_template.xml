@@ -39,11 +39,6 @@
             <h3 t-if="not is_billing_mode">User</h3>
         </xpath>
 
-        <!-- Change email label for billing address -->
-        <xpath expr="//div[@id='div_email']" position="attributes">
-            <attribute name="t-if">not is_billing_mode</attribute>
-        </xpath>
-
         <!-- Hide phone from billing address -->
         <xpath expr="//div[@id='div_phone']" position="attributes">
             <attribute name="t-if">not is_billing_mode</attribute>
@@ -95,26 +90,33 @@
                 </select>
             </div>
 
+            <!--
+            <xpath expr="//div[@id='div_email']" position="attributes">
+                <attribute name="t-if">not is_billing_mode</attribute>
+            </xpath>
+            <xpath expr="//label[@for='email']" position="after">
+                <label
+                    t-if="is_billing_mode"
+                    class="col-form-label"
+                    for="email"
+                >Invoice Email</label>
+            </xpath>
+
             <div
-                t-attf-class="form-group #{error.get('company_email') and 'o_has_error' or ''} col-lg-6"
-                id="company_email"
+                t-attf-class="#{error.get('email') and 'o_has_error'} col-lg-6 mb-2"
+                id="div_email"
                 t-if="is_billing_mode"
             >
-                <label
-                    id="company-email-label"
-                    class="col-form-label font-weight-normal label-optional"
-                    for="company_email"
-                >Invoice Email</label>
+                <label class="col-form-label" for="email">Invoice Email</label>
                 <input
-                    type="text"
-                    id="company-email-input"
-                    name="company_email_billing"
-                    t-attf-class="form-control #{error.get('company_email') and 'is-invalid' or ''}"
-                    t-att-value="'company_email' in checkout and checkout['company_email']"
-                    t-att-readonly="'1' if 'vat' in checkout and checkout['vat'] and not can_edit_vat else None"
-                    t-att-title="company_email if 'vat' in checkout and checkout['vat'] and not can_edit_vat else None"
+                    type="email"
+                    name="email"
+                    id="email_input"
+                    t-attf-class="form-control #{error.get('email') and 'is-invalid' or ''}"
+                    t-att-value="'email' in checkout and checkout['email']"
                 />
             </div>
+            -->
 
             <div
                 id="edicode-div"
