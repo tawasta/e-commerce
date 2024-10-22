@@ -23,8 +23,10 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def address(self, **kw):
-        # Tarkistetaan, onko URL:ssa parametri mode=billing
-        is_billing_mode = request.httprequest.args.get("mode") == "billing"
+        # Tarkistetaan, onko URL:ssa parametri mode=billing, tai "billing_address" jo parametreissa
+        is_billing_mode = request.httprequest.args.get("mode") == "billing" or kw.get(
+            "billing_address", {}
+        )
 
         if "submitted" in kw and kw.get("firstname"):
             name = request.env["res.partner"]._get_computed_name(
