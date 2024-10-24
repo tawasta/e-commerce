@@ -5,6 +5,13 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
 class WebsiteSaleBilling(WebsiteSale):
+    def _get_mandatory_fields_billing(self, country_id=False):
+        """Remove email and phone from mandatory fields"""
+        res = super()._get_mandatory_fields_billing(country_id)
+
+        if "email" in res:
+            res.remove("email")
+
     @http.route()
     def address(self, **kw):
         order = request.website.sale_get_order()
