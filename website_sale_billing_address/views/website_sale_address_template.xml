@@ -40,9 +40,11 @@
         </xpath>
 
         <!-- Hide phone from billing address -->
+        <!-- Phone is mandatory if invoice address is also used as shipping address
         <xpath expr="//div[@id='div_phone']" position="attributes">
             <attribute name="t-if">not is_billing_mode</attribute>
         </xpath>
+        -->
 
         <xpath expr="//input[@name='phone']/.." position="after">
             <div
