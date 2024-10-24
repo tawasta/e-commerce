@@ -6,7 +6,7 @@
 Website Sale - Limit payment providers
 ======================================
 
-Limit payment providers by product
+Limit payment providers by product or company type.
 
 Configuration
 =============

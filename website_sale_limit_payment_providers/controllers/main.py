@@ -10,13 +10,29 @@ class WebsiteSalePaymentProviders(WebsiteSale):
         providers_sudo = values["providers_sudo"]
         filtered_providers_sudo = request.env["payment.provider"].sudo()
 
+        # Decide if current customer is company or not
+        is_company = order.partner_invoice_id.is_company or order.partner_invoice_id.vat
+
         # Hae kaikki sallitut maksupalveluntarjoajat yhdellä kyselyllä
         allowed_providers_list = []
         for line in order.order_line:
             if line.product_id.allowed_payment_provider_ids:
-                allowed_providers_list.append(
-                    set(line.product_id.allowed_payment_provider_ids.ids)
-                )
+                if is_company:
+                    # Only show company providers
+                    allowed_providers = (
+                        line.product_id.allowed_payment_provider_ids.filtered(
+                            lambda p: p.website_show_company
+                        ).ids
+                    )
+                else:
+                    # Only show private providers
+                    allowed_providers = (
+                        line.product_id.allowed_payment_provider_ids.filtered(
+                            lambda p: p.website_show_private
+                        ).ids
+                    )
+
+                allowed_providers_list.append(set(allowed_providers))
 
         # Tarkistetaan, onko olemassa ristiriitaisia maksupalveluntarjoajia
         if allowed_providers_list:
