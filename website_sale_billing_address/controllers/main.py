@@ -12,6 +12,8 @@ class WebsiteSaleBilling(WebsiteSale):
         if "email" in res:
             res.remove("email")
 
+        return res
+
     @http.route()
     def address(self, **kw):
         order = request.website.sale_get_order()
