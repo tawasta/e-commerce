@@ -56,7 +56,7 @@ addon | version | maintainers | summary
 [website_sale_suggested_products_order_by](website_sale_suggested_products_order_by/) | 17.0.1.0.0 |  | Accessories ordered by _order instead of random order
 [website_user_business_code](website_user_business_code/) | 17.0.1.0.0 |  | Allow users to add and edit their business code
 [website_user_edicode](website_user_edicode/) | 17.0.1.0.0 |  | Allow users to add and edit their edicode and operator
-[website_user_transmit_method](website_user_transmit_method/) | 17.0.1.0.1 |  | Allow users to add and edit their transmit method
+[website_user_transmit_method](website_user_transmit_method/) | 17.0.1.0.2 |  | Allow users to add and edit their transmit method
 
 
 Unported addons
