@@ -21,7 +21,7 @@
 {
     "name": "Website User Transmit Method",
     "summary": "Allow users to add and edit their transmit method",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.0.2",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
