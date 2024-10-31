@@ -14,10 +14,9 @@ class WebsiteSalePaymentProviders(WebsiteSale):
         allowed_providers_list = []
         for line in order.order_line:
             if line.product_id.allowed_payment_provider_ids:
-                if line.product_id.allowed_payment_provider_ids:
-                    allowed_providers_list.append(
-                        set(line.product_id.allowed_payment_provider_ids.ids)
-                    )
+                allowed_providers_list.append(
+                    set(line.product_id.allowed_payment_provider_ids.ids)
+                )
 
         # Tarkistetaan, onko olemassa ristiriitaisia maksupalveluntarjoajia
         if allowed_providers_list:
