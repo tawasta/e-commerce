@@ -45,7 +45,7 @@ class WebsiteSalePaymentProviders(WebsiteSale):
             # Only show company providers
             providers_sudo = providers_sudo.filtered(lambda p: p.website_show_company)
         else:
-            # Only show company providers
+            # Only show private providers
             providers_sudo = providers_sudo.filtered(lambda p: p.website_show_private)
 
         # Päivitä maksutavat vain, jos suodatettu lista poikkeaa alkuperäisestä
