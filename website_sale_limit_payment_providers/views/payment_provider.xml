@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="payment_provider_form" model="ir.ui.view">
+        <field name="name">payment.provider.form.limit.provider</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form" />
+        <field name="arch" type="xml">
+            <field name="available_country_ids" position="after">
+                <field name="website_show_company" widget="boolean_toggle" />
+                <field name="website_show_private" widget="boolean_toggle" />
+            </field>
+        </field>
+    </record>
+</odoo>

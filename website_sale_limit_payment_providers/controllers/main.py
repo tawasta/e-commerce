@@ -35,6 +35,18 @@ class WebsiteSalePaymentProviders(WebsiteSale):
         # Käytä suodatettuja palveluntarjoajia, jos niitä löytyi
         if filtered_providers_sudo:
             providers_sudo = filtered_providers_sudo
+        else:
+            providers_sudo = values["providers_sudo"]
+
+        # Decide if current customer is company or not
+        is_company = order.partner_invoice_id.is_company or order.partner_invoice_id.vat
+
+        if is_company:
+            # Only show company providers
+            providers_sudo = providers_sudo.filtered(lambda p: p.website_show_company)
+        else:
+            # Only show private providers
+            providers_sudo = providers_sudo.filtered(lambda p: p.website_show_private)
 
         # Päivitä maksutavat vain, jos suodatettu lista poikkeaa alkuperäisestä
         if providers_sudo != values["providers_sudo"]:
