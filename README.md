@@ -37,7 +37,7 @@ addon | version | maintainers | summary
 [website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 17.0.1.0.0 |  | Hide Delivery Orders and Returns links from portal users
 [website_sale_interested_product](website_sale_interested_product/) | 17.0.2.0.0 |  | Add a title above the alternative products
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 17.0.1.0.0 |  | Adds account invoice transmit method to checkout
-[website_sale_limit_payment_providers](website_sale_limit_payment_providers/) | 17.0.1.0.1 |  | Limit payment providers by product
+[website_sale_limit_payment_providers](website_sale_limit_payment_providers/) | 17.0.1.1.0 |  | Limit payment providers by product
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 17.0.1.0.0 |  | Website Sale Maintenance mode
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 17.0.1.0.0 |  | Website sale membership privacy values
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 17.0.1.0.0 |  | Invoice Transmit Method and Payment Terms for Website SO print
