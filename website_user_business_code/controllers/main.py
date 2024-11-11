@@ -12,10 +12,10 @@ class CustomerPortalBusinessCode(CustomerPortal):
             "company_registry"
         ]
 
-    def details_form_validate(self, data):
+    def details_form_validate(self, data, partner_creation=False):
         error, error_message = super(
             CustomerPortalBusinessCode, self
-        ).details_form_validate(data)
+        ).details_form_validate(data, partner_creation)
 
         # Business id validation
         if data.get("company_registry"):
