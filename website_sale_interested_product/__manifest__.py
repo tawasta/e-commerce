@@ -19,15 +19,15 @@
 ##############################################################################
 
 {
-    "name": "eCommerce: Title for Product page's Alternative products section",
-    "summary": "Add a title above the alternative products",
-    "version": "17.0.2.0.0",
+    "name": "eCommerce: Title for Product page's Alternative products section (DEPRECATED)",
+    "summary": "Add a title above the alternative products (deprecated)",
+    "version": "17.0.3.0.0",
     "category": "eCommerce",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
-    "installable": True,
+    "installable": False,
     "depends": ["website_sale_product_configurator"],
     "data": ["views/website_sale_interested_product.xml"],
 }

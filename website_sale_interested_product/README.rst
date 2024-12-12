@@ -2,12 +2,15 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-================================================================
-eCommerce: Title for Product page's Alternative products section
-================================================================
+=============================================================================
+eCommerce: Title for Product page's Alternative products section (DEPRECATED)
+=============================================================================
 
 * Adds a "You may also be interested in these products:" title 
   above the alternative products on product page
+* Deprecated and flagged as uninstallable in 17.0 since the title
+  can be added with website editor and it's editable and translatable
+  out of the box.
 
 Configuration
 =============
