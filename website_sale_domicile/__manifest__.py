@@ -31,8 +31,5 @@
     "depends": ["res_partner_domicile", "website_sale"],
     "data": ["views/website_sale_checkout.xml"],
     "assets": {
-        "web.assets_frontend": [
-            "website_sale_domicile/static/src/js/checkout.esm.js",
-        ]
     },
 }
