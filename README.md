@@ -36,7 +36,6 @@ addon | version | maintainers | summary
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 17.0.1.1.0 |  | Forces autoinvoice on quotations created from website_sale
 [website_sale_force_login](website_sale_force_login/) | 17.0.1.1.0 |  | Force login before adding products to carts
 [website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 17.0.1.0.0 |  | Hide Delivery Orders and Returns links from portal users
-[website_sale_interested_product](website_sale_interested_product/) | 17.0.2.0.0 |  | Add a title above the alternative products
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 17.0.1.0.0 |  | Adds account invoice transmit method to checkout
 [website_sale_limit_payment_providers](website_sale_limit_payment_providers/) | 17.0.1.1.1 |  | Limit payment providers by product
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 17.0.1.0.0 |  | Website Sale Maintenance mode
@@ -66,6 +65,7 @@ Unported addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [website_sale_hide_default_product_text](website_sale_hide_default_product_text/) | 17.0.1.0.1 (unported) |  | Hides the default '30-day money-back quarantee...' text (deprecated)
+[website_sale_interested_product](website_sale_interested_product/) | 17.0.3.0.0 (unported) |  | Add a title above the alternative products (deprecated)
 [website_sale_payment_rules](website_sale_payment_rules/) | 17.0.1.0.0 (unported) |  | Website sale payment rules
 [website_sale_product_description](website_sale_product_description/) | 17.0.1.0.1 (unported) |  | Show website product description in backend (deprecated)
 
