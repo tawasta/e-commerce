@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="option_collapse_categories_recursive"
+        name="Collapse Category Recursive (freeform links)"
+        inherit_id="website_sale.option_collapse_categories_recursive"
+    >
+        <xpath expr="(//li[hasclass('nav-item')]/a)[1]" position="attributes">
+            <attribute name="t-if">1==0</attribute>
+        </xpath>
+
+        <!-- if not configured to be a freeform link, handle as in core  -->
+        <xpath expr="(//li[hasclass('nav-item')]/a)[1]" position="after">
+
+            <t t-if="c.show_as_external_link">
+                <a t-att-href="c.external_link_url" class="nav-link">
+                    <span t-field="c.name" />
+                </a>
+            </t>
+            <t t-else="">
+               <a
+                    t-att-href="keep('/shop/category/' + slug(c), category=0)"
+                    t-attf-class="nav-link #{'active' if c.id == category.id else ''}"
+                    t-field="c.name"
+                />
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
