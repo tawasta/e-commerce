@@ -52,7 +52,11 @@ publicWidget.registry.WebsiteSaleInvoiceTransmitMethod = publicWidget.Widget.ext
         ).addClass("label-optional");
         $("#company_email").show();
         $("#einvoice-operator-div, #edicode-div, #edicode-notification-div").hide();
-        $("input[name='phone']").val("-");
+
+        var phone = $("input[name='phone']");
+        if ($.trim(phone.val()) === "") {
+            phone.val("-");
+        }
     },
 
     _hideCompanyEmail() {

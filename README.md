@@ -14,7 +14,7 @@ addon | version | maintainers | summary
 [website_pricelist_company_info](website_pricelist_company_info/) | 17.0.1.0.0 |  | Allow users to add and edit their currency
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 17.0.1.0.0 |  | Create company for website customer, if company name is set
 [website_sale_autoflag_partner_as_customer](website_sale_autoflag_partner_as_customer/) | 17.0.1.0.0 |  | Set the 'Is a Customer' flag automatically
-[website_sale_billing_address](website_sale_billing_address/) | 17.0.1.0.2 |  | Website customer can select a billing address
+[website_sale_billing_address](website_sale_billing_address/) | 17.0.1.0.3 |  | Website customer can select a billing address
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 17.0.1.0.0 |  | eCommerce tax in cart lines
 [website_sale_company_email](website_sale_company_email/) | 17.0.1.0.1 |  | Add different emails for ecommerce user and company
 [website_sale_company_slider](website_sale_company_slider/) | 17.0.1.2.0 |  | Slider to checkout
