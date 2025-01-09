@@ -8,6 +8,8 @@ eCommerce: Partner Default Invoice Address
 
 * Extend the functionality of partner_default_invoice_address to 
   suggest the default invoice address for eCommerce orders
+* Adds a domain limitation to the possible addresses, to avoid
+  error 403 in address step of checkout
 
 Configuration
 =============
