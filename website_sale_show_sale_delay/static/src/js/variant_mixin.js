@@ -5,6 +5,7 @@ odoo.define("website_sale_show_sale_delay.customVariantMixin", function (require
     var publicWidget = require("web.public.widget");
     var ajax = require("web.ajax");
     var core = require("web.core");
+    var _t = core._t;
     var QWeb = core.qweb;
     var xml_load = ajax.loadXML(
         "/website_sale_show_sale_delay/static/src/xml/websitesale_stock_product_availability.xml",
@@ -22,7 +23,7 @@ odoo.define("website_sale_show_sale_delay.customVariantMixin", function (require
                 combination.product_type === "product" &&
                 _.contains(["delivery_time"], combination.inventory_availability)
             ) {
-                console.log(combination);
+                
                 // Var qty = $parent.find('input[name="add_qty"]').val();
                 $parent.find("#add_to_cart").removeClass("out_of_stock");
                 $parent.find("#buy_now").removeClass("out_of_stock");
@@ -39,9 +40,19 @@ odoo.define("website_sale_show_sale_delay.customVariantMixin", function (require
                     },
                 }).then(function (results) {
                     combination.sale_delay = results.sale_delay;
+                    combination.qty_available = results.qty_available || 0;
                     if (combination.virtual_available == 0) {
                         $parent.find(".sale_delay").text(combination.sale_delay);
                     }
+
+                    var qty_message = "";
+                    if (combination.qty_available <= 0) {
+                        qty_message = _t("Delivery time: ") + `${combination.sale_delay} ` + _t("days");
+                    } else {
+                        qty_message = _t("Balance: ") + `${combination.qty_available}`;
+                    }
+
+                    $parent.find(".availability_message").text(qty_message);
                 });
             }
             xml_load.then(function () {
