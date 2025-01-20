@@ -10,4 +10,4 @@ class CombinationInfo(http.Controller):
             [("id", "=", product_id)]
         )
 
-        return {"sale_delay": current_product.sale_delay_for_website}
+        return {"sale_delay": current_product.sale_delay_for_website, "qty_available": current_product.qty_available}
