@@ -69,6 +69,7 @@ addon | version | summary
 [website_sale_payment_processing_payment_text](website_sale_payment_processing_payment_text/) | 14.0.1.0.0 | Processing payment text shown for unfinished transaction
 [website_sale_payment_rules](website_sale_payment_rules/) | 14.0.1.0.2 | Website sale payment rules
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 14.0.1.0.1 | Invoice Transmit Method and Payment Terms for Website SO print
+[website_sale_pricelist_search_domain_bypass_option](website_sale_pricelist_search_domain_bypass_option/) | 14.0.1.0.0 | Provides context-based flag for customizing searching of pricelists
 [website_sale_product_category_freeform_link](website_sale_product_category_freeform_link/) | 14.0.1.0.0 | Categories in product catalog can be configured to link elsewhere outside the catalog
 [website_sale_product_code](website_sale_product_code/) | 14.0.1.0.0 | Show product default code in shop
 [website_sale_product_link_rel_canonical_meta_tag](website_sale_product_link_rel_canonical_meta_tag/) | 14.0.1.1.0 | Support for setting a custom canonical link meta tag
