@@ -131,6 +131,7 @@
                     type="text"
                     name="edicode"
                     class="form-control"
+                    placeholder="e.g. 003712345671"
                     t-att-value="'edicode' in checkout and checkout['edicode']"
                 />
                 </div>
