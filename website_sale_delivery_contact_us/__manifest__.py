@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2022 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,16 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Website Sale Domicile",
-    "summary": "Adds domicile to website checkout form",
-    "version": "17.0.1.0.2",
+    "name": "eCommerce: Quick link to contact form, if delivery is not found",
+    "summary": "Suggest moving to contact form if no delivery methods",
+    "version": "17.0.1.0.0",
     "category": "Website",
     "website": "https://gitlab.com/tawasta/odoo/e-commerce",
-    "author": "Tawasta",
+    "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["res_partner_domicile", "website_sale"],
-    "data": ["views/website_sale_checkout.xml"],
-    "assets": {},
+    "depends": ["website_sale", "website_crm"],  # website_sale_delivery
+    "data": ["views/website_sale_payment_delivery.xml"],
 }
