@@ -55,6 +55,7 @@ addon | version | summary
 [website_sale_hide_login](website_sale_hide_login/) | 14.0.1.0.0 | Website Sale Hide Login Button
 [website_sale_hide_price_fix](website_sale_hide_price_fix/) | 14.0.1.0.1 | Fix missing items from Website Sale Hide Price
 [website_sale_hide_transmit_method_public_user](website_sale_hide_transmit_method_public_user/) | 14.0.1.5.3 | Website Sale Hide Transmit Method Public User
+[website_sale_hide_variant_extra_costs](website_sale_hide_variant_extra_costs/) | 14.0.1.0.0 | Adds option to hide the '+ 15 €' text from variant dropdownsoutside the catalog
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 14.0.1.0.8 | Adds account invoice transmit method to checkout
 [website_sale_invoicing_fee](website_sale_invoicing_fee/) | 14.0.1.0.4 | Adds Invoicing fee to Sale Order
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 14.0.1.0.0 | Website Sale Maintenance mode
