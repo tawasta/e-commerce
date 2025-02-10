@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website_sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <div id="sale_product_catalog_settings" position="inside">
+                <div
+                    class="col-12 col-lg-6 o_setting_box"
+                    id="website_sale_hide_variant_extra_costs_setting"
+                    title="Hide the variant extra cost indicators from product page dropdowns"
+                >
+                    <div class="o_setting_left_pane">
+                        <field name="hide_variant_extra_costs" />
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="hide_variant_extra_costs" />
+                        <span
+                            class="fa fa-lg fa-building-o"
+                            title="Values set here are company-specific."
+                            groups="base.group_multi_company"
+                        />
+                        <div class="text-muted">
+                            Hide Variant Costs from Product Page Dropdowns
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>
