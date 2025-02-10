@@ -5,7 +5,8 @@
             expr="//div[@t-attf-class='css_quantity input-group mb-2']"
             position="before"
         >
-            <t t-set="disable_cart_change" t-value='1==0' />
+            <!-- Tarkista kategorian asetus -->
+            <t t-set="disable_cart_change" t-value="line._get_disable_qty_change()" />
         </xpath>
         <xpath expr="//input[@type='text']" position="attributes">
             <attribute
@@ -19,6 +20,18 @@
             <attribute
                 name="t-attf-class"
             >css_quantity input-group mb-2 {{ 'd-none' if disable_cart_change else '' }}</attribute>
+        </xpath>
+    </template>
+
+    <template
+        id="product_quantity_disable"
+        inherit_id="website_sale.product_quantity"
+    >
+        <xpath
+            expr="//a[@class='btn btn-link js_add_cart_json']/.."
+            position="attributes"
+        >
+            <attribute name="t-if">not product.categ_id.disable_qty_change</attribute>
         </xpath>
     </template>
 </odoo>
