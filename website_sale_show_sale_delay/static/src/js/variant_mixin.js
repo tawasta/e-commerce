@@ -23,7 +23,6 @@ odoo.define("website_sale_show_sale_delay.customVariantMixin", function (require
                 combination.product_type === "product" &&
                 _.contains(["delivery_time"], combination.inventory_availability)
             ) {
-                
                 // Var qty = $parent.find('input[name="add_qty"]').val();
                 $parent.find("#add_to_cart").removeClass("out_of_stock");
                 $parent.find("#buy_now").removeClass("out_of_stock");
@@ -47,7 +46,10 @@ odoo.define("website_sale_show_sale_delay.customVariantMixin", function (require
 
                     var qty_message = "";
                     if (combination.qty_available <= 0) {
-                        qty_message = _t("Delivery time: ") + `${combination.sale_delay} ` + _t("days");
+                        qty_message =
+                            _t("Delivery time: ") +
+                            `${combination.sale_delay} ` +
+                            _t("days");
                     } else {
                         qty_message = _t("Balance: ") + `${combination.qty_available}`;
                     }

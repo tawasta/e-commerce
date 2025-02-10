@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="variants" inherit_id="sale.variants">
+        <xpath
+            expr="//select[@t-att-data-attribute_id='ptal.attribute_id.id']//span[hasclass('badge')]"
+            position="attributes"
+        >
+                <attribute
+                name="t-if"
+            >not request.website.company_id.hide_variant_extra_costs</attribute>
+        </xpath>
+
+    </template>
+</odoo>

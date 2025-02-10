@@ -65,7 +65,7 @@
             <div
                 t-attf-class="availability_message_#{product_template} text-danger mt16"
             >
-                <span class="availability_message"></span>
+                <span class="availability_message" />
             </div>
         </div>
     </t>
