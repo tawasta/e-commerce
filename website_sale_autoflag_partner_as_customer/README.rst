@@ -6,7 +6,7 @@
 eCommerce: Autoflag Buying Partners as Customers
 ================================================
 
-* When creating a partner during webshop checkout, 
+* When creating a partner during webshop checkout,
   set the "Is a Customer" field automatically
 
 Configuration
@@ -27,13 +27,13 @@ Credits
 Contributors
 ------------
 
-* Timo Talvitie <timo.talvitie@tawasta.fi>
+* Timo Talvitie <timo.talvitie@futural.fi>
 
 Maintainer
 ----------
 
-.. image:: https://tawasta.fi/templates/tawastrap/images/logo.png
-   :alt: Oy Tawasta OS Technologies Ltd.
-   :target: https://tawasta.fi/
+.. image:: https://futural.fi/templates/tawastrap/images/logo.png
+   :alt: Futural Oy
+   :target: https://futural.fi/
 
-This module is maintained by Oy Tawasta OS Technologies Ltd.
+This module is maintained by Futural Oy
