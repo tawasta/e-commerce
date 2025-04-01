@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Tawasta
-#    Copyright 2022 Futural Oy (https://futural.fi)
+#    Copyright 2022 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -24,15 +24,11 @@
     "version": "17.0.1.0.2",
     "category": "Website",
     "website": "https://github.com/tawasta/e-commerce",
-    "author": "Futural",
+    "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "depends": ["res_partner_domicile", "website_sale"],
     "data": ["views/website_sale_checkout.xml"],
-    "assets": {
-        "web.assets_frontend": [
-            "website_sale_domicile/static/src/js/checkout.esm.js",
-        ]
-    },
+    "assets": {},
 }
