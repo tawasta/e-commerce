@@ -7,7 +7,7 @@ eCommerce: Suggested Accessories Categorized View
 =================================================
 * In Order overview, the module sorts all the Suggested Accessories based on configurable categories,
   instead of a single list.
-* Provides two new toggles in website editor's Customize section 
+* Provides two new toggles in website editor's Customize section
 
   * "Switch to primary button style for Suggested Accessories' Add to Cart buttons (applies to Suggested Accessories Categorized View)"
   * "Hide Order Overview Suggested Accessories' Product Images (applies to Suggested Accessories Categorized View)"
@@ -20,7 +20,7 @@ Configuration
 
 Usage
 =====
-* Add to cart a product that has suggested accessories configured. 
+* Add to cart a product that has suggested accessories configured.
 * Go to Order Overview. The suggestions appear as categorized under the order lines
 
 
@@ -35,14 +35,14 @@ Credits
 Contributors
 ------------
 
-* Miika Nissi <miika.nissi@tawasta.fi>
-* Timo Talvitie <timo.talvitie@tawasta.fi>
+* Miika Nissi <miika.nissi@futural.fi>
+* Timo Talvitie <timo.talvitie@futural.fi>
 
 Maintainer
 ----------
 
-.. image:: http://tawasta.fi/templates/tawastrap/images/logo.png
-   :alt: Oy Tawasta OS Technologies Ltd.
-   :target: http://tawasta.fi/
+.. image:: https://futural.fi/templates/tawastrap/images/logo.png
+   :alt: Futural Oy
+   :target: https://futural.fi/
 
-This module is maintained by Oy Tawasta OS Technologies Ltd.
+This module is maintained by Futural Oy

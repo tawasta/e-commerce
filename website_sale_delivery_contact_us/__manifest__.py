@@ -23,7 +23,7 @@
     "summary": "Suggest moving to contact form if no delivery methods",
     "version": "17.0.1.0.0",
     "category": "Website",
-    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
+    "website": "https://github.com/tawasta/e-commerce",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,

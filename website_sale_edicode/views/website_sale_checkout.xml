@@ -20,6 +20,7 @@
                     <input
                         type="text"
                         name="edicode"
+                        placeholder="e.g. 003712345671"
                         class="form-control"
                         t-att-value="'edicode' in checkout and checkout['edicode']"
                     />

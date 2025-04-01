@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
+#    Author: Futural Oy
+#    Copyright 2021- Futural Oy (http://www.futural.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -22,11 +22,11 @@
     "version": "17.0.1.0.0",
     "category": "E-commerce",
     "summary": "Helper module to disable changing product quantity in cart",
-    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
-    "author": "Tawasta",
+    "website": "https://github.com/tawasta/e-commerce",
+    "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
     "depends": ["website_sale"],
-    "data": ["views/product_category_view.xml","views/website_sale_templates.xml"],
+    "data": ["views/product_category_view.xml", "views/website_sale_templates.xml"],
 }

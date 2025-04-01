@@ -83,6 +83,9 @@ class WebsiteSale(WebsiteSale):
                 ]
             )
 
+        # It would seem that the domain is not used anywhere anymore?
+        _logger.info(domain)
+
         return values
 
     @http.route()
