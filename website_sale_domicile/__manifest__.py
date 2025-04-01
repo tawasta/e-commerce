@@ -23,7 +23,7 @@
     "summary": "Adds domicile to website checkout form",
     "version": "17.0.1.0.2",
     "category": "Website",
-    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
+    "website": "https://github.com/tawasta/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
