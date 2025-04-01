@@ -6,7 +6,7 @@
 eCommerce: Partner Default Invoice Address
 ==========================================
 
-* Extend the functionality of partner_default_invoice_address to 
+* Extend the functionality of partner_default_invoice_address to
   suggest the default invoice address for eCommerce orders
 * Adds a domain limitation to the possible addresses, to avoid
   error 403 in address step of checkout
@@ -18,7 +18,7 @@ Configuration
 
 Usage
 =====
-* Navigate to checkout as that contact. The configured default invoice 
+* Navigate to checkout as that contact. The configured default invoice
   address will be suggested, instead of the contact partner itself.
 
 Known issues / Roadmap
@@ -31,14 +31,14 @@ Credits
 Contributors
 ------------
 
-* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
-* Timo Talvitie <timo.talvitie@tawasta.fi>
+* Jarmo Kortetjärvi <jarmo.kortetjarvi@futural.fi>
+* Timo Talvitie <timo.talvitie@futural.fi>
 
 Maintainer
 ----------
 
-.. image:: https://tawasta.fi/templates/tawastrap/images/logo.png
-   :alt: Oy Tawasta OS Technologies Ltd.
-   :target: https://tawasta.fi/
+.. image:: https://futural.fi/templates/tawastrap/images/logo.png
+   :alt: Futural Oy
+   :target: https://futural.fi/
 
-This module is maintained by Oy Tawasta OS Technologies Ltd.
+This module is maintained by Futural Oy

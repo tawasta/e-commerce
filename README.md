@@ -1,8 +1,8 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Pipeline Status](https://gitlab.com/tawasta/odoo/e-commerce/badges/17.0-dev/pipeline.svg)](https://gitlab.com/tawasta/odoo/e-commerce/-/pipelines/)
+[![Pre-commit Status](https://github.com/tawasta/e-commerce/actions/workflows/pre-commit.yml/badge.svg?branch=17.0)](https://github.com/tawasta/e-commerce/actions/workflows/pre-commit.yml?query=branch%3A17.0)
 
-Invoicing
-=========
+Website sale (e-commerce) modules
+=================================
 
 [//]: # (addons)
 
