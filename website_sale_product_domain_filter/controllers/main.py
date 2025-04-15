@@ -11,7 +11,6 @@ _logger = logging.getLogger(__name__)
 
 
 class WebsiteSale(WebsiteSale):
-
     def _shop_lookup_products(self, attrib_set, options, post, search, website):
         fuzzy_search_term, product_count, search_result = super()._shop_lookup_products(
             attrib_set, options, post, search, website
@@ -25,7 +24,7 @@ class WebsiteSale(WebsiteSale):
         return fuzzy_search_term, len(filtered_products), filtered_products
 
     @http.route([])
-    def product(self, product, category='', search='', **kwargs):
+    def product(self, product, category="", search="", **kwargs):
         """Yksittäisen tuotteen näkymä — estä pääsy jos ei oikeuksia"""
         _logger.info("======================TAALLA===================")
         _logger.info(product.paywall_domain)
