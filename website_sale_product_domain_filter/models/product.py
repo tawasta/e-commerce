@@ -24,3 +24,12 @@ class ProductTemplate(models.Model):
             if product.paywall_domain:
                 domain = [("id", "=", user_partner_id)] + safe_eval(product.paywall_domain)
             product.user_in_paywall_domain = bool(domain and partner.search(domain))
+
+    def _can_be_added_to_cart(self):
+        res = super()._can_be_added_to_cart()
+        if not res:
+            return False
+        return all(
+            not p.paywall_domain or p.user_in_paywall_domain
+            for p in self
+        )

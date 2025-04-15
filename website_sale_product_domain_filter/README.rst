@@ -5,36 +5,52 @@
 ==================================
 Website Sale Product Domain Filter
 ==================================
-This module restricts visibility of products on the Odoo website shop
+This module restricts the visibility of products in the Odoo website shop
 based on partner-specific domain rules (`paywall_domain`).
 
-Users will only see products they are allowed to access.
+Only users matching the defined criteria will be able to see or buy the product.
 
 Features
 ========
 
-* Define a domain (`paywall_domain`) for each product
-* Users only see products if their partner (`res.partner`) matches the domain
+* Define a custom domain (`paywall_domain`) per product using Python-like syntax
+* Products are shown only if the current user's partner (`res.partner`) matches the domain
 * Filters apply to:
   * Shop search results
   * Autocomplete suggestions
   * Individual product pages
+  * Suggested accessories
+  * Related / recommended products
+  * Add-to-cart logic
 * Backend domain editor (domain widget in product form)
+* Prevents access to product pages if not allowed
+* Prevents restricted products from being added to cart or suggested
 
 Usage
 =====
 
 1. Go to **Sales** → **Products**
-2. Edit a product and add a **Paywall Domain** (e.g., `[('country_id.code', '=', 'FI')]`)
-3. In the frontend (website shop), users will only see products matching their `res.partner` via the domain
+2. Edit a product and add a **Paywall Domain**, e.g.:
+
+   ::
+
+       [('country_id.code', '=', 'FI')]
+
+3. In the frontend (website shop), users will only see the product if their partner matches the domain condition
 
 Technical Details
 =================
 
-* `paywall_domain` is a Char field (safe_eval evaluated)
-* `user_in_paywall_domain` is a computed boolean field
-* Website routes for product views and search are extended to apply filtering
-* Autocomplete controller is extended to filter product suggestions
+* `paywall_domain` is a `Char` field using `safe_eval` for evaluation
+* `user_in_paywall_domain` is a computed boolean field based on the current user’s `res.partner`
+* Filters are applied at:
+  * Product listing
+  * Product details
+  * Cart suggestions
+  * Autocomplete
+* `_can_be_added_to_cart()` is overridden to prevent forbidden products being added
+* `_cart_accessories()` is extended to exclude restricted products
+* Fully compatible with `website_sale` & `website_sale_cart`
 
 
 Known issues / Roadmap
