@@ -6,7 +6,18 @@
 Website sale billing address
 ============================
 
-* This Odoo module extends the default website sale functionality to include custom fields and manage billing address requirements during checkout. It adds new fields for invoice email, VAT, and invoice transmit method, which are dynamically displayed or hidden based on the user's selection. The module ensures that these custom fields are correctly saved to the sales order's partner invoice address, providing a seamless and customizable checkout experience.
+* This Odoo module extends the standard website sale checkout flow by enabling support for a separate billing address and invoice-specific fields. It provides custom logic and dynamic behavior for fields such as company registry number (VAT), invoice transmit method, invoice email, and e-invoice operator details.
+
+The fields are shown or hidden depending on the selected transmit method (e.g. email, post, e-invoice), and validated accordingly. Valid data is written to the sales order's invoice partner only when the form passes all validation checks.
+
+Key features:
+
+- Billing address mode in checkout with dedicated fields
+- Company registry/VAT validation during checkout
+- Dynamic visibility and required logic for transmit method–specific fields
+- Prevents overwriting billing partner if there are form validation errors
+- Integration with modules like `website_sale_invoice_transmit_method` and `website_sale_company_email`
+
 
 Configuration
 =============
@@ -14,7 +25,10 @@ Configuration
 
 Usage
 =====
-\-
+- Customer proceeds to checkout
+- Billing address and invoice-related fields are displayed
+- Selected transmit method (e.g. post or e-invoice) affects which fields are shown
+- After submission, valid data is saved to the invoice address
 
 Known issues / Roadmap
 ======================
