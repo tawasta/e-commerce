@@ -8,7 +8,6 @@ _logger = logging.getLogger(__name__)
 
 
 class WebsiteSaleBilling(WebsiteSale):
-
     def _get_mandatory_fields_billing(self, country_id=False):
         """Poista sähköposti pakollisista laskutuskentistä"""
         res = super()._get_mandatory_fields_billing(country_id)
@@ -17,23 +16,27 @@ class WebsiteSaleBilling(WebsiteSale):
         return res
 
     def checkout_form_validate(self, mode, all_form_values, data):
-        error, error_message = super().checkout_form_validate(mode, all_form_values, data)
+        error, error_message = super().checkout_form_validate(
+            mode, all_form_values, data
+        )
 
-        Partner = request.env['res.partner']
-        country_id = int(data.get('country_id') or 0)
-        vat = data.get('billing_company_registry')
+        Partner = request.env["res.partner"]
+        country_id = int(data.get("country_id") or 0)
+        vat = data.get("billing_company_registry")
 
         if vat and hasattr(Partner, "check_vat") and country_id:
             vat_fixed = Partner.fix_eu_vat_number(country_id, vat)
-            data['billing_company_registry'] = vat_fixed
-            partner_dummy = Partner.new({
-                'vat': vat_fixed,
-                'country_id': country_id,
-            })
+            data["billing_company_registry"] = vat_fixed
+            partner_dummy = Partner.new(
+                {
+                    "vat": vat_fixed,
+                    "country_id": country_id,
+                }
+            )
             try:
                 partner_dummy.sudo().check_vat()
             except ValidationError as e:
-                error['billing_company_registry'] = 'error'
+                error["billing_company_registry"] = "error"
                 error_message.append(e.args[0])
 
         return error, error_message
@@ -44,7 +47,9 @@ class WebsiteSaleBilling(WebsiteSale):
 
         # Säilytä arvot ennen validointia
         billing_company_registry = kw.get("billing_company_registry")
-        customer_invoice_transmit_method_id = kw.get("customer_invoice_transmit_method_id")
+        customer_invoice_transmit_method_id = kw.get(
+            "customer_invoice_transmit_method_id"
+        )
         company_email = kw.get("email") or kw.get("company_email")
 
         # Suorita lomakkeen käsittely ensin
@@ -58,7 +63,9 @@ class WebsiteSaleBilling(WebsiteSale):
 
         if kw.get("billing_address") or kw.get("checkout", {}).get("billing_address"):
             if order.partner_invoice_id:
-                partner_invoice = order.with_context(no_vat_validation=True).partner_invoice_id
+                partner_invoice = order.with_context(
+                    no_vat_validation=True
+                ).partner_invoice_id
                 update_values = {"type": "invoice"}
 
                 if company_email:
@@ -74,9 +81,14 @@ class WebsiteSaleBilling(WebsiteSale):
 
                 if customer_invoice_transmit_method_id:
                     try:
-                        update_values["customer_invoice_transmit_method_id"] = int(customer_invoice_transmit_method_id)
+                        update_values["customer_invoice_transmit_method_id"] = int(
+                            customer_invoice_transmit_method_id
+                        )
                     except (ValueError, TypeError):
-                        _logger.warning("Invalid transmit method ID: %s", customer_invoice_transmit_method_id)
+                        _logger.warning(
+                            "Invalid transmit method ID: %s",
+                            customer_invoice_transmit_method_id,
+                        )
 
                 if update_values:
                     _logger.info("Writing partner_invoice values: %s", update_values)
@@ -97,6 +109,8 @@ class WebsiteSaleBilling(WebsiteSale):
         if order:
             partner_invoice = order.partner_invoice_id
             if not self._check_billing_partner_mandatory_fields(partner_invoice):
-                return request.redirect("/shop/address?partner_id=%d" % partner_invoice.id)
+                return request.redirect(
+                    "/shop/address?partner_id=%d" % partner_invoice.id
+                )
 
         return res
