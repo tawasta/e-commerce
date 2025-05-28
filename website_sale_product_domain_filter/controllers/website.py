@@ -7,7 +7,7 @@ from odoo.addons.website.controllers.main import Website
 _logger = logging.getLogger(__name__)
 
 
-class WebsitePaywall(Website):
+class WebsitePartnerFilter(Website):
     @http.route()
     def autocomplete(
         self,
@@ -37,9 +37,7 @@ class WebsitePaywall(Website):
                     continue  # Ei kelvollinen ID
 
                 tmpl = request.env["product.template"].browse(product_id)
-                if tmpl.exists() and (
-                    not tmpl.paywall_domain or tmpl.user_in_paywall_domain
-                ):
+                if tmpl.exists() and (tmpl.user_in_partner_domain):
                     filtered_results.append(product)
 
             response["results"] = filtered_results

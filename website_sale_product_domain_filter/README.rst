@@ -6,14 +6,14 @@
 Website Sale Product Domain Filter
 ==================================
 This module restricts the visibility of products in the Odoo website shop
-based on partner-specific domain rules (`paywall_domain`).
+based on partner-specific domain rules.
 
 Only users matching the defined criteria will be able to see or buy the product.
 
 Features
 ========
 
-* Define a custom domain (`paywall_domain`) per product using Python-like syntax
+* Define a custom filters for products
 * Products are shown only if the current user's partner (`res.partner`) matches the domain
 * Filters apply to:
   * Shop search results
@@ -30,7 +30,7 @@ Usage
 =====
 
 1. Go to **Sales** → **Products**
-2. Edit a product and add a **Paywall Domain**, e.g.:
+2. Edit a product and add a **Partner filters**, e.g.:
 
    ::
 
@@ -41,8 +41,7 @@ Usage
 Technical Details
 =================
 
-* `paywall_domain` is a `Char` field using `safe_eval` for evaluation
-* `user_in_paywall_domain` is a computed boolean field based on the current user’s `res.partner`
+* `user_in_partner_domain` is a computed boolean field based on the current user’s `res.partner`
 * Filters are applied at:
   * Product listing
   * Product details
@@ -64,6 +63,7 @@ Contributors
 ------------
 
 * Valtteri Lattu <valtteri.lattu@futural.fi>
+* Jarmo Kortetjärvi <jarmo.kortetjarvi@futural.fi>
 
 Maintainer
 ----------
