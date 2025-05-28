@@ -10,8 +10,7 @@ class SaleOrder(models.Model):
         accessories = self.env["product.product"].browse([p.id for p in accessories])
 
         accessories = accessories.filtered(
-            lambda p: not p.product_tmpl_id.paywall_domain
-            or p.product_tmpl_id.user_in_paywall_domain
+            lambda p: p.product_tmpl_id.user_in_partner_domain
         )
 
         return accessories

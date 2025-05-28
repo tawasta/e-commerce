@@ -21,14 +21,14 @@
 {
     "name": "Website Sale Product Domain Filter",
     "summary": "Website Sale Product Domain Filter",
-    "version": "17.0.1.1.0",
+    "version": "17.0.1.2.0",
     "category": "Events",
     "website": "https://github.com/tawasta/e-commerce",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale", "product"],
+    "depends": ["website_sale", "partner_domain_filter", "product"],
     "data": [
         "views/product.xml",
     ],
