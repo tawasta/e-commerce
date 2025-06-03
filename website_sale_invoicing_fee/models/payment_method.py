@@ -2,7 +2,6 @@ from odoo import fields, models
 
 
 class PaymentMethod(models.Model):
-
     _inherit = "payment.method"
 
     product_id = fields.Many2one(

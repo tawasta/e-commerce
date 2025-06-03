@@ -23,7 +23,7 @@
     "summary": "Adds Invoicing fee to Sale Order",
     "version": "17.0.1.0.0",
     "category": "eCommerce",
-    "website": "https://gitlab.com/tawasta/odoo/e-commerce",
+    "website": "https://github.com/tawasta/e-commerce",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
