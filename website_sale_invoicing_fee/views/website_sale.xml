@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="method_form" inherit_id="payment.method_form">
+        <xpath
+            expr="//div[@class='d-flex gap-2 flex-grow-1 me-auto']"
+            position="inside"
+        >
+            <t t-if="pm_sudo.sudo().product_id and website_sale_order">
+                <span class="badge bg-secondary pull-right">
+                    <t t-set="tax_added" t-value="0" />
+                    <t
+                        t-if="website_sale_order"
+                        t-set="fpos"
+                        t-value="website_sale_order.fiscal_position_id or website_sale_order.partner_id.property_account_position_id"
+                    />
+                    <t t-else="" t-set="fpos" t-value="False" />
+
+                    <t
+                        t-set="company"
+                        t-value="website_sale_order.company_id if website_sale_order else pm_sudo.sudo().company_id"
+                    />
+
+                    <t
+                        t-set="taxes"
+                        t-value="pm_sudo.product_id.sudo().taxes_id.filtered(lambda r: not company or r.company_id == company)"
+                    />
+                    <t t-if="pm_sudo.product_id.sudo().taxes_id">
+                        <t
+                            t-if="request.env.user.has_group('account.group_show_line_subtotals_tax_included')"
+                        >
+                            <t
+                                t-set="tax_added"
+                                t-value="fpos.map_tax(taxes, pm_sudo.product_id, website_sale_order.partner_shipping_id).amount if fpos else taxes.amount"
+                            />
+                        </t>
+                    </t>
+                    <t
+                        t-esc="pm_sudo.sudo().product_id.list_price * (1 + tax_added * 0.01)"
+                        t-options='{"widget": "monetary", "from_currency": pm_sudo.sudo().product_id.company_id.currency_id, "display_currency": website_sale_order.currency_id}'
+                    />
+                </span>
+            </t>
+        </xpath>
+    </template>
+</odoo>
