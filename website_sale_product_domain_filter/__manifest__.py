@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Futural Oy
-#    Copyright 2021- Futural Oy (http://www.futural.fi)
+#    Copyright 2021- Futural Oy (https://futural.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -17,16 +17,19 @@
 #    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
 #
 ##############################################################################
+
 {
-    "name": "Website Sale Disable Quantity in Cart",
-    "version": "17.0.1.0.0",
-    "category": "E-commerce",
-    "summary": "Helper module to disable changing product quantity in cart",
+    "name": "Website Sale Product Domain Filter",
+    "summary": "Website Sale Product Domain Filter",
+    "version": "17.0.1.2.0",
+    "category": "Events",
     "website": "https://github.com/tawasta/e-commerce",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale"],
-    "data": ["views/product_category_view.xml", "views/website_sale_templates.xml"],
+    "depends": ["website_sale", "partner_domain_filter", "product"],
+    "data": [
+        "views/product.xml",
+    ],
 }

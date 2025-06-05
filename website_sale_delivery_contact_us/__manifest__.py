@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Futural Oy
-#    Copyright 2021- Futural Oy (http://www.futural.fi)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2020 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -17,16 +17,17 @@
 #    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
 #
 ##############################################################################
+
 {
-    "name": "Website Sale Disable Quantity in Cart",
+    "name": "eCommerce: Quick link to contact form, if delivery is not found",
+    "summary": "Suggest moving to contact form if no delivery methods",
     "version": "17.0.1.0.0",
-    "category": "E-commerce",
-    "summary": "Helper module to disable changing product quantity in cart",
+    "category": "Website",
     "website": "https://github.com/tawasta/e-commerce",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale"],
-    "data": ["views/product_category_view.xml", "views/website_sale_templates.xml"],
+    "depends": ["website_sale", "website_crm"],  # website_sale_delivery
+    "data": ["views/website_sale_payment_delivery.xml"],
 }

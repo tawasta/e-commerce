@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 [website_sale_default_country](website_sale_default_country/) | 17.0.1.0.0 |  | Website Sale Default Country
 [website_sale_default_invoice_address](website_sale_default_invoice_address/) | 17.0.1.1.0 |  | Use predefined invoice address from partner, if set
 [website_sale_default_privacies](website_sale_default_privacies/) | 17.0.1.0.0 |  | Website sale default privacy values
+[website_sale_delivery_contact_us](website_sale_delivery_contact_us/) | 17.0.1.0.0 |  | Suggest moving to contact form if no delivery methods
 [website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop
 [website_sale_disable_qty_in_cart](website_sale_disable_qty_in_cart/) | 17.0.1.0.0 |  | Helper module to disable changing product quantity in cart
 [website_sale_domicile](website_sale_domicile/) | 17.0.1.0.2 |  | Adds domicile to website checkout form
@@ -42,6 +43,7 @@ addon | version | maintainers | summary
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 17.0.1.0.0 |  | Website sale membership privacy values
 [website_sale_pay_now_button_configurable_label](website_sale_pay_now_button_configurable_label/) | 17.0.1.0.0 |  | Set the checkout button's text in backend
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 17.0.1.0.0 |  | Invoice Transmit Method and Payment Terms for Website SO print
+[website_sale_product_domain_filter](website_sale_product_domain_filter/) | 17.0.1.2.0 |  | Website Sale Product Domain Filter
 [website_sale_product_page_tax_calculation_info](website_sale_product_page_tax_calculation_info/) | 17.0.1.0.0 |  | Shows a note that country-based VAT is calculated at checkout
 [website_sale_remove_confirmation_status](website_sale_remove_confirmation_status/) | 17.0.1.0.0 |  | Removes confirmation status after completing an order
 [website_sale_remove_email_from_mandatory_billing_fields](website_sale_remove_email_from_mandatory_billing_fields/) | 17.0.1.0.0 |  | E-mail no longer a mandatory field for billing addresses
