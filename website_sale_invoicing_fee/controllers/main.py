@@ -58,12 +58,6 @@ class PortalWebsiteSale(payment_portal.PaymentPortal):
                     line.product_id.id == product.id for line in order.order_line
                 )
                 if not existing_line:
-                    product_desc = (
-                        f"[{product.default_code}] {product.name}"
-                        if product.default_code
-                        else product.name
-                    )
-
                     company_id = request.env.company.id
                     request.env["sale.order.line"].sudo().create(
                         {
@@ -71,7 +65,7 @@ class PortalWebsiteSale(payment_portal.PaymentPortal):
                             "product_id": product.id,
                             "product_uom_qty": 1,
                             "price_unit": product.list_price,
-                            "name": product_desc,
+                            "name": product.name,
                             "order_id": order.id,
                             "company_id": company_id,
                         }
