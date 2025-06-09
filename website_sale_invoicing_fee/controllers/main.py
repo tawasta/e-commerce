@@ -61,7 +61,6 @@ class PortalWebsiteSale(payment_portal.PaymentPortal):
                     company_id = request.env.company.id
                     request.env["sale.order.line"].sudo().create(
                         {
-                            "customer_lead": 0,
                             "product_id": product.id,
                             "product_uom_qty": 1,
                             "price_unit": product.list_price,
