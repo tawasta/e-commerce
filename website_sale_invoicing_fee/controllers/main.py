@@ -4,29 +4,16 @@ from odoo import http
 
 
 class WebsiteEventSale(WebsiteSale):
-    @http.route(
-        "/shop/payment/validate",
-        type="http",
-        auth="public",
-        website=True,
-        sitemap=False,
-    )
-    def shop_payment_validate(self, sale_order_id=None, **post):
-        # Selvitetään tilaus ennen superin kutsua
-        if sale_order_id:
-            order = request.env["sale.order"].sudo().browse(sale_order_id)
-        else:
-            order = request.website.sale_get_order()
-            if not order and "sale_last_order_id" in request.session:
-                last_order_id = request.session["sale_last_order_id"]
-                order = request.env["sale.order"].sudo().browse(last_order_id).exists()
 
-        # Käytetään ensimmäistä transaktiota lisätäksemme laskutustuotteen
-        if order and order.transaction_ids:
+    @http.route('/shop/payment', type='http', auth='public', website=True, sitemap=False)
+    def shop_payment(self, **post):
+        order = request.website.sale_get_order()
+
+        # Laskutustuotteen lisäys VAIN POST-pyynnöillä
+        if request.httprequest.method == 'POST' and order:
             transaction = order.transaction_ids[0]
             product = transaction.payment_method_id.product_id
             if product:
-                # Tarkista onko tuote jo olemassa tilauksella, ettei tule duplikaatteja
                 existing_product_ids = order.order_line.mapped("product_id").ids
                 if product.id not in existing_product_ids:
                     product_desc = (
@@ -34,7 +21,6 @@ class WebsiteEventSale(WebsiteSale):
                         if product.default_code
                         else product.name
                     )
-
                     request.env["sale.order.line"].sudo().create(
                         {
                             "customer_lead": 0,
@@ -47,5 +33,5 @@ class WebsiteEventSale(WebsiteSale):
                         }
                     )
 
-        # Palauta superin logiikka normaalisti
-        return super().shop_payment_validate(sale_order_id=sale_order_id, **post)
+        # Palautetaan superin normaali logiikka
+        return super().shop_payment(**post)
