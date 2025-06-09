@@ -4,13 +4,14 @@ from odoo import http
 
 
 class WebsiteEventSale(WebsiteSale):
-
-    @http.route('/shop/payment', type='http', auth='public', website=True, sitemap=False)
+    @http.route(
+        "/shop/payment", type="http", auth="public", website=True, sitemap=False
+    )
     def shop_payment(self, **post):
         order = request.website.sale_get_order()
 
         # Laskutustuotteen lisäys VAIN POST-pyynnöillä
-        if request.httprequest.method == 'POST' and order:
+        if request.httprequest.method == "POST" and order:
             transaction = order.transaction_ids[0]
             product = transaction.payment_method_id.product_id
             if product:
