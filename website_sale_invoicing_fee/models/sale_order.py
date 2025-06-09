@@ -4,7 +4,6 @@ from odoo import models, api
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    @api.multi
     def action_confirm(self):
         for order in self:
             # Tarkista, onko laskutustuote jo lisätty
