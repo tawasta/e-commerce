@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Re-label the VAT field on the address form -->
+    <template id="address" inherit_id="website_sale.address" priority="101">
+        <xpath expr="//label[@for='vat']" position="replace">
+            <label for="vat" class="col-form-label">Company Registry / VAT Code</label>
+        </xpath>
+    </template>
+
+</odoo>
