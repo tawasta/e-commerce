@@ -16,4 +16,18 @@
         </xpath>
 
     </template>
+
+    <template
+        name="Hide cart button"
+        id="product"
+        inherit_id="website_sale.product"
+    >
+        <xpath
+            expr="//a[@id='add_to_cart']"
+            position="attributes"
+        >
+            <attribute name="t-attf-class" add="d-none" separator=" "/>
+        </xpath>
+
+    </template>
 </odoo>
