@@ -6,8 +6,24 @@
         <field name="inherit_id" ref="product.product_normal_form_view" />
         <field name="arch" type="xml">
             <field name="categ_id" position="after">
-                <field name="can_not_order" />
+                <field name="show_can_not_order_variant" invisible="1" />
+                <field name="can_not_order" invisible="not show_can_not_order_variant"/>
             </field>
+        </field>
+    </record>
+
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.pricelist</field>
+        <field name="model">product.template</field>
+        <field name="priority" eval="8" />
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='sales']" position="inside">
+                <group>
+                    <field name="show_can_not_order_template" invisible="1" />
+                    <field name="can_not_order_template"  invisible="not show_can_not_order_template"/>
+                </group>
+            </xpath>
         </field>
     </record>
 </odoo>
