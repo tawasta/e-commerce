@@ -7,7 +7,10 @@
         <field name="arch" type="xml">
             <field name="categ_id" position="after">
                 <field name="show_can_not_order_variant" invisible="1" />
-                <field name="can_not_order" invisible="not show_can_not_order_variant"/>
+                <field
+                    name="can_not_order"
+                    invisible="not show_can_not_order_variant"
+                />
             </field>
         </field>
     </record>
@@ -21,7 +24,10 @@
             <xpath expr="//page[@name='sales']" position="inside">
                 <group>
                     <field name="show_can_not_order_template" invisible="1" />
-                    <field name="can_not_order_template"  invisible="not show_can_not_order_template"/>
+                    <field
+                        name="can_not_order_template"
+                        invisible="not show_can_not_order_template"
+                    />
                 </group>
             </xpath>
         </field>

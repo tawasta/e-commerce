@@ -1,6 +1,7 @@
 from odoo import http, exceptions, _
 from odoo.http import request
 
+
 class CheckProduct(http.Controller):
     @http.route(
         ["/check/product/<int:product_id>"],

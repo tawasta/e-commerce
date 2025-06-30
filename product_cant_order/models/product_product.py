@@ -1,5 +1,6 @@
 from odoo import fields, models, api
 
+
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
@@ -12,9 +13,12 @@ class ProductTemplate(models.Model):
     )
 
     def _compute_show_can_not_order_flags(self):
-        use_template = self.env["ir.config_parameter"].sudo().get_param(
-            "product_cant_order.can_not_order_use_template", "False"
-        ) == "True"
+        use_template = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("product_cant_order.can_not_order_use_template", "False")
+            == "True"
+        )
         for rec in self:
             rec.show_can_not_order_template = use_template
 
@@ -31,9 +35,12 @@ class ProductProduct(models.Model):
     )
 
     def _compute_show_can_not_order_flags(self):
-        use_template = self.env["ir.config_parameter"].sudo().get_param(
-            "product_cant_order.can_not_order_use_template", "False"
-        ) == "True"
+        use_template = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("product_cant_order.can_not_order_use_template", "False")
+            == "True"
+        )
         for rec in self:
             rec.show_can_not_order_variant = not use_template
 
@@ -43,10 +50,13 @@ class ProductProduct(models.Model):
         depending on the configuration parameter 'product_cant_order.can_not_order_use_template'.
         """
         self.ensure_one()
-        use_template = self.env["ir.config_parameter"].sudo().get_param(
-            "product_cant_order.can_not_order_use_template", "False"
-        ) == "True"
-        
+        use_template = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("product_cant_order.can_not_order_use_template", "False")
+            == "True"
+        )
+
         if use_template:
             return self.product_tmpl_id.can_not_order_template
         else:
