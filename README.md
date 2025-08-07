@@ -23,6 +23,7 @@ addon | version | maintainers | summary
 [website_sale_create_user](website_sale_create_user/) | 17.0.1.0.1 |  | Website sale create user
 [website_sale_default_country](website_sale_default_country/) | 17.0.1.0.0 |  | Website Sale Default Country
 [website_sale_default_invoice_address](website_sale_default_invoice_address/) | 17.0.1.1.0 |  | Use predefined invoice address from partner, if set
+[website_sale_default_payment_term](website_sale_default_payment_term/) | 17.0.1.0.0 |  | Set a default payment term for e-commerce sales if a partner does not have one
 [website_sale_default_privacies](website_sale_default_privacies/) | 17.0.1.0.0 |  | Website sale default privacy values
 [website_sale_delivery_contact_us](website_sale_delivery_contact_us/) | 17.0.1.0.0 |  | Suggest moving to contact form if no delivery methods
 [website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop
