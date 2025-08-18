@@ -6,7 +6,10 @@
 eCommerce: Always show address-step
 ===================================
 
-Never skip the address step. Disables "express"-checkout
+This module ensures that the checkout **address step** is always shown,
+even if the customer already has saved contact details.  
+It is useful if you want to make sure that the user always confirms or updates
+their contact information, and that related contacts are visible.
 
 Configuration
 =============
@@ -14,7 +17,9 @@ Configuration
 
 Usage
 =====
-\-
+1. Go to **Website Shop**.
+2. Add items to cart.
+3. Proceed to checkout → Address step is always shown before payment.
 
 Known issues / Roadmap
 ======================
@@ -27,6 +32,7 @@ Contributors
 ------------
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@futural.fi>
+* Valtteri Lattu <valtteri.lattu@futural.fi>
 
 Maintainer
 ----------

@@ -20,7 +20,7 @@
 
 {
     "name": "eCommerce: Always show address-step",
-    "summary": "Never skip the address step. Disables 'express'-checkout",
+    "summary": "Always show checkout address step, even if customer details exist",
     "version": "17.0.1.0.0",
     "category": "Website",
     "website": "https://github.com/tawasta/e-commerce",
