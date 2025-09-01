@@ -32,7 +32,6 @@ def _is_200_ok(response):
 
 
 class MyWebsiteSale(WebsiteSale):
-
     def _require_checkout_done(self):
         """
         Apumetodi: tarkistaa onko checkout 'valmis' käyttäjän istunnossa.
@@ -59,7 +58,7 @@ class MyWebsiteSale(WebsiteSale):
         """
         response = super().checkout(**post)
 
-        is_get = (request.httprequest.method == "GET")
+        is_get = request.httprequest.method == "GET"
         is_xhr = bool(post.get("xhr"))
 
         if is_get and not is_xhr and _is_200_ok(response):
@@ -73,7 +72,6 @@ class MyWebsiteSale(WebsiteSale):
     @http.route()
     def address(self, **post):
         is_post = request.httprequest.method == "POST"
-        so_id_before = _current_order_id()
 
         if is_post:
             post = dict(post)
