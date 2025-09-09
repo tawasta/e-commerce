@@ -1,56 +1,63 @@
-##############################################################################
-#
-#    Author: Futural Oy
-#    Copyright 2021- Futural Oy (https://futural.fi)
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
-#
-##############################################################################
+from odoo import fields, models, api
 
-# 1. Standard library imports:
 
-# 2. Known third party imports:
+class ProductTemplate(models.Model):
+    _inherit = "product.template"
 
-# 3. Odoo imports (openerp):
-from odoo import fields, models
+    can_not_order_template = fields.Boolean(string="Cannot be Added to Cart")
 
-# 4. Imports from Odoo modules:
+    show_can_not_order_template = fields.Boolean(
+        string="Show Template Can Not Order",
+        compute="_compute_show_can_not_order_flags",
+        store=False,
+    )
 
-# 5. Local imports in the relative form:
-
-# 6. Unknown third party imports:
+    def _compute_show_can_not_order_flags(self):
+        use_template = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("product_cant_order.can_not_order_use_template", "False")
+            == "True"
+        )
+        for rec in self:
+            rec.show_can_not_order_template = use_template
 
 
 class ProductProduct(models.Model):
-    # 1. Private attributes
     _inherit = "product.product"
 
-    # 2. Fields declaration
-    can_not_order = fields.Boolean(
-        string="Cannot be Added to Cart",
-        default=False,
-        help="Prevents adding this variant to Cart in eCommerce",
+    can_not_order = fields.Boolean(string="Cannot be Added to Cart")
+
+    show_can_not_order_variant = fields.Boolean(
+        string="Show Variant Can Not Order",
+        compute="_compute_show_can_not_order_flags",
+        store=False,
     )
 
-    # 3. Default methods
+    def _compute_show_can_not_order_flags(self):
+        use_template = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("product_cant_order.can_not_order_use_template", "False")
+            == "True"
+        )
+        for rec in self:
+            rec.show_can_not_order_variant = not use_template
 
-    # 4. Compute and search fields, in the same order that fields declaration
+    def get_effective_can_not_order(self):
+        """
+        Returns True if the product or its template is marked as 'cannot be added to cart',
+        depending on the configuration parameter 'product_cant_order.can_not_order_use_template'.
+        """
+        self.ensure_one()
+        use_template = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param("product_cant_order.can_not_order_use_template", "False")
+            == "True"
+        )
 
-    # 5. Constraints and onchanges
-
-    # 6. CRUD methods
-
-    # 7. Action methods
-
-    # 8. Business methods
+        if use_template:
+            return self.product_tmpl_id.can_not_order_template
+        else:
+            return self.can_not_order

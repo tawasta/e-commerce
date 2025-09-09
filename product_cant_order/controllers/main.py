@@ -15,12 +15,8 @@ class CheckProduct(http.Controller):
         Checks if the provided variant ID can be added to cart.
         """
 
-        product = (
-            request.env["product.product"]
-            .sudo()
-            .search([("id", "=", product_id)], limit=1)
-        )
-        if product:
-            return {"can_not_order": product.can_not_order}
+        product = request.env["product.product"].sudo().browse(product_id)
+        if product.exists():
+            return {"can_not_order": product.get_effective_can_not_order()}
         else:
             raise exceptions.ValidationError(_("Product ID %s not found", product_id))

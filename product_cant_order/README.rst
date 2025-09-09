@@ -6,17 +6,30 @@
 Product Variant: Prevent Ordering via eCommerce
 ===============================================
 
-* Provides a new "Cannot be Added to Cart" checkbox for product variants
+This module adds the ability to mark product variants or templates as "Cannot be Added to Cart".  
+It prevents customers from adding such products to their shopping cart on the website.
+
+Features
+========
+- Adds a boolean field `can_not_order` on product variants (`product.product`)
+- Adds a boolean field `can_not_order_template` on product templates (`product.template`)
+- Configurable via system parameter `product_cant_order.can_not_order_use_template` to choose whether to check the flag on the variant or on the template level
+- Hides the Add to Cart and Buy Now buttons on the website automatically based on the flag
+- Provides a JSON route `/check/product/<product_id>` to check product availability for ordering
+
 
 Configuration
 =============
-* Just check the checkbox for a specific product variant via Sales -> Products -> Product Variants
+- Enable the "Cannot be Added to Cart" checkbox on the desired product variants or product templates:
+  - Go to **Sales > Products > Product Variants** to set variant-level flag
+  - Go to **Sales > Products > Product Templates** to set template-level flag
+- Set system parameter `product_cant_order.can_not_order_use_template` to `"True"` or `"False"` to decide the check level
+
 
 Usage
 =====
-* Open the product page in eCommerce
-* Select the prohibited variant in dropdown
-* Add to cart button is now hidden
+- On the eCommerce product page, selecting a variant or product with the flag set will hide the Add to Cart and Buy Now buttons
+- The system uses the config parameter to decide whether to check the variant or the template field
 
 Known issues / Roadmap
 ======================
