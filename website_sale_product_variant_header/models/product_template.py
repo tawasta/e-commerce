@@ -8,4 +8,5 @@ class ProductTemplate(models.Model):
     website_variant_header = fields.Char(
         string="Website variant header",
         help="Show product variant header in website",
+        translate=True,
     )
