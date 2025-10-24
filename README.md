@@ -77,7 +77,7 @@ addon | version | summary
 [website_sale_product_quantity_integer](website_sale_product_quantity_integer/) | 14.0.1.0.0 | Show product quantity in cart as integer
 [website_sale_product_replace](website_sale_product_replace/) | 14.0.1.3.0 | Replace a product for all customers or for certain customers
 [website_sale_product_synopsis](website_sale_product_synopsis/) | 14.0.1.2.0 | Show product synopsis in shop
-[website_sale_product_variant_header](website_sale_product_variant_header/) | 14.0.1.0.0 | Show product variant header in shop
+[website_sale_product_variant_header](website_sale_product_variant_header/) | 14.0.1.0.1 | Show product variant header in shop
 [website_sale_publication](website_sale_publication/) | 14.0.1.0.0 | Adds publication product to website product views
 [website_sale_quotation](website_sale_quotation/) | 14.0.1.1.3 | Change the terminology used in eCommerce views
 [website_sale_remove_confirmation_status](website_sale_remove_confirmation_status/) | 14.0.1.0.0 | Website sale: remove confirmation status
