@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "eCommerce: Disable pricelist selector if partner pricelist is defined",
-    "summary": "If a pricelist is assigned to a partner, hide pricelist selector in shop",
+    "name": "eCommerce: Disable pricelist selector if pricelist is defined",
+    "summary": "If a pricelist is assigned to a partner, hide pricelist selector",
     "version": "17.0.1.0.0",
     "category": "Website",
     "website": "https://github.com/tawasta/e-commerce",

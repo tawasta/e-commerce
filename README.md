@@ -24,9 +24,9 @@ addon | version | maintainers | summary
 [website_sale_create_user](website_sale_create_user/) | 17.0.1.0.1 |  | Website sale create user
 [website_sale_default_country](website_sale_default_country/) | 17.0.1.0.0 |  | Website Sale Default Country
 [website_sale_default_invoice_address](website_sale_default_invoice_address/) | 17.0.1.1.0 |  | Use predefined invoice address from partner, if set
-[website_sale_default_payment_term](website_sale_default_payment_term/) | 17.0.1.0.0 |  | Set a default payment term for e-commerce sales if a partner does not have one
+[website_sale_default_payment_term](website_sale_default_payment_term/) | 17.0.1.0.0 |  | Set a default payment term for e-commerce partner not having one
 [website_sale_default_privacies](website_sale_default_privacies/) | 17.0.1.0.0 |  | Website sale default privacy values
-[website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop
+[website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector
 [website_sale_disable_qty_in_cart](website_sale_disable_qty_in_cart/) | 17.0.1.0.0 |  | Helper module to disable changing product quantity in cart
 [website_sale_domicile](website_sale_domicile/) | 17.0.1.0.2 |  | Adds domicile to website checkout form
 [website_sale_edicode](website_sale_edicode/) | 17.0.1.0.1 |  | Adds EDI code to website checkout form
@@ -52,7 +52,7 @@ addon | version | maintainers | summary
 [website_sale_remove_email_from_mandatory_billing_fields](website_sale_remove_email_from_mandatory_billing_fields/) | 17.0.1.0.0 |  | E-mail no longer a mandatory field for billing addresses
 [website_sale_require_attachment](website_sale_require_attachment/) | 17.0.1.0.1 |  | Configurable option to require an attachment on checkout
 [website_sale_require_company](website_sale_require_company/) | 17.0.1.0.0 |  | Require company info on checkout
-[website_sale_require_explanation](website_sale_require_explanation/) | 17.0.1.0.1 |  | Configurable option for products to require text in the Extra Info step of the cart flow
+[website_sale_require_explanation](website_sale_require_explanation/) | 17.0.1.0.1 |  | Allows configuring products to require explanation on e-commerce
 [website_sale_require_product_category](website_sale_require_product_category/) | 17.0.1.0.0 |  | Require a product category on checkout
 [website_sale_settings](website_sale_settings/) | 17.0.1.0.0 |  | Various toggleable settings under editor's customize menu
 [website_sale_show_product_code](website_sale_show_product_code/) | 17.0.1.0.0 |  | Show the product's internal reference on product page

@@ -1,11 +1,10 @@
 import logging
 
+from werkzeug.exceptions import NotFound
+
 from odoo import http
-from odoo.http import request
-from odoo.osv import expression
 
 from odoo.addons.website_sale.controllers.main import WebsiteSale
-from werkzeug.exceptions import NotFound
 
 _logger = logging.getLogger(__name__)
 

@@ -9,7 +9,7 @@ class WebsiteSale(WebsiteSale):
         Autoset the is_customer field provided by oca's partner_manual_rank module
         """
 
-        res = super(WebsiteSale, self)._checkout_form_save(mode, checkout, all_values)
+        res = super()._checkout_form_save(mode, checkout, all_values)
 
         partner = request.env["res.partner"].sudo().browse([res])
         partner.sudo().write({"is_customer": True})

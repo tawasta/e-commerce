@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import models
 
 
 class PaymentTransaction(models.Model):
@@ -9,7 +9,8 @@ class PaymentTransaction(models.Model):
             # Auto-confirm SO if the payment provider is configured with auto-confirm
             self.sale_order_ids.action_confirm()
 
-            # _set_pending() will not send confirmation mail if sale is already confirmed
+            # _set_pending() will not send confirmation mail
+            # if sale is already confirmed
             self.sale_order_ids._send_payment_succeeded_for_order_mail()
 
         return super()._process_notification_data(notification_data)

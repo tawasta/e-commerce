@@ -1,8 +1,10 @@
-from odoo import http
-from odoo.http import request
-from odoo.exceptions import ValidationError
-from odoo.addons.website_sale.controllers.main import WebsiteSale
 import logging
+
+from odoo import http
+from odoo.exceptions import ValidationError
+from odoo.http import request
+
+from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 _logger = logging.getLogger(__name__)
 

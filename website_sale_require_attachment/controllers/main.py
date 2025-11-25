@@ -1,5 +1,7 @@
 import logging
+
 from odoo import _
+
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 _logger = logging.getLogger(__name__)
@@ -12,7 +14,8 @@ class WebsiteSaleRequireAttachment(WebsiteSale):
         requires_attachment = True in order.order_line.mapped(
             "product_id.requires_attachment"
         )
-        # We could check if the number of needed attachments match given attachments here
+        # We could check if the number of needed attachments
+        # match given attachments here
         has_attachment = order.message_attachment_count > 0
 
         if requires_attachment and not has_attachment:
@@ -25,7 +28,13 @@ class WebsiteSaleRequireAttachment(WebsiteSale):
                 product = line.product_id
                 explanation = product.requires_attachment_help or _("Needs attachment")
 
-                errors.append(_("%s: %s", product.name, explanation))
+                errors.append(
+                    _(
+                        "%(product)s: %(explanation)s",
+                        product=product.name,
+                        explanation=explanation,
+                    )
+                )
 
             error_text = ", ".join(errors)
 

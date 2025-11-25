@@ -1,6 +1,6 @@
-from odoo import models
-
 import logging
+
+from odoo import models
 
 _logger = logging.getLogger(__name__)
 
@@ -37,9 +37,8 @@ class Website(models.Model):
                 values["partner_invoice_id"] = invoice_address_to_use
             else:
                 _logger.debug(
-                    "Skipped using invoice address id %s, partner %s "
-                    "did not have access to it "
-                    % (invoice_address_to_use, partner_sudo.id)
+                    f"Skipped using invoice address id {invoice_address_to_use}, "
+                    f"partner {partner_sudo.id} did not have access to it "
                 )
 
         return values

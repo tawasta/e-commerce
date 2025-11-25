@@ -1,6 +1,8 @@
+import logging
+
 from odoo import http
 from odoo.http import request
-import logging
+
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 _logger = logging.getLogger(__name__)

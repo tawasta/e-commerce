@@ -5,7 +5,7 @@ class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     def action_confirm(self):
-        res = super(SaleOrder, self).action_confirm()
+        res = super().action_confirm()
         create_user = False
         allow_create = False
         for line in self.order_line:
