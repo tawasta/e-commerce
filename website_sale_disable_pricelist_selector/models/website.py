@@ -12,7 +12,8 @@ class Website(models.Model):
         public_pricelist = self.env.ref("website_sale.list_europe")
 
         if partner_pl and partner_pl != public_pricelist:
-            # If a specific pricelist is assigned to partner, disallow using anything else
+            # If a specific pricelist is assigned to partner,
+            # disallow using anything else
             res = partner_pl
 
         return res

@@ -1,4 +1,4 @@
-from odoo import fields, models, api
+from odoo import fields, models
 
 
 class ProductTemplate(models.Model):
@@ -46,8 +46,9 @@ class ProductProduct(models.Model):
 
     def get_effective_can_not_order(self):
         """
-        Returns True if the product or its template is marked as 'cannot be added to cart',
-        depending on the configuration parameter 'product_cant_order.can_not_order_use_template'.
+        Returns True if the product or its template is marked as
+        'cannot be added to cart', depending on the configuration parameter
+        'product_cant_order.can_not_order_use_template'.
         """
         self.ensure_one()
         use_template = (

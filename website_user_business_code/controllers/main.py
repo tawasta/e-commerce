@@ -1,21 +1,20 @@
 from odoo import _
-from odoo.addons.portal.controllers.portal import CustomerPortal
 from odoo.exceptions import ValidationError
 from odoo.http import request
+
+from odoo.addons.portal.controllers.portal import CustomerPortal
 
 
 class CustomerPortalBusinessCode(CustomerPortal):
     def __init__(self):
-        super(CustomerPortalBusinessCode, self).__init__()
+        super().__init__()
 
         self.OPTIONAL_BILLING_FIELDS = self.OPTIONAL_BILLING_FIELDS + [
             "company_registry"
         ]
 
     def details_form_validate(self, data, partner_creation=False):
-        error, error_message = super(
-            CustomerPortalBusinessCode, self
-        ).details_form_validate(data, partner_creation)
+        error, error_message = super().details_form_validate(data, partner_creation)
 
         # Business id validation
         if data.get("company_registry"):

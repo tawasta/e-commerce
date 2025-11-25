@@ -20,7 +20,7 @@
 
 {
     "name": "Website Sale - Require explanation in cart's Extra Info step",
-    "summary": "Configurable option for products to require text in the Extra Info step of the cart flow",
+    "summary": "Allows configuring products to require explanation on e-commerce",
     "version": "17.0.1.0.1",
     "category": "Website",
     "website": "https://github.com/tawasta/e-commerce",

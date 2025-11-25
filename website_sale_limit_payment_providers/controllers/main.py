@@ -1,4 +1,5 @@
 from odoo.http import request
+
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
@@ -6,7 +7,8 @@ class WebsiteSalePaymentProviders(WebsiteSale):
     def _get_shop_payment_values(self, order, **kwargs):
         values = super()._get_shop_payment_values(order, **kwargs)
 
-        # Haetaan kaikki maksupalveluntarjoajat ja maksutavat yhdellä kertaa suodatuksen helpottamiseksi
+        # Haetaan kaikki maksupalveluntarjoajat ja
+        # maksutavat yhdellä kertaa suodatuksen helpottamiseksi
         providers_sudo = values["providers_sudo"]
         filtered_providers_sudo = request.env["payment.provider"].sudo()
 

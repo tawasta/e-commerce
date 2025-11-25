@@ -9,6 +9,6 @@ class WebsiteSale(WebsiteSale):
 
         checkout["company_email"] = all_values.get("company_email", "")
 
-        res = super(WebsiteSale, self)._checkout_form_save(mode, checkout, all_values)
+        res = super()._checkout_form_save(mode, checkout, all_values)
 
         return res

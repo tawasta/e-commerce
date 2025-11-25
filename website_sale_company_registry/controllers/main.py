@@ -1,11 +1,9 @@
-import re
+import logging
 
+from odoo.exceptions import ValidationError
 from odoo.http import request
 
 from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.exceptions import ValidationError
-
-import logging
 
 _logger = logging.getLogger(__name__)
 

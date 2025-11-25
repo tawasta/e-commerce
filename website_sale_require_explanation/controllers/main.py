@@ -1,8 +1,9 @@
 import logging
+
 from odoo import _
-from odoo.addons.website_sale.controllers.main import WebsiteSale
 from odoo.tools import is_html_empty
 
+from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 _logger = logging.getLogger(__name__)
 
@@ -32,7 +33,13 @@ class WebsiteSaleRequireExplanation(WebsiteSale):
                     "Needs explanation"
                 )
 
-                errors.append(_("%s: %s", product.name, explanation))
+                errors.append(
+                    _(
+                        "%(product)s: %(explanation)s",
+                        product=product.name,
+                        explanation=explanation,
+                    )
+                )
 
             error_text = ", ".join(errors)
 

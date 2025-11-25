@@ -51,4 +51,4 @@ class WebsiteSale(WebsiteSale):
                 ):
                     order.sudo()._create_invoices()
 
-        return super(WebsiteSale, self).shop_payment_confirmation(**post)
+        return super().shop_payment_confirmation(**post)

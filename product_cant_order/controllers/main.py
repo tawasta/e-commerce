@@ -1,4 +1,4 @@
-from odoo import http, exceptions, _
+from odoo import _, exceptions, http
 from odoo.http import request
 
 

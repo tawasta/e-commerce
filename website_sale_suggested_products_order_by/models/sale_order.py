@@ -51,7 +51,7 @@ class SaleOrder(models.Model):
         """
         Override the randomized order
         """
-        res = super(SaleOrder, self)._cart_accessories()
+        res = super()._cart_accessories()
         records = self.env["product.product"]
         for record in res:
             records += self.env["product.product"].browse(record.id)
