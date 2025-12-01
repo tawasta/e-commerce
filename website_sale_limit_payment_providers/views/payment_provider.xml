@@ -8,6 +8,11 @@
             <field name="available_country_ids" position="after">
                 <field name="website_show_company" widget="boolean_toggle" />
                 <field name="website_show_private" widget="boolean_toggle" />
+                <field
+                    name="website_show_for_group_ids"
+                    widget="many2many_tags"
+                    options="{'no_create': True, 'no_create_edit': True}"
+                />
             </field>
         </field>
     </record>
