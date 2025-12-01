@@ -26,7 +26,8 @@ addon | version | maintainers | summary
 [website_sale_default_invoice_address](website_sale_default_invoice_address/) | 17.0.1.1.0 |  | Use predefined invoice address from partner, if set
 [website_sale_default_payment_term](website_sale_default_payment_term/) | 17.0.1.0.0 |  | Set a default payment term for e-commerce partner not having one
 [website_sale_default_privacies](website_sale_default_privacies/) | 17.0.1.0.0 |  | Website sale default privacy values
-[website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector
+[website_sale_delivery_contact_us](website_sale_delivery_contact_us/) | 17.0.1.0.0 |  | Suggest moving to contact form if no delivery methods
+[website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop
 [website_sale_disable_qty_in_cart](website_sale_disable_qty_in_cart/) | 17.0.1.0.0 |  | Helper module to disable changing product quantity in cart
 [website_sale_domicile](website_sale_domicile/) | 17.0.1.0.2 |  | Adds domicile to website checkout form
 [website_sale_edicode](website_sale_edicode/) | 17.0.1.0.1 |  | Adds EDI code to website checkout form
