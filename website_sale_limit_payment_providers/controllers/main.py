@@ -50,6 +50,15 @@ class WebsiteSalePaymentProviders(WebsiteSale):
             # Only show private providers
             providers_sudo = providers_sudo.filtered(lambda p: p.website_show_private)
 
+        # Filter out those payment providers that are restricted to res.groups that
+        # the current user is not a member of.
+        current_user_groups = request.env.user.groups_id
+
+        providers_sudo = providers_sudo.filtered(
+            lambda p: not p.website_show_for_group_ids
+            or any(g in current_user_groups for g in p.website_show_for_group_ids)
+        )
+
         # Päivitä maksutavat vain, jos suodatettu lista poikkeaa alkuperäisestä
         if providers_sudo != values["providers_sudo"]:
             payment_method = request.env["payment.method"].sudo()
