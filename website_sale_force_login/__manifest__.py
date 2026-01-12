@@ -21,7 +21,7 @@
 {
     "name": "eCommerce: Force login",
     "summary": "Force login before adding products to carts",
-    "version": "17.0.1.1.0",
+    "version": "17.0.1.2.0",
     "category": "Website",
     "website": "https://github.com/tawasta/e-commerce",
     "author": "Futural",

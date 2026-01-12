@@ -6,6 +6,7 @@
             id="cart_login"
             class="d-inline-flex align-items-center mb-2 me-auto"
             t-if="website.is_public_user()"
+            t-nocache="Avoid caching public user checks"
         >
             <a
                 t-attf-href="/web/login?redirect=#{request.httprequest.url}"
@@ -23,7 +24,11 @@
                 href="#"
             ><i class="fa fa-lock me-2" /><small>Sign up</small></a>
         </div>
-        <div id="cart_login_guide" t-if="website.is_public_user()">
+        <div
+            id="cart_login_guide"
+            t-if="website.is_public_user()"
+            t-nocache="Avoid caching public user checks"
+        >
             <small><i
                     class="font-italic"
                 >Please login or sign up by registering your email address to continue</i></small>
