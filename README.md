@@ -37,7 +37,7 @@ addon | version | maintainers | summary
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 17.0.1.0.0 |  | Allow hiding/showing items in extra step
 [website_sale_force_address_step](website_sale_force_address_step/) | 17.0.1.0.0 |  | Always show checkout address step, even if customer details exist
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 17.0.1.1.0 |  | Forces autoinvoice on quotations created from website_sale
-[website_sale_force_login](website_sale_force_login/) | 17.0.1.1.0 |  | Force login before adding products to carts
+[website_sale_force_login](website_sale_force_login/) | 17.0.1.2.0 |  | Force login before adding products to carts
 [website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 17.0.1.0.0 |  | Hide Delivery Orders and Returns links from portal users
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 17.0.1.0.0 |  | Adds account invoice transmit method to checkout
 [website_sale_invoicing_fee](website_sale_invoicing_fee/) | 17.0.1.0.0 |  | Adds Invoicing fee to Sale Order
