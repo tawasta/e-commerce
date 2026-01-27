@@ -64,6 +64,7 @@ addon | version | maintainers | summary
 [website_user_business_code](website_user_business_code/) | 17.0.1.0.0 |  | Allow users to add and edit their business code
 [website_user_edicode](website_user_edicode/) | 17.0.1.0.0 |  | Allow users to add and edit their edicode and operator
 [website_user_transmit_method](website_user_transmit_method/) | 17.0.1.0.2 |  | Allow users to add and edit their transmit method
+[woo_export_stock_cron](woo_export_stock_cron/) | 17.0.1.0.0 |  | Cron to export stock to WooCommerce via wizard
 
 
 Unported addons
