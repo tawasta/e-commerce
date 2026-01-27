@@ -31,4 +31,7 @@
     "depends": [
         "woo_commerce_ept",
     ],
+    "data": [
+        "data/cron.xml",
+    ],
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<odoo>
-  <data noupdate="1">
+<odoo noupdate="1">
 
     <record id="ir_cron_woo_export_stock_daily" model="ir.cron">
       <field name="name">Woo: Export Stock (via export_stock_in_woo wizard)</field>
@@ -13,5 +12,4 @@
       <field name="numbercall">-1</field>
     </record>
 
-  </data>
 </odoo>
