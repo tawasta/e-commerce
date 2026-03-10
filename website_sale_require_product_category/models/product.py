@@ -10,5 +10,6 @@ class ProductTemplate(models.Model):
     required_product_category_help = fields.Text(
         "Required category help",
         translate=True,
-        help="Show this help text if a product from required category is missing from order",
+        help="Show this help text if "
+        "a product from required category is missing from order",
     )

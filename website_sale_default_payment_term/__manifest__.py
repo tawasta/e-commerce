@@ -19,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "Set a default payment term for e-commerce sales if a partner does not have one",
-    "summary": "Set a default payment term for e-commerce sales if a partner does not have one",
+    "name": "Set a default payment term for e-commerce partner not having one",
+    "summary": "Set a default payment term for e-commerce partner not having one",
     "version": "17.0.1.0.0",
     "category": "eCommerce",
     "website": "https://github.com/tawasta/e-commerce",

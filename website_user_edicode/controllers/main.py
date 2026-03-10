@@ -1,5 +1,4 @@
 from odoo.addons.portal.controllers.portal import CustomerPortal
-from odoo.http import request
 
 
 class CustomerPortalEdicode(CustomerPortal):

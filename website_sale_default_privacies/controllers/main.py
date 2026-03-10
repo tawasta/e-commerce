@@ -1,5 +1,6 @@
 from odoo import http
 from odoo.http import request
+
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 
@@ -7,7 +8,7 @@ class WebsiteSalePrivacy(WebsiteSale):
     @http.route()
     def address(self, **kw):
         if "submitted" in kw:
-            response = super(WebsiteSalePrivacy, self).address(**kw)
+            response = super().address(**kw)
             is_sale_privacies = (
                 request.env["privacy.activity"]
                 .sudo()
@@ -17,7 +18,7 @@ class WebsiteSalePrivacy(WebsiteSale):
                 order = request.website.sale_get_order()
                 self._create_privacy_website_sale(kw, order.partner_id)
         else:
-            response = super(WebsiteSalePrivacy, self).address(**kw)
+            response = super().address(**kw)
 
         return response
 

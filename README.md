@@ -24,10 +24,10 @@ addon | version | maintainers | summary
 [website_sale_create_user](website_sale_create_user/) | 17.0.1.0.1 |  | Website sale create user
 [website_sale_default_country](website_sale_default_country/) | 17.0.1.0.0 |  | Website Sale Default Country
 [website_sale_default_invoice_address](website_sale_default_invoice_address/) | 17.0.1.1.0 |  | Use predefined invoice address from partner, if set
-[website_sale_default_payment_term](website_sale_default_payment_term/) | 17.0.1.0.0 |  | Set a default payment term for e-commerce sales if a partner does not have one
+[website_sale_default_payment_term](website_sale_default_payment_term/) | 17.0.1.0.0 |  | Set a default payment term for e-commerce partner not having one
 [website_sale_default_privacies](website_sale_default_privacies/) | 17.0.1.0.0 |  | Website sale default privacy values
 [website_sale_delivery_contact_us](website_sale_delivery_contact_us/) | 17.0.1.0.0 |  | Suggest moving to contact form if no delivery methods
-[website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector in shop
+[website_sale_disable_pricelist_selector](website_sale_disable_pricelist_selector/) | 17.0.1.0.0 |  | If a pricelist is assigned to a partner, hide pricelist selector
 [website_sale_disable_qty_in_cart](website_sale_disable_qty_in_cart/) | 17.0.1.0.0 |  | Helper module to disable changing product quantity in cart
 [website_sale_domicile](website_sale_domicile/) | 17.0.1.0.2 |  | Adds domicile to website checkout form
 [website_sale_edicode](website_sale_edicode/) | 17.0.1.0.1 |  | Adds EDI code to website checkout form
@@ -38,7 +38,7 @@ addon | version | maintainers | summary
 [website_sale_extra_step_settings](website_sale_extra_step_settings/) | 17.0.1.0.0 |  | Allow hiding/showing items in extra step
 [website_sale_force_address_step](website_sale_force_address_step/) | 17.0.1.0.0 |  | Always show checkout address step, even if customer details exist
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 17.0.1.1.0 |  | Forces autoinvoice on quotations created from website_sale
-[website_sale_force_login](website_sale_force_login/) | 17.0.1.1.0 |  | Force login before adding products to carts
+[website_sale_force_login](website_sale_force_login/) | 17.0.1.2.0 |  | Force login before adding products to carts
 [website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 17.0.1.0.0 |  | Hide Delivery Orders and Returns links from portal users
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 17.0.1.0.0 |  | Adds account invoice transmit method to checkout
 [website_sale_invoicing_fee](website_sale_invoicing_fee/) | 17.0.1.0.0 |  | Adds Invoicing fee to Sale Order
@@ -53,9 +53,10 @@ addon | version | maintainers | summary
 [website_sale_remove_email_from_mandatory_billing_fields](website_sale_remove_email_from_mandatory_billing_fields/) | 17.0.1.0.0 |  | E-mail no longer a mandatory field for billing addresses
 [website_sale_require_attachment](website_sale_require_attachment/) | 17.0.1.0.1 |  | Configurable option to require an attachment on checkout
 [website_sale_require_company](website_sale_require_company/) | 17.0.1.0.0 |  | Require company info on checkout
-[website_sale_require_explanation](website_sale_require_explanation/) | 17.0.1.0.1 |  | Configurable option for products to require text in the Extra Info step of the cart flow
+[website_sale_require_explanation](website_sale_require_explanation/) | 17.0.1.0.1 |  | Allows configuring products to require explanation on e-commerce
 [website_sale_require_product_category](website_sale_require_product_category/) | 17.0.1.0.0 |  | Require a product category on checkout
 [website_sale_settings](website_sale_settings/) | 17.0.1.0.0 |  | Various toggleable settings under editor's customize menu
+[website_sale_shop_routes_require_login](website_sale_shop_routes_require_login/) | 17.0.1.0.0 |  | Authentication is required to access shop pages
 [website_sale_show_product_code](website_sale_show_product_code/) | 17.0.1.0.0 |  | Show the product's internal reference on product page
 [website_sale_show_tax](website_sale_show_tax/) | 17.0.1.1.1 |  | Show taxes in product grid and product view
 [website_sale_split_name](website_sale_split_name/) | 17.0.1.0.1 |  | Split name field on address card to first and last name
@@ -65,6 +66,7 @@ addon | version | maintainers | summary
 [website_user_business_code](website_user_business_code/) | 17.0.1.0.0 |  | Allow users to add and edit their business code
 [website_user_edicode](website_user_edicode/) | 17.0.1.0.0 |  | Allow users to add and edit their edicode and operator
 [website_user_transmit_method](website_user_transmit_method/) | 17.0.1.0.2 |  | Allow users to add and edit their transmit method
+[woo_export_stock_cron](woo_export_stock_cron/) | 17.0.1.0.0 |  | Cron to export stock to WooCommerce via wizard
 
 
 Unported addons

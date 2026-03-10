@@ -1,12 +1,11 @@
-from odoo.addons.website_sale.controllers.delivery import WebsiteSaleDelivery
 from odoo import _
+
+from odoo.addons.website_sale.controllers.delivery import WebsiteSaleDelivery
 
 
 class WebsiteSaleDeliveryContact(WebsiteSaleDelivery):
     def _get_shop_payment_values(self, order, **kwargs):
-        values = super(WebsiteSaleDeliveryContact, self)._get_shop_payment_values(
-            order, **kwargs
-        )
+        values = super()._get_shop_payment_values(order, **kwargs)
 
         has_storable_products = any(
             line.product_id.type in ["consu", "product"] for line in order.order_line
@@ -29,7 +28,7 @@ class WebsiteSaleDeliveryContact(WebsiteSaleDelivery):
                         partner_name=order.partner_id.company_name or "-",
                         name=_("Delivery of order {}").format(order.name),
                         description=_(
-                            "There were no suitable delivery options for my order {}. Please advise"
+                            "There were no suitable delivery options for my order {}. Please advise"  # noqa: E501
                         ).format(order.name),
                         text=_("Contact us here for more delivery options"),
                     )
