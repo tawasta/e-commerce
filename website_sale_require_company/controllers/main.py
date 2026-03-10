@@ -1,8 +1,8 @@
 import logging
-from odoo import _
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.tools import is_html_empty
 
+from odoo import _
+
+from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 _logger = logging.getLogger(__name__)
 

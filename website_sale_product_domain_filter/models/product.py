@@ -1,5 +1,5 @@
 # models/product_template.py
-from odoo import models, fields, api, _
+from odoo import fields, models
 from odoo.tools.safe_eval import safe_eval
 
 

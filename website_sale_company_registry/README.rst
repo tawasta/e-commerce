@@ -24,6 +24,10 @@ Usage
 
 Known issues / Roadmap
 ======================
+* The suggested prefill value needs work when used in cases where customers 
+  register accounts before ordering, and both Finnish and non-Finnish 
+  countries are expected (the former should get a prefill
+  with Y-tunnus, the latter with VAT).
 * Some compatibility issues with other website_sale_* modules, e.g.
   installing company slider would make the VAT field mandatory.
 

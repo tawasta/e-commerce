@@ -17,5 +17,7 @@ class ProductTemplate(models.Model):
         self = self.filtered("product_variant_id")
         # Use mapped that returns a recordset with only itself to prefetch
         # and don't prefetch every product_variant_ids
-        for template, product in zip(self, self.mapped("product_variant_id")):
+        for template, product in zip(
+            self, self.mapped("product_variant_id"), strict=True
+        ):
             template.website_tax_ids = product.website_tax_ids

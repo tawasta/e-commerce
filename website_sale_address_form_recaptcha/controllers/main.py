@@ -1,7 +1,9 @@
 import logging
-from odoo import http, _
-from odoo.http import request
+
+from odoo import _, http
 from odoo.exceptions import UserError
+from odoo.http import request
+
 from odoo.addons.website_sale.controllers.main import WebsiteSale as WebsiteSaleOriginal
 
 _logger = logging.getLogger(__name__)

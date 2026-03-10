@@ -11,7 +11,7 @@ _logger = logging.getLogger(__name__)
 
 class WebsiteSale(WebsiteSale):
     def _get_shop_payment_values(self, order, **kwargs):  # noqa: max-complexity: 23
-        values = super(WebsiteSale, self)._get_shop_payment_values(order, **kwargs)
+        values = super()._get_shop_payment_values(order, **kwargs)
         only_invoice = False
         check_mandatory_products = False
         mandatory_products_list = []
@@ -128,11 +128,11 @@ class WebsiteSale(WebsiteSale):
                     }
                 )
 
-        return super(WebsiteSale, self).payment_confirmation(**post)
+        return super().payment_confirmation(**post)
 
     @http.route()
     def shop(self, page=0, category=None, search="", ppg=False, **post):
-        response = super(WebsiteSale, self).shop(
+        response = super().shop(
             page=page, category=category, search=search, ppg=ppg, **post
         )
 
@@ -169,9 +169,7 @@ class WebsiteSale(WebsiteSale):
         if not options:
             options = {}
 
-        response = super(WebsiteSale, self).products_autocomplete(
-            term, options=options, **kwargs
-        )
+        response = super().products_autocomplete(term, options=options, **kwargs)
         products = response["products"]
         product_list = []
         for i in range(len(products)):
@@ -190,7 +188,7 @@ class WebsiteSale(WebsiteSale):
         return response
 
 
-class TableCompute(object):
+class TableCompute:
     def __init__(self):
         self.table = {}
 

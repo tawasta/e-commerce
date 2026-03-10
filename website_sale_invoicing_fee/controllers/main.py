@@ -1,8 +1,8 @@
-from odoo import http
-from odoo.http import request
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.payment.controllers import portal as payment_portal
 import logging
+
+from odoo.http import request
+
+from odoo.addons.payment.controllers import portal as payment_portal
 
 _logger = logging.getLogger(__name__)
 
@@ -29,15 +29,15 @@ class PortalWebsiteSale(payment_portal.PaymentPortal):
         if custom_create_values and "sale_order_ids" in custom_create_values:
             sale_order_ids = custom_create_values.get("sale_order_ids")
             # sale_order_ids voi olla esim [(6, 0, [order_id])]
-            if sale_order_ids and isinstance(sale_order_ids, (list, tuple)):
+            if sale_order_ids and isinstance(sale_order_ids, list | tuple):
                 # Otetaan ensimmäinen order_id listasta
                 order_ids = []
                 # Etsitään ID:t listasta esim. [(6, 0, [38])] -> [38]
                 for cmd in sale_order_ids:
                     if (
-                        isinstance(cmd, (list, tuple))
+                        isinstance(cmd, list | tuple)
                         and len(cmd) == 3
-                        and isinstance(cmd[2], (list, tuple))
+                        and isinstance(cmd[2], list | tuple)
                     ):
                         order_ids.extend(cmd[2])
                 if order_ids:

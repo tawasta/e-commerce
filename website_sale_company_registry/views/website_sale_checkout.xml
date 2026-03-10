@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <!-- Re-label the VAT field on the address form -->
+
     <template id="address" inherit_id="website_sale.address" priority="101">
+        <!-- Re-label the VAT field on the address form -->
         <xpath expr="//label[@for='vat']" position="replace">
             <label for="vat" class="col-form-label">Company Registry / VAT Code</label>
         </xpath>
+
+        <!-- Prefill the field with company registry -->
+        <!--
+        Note: for use cases where both finnish AND nonfinnish countries are used, this needs further work.
+        For nonfinnish countries the VAT field value should be prepopulated
+        -->
+        <xpath expr="//input[@name='vat']" position="attributes">
+            <attribute
+                name="t-att-value"
+            >'company_registry' in checkout and checkout['company_registry']</attribute>
+        </xpath>
+
+
     </template>
 
 </odoo>

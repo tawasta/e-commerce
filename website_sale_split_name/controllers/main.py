@@ -23,7 +23,8 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def address(self, **kw):
-        # Tarkistetaan, onko URL:ssa parametri mode=billing, tai "billing_address" jo parametreissa
+        # Tarkistetaan, onko URL:ssa parametri mode=billing,
+        # tai "billing_address" jo parametreissa
         is_billing_mode = request.httprequest.args.get("mode") == "billing" or kw.get(
             "billing_address", {}
         )
@@ -33,9 +34,9 @@ class WebsiteSale(WebsiteSale):
                 kw.get("lastname"), kw.get("firstname")
             )
             kw["name"] = name
-            response = super(WebsiteSale, self).address(**kw)
+            response = super().address(**kw)
         else:
-            response = super(WebsiteSale, self).address(**kw)
+            response = super().address(**kw)
 
         # Välitetään is_billing_mode templateen
         response.qcontext.update(
