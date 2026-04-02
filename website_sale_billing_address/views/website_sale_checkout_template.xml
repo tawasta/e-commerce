@@ -105,7 +105,7 @@
 
         <xpath expr="//div[contains(@class, 'card-body')]/t[@t-esc='contact']" position="after">
             <p t-if="mode == 'billing'" t-attf-class="small mt-2 mb-2 #{selected and 'text-white-50' or 'text-muted'}">
-                Used for invoices and billing documents.
+                Used for billing.
             </p>
             <p t-if="mode == 'shipping'" t-attf-class="small mt-2 mb-2 #{selected and 'text-white-50' or 'text-muted'}">
                 Used as the delivery address for this order.
