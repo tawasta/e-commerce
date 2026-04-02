@@ -59,7 +59,7 @@
                         <span class="badge bg-light text-dark border ms-2">Invoice</span>
                     </h4>
                     <p class="text-muted small mb-0">
-                        Select the address used for invoices and billing documents.
+                        Select the address used for billing.
                     </p>
                 </div>
             </div>
