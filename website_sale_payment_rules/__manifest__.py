@@ -34,6 +34,7 @@
         "sale_create_membership",
         "website_sale",
         "payment_paytrail",
+        "website",
     ],
     "data": [
         "views/payment_acquirer_view.xml",
