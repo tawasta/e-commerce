@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="cart_begin_checkout_gtm"
+        inherit_id="website_sale.cart"
+        name="GA4 begin_checkout event"
+    >
+        <xpath expr="//t[@t-call='website_sale.checkout_layout']" position="inside">
+            <t
+                t-if="website_sale_order and website_sale_order.order_line
+                     and not request.env.user.has_group('base.group_user')"
+            >
+                <script
+                    type="text/javascript"
+                    t-out="website_sale_order._ga4_begin_checkout_script()"
+                />
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
