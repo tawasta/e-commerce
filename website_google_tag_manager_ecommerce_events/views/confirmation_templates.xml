@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="confirmation_purchase_gtm"
+        inherit_id="website_sale.confirmation"
+        name="GA4 purchase event"
+    >
+        <xpath expr="//t[@t-call='website_sale.checkout_layout']" position="inside">
+            <t t-if="order and not request.env.user.has_group('base.group_user')">
+                <script type="text/javascript" t-out="order._ga4_purchase_script()" />
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
