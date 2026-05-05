@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <!-- Cart line product images -->
+  <template
+    id="opt_cart_lines_hide_images"
+    inherit_id="website_sale.cart_lines"
+    name="Hide Product Images"
+    active="False"
+  >
+    <xpath
+      expr="//t[@t-foreach='website_sale_order.website_order_line']//div[hasclass('o_cart_product_image')]"
+      position="attributes"
+    >
+      <attribute name="style">display:none;</attribute>
+    </xpath>
+  </template>
+
+  <!-- Cart suggested accessories product images -->
+  <template
+    id="opt_cart_suggested_accessories_hide_images"
+    inherit_id="website_sale.suggested_products_list"
+    name="Hide Suggested Accessories Images"
+    active="False"
+  >
+    <xpath
+      expr="//div[@t-foreach='suggested_products']//div[hasclass('o_cart_product_image')]"
+      position="attributes"
+    >
+      <attribute name="style">display:none;</attribute>
+    </xpath>
+  </template>
+
+  <!-- Cart summary product images -->
+  <template
+    id="opt_cart_summary_hide_images"
+    inherit_id="website_sale.cart_summary_content"
+    name="Hide Cart Summary Images"
+    active="False"
+  >
+    <xpath
+      expr="//tr[@t-foreach='website_sale_order.website_order_line']//td[hasclass('td-img')]"
+      position="attributes"
+    >
+      <attribute name="style">display:none;</attribute>
+    </xpath>
+  </template>
+</odoo>

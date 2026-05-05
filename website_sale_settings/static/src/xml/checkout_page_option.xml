@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+<t
+    t-name="website_sale_settings.checkoutPageOption"
+    t-inherit="website_sale.checkoutPageOption"
+    t-inherit-mode="extension"
+  >
+    <xpath expr="//BuilderContext" position="inside">
+      <!-- Cart line product images -->
+      <BuilderRow label.translate="No product images">
+        <BuilderCheckbox
+          actionParam="{views: ['website_sale_settings.opt_cart_lines_hide_images']}"
+        />
+      </BuilderRow>
+
+      <!-- Cart suggested accessories product images -->
+      <BuilderRow label.translate="No suggested accessories images">
+        <BuilderCheckbox
+          actionParam="{views: ['website_sale_settings.opt_cart_suggested_accessories_hide_images']}"
+        />
+      </BuilderRow>
+
+      <!-- Cart summary product images -->
+      <BuilderRow label.translate="No cart summary product images">
+        <BuilderCheckbox
+          actionParam="{views: ['website_sale_settings.opt_cart_summary_hide_images']}"
+        />
+      </BuilderRow>
+    </xpath>
+  </t>
+</templates>
