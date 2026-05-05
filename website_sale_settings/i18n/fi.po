@@ -1,0 +1,36 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_settings
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260504\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-05 12:52+0000\n"
+"PO-Revision-Date: 2026-05-05 15:53+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: website_sale_settings
+#. odoo-javascript
+#: code:addons/website_sale_settings/static/src/xml/checkout_page_option.xml:0
+msgid "No cart summary product images"
+msgstr "Ei tuotekuvia ostoskorin yhteenvedossa"
+
+#. module: website_sale_settings
+#. odoo-javascript
+#: code:addons/website_sale_settings/static/src/xml/checkout_page_option.xml:0
+msgid "No product images"
+msgstr "Ei tuotekuvia"
+
+#. module: website_sale_settings
+#. odoo-javascript
+#: code:addons/website_sale_settings/static/src/xml/checkout_page_option.xml:0
+msgid "No suggested accessories images"
+msgstr "Ei kuvia suositelluista lisävarusteista"
