@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <!-- Extra info reference -->
+  <template
+    id="opt_checkout_hide_extra_info_reference"
+    name="Hide checkout extra info reference"
+    inherit_id="website_sale.extra_info"
+    active="False"
+  >
+    <xpath expr="//label[@for='sale1']/../.." position="attributes">
+      <attribute name="style">display:none;</attribute>
+    </xpath>
+  </template>
+
+  <!-- Extra info feedback -->
+  <template
+    id="opt_checkout_hide_extra_info_feedback"
+    name="Hide checkout extra info feedback"
+    inherit_id="website_sale.extra_info"
+    active="False"
+  >
+    <xpath expr="//label[@for='sale2']/../.." position="attributes">
+      <attribute name="style">display:none;</attribute>
+    </xpath>
+  </template>
+
+  <!-- Extra info attachment -->
+  <template
+    id="opt_checkout_hide_extra_info_attachment"
+    name="Hide checkout extra info attachment"
+    inherit_id="website_sale.extra_info"
+    active="False"
+  >
+    <xpath expr="//label[@for='sale3']/../.." position="attributes">
+      <attribute name="style">display:none;</attribute>
+    </xpath>
+  </template>
+
+  <!-- Add order reference into reference field -->
+  <template
+    id="opt_fill_reference"
+    name="Fill reference field automatically"
+    inherit_id="website_sale.extra_info"
+    active="False"
+  >
+    <xpath expr="//input[@name='client_order_ref']" position="attributes">
+      <attribute name='t-att-value'>website_sale_order.client_order_ref</attribute>
+    </xpath>
+  </template>
+
+  <!-- Enlarge the feedback textarea -->
+  <template
+    id="opt_enlarge_feedback_textarea"
+    name="Enlarge feedback textarea"
+    inherit_id="website_sale.extra_info"
+    active="False"
+  >
+    <xpath expr="//textarea" position="attributes">
+      <attribute name="rows">4</attribute>
+    </xpath>
+  </template>
+</odoo>

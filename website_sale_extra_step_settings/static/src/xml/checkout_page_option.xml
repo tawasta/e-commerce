@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+<t
+    t-name="website_sale_settings.checkoutPageOption"
+    t-inherit="website_sale.checkoutPageOption"
+    t-inherit-mode="extension"
+  >
+    <xpath expr="//BuilderRow" position="after">
+      <BuilderContext action="'websiteConfig'">
+        <!-- Extra info reference -->
+        <BuilderRow label.translate="No reference" level="2">
+          <BuilderCheckbox
+            actionParam="{views: ['website_sale_extra_step_settings.opt_checkout_hide_extra_info_reference']}"
+          />
+        </BuilderRow>
+
+        <!-- Extra info feedback -->
+        <BuilderRow label.translate="No feedback" level="2">
+          <BuilderCheckbox
+            actionParam="{views: ['website_sale_extra_step_settings.opt_checkout_hide_extra_info_feedback']}"
+          />
+        </BuilderRow>
+
+        <!-- Extra info attachment -->
+        <BuilderRow label.translate="No attachment" level="2">
+          <BuilderCheckbox
+            actionParam="{views: ['website_sale_extra_step_settings.opt_checkout_hide_extra_info_attachment']}"
+          />
+        </BuilderRow>
+
+        <!-- Add order reference into reference field -->
+        <BuilderRow label.translate="Fill reference automatically" level="2">
+          <BuilderCheckbox
+            actionParam="{views: ['website_sale_extra_step_settings.opt_fill_reference']}"
+          />
+        </BuilderRow>
+
+        <!-- Enlarge the feedback textarea -->
+        <BuilderRow label.translate="Enlarge feedback textare" level="2">
+          <BuilderCheckbox
+            actionParam="{views: ['website_sale_extra_step_settings.opt_enlarge_feedback_textarea']}"
+          />
+        </BuilderRow>
+      </BuilderContext>
+    </xpath>
+  </t>
+</templates>
