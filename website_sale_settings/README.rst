@@ -7,12 +7,9 @@ eCommerce: Toggleable Customize Settings
 ========================================
 
 * Adds the following toggleable settings/customizations for eCommerce:
-
-  * Switch to primary button style for Suggested Accessories' Add to Cart buttons
   * Hide Order Overview Lines' Product Images
   * Hide Order Overview Suggested Accessories' Product Images
   * Hide Sidebar Order Summary's Lines' Product Images
-  * Rename 'Street and Number' to 'Billing Address'
 
 Configuration
 =============
@@ -25,8 +22,7 @@ Usage
 
 Known issues / Roadmap
 ======================
-* Consider removing the 'Rename 'Street and Number' to 'Billing Address' option in 17.0
-  for consistency
+\-
 
 Credits
 =======
@@ -36,6 +32,7 @@ Contributors
 
 * Miika Nissi <miika.nissi@futural.fi>
 * Timo Talvitie <timo.talvitie@futural.fi>
+* Joona Isoaho <joona.isoaho@futural.fi>
 
 Maintainer
 ----------
