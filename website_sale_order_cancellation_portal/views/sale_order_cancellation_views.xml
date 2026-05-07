@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="view_sale_order_cancellation_tree" model="ir.ui.view">
         <field name="name">sale.order.cancellation.tree</field>
         <field name="model">sale.order.cancellation</field>
         <field name="arch" type="xml">
-            <tree string="Cancellation Notices">
-                <field name="sale_order_id"/>
-                <field name="partner_id"/>
-                <field name="received_at"/>
+            <tree>
+                <field name="sale_order_id" />
+                <field name="partner_id" />
+                <field name="received_at" />
             </tree>
         </field>
     </record>
@@ -21,20 +21,20 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="sale_order_id"/>
-                            <field name="partner_id"/>
-                            <field name="received_at"/>
+                            <field name="sale_order_id" />
+                            <field name="partner_id" />
+                            <field name="received_at" />
                         </group>
                     </group>
 
                     <notebook>
                         <page string="Cancellation Reason">
-                            <field name="cancellation_reason" readonly="1"/>
+                            <field name="cancellation_reason" readonly="1" />
                         </page>
                     </notebook>
                 </sheet>
 
-                <chatter/>
+                <chatter />
             </form>
         </field>
     </record>

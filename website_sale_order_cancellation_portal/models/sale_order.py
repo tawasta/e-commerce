@@ -25,14 +25,17 @@ class SaleOrder(models.Model):
     )
 
     portal_cancellation_allowed = fields.Boolean(
-        string="Portal Cancellation Allowed",
         compute="_compute_portal_cancellation_allowed",
     )
 
     def _get_portal_cancellation_period_days(self):
-        value = self.env["ir.config_parameter"].sudo().get_param(
-            "website_sale_order_cancellation_portal.period_days",
-            "14",
+        value = (
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param(
+                "website_sale_order_cancellation_portal.period_days",
+                "14",
+            )
         )
         try:
             value = int(value)

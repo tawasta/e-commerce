@@ -24,7 +24,6 @@ class SaleOrderCancellation(models.Model):
     )
 
     received_at = fields.Datetime(
-        string="Received At",
         default=fields.Datetime.now,
         required=True,
         readonly=True,
@@ -32,6 +31,5 @@ class SaleOrderCancellation(models.Model):
     )
 
     cancellation_reason = fields.Text(
-        string="Cancellation Reason",
         help="Optional reason given by the customer.",
     )

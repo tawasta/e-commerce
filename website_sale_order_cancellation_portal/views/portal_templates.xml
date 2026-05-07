@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <template
@@ -9,9 +9,12 @@
         <xpath expr="//div[@id='portal_sale_content']" position="before">
 
             <t t-if="request.params.get('cancel_ok')">
-                <div class="alert alert-success d-print-none mb-4 border-0 shadow-sm" role="status">
+                <div
+                    class="alert alert-success d-print-none mb-4 border-0 shadow-sm"
+                    role="status"
+                >
                     <div class="d-flex align-items-start gap-3">
-                        <i class="fa fa-check-circle mt-1"/>
+                        <i class="fa fa-check-circle mt-1" />
                         <div>
                             <div class="fw-semibold">Cancellation notice submitted</div>
                             <div class="small">
@@ -23,12 +26,19 @@
             </t>
 
             <t t-if="request.params.get('cancel_error')">
-                <div class="alert alert-danger d-print-none mb-4 border-0 shadow-sm" role="alert">
+                <div
+                    class="alert alert-danger d-print-none mb-4 border-0 shadow-sm"
+                    role="alert"
+                >
                     <div class="d-flex align-items-start gap-3">
-                        <i class="fa fa-exclamation-triangle mt-1"/>
+                        <i class="fa fa-exclamation-triangle mt-1" />
                         <div>
-                            <div class="fw-semibold">Cancellation notice could not be submitted</div>
-                            <div class="small">Please review the order details and try again.</div>
+                            <div
+                                class="fw-semibold"
+                            >Cancellation notice could not be submitted</div>
+                            <div
+                                class="small"
+                            >Please review the order details and try again.</div>
                         </div>
                     </div>
                 </div>
@@ -38,20 +48,30 @@
                 <section class="d-print-none mb-4">
                     <div class="card border-0 shadow-sm">
                         <div class="card-body">
-                            <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+                            <div
+                                class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3"
+                            >
                                 <div>
                                     <div class="d-flex align-items-center gap-2 mb-1">
-                                        <i class="fa fa-undo text-danger"/>
-                                        <h2 class="h6 fw-semibold mb-0">Order cancellation</h2>
-                                        <span class="badge rounded-pill text-bg-light border">Available</span>
+                                        <i class="fa fa-undo text-danger" />
+                                        <h2
+                                            class="h6 fw-semibold mb-0"
+                                        >Order cancellation</h2>
+                                        <span
+                                            class="badge rounded-pill text-bg-light border"
+                                        >Available</span>
                                     </div>
 
                                     <div class="text-muted small">
                                         You can submit a cancellation notice for this order.
-                                        <t t-if="sale_order.portal_cancellation_deadline">
+                                        <t
+                                            t-if="sale_order.portal_cancellation_deadline"
+                                        >
                                             Available until
                                             <strong class="text-body">
-                                                <span t-field="sale_order.portal_cancellation_deadline"/>
+                                                <span
+                                                    t-field="sale_order.portal_cancellation_deadline"
+                                                />
                                             </strong>.
                                         </t>
                                     </div>
@@ -92,10 +112,15 @@
 
                                 <div class="modal-header border-bottom">
                                     <div>
-                                        <div class="text-uppercase text-muted small fw-semibold mb-1">
+                                        <div
+                                            class="text-uppercase text-muted small fw-semibold mb-1"
+                                        >
                                             Order cancellation
                                         </div>
-                                        <h5 class="modal-title fw-semibold" id="portalCancelOrderModalLabel">
+                                        <h5
+                                            class="modal-title fw-semibold"
+                                            id="portalCancelOrderModalLabel"
+                                        >
                                             Submit a cancellation notice
                                         </h5>
                                     </div>
@@ -121,17 +146,25 @@
                                         <div class="card-body">
                                             <div class="row g-3">
                                                 <div class="col-12 col-md-6">
-                                                    <div class="text-muted small mb-1">Order number</div>
+                                                    <div
+                                                        class="text-muted small mb-1"
+                                                    >Order number</div>
                                                     <div class="fs-5 fw-semibold">
-                                                        <span t-esc="sale_order.name"/>
+                                                        <span t-esc="sale_order.name" />
                                                     </div>
                                                 </div>
 
-                                                <t t-if="sale_order.portal_cancellation_deadline">
+                                                <t
+                                                    t-if="sale_order.portal_cancellation_deadline"
+                                                >
                                                     <div class="col-12 col-md-6">
-                                                        <div class="text-muted small mb-1">Cancellation deadline</div>
+                                                        <div
+                                                            class="text-muted small mb-1"
+                                                        >Cancellation deadline</div>
                                                         <div class="fs-6 fw-semibold">
-                                                            <span t-field="sale_order.portal_cancellation_deadline"/>
+                                                            <span
+                                                                t-field="sale_order.portal_cancellation_deadline"
+                                                            />
                                                         </div>
                                                     </div>
                                                 </t>
@@ -142,7 +175,9 @@
                                     <div class="card border mb-4">
                                         <div class="card-body">
                                             <div class="d-flex gap-3">
-                                                <i class="fa fa-info-circle text-primary mt-1"/>
+                                                <i
+                                                    class="fa fa-info-circle text-primary mt-1"
+                                                />
                                                 <div>
                                                     <div class="fw-semibold mb-1">
                                                         What happens next?
@@ -163,9 +198,14 @@
                                     </div>
 
                                     <div class="mb-4">
-                                        <label class="form-label fw-semibold" for="cancellation_reason">
+                                        <label
+                                            class="form-label fw-semibold"
+                                            for="cancellation_reason"
+                                        >
                                             Reason for cancellation
-                                            <span class="text-muted fw-normal">(optional)</span>
+                                            <span
+                                                class="text-muted fw-normal"
+                                            >(optional)</span>
                                         </label>
                                         <textarea
                                             id="cancellation_reason"
@@ -221,12 +261,19 @@
                 </div>
             </t>
 
-            <t t-if="sale_order.portal_cancellation_received and not request.params.get('cancel_ok')">
-                <div class="alert alert-light border d-print-none mb-4 shadow-sm" role="status">
+            <t
+                t-if="sale_order.portal_cancellation_received and not request.params.get('cancel_ok')"
+            >
+                <div
+                    class="alert alert-light border d-print-none mb-4 shadow-sm"
+                    role="status"
+                >
                     <div class="d-flex align-items-start gap-3">
-                        <i class="fa fa-info-circle text-muted mt-1"/>
+                        <i class="fa fa-info-circle text-muted mt-1" />
                         <div>
-                            <div class="fw-semibold">Cancellation notice already submitted</div>
+                            <div
+                                class="fw-semibold"
+                            >Cancellation notice already submitted</div>
                             <div class="small text-muted">
                                 A cancellation notice has already been received for this order.
                             </div>

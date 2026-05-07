@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="mail_template_customer_cancellation_confirmation" model="mail.template">
         <field name="name">Customer Cancellation Confirmation</field>
-        <field name="model_id" ref="model_sale_order_cancellation"/>
-        <field name="subject">Cancellation notice received – {{ object.sale_order_id.name }}</field>
+        <field name="model_id" ref="model_sale_order_cancellation" />
+        <field
+            name="subject"
+        >Cancellation notice received – {{ object.sale_order_id.name }}</field>
         <field name="email_from">
             {{ object.sale_order_id.company_id.partner_id.email_formatted or user.email_formatted }}
         </field>
         <field name="email_to">{{ object.partner_id.email }}</field>
         <field name="body_html" type="html">
             <div>
-                <p>Hello <t t-out="object.partner_id.name"/>,</p>
+                <p>Hello <t t-out="object.partner_id.name" />,</p>
 
                 <p>
                     We have received your cancellation notice.
@@ -19,10 +21,10 @@
 
                 <p>
                     <strong>Order:</strong>
-                    <t t-out="object.sale_order_id.name"/>
-                    <br/>
+                    <t t-out="object.sale_order_id.name" />
+                    <br />
                     <strong>Received at:</strong>
-                    <t t-out="object.received_at"/>
+                    <t t-out="object.received_at" />
                 </p>
 
                 <p>
@@ -39,8 +41,10 @@
 
     <record id="mail_template_manager_cancellation_alert" model="mail.template">
         <field name="name">Manager Cancellation Alert</field>
-        <field name="model_id" ref="model_sale_order_cancellation"/>
-        <field name="subject">New cancellation notice – {{ object.sale_order_id.name }}</field>
+        <field name="model_id" ref="model_sale_order_cancellation" />
+        <field
+            name="subject"
+        >New cancellation notice – {{ object.sale_order_id.name }}</field>
         <field name="email_from">
             {{ object.sale_order_id.company_id.partner_id.email_formatted or user.email_formatted }}
         </field>
@@ -52,26 +56,26 @@
 
                 <p>
                     <strong>Customer:</strong>
-                    <t t-out="object.partner_id.name"/>
-                    <br/>
+                    <t t-out="object.partner_id.name" />
+                    <br />
 
                     <strong>Order number:</strong>
-                    <t t-out="object.sale_order_id.name"/>
-                    <br/>
+                    <t t-out="object.sale_order_id.name" />
+                    <br />
 
                     <strong>Received at:</strong>
-                    <t t-out="object.received_at"/>
-                    <br/>
+                    <t t-out="object.received_at" />
+                    <br />
 
                     <strong>Order status:</strong>
-                    <t t-out="object.sale_order_id.state"/>
+                    <t t-out="object.sale_order_id.state" />
                 </p>
 
                 <t t-if="object.cancellation_reason">
                     <p>
                         <strong>Customer note:</strong>
-                        <br/>
-                        <t t-out="object.cancellation_reason"/>
+                        <br />
+                        <t t-out="object.cancellation_reason" />
                     </p>
                 </t>
 
@@ -89,7 +93,9 @@
                 </t>
 
                 <p>
-                    <a t-att-href="'/web#id=%s&amp;model=sale.order&amp;view_type=form' % object.sale_order_id.id">
+                    <a
+                        t-att-href="'/web#id=%s&amp;model=sale.order&amp;view_type=form' % object.sale_order_id.id"
+                    >
                         Open order
                     </a>
                 </p>

@@ -1,20 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record id="view_order_form_portal_cancellation" model="ir.ui.view">
         <field name="name">sale.order.form.portal.cancellation</field>
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
 
             <xpath expr="//page[@name='other_information']//group" position="inside">
-                <group
-                    string="Portal Cancellation"
-                    name="portal_cancellation_group"
-                >
-                    <field name="portal_cancellation_deadline" readonly="1"/>
-                    <field name="portal_cancellation_allowed" readonly="1"/>
-                    <field name="portal_cancellation_received" readonly="1"/>
+                <group string="Portal Cancellation" name="portal_cancellation_group">
+                    <field name="portal_cancellation_deadline" readonly="1" />
+                    <field name="portal_cancellation_allowed" readonly="1" />
+                    <field name="portal_cancellation_received" readonly="1" />
                 </group>
             </xpath>
 
@@ -24,30 +21,26 @@
                     name="portal_cancellation_notices"
                     invisible="not portal_cancellation_ids"
                 >
-                    <field
-                        name="portal_cancellation_ids"
-                        readonly="1"
-                        nolabel="1"
-                    >
+                    <field name="portal_cancellation_ids" readonly="1" nolabel="1">
                         <tree>
-                            <field name="received_at"/>
-                            <field name="partner_id"/>
-                            <field name="cancellation_reason"/>
+                            <field name="received_at" />
+                            <field name="partner_id" />
+                            <field name="cancellation_reason" />
                         </tree>
                         <form>
                             <sheet>
                                 <group>
                                     <group>
-                                        <field name="sale_order_id"/>
-                                        <field name="partner_id"/>
+                                        <field name="sale_order_id" />
+                                        <field name="partner_id" />
                                     </group>
                                     <group>
-                                        <field name="received_at"/>
+                                        <field name="received_at" />
                                     </group>
                                 </group>
 
                                 <group string="Cancellation Reason">
-                                    <field name="cancellation_reason" nolabel="1"/>
+                                    <field name="cancellation_reason" nolabel="1" />
                                 </group>
                             </sheet>
                         </form>
