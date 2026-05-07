@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_portal_cancellation" model="ir.ui.view">
+        <field name="name">res.config.settings.portal.cancellation.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//setting[@id='discount_sale_order_lines']" position="after">
+                <setting
+                    id="portal_cancellation_period_days_setting"
+                    string="Portal Order Cancellation"
+                    help="Define how many days customers can submit cancellation notices from the customer portal."
+                >
+                    <field name="portal_cancellation_period_days"/>
+                </setting>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
