@@ -140,24 +140,24 @@ class SaleOrderCancellationPortal(CustomerPortal):
                     summary=_("New order cancellation notice"),
                     note=activity_note,
                 )
-
-            try:
-                if order.state != "cancel":
-                    order.sudo().with_context(
-                        disable_cancel_warning=True
-                    ).action_cancel()
-            except Exception as e:
-                _logger.warning(
-                    "Automatic cancellation of sale order %s failed: %s",
-                    order.name,
-                    e,
-                )
-                order.sudo().message_post(
-                    body=_(
-                        "Automatic sale order cancellation failed after customer "
-                        "submitted a cancellation notice. Please handle manually."
+            if not order.invoice_ids:
+                try:
+                    if order.state != "cancel":
+                        order.sudo().with_context(
+                            disable_cancel_warning=True
+                        ).action_cancel()
+                except Exception as e:
+                    _logger.warning(
+                        "Automatic cancellation of sale order %s failed: %s",
+                        order.name,
+                        e,
                     )
-                )
+                    order.sudo().message_post(
+                        body=_(
+                            "Automatic sale order cancellation failed after customer "
+                            "submitted a cancellation notice. Please handle manually."
+                        )
+                    )
 
         except Exception as e:
             _logger.exception("Portal order cancellation failed: %s", e)
