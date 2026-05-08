@@ -11,6 +11,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [product_cant_order](product_cant_order/) | 17.0.1.1.1 |  | Disables adding specific variants to cart
+[website_google_tag_manager_ecommerce_events](website_google_tag_manager_ecommerce_events/) | 17.0.1.0.0 |  | Fires some additional events to Google Tag Manager during eCommerce flow
 [website_pricelist_company_info](website_pricelist_company_info/) | 17.0.1.0.0 |  | Allow users to add and edit their currency
 [website_sale_address_form_recaptcha](website_sale_address_form_recaptcha/) | 17.0.1.0.0 |  | Recaptcha to prevent bots creating partner records
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 17.0.1.0.0 |  | Create company for website customer, if company name is set
@@ -45,6 +46,7 @@ addon | version | maintainers | summary
 [website_sale_limit_payment_providers](website_sale_limit_payment_providers/) | 17.0.1.1.1 |  | Limit payment providers by product
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 17.0.1.0.0 |  | Website Sale Maintenance mode
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 17.0.1.0.0 |  | Website sale membership privacy values
+[website_sale_order_cancellation_portal](website_sale_order_cancellation_portal/) | 17.0.1.0.0 |  | Portal cancellation notice for website sale orders
 [website_sale_pay_now_button_configurable_label](website_sale_pay_now_button_configurable_label/) | 17.0.1.0.0 |  | Set the checkout button's text in backend
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 17.0.1.0.0 |  | Invoice Transmit Method and Payment Terms for Website SO print
 [website_sale_product_domain_filter](website_sale_product_domain_filter/) | 17.0.1.2.0 |  | Website Sale Product Domain Filter

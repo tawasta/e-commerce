@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="portal_sale_order_cancellation_button"
+        inherit_id="sale.sale_order_portal_template"
+        priority="60"
+    >
+        <xpath expr="//div[@id='portal_sale_content']" position="before">
+
+            <t t-if="request.params.get('cancel_ok')">
+                <div
+                    class="alert alert-success d-print-none mb-4 border-0 shadow-sm"
+                    role="status"
+                >
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="fa fa-check-circle mt-1" />
+                        <div>
+                            <div class="fw-semibold">Cancellation notice submitted</div>
+                            <div class="small">
+                                We have received your cancellation notice. A confirmation email has been sent to you.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+
+            <t t-if="request.params.get('cancel_error')">
+                <div
+                    class="alert alert-danger d-print-none mb-4 border-0 shadow-sm"
+                    role="alert"
+                >
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="fa fa-exclamation-triangle mt-1" />
+                        <div>
+                            <div
+                                class="fw-semibold"
+                            >Cancellation notice could not be submitted</div>
+                            <div
+                                class="small"
+                            >Please review the order details and try again.</div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+
+            <t t-if="sale_order.portal_cancellation_allowed">
+                <section class="d-print-none mb-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div
+                                class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3"
+                            >
+                                <div>
+                                    <div class="d-flex align-items-center gap-2 mb-1">
+                                        <i class="fa fa-undo text-danger" />
+                                        <h2
+                                            class="h6 fw-semibold mb-0"
+                                        >Order cancellation</h2>
+                                        <span
+                                            class="badge rounded-pill text-bg-light border"
+                                        >Available</span>
+                                    </div>
+
+                                    <div class="text-muted small">
+                                        You can submit a cancellation notice for this order.
+                                        <t
+                                            t-if="sale_order.portal_cancellation_deadline"
+                                        >
+                                            Available until
+                                            <strong class="text-body">
+                                                <span
+                                                    t-field="sale_order.portal_cancellation_deadline"
+                                                />
+                                            </strong>.
+                                        </t>
+                                    </div>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-danger"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#portalCancelOrderModal"
+                                >
+                                    Cancel Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div
+                    class="modal fade"
+                    id="portalCancelOrderModal"
+                    tabindex="-1"
+                    aria-labelledby="portalCancelOrderModalLabel"
+                    aria-hidden="true"
+                >
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content border-0 shadow-lg">
+
+                            <form
+                                t-att-action="'/my/orders/%s/cancel?access_token=%s' % (sale_order.id, sale_order.access_token or '')"
+                                method="post"
+                            >
+                                <input
+                                    type="hidden"
+                                    name="csrf_token"
+                                    t-att-value="request.csrf_token()"
+                                />
+
+                                <div class="modal-header border-bottom">
+                                    <div>
+                                        <div
+                                            class="text-uppercase text-muted small fw-semibold mb-1"
+                                        >
+                                            Order cancellation
+                                        </div>
+                                        <h5
+                                            class="modal-title fw-semibold"
+                                            id="portalCancelOrderModalLabel"
+                                        >
+                                            Submit a cancellation notice
+                                        </h5>
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    />
+                                </div>
+
+                                <div class="modal-body">
+
+                                    <div class="mb-4">
+                                        <p class="mb-0 text-muted">
+                                            Please confirm that you want to submit a cancellation notice for the order below.
+                                            Your request will be recorded and sent to our team for processing.
+                                        </p>
+                                    </div>
+
+                                    <div class="card bg-light border-0 mb-4">
+                                        <div class="card-body">
+                                            <div class="row g-3">
+                                                <div class="col-12 col-md-6">
+                                                    <div
+                                                        class="text-muted small mb-1"
+                                                    >Order number</div>
+                                                    <div class="fs-5 fw-semibold">
+                                                        <span t-esc="sale_order.name" />
+                                                    </div>
+                                                </div>
+
+                                                <t
+                                                    t-if="sale_order.portal_cancellation_deadline"
+                                                >
+                                                    <div class="col-12 col-md-6">
+                                                        <div
+                                                            class="text-muted small mb-1"
+                                                        >Cancellation deadline</div>
+                                                        <div class="fs-6 fw-semibold">
+                                                            <span
+                                                                t-field="sale_order.portal_cancellation_deadline"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card border mb-4">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-3">
+                                                <i
+                                                    class="fa fa-info-circle text-primary mt-1"
+                                                />
+                                                <div>
+                                                    <div class="fw-semibold mb-1">
+                                                        What happens next?
+                                                    </div>
+                                                    <div class="text-muted small">
+                                                        <p class="mb-2">
+                                                            Your cancellation notice will be submitted to our team for processing.
+                                                        </p>
+
+                                                        <p class="mb-0">
+                                                            Any refunds, credit notes, returns or other order-related actions
+                                                            will be handled separately as part of the normal order processing flow.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label
+                                            class="form-label fw-semibold"
+                                            for="cancellation_reason"
+                                        >
+                                            Reason for cancellation
+                                            <span
+                                                class="text-muted fw-normal"
+                                            >(optional)</span>
+                                        </label>
+                                        <textarea
+                                            id="cancellation_reason"
+                                            class="form-control"
+                                            name="cancellation_reason"
+                                            rows="4"
+                                            placeholder="You can add a short note if you want."
+                                        />
+                                        <div class="form-text">
+                                            You do not need to provide a reason to submit the cancellation notice.
+                                        </div>
+                                    </div>
+
+                                    <div class="card border">
+                                        <div class="card-body">
+                                            <div class="form-check">
+                                                <input
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    name="confirm_cancellation"
+                                                    id="confirm_cancellation"
+                                                    required="required"
+                                                />
+                                                <label
+                                                    class="form-check-label fw-semibold"
+                                                    for="confirm_cancellation"
+                                                >
+                                                    I confirm that I want to submit a cancellation notice for this order.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="modal-footer bg-light">
+                                    <button
+                                        type="button"
+                                        class="btn btn-outline-secondary"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Keep Order
+                                    </button>
+
+                                    <button type="submit" class="btn btn-danger">
+                                        Submit Cancellation Notice
+                                    </button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </t>
+
+            <t
+                t-if="sale_order.portal_cancellation_received and not request.params.get('cancel_ok')"
+            >
+                <div
+                    class="alert alert-light border d-print-none mb-4 shadow-sm"
+                    role="status"
+                >
+                    <div class="d-flex align-items-start gap-3">
+                        <i class="fa fa-info-circle text-muted mt-1" />
+                        <div>
+                            <div
+                                class="fw-semibold"
+                            >Cancellation notice already submitted</div>
+                            <div class="small text-muted">
+                                A cancellation notice has already been received for this order.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+
+        </xpath>
+    </template>
+
+</odoo>

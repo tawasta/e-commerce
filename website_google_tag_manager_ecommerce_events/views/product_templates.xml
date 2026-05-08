@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template
+        id="product_view_item_gtm"
+        inherit_id="website_sale.product"
+        name="GA4 view_item event"
+    >
+        <xpath expr="//t[@t-call='website.layout']" position="inside">
+            <t t-if="not request.env.user.has_group('base.group_user')">
+                <script
+                    type="text/javascript"
+                    t-out="product._ga4_view_item_script()"
+                />
+            </t>
+        </xpath>
+    </template>
+
+</odoo>
