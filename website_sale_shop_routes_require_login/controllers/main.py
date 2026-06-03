@@ -14,146 +14,101 @@ class WebsiteSaleLoginRequired(WebsiteSale):
     # '/shop/category/<model("product.public.category"):category>',
     # '/shop/category/<model("product.public.category"):category>/page/<int:page>',
     @http.route(auth="user", sitemap=False)
-    def shop(
-        self,
-        page=0,
-        category=None,
-        search="",
-        min_price=0.0,
-        max_price=0.0,
-        ppg=False,
-        **post,
-    ):
-        return super().shop(page, category, search, min_price, max_price, ppg, **post)
+    def shop(self, *args, **kwargs):
+        return super().shop(*args, **kwargs)
 
     # Affects:
     # /shop/<model("product.template"):product>
     @http.route(auth="user", sitemap=False)
-    def product(self, product, category="", search="", **kwargs):
-        return super().product(product, category, search, **kwargs)
+    def product(self, *args, **kwargs):
+        return super().product(*args, **kwargs)
 
     # Affects:
     # '/shop/<model("product.template"):product_template>/document/<int:document_id>',
     @http.route(auth="user")
-    def product_document(self, product_template, document_id):
-        return super().product_document(product_template, document_id)
+    def product_document(self, *args, **kwargs):
+        return super().product_document(*args, **kwargs)
 
     # Affects:
     # /shop/product/<model("product.template"):product>
     @http.route(auth="user")
-    def old_product(self, product, category="", search="", **kwargs):
-        return super().old_product(product, category, search, **kwargs)
+    def old_product(self, *args, **kwargs):
+        return super().old_product(*args, **kwargs)
 
     # Affects:
     # /shop/cart
     @http.route(auth="user")
-    def cart(self, access_token=None, revive="", **post):
-        return super().cart(access_token, revive, **post)
+    def cart(self, *args, **kwargs):
+        return super().cart(*args, **kwargs)
 
     # Affects:
     # /shop/cart/update
     @http.route(auth="user")
-    def cart_update(
-        self,
-        product_id,
-        add_qty=1,
-        set_qty=0,
-        product_custom_attribute_values=None,
-        no_variant_attribute_values=None,
-        express=False,
-        **kwargs,
-    ):
-        return super().cart_update(
-            product_id,
-            add_qty,
-            set_qty,
-            product_custom_attribute_values,
-            no_variant_attribute_values,
-            express,
-            **kwargs,
-        )
+    def cart_update(self, *args, **kwargs):
+        return super().cart_update(*args, **kwargs)
 
     # Affects:
     # /shop/cart/update_json
     @http.route(auth="user")
-    def cart_update_json(
-        self,
-        product_id,
-        line_id=None,
-        add_qty=None,
-        set_qty=None,
-        display=True,
-        product_custom_attribute_values=None,
-        no_variant_attribute_values=None,
-        **kw,
-    ):
-        return super().cart_update_json(
-            product_id,
-            line_id,
-            add_qty,
-            set_qty,
-            display,
-            product_custom_attribute_values,
-            no_variant_attribute_values,
-            **kw,
-        )
+    def cart_update_json(self, *args, **kwargs):
+        return super().cart_update_json(*args, **kwargs)
 
     # Affects:
     # /shop/address
     @http.route(auth="user")
-    def address(self, **kw):
-        return super().address(**kw)
+    def address(self, *args, **kwargs):
+        return super().address(*args, **kwargs)
 
     # Affects:
     # /shop/checkout
     @http.route(auth="user")
-    def checkout(self, **post):
-        return super().checkout(**post)
+    def checkout(self, *args, **kwargs):
+        return super().checkout(*args, **kwargs)
 
     # Affects:
     # /shop/extra_info
     @http.route(auth="user")
-    def extra_info(self, **post):
-        return super().extra_info(**post)
+    def extra_info(self, *args, **kwargs):
+        return super().extra_info(*args, **kwargs)
 
     # Affects:
     # /shop/payment
     @http.route(auth="user")
-    def shop_payment(self, **post):
-        return super().shop_payment(**post)
+    def shop_payment(self, *args, **kwargs):
+        return super().shop_payment(*args, **kwargs)
 
     # Affects:
     # /shop/payment/validate
     @http.route(auth="user")
-    def shop_payment_validate(self, sale_order_id=None, **post):
-        return super().shop_payment_validate(sale_order_id, **post)
+    def shop_payment_validate(self, *args, **kwargs):
+        return super().shop_payment_validate(*args, **kwargs)
 
     # Affects:
     # /shop/confirmation
     @http.route(auth="user")
-    def shop_payment_confirmation(self, **post):
-        return super().shop_payment_confirmation(**post)
+    def shop_payment_confirmation(self, *args, **kwargs):
+        return super().shop_payment_confirmation(*args, **kwargs)
 
     # Affects:
     # /shop/change_pricelist/<model("product.pricelist"):pricelist>
     @http.route(auth="user")
-    def pricelist_change(self, pricelist, **post):
-        return super().pricelist_change(pricelist, **post)
+    def pricelist_change(self, *args, **kwargs):
+        return super().pricelist_change(*args, **kwargs)
 
     # Affects:
     # /shop/pricelist
     @http.route(auth="user")
-    def pricelist(self, promo, **post):
-        return super().pricelist(promo, **post)
+    def pricelist(self, *args, **kwargs):
+        return super().pricelist(*args, **kwargs)
 
     # Affects:
     # /shop/confirm_order
     @http.route(auth="user")
-    def confirm_order(self, **post):
-        return super().confirm_order(**post)
+    def confirm_order(self, *args, **kwargs):
+        return super().confirm_order(*args, **kwargs)
 
     # Affects:
     # '/shop/print'
     @http.route(auth="user")
-    def print_saleorder(self, **kwargs):
-        return super().print_saleorder(kwargs)
+    def print_saleorder(self, *args, **kwargs):
+        return super().print_saleorder(*args, **kwargs)
