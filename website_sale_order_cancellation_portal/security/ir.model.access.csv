@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_sale_order_cancellation_sale_manager,sale.order.cancellation.sale.manager,model_sale_order_cancellation,sales_team.group_sale_manager,1,1,1,0
+access_sale_order_cancellation_deny_rule_manager,sale.order.cancellation.deny.rule manager,model_sale_order_cancellation_deny_rule,sales_team.group_sale_manager,1,1,1,1
