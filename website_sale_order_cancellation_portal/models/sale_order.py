@@ -70,9 +70,15 @@ class SaleOrder(models.Model):
     def _get_portal_cancellation_denial_rule(self):
         self.ensure_one()
 
-        rules = self.env["sale.order.cancellation.deny.rule"].sudo().search([
-            ("active", "=", True),
-        ])
+        rules = (
+            self.env["sale.order.cancellation.deny.rule"]
+            .sudo()
+            .search(
+                [
+                    ("active", "=", True),
+                ]
+            )
+        )
 
         for rule in rules:
             try:
@@ -80,10 +86,12 @@ class SaleOrder(models.Model):
             except Exception:
                 continue
 
-            domain = expression.AND([
-                [("id", "=", self.id)],
-                rule_domain,
-            ])
+            domain = expression.AND(
+                [
+                    [("id", "=", self.id)],
+                    rule_domain,
+                ]
+            )
 
             if self.sudo().search_count(domain):
                 return rule

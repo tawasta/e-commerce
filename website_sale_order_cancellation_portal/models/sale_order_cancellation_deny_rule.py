@@ -14,5 +14,4 @@ class SaleOrderCancellationDenyRule(models.Model):
         string="Deny Condition",
         required=True,
         default="[]",
-        help="Domain evaluated against sale.order. If it matches, portal cancellation is denied.",
     )
