@@ -12,6 +12,7 @@
                     <field name="portal_cancellation_deadline" readonly="1" />
                     <field name="portal_cancellation_allowed" readonly="1" />
                     <field name="portal_cancellation_received" readonly="1" />
+                    <field name="portal_cancellation_denial_rule_id" readonly="1" />
                 </group>
             </xpath>
 

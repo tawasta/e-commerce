@@ -38,6 +38,7 @@
         "security/ir.model.access.csv",
         "data/mail_templates.xml",
         "views/res_config_settings_views.xml",
+        "views/sale_order_cancellation_deny_rule_views.xml",
         "views/sale_order_cancellation_views.xml",
         "views/portal_templates.xml",
         "views/sale_order_views.xml",

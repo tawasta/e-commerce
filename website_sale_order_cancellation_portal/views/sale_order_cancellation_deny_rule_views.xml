@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_sale_order_cancellation_deny_rule_tree" model="ir.ui.view">
+        <field name="name">sale.order.cancellation.deny.rule.tree</field>
+        <field name="model">sale.order.cancellation.deny.rule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle" />
+                <field name="active" />
+                <field name="name" />
+                <field name="domain" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_sale_order_cancellation_deny_rule_form" model="ir.ui.view">
+        <field name="name">sale.order.cancellation.deny.rule.form</field>
+        <field name="model">sale.order.cancellation.deny.rule</field>
+        <field name="arch" type="xml">
+            <form string="Cancellation Deny Rule">
+                <sheet>
+                    <group>
+                        <field name="active" />
+                        <field name="sequence" />
+                        <field name="name" />
+                    </group>
+
+                    <group string="Condition">
+                        <field
+                            name="domain"
+                            widget="domain"
+                            options="{'model': 'sale.order'}"
+                        />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sale_order_cancellation_deny_rule" model="ir.actions.act_window">
+        <field name="name">Cancellation Deny Rules</field>
+        <field name="res_model">sale.order.cancellation.deny.rule</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_sale_order_cancellation_deny_rule"
+        name="Cancellation Deny Rules"
+        parent="sale.sale_order_menu"
+        action="action_sale_order_cancellation_deny_rule"
+        sequence="91"
+        groups="sales_team.group_sale_manager"
+    />
+
+</odoo>
