@@ -40,6 +40,21 @@ class WebsiteSalePaymentProviders(WebsiteSale):
         else:
             providers_sudo = values["providers_sudo"]
 
+        # Jos korissa on useamman variant-yhtiön tuotteita,
+        # salli vain tähän erikseen hyväksytyt maksupalveluntarjoajat.
+        variant_companies = order.order_line.filtered(
+            lambda line: (
+                not line.display_type
+                and line.product_id
+                and line.product_id.variant_company_id
+            )
+        ).mapped("product_id.variant_company_id")
+
+        if len(variant_companies) > 1:
+            providers_sudo = providers_sudo.filtered(
+                lambda p: p.website_allow_mixed_variant_companies
+            )
+
         # Decide if current customer is company or not
         is_company = order.partner_invoice_id.is_company or order.partner_invoice_id.vat
 
@@ -59,7 +74,7 @@ class WebsiteSalePaymentProviders(WebsiteSale):
             or any(g in current_user_groups for g in p.website_show_for_group_ids)
         )
 
-        # Päivitä maksutavat vain, jos suodatettu lista poikkeaa alkuperäisestä
+        # Päivitä maksutavat aina lopullisen provider-listan perusteella
         if providers_sudo != values["providers_sudo"]:
             payment_method = request.env["payment.method"].sudo()
 
