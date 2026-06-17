@@ -16,7 +16,9 @@ class WebsiteSalePaymentProviders(WebsiteSale):
         allowed_providers_list = []
         explicit_allowed_providers = PaymentProvider
 
-        for line in order.order_line.filtered(lambda l: not l.display_type and l.product_id):
+        for line in order.order_line.filtered(
+            lambda li: not li.display_type and li.product_id
+        ):
             allowed = line.product_id.allowed_payment_provider_ids.sudo()
             if allowed:
                 allowed_providers_list.append(set(allowed.ids))
@@ -29,9 +31,6 @@ class WebsiteSalePaymentProviders(WebsiteSale):
                 values["payment_methods_sudo"] = PaymentMethod
                 return values
 
-            # TÄRKEÄ:
-            # Suodatetaan core-providerit + tuotteella erikseen sallitut providerit.
-            # Näin BBB-provider voi näkyä AAA-verkkokaupassa, jos tuote sallii sen.
             providers_sudo = (providers_sudo | explicit_allowed_providers).filtered(
                 lambda p: p.id in common_providers
             )
