@@ -24,3 +24,13 @@ class PaymentProvider(models.Model):
         "users. If field is left empty, payment provider is shown for all groups' "
         "users.",
     )
+
+    website_allow_mixed_variant_companies = fields.Boolean(
+        string="Allow for mixed variant companies",
+        default=False,
+        help=(
+            "Allow this payment provider when the cart contains products from "
+            "multiple product variant companies. Enable only for invoice/manual "
+            "payment providers, not Paytrail."
+        ),
+    )
