@@ -7,68 +7,66 @@ class WebsiteSalePaymentProviders(WebsiteSale):
     def _get_shop_payment_values(self, order, **kwargs):
         values = super()._get_shop_payment_values(order, **kwargs)
 
-        # Haetaan kaikki maksupalveluntarjoajat ja
-        # maksutavat yhdellä kertaa suodatuksen helpottamiseksi
+        PaymentProvider = request.env["payment.provider"].sudo()
+        PaymentMethod = request.env["payment.method"].sudo()
+
         providers_sudo = values["providers_sudo"]
-        filtered_providers_sudo = request.env["payment.provider"].sudo()
+        order = order.sudo()
 
-        # Hae kaikki sallitut maksupalveluntarjoajat yhdellä kyselyllä
         allowed_providers_list = []
-        for line in order.order_line:
-            if line.product_id.allowed_payment_provider_ids:
-                allowed_providers_list.append(
-                    set(line.product_id.allowed_payment_provider_ids.ids)
-                )
+        explicit_allowed_providers = PaymentProvider
 
-        # Tarkistetaan, onko olemassa ristiriitaisia maksupalveluntarjoajia
+        for line in order.order_line.filtered(
+            lambda li: not li.display_type and li.product_id
+        ):
+            allowed = line.product_id.allowed_payment_provider_ids.sudo()
+            if allowed:
+                allowed_providers_list.append(set(allowed.ids))
+                explicit_allowed_providers |= allowed
+
         if allowed_providers_list:
             common_providers = set.intersection(*allowed_providers_list)
             if not common_providers:
-                # Jos ristiriita löytyy, tyhjennetään maksupalveluntarjoajat
-                values["providers_sudo"] = request.env["payment.provider"].sudo()
-                values["payment_methods_sudo"] = request.env["payment.method"].sudo()
+                values["providers_sudo"] = PaymentProvider
+                values["payment_methods_sudo"] = PaymentMethod
                 return values
-            else:
-                # Suodatus: käytetään vain yhteisiä maksupalveluntarjoajia
-                filtered_providers_sudo = providers_sudo.filtered(
-                    lambda p: p.id in common_providers
-                )
 
-        # Käytä suodatettuja palveluntarjoajia, jos niitä löytyi
-        if filtered_providers_sudo:
-            providers_sudo = filtered_providers_sudo
-        else:
-            providers_sudo = values["providers_sudo"]
+            providers_sudo = (providers_sudo | explicit_allowed_providers).filtered(
+                lambda p: p.id in common_providers
+            )
 
-        # Decide if current customer is company or not
+        variant_companies = order.order_line.filtered(
+            lambda line: (
+                not line.display_type
+                and line.product_id
+                and line.product_id.variant_company_id
+            )
+        ).mapped("product_id.variant_company_id")
+
+        if len(variant_companies) > 1:
+            providers_sudo = providers_sudo.filtered(
+                lambda p: p.website_allow_mixed_variant_companies
+            )
+
         is_company = order.partner_invoice_id.is_company or order.partner_invoice_id.vat
 
         if is_company:
-            # Only show company providers
             providers_sudo = providers_sudo.filtered(lambda p: p.website_show_company)
         else:
-            # Only show private providers
             providers_sudo = providers_sudo.filtered(lambda p: p.website_show_private)
 
-        # Filter out those payment providers that are restricted to res.groups that
-        # the current user is not a member of.
         current_user_groups = request.env.user.groups_id
 
         providers_sudo = providers_sudo.filtered(
             lambda p: not p.website_show_for_group_ids
-            or any(g in current_user_groups for g in p.website_show_for_group_ids)
+            or bool(p.website_show_for_group_ids & current_user_groups)
         )
 
-        # Päivitä maksutavat vain, jos suodatettu lista poikkeaa alkuperäisestä
-        if providers_sudo != values["providers_sudo"]:
-            payment_method = request.env["payment.method"].sudo()
-
-            payment_methods_sudo = payment_method._get_compatible_payment_methods(
-                providers_sudo.ids,
-                order.partner_id.id,
-                currency_id=order.currency_id.id,
-            )
-            values["providers_sudo"] = providers_sudo
-            values["payment_methods_sudo"] = payment_methods_sudo
+        values["providers_sudo"] = providers_sudo
+        values["payment_methods_sudo"] = PaymentMethod._get_compatible_payment_methods(
+            providers_sudo.ids,
+            order.partner_id.id,
+            currency_id=order.currency_id.id,
+        )
 
         return values
