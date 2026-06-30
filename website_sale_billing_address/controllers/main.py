@@ -68,7 +68,10 @@ class WebsiteSaleBilling(WebsiteSale):
                 partner_invoice = order.with_context(
                     no_vat_validation=True
                 ).partner_invoice_id
-                update_values = {"type": "invoice"}
+                update_values = {
+                    "type": "invoice",
+                    "company_id": False,
+                }
 
                 if company_email:
                     update_values["company_email"] = company_email
