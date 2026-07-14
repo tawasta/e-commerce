@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="default_country" inherit_id="portal.address_form_fields" priority="100">
+    <xpath expr="//select[@id='o_country_id']" position="replace">
+      <select
+        id="o_country_id"
+        name="country_id"
+        t-att-class="'pe-none opacity-50 form-select' if not can_edit_country else 'form-select'"
+      >
+        <option value="">Country...</option>
+        <option
+          t-foreach="countries"
+          t-as="c"
+          t-att-value="c.id"
+          t-att-selected="c.id == request.env.ref('base.fi').id"
+          t-att-code="c.code"
+          t-out="c.name"
+        />
+      </select>
+    </xpath>
+  </template>
+</odoo>
