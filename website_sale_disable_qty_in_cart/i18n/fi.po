@@ -1,0 +1,54 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_disable_qty_in_cart
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260630\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-15 11:04+0000\n"
+"PO-Revision-Date: 2026-07-15 14:05+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: website_sale_disable_qty_in_cart
+#: model:ir.model.fields,field_description:website_sale_disable_qty_in_cart.field_product_category__disable_qty_change
+msgid "Disable Quantity Change"
+msgstr "Poista määrän muutos käytöstä"
+
+#. module: website_sale_disable_qty_in_cart
+#: model:ir.model.fields,field_description:website_sale_disable_qty_in_cart.field_product_category__display_name
+#: model:ir.model.fields,field_description:website_sale_disable_qty_in_cart.field_sale_order_line__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: website_sale_disable_qty_in_cart
+#: model:ir.model.fields,field_description:website_sale_disable_qty_in_cart.field_product_category__id
+#: model:ir.model.fields,field_description:website_sale_disable_qty_in_cart.field_sale_order_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_sale_disable_qty_in_cart
+#: model:ir.model.fields,help:website_sale_disable_qty_in_cart.field_product_category__disable_qty_change
+msgid ""
+"If enabled, quantity change in the cart will be disabled for products in "
+"this category."
+msgstr ""
+"Jos tämä asetus on käytössä, ostoskorin tuotemäärän muuttaminen ei ole "
+"mahdollista tämän kategorian tuotteiden osalta."
+
+#. module: website_sale_disable_qty_in_cart
+#: model:ir.model,name:website_sale_disable_qty_in_cart.model_product_category
+msgid "Product Category"
+msgstr "Tuoteryhmä"
+
+#. module: website_sale_disable_qty_in_cart
+#: model:ir.model,name:website_sale_disable_qty_in_cart.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Myyntitilausrivi"
