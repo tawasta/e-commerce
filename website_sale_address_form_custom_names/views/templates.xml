@@ -13,7 +13,7 @@
             <label
                 class="col-form-label fw-normal label-optional"
                 for="vat"
-            >VAT ID</label>
+            >VAT Identification Number (VAT ID)</label>
         </xpath>
         <xpath expr="//label[@for='street2']" position="attributes">
             <attribute name="class" add="d-none" separator=" " />
@@ -22,7 +22,17 @@
             <label
                 class="col-form-label label-optional"
                 for="street2"
-            >Apartment, suite, unit, etc.</label>
+            >Address line 2</label>
+        </xpath>
+
+        <xpath expr="//label[@for='street']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+        <xpath expr="//label[@for='street']" position="after">
+            <label
+                class="col-form-label label-optional"
+                for="street"
+            >Street address and number</label>
         </xpath>
     </template>
 </odoo>
