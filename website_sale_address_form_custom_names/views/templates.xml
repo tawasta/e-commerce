@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Inherit website_sale.address to change the VAT field label -->
+    <template
+        id="address_inherit_vat_label"
+        inherit_id="website_sale.address"
+        name="Change VAT label to VAT ID"
+    >
+        <xpath expr="//label[@for='vat']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+        <xpath expr="//label[@for='vat']" position="after">
+            <label
+                class="col-form-label fw-normal label-optional"
+                for="vat"
+            >VAT Identification Number (VAT ID)</label>
+        </xpath>
+        <xpath expr="//label[@for='street2']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+        <xpath expr="//label[@for='street2']" position="after">
+            <label
+                class="col-form-label label-optional"
+                for="street2"
+            >Address line 2</label>
+        </xpath>
+
+        <xpath expr="//label[@for='street']" position="attributes">
+            <attribute name="class" add="d-none" separator=" " />
+        </xpath>
+        <xpath expr="//label[@for='street']" position="after">
+            <label
+                class="col-form-label label-optional"
+                for="street"
+            >Street address and number</label>
+        </xpath>
+    </template>
+</odoo>
