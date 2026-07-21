@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template
+    id="address"
+    inherit_id="portal.address_form_fields"
+    customize_show="True"
+    active="True"
+    name="Show invoice transmit method"
+  >
+    <xpath expr="//div[@id='div_vat']" position="after">
+      <t
+        t-set="methods"
+        t-value="request.env['transmit.method'].sudo().search([('website_sale_ok', '=', True)])"
+      />
+      <div
+        id="customer_invoice_transmit_method_id_div"
+        t-if="methods"
+        class="col-lg-6 mb-2"
+      >
+        <label
+          class="col-form-label fw-normal label-optional"
+          for="customer_invoice_transmit_method_id"
+        >Invoice transmit method</label>
+        <select
+          id="customer-invoice-transmit-method"
+          name="customer_invoice_transmit_method_id"
+          data-init="1"
+          class="form-select"
+        >
+          <t t-foreach="methods" t-as="method">
+            <option
+              t-att-value="method.id"
+              t-att-data-code="method.code"
+              t-esc="method.name"
+            />
+          </t>
+        </select>
+      </div>
+    </xpath>
+  </template>
+</odoo>
