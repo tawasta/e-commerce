@@ -1,1 +1,2 @@
 https://github.com/tawasta/oca-backports/archive/refs/heads/19.0.zip#subdirectory=privacy
+https://github.com/tawasta/partner/archive/refs/heads/19.0.zip#subdirectory=res_partner_domicile
