@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template
+    id="_opt_split_name_in_website_sale_address_list"
+    inherit_id="portal.address_form_fields"
+    name="Split name field in website sale address list"
+    active="False"
+  >
+    <xpath expr="//div[@id='div_name']" position="attributes">
+      <attribute name="t-if">false</attribute>
+    </xpath>
+
+    <xpath expr="//input[@name='required_fields']" position="after">
+      <input type="hidden" name="required_fields" t-att-value="'email'" />
+    </xpath>
+
+    <xpath expr="//div[@id='div_name']" position="after">
+      <div id="div_firstname" class="col-lg-6 mb-2">
+        <label class="col-form-label" for="firstname">First name</label>
+        <input
+          type="text"
+          name="firstname"
+          t-att-value="partner_sudo.firstname"
+          class="form-control"
+        />
+      </div>
+      <div id="div_lastname" class="col-lg-6 mb-2">
+        <label class="col-form-label" for="lastname">Last name</label>
+        <input
+          type="text"
+          name="lastname"
+          t-att-value="partner_sudo.lastname"
+          class="form-control"
+        />
+      </div>
+    </xpath>
+  </template>
+</odoo>
