@@ -6,6 +6,8 @@
 Website Sale - Split name
 =========================
 
+By default is off!
+
 * The eCommerce form name field is changed to first and last name
 * Switch this functionality on and off by toggling active state of view with
   External Id: website_sale_split_name._opt_split_name_in_website_sale_address_list
@@ -21,7 +23,7 @@ Usage
 
 Known issues / Roadmap
 ======================
-- Configuration toggle into website builder Edit -> Style
+- No configuration toggle in website builder Edit -> Style bar
 
 Credits
 =======
