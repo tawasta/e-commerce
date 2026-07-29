@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template
+    id="_opt_website_sale_domicile_show"
+    inherit_id="portal.address_form_fields"
+    name="Show domicile"
+    active="False"
+  >
+    <xpath expr="//div[@id='div_street']" position="before">
+      <div id="domicile_div" class="col-lg-6 mb-2">
+        <label class="col-form-label label-optional" for="domicile">Domicile</label>
+        <input
+          type="text"
+          name="domicile"
+          t-att-value="partner_sudo.domicile"
+          class="form-control"
+        />
+      </div>
+    </xpath>
+  </template>
+</odoo>

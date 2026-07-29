@@ -1,8 +1,4 @@
-import logging
-
 from odoo.addons.portal.controllers.portal import CustomerPortal
-
-logger = logging.getLogger(__name__)
 
 
 class CustomerPortal(CustomerPortal):
@@ -47,7 +43,6 @@ class CustomerPortal(CustomerPortal):
 
     def _get_mandatory_address_fields(self, country_sudo):
         result = super()._get_mandatory_address_fields(country_sudo)
-        logger.error("HERE: ")
         opt_view = (
             self.env["ir.ui.view"]
             .sudo()
@@ -63,8 +58,6 @@ class CustomerPortal(CustomerPortal):
                 limit=1,
             )
         )
-        logger.error(opt_view)
-        logger.error(opt_view.active)
         if opt_view.active:
             return result | set(["firstname", "lastname"])
         else:
