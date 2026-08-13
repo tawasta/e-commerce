@@ -43,6 +43,20 @@ class WebsiteSalePaymentProviders(WebsiteSale):
             )
         ).mapped("product_id.invoice_company_id")
 
+        if len(invoice_companies) == 1 and invoice_companies != order.company_id:
+            # super()._get_shop_payment_values() only fetched providers
+            # compatible with the order's own company_id. When the cart
+            # resolves to a single, different invoice_company_id, that
+            # company's own providers were never fetched at all, so
+            # filtering alone can't recover them - fetch them too.
+            providers_sudo |= PaymentProvider._get_compatible_providers(
+                invoice_companies.id,
+                order.partner_id.id,
+                order.amount_total - order.amount_paid,
+                currency_id=order.currency_id.id,
+                sale_order_id=order.id,
+            )
+
         if len(invoice_companies) > 1:
             providers_sudo = providers_sudo.filtered(
                 lambda p: p.website_allow_mixed_variant_companies
