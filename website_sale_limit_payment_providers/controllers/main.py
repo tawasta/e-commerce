@@ -1,10 +1,6 @@
-import logging
-
 from odoo.http import request
 
 from odoo.addons.website_sale.controllers.main import WebsiteSale
-
-_logger = logging.getLogger(__name__)
 
 
 class WebsiteSalePaymentProviders(WebsiteSale):
@@ -47,23 +43,7 @@ class WebsiteSalePaymentProviders(WebsiteSale):
             )
         ).mapped("product_id.invoice_company_id")
 
-        _logger.info(
-            "Order %s: order.company_id=%s, cart invoice_company_id(s)=%s, "
-            "providers before company handling=%s",
-            order.name,
-            order.company_id.name,
-            invoice_companies.mapped("name"),
-            providers_sudo.mapped("name"),
-        )
-
         if len(invoice_companies) == 1 and invoice_companies != order.company_id:
-            # super()._get_shop_payment_values() only fetched providers
-            # compatible with the order's own company_id. When the cart
-            # resolves to a single, different invoice_company_id, the
-            # cart must be paid as that company, so its own compatible
-            # providers replace (not extend) the wrong-company list -
-            # otherwise both the wrong and the right company's providers
-            # would be offered together.
             providers_sudo = PaymentProvider._get_compatible_providers(
                 invoice_companies.id,
                 order.partner_id.id,
@@ -71,24 +51,10 @@ class WebsiteSalePaymentProviders(WebsiteSale):
                 currency_id=order.currency_id.id,
                 sale_order_id=order.id,
             )
-            _logger.info(
-                "Order %s: replaced providers with %s's own compatible "
-                "providers: %s",
-                order.name,
-                invoice_companies.name,
-                providers_sudo.mapped("name"),
-            )
 
         if len(invoice_companies) > 1:
             providers_sudo = providers_sudo.filtered(
                 lambda p: p.website_allow_mixed_variant_companies
-            )
-            _logger.info(
-                "Order %s: multiple invoice companies (%s), restricted to "
-                "mixed-company providers: %s",
-                order.name,
-                invoice_companies.mapped("name"),
-                providers_sudo.mapped("name"),
             )
 
         is_company = order.partner_invoice_id.is_company or order.partner_invoice_id.vat
@@ -103,12 +69,6 @@ class WebsiteSalePaymentProviders(WebsiteSale):
         providers_sudo = providers_sudo.filtered(
             lambda p: not p.website_show_for_group_ids
             or bool(p.website_show_for_group_ids & current_user_groups)
-        )
-
-        _logger.info(
-            "Order %s: final providers shown to customer: %s",
-            order.name,
-            providers_sudo.mapped("name"),
         )
 
         values["providers_sudo"] = providers_sudo

@@ -21,7 +21,7 @@
 {
     "name": "Website Sale - Limit payment providers",
     "summary": "Limit payment providers by product",
-    "version": "17.0.1.2.3",
+    "version": "17.0.1.1.2",
     "category": "Website",
     "website": "https://github.com/tawasta/e-commerce",
     "author": "Futural",
