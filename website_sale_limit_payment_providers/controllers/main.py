@@ -35,15 +35,24 @@ class WebsiteSalePaymentProviders(WebsiteSale):
                 lambda p: p.id in common_providers
             )
 
-        variant_companies = order.order_line.filtered(
+        invoice_companies = order.order_line.filtered(
             lambda line: (
                 not line.display_type
                 and line.product_id
-                and line.product_id.variant_company_id
+                and line.product_id.invoice_company_id
             )
-        ).mapped("product_id.variant_company_id")
+        ).mapped("product_id.invoice_company_id")
 
-        if len(variant_companies) > 1:
+        if len(invoice_companies) == 1 and invoice_companies != order.company_id:
+            providers_sudo = PaymentProvider._get_compatible_providers(
+                invoice_companies.id,
+                order.partner_id.id,
+                order.amount_total - order.amount_paid,
+                currency_id=order.currency_id.id,
+                sale_order_id=order.id,
+            )
+
+        if len(invoice_companies) > 1:
             providers_sudo = providers_sudo.filtered(
                 lambda p: p.website_allow_mixed_variant_companies
             )
