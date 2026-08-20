@@ -28,7 +28,7 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["website_sale", "auth_signup_portal_user_custom_redirect_after_signup"],
+    "depends": ["website_sale"],
     "data": [
         "views/website_product_template.xml",
     ],
