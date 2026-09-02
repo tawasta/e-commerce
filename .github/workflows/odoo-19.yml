@@ -1,4 +1,4 @@
-name: Module version check
+name: odoo-19
 
 on:
   workflow_dispatch:
@@ -7,10 +7,12 @@ on:
     types:
       - opened
       - synchronize
+  push:
     branches:
-      - 19.0
+      - '19*'
 
 jobs:
-  run-tests:
-    uses: tawasta/github-workflows/.github/workflows/odoo-19-module-version-check.yml@main
+  all:
+    uses: tawasta/github-workflows/.github/workflows/odoo-19.yml@main
     secrets: inherit
+

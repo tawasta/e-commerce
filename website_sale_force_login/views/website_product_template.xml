@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="product_login_buttons">
+    <div
+      id="cart_login"
+      class="d-inline-flex align-items-center mb-2 me-auto"
+      t-if="website.is_public_user()"
+      t-nocache="Avoid caching public user checks"
+    >
+      <a
+        t-attf-href="/web/login?redirect=#{request.httprequest.url}"
+        id="cart_login_button"
+        title="Please login or sign up by registering your email address to continue"
+        class="btn btn-primary flex-grow-1"
+        href="#"
+      >
+        <i class="fa fa-sign-in me-2" />
+        <small>Login</small>
+      </a>
+
+      <a
+        t-attf-href="/web/signup?portal_user_signup_origin_url=#{request.httprequest.url}"
+        id="cart_register_button"
+        title="Please login or sign up by registering your email address to continue"
+        class="btn btn-warning flex-grow-1 ms-1"
+        href="#"
+      >
+        <i class="fa fa-lock me-2" />
+        <small>Sign up</small>
+      </a>
+    </div>
+    <div
+      id="cart_login_guide"
+      t-if="request.website.is_public_user()"
+      t-nocache="Avoid caching public user checks"
+    >
+      <small>
+        <i
+          class="font-italic"
+        >Please login or sign up by registering your email address to continue</i>
+      </small>
+    </div>
+  </template>
+
+  <template id="product" inherit_id="website_sale.cta_wrapper">
+    <xpath expr="//div[@id='add_to_cart_wrap']" position="attributes">
+      <attribute name="t-if">not request.website.is_public_user()</attribute>
+    </xpath>
+
+    <xpath expr="//div[@id='add_to_cart_wrap']" position="after">
+      <t t-call="website_sale_force_login.product_login_buttons" />
+    </xpath>
+  </template>
+</odoo>
