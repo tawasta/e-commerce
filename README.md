@@ -18,6 +18,7 @@ addon | version | maintainers | summary
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 17.0.1.0.0 |  | Create company for website customer, if company name is set
 [website_sale_autoflag_partner_as_customer](website_sale_autoflag_partner_as_customer/) | 17.0.1.0.0 |  | Set the 'Is a Customer' flag automatically
 [website_sale_billing_address](website_sale_billing_address/) | 17.0.1.0.3 |  | Website customer can select a billing address
+[website_sale_birth_year_membership](website_sale_birth_year_membership/) | 17.0.1.0.0 |  | Customer can fill in their birth year at checkout
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 17.0.1.0.0 |  | eCommerce tax in cart lines
 [website_sale_company_email](website_sale_company_email/) | 17.0.1.0.1 |  | Add different emails for ecommerce user and company
 [website_sale_company_registry](website_sale_company_registry/) | 17.0.1.0.0 |  | Handling of Finnish 'yritystunnus' on the website checkout form
@@ -40,6 +41,7 @@ addon | version | maintainers | summary
 [website_sale_force_address_step](website_sale_force_address_step/) | 17.0.1.0.0 |  | Always show checkout address step, even if customer details exist
 [website_sale_force_autoinvoice](website_sale_force_autoinvoice/) | 17.0.1.1.0 |  | Forces autoinvoice on quotations created from website_sale
 [website_sale_force_login](website_sale_force_login/) | 17.0.1.2.0 |  | Force login before adding products to carts
+[website_sale_gender_membership](website_sale_gender_membership/) | 17.0.1.0.0 |  | Customer can fill in their gender at checkout
 [website_sale_hide_delivery_orders](website_sale_hide_delivery_orders/) | 17.0.1.0.0 |  | Hide Delivery Orders and Returns links from portal users
 [website_sale_invoice_transmit_method](website_sale_invoice_transmit_method/) | 17.0.1.0.0 |  | Adds account invoice transmit method to checkout
 [website_sale_invoicing_fee](website_sale_invoicing_fee/) | 17.0.1.0.0 |  | Adds Invoicing fee to Sale Order

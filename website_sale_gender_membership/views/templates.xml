@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="address_inherit_gender" inherit_id="website_sale.address">
+        <xpath expr="//select[@id='country_id']//.." position="after">
+            <t t-if="has_membership_product">
+                <div class="form-group col-lg-6 mb-2">
+                    <label class="col-form-label" for="gender">Gender</label>
+                    <select name="gender" class="form-select">
+                        <option value="">Select Gender...</option>
+                        <t t-foreach="gender_selection" t-as="gender_option">
+                            <option
+                                t-att-value="gender_option[0]"
+                                t-att-selected="'selected' if gender_option[0] == current_gender else None"
+                                t-esc="gender_option[1]"
+                            />
+                        </t>
+                    </select>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>
