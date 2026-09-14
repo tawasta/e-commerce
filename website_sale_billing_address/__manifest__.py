@@ -21,7 +21,7 @@
 {
     "name": "Website sale billing address",
     "summary": "Website customer can select a billing address",
-    "version": "17.0.1.0.3",
+    "version": "17.0.1.0.4",
     "category": "Website",
     "website": "https://github.com/tawasta/e-commerce",
     "author": "Futural",
@@ -35,6 +35,7 @@
         "website_sale_domicile",
         "website_sale_company_email",
         "website_sale_default_privacies",
+        "l10n_fi_company_registry",
     ],
     "data": [
         "views/website_sale_address_kanban_template.xml",
