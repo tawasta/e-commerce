@@ -50,6 +50,7 @@ class WebsiteSalePaymentProviders(WebsiteSale):
                 order.amount_total - order.amount_paid,
                 currency_id=order.currency_id.id,
                 sale_order_id=order.id,
+                website_id=request.website.id,
             )
 
         if len(invoice_companies) > 1:
