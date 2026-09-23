@@ -24,19 +24,20 @@ class WebsiteSaleBilling(WebsiteSale):
 
         Partner = request.env["res.partner"]
         country_id = int(data.get("country_id") or 0)
-        vat = data.get("billing_company_registry")
+        company_registry = data.get("billing_company_registry")
 
-        if vat and hasattr(Partner, "check_vat") and country_id:
-            vat_fixed = Partner.fix_eu_vat_number(country_id, vat)
-            data["billing_company_registry"] = vat_fixed
+        # Validate as a company registry (e.g. Finnish Y-tunnus), not as a
+        # VAT number - they use different formats even though for Finland
+        # the VAT number is derived from the company registry.
+        if company_registry and country_id:
             partner_dummy = Partner.new(
                 {
-                    "vat": vat_fixed,
+                    "company_registry": company_registry,
                     "country_id": country_id,
                 }
             )
             try:
-                partner_dummy.sudo().check_vat()
+                partner_dummy.sudo().validate_company_registry()
             except ValidationError as e:
                 error["billing_company_registry"] = "error"
                 error_message.append(e.args[0])
@@ -79,8 +80,10 @@ class WebsiteSaleBilling(WebsiteSale):
                         update_values["email_invoicing_address"] = company_email
 
                 if billing_company_registry:
+                    # l10n_fi_company_registry derives "vat" from
+                    # "company_registry" on write - don't also write the
+                    # company-registry-formatted value into "vat" directly.
                     update_values["company_registry"] = billing_company_registry
-                    update_values["vat"] = billing_company_registry
                     update_values["is_company"] = True
                     update_values["company_type"] = "company"
 

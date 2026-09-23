@@ -21,7 +21,7 @@
 {
     "name": "Website sale split name",
     "summary": "Split name field on address card to first and last name",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.0.2",
     "category": "Website",
     "website": "https://github.com/tawasta/e-commerce",
     "author": "Futural",

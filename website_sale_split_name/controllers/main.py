@@ -23,12 +23,6 @@ class WebsiteSale(WebsiteSale):
 
     @http.route()
     def address(self, **kw):
-        # Tarkistetaan, onko URL:ssa parametri mode=billing,
-        # tai "billing_address" jo parametreissa
-        is_billing_mode = request.httprequest.args.get("mode") == "billing" or kw.get(
-            "billing_address", {}
-        )
-
         if "submitted" in kw and kw.get("firstname"):
             name = request.env["res.partner"]._get_computed_name(
                 kw.get("lastname"), kw.get("firstname")
@@ -37,6 +31,13 @@ class WebsiteSale(WebsiteSale):
             response = super().address(**kw)
         else:
             response = super().address(**kw)
+
+        # Read the address mode core already computed instead of the
+        # request's raw query string: a plain form POST doesn't repeat the
+        # URL's query string, so "mode=billing" is lost from
+        # request.httprequest.args as soon as a validation error re-renders
+        # the page after submission.
+        is_billing_mode = "billing" in (response.qcontext.get("mode") or ())
 
         # Välitetään is_billing_mode templateen
         response.qcontext.update(

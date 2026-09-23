@@ -17,7 +17,7 @@ addon | version | maintainers | summary
 [website_sale_address_form_recaptcha](website_sale_address_form_recaptcha/) | 17.0.1.0.0 |  | Recaptcha to prevent bots creating partner records
 [website_sale_autocreate_company](website_sale_autocreate_company/) | 17.0.1.0.0 |  | Create company for website customer, if company name is set
 [website_sale_autoflag_partner_as_customer](website_sale_autoflag_partner_as_customer/) | 17.0.1.0.0 |  | Set the 'Is a Customer' flag automatically
-[website_sale_billing_address](website_sale_billing_address/) | 17.0.1.0.3 |  | Website customer can select a billing address
+[website_sale_billing_address](website_sale_billing_address/) | 17.0.1.0.4 |  | Website customer can select a billing address
 [website_sale_birth_year_membership](website_sale_birth_year_membership/) | 17.0.1.0.0 |  | Customer can fill in their birth year at checkout
 [website_sale_cart_lines_tax](website_sale_cart_lines_tax/) | 17.0.1.0.0 |  | eCommerce tax in cart lines
 [website_sale_company_email](website_sale_company_email/) | 17.0.1.0.1 |  | Add different emails for ecommerce user and company
@@ -63,7 +63,7 @@ addon | version | maintainers | summary
 [website_sale_shop_routes_require_login](website_sale_shop_routes_require_login/) | 17.0.1.0.0 |  | Authentication is required to access shop pages
 [website_sale_show_product_code](website_sale_show_product_code/) | 17.0.1.0.0 |  | Show the product's internal reference on product page
 [website_sale_show_tax](website_sale_show_tax/) | 17.0.1.1.1 |  | Show taxes in product grid and product view
-[website_sale_split_name](website_sale_split_name/) | 17.0.1.0.1 |  | Split name field on address card to first and last name
+[website_sale_split_name](website_sale_split_name/) | 17.0.1.0.2 |  | Split name field on address card to first and last name
 [website_sale_stock_already_in_cart_helper_message](website_sale_stock_already_in_cart_helper_message/) | 17.0.1.0.0 |  | Show additional instruction for the user
 [website_sale_suggest_einvoice_based_invoice_address](website_sale_suggest_einvoice_based_invoice_address/) | 17.0.1.0.0 |  | In checkout, try to suggest an invoicing address with edicode and invoice operator, if one exists
 [website_sale_suggested_products_category](website_sale_suggested_products_category/) | 17.0.1.0.0 |  | Enable categorizing Order Overview's suggested accessories
