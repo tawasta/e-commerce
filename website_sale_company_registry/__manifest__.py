@@ -28,6 +28,6 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["l10n_fi_company_registry", "website_sale"],
+    "depends": ["l10n_fi_company_registry", "website_sale_billing_address"],
     "data": ["views/website_sale_checkout.xml"],
 }
