@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Tawasta
-#    Copyright 2025 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Futural Oy
+#    Copyright 2026 Futural Oy (https://futural.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,15 +19,22 @@
 ##############################################################################
 
 {
-    "name": "eCommerce: Finnish Company Registry Support",
-    "summary": "Handling of Finnish 'yritystunnus' on the website checkout form",
+    "name": "eCommerce: Customer's Gender",
+    "summary": "Customer can fill in their gender at checkout",
     "version": "17.0.1.0.0",
-    "category": "Website",
+    "category": "eCommerce",
     "website": "https://github.com/tawasta/e-commerce",
     "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["l10n_fi_company_registry", "website_sale_billing_address"],
-    "data": ["views/website_sale_checkout.xml"],
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": [
+        "website_sale",
+        "partner_contact_gender",
+        "partner_gender_values",
+        "membership_product",
+    ],
+    "data": ["views/templates.xml"],
+    "demo": [],
 }

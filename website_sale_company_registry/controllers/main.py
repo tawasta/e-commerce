@@ -30,7 +30,20 @@ class WebsiteSale(WebsiteSale):
         # - If country is Finland, assume format to be 1234567-1
         # - For other countries, use the standard VAT validation functionality of core
 
-        vat_field_input = data.get("vat", False)
+        # in website_sale_billing_address, when reaching address page with mode=billing
+        # the name of the form field is "billing_company_registry" instead of "vat".
+        # Handle both cases
+
+        vat_field_filled = "vat" in data
+        billing_company_registry_filled = "billing_company_registry" in data
+
+        if vat_field_filled:
+            vat_field_input = data.get("vat", False)
+        elif billing_company_registry_filled:
+            vat_field_input = data.get("billing_company_registry", False)
+        else:
+            vat_field_input = False
+
         country_input = data.get("country_id", False)
 
         is_finland = (
@@ -39,7 +52,10 @@ class WebsiteSale(WebsiteSale):
 
         # Pop the Y-tunnus value so it doesn't get validated as a VAT code
         if is_finland and vat_field_input:
-            data.pop("vat")
+            if vat_field_filled:
+                data.pop("vat")
+            elif billing_company_registry_filled:
+                data.pop("billing_company_registry")
 
         # Run all the standard validations
         error, error_message = super().checkout_form_validate(
@@ -58,11 +74,22 @@ class WebsiteSale(WebsiteSale):
 
                 partner_dummy.sudo()._company_registry_validate_fi()
 
-                data["vat"] = vat_field_input
             except ValidationError as exception:
                 # Human-readable validation message is
                 # provided by l10n_fi_company_registry
-                error["vat"] = "error"
+                if vat_field_filled:
+                    error["vat"] = "error"
+                elif billing_company_registry_filled:
+                    error["billing_company_registry"] = "error"
+
                 error_message.append(exception.args[0])
+
+            finally:
+                # Put the popped value back, also when the validation failed,
+                # so that overrides running after this one still see it
+                if vat_field_filled:
+                    data["vat"] = vat_field_input
+                elif billing_company_registry_filled:
+                    data["billing_company_registry"] = vat_field_input
 
         return error, error_message
