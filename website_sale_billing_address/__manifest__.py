@@ -35,6 +35,7 @@
         "website_sale_domicile",
         "website_sale_company_email",
         "website_sale_default_privacies",
+        "website_sale_edicode",
     ],
     "data": [
         "views/website_sale_address_kanban_template.xml",
