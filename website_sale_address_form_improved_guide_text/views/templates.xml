@@ -13,7 +13,7 @@
         t-value="use_delivery_as_billing and not only_services"
       />
       <h4 id="address_guide_heading" class="mb-3">
-        <t t-if="is_own_contact">Your contact details</t>
+        <t t-if="is_own_contact">Your user details</t>
         <t t-elif="is_delivery_and_billing">Delivery and billing address</t>
         <t t-elif="address_type == 'delivery'">Delivery address</t>
         <t t-else="">Billing address</t>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="address_card" inherit_id="website_sale.address_card">
+    <!-- Editing the own address from the delivery list would also change the
+         customer's main contact details, which is easy to do by accident -->
+    <xpath expr="//div[@t-if='can_be_edited']" position="attributes">
+      <attribute
+        name="t-if"
+      >can_be_edited and not (is_user_address and address_type == 'delivery')</attribute>
+    </xpath>
+  </template>
+</odoo>
