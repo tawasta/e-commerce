@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 19.0\n"
+"Project-Id-Version: Odoo Server 19.0-20260908\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-19 00:00+0000\n"
-"PO-Revision-Date: 2026-10-19 00:00+0000\n"
+"POT-Creation-Date: 2026-10-19 10:23+0000\n"
+"PO-Revision-Date: 2026-10-19 10:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,14 +32,13 @@ msgstr "Toimitus- ja laskutusosoite"
 
 #. module: website_sale_address_form_improved_guide_text
 #: model_terms:ir.ui.view,arch_db:website_sale_address_form_improved_guide_text.address
-msgid "Your user details"
-msgstr "Omat käyttäjätietosi"
-
-#. module: website_sale_address_form_improved_guide_text
-#: model_terms:ir.ui.view,arch_db:website_sale_address_form_improved_guide_text.address
 msgid ""
-"You can manage separate delivery and/or billing addresses on the next "
-"page."
+"You can manage separate delivery and/or billing addresses on the next page."
 msgstr ""
 "Voit hallita erillisiä toimitus- ja/tai laskutusosoitteita seuraavalla "
 "sivulla."
+
+#. module: website_sale_address_form_improved_guide_text
+#: model_terms:ir.ui.view,arch_db:website_sale_address_form_improved_guide_text.address
+msgid "Your user details"
+msgstr "Omat käyttäjätietosi"
