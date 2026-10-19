@@ -21,7 +21,7 @@
 {
     "name": "eCommerce: Address form improved guide text",
     "summary": "Show which address is being edited in the checkout address form",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Website",
     "website": "https://github.com/tawasta/e-commerce",
     "author": "Futural",
