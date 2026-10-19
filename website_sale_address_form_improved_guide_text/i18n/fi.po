@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_address_form_improved_guide_text
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-19 00:00+0000\n"
+"PO-Revision-Date: 2026-10-19 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_address_form_improved_guide_text
+#: model_terms:ir.ui.view,arch_db:website_sale_address_form_improved_guide_text.address
+msgid "Billing address"
+msgstr "Laskutusosoite"
+
+#. module: website_sale_address_form_improved_guide_text
+#: model_terms:ir.ui.view,arch_db:website_sale_address_form_improved_guide_text.address
+msgid "Delivery address"
+msgstr "Toimitusosoite"
+
+#. module: website_sale_address_form_improved_guide_text
+#: model_terms:ir.ui.view,arch_db:website_sale_address_form_improved_guide_text.address
+msgid "Delivery and billing address"
+msgstr "Toimitus- ja laskutusosoite"
+
+#. module: website_sale_address_form_improved_guide_text
+#: model_terms:ir.ui.view,arch_db:website_sale_address_form_improved_guide_text.address
+msgid "Your user details"
+msgstr "Omat käyttäjätietosi"
+
+#. module: website_sale_address_form_improved_guide_text
+#: model_terms:ir.ui.view,arch_db:website_sale_address_form_improved_guide_text.address
+msgid ""
+"You can manage separate delivery and/or billing addresses on the next "
+"page."
+msgstr ""
+"Voit hallita erillisiä toimitus- ja/tai laskutusosoitteita seuraavalla "
+"sivulla."
