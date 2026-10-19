@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <template id="address" inherit_id="website_sale.address">
+    <!-- Hide the guide heading to be replaced with a more granular one -->
+    <xpath expr="//t[@t-if='not is_anonymous_cart']/h4" position="attributes">
+      <attribute name="t-if">False</attribute>
+    </xpath>
+
+    <xpath expr="//t[@t-if='not is_anonymous_cart']/h4" position="after">
+      <t t-set="is_own_contact" t-value="partner_sudo and is_main_address" />
+      <t
+        t-set="is_delivery_and_billing"
+        t-value="use_delivery_as_billing and not only_services"
+      />
+      <h4 id="address_guide_heading" class="mb-3">
+        <t t-if="is_own_contact">Your contact details</t>
+        <t t-elif="is_delivery_and_billing">Delivery and billing address</t>
+        <t t-elif="address_type == 'delivery'">Delivery address</t>
+        <t t-else="">Billing address</t>
+      </h4>
+      <p
+        t-if="is_own_contact"
+        id="address_guide_text"
+        class="text-muted"
+      >You can manage separate delivery and/or billing addresses on the next page.</p>
+    </xpath>
+
+    <!-- The 'You can manage...' note above already explains this for the
+         customer's own contact, so hide the core 'You are editing your
+         delivery and billing addresses at the same time' alert -->
+    <xpath
+      expr="//div[hasclass('o_customer_address_fill')]/div/div[hasclass('alert-warning')]"
+      position="attributes"
+    >
+      <attribute
+        name="t-if"
+      >use_delivery_as_billing and not only_services and partner_sudo and not is_main_address</attribute>
+    </xpath>
+  </template>
+</odoo>
