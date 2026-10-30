@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template
+        id="address_inherit_country_code"
+        inherit_id="website_sale.address"
+        name="Phone country code in checkout address form"
+    >
+        <xpath expr="//div[@id='div_phone']" position="before">
+            <div class="w-100" />
+            <t
+                t-set="phone_cc_posted"
+                t-value="'phone_country_code' in checkout and checkout['phone_country_code'] or ''"
+            />
+            <t
+                t-set="phone_cc_selected"
+                t-value="phone_cc_posted or (country and country.code) or ''"
+            />
+            <div
+                t-attf-class="#{error.get('phone_country_code') and 'o_has_error'} col-lg-6 mb-2"
+                id="div_phone_country_code"
+            >
+                <label
+                    class="col-form-label"
+                    for="phone_country_code"
+                >Country Code</label>
+                <select
+                    name="phone_country_code"
+                    id="phone_country_code"
+                    t-attf-class="form-select #{error.get('phone_country_code') and 'is-invalid' or ''}"
+                >
+                    <option value="">Country...</option>
+                    <t t-foreach="countries" t-as="c">
+                        <option
+                            t-if="c.phone_code"
+                            t-att-value="c.code"
+                            t-att-selected="c.code == phone_cc_selected"
+                            t-esc="'{} (+{})'.format(c.name, c.phone_code)"
+                        />
+                    </t>
+                </select>
+            </div>
+        </xpath>
+
+    </template>
+</odoo>
