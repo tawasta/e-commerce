@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <!-- Toggled from the website editor (shop page options). The grid price is
+       for the first available UoM: the base unit, or the first eCommerce
+       packaging with website_sale_packaging_restriction. -->
+  <template
+    id="products_item_packaging_name"
+    inherit_id="website_sale.products_item"
+    name="Shop: Packaging Name in Price"
+  >
+    <xpath
+      expr="//*[hasclass('product_price')]/span[@t-out=&quot;template_price_vals['price_reduce']&quot;]"
+      position="after"
+    >
+      <small
+        t-if="template_price_vals['price_reduce'] or not website.prevent_zero_price_sale"
+        class="text-muted text-nowrap"
+      >/ <t t-out="product._get_available_uoms()[:1].name" /></small>
+    </xpath>
+  </template>
+</odoo>

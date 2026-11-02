@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <!-- Preselect the first allowed UoM: core always preselects the base UoM,
+       which is also the first one when the product is not restricted -->
+  <template id="variants" inherit_id="website_sale.variants">
+    <xpath expr="//t[@t-set='is_main_uom']" position="attributes">
+      <attribute name="t-value">uom_first</attribute>
+    </xpath>
+  </template>
+</odoo>
