@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t
+    t-name="website_sale_shop_packaging_name.ProductsListPageOption"
+    t-inherit="website_sale.ProductsListPageOption"
+    t-inherit-mode="extension"
+  >
+    <xpath expr="//BuilderRow[@label.translate='Mobile']" position="after">
+      <BuilderRow label.translate="Packaging Name">
+        <BuilderCheckbox
+          action="'websiteConfig'"
+          actionParam="{views: ['website_sale_shop_packaging_name.products_item_packaging_name']}"
+        />
+      </BuilderRow>
+    </xpath>
+  </t>
+</templates>
