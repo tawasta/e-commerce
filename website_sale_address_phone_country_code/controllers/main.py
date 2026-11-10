@@ -9,10 +9,10 @@ class WebsiteSaleAddressPhoneCountryCode(WebsiteSale):
     def _phone_country_from_post(self, values):
         """Map the posted phone country code to a res.country, empty if unknown."""
         # sudo: public checkout visitors must resolve their own posted code
-        Country = request.env["res.country"].sudo()
+        country = request.env["res.country"].sudo()
         code = str(values.get("phone_country_code") or "").strip().upper()
         return (
-            Country.search([("code", "=", code)], limit=1) if code else Country.browse()
+            country.search([("code", "=", code)], limit=1) if code else country.browse()
         )
 
     def checkout_form_validate(self, mode, all_form_values, data):
