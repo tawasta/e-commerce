@@ -23,18 +23,18 @@ class WebsiteSaleAddressPhoneCountryCode(WebsiteSale):
     def _phone_country_from_post(self, values):
         """Return the posted phone country, empty if unknown or without a
         dialing code."""
-        Country = request.env["res.country"]
+        country = request.env["res.country"]
         country_id = str(values.get("phone_country_id") or "")
         # isdecimal, not isdigit: int() rejects digits like "²"
         if not country_id.isdecimal():
-            return Country
-        return Country.browse(int(country_id)).exists().filtered("phone_code")
+            return country
+        return country.browse(int(country_id)).exists().filtered("phone_code")
 
     def _phone_country_from_number(self, phone):
         """Return the country of an international number, empty otherwise."""
-        Country = request.env["res.country"]
+        country = request.env["res.country"]
         code = phone_get_country_code_for_number(phone) if phone else ""
-        return Country.search([("code", "=", code)], limit=1) if code else Country
+        return country.search([("code", "=", code)], limit=1) if code else country
 
     def _get_country_related_render_values(self, kw, render_values):
         """Add the phone country preselected in the address form."""
