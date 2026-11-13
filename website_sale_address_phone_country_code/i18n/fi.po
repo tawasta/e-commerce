@@ -23,10 +23,15 @@ msgstr "Maakoodi"
 
 #. module: website_sale_address_phone_country_code
 #: model_terms:ir.ui.view,arch_db:website_sale_address_phone_country_code.address_inherit_country_code
-msgid "Country..."
-msgstr "Maa..."
+msgid "<option value=\"\">Country...</option>"
+msgstr "<option value=\"\">Maa...</option>"
 
 #. module: website_sale_address_phone_country_code
 #: code:addons/website_sale_address_phone_country_code/controllers/main.py:0
 msgid "Please select a phone country code."
 msgstr "Valitse puhelinnumeron maakoodi."
+
+#. module: website_sale_address_phone_country_code
+#: code:addons/website_sale_address_phone_country_code/controllers/main.py:0
+msgid "Please enter a valid phone number."
+msgstr "Anna kelvollinen puhelinnumero."
