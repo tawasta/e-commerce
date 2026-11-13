@@ -7,33 +7,29 @@
     >
         <xpath expr="//div[@id='div_phone']" position="before">
             <div class="w-100" />
-            <t
-                t-set="phone_cc_posted"
-                t-value="'phone_country_code' in checkout and checkout['phone_country_code'] or ''"
-            />
-            <t
-                t-set="phone_cc_selected"
-                t-value="phone_cc_posted or (country and country.code) or ''"
-            />
+            <!-- Values are res.country ids, the same as in the address
+                 country select, so checkout.esm.js can copy the address
+                 country into this dropdown. The preselected id comes from
+                 _get_country_related_render_values. -->
             <div
-                t-attf-class="#{error.get('phone_country_code') and 'o_has_error'} col-lg-6 mb-2"
-                id="div_phone_country_code"
+                t-attf-class="#{error.get('phone_country_id') and 'o_has_error'} col-lg-6 mb-2"
+                id="div_phone_country_id"
             >
                 <label
                     class="col-form-label"
-                    for="phone_country_code"
+                    for="phone_country_id"
                 >Country Code</label>
                 <select
-                    name="phone_country_code"
-                    id="phone_country_code"
-                    t-attf-class="form-select #{error.get('phone_country_code') and 'is-invalid' or ''}"
+                    name="phone_country_id"
+                    id="phone_country_id"
+                    t-attf-class="form-select #{error.get('phone_country_id') and 'is-invalid' or ''}"
                 >
                     <option value="">Country...</option>
                     <t t-foreach="countries" t-as="c">
                         <option
                             t-if="c.phone_code"
-                            t-att-value="c.code"
-                            t-att-selected="c.code == phone_cc_selected"
+                            t-att-value="c.id"
+                            t-att-selected="str(c.id) == phone_country_selected"
                             t-esc="'{} (+{})'.format(c.name, c.phone_code)"
                         />
                     </t>
