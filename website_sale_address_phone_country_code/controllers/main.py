@@ -4,10 +4,15 @@ from odoo.http import request
 
 from odoo.addons.phone_validation.tools.phone_validation import (
     phone_format,
-    phone_get_country_code_for_number,
     phone_parse,
 )
 from odoo.addons.website_sale.controllers.main import WebsiteSale
+
+# Optional like in phone_validation: without it numbers are not parsed
+try:
+    import phonenumbers
+except ImportError:
+    phonenumbers = None
 
 # A lone dash is used as a placeholder for "no phone" so that core's required
 # check passes; it is not a number to validate.
@@ -33,7 +38,13 @@ class WebsiteSaleAddressPhoneCountryCode(WebsiteSale):
     def _phone_country_from_number(self, phone):
         """Return the country of an international number, empty otherwise."""
         country = request.env["res.country"]
-        code = phone_get_country_code_for_number(phone) if phone else ""
+        if not phone or not phonenumbers:
+            return country
+        try:
+            # Without a region only numbers starting with "+" parse
+            code = phonenumbers.region_code_for_number(phonenumbers.parse(phone))
+        except phonenumbers.NumberParseException:
+            return country
         return country.search([("code", "=", code)], limit=1) if code else country
 
     def _get_country_related_render_values(self, kw, render_values):

@@ -21,7 +21,7 @@
 {
     "name": "Website Sale Address Phone Country Code",
     "summary": "Show country code in phone number field on checkout page",
-    "version": "17.0.1.0.4",
+    "version": "17.0.1.0.5",
     "category": "eCommerce",
     "website": "https://github.com/tawasta/e-commerce",
     "author": "Futural",
