@@ -1,0 +1,35 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_sale_partner_email_readonly
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-17 00:00+0000\n"
+"PO-Revision-Date: 2026-11-17 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_partner_email_readonly
+#. odoo-python
+#: code:addons/website_sale_partner_email_readonly/controllers/main.py:0
+#, python-format
+msgid "Your email address follows your username and cannot be changed here."
+msgstr ""
+"Sähköpostiosoitteesi on sama kuin käyttäjätunnuksesi, eikä sitä voi vaihtaa "
+"täällä."
+
+#. module: website_sale_partner_email_readonly
+#: model_terms:ir.ui.view,arch_db:website_sale_partner_email_readonly.address
+msgid ""
+"Your email address follows your username. You can change it in your <a "
+"href=\"/my/security\">account security settings</a>."
+msgstr ""
+"Sähköpostiosoitteesi on sama kuin käyttäjätunnuksesi. Tarvittaessa voit vaihtaa sen "
+"<a href=\"/my/security\">oman tilin asetuksista</a>."

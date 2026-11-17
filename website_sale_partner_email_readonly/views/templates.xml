@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="address" inherit_id="website_sale.address">
+        <!-- Lock only the logged-in portal user's own partner, and only when
+             a username change also updates that partner's email -->
+        <xpath expr="//div[@id='div_email']" position="before">
+            <t
+                t-set="lock_own_email"
+                t-value="partner_id == request.env.user.partner_id.id and request.env.user._is_partner_email_locked()"
+            />
+        </xpath>
+        <xpath expr="//input[@name='email']" position="attributes">
+            <attribute name="t-att-readonly">'1' if lock_own_email else None</attribute>
+            <attribute
+                name="t-attf-class"
+                add="#{'bg-light' if lock_own_email else ''}"
+                separator=" "
+            />
+        </xpath>
+        <xpath expr="//input[@name='email']" position="after">
+            <div t-if="lock_own_email" class="form-text">
+                Your email address follows your username. You can change it in your <a
+                    href="/my/security"
+                >account security settings</a>.
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

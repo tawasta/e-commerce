@@ -49,6 +49,7 @@ addon | version | maintainers | summary
 [website_sale_maintenance_mode](website_sale_maintenance_mode/) | 17.0.1.0.0 |  | Website Sale Maintenance mode
 [website_sale_membership_privacies](website_sale_membership_privacies/) | 17.0.1.0.0 |  | Website sale membership privacy values
 [website_sale_order_cancellation_portal](website_sale_order_cancellation_portal/) | 17.0.1.0.0 |  | Portal cancellation notice for website sale orders
+[website_sale_partner_email_readonly](website_sale_partner_email_readonly/) | 17.0.1.0.0 |  | Prevent portal users from changing their own email in checkout
 [website_sale_pay_now_button_configurable_label](website_sale_pay_now_button_configurable_label/) | 17.0.1.0.0 |  | Set the checkout button's text in backend
 [website_sale_payment_transmission](website_sale_payment_transmission/) | 17.0.1.0.0 |  | Invoice Transmit Method and Payment Terms for Website SO print
 [website_sale_product_domain_filter](website_sale_product_domain_filter/) | 17.0.1.2.0 |  | Website Sale Product Domain Filter
